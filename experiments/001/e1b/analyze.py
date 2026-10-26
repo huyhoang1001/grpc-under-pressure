@@ -153,6 +153,7 @@ def main():
             axes[0,col].set_title(v+' — all repetitions')
             for ax in axes[:,col]:ax.axvline(60,color='black',linestyle='--',alpha=.5);ax.grid(alpha=.2)
             axes[2,col].legend(fontsize=7);axes[3,col].set_xlabel('Client elapsed seconds (load ends at 60s)')
+        axes[0,1].annotate('120s RPC deadline:\nremaining queue discarded', xy=(120,0), xytext=(63,75), arrowprops={'arrowstyle':'->','color':'black'}, fontsize=8)
         for i,label in enumerate(['Queued payload MiB','Server RSS MiB','messages/s','Cumulative Send p95 ms']):axes[i,0].set_ylabel(label)
         fig.suptitle('E1B release / final hardened server — offered load vs drain/deadline; finite sampled observations')
         fig.tight_layout();fig.savefig(OUT/'comparison.png',dpi=150);fig.savefig(OUT/'comparison.svg');plt.close(fig)

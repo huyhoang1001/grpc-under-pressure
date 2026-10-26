@@ -1,0 +1,19 @@
+{
+  "attempts": 17851,
+  "completed_sends": 17851,
+  "offered_seconds": 60,
+  "payload_bytes": 16384,
+  "rate": 300,
+  "rpc_error": "rpc error: code = DeadlineExceeded desc = context deadline exceeded",
+  "rpc_seconds": 120.003053999,
+  "seed": 1,
+  "send_blocked_gt20ms": 4,
+  "send_error": "\u003cnil\u003e",
+  "send_p50_ms": 0.017506,
+  "send_p95_ms": 0.050846,
+  "send_p99_ms": 0.168884,
+  "send_seconds": 60.000956117,
+  "send_total_ns": 582407802,
+  "skipped_slots": 149,
+  "summary": null
+}

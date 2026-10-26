@@ -370,22 +370,1424 @@
       "worker_capacity": 89.56700441665564
     }
   ],
-  "runs": [],
+  "runs": [
+    {
+      "name": "overload-1-bounded",
+      "variant": "bounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.00181372,
+      "rpc_seconds": 60.462603477,
+      "attempts": 5419,
+      "completed_sends": 5419,
+      "skipped_slots": 12579,
+      "send_p50_ms": 11.331378,
+      "send_p95_ms": 11.770292,
+      "send_p99_ms": 12.772408,
+      "send_call_time_s": 59.477038349,
+      "send_calls_gt20ms": 2,
+      "fraction_gt20ms": 0.0003690717844620779,
+      "max_queue_depth": 32.0,
+      "max_queue_bytes": 524288.0,
+      "peak_server_rss_bytes": 5033984.0,
+      "server_rss_near_load_end_bytes": 4993024.0,
+      "final_processed": 5419.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.023167478595796754,
+          "peak_sampled_fraction_one_core": 0.14077563366737686,
+          "peak_sampled_rss_bytes": 4800512
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.03968733625138432,
+          "peak_sampled_fraction_one_core": 0.1476143731170372,
+          "peak_sampled_rss_bytes": 17707008
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4458358897920.0,
+        "server_origin_monotonic_ns": 4457934160414.0,
+        "server_origin_lower_ns": 4457934041331.0,
+        "server_origin_upper_ns": 4457934279497.0,
+        "intersection_width_ms": 0.238166,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": -0.0003821261388287387,
+        "queue_slope_bytes_s": -6.260754658570055,
+        "rss_slope_bytes_s": 2450.716354105136,
+        "enqueue_rate": 89.59123783414779,
+        "dequeue_rate": 89.59161996028664,
+        "worker_rate": 89.59161996028664,
+        "producer_attempt_rate": 89.5919794731719,
+        "producer_completion_rate": 89.5919794731719
+      },
+      "early": {
+        "queue_slope_msg_s": -0.0021201805122856455,
+        "queue_slope_bytes_s": -34.737037513288016,
+        "rss_slope_bytes_s": -635.9751275084099,
+        "enqueue_rate": 89.75818877950007,
+        "dequeue_rate": 89.76030896001237,
+        "worker_rate": 89.76030896001237,
+        "producer_attempt_rate": 89.7610071054557,
+        "producer_completion_rate": 89.7610071054557
+      },
+      "late": {
+        "queue_slope_msg_s": 0.0038085509358481377,
+        "queue_slope_bytes_s": 62.39929853293589,
+        "rss_slope_bytes_s": -6453.465555203384,
+        "enqueue_rate": 89.32973749347204,
+        "dequeue_rate": 89.3259289425362,
+        "worker_rate": 89.3259289425362,
+        "producer_attempt_rate": 89.3242606256585,
+        "producer_completion_rate": 89.3242606256585
+      }
+    },
+    {
+      "name": "overload-1-direct",
+      "variant": "direct",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.001838174,
+      "rpc_seconds": 60.115420058,
+      "attempts": 5381,
+      "completed_sends": 5381,
+      "skipped_slots": 12617,
+      "send_p50_ms": 11.320386,
+      "send_p95_ms": 11.647674,
+      "send_p99_ms": 12.337894,
+      "send_call_time_s": 59.662863615,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3883008.0,
+      "server_rss_near_load_end_bytes": 3883008.0,
+      "final_processed": 5381.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.018658178934353172,
+          "peak_sampled_fraction_one_core": 0.09869620000433572,
+          "peak_sampled_rss_bytes": 3620864
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.033424510417285495,
+          "peak_sampled_fraction_one_core": 0.09872875668151798,
+          "peak_sampled_rss_bytes": 17215488
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4520131599872.0,
+        "server_origin_monotonic_ns": 4519707908770.0,
+        "server_origin_lower_ns": 4519707819986.0,
+        "server_origin_upper_ns": 4519707997554.0,
+        "intersection_width_ms": 0.177568,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 1134.3814166173488,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.54543495065758,
+        "producer_attempt_rate": 89.55092646277129,
+        "producer_completion_rate": 89.55097254225785
+      },
+      "early": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 4846.033868187912,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.51737869791138,
+        "producer_attempt_rate": 89.55294204467918,
+        "producer_completion_rate": 89.5576359765409
+      },
+      "late": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 0.0,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.65536219691413,
+        "producer_attempt_rate": 89.6700336773616,
+        "producer_completion_rate": 89.66704689455365
+      }
+    },
+    {
+      "name": "overload-1-unbounded",
+      "variant": "unbounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "rpc_deadline_abort",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.000956117,
+      "rpc_seconds": 120.003053999,
+      "attempts": 17851,
+      "completed_sends": 17851,
+      "skipped_slots": 149,
+      "send_p50_ms": 0.017506,
+      "send_p95_ms": 0.050846,
+      "send_p99_ms": 0.168884,
+      "send_call_time_s": 0.582407802,
+      "send_calls_gt20ms": 4,
+      "fraction_gt20ms": 0.00022407708251638564,
+      "max_queue_depth": 12433.0,
+      "max_queue_bytes": 203702272.0,
+      "peak_server_rss_bytes": 208117760.0,
+      "server_rss_near_load_end_bytes": 208117760.0,
+      "final_processed": 10782.0,
+      "final_discarded": 7069.0,
+      "fully_drained": false,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.03091578843479733,
+          "peak_sampled_fraction_one_core": 0.09855875949056792,
+          "peak_sampled_rss_bytes": 207970304
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.0977605926905342,
+          "peak_sampled_fraction_one_core": 0.339315764332172,
+          "peak_sampled_rss_bytes": 17838080
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4337045836032.0,
+        "server_origin_monotonic_ns": 4336622497758.0,
+        "server_origin_lower_ns": 4336622404878.0,
+        "server_origin_upper_ns": 4336622590638.0,
+        "intersection_width_ms": 0.18576,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 207.298712939132,
+        "queue_slope_bytes_s": 3396382.1127947387,
+        "rss_slope_bytes_s": 3410290.9187874217,
+        "enqueue_rate": 297.38348752587774,
+        "dequeue_rate": 90.08477458674577,
+        "worker_rate": 90.08477458674577,
+        "producer_attempt_rate": 297.37913710667794,
+        "producer_completion_rate": 297.37861488586634
+      },
+      "early": {
+        "queue_slope_msg_s": 209.52409357975364,
+        "queue_slope_bytes_s": 3432842.7492106836,
+        "rss_slope_bytes_s": 3441893.985197488,
+        "enqueue_rate": 299.78097376951706,
+        "dequeue_rate": 90.25688018976341,
+        "worker_rate": 90.25688018976341,
+        "producer_attempt_rate": 299.8002949143159,
+        "producer_completion_rate": 299.7995835160854
+      },
+      "late": {
+        "queue_slope_msg_s": 209.2282707385879,
+        "queue_slope_bytes_s": 3427995.987781024,
+        "rss_slope_bytes_s": 3435356.844818319,
+        "enqueue_rate": 299.30287911006064,
+        "dequeue_rate": 90.07460837147276,
+        "worker_rate": 90.07460837147276,
+        "producer_attempt_rate": 299.2900936474475,
+        "producer_completion_rate": 299.28255516024535
+      }
+    },
+    {
+      "name": "overload-2-bounded",
+      "variant": "bounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.004099663,
+      "rpc_seconds": 60.461603083,
+      "attempts": 5432,
+      "completed_sends": 5432,
+      "skipped_slots": 12566,
+      "send_p50_ms": 11.29051,
+      "send_p95_ms": 11.584917,
+      "send_p99_ms": 12.148534,
+      "send_call_time_s": 59.535362076,
+      "send_calls_gt20ms": 1,
+      "fraction_gt20ms": 0.0001840942562592047,
+      "max_queue_depth": 32.0,
+      "max_queue_bytes": 524288.0,
+      "peak_server_rss_bytes": 4816896.0,
+      "server_rss_near_load_end_bytes": 4575232.0,
+      "final_processed": 5432.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.01719107806884962,
+          "peak_sampled_fraction_one_core": 0.09868212684022308,
+          "peak_sampled_rss_bytes": 4751360
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.03181518777113532,
+          "peak_sampled_fraction_one_core": 0.14772914161283013,
+          "peak_sampled_rss_bytes": 17575936
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4581544105216.0,
+        "server_origin_monotonic_ns": 4581119406928.0,
+        "server_origin_lower_ns": 4581119273889.0,
+        "server_origin_upper_ns": 4581119539967.0,
+        "intersection_width_ms": 0.266078,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 0.00026271792336841123,
+        "queue_slope_bytes_s": 4.30437045646805,
+        "rss_slope_bytes_s": -2150.6550091796134,
+        "enqueue_rate": 89.83411353749617,
+        "dequeue_rate": 89.83385081957279,
+        "worker_rate": 89.83385081957279,
+        "producer_attempt_rate": 89.83349464322313,
+        "producer_completion_rate": 89.83292247278757
+      },
+      "early": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": -1142.122247561342,
+        "enqueue_rate": 89.74010746260498,
+        "dequeue_rate": 89.74010746260498,
+        "worker_rate": 89.74010746260498,
+        "producer_attempt_rate": 89.74484629217395,
+        "producer_completion_rate": 89.7485447730713
+      },
+      "late": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": -5752.54854633118,
+        "enqueue_rate": 89.78768365319713,
+        "dequeue_rate": 89.78768365319713,
+        "worker_rate": 89.78768365319713,
+        "producer_attempt_rate": 89.80495135641164,
+        "producer_completion_rate": 89.80495135641164
+      }
+    },
+    {
+      "name": "overload-2-direct",
+      "variant": "direct",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.010435882,
+      "rpc_seconds": 60.117998922,
+      "attempts": 5390,
+      "completed_sends": 5390,
+      "skipped_slots": 12609,
+      "send_p50_ms": 11.316918,
+      "send_p95_ms": 11.609344,
+      "send_p99_ms": 12.027401,
+      "send_call_time_s": 59.695890202,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3911680.0,
+      "server_rss_near_load_end_bytes": 3911680.0,
+      "final_processed": 5390.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.018012106738551074,
+          "peak_sampled_fraction_one_core": 0.09872111533694525,
+          "peak_sampled_rss_bytes": 3547136
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.03297489658531996,
+          "peak_sampled_fraction_one_core": 0.09872401432771748,
+          "peak_sampled_rss_bytes": 17444864
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4643285236736.0,
+        "server_origin_monotonic_ns": 4642861456393.5,
+        "server_origin_lower_ns": 4642861337150.0,
+        "server_origin_upper_ns": 4642861575637.0,
+        "intersection_width_ms": 0.238487,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 270.08787107552894,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.67853839698336,
+        "producer_attempt_rate": 89.68076558594463,
+        "producer_completion_rate": 89.68051212113771
+      },
+      "early": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 562.7834137023258,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.5235327183148,
+        "producer_attempt_rate": 89.5266182744745,
+        "producer_completion_rate": 89.53074308774038
+      },
+      "late": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 0.0,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.63941769535445,
+        "producer_attempt_rate": 89.65943820970725,
+        "producer_completion_rate": 89.65943820970725
+      }
+    },
+    {
+      "name": "overload-2-unbounded",
+      "variant": "unbounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "rpc_deadline_abort",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.000983412,
+      "rpc_seconds": 120.00484153,
+      "attempts": 17932,
+      "completed_sends": 17932,
+      "skipped_slots": 68,
+      "send_p50_ms": 0.016304,
+      "send_p95_ms": 0.03985,
+      "send_p99_ms": 0.124738,
+      "send_call_time_s": 0.45361916,
+      "send_calls_gt20ms": 2,
+      "fraction_gt20ms": 0.00011153245594467991,
+      "max_queue_depth": 12513.0,
+      "max_queue_bytes": 205012992.0,
+      "peak_server_rss_bytes": 209477632.0,
+      "server_rss_near_load_end_bytes": 209477632.0,
+      "final_processed": 10794.0,
+      "final_discarded": 7138.0,
+      "fully_drained": false,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.028494720593675204,
+          "peak_sampled_fraction_one_core": 0.14505869662353107,
+          "peak_sampled_rss_bytes": 209199104
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.08932545744833342,
+          "peak_sampled_fraction_one_core": 0.3427138873331719,
+          "peak_sampled_rss_bytes": 17801216
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4704693494528.0,
+        "server_origin_monotonic_ns": 4704268781031.5,
+        "server_origin_lower_ns": 4704268718244.0,
+        "server_origin_upper_ns": 4704268843819.0,
+        "intersection_width_ms": 0.125575,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 209.20847212785935,
+        "queue_slope_bytes_s": 3427671.6073428476,
+        "rss_slope_bytes_s": 3438346.440440962,
+        "enqueue_rate": 299.35157766753673,
+        "dequeue_rate": 90.14310553967742,
+        "worker_rate": 90.14310553967742,
+        "producer_attempt_rate": 299.35662218225957,
+        "producer_completion_rate": 299.3570868539683
+      },
+      "early": {
+        "queue_slope_msg_s": 209.10935332902307,
+        "queue_slope_bytes_s": 3426047.644942714,
+        "rss_slope_bytes_s": 3438277.2055556695,
+        "enqueue_rate": 299.3259535297393,
+        "dequeue_rate": 90.21660020071624,
+        "worker_rate": 90.21660020071624,
+        "producer_attempt_rate": 299.3626528347879,
+        "producer_completion_rate": 299.3542617943381
+      },
+      "late": {
+        "queue_slope_msg_s": 208.8085419269814,
+        "queue_slope_bytes_s": 3421119.1509316633,
+        "rss_slope_bytes_s": 3435126.6962397518,
+        "enqueue_rate": 299.03939276509084,
+        "dequeue_rate": 90.23085083810946,
+        "worker_rate": 90.23085083810946,
+        "producer_attempt_rate": 299.09826708089753,
+        "producer_completion_rate": 299.09826708089753
+      }
+    },
+    {
+      "name": "overload-3-bounded",
+      "variant": "bounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.001164877,
+      "rpc_seconds": 60.458943153,
+      "attempts": 5429,
+      "completed_sends": 5429,
+      "skipped_slots": 12568,
+      "send_p50_ms": 11.30209,
+      "send_p95_ms": 11.606315,
+      "send_p99_ms": 12.063832,
+      "send_call_time_s": 59.5677267,
+      "send_calls_gt20ms": 1,
+      "fraction_gt20ms": 0.0001841959845275373,
+      "max_queue_depth": 32.0,
+      "max_queue_bytes": 524288.0,
+      "peak_server_rss_bytes": 5054464.0,
+      "server_rss_near_load_end_bytes": 4739072.0,
+      "final_processed": 5429.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.01767898315186853,
+          "peak_sampled_fraction_one_core": 0.09857276785146173,
+          "peak_sampled_rss_bytes": 4722688
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.030473543964677757,
+          "peak_sampled_fraction_one_core": 0.14774929364017697,
+          "peak_sampled_rss_bytes": 17182720
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4887418778368.0,
+        "server_origin_monotonic_ns": 4886990935412.5,
+        "server_origin_lower_ns": 4886990806416.0,
+        "server_origin_upper_ns": 4886991064409.0,
+        "intersection_width_ms": 0.257993,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": -0.0008999072591352364,
+        "queue_slope_bytes_s": -14.744080533671713,
+        "rss_slope_bytes_s": -405.6287854503591,
+        "enqueue_rate": 89.71729064106424,
+        "dequeue_rate": 89.71819054832336,
+        "worker_rate": 89.71819054832336,
+        "producer_attempt_rate": 89.71342028364019,
+        "producer_completion_rate": 89.71342028364019
+      },
+      "early": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": -10240.85201001486,
+        "enqueue_rate": 89.71891915660086,
+        "dequeue_rate": 89.71891915660086,
+        "worker_rate": 89.71891915660086,
+        "producer_attempt_rate": 89.71961242179047,
+        "producer_completion_rate": 89.71961242179047
+      },
+      "late": {
+        "queue_slope_msg_s": -0.008346101508378357,
+        "queue_slope_bytes_s": -136.742527113271,
+        "rss_slope_bytes_s": -739.3766660446148,
+        "enqueue_rate": 89.80866202541729,
+        "dequeue_rate": 89.81700812692567,
+        "worker_rate": 89.81700812692567,
+        "producer_attempt_rate": 89.78696577077854,
+        "producer_completion_rate": 89.78696577077854
+      }
+    },
+    {
+      "name": "overload-3-direct",
+      "variant": "direct",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.009131588,
+      "rpc_seconds": 60.121436613,
+      "attempts": 5384,
+      "completed_sends": 5384,
+      "skipped_slots": 12616,
+      "send_p50_ms": 11.321699,
+      "send_p95_ms": 11.66066,
+      "send_p99_ms": 12.386509,
+      "send_call_time_s": 59.621635824,
+      "send_calls_gt20ms": 4,
+      "fraction_gt20ms": 0.0007429420505200594,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3940352.0,
+      "server_rss_near_load_end_bytes": 3940352.0,
+      "final_processed": 5384.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.019151308956691416,
+          "peak_sampled_fraction_one_core": 0.09865391274144286,
+          "peak_sampled_rss_bytes": 3686400
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.03375643328117027,
+          "peak_sampled_fraction_one_core": 0.09861983950794696,
+          "peak_sampled_rss_bytes": 17604608
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4825993422592.0,
+        "server_origin_monotonic_ns": 4825569451968.5,
+        "server_origin_lower_ns": 4825569334833.0,
+        "server_origin_upper_ns": 4825569569104.0,
+        "intersection_width_ms": 0.234271,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 314.2307934395152,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.50729825392503,
+        "producer_attempt_rate": 89.50864857712672,
+        "producer_completion_rate": 89.50869657909497
+      },
+      "early": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 0.0,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.74130385292287,
+        "producer_attempt_rate": 89.75096011700789,
+        "producer_completion_rate": 89.75096011700789
+      },
+      "late": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 616.2911667691797,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.64373303350358,
+        "producer_attempt_rate": 89.64841750169187,
+        "producer_completion_rate": 89.64841750169187
+      }
+    },
+    {
+      "name": "overload-3-unbounded",
+      "variant": "unbounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "rpc_deadline_abort",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.000496049,
+      "rpc_seconds": 120.009019891,
+      "attempts": 17928,
+      "completed_sends": 17928,
+      "skipped_slots": 72,
+      "send_p50_ms": 0.016064,
+      "send_p95_ms": 0.036675,
+      "send_p99_ms": 0.102955,
+      "send_call_time_s": 0.521371556,
+      "send_calls_gt20ms": 5,
+      "fraction_gt20ms": 0.0002788933511825078,
+      "max_queue_depth": 12505.0,
+      "max_queue_bytes": 204881920.0,
+      "peak_server_rss_bytes": 209281024.0,
+      "server_rss_near_load_end_bytes": 209281024.0,
+      "final_processed": 10790.0,
+      "final_discarded": 7138.0,
+      "fully_drained": false,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.02451372645450482,
+          "peak_sampled_fraction_one_core": 0.19745541575185574,
+          "peak_sampled_rss_bytes": 209080320
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.08546931796107286,
+          "peak_sampled_fraction_one_core": 0.29606064372011803,
+          "peak_sampled_rss_bytes": 18042880
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4949166868736.0,
+        "server_origin_monotonic_ns": 4948742392535.0,
+        "server_origin_lower_ns": 4948742308842.0,
+        "server_origin_upper_ns": 4948742476228.0,
+        "intersection_width_ms": 0.167386,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 208.88139700311345,
+        "queue_slope_bytes_s": 3422312.8084990107,
+        "rss_slope_bytes_s": 3433933.7100533857,
+        "enqueue_rate": 299.0560950141908,
+        "dequeue_rate": 90.17469801107734,
+        "worker_rate": 90.17469801107734,
+        "producer_attempt_rate": 299.0648462626171,
+        "producer_completion_rate": 299.06257102419306
+      },
+      "early": {
+        "queue_slope_msg_s": 209.28269224278176,
+        "queue_slope_bytes_s": 3428887.6297057364,
+        "rss_slope_bytes_s": 3436789.7647909266,
+        "enqueue_rate": 299.39009255538247,
+        "dequeue_rate": 90.10740031260069,
+        "worker_rate": 90.10740031260069,
+        "producer_attempt_rate": 299.39077760836,
+        "producer_completion_rate": 299.38409218239775
+      },
+      "late": {
+        "queue_slope_msg_s": 208.17584732755716,
+        "queue_slope_bytes_s": 3410753.0826146966,
+        "rss_slope_bytes_s": 3453219.5064915824,
+        "enqueue_rate": 298.13874177679327,
+        "dequeue_rate": 89.96289444923613,
+        "worker_rate": 89.96289444923613,
+        "producer_attempt_rate": 298.2075220783294,
+        "producer_completion_rate": 298.1930116938164
+      }
+    },
+    {
+      "name": "overload-4-bounded",
+      "variant": "bounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.008983354,
+      "rpc_seconds": 60.468544123,
+      "attempts": 5431,
+      "completed_sends": 5431,
+      "skipped_slots": 12569,
+      "send_p50_ms": 11.308046,
+      "send_p95_ms": 11.634122,
+      "send_p99_ms": 12.217463,
+      "send_call_time_s": 59.528899249,
+      "send_calls_gt20ms": 1,
+      "fraction_gt20ms": 0.00018412815319462345,
+      "max_queue_depth": 32.0,
+      "max_queue_bytes": 524288.0,
+      "peak_server_rss_bytes": 4911104.0,
+      "server_rss_near_load_end_bytes": 4706304.0,
+      "final_processed": 5431.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.019489636749532552,
+          "peak_sampled_fraction_one_core": 0.098675890915263,
+          "peak_sampled_rss_bytes": 4845568
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.033939330795922325,
+          "peak_sampled_fraction_one_core": 0.09878776252366302,
+          "peak_sampled_rss_bytes": 17707008
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 5131937735680.0,
+        "server_origin_monotonic_ns": 5131514738019.0,
+        "server_origin_lower_ns": 5131514633212.0,
+        "server_origin_upper_ns": 5131514842826.0,
+        "intersection_width_ms": 0.209614,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": -5.392539328238809e-05,
+        "queue_slope_bytes_s": -0.8835136435386465,
+        "rss_slope_bytes_s": 1220.943159118989,
+        "enqueue_rate": 89.84604960060064,
+        "dequeue_rate": 89.84610352599391,
+        "worker_rate": 89.84610352599391,
+        "producer_attempt_rate": 89.84372493643274,
+        "producer_completion_rate": 89.84412622115352
+      },
+      "early": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 10269.869286725958,
+        "enqueue_rate": 89.83916973720473,
+        "dequeue_rate": 89.83916973720473,
+        "worker_rate": 89.83916973720473,
+        "producer_attempt_rate": 89.8493732818916,
+        "producer_completion_rate": 89.8493732818916
+      },
+      "late": {
+        "queue_slope_msg_s": -0.0024041953157126054,
+        "queue_slope_bytes_s": -39.39033605263533,
+        "rss_slope_bytes_s": 17771.640228092347,
+        "enqueue_rate": 89.85967728574424,
+        "dequeue_rate": 89.86208148105996,
+        "worker_rate": 89.86208148105996,
+        "producer_attempt_rate": 89.8409847871367,
+        "producer_completion_rate": 89.84340301381128
+      }
+    },
+    {
+      "name": "overload-4-direct",
+      "variant": "direct",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.006065323,
+      "rpc_seconds": 60.119117865,
+      "attempts": 5386,
+      "completed_sends": 5386,
+      "skipped_slots": 12613,
+      "send_p50_ms": 11.317621,
+      "send_p95_ms": 11.643431,
+      "send_p99_ms": 12.220174,
+      "send_call_time_s": 59.667496591,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3923968.0,
+      "server_rss_near_load_end_bytes": 3923968.0,
+      "final_processed": 5386.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.01782600466935701,
+          "peak_sampled_fraction_one_core": 0.09873124719671136,
+          "peak_sampled_rss_bytes": 3686400
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.03290821793684593,
+          "peak_sampled_fraction_one_core": 0.14806130160354633,
+          "peak_sampled_rss_bytes": 17051648
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 5070501634560.0,
+        "server_origin_monotonic_ns": 5070075601752.5,
+        "server_origin_lower_ns": 5070075489641.0,
+        "server_origin_upper_ns": 5070075713864.0,
+        "intersection_width_ms": 0.224223,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 230.50345640110334,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.61860486561143,
+        "producer_attempt_rate": 89.62168055224949,
+        "producer_completion_rate": 89.62184183719343
+      },
+      "early": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 0.0,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.75454284320011,
+        "producer_attempt_rate": 89.76827141624835,
+        "producer_completion_rate": 89.76827141624835
+      },
+      "late": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 0.0,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.637318699811,
+        "producer_attempt_rate": 89.62554650581234,
+        "producer_completion_rate": 89.62113667090883
+      }
+    },
+    {
+      "name": "overload-4-unbounded",
+      "variant": "unbounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "rpc_deadline_abort",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.000042952,
+      "rpc_seconds": 120.005029373,
+      "attempts": 17894,
+      "completed_sends": 17894,
+      "skipped_slots": 106,
+      "send_p50_ms": 0.018117,
+      "send_p95_ms": 0.051928,
+      "send_p99_ms": 0.208314,
+      "send_call_time_s": 0.652866904,
+      "send_calls_gt20ms": 5,
+      "fraction_gt20ms": 0.0002794232703699564,
+      "max_queue_depth": 12488.0,
+      "max_queue_bytes": 204603392.0,
+      "peak_server_rss_bytes": 209252352.0,
+      "server_rss_near_load_end_bytes": 209252352.0,
+      "final_processed": 10774.0,
+      "final_discarded": 7120.0,
+      "fully_drained": false,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.0345415177846282,
+          "peak_sampled_fraction_one_core": 0.09865983100054383,
+          "peak_sampled_rss_bytes": 208986112
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.10636976220222782,
+          "peak_sampled_fraction_one_core": 0.24582727377297728,
+          "peak_sampled_rss_bytes": 17829888
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 5193710528000.0,
+        "server_origin_monotonic_ns": 5193283995908.5,
+        "server_origin_lower_ns": 5193283933483.0,
+        "server_origin_upper_ns": 5193284058334.0,
+        "intersection_width_ms": 0.124851,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 208.057971984609,
+        "queue_slope_bytes_s": 3408821.812995834,
+        "rss_slope_bytes_s": 3421078.3419274082,
+        "enqueue_rate": 297.8753601912993,
+        "dequeue_rate": 89.81738820669031,
+        "worker_rate": 89.81738820669031,
+        "producer_attempt_rate": 297.880403036915,
+        "producer_completion_rate": 297.88027233856434
+      },
+      "early": {
+        "queue_slope_msg_s": 208.37882655408004,
+        "queue_slope_bytes_s": 3414078.6942620473,
+        "rss_slope_bytes_s": 3415967.035806583,
+        "enqueue_rate": 298.0748493733014,
+        "dequeue_rate": 89.69602281922135,
+        "worker_rate": 89.69602281922135,
+        "producer_attempt_rate": 298.07176962630774,
+        "producer_completion_rate": 298.0710583524766
+      },
+      "late": {
+        "queue_slope_msg_s": 208.6001749605709,
+        "queue_slope_bytes_s": 3417705.266553994,
+        "rss_slope_bytes_s": 3434199.9117177124,
+        "enqueue_rate": 298.50485629083244,
+        "dequeue_rate": 89.90468133026154,
+        "worker_rate": 89.90468133026154,
+        "producer_attempt_rate": 298.5224582953148,
+        "producer_completion_rate": 298.5156298054895
+      }
+    },
+    {
+      "name": "overload-5-bounded",
+      "variant": "bounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.00167739,
+      "rpc_seconds": 60.460325646,
+      "attempts": 5429,
+      "completed_sends": 5429,
+      "skipped_slots": 12569,
+      "send_p50_ms": 11.32409,
+      "send_p95_ms": 11.640146,
+      "send_p99_ms": 12.181505,
+      "send_call_time_s": 59.52781806,
+      "send_calls_gt20ms": 2,
+      "fraction_gt20ms": 0.0003683919690550746,
+      "max_queue_depth": 32.0,
+      "max_queue_bytes": 524288.0,
+      "peak_server_rss_bytes": 4919296.0,
+      "server_rss_near_load_end_bytes": 4861952.0,
+      "final_processed": 5429.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.01933115823575086,
+          "peak_sampled_fraction_one_core": 0.09853057996064965,
+          "peak_sampled_rss_bytes": 4780032
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.03326451050822137,
+          "peak_sampled_fraction_one_core": 0.09875213786651665,
+          "peak_sampled_rss_bytes": 17661952
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 5436301334784.0,
+        "server_origin_monotonic_ns": 5435877062848.0,
+        "server_origin_lower_ns": 5435876944490.0,
+        "server_origin_upper_ns": 5435877181206.0,
+        "intersection_width_ms": 0.236716,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 0.002611256653241735,
+        "queue_slope_bytes_s": 42.78282900671259,
+        "rss_slope_bytes_s": 3624.931252966923,
+        "enqueue_rate": 89.8220191066844,
+        "dequeue_rate": 89.81940785003115,
+        "worker_rate": 89.81940785003115,
+        "producer_attempt_rate": 89.82097458729127,
+        "producer_completion_rate": 89.82097458729127
+      },
+      "early": {
+        "queue_slope_msg_s": 0.008335408827036773,
+        "queue_slope_bytes_s": 136.5673382221705,
+        "rss_slope_bytes_s": 32313.382801740907,
+        "enqueue_rate": 89.74719536465977,
+        "dequeue_rate": 89.73885995583272,
+        "worker_rate": 89.73885995583272,
+        "producer_attempt_rate": 89.73301534881998,
+        "producer_completion_rate": 89.73301534881998
+      },
+      "late": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 1355.210356989524,
+        "enqueue_rate": 89.79834326470855,
+        "dequeue_rate": 89.79834326470855,
+        "worker_rate": 89.79834326470855,
+        "producer_attempt_rate": 89.80508811691341,
+        "producer_completion_rate": 89.80508811691341
+      }
+    },
+    {
+      "name": "overload-5-direct",
+      "variant": "direct",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.006662628,
+      "rpc_seconds": 60.11612696,
+      "attempts": 5391,
+      "completed_sends": 5391,
+      "skipped_slots": 12608,
+      "send_p50_ms": 11.302152,
+      "send_p95_ms": 11.581052,
+      "send_p99_ms": 11.927975,
+      "send_call_time_s": 59.726473053,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3895296.0,
+      "server_rss_near_load_end_bytes": 3895296.0,
+      "final_processed": 5391.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.01636017023047325,
+          "peak_sampled_fraction_one_core": 0.09871465133220111,
+          "peak_sampled_rss_bytes": 3661824
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.02998373283061492,
+          "peak_sampled_fraction_one_core": 0.09875584863614051,
+          "peak_sampled_rss_bytes": 17645568
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 5498066583552.0,
+        "server_origin_monotonic_ns": 5497640945113.0,
+        "server_origin_lower_ns": 5497640667112.0,
+        "server_origin_upper_ns": 5497641223114.0,
+        "intersection_width_ms": 0.556002,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 534.4167316158976,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.64343321422703,
+        "producer_attempt_rate": 89.64038812648212,
+        "producer_completion_rate": 89.64015965415592
+      },
+      "early": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 493.0144479021597,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.57815460370595,
+        "producer_attempt_rate": 89.58775442088648,
+        "producer_completion_rate": 89.59173784322638
+      },
+      "late": {
+        "queue_slope_msg_s": 0.0,
+        "queue_slope_bytes_s": 0.0,
+        "rss_slope_bytes_s": 0.0,
+        "enqueue_rate": 0.0,
+        "dequeue_rate": 0.0,
+        "worker_rate": 89.79807569882324,
+        "producer_attempt_rate": 89.7625836381436,
+        "producer_completion_rate": 89.7625836381436
+      }
+    },
+    {
+      "name": "overload-5-unbounded",
+      "variant": "unbounded",
+      "git_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+      "source_tree_clean": true,
+      "outcome": "rpc_deadline_abort",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 60,
+      "send_seconds": 60.001057829,
+      "rpc_seconds": 120.004421897,
+      "attempts": 17925,
+      "completed_sends": 17925,
+      "skipped_slots": 75,
+      "send_p50_ms": 0.017907,
+      "send_p95_ms": 0.047672,
+      "send_p99_ms": 0.157097,
+      "send_call_time_s": 0.51902066,
+      "send_calls_gt20ms": 2,
+      "fraction_gt20ms": 0.00011157601115760112,
+      "max_queue_depth": 12520.0,
+      "max_queue_bytes": 205127680.0,
+      "peak_server_rss_bytes": 209862656.0,
+      "server_rss_near_load_end_bytes": 209862656.0,
+      "final_processed": 10777.0,
+      "final_discarded": 7148.0,
+      "fully_drained": false,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.03255935629007986,
+          "peak_sampled_fraction_one_core": 0.24413905621583018,
+          "peak_sampled_rss_bytes": 209842176
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.10409415938958029,
+          "peak_sampled_fraction_one_core": 0.3446206796856187,
+          "peak_sampled_rss_bytes": 18055168
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 5315016365824.0,
+        "server_origin_monotonic_ns": 5314591636311.5,
+        "server_origin_lower_ns": 5314591524463.0,
+        "server_origin_upper_ns": 5314591748160.0,
+        "intersection_width_ms": 0.223697,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "steady": {
+        "queue_slope_msg_s": 209.0783059404763,
+        "queue_slope_bytes_s": 3425538.9645287637,
+        "rss_slope_bytes_s": 3437995.6880565886,
+        "enqueue_rate": 298.858614908773,
+        "dequeue_rate": 89.78030896829671,
+        "worker_rate": 89.78030896829671,
+        "producer_attempt_rate": 298.8563527511053,
+        "producer_completion_rate": 298.85709197342595
+      },
+      "early": {
+        "queue_slope_msg_s": 208.42385458033053,
+        "queue_slope_bytes_s": 3414816.4334441354,
+        "rss_slope_bytes_s": 3415964.3600941966,
+        "enqueue_rate": 298.148018657546,
+        "dequeue_rate": 89.72416407721543,
+        "worker_rate": 89.72416407721543,
+        "producer_attempt_rate": 298.125985715051,
+        "producer_completion_rate": 298.1302532812354
+      },
+      "late": {
+        "queue_slope_msg_s": 208.17185491050714,
+        "queue_slope_bytes_s": 3410687.670853749,
+        "rss_slope_bytes_s": 3432751.71379994,
+        "enqueue_rate": 297.9120223964728,
+        "dequeue_rate": 89.74016748596567,
+        "worker_rate": 89.74016748596567,
+        "producer_attempt_rate": 297.8977868741833,
+        "producer_completion_rate": 297.8977868741833
+      }
+    }
+  ],
   "summary": {
     "direct": {
-      "run_count": 0,
-      "valid_60s_intervals": 0,
-      "outcomes": {}
+      "run_count": 5,
+      "valid_60s_intervals": 5,
+      "outcomes": {
+        "completed_and_drained": 5
+      },
+      "queue_slope_msg_s": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "queue_slope_bytes_s": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "rss_slope_bytes_s": {
+        "median": 314.2307934395152,
+        "min": 230.50345640110334,
+        "max": 1134.3814166173488
+      },
+      "producer_attempt_rate": {
+        "median": 89.62168055224949,
+        "min": 89.50864857712672,
+        "max": 89.68076558594463
+      },
+      "producer_completion_rate": {
+        "median": 89.62184183719343,
+        "min": 89.50869657909497,
+        "max": 89.68051212113771
+      },
+      "worker_rate": {
+        "median": 89.61860486561143,
+        "min": 89.50729825392503,
+        "max": 89.67853839698336
+      },
+      "max_queue_depth": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "max_queue_bytes": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "peak_server_rss_bytes": {
+        "median": 3911680.0,
+        "min": 3883008.0,
+        "max": 3940352.0
+      },
+      "send_p50_ms": {
+        "median": 11.317621,
+        "min": 11.302152,
+        "max": 11.321699
+      },
+      "send_p95_ms": {
+        "median": 11.643431,
+        "min": 11.581052,
+        "max": 11.66066
+      },
+      "send_p99_ms": {
+        "median": 12.220174,
+        "min": 11.927975,
+        "max": 12.386509
+      },
+      "send_call_time_s": {
+        "median": 59.667496591,
+        "min": 59.621635824,
+        "max": 59.726473053
+      },
+      "fraction_gt20ms": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0007429420505200594
+      }
     },
     "unbounded": {
-      "run_count": 0,
-      "valid_60s_intervals": 0,
-      "outcomes": {}
+      "run_count": 5,
+      "valid_60s_intervals": 5,
+      "outcomes": {
+        "rpc_deadline_abort": 5
+      },
+      "queue_slope_msg_s": {
+        "median": 208.88139700311345,
+        "min": 207.298712939132,
+        "max": 209.20847212785935
+      },
+      "queue_slope_bytes_s": {
+        "median": 3422312.8084990107,
+        "min": 3396382.1127947387,
+        "max": 3427671.6073428476
+      },
+      "rss_slope_bytes_s": {
+        "median": 3433933.7100533857,
+        "min": 3410290.9187874217,
+        "max": 3438346.440440962
+      },
+      "producer_attempt_rate": {
+        "median": 298.8563527511053,
+        "min": 297.37913710667794,
+        "max": 299.35662218225957
+      },
+      "producer_completion_rate": {
+        "median": 298.85709197342595,
+        "min": 297.37861488586634,
+        "max": 299.3570868539683
+      },
+      "worker_rate": {
+        "median": 90.08477458674577,
+        "min": 89.78030896829671,
+        "max": 90.17469801107734
+      },
+      "max_queue_depth": {
+        "median": 12505.0,
+        "min": 12433.0,
+        "max": 12520.0
+      },
+      "max_queue_bytes": {
+        "median": 204881920.0,
+        "min": 203702272.0,
+        "max": 205127680.0
+      },
+      "peak_server_rss_bytes": {
+        "median": 209281024.0,
+        "min": 208117760.0,
+        "max": 209862656.0
+      },
+      "send_p50_ms": {
+        "median": 0.017506,
+        "min": 0.016064,
+        "max": 0.018117
+      },
+      "send_p95_ms": {
+        "median": 0.047672,
+        "min": 0.036675,
+        "max": 0.051928
+      },
+      "send_p99_ms": {
+        "median": 0.157097,
+        "min": 0.102955,
+        "max": 0.208314
+      },
+      "send_call_time_s": {
+        "median": 0.521371556,
+        "min": 0.45361916,
+        "max": 0.652866904
+      },
+      "fraction_gt20ms": {
+        "median": 0.00022407708251638564,
+        "min": 0.00011153245594467991,
+        "max": 0.0002794232703699564
+      }
     },
     "bounded": {
-      "run_count": 0,
-      "valid_60s_intervals": 0,
-      "outcomes": {}
+      "run_count": 5,
+      "valid_60s_intervals": 5,
+      "outcomes": {
+        "completed_and_drained": 5
+      },
+      "queue_slope_msg_s": {
+        "median": -5.392539328238809e-05,
+        "min": -0.0008999072591352364,
+        "max": 0.002611256653241735
+      },
+      "queue_slope_bytes_s": {
+        "median": -0.8835136435386465,
+        "min": -14.744080533671713,
+        "max": 42.78282900671259
+      },
+      "rss_slope_bytes_s": {
+        "median": 1220.943159118989,
+        "min": -2150.6550091796134,
+        "max": 3624.931252966923
+      },
+      "producer_attempt_rate": {
+        "median": 89.82097458729127,
+        "min": 89.5919794731719,
+        "max": 89.84372493643274
+      },
+      "producer_completion_rate": {
+        "median": 89.82097458729127,
+        "min": 89.5919794731719,
+        "max": 89.84412622115352
+      },
+      "worker_rate": {
+        "median": 89.81940785003115,
+        "min": 89.59161996028664,
+        "max": 89.84610352599391
+      },
+      "max_queue_depth": {
+        "median": 32.0,
+        "min": 32.0,
+        "max": 32.0
+      },
+      "max_queue_bytes": {
+        "median": 524288.0,
+        "min": 524288.0,
+        "max": 524288.0
+      },
+      "peak_server_rss_bytes": {
+        "median": 4919296.0,
+        "min": 4816896.0,
+        "max": 5054464.0
+      },
+      "send_p50_ms": {
+        "median": 11.308046,
+        "min": 11.29051,
+        "max": 11.331378
+      },
+      "send_p95_ms": {
+        "median": 11.634122,
+        "min": 11.584917,
+        "max": 11.770292
+      },
+      "send_p99_ms": {
+        "median": 12.181505,
+        "min": 12.063832,
+        "max": 12.772408
+      },
+      "send_call_time_s": {
+        "median": 59.528899249,
+        "min": 59.477038349,
+        "max": 59.5677267
+      },
+      "fraction_gt20ms": {
+        "median": 0.0001841959845275373,
+        "min": 0.0001840942562592047,
+        "max": 0.0003690717844620779
+      }
     }
   },
   "interpretation": "Deadline-aborted drain is not a completed run. valid_60s_intervals only describes sustained load data, and never hides the recorded outcome."

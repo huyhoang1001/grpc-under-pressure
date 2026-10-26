@@ -1,0 +1,38 @@
+{
+  "source_commit": "9773403fbb8d156b2773687254fe038c6a5105d1",
+  "all_fifteen_source_tree_clean": true,
+  "binary_hashes_identical": {
+    "/workspace/grpc-under-pressure/server/target/release/pressure-server": "6ca366bd29442208a797be03a0ed9f5f5b0d1ad7d7c9560363a79cf18893273b",
+    "/workspace/toolchains/bin/pressure-loadgen-e1b": "0103ba4e4ba3811a793ba76d91810b443c1aa38c6a765807cd5213678a811ee4"
+  },
+  "baseline_evidence_files_unchanged": 250,
+  "source_inputs_verified_against_git_commit": {
+    "overload-1-bounded": 21,
+    "overload-1-direct": 21,
+    "overload-1-unbounded": 21,
+    "overload-2-bounded": 21,
+    "overload-2-direct": 21,
+    "overload-2-unbounded": 21,
+    "overload-3-bounded": 21,
+    "overload-3-direct": 21,
+    "overload-3-unbounded": 21,
+    "overload-4-bounded": 21,
+    "overload-4-direct": 21,
+    "overload-4-unbounded": 21,
+    "overload-5-bounded": 21,
+    "overload-5-direct": 21,
+    "overload-5-unbounded": 21
+  },
+  "outcomes": {
+    "direct": {
+      "completed_and_drained": 5
+    },
+    "unbounded": {
+      "rpc_deadline_abort": 5
+    },
+    "bounded": {
+      "completed_and_drained": 5
+    }
+  },
+  "no_source_or_workload_execution_in_packaging": true
+}

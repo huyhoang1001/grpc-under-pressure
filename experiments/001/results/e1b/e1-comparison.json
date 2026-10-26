@@ -1,0 +1,446 @@
+{
+  "e1_reference_commit": "3374f126e3009991ec97c95e64dabd03c734b575",
+  "e1_summary": {
+    "direct": {
+      "runs": 6,
+      "valid_runs": 5,
+      "queue_slope_msg_s": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "queue_slope_bytes_s": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "max_queue_depth": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "max_queue_bytes": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "peak_rss_bytes": {
+        "median": 7680000.0,
+        "min": 7639040.0,
+        "max": 7761920.0
+      },
+      "post_drain_rss_bytes": {
+        "median": 7667712.0,
+        "min": 7639040.0,
+        "max": 7761920.0
+      },
+      "steady_send_rate": {
+        "median": 88.8820990758579,
+        "min": 88.43854688026016,
+        "max": 89.12597020227967
+      },
+      "processed_rate": {
+        "median": 88.87385121897657,
+        "min": 88.48042854484387,
+        "max": 89.09839590033634
+      },
+      "send_p95_ms": {
+        "median": 11.81925,
+        "min": 11.799779,
+        "max": 12.077548
+      },
+      "send_p99_ms": {
+        "median": 12.582632,
+        "min": 12.20202,
+        "max": 13.637131
+      },
+      "blocked_fraction": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "send_total_seconds": {
+        "median": 11.910738246,
+        "min": 11.901574378,
+        "max": 11.923575281
+      },
+      "rss_slope_bytes_s": {
+        "median": 440.8337067016273,
+        "min": 0.0,
+        "max": 1637.0568316888216
+      }
+    },
+    "unbounded": {
+      "runs": 5,
+      "valid_runs": 5,
+      "queue_slope_msg_s": {
+        "median": 209.81806186628597,
+        "min": 207.38617282494693,
+        "max": 210.19782581499288
+      },
+      "queue_slope_bytes_s": {
+        "median": 3437659.1256172294,
+        "min": 3397815.0555639304,
+        "max": 3443881.1781528434
+      },
+      "max_queue_depth": {
+        "median": 2512.0,
+        "min": 2487.0,
+        "max": 2514.0
+      },
+      "max_queue_bytes": {
+        "median": 41156608.0,
+        "min": 40747008.0,
+        "max": 41189376.0
+      },
+      "peak_rss_bytes": {
+        "median": 48922624.0,
+        "min": 48533504.0,
+        "max": 49016832.0
+      },
+      "post_drain_rss_bytes": {
+        "median": 23093248.0,
+        "min": 20082688.0,
+        "max": 24477696.0
+      },
+      "steady_send_rate": {
+        "median": 299.64067388499694,
+        "min": 297.05637224352597,
+        "max": 300.0608327535433
+      },
+      "processed_rate": {
+        "median": 89.71914155102331,
+        "min": 89.64370949483231,
+        "max": 90.18583218337773
+      },
+      "send_p95_ms": {
+        "median": 0.036866,
+        "min": 0.027912,
+        "max": 0.042073
+      },
+      "send_p99_ms": {
+        "median": 0.118918,
+        "min": 0.093821,
+        "max": 0.162064
+      },
+      "blocked_fraction": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0011207621182404036
+      },
+      "send_total_seconds": {
+        "median": 0.084395293,
+        "min": 0.059466539,
+        "max": 0.200478478
+      },
+      "rss_slope_bytes_s": {
+        "median": 3433076.9642137266,
+        "min": 3403907.1894830912,
+        "max": 3464412.857633474
+      }
+    },
+    "bounded": {
+      "runs": 5,
+      "valid_runs": 5,
+      "queue_slope_msg_s": {
+        "median": 0.00229969693467367,
+        "min": -0.004198525730479968,
+        "max": 0.0354319328144204
+      },
+      "queue_slope_bytes_s": {
+        "median": 37.67823457769341,
+        "min": -68.7886455681838,
+        "max": 580.5167872314638
+      },
+      "max_queue_depth": {
+        "median": 32.0,
+        "min": 32.0,
+        "max": 32.0
+      },
+      "max_queue_bytes": {
+        "median": 524288.0,
+        "min": 524288.0,
+        "max": 524288.0
+      },
+      "peak_rss_bytes": {
+        "median": 8687616.0,
+        "min": 8536064.0,
+        "max": 8773632.0
+      },
+      "post_drain_rss_bytes": {
+        "median": 8142848.0,
+        "min": 7876608.0,
+        "max": 8466432.0
+      },
+      "steady_send_rate": {
+        "median": 89.49353538602752,
+        "min": 88.99399016182001,
+        "max": 89.79847636560562
+      },
+      "processed_rate": {
+        "median": 89.49084530600327,
+        "min": 89.02701742705383,
+        "max": 89.77753262583286
+      },
+      "send_p95_ms": {
+        "median": 11.854437,
+        "min": 11.683888,
+        "max": 12.408976
+      },
+      "send_p99_ms": {
+        "median": 12.584015,
+        "min": 11.968819,
+        "max": 13.42793
+      },
+      "blocked_fraction": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0009049773755656109
+      },
+      "send_total_seconds": {
+        "median": 11.76788266,
+        "min": 11.733329785,
+        "max": 11.776000041
+      },
+      "rss_slope_bytes_s": {
+        "median": -512.817807428045,
+        "min": -15144.539360495624,
+        "max": 11454.63870680334
+      }
+    }
+  },
+  "e1b_summary": {
+    "direct": {
+      "run_count": 5,
+      "valid_60s_intervals": 5,
+      "outcomes": {
+        "completed_and_drained": 5
+      },
+      "queue_slope_msg_s": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "queue_slope_bytes_s": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "rss_slope_bytes_s": {
+        "median": 314.2307934395152,
+        "min": 230.50345640110334,
+        "max": 1134.3814166173488
+      },
+      "producer_attempt_rate": {
+        "median": 89.62168055224949,
+        "min": 89.50864857712672,
+        "max": 89.68076558594463
+      },
+      "producer_completion_rate": {
+        "median": 89.62184183719343,
+        "min": 89.50869657909497,
+        "max": 89.68051212113771
+      },
+      "worker_rate": {
+        "median": 89.61860486561143,
+        "min": 89.50729825392503,
+        "max": 89.67853839698336
+      },
+      "max_queue_depth": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "max_queue_bytes": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "peak_server_rss_bytes": {
+        "median": 3911680.0,
+        "min": 3883008.0,
+        "max": 3940352.0
+      },
+      "send_p50_ms": {
+        "median": 11.317621,
+        "min": 11.302152,
+        "max": 11.321699
+      },
+      "send_p95_ms": {
+        "median": 11.643431,
+        "min": 11.581052,
+        "max": 11.66066
+      },
+      "send_p99_ms": {
+        "median": 12.220174,
+        "min": 11.927975,
+        "max": 12.386509
+      },
+      "send_call_time_s": {
+        "median": 59.667496591,
+        "min": 59.621635824,
+        "max": 59.726473053
+      },
+      "fraction_gt20ms": {
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0007429420505200594
+      }
+    },
+    "unbounded": {
+      "run_count": 5,
+      "valid_60s_intervals": 5,
+      "outcomes": {
+        "rpc_deadline_abort": 5
+      },
+      "queue_slope_msg_s": {
+        "median": 208.88139700311345,
+        "min": 207.298712939132,
+        "max": 209.20847212785935
+      },
+      "queue_slope_bytes_s": {
+        "median": 3422312.8084990107,
+        "min": 3396382.1127947387,
+        "max": 3427671.6073428476
+      },
+      "rss_slope_bytes_s": {
+        "median": 3433933.7100533857,
+        "min": 3410290.9187874217,
+        "max": 3438346.440440962
+      },
+      "producer_attempt_rate": {
+        "median": 298.8563527511053,
+        "min": 297.37913710667794,
+        "max": 299.35662218225957
+      },
+      "producer_completion_rate": {
+        "median": 298.85709197342595,
+        "min": 297.37861488586634,
+        "max": 299.3570868539683
+      },
+      "worker_rate": {
+        "median": 90.08477458674577,
+        "min": 89.78030896829671,
+        "max": 90.17469801107734
+      },
+      "max_queue_depth": {
+        "median": 12505.0,
+        "min": 12433.0,
+        "max": 12520.0
+      },
+      "max_queue_bytes": {
+        "median": 204881920.0,
+        "min": 203702272.0,
+        "max": 205127680.0
+      },
+      "peak_server_rss_bytes": {
+        "median": 209281024.0,
+        "min": 208117760.0,
+        "max": 209862656.0
+      },
+      "send_p50_ms": {
+        "median": 0.017506,
+        "min": 0.016064,
+        "max": 0.018117
+      },
+      "send_p95_ms": {
+        "median": 0.047672,
+        "min": 0.036675,
+        "max": 0.051928
+      },
+      "send_p99_ms": {
+        "median": 0.157097,
+        "min": 0.102955,
+        "max": 0.208314
+      },
+      "send_call_time_s": {
+        "median": 0.521371556,
+        "min": 0.45361916,
+        "max": 0.652866904
+      },
+      "fraction_gt20ms": {
+        "median": 0.00022407708251638564,
+        "min": 0.00011153245594467991,
+        "max": 0.0002794232703699564
+      }
+    },
+    "bounded": {
+      "run_count": 5,
+      "valid_60s_intervals": 5,
+      "outcomes": {
+        "completed_and_drained": 5
+      },
+      "queue_slope_msg_s": {
+        "median": -5.392539328238809e-05,
+        "min": -0.0008999072591352364,
+        "max": 0.002611256653241735
+      },
+      "queue_slope_bytes_s": {
+        "median": -0.8835136435386465,
+        "min": -14.744080533671713,
+        "max": 42.78282900671259
+      },
+      "rss_slope_bytes_s": {
+        "median": 1220.943159118989,
+        "min": -2150.6550091796134,
+        "max": 3624.931252966923
+      },
+      "producer_attempt_rate": {
+        "median": 89.82097458729127,
+        "min": 89.5919794731719,
+        "max": 89.84372493643274
+      },
+      "producer_completion_rate": {
+        "median": 89.82097458729127,
+        "min": 89.5919794731719,
+        "max": 89.84412622115352
+      },
+      "worker_rate": {
+        "median": 89.81940785003115,
+        "min": 89.59161996028664,
+        "max": 89.84610352599391
+      },
+      "max_queue_depth": {
+        "median": 32.0,
+        "min": 32.0,
+        "max": 32.0
+      },
+      "max_queue_bytes": {
+        "median": 524288.0,
+        "min": 524288.0,
+        "max": 524288.0
+      },
+      "peak_server_rss_bytes": {
+        "median": 4919296.0,
+        "min": 4816896.0,
+        "max": 5054464.0
+      },
+      "send_p50_ms": {
+        "median": 11.308046,
+        "min": 11.29051,
+        "max": 11.331378
+      },
+      "send_p95_ms": {
+        "median": 11.634122,
+        "min": 11.584917,
+        "max": 11.770292
+      },
+      "send_p99_ms": {
+        "median": 12.181505,
+        "min": 12.063832,
+        "max": 12.772408
+      },
+      "send_call_time_s": {
+        "median": 59.528899249,
+        "min": 59.477038349,
+        "max": 59.5677267
+      },
+      "fraction_gt20ms": {
+        "median": 0.0001841959845275373,
+        "min": 0.0001840942562592047,
+        "max": 0.0003690717844620779
+      }
+    }
+  },
+  "caveat": "Source, release profile, duration and telemetry differ together; no isolated causal effect size. V1 drain may be deadline-censored."
+}

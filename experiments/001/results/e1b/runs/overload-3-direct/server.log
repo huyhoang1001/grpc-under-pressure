@@ -1,0 +1,1 @@
+ready 127.0.0.1:50051 variant=direct K=32 service_ms=10
