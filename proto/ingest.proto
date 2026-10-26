@@ -1,0 +1,18 @@
+syntax = "proto3";
+package pressure.v1;
+
+option go_package = "example.com/grpc-under-pressure/loadgen/gen/pressure/v1;pressurev1";
+
+service IngestService {
+  rpc Ingest(stream Payload) returns (Summary);
+}
+
+message Payload {
+  uint64 sequence = 1;
+  bytes data = 2;
+}
+
+message Summary {
+  uint64 accepted = 1;
+  uint64 processed = 2;
+}
