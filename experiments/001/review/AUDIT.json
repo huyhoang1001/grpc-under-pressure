@@ -1,0 +1,719 @@
+{
+  "scope": "Existing files only; no benchmarks, builds, or test suites executed",
+  "runs_found": 28,
+  "included_overload_counts": {
+    "direct": 5,
+    "unbounded": 5,
+    "bounded": 5
+  },
+  "runs": [
+    {
+      "run": "control-bounded",
+      "path": "results/e1/control-bounded",
+      "variant": "bounded",
+      "offered_rate": 50,
+      "offered_seconds": 4,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 26,
+        "client": 21,
+        "process": 47
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "control-direct",
+      "path": "results/e1/control-direct",
+      "variant": "direct",
+      "offered_rate": 50,
+      "offered_seconds": 4,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 26,
+        "client": 21,
+        "process": 47
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "control-unbounded",
+      "path": "results/e1/control-unbounded",
+      "variant": "unbounded",
+      "offered_rate": 50,
+      "offered_seconds": 4,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 26,
+        "client": 21,
+        "process": 46
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "diagnostic-bounded",
+      "path": "results/e1/diagnostic-bounded",
+      "variant": "bounded",
+      "offered_rate": 300,
+      "offered_seconds": 4,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 28,
+        "client": 23,
+        "process": 51
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "diagnostic-unbounded",
+      "path": "results/e1/diagnostic-unbounded",
+      "variant": "unbounded",
+      "offered_rate": 300,
+      "offered_seconds": 4,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 71,
+        "client": 66,
+        "process": 137
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "overload-1-bounded",
+      "path": "results/e1/overload-1-bounded",
+      "variant": "bounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 68,
+        "client": 63,
+        "process": 130
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 0.0354319328144204,
+        "processed_rate": 89.49084530600327,
+        "steady_send_rate": 89.49353538602752
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-1-direct",
+      "path": "results/e1/overload-1-direct",
+      "variant": "direct",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 66,
+        "client": 61,
+        "process": 127
+      },
+      "excluded": "Source-hash metadata captured a temporary uncompiled bounded-accounting assertion edit during this run. Running binary hash was unchanged, but rerun direct to remove source-provenance ambiguity.",
+      "source_hash_matches": {
+        "server/src/main.rs": false,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 0.0,
+        "processed_rate": 89.38579563065198,
+        "steady_send_rate": 89.42860796308071
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-1-unbounded",
+      "path": "results/e1/overload-1-unbounded",
+      "variant": "unbounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 205,
+        "client": 201,
+        "process": 407
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 209.81806186628597,
+        "processed_rate": 90.18583218337773,
+        "steady_send_rate": 299.97612835923405
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-2-bounded",
+      "path": "results/e1/overload-2-bounded",
+      "variant": "bounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 68,
+        "client": 63,
+        "process": 131
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": -0.001402063393437496,
+        "processed_rate": 89.77753262583286,
+        "steady_send_rate": 89.79847636560562
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-2-direct",
+      "path": "results/e1/overload-2-direct",
+      "variant": "direct",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 66,
+        "client": 61,
+        "process": 127
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 0.0,
+        "processed_rate": 89.09839590033634,
+        "steady_send_rate": 89.12597020227967
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-2-unbounded",
+      "path": "results/e1/overload-2-unbounded",
+      "variant": "unbounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 205,
+        "client": 201,
+        "process": 404
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 208.32148517809478,
+        "processed_rate": 89.70264965333806,
+        "steady_send_rate": 298.0443155161467
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-3-bounded",
+      "path": "results/e1/overload-3-bounded",
+      "variant": "bounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 68,
+        "client": 63,
+        "process": 131
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 0.00229969693467367,
+        "processed_rate": 89.57897438230967,
+        "steady_send_rate": 89.6031040641509
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-3-direct",
+      "path": "results/e1/overload-3-direct",
+      "variant": "direct",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 66,
+        "client": 61,
+        "process": 127
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 0.0,
+        "processed_rate": 89.02541646035675,
+        "steady_send_rate": 88.99856604453285
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-3-unbounded",
+      "path": "results/e1/overload-3-unbounded",
+      "variant": "unbounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 206,
+        "client": 202,
+        "process": 407
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 209.94975688519023,
+        "processed_rate": 89.71914155102331,
+        "steady_send_rate": 299.64067388499694
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-4-bounded",
+      "path": "results/e1/overload-4-bounded",
+      "variant": "bounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 68,
+        "client": 63,
+        "process": 131
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 0.015370775025848767,
+        "processed_rate": 89.02701742705383,
+        "steady_send_rate": 88.99399016182001
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-4-direct",
+      "path": "results/e1/overload-4-direct",
+      "variant": "direct",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 66,
+        "client": 61,
+        "process": 126
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 0.0,
+        "processed_rate": 88.55541006494528,
+        "steady_send_rate": 88.56462410564488
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-4-unbounded",
+      "path": "results/e1/overload-4-unbounded",
+      "variant": "unbounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 206,
+        "client": 202,
+        "process": 408
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 210.19782581499288,
+        "processed_rate": 89.75604821677143,
+        "steady_send_rate": 300.0608327535433
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-5-bounded",
+      "path": "results/e1/overload-5-bounded",
+      "variant": "bounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 68,
+        "client": 63,
+        "process": 131
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": -0.004198525730479968,
+        "processed_rate": 89.08465862625503,
+        "steady_send_rate": 89.11200489761394
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-5-direct",
+      "path": "results/e1/overload-5-direct",
+      "variant": "direct",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 66,
+        "client": 61,
+        "process": 127
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 0.0,
+        "processed_rate": 88.48042854484387,
+        "steady_send_rate": 88.43854688026016
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-5-unbounded",
+      "path": "results/e1/overload-5-unbounded",
+      "variant": "unbounded",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 204,
+        "client": 200,
+        "process": 405
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 207.38617282494693,
+        "processed_rate": 89.64370949483231,
+        "steady_send_rate": 297.05637224352597
+      },
+      "errors": []
+    },
+    {
+      "run": "overload-6-direct",
+      "path": "results/e1/overload-6-direct",
+      "variant": "direct",
+      "offered_rate": 300,
+      "offered_seconds": 12,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 66,
+        "client": 61,
+        "process": 126
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {
+        "queue_slope_msg_s": 0.0,
+        "processed_rate": 88.87385121897657,
+        "steady_send_rate": 88.8820990758579
+      },
+      "errors": []
+    },
+    {
+      "run": "sender-calibration-bounded",
+      "path": "results/e1/sender-calibration-bounded",
+      "variant": "bounded",
+      "offered_rate": 300,
+      "offered_seconds": 3,
+      "service_ms": 1,
+      "sample_counts": {
+        "server": 21,
+        "client": 16,
+        "process": 37
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "sender-calibration-direct",
+      "path": "results/e1/sender-calibration-direct",
+      "variant": "direct",
+      "offered_rate": 300,
+      "offered_seconds": 3,
+      "service_ms": 1,
+      "sample_counts": {
+        "server": 21,
+        "client": 16,
+        "process": 36
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "sender-calibration-unbounded",
+      "path": "results/e1/sender-calibration-unbounded",
+      "variant": "unbounded",
+      "offered_rate": 300,
+      "offered_seconds": 3,
+      "service_ms": 1,
+      "sample_counts": {
+        "server": 21,
+        "client": 16,
+        "process": 37
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "worker-calibration",
+      "path": "results/e1/worker-calibration",
+      "variant": "direct",
+      "offered_rate": 1000,
+      "offered_seconds": 3,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 21,
+        "client": 16,
+        "process": 36
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "final-bounded",
+      "path": "results/final-smoke/final-bounded",
+      "variant": "bounded",
+      "offered_rate": 300,
+      "offered_seconds": 1,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 13,
+        "client": 8,
+        "process": 21
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "final-direct",
+      "path": "results/final-smoke/final-direct",
+      "variant": "direct",
+      "offered_rate": 300,
+      "offered_seconds": 1,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 11,
+        "client": 6,
+        "process": 17
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    },
+    {
+      "run": "final-unbounded",
+      "path": "results/final-smoke/final-unbounded",
+      "variant": "unbounded",
+      "offered_rate": 300,
+      "offered_seconds": 1,
+      "service_ms": 10,
+      "sample_counts": {
+        "server": 22,
+        "client": 17,
+        "process": 39
+      },
+      "excluded": null,
+      "source_hash_matches": {
+        "server/src/main.rs": true,
+        "loadgen/cmd/loadgen/main.go": true,
+        "server/Cargo.lock": true,
+        "loadgen/go.sum": true
+      },
+      "execution_git_sha_recorded": false,
+      "checked_slopes": {},
+      "errors": []
+    }
+  ]
+}

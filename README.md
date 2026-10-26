@@ -21,3 +21,5 @@ python3 experiments/001/run.py --output /tmp/pressure-calibration --phase calibr
 ```
 
 Use a new output directory on each invocation. See [experiment instructions](experiments/001/README.md) for individual startup, measurements and analysis. Optional code regeneration: `bash scripts/generate-go.sh`.
+
+Independent reviewers: start with the [Experiment 001 evidence index](experiments/001/EVIDENCE-INDEX.md).
