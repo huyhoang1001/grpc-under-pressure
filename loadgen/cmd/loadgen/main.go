@@ -38,6 +38,14 @@ func rss() uint64 {
 	}
 	return 0
 }
+
+// latencyPercentile uses the same floor-index convention as the E1 summary.
+func latencyPercentile(sorted []int64, p float64) float64 {
+	if len(sorted) == 0 {
+		return 0
+	}
+	return float64(sorted[int(float64(len(sorted)-1)*p)]) / 1e6
+}
 func main() {
 	runtime.GOMAXPROCS(2)
 	addr := flag.String("addr", "127.0.0.1:50051", "server")
@@ -47,6 +55,7 @@ func main() {
 	timeout := flag.Duration("timeout", 240*time.Second, "whole RPC deadline including drain")
 	csv := flag.String("csv", "client.csv", "aggregate samples")
 	summary := flag.String("summary", "client.json", "final result")
+	telemetry := flag.String("telemetry", "", "optional E1B cumulative Send percentile/time telemetry CSV")
 	flag.Parse()
 	if *rate <= 0 || *rate > 100000 || *seconds <= 0 || *size <= 0 || *size > 1024*1024-64 {
 		panic("invalid workload")
@@ -70,12 +79,20 @@ func main() {
 	}
 	defer file.Close()
 	fmt.Fprintln(file, "elapsed_s,scheduled,attempts,completed,skipped,send_ns,blocked_gt20ms,rss_bytes")
+	var telemetryFile *os.File
+	if *telemetry != "" {
+		telemetryFile, err = os.OpenFile(*telemetry, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0644)
+		if err != nil {
+			panic(err)
+		}
+		defer telemetryFile.Close()
+		fmt.Fprintln(telemetryFile, "unix_ns,elapsed_s,latency_samples,cumulative_send_p50_ms,cumulative_send_p95_ms,cumulative_send_p99_ms")
+	}
 	start := time.Now()
 	stop := start.Add(time.Duration(*seconds * float64(time.Second)))
 	s := &stats{}
 	sample := func() {
 		s.Lock()
-		defer s.Unlock()
 		elapsed := time.Since(start).Seconds()
 		sched := int(elapsed * float64(*rate))
 		if sched > int(*seconds*float64(*rate)) {
@@ -83,6 +100,18 @@ func main() {
 		}
 		fmt.Fprintf(file, "%.6f,%d,%d,%d,%d,%d,%d,%d\n", elapsed, sched, s.Attempts, s.Completed, s.Skipped, s.SendNS, s.Blocked, rss())
 		file.Sync()
+		var snapshot []int64
+		if telemetryFile != nil {
+			snapshot = append([]int64(nil), s.Latencies...)
+		}
+		elapsedSample := time.Since(start).Seconds()
+		unixSample := time.Now().UnixNano()
+		s.Unlock()
+		if telemetryFile != nil {
+			sort.Slice(snapshot, func(i, j int) bool { return snapshot[i] < snapshot[j] })
+			fmt.Fprintf(telemetryFile, "%d,%.9f,%d,%.9f,%.9f,%.9f\n", unixSample, elapsedSample, len(snapshot), latencyPercentile(snapshot, .5), latencyPercentile(snapshot, .95), latencyPercentile(snapshot, .99))
+			telemetryFile.Sync()
+		}
 	}
 	done := make(chan struct{})
 	joined := make(chan struct{})

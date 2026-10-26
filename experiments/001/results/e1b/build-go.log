@@ -1,0 +1,11 @@
+=== RUN   TestPayloadRoundTrip
+--- PASS: TestPayloadRoundTrip (0.00s)
+=== RUN   TestStreamingContract
+--- PASS: TestStreamingContract (0.00s)
+PASS
+ok  	github.com/huyhoang1001/grpc-under-pressure/loadgen	(cached)
+=== RUN   TestLatencyPercentiles
+--- PASS: TestLatencyPercentiles (0.00s)
+PASS
+ok  	github.com/huyhoang1001/grpc-under-pressure/loadgen/cmd/loadgen	0.004s
+?   	github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1	[no test files]

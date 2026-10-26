@@ -1,0 +1,392 @@
+{
+  "steady_client_window_s": [
+    5,
+    55
+  ],
+  "early_window_s": [
+    5,
+    20
+  ],
+  "late_window_s": [
+    40,
+    55
+  ],
+  "preflight": [
+    {
+      "name": "control-bounded",
+      "variant": "bounded",
+      "git_commit": "3374f126e3009991ec97c95e64dabd03c734b575",
+      "source_tree_clean": false,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 4,
+      "send_seconds": 4.000063561,
+      "rpc_seconds": 4.044147119,
+      "attempts": 200,
+      "completed_sends": 200,
+      "skipped_slots": 0,
+      "send_p50_ms": 0.038138,
+      "send_p95_ms": 0.124646,
+      "send_p99_ms": 0.188441,
+      "send_call_time_s": 0.010236315,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3719168.0,
+      "server_rss_near_load_end_bytes": 3719168.0,
+      "final_processed": 200.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.012864402339129928,
+          "peak_sampled_fraction_one_core": 0.049136707361032546,
+          "peak_sampled_rss_bytes": 3440640
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.03539554615641856,
+          "peak_sampled_fraction_one_core": 0.09746712285308803,
+          "peak_sampled_rss_bytes": 16949248
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4104373927424.0,
+        "server_origin_monotonic_ns": 4103949479972.5,
+        "server_origin_lower_ns": 4103949265250.0,
+        "server_origin_upper_ns": 4103949694695.0,
+        "intersection_width_ms": 0.429445,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "send_rate": 49.9992055001248,
+      "worker_capacity": 89.58881624821116
+    },
+    {
+      "name": "control-direct",
+      "variant": "direct",
+      "git_commit": "3374f126e3009991ec97c95e64dabd03c734b575",
+      "source_tree_clean": false,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 4,
+      "send_seconds": 4.000881542,
+      "rpc_seconds": 4.046752641,
+      "attempts": 200,
+      "completed_sends": 200,
+      "skipped_slots": 0,
+      "send_p50_ms": 0.037056,
+      "send_p95_ms": 0.102394,
+      "send_p99_ms": 0.192625,
+      "send_call_time_s": 0.010009592,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3649536.0,
+      "server_rss_near_load_end_bytes": 3649536.0,
+      "final_processed": 200.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.007778865650373568,
+          "peak_sampled_fraction_one_core": 0.04928353518604402,
+          "peak_sampled_rss_bytes": 3489792
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.030066295497047757,
+          "peak_sampled_fraction_one_core": 0.09856819397869672,
+          "peak_sampled_rss_bytes": 16162816
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4085023083520.0,
+        "server_origin_monotonic_ns": 4084598661974.5,
+        "server_origin_lower_ns": 4084598216983.0,
+        "server_origin_upper_ns": 4084599106966.0,
+        "intersection_width_ms": 0.889983,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "send_rate": 49.988983152953345,
+      "worker_capacity": 89.91404648743224
+    },
+    {
+      "name": "control-unbounded",
+      "variant": "unbounded",
+      "git_commit": "3374f126e3009991ec97c95e64dabd03c734b575",
+      "source_tree_clean": false,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 4,
+      "send_seconds": 4.001051062,
+      "rpc_seconds": 4.045899598,
+      "attempts": 200,
+      "completed_sends": 200,
+      "skipped_slots": 0,
+      "send_p50_ms": 0.038628,
+      "send_p95_ms": 0.09366,
+      "send_p99_ms": 0.421301,
+      "send_call_time_s": 0.010935792,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3760128.0,
+      "server_rss_near_load_end_bytes": 3760128.0,
+      "final_processed": 200.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.015073470865421434,
+          "peak_sampled_fraction_one_core": 0.0492420830917804,
+          "peak_sampled_rss_bytes": 3481600
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.03173520395995901,
+          "peak_sampled_fraction_one_core": 0.09181252700952396,
+          "peak_sampled_rss_bytes": 16527360
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4094690063616.0,
+        "server_origin_monotonic_ns": 4094265398580.0,
+        "server_origin_lower_ns": 4094264373557.0,
+        "server_origin_upper_ns": 4094266423603.0,
+        "intersection_width_ms": 2.050046,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "send_rate": 49.986865176378494,
+      "worker_capacity": 88.42862747248796
+    },
+    {
+      "name": "sender-bounded",
+      "variant": "bounded",
+      "git_commit": "3374f126e3009991ec97c95e64dabd03c734b575",
+      "source_tree_clean": false,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 3,
+      "send_seconds": 3.001100717,
+      "rpc_seconds": 3.043444515,
+      "attempts": 900,
+      "completed_sends": 900,
+      "skipped_slots": 0,
+      "send_p50_ms": 0.016215,
+      "send_p95_ms": 0.035073,
+      "send_p99_ms": 0.095624,
+      "send_call_time_s": 0.019235136,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3784704.0,
+      "server_rss_near_load_end_bytes": 3784704.0,
+      "final_processed": 900.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.024639638082918493,
+          "peak_sampled_fraction_one_core": 0.04933222470011409,
+          "peak_sampled_rss_bytes": 3567616
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.07581073512578694,
+          "peak_sampled_fraction_one_core": 0.14765373853679742,
+          "peak_sampled_rss_bytes": 16949248
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4100038504960.0,
+        "server_origin_monotonic_ns": 4099616023403.0,
+        "server_origin_lower_ns": 4099614831113.0,
+        "server_origin_upper_ns": 4099617215693.0,
+        "intersection_width_ms": 2.38458,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "send_rate": 299.8899686711181,
+      "worker_capacity": 476.77935368587566
+    },
+    {
+      "name": "sender-direct",
+      "variant": "direct",
+      "git_commit": "3374f126e3009991ec97c95e64dabd03c734b575",
+      "source_tree_clean": false,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 3,
+      "send_seconds": 3.000547023,
+      "rpc_seconds": 3.042944392,
+      "attempts": 898,
+      "completed_sends": 898,
+      "skipped_slots": 2,
+      "send_p50_ms": 0.018909,
+      "send_p95_ms": 0.065939,
+      "send_p99_ms": 0.256547,
+      "send_call_time_s": 0.027885217,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3772416.0,
+      "server_rss_near_load_end_bytes": 3772416.0,
+      "final_processed": 898.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.03147521598454122,
+          "peak_sampled_fraction_one_core": 0.049330198754379925,
+          "peak_sampled_rss_bytes": 3444736
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.10187283461315746,
+          "peak_sampled_fraction_one_core": 0.19561874840992524,
+          "peak_sampled_rss_bytes": 16945152
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4080679371008.0,
+        "server_origin_monotonic_ns": 4080253988303.0,
+        "server_origin_lower_ns": 4080252894599.0,
+        "server_origin_upper_ns": 4080255082007.0,
+        "intersection_width_ms": 2.187408,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "send_rate": 299.27876254449217,
+      "worker_capacity": 470.00954904478465
+    },
+    {
+      "name": "sender-unbounded",
+      "variant": "unbounded",
+      "git_commit": "3374f126e3009991ec97c95e64dabd03c734b575",
+      "source_tree_clean": false,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 3,
+      "send_seconds": 3.000752096,
+      "rpc_seconds": 3.042523782,
+      "attempts": 900,
+      "completed_sends": 900,
+      "skipped_slots": 0,
+      "send_p50_ms": 0.016504,
+      "send_p95_ms": 0.050466,
+      "send_p99_ms": 0.116866,
+      "send_call_time_s": 0.018713826,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3821568.0,
+      "server_rss_near_load_end_bytes": 3821568.0,
+      "final_processed": 900.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.024660846711164933,
+          "peak_sampled_fraction_one_core": 0.04934216921320615,
+          "peak_sampled_rss_bytes": 3448832
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.07586913898109203,
+          "peak_sampled_fraction_one_core": 0.09868344102270743,
+          "peak_sampled_rss_bytes": 17211392
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4090358902528.0,
+        "server_origin_monotonic_ns": 4089935053987.0,
+        "server_origin_lower_ns": 4089934587250.0,
+        "server_origin_upper_ns": 4089935520724.0,
+        "intersection_width_ms": 0.933474,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "send_rate": 299.92480925022073,
+      "worker_capacity": 476.69290344859394
+    },
+    {
+      "name": "worker",
+      "variant": "direct",
+      "git_commit": "3374f126e3009991ec97c95e64dabd03c734b575",
+      "source_tree_clean": false,
+      "outcome": "completed_and_drained",
+      "valid_offered_interval": true,
+      "issues": [],
+      "offered_seconds": 3,
+      "send_seconds": 3.010538762,
+      "rpc_seconds": 3.125693871,
+      "attempts": 278,
+      "completed_sends": 278,
+      "skipped_slots": 2721,
+      "send_p50_ms": 11.292822,
+      "send_p95_ms": 11.902269,
+      "send_p99_ms": 12.622838,
+      "send_call_time_s": 2.973160495,
+      "send_calls_gt20ms": 0,
+      "fraction_gt20ms": 0.0,
+      "max_queue_depth": 0.0,
+      "max_queue_bytes": 0.0,
+      "peak_server_rss_bytes": 3903488.0,
+      "server_rss_near_load_end_bytes": 3903488.0,
+      "final_processed": 278.0,
+      "final_discarded": 0.0,
+      "fully_drained": true,
+      "cpu": {
+        "server": {
+          "offered_interval_mean_fraction_one_core": 0.020977346653719316,
+          "peak_sampled_fraction_one_core": 0.049185695157046114,
+          "peak_sampled_rss_bytes": 3592192
+        },
+        "client": {
+          "offered_interval_mean_fraction_one_core": 0.04515394116490245,
+          "peak_sampled_fraction_one_core": 0.09777053124326987,
+          "peak_sampled_rss_bytes": 16134144
+        }
+      },
+      "clock_alignment": {
+        "client_origin_monotonic_ns": 4109714223616.0,
+        "server_origin_monotonic_ns": 4109288921941.0,
+        "server_origin_lower_ns": 4109288161598.0,
+        "server_origin_upper_ns": 4109289682284.0,
+        "intersection_width_ms": 1.520686,
+        "method": "intersection of CSV visibility brackets",
+        "limitation": "CSV export visibility, not exact ownership snapshot time; exporter overhead is not separately measured. Aligned snapshots may hold native values for one ~200ms sampling interval."
+      },
+      "send_rate": 92.34227557838035,
+      "worker_capacity": 89.56700441665564
+    }
+  ],
+  "runs": [],
+  "summary": {
+    "direct": {
+      "run_count": 0,
+      "valid_60s_intervals": 0,
+      "outcomes": {}
+    },
+    "unbounded": {
+      "run_count": 0,
+      "valid_60s_intervals": 0,
+      "outcomes": {}
+    },
+    "bounded": {
+      "run_count": 0,
+      "valid_60s_intervals": 0,
+      "outcomes": {}
+    }
+  },
+  "interpretation": "Deadline-aborted drain is not a completed run. valid_60s_intervals only describes sustained load data, and never hides the recorded outcome."
+}

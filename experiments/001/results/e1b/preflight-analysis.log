@@ -1,0 +1,17 @@
+{
+  "direct": {
+    "run_count": 0,
+    "valid_60s_intervals": 0,
+    "outcomes": {}
+  },
+  "unbounded": {
+    "run_count": 0,
+    "valid_60s_intervals": 0,
+    "outcomes": {}
+  },
+  "bounded": {
+    "run_count": 0,
+    "valid_60s_intervals": 0,
+    "outcomes": {}
+  }
+}

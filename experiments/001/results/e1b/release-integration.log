@@ -1,0 +1,13 @@
+test_cancel_bounded (release_tests.RuntimeTests.test_cancel_bounded) ... ok
+test_cancel_direct (release_tests.RuntimeTests.test_cancel_direct) ... ok
+test_cancel_unbounded (release_tests.RuntimeTests.test_cancel_unbounded) ... ok
+test_normal_bounded (release_tests.RuntimeTests.test_normal_bounded) ... ok
+test_normal_direct (release_tests.RuntimeTests.test_normal_direct) ... ok
+test_normal_unbounded (release_tests.RuntimeTests.test_normal_unbounded) ... ok
+test_queue_safety_abort (release_tests.RuntimeTests.test_queue_safety_abort) ... ok
+test_rss_safety_abort (release_tests.RuntimeTests.test_rss_safety_abort) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 8.804s
+
+OK
