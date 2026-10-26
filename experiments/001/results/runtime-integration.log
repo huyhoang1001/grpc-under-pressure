@@ -1,0 +1,29 @@
+test_cancel_bounded (test_runtime.RuntimeTests.test_cancel_bounded) ... /workspace/grpc-under-pressure/experiments/001/tests/test_runtime.py:29: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/pressure-test-sq4e8h7m/server.csv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader((p/'server.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_cancel_direct (test_runtime.RuntimeTests.test_cancel_direct) ... /workspace/grpc-under-pressure/experiments/001/tests/test_runtime.py:29: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/pressure-test-8naj6i5n/server.csv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader((p/'server.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_cancel_unbounded (test_runtime.RuntimeTests.test_cancel_unbounded) ... /workspace/grpc-under-pressure/experiments/001/tests/test_runtime.py:29: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/pressure-test-f7wltlgp/server.csv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader((p/'server.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_normal_bounded (test_runtime.RuntimeTests.test_normal_bounded) ... /workspace/grpc-under-pressure/experiments/001/tests/test_runtime.py:29: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/pressure-test-mof3z_bc/server.csv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader((p/'server.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_normal_direct (test_runtime.RuntimeTests.test_normal_direct) ... /workspace/grpc-under-pressure/experiments/001/tests/test_runtime.py:29: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/pressure-test-ktzipf90/server.csv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader((p/'server.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_normal_unbounded (test_runtime.RuntimeTests.test_normal_unbounded) ... /workspace/grpc-under-pressure/experiments/001/tests/test_runtime.py:29: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/pressure-test-tniv18ip/server.csv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader((p/'server.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 6.607s
+
+OK

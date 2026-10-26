@@ -1,0 +1,70 @@
+{
+  "name": "final-unbounded",
+  "variant": "unbounded",
+  "rate": 300,
+  "seconds": 1,
+  "service_ms": 10,
+  "payload": 16384,
+  "seed": 1,
+  "capacity": 32,
+  "queue_limit": 268435456,
+  "server_rss_limit": 536870912,
+  "rpc_deadline_s": 120,
+  "drain_rule": "CloseAndRecv waits within whole RPC deadline",
+  "warmup": "none; start fresh idle process, sample before traffic",
+  "windows": {
+    "server_stream": 65535,
+    "server_connection": 65535,
+    "server_adaptive": false,
+    "client_stream": 65535,
+    "client_connection": 65535
+  },
+  "max_message_bytes": 1048576,
+  "compression": false,
+  "runtime_threads": {
+    "tokio_workers": 2,
+    "gomaxprocs": 2
+  },
+  "server_command": [
+    "/workspace/grpc-under-pressure/server/target/debug/pressure-server",
+    "--variant",
+    "unbounded",
+    "--capacity",
+    "32",
+    "--service-ms",
+    "10",
+    "--queue-limit",
+    "268435456",
+    "--rss-limit",
+    "536870912",
+    "--csv",
+    "/workspace/grpc-under-pressure/experiments/001/results/final-smoke/final-unbounded/server.csv"
+  ],
+  "client_command": [
+    "/workspace/toolchains/bin/pressure-loadgen",
+    "--rate",
+    "300",
+    "--seconds",
+    "1",
+    "--timeout",
+    "120s",
+    "--csv",
+    "/workspace/grpc-under-pressure/experiments/001/results/final-smoke/final-unbounded/client.csv",
+    "--summary",
+    "/workspace/grpc-under-pressure/experiments/001/results/final-smoke/final-unbounded/client.json"
+  ],
+  "kernel": "6.18.55",
+  "started_utc": "2026-10-26T11:59:32Z",
+  "source_sha256": {
+    "server/src/main.rs": "b3c4b892238628eb9ae8ce96734ae49cb50624075dc93f3d11410ced848d0c3c",
+    "loadgen/cmd/loadgen/main.go": "2bca2006e7533c430a522427f32ca789d59c14267f2e3690d061249ff295183b",
+    "server/Cargo.lock": "2579443f2e81532c5d5ea6fba99174c794d3035f73432b9c7017a158ed6d9fee",
+    "loadgen/go.sum": "e34b4ddb3ea9d54efdaea326b5837f32b8e60f72b1dac34a9df14a8115cd4e12"
+  },
+  "binary_sha256": {
+    "/workspace/grpc-under-pressure/server/target/debug/pressure-server": "9bb20c3344432161f9bbed7c32667a4233cb790b22b7199b2da92062eb70724e",
+    "/workspace/toolchains/bin/pressure-loadgen": "6c6c1fe19f1054335db79e34852db5c0d8282e5f08f755edad3fb956208e7184"
+  },
+  "client_exit": 0,
+  "server_exit": 0
+}

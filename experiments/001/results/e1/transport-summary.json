@@ -1,0 +1,16 @@
+{
+  "unbounded": {
+    "stream1_window_update_credit_bytes": 19117606,
+    "received_data_frame_events": 2335,
+    "first4s_stream_credit_bytes": 19117606,
+    "first4s_data_frame_events": 2334,
+    "note": "Unique h2 DEBUG send-frame / received-frame log events, not packet capture. Time origin is first handshake log."
+  },
+  "bounded": {
+    "stream1_window_update_credit_bytes": 6476290,
+    "received_data_frame_events": 797,
+    "first4s_stream_credit_bytes": 6377914,
+    "first4s_data_frame_events": 785,
+    "note": "Unique h2 DEBUG send-frame / received-frame log events, not packet capture. Time origin is first handshake log."
+  }
+}

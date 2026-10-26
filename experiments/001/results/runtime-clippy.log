@@ -1,0 +1,22 @@
+    Checking tokio-stream v0.1.17
+   Compiling pressure-server v0.1.0 (/workspace/grpc-under-pressure/server)
+    Checking tonic v0.14.2
+    Checking tonic-prost v0.14.2
+error: using `map` over `inspect`
+   --> src/main.rs:261:20
+    |
+261 |             socket.map(|s| {
+    |                    ^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.99.0/index.html#manual_inspect
+    = note: `-D clippy::manual-inspect` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::manual_inspect)]`
+help: try
+    |
+261 ~             socket.inspect(|s| {
+262 ~                 connections.fetch_add(1, Ordering::SeqCst);
+    |
+
+error: could not compile `pressure-server` (bin "pressure-server") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `pressure-server` (bin "pressure-server" test) due to 1 previous error

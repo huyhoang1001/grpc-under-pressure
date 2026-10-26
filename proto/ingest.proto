@@ -1,7 +1,7 @@
 syntax = "proto3";
 package pressure.v1;
 
-option go_package = "example.com/grpc-under-pressure/loadgen/gen/pressure/v1;pressurev1";
+option go_package = "github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1;pressurev1";
 
 service IngestService {
   rpc Ingest(stream Payload) returns (Summary);

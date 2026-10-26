@@ -1,0 +1,2 @@
+diagnostic-unbounded client_exit= 0 server_exit= 0
+diagnostic-bounded client_exit= 0 server_exit= 0

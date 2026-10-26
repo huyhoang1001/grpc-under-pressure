@@ -1,0 +1,52 @@
+   Compiling pressure-server v0.1.0 (/workspace/grpc-under-pressure/server)
+error[E0277]: the trait bound `(): tokio::net::ToSocketAddrs` is not satisfied
+   --> src/main.rs:126:38
+    |
+126 |     let listener = TcpListener::bind(addr).await?;
+    |                    ----------------- ^^^^ the trait `tokio::net::ToSocketAddrs` is not implemented for `()`
+    |                    |
+    |                    required by a bound introduced by this call
+    |
+    = help: the following other types implement trait `tokio::net::ToSocketAddrs`:
+              (&str, u16)
+              (IpAddr, u16)
+              (Ipv4Addr, u16)
+              (Ipv6Addr, u16)
+              (String, u16)
+note: required by a bound in `tokio::net::TcpListener::bind`
+   --> /workspace/toolchains/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.48.0/src/net/tcp/listener.rs:103:30
+    |
+103 |         pub async fn bind<A: ToSocketAddrs>(addr: A) -> io::Result<TcpListener> {
+    |                              ^^^^^^^^^^^^^ required by this bound in `TcpListener::bind`
+
+error[E0277]: the trait bound `(): FromStr` is not satisfied
+   --> src/main.rs:122:57
+    |
+122 |     let addr = option(&args,"--addr","127.0.0.1:50051").parse()?;
+    |                                                         ^^^^^ the trait `FromStr` is not implemented for `()`
+    |
+    = help: the following other types implement trait `FromStr`:
+              ByteString
+              CString
+              Endpoint
+              IpAddr
+              Ipv4Addr
+              Ipv6Addr
+              MetadataKey<VE>
+              MetadataValue<tonic::metadata::Ascii>
+            and 41 others
+note: required by a bound in `core::str::<impl str>::parse`
+   --> /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/str/mod.rs:2782:4
+
+error[E0277]: `()` doesn't implement `std::fmt::Display`
+   --> src/main.rs:144:22
+    |
+144 |     eprintln!("ready {addr} variant={variant} K={capacity} service_ms={ms}");
+    |                      ^^^^^^ `()` cannot be formatted with the default formatter
+    |
+    = help: the trait `std::fmt::Display` is not implemented for `()`
+    = note: in format strings you may be able to use `{:?}` (or `{:#?}` for pretty-print) instead
+    = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `eprintln` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `pressure-server` (bin "pressure-server") due to 3 previous errors

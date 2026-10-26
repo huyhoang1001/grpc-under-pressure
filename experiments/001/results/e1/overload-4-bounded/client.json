@@ -1,0 +1,22 @@
+{
+  "attempts": 1105,
+  "completed_sends": 1105,
+  "offered_seconds": 12,
+  "payload_bytes": 16384,
+  "rate": 300,
+  "rpc_error": "\u003cnil\u003e",
+  "rpc_seconds": 12.472458335,
+  "seed": 1,
+  "send_blocked_gt20ms": 1,
+  "send_error": "\u003cnil\u003e",
+  "send_p50_ms": 11.070251,
+  "send_p95_ms": 12.408976,
+  "send_p99_ms": 13.42793,
+  "send_seconds": 12.009779551,
+  "send_total_ns": 11733329785,
+  "skipped_slots": 2495,
+  "summary": {
+    "accepted": 1105,
+    "processed": 1105
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": ["direct", "unbounded", "bounded"],
+  "payload_bytes": 16384,
+  "offered_rate_per_second": 300,
+  "offered_duration_seconds": 12,
+  "control_rate_per_second": 50,
+  "control_duration_seconds": 4,
+  "service_interval_ms": 10,
+  "bounded_capacity": 32,
+  "repetitions_per_variant": 5,
+  "randomization_seed": 1,
+  "queue_payload_abort_bytes": 268435456,
+  "server_rss_abort_bytes": 536870912,
+  "rpc_deadline_including_drain_seconds": 120,
+  "warmup": "none; independent calibration and fresh idle server per run",
+  "missed_schedule_policy": "skip missed slots; no catch-up bursts",
+  "steady_server_window_seconds": [2.5, 10.5],
+  "steady_client_window_seconds": [2, 10],
+  "exclusion_criteria": ["nonzero exit or abort", "accounting discrepancy", "incomplete drain", "more than one connection or stream", "bounded capacity violation", "ambiguous source/binary provenance"],
+  "note": "Runner command-line arguments and per-run manifests are authoritative executed parameters. Initial calibration and safety choices preceded measurement; steady analysis window was chosen before later repeats completed."
+}

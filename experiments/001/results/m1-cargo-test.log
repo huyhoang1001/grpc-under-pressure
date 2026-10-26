@@ -1,0 +1,238 @@
+info: syncing channel updates for 1.99.1-x86_64-unknown-linux-gnu
+info: latest update on 2026-10-15 for version 1.99.1 (58cf8f9c3 2026-10-13)
+info: downloading 2 components
+    Updating crates.io index
+     Locking 104 packages to highest compatible versions
+      Adding matchit v0.8.4 (available: v0.8.6)
+      Adding prost v0.14.1 (available: v0.14.4)
+      Adding prost-build v0.14.1 (available: v0.14.4)
+      Adding prost-types v0.14.1 (available: v0.14.4)
+      Adding protoc-bin-vendored v3.2.0 (available: v3.3.0)
+      Adding protoc-bin-vendored-linux-aarch_64 v3.2.0 (available: v3.3.0)
+      Adding protoc-bin-vendored-linux-ppcle_64 v3.2.0 (available: v3.3.0)
+      Adding protoc-bin-vendored-linux-s390_64 v3.2.0 (available: v3.3.0)
+      Adding protoc-bin-vendored-linux-x86_32 v3.2.0 (available: v3.3.0)
+      Adding protoc-bin-vendored-linux-x86_64 v3.2.0 (available: v3.3.0)
+      Adding protoc-bin-vendored-macos-aarch_64 v3.2.0 (available: v3.3.0)
+      Adding protoc-bin-vendored-macos-x86_64 v3.2.0 (available: v3.3.0)
+      Adding protoc-bin-vendored-win32 v3.2.0 (available: v3.3.0)
+      Adding tokio v1.48.0 (available: v1.54.1)
+      Adding tokio-macros v2.6.1 (available: v2.7.2)
+      Adding tokio-util v0.7.19 (available: v0.7.20)
+      Adding tonic v0.14.2 (available: v0.14.6)
+      Adding tonic-prost v0.14.2 (available: v0.14.6)
+      Adding tonic-prost-build v0.14.2 (available: v0.14.6)
+ Downloading crates ...
+  Downloaded fnv v1.0.7
+  Downloaded atomic-waker v1.1.2
+  Downloaded anyhow v1.0.104
+  Downloaded bitflags v2.13.2
+  Downloaded base64 v0.22.1
+  Downloaded aho-corasick v1.1.5
+  Downloaded futures-core v0.3.34
+  Downloaded async-trait v0.1.92
+  Downloaded bytes v1.12.1
+  Downloaded getrandom v0.4.3
+  Downloaded axum v0.8.9
+  Downloaded equivalent v1.0.3
+  Downloaded cfg-if v1.0.5
+  Downloaded futures-sink v0.3.34
+  Downloaded axum-core v0.5.6
+  Downloaded futures-util v0.3.34
+  Downloaded futures-channel v0.3.34
+  Downloaded h2 v0.4.20
+  Downloaded fastrand v2.5.0
+  Downloaded fixedbitset v0.5.7
+  Downloaded errno v0.3.14
+  Downloaded futures-task v0.3.34
+  Downloaded either v1.19.0
+  Downloaded hashbrown v0.17.1
+  Downloaded hyper-util v0.1.21
+  Downloaded httparse v1.10.1
+  Downloaded httpdate v1.0.3
+  Downloaded http-body-util v0.1.5
+  Downloaded http v1.5.0
+  Downloaded hyper-timeout v0.5.2
+  Downloaded heck v0.5.0
+  Downloaded hyper v1.12.0
+  Downloaded log v0.4.34
+  Downloaded memchr v2.8.3
+  Downloaded libc v0.2.191
+  Downloaded itoa v1.0.18
+  Downloaded matchit v0.8.4
+  Downloaded indexmap v2.14.2
+  Downloaded mime v0.3.17
+  Downloaded mio v1.2.4
+  Downloaded once_cell v1.21.4
+  Downloaded petgraph v0.7.1
+  Downloaded percent-encoding v2.3.2
+  Downloaded pin-project-lite v0.2.17
+  Downloaded pin-project v1.1.13
+  Downloaded prost-types v0.14.1
+  Downloaded proc-macro2 v1.0.107
+  Downloaded http-body v1.1.0
+  Downloaded itertools v0.14.0
+  Downloaded multimap v0.10.1
+  Downloaded pin-project-internal v1.1.13
+  Downloaded protoc-bin-vendored v3.2.0
+  Downloaded prost-build v0.14.1
+  Downloaded prost-derive v0.14.4
+  Downloaded prettyplease v0.2.37
+  Downloaded prost v0.14.1
+  Downloaded quote v1.0.47
+  Downloaded pulldown-cmark v0.13.5
+  Downloaded linux-raw-sys v0.12.1
+  Downloaded pulldown-cmark-to-cmark v21.1.0
+  Downloaded regex v1.13.1
+  Downloaded regex-syntax v0.8.11
+  Downloaded regex-automata v0.4.18
+  Downloaded rustix v1.1.5
+  Downloaded serde_core v1.0.229
+  Downloaded signal-hook-registry v1.4.8
+  Downloaded slab v0.4.12
+  Downloaded smallvec v1.16.4
+  Downloaded socket2 v0.6.5
+  Downloaded protoc-bin-vendored-macos-aarch_64 v3.2.0
+  Downloaded tempfile v3.27.0
+  Downloaded tower-layer v0.3.3
+  Downloaded protoc-bin-vendored-linux-aarch_64 v3.2.0
+  Downloaded syn v2.0.119
+  Downloaded protoc-bin-vendored-macos-x86_64 v3.2.0
+  Downloaded sync_wrapper v1.0.2
+  Downloaded syn v3.0.9
+  Downloaded tokio-macros v2.6.1
+  Downloaded tokio-util v0.7.19
+  Downloaded tokio v1.48.0
+  Downloaded tokio-stream v0.1.19
+  Downloaded tonic-prost v0.14.2
+  Downloaded tonic v0.14.2
+  Downloaded tonic-build v0.14.6
+  Downloaded tonic-prost-build v0.14.2
+  Downloaded tower v0.5.3
+  Downloaded tower-service v0.3.3
+  Downloaded tracing v0.1.44
+  Downloaded try-lock v0.2.5
+  Downloaded tracing-core v0.1.36
+  Downloaded tracing-attributes v0.1.31
+  Downloaded unicase v2.10.0
+  Downloaded protoc-bin-vendored-linux-ppcle_64 v3.2.0
+  Downloaded unicode-ident v1.0.27
+  Downloaded protoc-bin-vendored-win32 v3.2.0
+  Downloaded protoc-bin-vendored-linux-x86_64 v3.2.0
+  Downloaded protoc-bin-vendored-linux-x86_32 v3.2.0
+  Downloaded protoc-bin-vendored-linux-s390_64 v3.2.0
+  Downloaded want v0.3.2
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.27
+   Compiling quote v1.0.47
+   Compiling libc v0.2.191
+   Compiling bytes v1.12.1
+   Compiling once_cell v1.21.4
+   Compiling pin-project-lite v0.2.17
+   Compiling hashbrown v0.17.1
+   Compiling equivalent v1.0.3
+   Compiling futures-core v0.3.34
+   Compiling syn v2.0.119
+   Compiling anyhow v1.0.104
+   Compiling indexmap v2.14.2
+   Compiling itoa v1.0.18
+   Compiling http v1.5.0
+   Compiling errno v0.3.14
+   Compiling signal-hook-registry v1.4.8
+   Compiling socket2 v0.6.5
+   Compiling mio v1.2.4
+   Compiling either v1.19.0
+   Compiling tracing-core v0.1.36
+   Compiling itertools v0.14.0
+   Compiling futures-sink v0.3.34
+   Compiling memchr v2.8.3
+   Compiling slab v0.4.12
+   Compiling http-body v1.1.0
+   Compiling bitflags v2.13.2
+   Compiling tower-service v0.3.3
+   Compiling pulldown-cmark v0.13.5
+   Compiling getrandom v0.4.3
+   Compiling rustix v1.1.5
+   Compiling futures-task v0.3.34
+   Compiling prettyplease v0.2.37
+   Compiling httparse v1.10.1
+   Compiling futures-util v0.3.34
+   Compiling unicase v2.10.0
+   Compiling fnv v1.0.7
+   Compiling cfg-if v1.0.5
+   Compiling regex-syntax v0.8.11
+   Compiling atomic-waker v1.1.2
+   Compiling linux-raw-sys v0.12.1
+   Compiling try-lock v0.2.5
+   Compiling want v0.3.2
+   Compiling tokio-macros v2.6.1
+   Compiling tracing-attributes v0.1.31
+   Compiling tokio v1.48.0
+   Compiling prost-derive v0.14.4
+   Compiling tracing v0.1.44
+   Compiling regex-automata v0.4.18
+   Compiling prost v0.14.1
+   Compiling futures-channel v0.3.34
+   Compiling tower-layer v0.3.3
+   Compiling sync_wrapper v1.0.2
+   Compiling fastrand v2.5.0
+   Compiling httpdate v1.0.3
+   Compiling smallvec v1.16.4
+   Compiling fixedbitset v0.5.7
+   Compiling serde_core v1.0.229
+   Compiling petgraph v0.7.1
+   Compiling pulldown-cmark-to-cmark v21.1.0
+   Compiling tempfile v3.27.0
+   Compiling regex v1.13.1
+   Compiling prost-types v0.14.1
+   Compiling http-body-util v0.1.5
+   Compiling heck v0.5.0
+   Compiling tokio-util v0.7.19
+   Compiling h2 v0.4.20
+   Compiling multimap v0.10.1
+   Compiling log v0.4.34
+   Compiling mime v0.3.17
+   Compiling prost-build v0.14.1
+   Compiling axum-core v0.5.6
+   Compiling tower v0.5.3
+   Compiling tonic-build v0.14.6
+   Compiling pin-project-internal v1.1.13
+   Compiling syn v3.0.9
+   Compiling hyper v1.12.0
+   Compiling protoc-bin-vendored-macos-x86_64 v3.2.0
+   Compiling percent-encoding v2.3.2
+   Compiling protoc-bin-vendored-linux-aarch_64 v3.2.0
+   Compiling protoc-bin-vendored-win32 v3.2.0
+   Compiling protoc-bin-vendored-macos-aarch_64 v3.2.0
+   Compiling protoc-bin-vendored-linux-x86_64 v3.2.0
+   Compiling protoc-bin-vendored-linux-x86_32 v3.2.0
+   Compiling protoc-bin-vendored-linux-s390_64 v3.2.0
+   Compiling protoc-bin-vendored-linux-ppcle_64 v3.2.0
+   Compiling matchit v0.8.4
+   Compiling protoc-bin-vendored v3.2.0
+   Compiling pin-project v1.1.13
+   Compiling tonic-prost-build v0.14.2
+   Compiling hyper-util v0.1.21
+   Compiling axum v0.8.9
+   Compiling tokio-stream v0.1.19
+   Compiling base64 v0.22.1
+   Compiling pressure-server v0.1.0 (/workspace/grpc-under-pressure/server)
+   Compiling hyper-timeout v0.5.2
+   Compiling async-trait v0.1.92
+   Compiling tonic v0.14.2
+   Compiling tonic-prost v0.14.2
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 17.96s
+     Running unittests src/lib.rs (server/target/debug/deps/pressure_server-917ac822288b7eff)
+
+running 2 tests
+test tests::summary_round_trip_keeps_admission_distinct_from_completion ... ok
+test tests::payload_round_trip_preserves_sequence_and_owned_bytes ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests pressure_server
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

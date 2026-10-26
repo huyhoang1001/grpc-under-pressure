@@ -6,3 +6,5 @@ experiments/001/traces/*
 !experiments/001/traces/.gitkeep
 *.pcap
 *.pcapng
+__pycache__/
+*.pyc

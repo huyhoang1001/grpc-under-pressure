@@ -1,0 +1,18 @@
+[package]
+name = "pressure-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+prost = "=0.14.1"
+tonic = "=0.14.2"
+tonic-prost = "=0.14.2"
+tokio = { version = "=1.48.0", features = ["macros", "rt-multi-thread", "sync", "time", "signal", "net", "io-util"] }
+
+tokio-stream = { version = "=0.1.17", features = ["net"] }
+
+tracing-subscriber = { version = "=0.3.20", features = ["env-filter"] }
+
+[build-dependencies]
+protoc-bin-vendored = "=3.2.0"
+tonic-prost-build = "=0.14.2"

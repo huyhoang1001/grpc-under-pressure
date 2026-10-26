@@ -1,0 +1,21 @@
+# github.com/huyhoang1001/grpc-under-pressure/loadgen
+gen/pressure/v1/ingest_grpc.pb.go:11:2: missing go.sum entry for module providing package google.golang.org/grpc (imported by github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1); to add:
+	go get github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+FAIL	github.com/huyhoang1001/grpc-under-pressure/loadgen [setup failed]
+# github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+gen/pressure/v1/ingest_grpc.pb.go:11:2: missing go.sum entry for module providing package google.golang.org/grpc (imported by github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1); to add:
+	go get github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+# github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+gen/pressure/v1/ingest_grpc.pb.go:12:2: missing go.sum entry for module providing package google.golang.org/grpc/codes (imported by github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1); to add:
+	go get github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+# github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+gen/pressure/v1/ingest_grpc.pb.go:13:2: missing go.sum entry for module providing package google.golang.org/grpc/status (imported by github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1); to add:
+	go get github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+# github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+gen/pressure/v1/ingest.pb.go:10:2: missing go.sum entry for module providing package google.golang.org/protobuf/reflect/protoreflect (imported by github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1); to add:
+	go get github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+# github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+gen/pressure/v1/ingest.pb.go:11:2: missing go.sum entry for module providing package google.golang.org/protobuf/runtime/protoimpl (imported by github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1); to add:
+	go get github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1
+FAIL	github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1 [setup failed]
+FAIL
