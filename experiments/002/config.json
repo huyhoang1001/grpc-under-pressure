@@ -1,0 +1,21 @@
+{
+ "stage":1,
+ "mode":"instrumentation only",
+ "policy":"fixed32",
+ "physical_capacity":32,
+ "static_pending_limit":32,
+ "dynamic_budget":false,
+ "service_ms":10,
+ "service_schedule":"constant; slowdown not implemented",
+ "sample_ms":200,
+ "histogram_buckets":1024,
+ "event_buffer_bytes":65536,
+ "contract_rate":80,
+ "contract_payload_bytes":16384,
+ "contract_duration_seconds":36,
+ "primary_workload_executed":false,
+ "normal_smoke_duration_seconds":0.8,
+ "normal_smoke_repetitions":3,
+ "fault_fixtures":["cancellation with full capacity","worker error","worker panic"],
+ "controller_implemented":false
+}
