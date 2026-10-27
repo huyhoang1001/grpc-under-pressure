@@ -1,0 +1,5 @@
+stage1 ready
+
+thread 'tokio-runtime-worker' (90096) panicked at src/bin/../../../experiments/002/server/mod.rs:497:13:
+injected worker panic
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

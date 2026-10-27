@@ -1,0 +1,65 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+     Running unittests src/lib.rs (server/target/debug/deps/pressure_server-45a2c4d72b51c5ce)
+
+running 4 tests
+test tests::summary_round_trip_keeps_admission_distinct_from_completion ... ok
+test channel_contract_tests::owned_payloads_survive_handoff_and_drain_exactly_once ... ok
+test channel_contract_tests::reservation_blocks_read_ahead_and_drop_releases_eof_slot ... ok
+test tests::payload_round_trip_preserves_sequence_and_owned_bytes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (server/target/debug/deps/pressure_server-feb63396598e92b4)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/pressure-stage1.rs (server/target/debug/deps/pressure_stage1-0ea89af6a711b8ca)
+
+running 11 tests
+test stage1::tests::cancel_during_service_and_receive_cleans_permit ... ok
+test stage1::tests::empty_eof_releases_reservation ... ok
+test stage1::tests::full_queue_prevents_read_ahead_and_cancel_wakes_capacity ... ok
+test stage1::tests::payload_ownership_and_synthetic_queue_phase ... ok
+test stage1::tests::received_handoff_failure_has_own_disposition ... ok
+test stage1::tests::sampler_failure_stops_the_server_instead_of_leaving_a_metrics_gap ... ok
+test stage1::tests::handoff_drain_and_unused_eof_reservation ... ok
+test stage1::tests::completion_cancellation_races_never_double_dispose ... ok
+test stage1::tests::worker_error_wakes_blocked_handler ... ok
+test stage1::tests::worker_panic_wakes_blocked_handler ... ok
+test stage1::histogram::tests::known_durations_and_frozen_phase_boundaries ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+   Doc-tests pressure_server
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.06s
+=== RUN   TestPayloadRoundTrip
+--- PASS: TestPayloadRoundTrip (0.00s)
+=== RUN   TestStreamingContract
+--- PASS: TestStreamingContract (0.00s)
+PASS
+ok  	github.com/huyhoang1001/grpc-under-pressure/loadgen	(cached)
+=== RUN   TestLatencyPercentiles
+--- PASS: TestLatencyPercentiles (0.00s)
+PASS
+ok  	github.com/huyhoang1001/grpc-under-pressure/loadgen/cmd/loadgen	(cached)
+?   	github.com/huyhoang1001/grpc-under-pressure/loadgen/gen/pressure/v1	[no test files]
+test_cancel_bounded (test_runtime.RuntimeTests.test_cancel_bounded) ... ok
+test_cancel_direct (test_runtime.RuntimeTests.test_cancel_direct) ... ok
+test_cancel_unbounded (test_runtime.RuntimeTests.test_cancel_unbounded) ... ok
+test_normal_bounded (test_runtime.RuntimeTests.test_normal_bounded) ... ok
+test_normal_direct (test_runtime.RuntimeTests.test_normal_direct) ... ok
+test_normal_unbounded (test_runtime.RuntimeTests.test_normal_unbounded) ... ok
+test_queue_safety_abort (test_runtime.RuntimeTests.test_queue_safety_abort) ... ok
+test_rss_safety_abort (test_runtime.RuntimeTests.test_rss_safety_abort) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 8.806s
+
+OK

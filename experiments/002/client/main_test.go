@@ -50,3 +50,18 @@ func TestDueSlotsAndPhaseBoundaries(t *testing.T) {
 		t.Fatal("phase bounds")
 	}
 }
+
+func TestBlockedThresholdIsStrict(t *testing.T) {
+	var c counters
+	c.begin(0)
+	c.finish(20_000_000, true)
+	if c.BlockedCalls != 0 {
+		t.Fatal("20ms is not greater than 20ms")
+	}
+	c.begin(1)
+	c.finish(20_000_001, false)
+	c.verify(true)
+	if c.BlockedCalls != 1 || c.BlockedNS != 20_000_001 || c.ExcessNS != 1 {
+		t.Fatal(c)
+	}
+}

@@ -63,18 +63,21 @@ async fn until(shared: &Shared, condition: impl Fn(&State) -> bool) {
 }
 #[tokio::test]
 async fn handoff_drain_and_unused_eof_reservation() {
-    let (s, input, reads) = setup(5);
-    let summary = ingest(input, s.clone(), config()).await.unwrap();
-    assert_eq!((summary.accepted, summary.processed), (5, 5));
-    assert_eq!(reads.load(Ordering::SeqCst), 6);
+    let (s, input, reads) = setup(65);
+    let summary = tokio::time::timeout(Duration::from_secs(2), ingest(input, s.clone(), config()))
+        .await
+        .unwrap()
+        .unwrap();
+    assert_eq!((summary.accepted, summary.processed), (65, 65));
+    assert_eq!(reads.load(Ordering::SeqCst), 66);
     let m = s.s.lock().unwrap();
     m.verify();
     assert_eq!((m.c.q, m.c.r, m.c.w), (0, 0, 0));
     assert_eq!(m.c.released, 1);
     assert_eq!((m.c.qbytes, m.c.hbytes, m.c.wbytes), (0, 0, 0));
     assert_eq!(m.c.queue_violations, 0);
-    assert_eq!(m.queue_hist.iter().map(|h| h.count).sum::<u64>(), 5);
-    assert_eq!(m.service_hist.iter().map(|h| h.count).sum::<u64>(), 5);
+    assert_eq!(m.queue_hist.iter().map(|h| h.count).sum::<u64>(), 65);
+    assert_eq!(m.service_hist.iter().map(|h| h.count).sum::<u64>(), 65);
     assert!(m.c.busy > 0 && m.c.idle > 0);
 }
 #[tokio::test]
@@ -130,6 +133,7 @@ async fn worker_error_wakes_blocked_handler() {
     let m = s.s.lock().unwrap();
     m.verify();
     assert_eq!(m.reason, "worker_error");
+    assert_eq!((m.c.admitted, m.c.dq), (33, 32));
     assert_eq!(m.c.dw, 1);
     assert_eq!(m.c.r, 0);
     assert_eq!(m.c.active, 0);
@@ -271,5 +275,35 @@ async fn sampler_failure_stops_the_server_instead_of_leaving_a_metrics_gap() {
     let state = shared.s.lock().unwrap();
     assert!(state.terminal);
     assert_eq!(state.reason, "instrumentation_failed");
+    state.verify();
+}
+
+#[tokio::test]
+async fn phase_is_assigned_at_enqueue_even_when_dequeue_crosses_a_boundary() {
+    let (shared, _, _) = setup(0);
+    shared.s.lock().unwrap().started = Some(Instant::now() - Duration::from_secs(13));
+    reserve(shared.clone())
+        .await
+        .unwrap()
+        .handoff(Payload {
+            sequence: 1,
+            data: vec![0; 16],
+        })
+        .unwrap();
+    let mut state = shared.s.lock().unwrap();
+    let item = state.rx.try_recv().unwrap();
+    assert_eq!(item.phase, 1); // actual handoff chose the slowdown enqueue window
+    let later = item.enqueued + Duration::from_secs(13); // dequeue occurs in recovery
+    shared.tx.try_send(item).unwrap();
+    assert!(state.dequeue(later));
+    state.complete(later + Duration::from_millis(40));
+    assert_eq!(
+        (state.queue_hist[1].count, state.queue_hist[2].count),
+        (1, 0)
+    );
+    assert_eq!(
+        (state.service_hist[1].count, state.service_hist[2].count),
+        (1, 0)
+    );
     state.verify();
 }

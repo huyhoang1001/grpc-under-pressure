@@ -1,0 +1,20 @@
+    Checking pressure-server v0.1.0 (/workspace/grpc-under-pressure/server)
+error: this function has too many arguments (8/7)
+   --> src/bin/../../../experiments/002/server/mod.rs:140:5
+    |
+140 | /     fn event(
+141 | |         &mut self,
+142 | |         kind: &str,
+143 | |         seq: Option<u64>,
+...   |
+148 | |         p: usize,
+149 | |     ) {
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.99.0/index.html#too_many_arguments
+    = note: `-D clippy::too-many-arguments` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::too_many_arguments)]`
+
+error: could not compile `pressure-server` (bin "pressure-stage1") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `pressure-server` (bin "pressure-stage1" test) due to 1 previous error

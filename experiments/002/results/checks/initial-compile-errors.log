@@ -1,0 +1,18 @@
+   Compiling pressure-server v0.1.0 (/workspace/grpc-under-pressure/server)
+error[E0689]: can't call method `div_ceil` on ambiguous numeric type `{integer}`
+  --> src/bin/../../../experiments/002/server/histogram.rs:10:43
+   |
+10 |             bins[i] = (bins[i - 1] * 102).div_ceil(100);
+   |                                           ^^^^^^^^
+
+error[E0502]: cannot borrow `s` as immutable because it is also borrowed as mutable
+   --> src/bin/../../../experiments/002/server/mod.rs:114:79
+    |
+114 |    s.c.not_admitted+=1;s.event("received_not_admitted",Some(payload.sequence),s.c.hbytes,0,0,0,0);
+    |                        - ----- mutable borrow later used by call              ^ immutable borrow occurs here
+    |                        |
+    |                        mutable borrow occurs here
+
+Some errors have detailed explanations: E0502, E0689.
+For more information about an error, try `rustc --explain E0502`.
+error: could not compile `pressure-server` (bin "pressure-stage1" test) due to 2 previous errors

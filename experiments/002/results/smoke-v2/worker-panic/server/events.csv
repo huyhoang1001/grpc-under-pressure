@@ -1,0 +1,8 @@
+observed_elapsed_ns,event,sequence,payload_bytes,enqueue_ns,dequeue_ns,completion_ns,queue_residence_ns,service_duration_ns,enqueue_phase
+1913423,reservation_acquired,,0,0,,,0,0,0
+2142838,admitted,0,16384,2142277,,,0,0,0
+2151150,reservation_acquired,,0,0,,,0,0,0
+2183189,dequeued,0,16384,2142277,2158792,,16515,0,0
+13252185,discarded_worker,0,16384,2142277,2158792,,16515,11093012,0
+13259446,terminal,,0,0,,,0,0,0
+13307458,reservation_released,,0,0,,,0,0,0

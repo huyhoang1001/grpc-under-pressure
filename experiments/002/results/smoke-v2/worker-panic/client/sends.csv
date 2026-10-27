@@ -1,0 +1,5 @@
+slot,sequence,send_start_ns,send_return_ns,send_duration_ns,outcome,phase
+0,0,1420592,1685450,264858,success,0
+1,1,12756930,12943581,186651,success,0
+2,2,25772907,25822412,49505,success,0
+3,3,38521012,38574583,53571,failed,0

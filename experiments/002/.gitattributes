@@ -1,0 +1,2 @@
+# Keep native CSV line endings and raw diagnostic formatting unchanged.
+results/** -text -whitespace

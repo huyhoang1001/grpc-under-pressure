@@ -1,0 +1,42 @@
+   Compiling pressure-server v0.1.0 (/workspace/grpc-under-pressure/server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.45s
+     Running unittests src/lib.rs (server/target/debug/deps/pressure_server-45a2c4d72b51c5ce)
+
+running 4 tests
+test tests::summary_round_trip_keeps_admission_distinct_from_completion ... ok
+test channel_contract_tests::reservation_blocks_read_ahead_and_drop_releases_eof_slot ... ok
+test channel_contract_tests::owned_payloads_survive_handoff_and_drain_exactly_once ... ok
+test tests::payload_round_trip_preserves_sequence_and_owned_bytes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (server/target/debug/deps/pressure_server-feb63396598e92b4)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/pressure-stage1.rs (server/target/debug/deps/pressure_stage1-0ea89af6a711b8ca)
+
+running 12 tests
+test stage1::tests::cancel_during_service_and_receive_cleans_permit ... ok
+test stage1::tests::empty_eof_releases_reservation ... ok
+test stage1::tests::full_queue_prevents_read_ahead_and_cancel_wakes_capacity ... ok
+test stage1::tests::payload_ownership_and_synthetic_queue_phase ... ok
+test stage1::tests::phase_is_assigned_at_enqueue_even_when_dequeue_crosses_a_boundary ... ok
+test stage1::tests::received_handoff_failure_has_own_disposition ... ok
+test stage1::tests::sampler_failure_stops_the_server_instead_of_leaving_a_metrics_gap ... ok
+test stage1::tests::completion_cancellation_races_never_double_dispose ... ok
+test stage1::tests::worker_error_wakes_blocked_handler ... ok
+test stage1::tests::worker_panic_wakes_blocked_handler ... ok
+test stage1::histogram::tests::known_durations_and_frozen_phase_boundaries ... ok
+test stage1::tests::handoff_drain_and_unused_eof_reservation ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+   Doc-tests pressure_server
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
