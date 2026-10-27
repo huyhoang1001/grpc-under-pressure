@@ -259,3 +259,17 @@ async fn completion_cancellation_races_never_double_dispose() {
         assert_eq!((m.c.q, m.c.w, m.c.wbytes), (0, 0, 0));
     }
 }
+
+#[tokio::test]
+async fn sampler_failure_stops_the_server_instead_of_leaving_a_metrics_gap() {
+    let (shared, _, _) = setup(0);
+    let mut sampler = tokio::spawn(async {
+        panic!("injected sampler failure");
+    });
+    let result = supervise(std::future::pending(), &mut sampler, &shared).await;
+    assert!(result.is_err());
+    let state = shared.s.lock().unwrap();
+    assert!(state.terminal);
+    assert_eq!(state.reason, "instrumentation_failed");
+    state.verify();
+}

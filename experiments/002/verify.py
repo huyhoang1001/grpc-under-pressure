@@ -24,6 +24,9 @@ def verify(folder):
         result=json.loads((folder/'client/summary.json').read_text());hist=json.loads((folder/'server/histograms.json').read_text())
     except (FileNotFoundError,ValueError) as e:return errors+[str(e)]
     if not server or not client:return errors+['empty metrics']
+    for rows in [server,client]:
+        times=[int(r['elapsed_ns']) for r in rows if r.get('started','1')=='1']
+        if any(b-a>500_000_000 or b<a for a,b in zip(times,times[1:])):errors.append('sampling gap or nonmonotonic clock')
     for row in server:
         c={k:int(v) for k,v in row.items() if k not in ['service_phase','terminal_reason']}
         checks=[c['Q']==c['physical_queue_depth']==c['admitted']-c['dequeued']-c['discarded_from_queue'],c['W']==c['dequeued']-c['processed']-c['discarded_from_worker'],0<=c['Q']<=32,0<=c['R']<=1,0<=c['W']<=1,c['Q']+c['R']<=32,c['received']==c['admitted']+c['received_not_admitted'],c['admitted']==c['processed']+c['discarded']+c['Q']+c['W'],c['discarded']==c['discarded_from_queue']+c['discarded_from_worker'],c['reservations_acquired']==c['admitted']+c['reservations_released']+c['R'],c['queued_payload_bytes']==c['admitted_bytes']-c['dequeued_bytes']-c['discarded_queue_bytes'],c['worker_payload_bytes']==c['dequeued_bytes']-c['processed_bytes']-c['discarded_worker_bytes'],c['queue_residence_violations']==0,c['telemetry_errors']==0]
@@ -50,6 +53,14 @@ def verify(folder):
     for e in events:
         if e['event']=='dequeued':expected[int(e['enqueue_phase'])][bisect.bisect_left(bounds,int(e['queue_residence_ns']))]+=1
     if expected!=hist['queue_counts']:errors.append('histogram differs from exact streamed durations')
+    expected_service=[[0]*len(bounds) for _ in range(4)]
+    for e in events:
+        if e['event']=='processed':expected_service[int(e['enqueue_phase'])][bisect.bisect_left(bounds,int(e['service_duration_ns']))]+=1
+        if 'dequeue_ns' in e and e['event'] in ['dequeued','processed','discarded_worker']:
+            if int(e['dequeue_ns'])-int(e['enqueue_ns'])!=int(e['queue_residence_ns']):errors.append('queue timestamps disagree')
+        if 'completion_ns' in e and e['event']=='processed':
+            if int(e['completion_ns'])-int(e['dequeue_ns'])!=int(e['service_duration_ns']):errors.append('service timestamps disagree')
+    if expected_service!=hist['service_counts']:errors.append('service histogram differs from exact streamed durations')
     if fault is None:
         if not(last['admitted']==last['dequeued']==last['processed']==result['summary']['accepted']==result['summary']['processed']):errors.append('normal Summary/drain')
         if last['discarded'] or last['errors']:errors.append('normal error/discard')

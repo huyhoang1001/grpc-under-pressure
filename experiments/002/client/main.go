@@ -272,9 +272,9 @@ func main() {
 		for j := range jobs {
 			payload := make([]byte, 16384)
 			rng.Read(payload)
+			s.Lock()
 			begin := time.Now()
 			beginNS := begin.Sub(start).Nanoseconds()
-			s.Lock()
 			s.c.begin(beginNS)
 			s.Unlock()
 			e := stream.Send(&pb.Payload{Sequence: j.seq, Data: payload})
@@ -297,6 +297,8 @@ func main() {
 			readySender <- struct{}{}
 		}
 	}()
+	<-readySender
+	readySender <- struct{}{}
 	total := int(float64(*rate) * (*seconds))
 	interval := time.Second / time.Duration(*rate)
 	endTime := start.Add(time.Duration(*seconds * float64(time.Second)))

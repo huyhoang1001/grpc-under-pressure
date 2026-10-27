@@ -147,11 +147,23 @@ impl State {
     ) {
         let (enqueue_ns, queue_ns, service_ns) = timing;
         let elapsed = self.elapsed(Instant::now());
+        let dequeue = if matches!(kind, "dequeued" | "processed" | "discarded_worker") {
+            Some(enqueue_ns + queue_ns)
+        } else {
+            None
+        };
+        let completion = if kind == "processed" {
+            dequeue.map(|d| d + service_ns)
+        } else {
+            None
+        };
         if let Some(out) = self.events.as_mut() {
             if writeln!(
                 out,
-                "{elapsed},{kind},{},{bytes},{enqueue_ns},{queue_ns},{service_ns},{p}",
-                seq.map(|n| n.to_string()).unwrap_or_default()
+                "{elapsed},{kind},{},{bytes},{enqueue_ns},{},{},{queue_ns},{service_ns},{p}",
+                seq.map(|n| n.to_string()).unwrap_or_default(),
+                dequeue.map(|n| n.to_string()).unwrap_or_default(),
+                completion.map(|n| n.to_string()).unwrap_or_default()
             )
             .is_err()
             {
@@ -160,6 +172,7 @@ impl State {
         }
     }
     fn verify(&self) {
+        assert_eq!(self.c.queue_violations, 0);
         assert_eq!(
             self.c.q as u64,
             self.c.admitted - self.c.dequeued - self.c.dq
@@ -251,7 +264,11 @@ impl State {
             "processed",
             Some(item.payload.sequence),
             item.payload.data.len() as u64,
-            (self.elapsed(item.enqueued), 0, duration),
+            (
+                self.elapsed(item.enqueued),
+                ns(item.service_start.unwrap().duration_since(item.enqueued)),
+                duration,
+            ),
             item.phase,
         );
         self.c.processed_bytes += item.payload.data.len() as u64;
@@ -291,7 +308,9 @@ impl State {
                 item.payload.data.len() as u64,
                 (
                     self.elapsed(item.enqueued),
-                    0,
+                    item.service_start
+                        .map(|t| ns(t.duration_since(item.enqueued)))
+                        .unwrap_or(0),
                     item.service_start.map(|t| ns(t.elapsed())).unwrap_or(0),
                 ),
                 item.phase,
@@ -634,7 +653,8 @@ fn write_histograms(shared: &Shared, path: &Path) -> std::io::Result<()> {
     for (i, h) in s.service_hist.iter().enumerate() {
         write!(out, "{}{:?}", if i > 0 { "," } else { "" }, h.counts)?;
     }
-    writeln!(out, "]}}")
+    writeln!(out, "]}}")?;
+    out.flush()
 }
 async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
     let mut out = BufWriter::new(create(&path).unwrap());
@@ -644,6 +664,9 @@ async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
     loop {
         ticker.tick().await;
         let memory = rss();
+        if memory > rss_limit {
+            shared.fail("rss_limit");
+        }
         {
             let mut s = shared.s.lock().unwrap();
             let now = Instant::now();
@@ -713,7 +736,7 @@ async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
             }
         }
         if memory > rss_limit {
-            shared.fail("rss_limit");
+            let _ = write_histograms(&shared, &path.parent().unwrap().join("histograms.json"));
             eprintln!("RSS safety abort");
             std::process::exit(42);
         }
@@ -722,13 +745,26 @@ async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
 fn c_telemetry_failed(s: &State) -> bool {
     s.c.telemetry_errors > 0
 }
+async fn supervise(
+    serving: impl std::future::Future<Output = Result<(), tonic::transport::Error>>,
+    sampler: &mut tokio::task::JoinHandle<()>,
+    shared: &Shared,
+) -> Result<(), Box<dyn std::error::Error>> {
+    tokio::select! {
+        result = serving => { result?; Ok(()) },
+        result = sampler => {
+            shared.fail("instrumentation_failed");
+            Err(format!("sampling task terminated unexpectedly: {result:?}").into())
+        }
+    }
+}
 #[tokio::main(worker_threads = 2)]
 pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<_> = std::env::args().collect();
     let dir = PathBuf::from(option(&args, "--output", "stage1-output"));
     std::fs::create_dir_all(&dir)?;
     let mut events = create(&dir.join("events.csv"))?;
-    writeln!(events,"elapsed_ns,event,sequence,payload_bytes,enqueue_ns,queue_residence_ns,service_duration_ns,enqueue_phase")?;
+    writeln!(events,"observed_elapsed_ns,event,sequence,payload_bytes,enqueue_ns,dequeue_ns,completion_ns,queue_residence_ns,service_duration_ns,enqueue_phase")?;
     let shared = Shared::new(Some(events));
     let config = Config {
         service_ms: option(&args, "--service-ms", "10").parse()?,
@@ -758,10 +794,10 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
             s.started = Some(start);
             s.last = Some(start);
         }
-        std::fs::write(marker_out.join("clock.json"),format!("{{\"target_unix_ns\":{target},\"actual_start_unix_ns\":{actual},\"start_offset_ns\":{}}}",actual as i128-target as i128)).unwrap();
         marker_shared.start.send_replace(true);
+        std::fs::write(marker_out.join("clock.json"),format!("{{\"target_unix_ns\":{target},\"actual_start_unix_ns\":{actual},\"start_offset_ns\":{}}}",actual as i128-target as i128)).unwrap();
     });
-    let metrics = tokio::spawn(sample(shared.clone(), dir.join("server.csv"), 536870912));
+    let mut metrics = tokio::spawn(sample(shared.clone(), dir.join("server.csv"), 536870912));
     let listener = TcpListener::bind(option(&args, "--addr", "127.0.0.1:50053")).await?;
     let incoming = TcpListenerStream::new(listener).map({
         let shared = shared.clone();
@@ -772,7 +808,7 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     });
     eprintln!("stage1 ready");
-    tonic::transport::Server::builder()
+    let serving = tonic::transport::Server::builder()
         .initial_stream_window_size(65535)
         .initial_connection_window_size(65535)
         .http2_adaptive_window(Some(false))
@@ -786,8 +822,8 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .serve_with_incoming_shutdown(incoming, async {
             tokio::signal::ctrl_c().await.unwrap();
-        })
-        .await?;
+        });
+    supervise(serving, &mut metrics, &shared).await?;
     write_histograms(&shared, &dir.join("histograms.json"))?;
     metrics.abort();
     clock.abort();
