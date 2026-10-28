@@ -1,0 +1,20 @@
+{
+  "build_source_commit": "a6942a337bea7304b98bf86a5711bf2d6b939b9e",
+  "later_harness_commit": "40bb23fd888a0fdc1c98a1d7b695b9eb7a80c202",
+  "identical_server_inputs": [
+    "experiments/002/server/adaptive_tests.rs",
+    "experiments/002/server/controller.rs",
+    "experiments/002/server/histogram.rs",
+    "experiments/002/server/mod.rs",
+    "experiments/002/server/tests.rs",
+    "proto/ingest.proto",
+    "rust-toolchain.toml",
+    "server/Cargo.lock",
+    "server/Cargo.toml",
+    "server/build.rs",
+    "server/src/bin/pressure-stage1.rs",
+    "server/src/lib.rs",
+    "server/src/main.rs"
+  ],
+  "explanation": "Only fixture/audit/protocol Python and documentation changed in the second source commit; the compiled Rust and shared client bytes were reused unchanged. Each manifest preserves its own commit and per-file hashes."
+}

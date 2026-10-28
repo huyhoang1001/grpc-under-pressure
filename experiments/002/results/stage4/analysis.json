@@ -1,0 +1,3246 @@
+{
+  "scope": "Stage4 correctness and at most one exploratory adaptive run, not primary comparison",
+  "runs": [
+    {
+      "name": "adaptive-cancel-after-shrink",
+      "purpose": "integration_fixture",
+      "expected_fault": "cancellation",
+      "admitted": 160,
+      "processed": 151,
+      "discarded": 9,
+      "rpc_status": "rpc error: code = DeadlineExceeded desc = context deadline exceeded",
+      "failed_sends": 1,
+      "policy": "adaptive",
+      "controller_ticks": 3,
+      "budget_updates": 1,
+      "budget_trajectory": [
+        {
+          "scheduled_ns": "1000000000",
+          "observed_ns": "1000901957",
+          "lateness_ns": "901957",
+          "window_start_ns": "501791888",
+          "interval_completions": "45",
+          "interval_service_ns": "504142328",
+          "interval_mean_ms": "11.203162844444444",
+          "ewma_ms": "11.153697423434345",
+          "estimated_delay_ms": "178.45915877494951",
+          "Q": "16",
+          "R": "0",
+          "W": "1",
+          "B_before": "16",
+          "B_proposed": "8",
+          "B_after": "8",
+          "near_full": "1",
+          "high_before": "1",
+          "low_before": "0",
+          "high_after": "0",
+          "low_after": "0",
+          "proposal_reason": "decrease",
+          "decision_reason": "decrease",
+          "shrink_occupancy": "16",
+          "total_completions": "89",
+          "total_service_ns": "994360895"
+        }
+      ],
+      "final_budget": 8,
+      "max_tick_lateness_ms": 1.791888,
+      "controller_io_ms": 0.061703
+    },
+    {
+      "name": "adaptive-healthy",
+      "purpose": "integration_fixture",
+      "event_io": "buffered",
+      "source_commit": "a6942a337bea7304b98bf86a5711bf2d6b939b9e",
+      "valid_for_declared_purpose": true,
+      "scheduled": 128,
+      "skipped": 0,
+      "attempted": 128,
+      "successful_sends": 128,
+      "failed_sends": 0,
+      "admitted": 128,
+      "dequeued": 128,
+      "processed": 128,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.060682,
+      "worker_observed_s": 1.600666705,
+      "worker_busy_s": 1.426502258,
+      "worker_idle_s": 0.174164447,
+      "idle_backlog_ms": 5.376519,
+      "event_write_calls": 517,
+      "event_format_write_ms": 1.713527,
+      "event_write_max_us": 103.397,
+      "event_flush_calls": 13,
+      "event_flush_ms": 0.276021,
+      "event_flush_max_us": 52.761,
+      "timed_event_io_fraction": 0.0012429495745649311,
+      "service_mean_ms": 11.144548890625,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 1.600435154,
+      "rpc_s": 1.950602613,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.56640625,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.004454652,
+      "logical_admission_wait_s": 0.00030319,
+      "physical_reservation_wait_s": 7.4421e-05,
+      "server_eof_s": 1.600616558,
+      "last_completion_s": 1.599566785,
+      "server_worker_stop_s": 1.600666705,
+      "server_eof_to_worker_stop_s": 5.01470000000559e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 128,
+          "first_start_s": 0.001648523,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1256458",
+          "lateness_ns": "1256458",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793161358450151455"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "adaptive",
+      "controller_ticks": 3,
+      "budget_updates": 0,
+      "budget_trajectory": [],
+      "final_budget": 16,
+      "max_tick_lateness_ms": 1.394272,
+      "controller_io_ms": 0.061704
+    },
+    {
+      "name": "adaptive-schedule-smoke",
+      "purpose": "integration_fixture",
+      "event_io": "buffered",
+      "source_commit": "a6942a337bea7304b98bf86a5711bf2d6b939b9e",
+      "valid_for_declared_purpose": true,
+      "scheduled": 128,
+      "skipped": 0,
+      "attempted": 128,
+      "successful_sends": 128,
+      "failed_sends": 0,
+      "admitted": 128,
+      "dequeued": 128,
+      "processed": 128,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.82361,
+      "worker_observed_s": 1.600891409,
+      "worker_busy_s": 1.427529285,
+      "worker_idle_s": 0.173362124,
+      "idle_backlog_ms": 6.009425,
+      "event_write_calls": 517,
+      "event_format_write_ms": 1.71798,
+      "event_write_max_us": 78.889,
+      "event_flush_calls": 13,
+      "event_flush_ms": 0.470528,
+      "event_flush_max_us": 255.935,
+      "timed_event_io_fraction": 0.0013670558713080082,
+      "service_mean_ms": 11.1525725390625,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 1.600659325,
+      "rpc_s": 1.950539559,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.546875,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.005338874,
+      "logical_admission_wait_s": 0.000386177,
+      "physical_reservation_wait_s": 8.2349e-05,
+      "server_eof_s": 1.600840182,
+      "last_completion_s": 1.599775569,
+      "server_worker_stop_s": 1.600891409,
+      "server_eof_to_worker_stop_s": 5.122699999993152e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 128,
+          "first_start_s": 0.001732928,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1479403",
+          "lateness_ns": "1479403",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793161361079576210"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "adaptive",
+      "controller_ticks": 3,
+      "budget_updates": 0,
+      "budget_trajectory": [],
+      "final_budget": 16,
+      "max_tick_lateness_ms": 0.945037,
+      "controller_io_ms": 0.075283
+    },
+    {
+      "name": "adaptive-worker-error",
+      "purpose": "integration_fixture",
+      "expected_fault": "worker_error",
+      "admitted": 1,
+      "processed": 0,
+      "discarded": 1,
+      "rpc_status": "rpc error: code = Canceled desc = worker terminated during receive",
+      "failed_sends": 1,
+      "policy": "adaptive",
+      "controller_ticks": 0,
+      "budget_updates": 0,
+      "budget_trajectory": [],
+      "final_budget": 16,
+      "max_tick_lateness_ms": null,
+      "controller_io_ms": 0.0
+    },
+    {
+      "name": "adaptive-worker-panic",
+      "purpose": "integration_fixture",
+      "expected_fault": "worker_panic",
+      "admitted": 1,
+      "processed": 0,
+      "discarded": 1,
+      "rpc_status": "rpc error: code = Canceled desc = worker terminated during receive",
+      "failed_sends": 1,
+      "policy": "adaptive",
+      "controller_ticks": 0,
+      "budget_updates": 0,
+      "budget_trajectory": [],
+      "final_budget": 16,
+      "max_tick_lateness_ms": null,
+      "controller_io_ms": 0.0
+    },
+    {
+      "name": "exploratory-adaptive",
+      "purpose": "single_exploratory_adaptive",
+      "event_io": "buffered",
+      "source_commit": "40bb23fd888a0fdc1c98a1d7b695b9eb7a80c202",
+      "valid_for_declared_purpose": true,
+      "scheduled": 2880,
+      "skipped": 659,
+      "attempted": 2221,
+      "successful_sends": 2221,
+      "failed_sends": 0,
+      "admitted": 2221,
+      "dequeued": 2221,
+      "processed": 2221,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 16,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.155839,
+      "worker_observed_s": 36.000259811,
+      "worker_busy_s": 33.531878401,
+      "worker_idle_s": 2.46838141,
+      "idle_backlog_ms": 89.366368,
+      "event_write_calls": 8889,
+      "event_format_write_ms": 28.403557,
+      "event_write_max_us": 502.176,
+      "event_flush_calls": 185,
+      "event_flush_ms": 4.91192,
+      "event_flush_max_us": 118.909,
+      "timed_event_io_fraction": 0.0009254232379128648,
+      "service_mean_ms": 15.097648987393066,
+      "service_p95_upper_ms": 41.679231,
+      "half_close_s": 36.00006683,
+      "rpc_s": 36.350250221,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 7.1484375,
+      "send_gt20ms_calls": 265,
+      "send_gt20ms_duration_s": 9.744259078,
+      "send_wall_duration_s": 9.833188886,
+      "logical_admission_wait_s": 12.581335953,
+      "physical_reservation_wait_s": 0.001084276,
+      "server_eof_s": 36.000223271,
+      "last_completion_s": 35.99925295,
+      "server_worker_stop_s": 36.000259811,
+      "server_eof_to_worker_stop_s": 3.65399999964211e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 960,
+          "first_start_s": 0.001514777,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 291,
+          "first_start_s": 12.000325434,
+          "selected_ms": [
+            40
+          ]
+        },
+        "2": {
+          "count": 970,
+          "first_start_s": 24.012772134,
+          "selected_ms": [
+            10
+          ]
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phases": {
+        "healthy": {
+          "bounds_s": [
+            0,
+            12
+          ],
+          "actual_service_ms_by_start": {
+            "count": 960,
+            "mean": 11.156975764583333,
+            "p50": 11.167334,
+            "p95": 11.385942,
+            "p99": 11.563646,
+            "min": 10.169637999999999,
+            "max": 13.343689999999999
+          },
+          "completion_count": 960,
+          "completion_rate_s": 80.0,
+          "queue_residence_ms_by_enqueue": {
+            "count": 960,
+            "mean": 0.050169007291666665,
+            "p50": 0.035724,
+            "p95": 0.098589,
+            "p99": 0.23166899999999999,
+            "min": 0.018638,
+            "max": 2.227619
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 960,
+          "successful_sends": 960,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 80.0,
+          "send_ms": {
+            "count": 960,
+            "mean": 0.031760188541666665,
+            "p50": 0.02651,
+            "p95": 0.06289399999999999,
+            "p99": 0.12278399999999999,
+            "min": 0.011077,
+            "max": 0.440013
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 960,
+          "skipped_scheduled_slots": 0
+        },
+        "slowdown": {
+          "bounds_s": [
+            12,
+            24
+          ],
+          "actual_service_ms_by_start": {
+            "count": 291,
+            "mean": 41.23698280412371,
+            "p50": 41.130621,
+            "p95": 41.924836,
+            "p99": 42.076893,
+            "min": 40.227526999999995,
+            "max": 43.03948
+          },
+          "completion_count": 290,
+          "completion_rate_s": 24.166666666666668,
+          "queue_residence_ms_by_enqueue": {
+            "count": 294,
+            "mean": 182.09364575170065,
+            "p50": 123.961395,
+            "p95": 660.917702,
+            "p99": 663.463488,
+            "min": 0.038879,
+            "max": 663.681306
+          },
+          "Q_mean": 4.433333333333334,
+          "Q_max": 16,
+          "attempted_sends": 303,
+          "successful_sends": 303,
+          "successful_send_returns": 302,
+          "return_rate_s": 25.166666666666668,
+          "attempt_rate_s": 25.25,
+          "send_ms": {
+            "count": 303,
+            "mean": 32.27276303960396,
+            "p50": 33.679263,
+            "p95": 40.274685999999996,
+            "p99": 41.565031,
+            "min": 0.013139999999999999,
+            "max": 361.34475299999997
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 303,
+          "skipped_scheduled_slots": 657
+        },
+        "recovery": {
+          "bounds_s": [
+            24,
+            36
+          ],
+          "actual_service_ms_by_start": {
+            "count": 970,
+            "mean": 11.155896568041237,
+            "p50": 11.15657,
+            "p95": 11.451626,
+            "p99": 11.763214,
+            "min": 10.129381,
+            "max": 14.647611999999999
+          },
+          "completion_count": 971,
+          "completion_rate_s": 80.91666666666667,
+          "queue_residence_ms_by_enqueue": {
+            "count": 967,
+            "mean": 3.047243640124095,
+            "p50": 0.038838,
+            "p95": 33.081523,
+            "p99": 34.234238,
+            "min": 0.016944999999999998,
+            "max": 34.972637999999996
+          },
+          "Q_mean": 0.23333333333333334,
+          "Q_max": 3,
+          "attempted_sends": 958,
+          "successful_sends": 958,
+          "successful_send_returns": 959,
+          "return_rate_s": 79.91666666666667,
+          "attempt_rate_s": 79.83333333333333,
+          "send_ms": {
+            "count": 958,
+            "mean": 0.025106371607515658,
+            "p50": 0.021162,
+            "p95": 0.047992,
+            "p99": 0.10223399999999999,
+            "min": 0.008322999999999999,
+            "max": 0.44631299999999996
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 958,
+          "skipped_scheduled_slots": 2
+        },
+        "drain": {
+          "bounds_s": [
+            36,
+            null
+          ],
+          "actual_service_ms_by_start": {
+            "count": 0
+          },
+          "completion_count": 0,
+          "completion_rate_s": null,
+          "queue_residence_ms_by_enqueue": {
+            "count": 0
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 0,
+          "successful_sends": 0,
+          "successful_send_returns": 0,
+          "return_rate_s": null,
+          "attempt_rate_s": null,
+          "send_ms": {
+            "count": 0
+          }
+        }
+      },
+      "first_sampled_Q_zero_after24_s": 25.082754773,
+      "early_recovery_completion_rate_s": 82.75,
+      "late_recovery_completion_rate_s": 80.0,
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1089078",
+          "lateness_ns": "1089078",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793161451978780627"
+        },
+        {
+          "scheduled_ns": "12000000000",
+          "observed_ns": "12001477578",
+          "lateness_ns": "1477578",
+          "phase": "slowdown",
+          "configured_ms": "40",
+          "unix_ns": "1793161463979168016"
+        },
+        {
+          "scheduled_ns": "24000000000",
+          "observed_ns": "24001474169",
+          "lateness_ns": "1474169",
+          "phase": "recovery",
+          "configured_ms": "10",
+          "unix_ns": "1793161475979165369"
+        },
+        {
+          "scheduled_ns": "36000000000",
+          "observed_ns": "36001601815",
+          "lateness_ns": "1601815",
+          "phase": "drain",
+          "configured_ms": "10",
+          "unix_ns": "1793161487979292383"
+        }
+      ],
+      "policy": "adaptive",
+      "controller_ticks": 71,
+      "budget_updates": 4,
+      "budget_trajectory": [
+        {
+          "scheduled_ns": "13000000000",
+          "observed_ns": "13000978825",
+          "lateness_ns": "978825",
+          "window_start_ns": "12501478383",
+          "interval_completions": "12",
+          "interval_service_ns": "496843188",
+          "interval_mean_ms": "41.403599",
+          "ewma_ms": "21.97799707206629",
+          "estimated_delay_ms": "351.64795315306066",
+          "Q": "16",
+          "R": "0",
+          "W": "1",
+          "B_before": "16",
+          "B_proposed": "8",
+          "B_after": "8",
+          "near_full": "1",
+          "high_before": "1",
+          "low_before": "0",
+          "high_after": "0",
+          "low_after": "0",
+          "proposal_reason": "decrease",
+          "decision_reason": "decrease",
+          "shrink_occupancy": "16",
+          "total_completions": "984",
+          "total_service_ns": "11699898777"
+        },
+        {
+          "scheduled_ns": "14000000000",
+          "observed_ns": "14001658451",
+          "lateness_ns": "1658451",
+          "window_start_ns": "13501246422",
+          "interval_completions": "12",
+          "interval_service_ns": "494556455",
+          "interval_mean_ms": "41.213037916666664",
+          "ewma_ms": "28.935614269455762",
+          "estimated_delay_ms": "231.4849141556461",
+          "Q": "8",
+          "R": "0",
+          "W": "1",
+          "B_before": "8",
+          "B_proposed": "4",
+          "B_after": "4",
+          "near_full": "1",
+          "high_before": "1",
+          "low_before": "0",
+          "high_after": "0",
+          "low_after": "0",
+          "proposal_reason": "decrease",
+          "decision_reason": "decrease",
+          "shrink_occupancy": "8",
+          "total_completions": "1008",
+          "total_service_ns": "12691486874"
+        },
+        {
+          "scheduled_ns": "15000000000",
+          "observed_ns": "15001277221",
+          "lateness_ns": "1277221",
+          "window_start_ns": "14501598349",
+          "interval_completions": "12",
+          "interval_service_ns": "494576953",
+          "interval_mean_ms": "41.21474608333334",
+          "ewma_ms": "33.363785909118356",
+          "estimated_delay_ms": "133.45514363647342",
+          "Q": "4",
+          "R": "0",
+          "W": "1",
+          "B_before": "4",
+          "B_proposed": "2",
+          "B_after": "2",
+          "near_full": "1",
+          "high_before": "1",
+          "low_before": "0",
+          "high_after": "0",
+          "low_after": "0",
+          "proposal_reason": "decrease",
+          "decision_reason": "decrease",
+          "shrink_occupancy": "4",
+          "total_completions": "1032",
+          "total_service_ns": "13681217094"
+        },
+        {
+          "scheduled_ns": "16000000000",
+          "observed_ns": "16001432027",
+          "lateness_ns": "1432027",
+          "window_start_ns": "15501686261",
+          "interval_completions": "12",
+          "interval_service_ns": "492868380",
+          "interval_mean_ms": "41.072365",
+          "ewma_ms": "36.16028490183575",
+          "estimated_delay_ms": "72.3205698036715",
+          "Q": "2",
+          "R": "0",
+          "W": "1",
+          "B_before": "2",
+          "B_proposed": "3",
+          "B_after": "3",
+          "near_full": "1",
+          "high_before": "0",
+          "low_before": "1",
+          "high_after": "0",
+          "low_after": "0",
+          "proposal_reason": "increase",
+          "decision_reason": "increase",
+          "shrink_occupancy": "4",
+          "total_completions": "1056",
+          "total_service_ns": "14668559643"
+        }
+      ],
+      "final_budget": 3,
+      "max_tick_lateness_ms": 2.814412,
+      "controller_io_ms": 2.179632,
+      "pooled_residence_12_36": {
+        "count": 1261,
+        "p50_ms": 0.045489,
+        "p95_ms": 164.732119,
+        "p99_ms": 661.060091
+      },
+      "recovery_window_screen": {
+        "method": "exploratory 200ms-grid 3s enqueue-cohort window; not proof of continuous instantaneous recovery or primary H4",
+        "healthy_p95_ms": 0.098589,
+        "healthy_completion_rate_s": 80.0,
+        "first_passing_window": {
+          "start_s": 25.2,
+          "confirmation_end_s": 28.2,
+          "cohort_messages": 240,
+          "queue_p95_ms": 0.075544,
+          "completions_per_s": 79.66666666666667,
+          "passes_window_screen": true
+        },
+        "status": "window observed",
+        "windows": [
+          {
+            "start_s": 24.0,
+            "confirmation_end_s": 27.0,
+            "cohort_messages": 247,
+            "queue_p95_ms": 34.161148,
+            "completions_per_s": 83.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.2,
+            "confirmation_end_s": 27.2,
+            "cohort_messages": 246,
+            "queue_p95_ms": 33.883441,
+            "completions_per_s": 83.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.4,
+            "confirmation_end_s": 27.4,
+            "cohort_messages": 244,
+            "queue_p95_ms": 33.666483,
+            "completions_per_s": 82.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.6,
+            "confirmation_end_s": 27.6,
+            "cohort_messages": 242,
+            "queue_p95_ms": 33.128425,
+            "completions_per_s": 82.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.8,
+            "confirmation_end_s": 27.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 20.470313,
+            "completions_per_s": 81.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.0,
+            "confirmation_end_s": 28.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.117768,
+            "completions_per_s": 80.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.2,
+            "confirmation_end_s": 28.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.075544,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 25.4,
+            "confirmation_end_s": 28.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.098919,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.6,
+            "confirmation_end_s": 28.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.098919,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.8,
+            "confirmation_end_s": 28.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.080352,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 26.0,
+            "confirmation_end_s": 29.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.080352,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 26.2,
+            "confirmation_end_s": 29.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.089535,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 26.4,
+            "confirmation_end_s": 29.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.104538,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.6,
+            "confirmation_end_s": 29.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.110677,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.8,
+            "confirmation_end_s": 29.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.104538,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.0,
+            "confirmation_end_s": 30.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.104538,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.2,
+            "confirmation_end_s": 30.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.104538,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.4,
+            "confirmation_end_s": 30.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.111218,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.6,
+            "confirmation_end_s": 30.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.097727,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 27.8,
+            "confirmation_end_s": 30.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.111218,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 28.0,
+            "confirmation_end_s": 31.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.111218,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 28.2,
+            "confirmation_end_s": 31.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.122584,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 28.4,
+            "confirmation_end_s": 31.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088433,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.6,
+            "confirmation_end_s": 31.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.094953,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.8,
+            "confirmation_end_s": 31.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.095213,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.0,
+            "confirmation_end_s": 32.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.095213,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.2,
+            "confirmation_end_s": 32.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.097727,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.4,
+            "confirmation_end_s": 32.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.097436,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.6,
+            "confirmation_end_s": 32.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.094953,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.8,
+            "confirmation_end_s": 32.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.091808,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.0,
+            "confirmation_end_s": 33.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.091808,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.2,
+            "confirmation_end_s": 33.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.091808,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.4,
+            "confirmation_end_s": 33.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.091087,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.6,
+            "confirmation_end_s": 33.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088433,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.8,
+            "confirmation_end_s": 33.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088433,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.0,
+            "confirmation_end_s": 34.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.2,
+            "confirmation_end_s": 34.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.4,
+            "confirmation_end_s": 34.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.6,
+            "confirmation_end_s": 34.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.084397,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.8,
+            "confirmation_end_s": 34.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.081152,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.0,
+            "confirmation_end_s": 35.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.084397,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.2,
+            "confirmation_end_s": 35.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.081152,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.4,
+            "confirmation_end_s": 35.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.075473,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.6,
+            "confirmation_end_s": 35.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.075473,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.8,
+            "confirmation_end_s": 35.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 33.0,
+            "confirmation_end_s": 36.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          }
+        ]
+      },
+      "budget_direction_reversals": 1
+    },
+    {
+      "name": "fixed32-regression",
+      "purpose": "integration_fixture",
+      "event_io": "buffered",
+      "source_commit": "a6942a337bea7304b98bf86a5711bf2d6b939b9e",
+      "valid_for_declared_purpose": true,
+      "scheduled": 128,
+      "skipped": 0,
+      "attempted": 128,
+      "successful_sends": 128,
+      "failed_sends": 0,
+      "admitted": 128,
+      "dequeued": 128,
+      "processed": 128,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.046099,
+      "worker_observed_s": 1.601253363,
+      "worker_busy_s": 1.438638316,
+      "worker_idle_s": 0.162615047,
+      "idle_backlog_ms": 7.019468,
+      "event_write_calls": 517,
+      "event_format_write_ms": 2.294222,
+      "event_write_max_us": 221.433,
+      "event_flush_calls": 13,
+      "event_flush_ms": 0.231157,
+      "event_flush_max_us": 31.027,
+      "timed_event_io_fraction": 0.0015771264300539051,
+      "service_mean_ms": 11.23936184375,
+      "service_p95_upper_ms": 11.735675,
+      "half_close_s": 1.60098378,
+      "rpc_s": 1.950425398,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.55078125,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.006049389,
+      "logical_admission_wait_s": 0.000357919,
+      "physical_reservation_wait_s": 5.8617e-05,
+      "server_eof_s": 1.601212888,
+      "last_completion_s": 1.600523062,
+      "server_worker_stop_s": 1.601253363,
+      "server_eof_to_worker_stop_s": 4.0475000000039785e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 128,
+          "first_start_s": 0.001593471,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1116644",
+          "lateness_ns": "1116644",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793161353154068870"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed32",
+      "controller_ticks": 3,
+      "budget_updates": 0,
+      "budget_trajectory": [],
+      "final_budget": 32,
+      "max_tick_lateness_ms": 0.785005,
+      "controller_io_ms": 0.089656
+    },
+    {
+      "name": "fixed8-regression",
+      "purpose": "integration_fixture",
+      "event_io": "buffered",
+      "source_commit": "a6942a337bea7304b98bf86a5711bf2d6b939b9e",
+      "valid_for_declared_purpose": true,
+      "scheduled": 128,
+      "skipped": 0,
+      "attempted": 128,
+      "successful_sends": 128,
+      "failed_sends": 0,
+      "admitted": 128,
+      "dequeued": 128,
+      "processed": 128,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.314849,
+      "worker_observed_s": 1.600828187,
+      "worker_busy_s": 1.428423965,
+      "worker_idle_s": 0.172404222,
+      "idle_backlog_ms": 6.32191,
+      "event_write_calls": 517,
+      "event_format_write_ms": 1.679916,
+      "event_write_max_us": 58.97,
+      "event_flush_calls": 13,
+      "event_flush_ms": 0.2406,
+      "event_flush_max_us": 33.22,
+      "timed_event_io_fraction": 0.0011997015142512606,
+      "service_mean_ms": 11.1595622265625,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 1.600143544,
+      "rpc_s": 1.947900439,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.5390625,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.004519477,
+      "logical_admission_wait_s": 0.000551611,
+      "physical_reservation_wait_s": 0.000113512,
+      "server_eof_s": 1.600755472,
+      "last_completion_s": 1.599335517,
+      "server_worker_stop_s": 1.600828187,
+      "server_eof_to_worker_stop_s": 7.27150000001675e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 128,
+          "first_start_s": 0.001308108,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "583889",
+          "lateness_ns": "583889",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793161355804372862"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed8",
+      "controller_ticks": 3,
+      "budget_updates": 0,
+      "budget_trajectory": [],
+      "final_budget": 8,
+      "max_tick_lateness_ms": 1.005582,
+      "controller_io_ms": 0.077127
+    }
+  ],
+  "retained_invalid_attempts": [
+    {
+      "name": "adaptive-cancel",
+      "issues": [
+        "cancel fixture did not exercise live shrink"
+      ],
+      "reason": "1200ms RPC deadline includes setup/barrier; only one tick before cancellation. Accounting checks passed, but live shrink coverage absent. Retained invalid; replaced for coverage by separately named 2s cancellation fixture, not an exploratory benchmark retry.",
+      "excluded_from_acceptance": true
+    }
+  ],
+  "comparison": {
+    "fixed32": {
+      "name": "exploratory-1",
+      "purpose": "single_exploratory_slowdown_recovery",
+      "event_io": "buffered",
+      "source_commit": "84509545abf6a5f139687250757e67703477a5c1",
+      "valid_for_declared_purpose": true,
+      "scheduled": 2880,
+      "skipped": 629,
+      "attempted": 2251,
+      "successful_sends": 2251,
+      "failed_sends": 0,
+      "admitted": 2251,
+      "dequeued": 2251,
+      "processed": 2251,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 32,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.494664,
+      "worker_observed_s": 36.001000234,
+      "worker_busy_s": 33.849077816,
+      "worker_idle_s": 2.151922418,
+      "idle_backlog_ms": 74.417919,
+      "event_write_calls": 9007,
+      "event_format_write_ms": 28.063037,
+      "event_write_max_us": 450.958,
+      "event_flush_calls": 185,
+      "event_flush_ms": 4.869654,
+      "event_flush_max_us": 228.013,
+      "timed_event_io_fraction": 0.0009147715559552084,
+      "service_mean_ms": 15.037351317636606,
+      "service_p95_upper_ms": 41.679231,
+      "half_close_s": 36.00086411,
+      "rpc_s": 36.348827545,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 7.66796875,
+      "send_gt20ms_calls": 273,
+      "send_gt20ms_duration_s": 9.391721875,
+      "send_wall_duration_s": 9.472874581,
+      "logical_admission_wait_s": 12.344393117,
+      "physical_reservation_wait_s": 0.001573518,
+      "server_eof_s": 36.000989428,
+      "last_completion_s": 35.999757904,
+      "server_worker_stop_s": 36.001000234,
+      "server_eof_to_worker_stop_s": 1.080600000591403e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 960,
+          "first_start_s": 0.001777936,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 291,
+          "first_start_s": 12.001447611,
+          "selected_ms": [
+            40
+          ]
+        },
+        "2": {
+          "count": 1000,
+          "first_start_s": 24.005988864,
+          "selected_ms": [
+            10
+          ]
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phases": {
+        "healthy": {
+          "bounds_s": [
+            0,
+            12
+          ],
+          "actual_service_ms_by_start": {
+            "count": 960,
+            "mean": 11.152994466666666,
+            "p50": 11.154494,
+            "p95": 11.389833,
+            "p99": 11.534131,
+            "min": 10.118039999999999,
+            "max": 13.023577
+          },
+          "completion_count": 959,
+          "completion_rate_s": 79.91666666666667,
+          "queue_residence_ms_by_enqueue": {
+            "count": 960,
+            "mean": 0.045738106249999994,
+            "p50": 0.034762,
+            "p95": 0.079289,
+            "p99": 0.249586,
+            "min": 0.016635,
+            "max": 3.1401049999999997
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 960,
+          "successful_sends": 960,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 80.0,
+          "send_ms": {
+            "count": 960,
+            "mean": 0.03222485520833333,
+            "p50": 0.02036,
+            "p95": 0.051788,
+            "p99": 0.12639,
+            "min": 0.009163,
+            "max": 5.1878459999999995
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 960,
+          "skipped_scheduled_slots": 0
+        },
+        "slowdown": {
+          "bounds_s": [
+            12,
+            24
+          ],
+          "actual_service_ms_by_start": {
+            "count": 291,
+            "mean": 41.225142498281784,
+            "p50": 41.086757,
+            "p95": 41.934557,
+            "p99": 42.054994,
+            "min": 40.393969999999996,
+            "max": 44.242657
+          },
+          "completion_count": 291,
+          "completion_rate_s": 24.25,
+          "queue_residence_ms_by_enqueue": {
+            "count": 323,
+            "mean": 1177.9257852817336,
+            "p50": 1319.222078,
+            "p95": 1323.315282,
+            "p99": 1324.265342,
+            "min": 0.024385999999999998,
+            "max": 1325.2853029999999
+          },
+          "Q_mean": 31.183333333333334,
+          "Q_max": 32,
+          "attempted_sends": 332,
+          "successful_sends": 332,
+          "successful_send_returns": 331,
+          "return_rate_s": 27.583333333333332,
+          "attempt_rate_s": 27.666666666666668,
+          "send_ms": {
+            "count": 332,
+            "mean": 28.338650759036145,
+            "p50": 32.930558999999995,
+            "p95": 39.6727,
+            "p99": 40.776104,
+            "min": 0.010466,
+            "max": 41.624862
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 332,
+          "skipped_scheduled_slots": 628
+        },
+        "recovery": {
+          "bounds_s": [
+            24,
+            36
+          ],
+          "actual_service_ms_by_start": {
+            "count": 1000,
+            "mean": 11.145686661,
+            "p50": 11.170387999999999,
+            "p95": 11.487515,
+            "p99": 11.706069,
+            "min": 10.134443,
+            "max": 12.218485
+          },
+          "completion_count": 1001,
+          "completion_rate_s": 83.41666666666667,
+          "queue_residence_ms_by_enqueue": {
+            "count": 968,
+            "mean": 77.7939784070248,
+            "p50": 0.045979,
+            "p95": 356.174482,
+            "p99": 358.608864,
+            "min": 0.017405999999999998,
+            "max": 359.597443
+          },
+          "Q_mean": 6.816666666666666,
+          "Q_max": 32,
+          "attempted_sends": 959,
+          "successful_sends": 959,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 79.91666666666667,
+          "send_ms": {
+            "count": 959,
+            "mean": 0.034939174139728885,
+            "p50": 0.021612,
+            "p95": 0.056495,
+            "p99": 0.12563,
+            "min": 0.009614,
+            "max": 4.231446
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 959,
+          "skipped_scheduled_slots": 1
+        },
+        "drain": {
+          "bounds_s": [
+            36,
+            null
+          ],
+          "actual_service_ms_by_start": {
+            "count": 0
+          },
+          "completion_count": 0,
+          "completion_rate_s": null,
+          "queue_residence_ms_by_enqueue": {
+            "count": 0
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 0,
+          "successful_sends": 0,
+          "successful_send_returns": 0,
+          "return_rate_s": null,
+          "attempt_rate_s": null,
+          "send_ms": {
+            "count": 0
+          }
+        }
+      },
+      "first_sampled_Q_zero_after24_s": 28.282441347,
+      "early_recovery_completion_rate_s": 89.75,
+      "late_recovery_completion_rate_s": 80.25,
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "609798",
+          "lateness_ns": "609798",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793156852171423843"
+        },
+        {
+          "scheduled_ns": "12000000000",
+          "observed_ns": "12001124826",
+          "lateness_ns": "1124826",
+          "phase": "slowdown",
+          "configured_ms": "40",
+          "unix_ns": "1793156864171939332"
+        },
+        {
+          "scheduled_ns": "24000000000",
+          "observed_ns": "24000682891",
+          "lateness_ns": "682891",
+          "phase": "recovery",
+          "configured_ms": "10",
+          "unix_ns": "1793156876171498068"
+        },
+        {
+          "scheduled_ns": "36000000000",
+          "observed_ns": "36000867194",
+          "lateness_ns": "867194",
+          "phase": "drain",
+          "configured_ms": "10",
+          "unix_ns": "1793156888171681329"
+        }
+      ],
+      "pooled_residence_12_36": {
+        "count": 1291,
+        "p50_ms": 24.591454,
+        "p95_ms": 1321.889556,
+        "p99_ms": 1323.48684
+      },
+      "recovery_window_screen": {
+        "method": "exploratory 200ms-grid 3s enqueue-cohort window; not proof of continuous instantaneous recovery or primary H4",
+        "healthy_p95_ms": 0.079289,
+        "healthy_completion_rate_s": 79.91666666666667,
+        "first_passing_window": {
+          "start_s": 28.2,
+          "confirmation_end_s": 31.2,
+          "cohort_messages": 240,
+          "queue_p95_ms": 0.073411,
+          "completions_per_s": 80.0,
+          "passes_window_screen": true
+        },
+        "status": "window observed",
+        "windows": [
+          {
+            "start_s": 24.0,
+            "confirmation_end_s": 27.0,
+            "cohort_messages": 248,
+            "queue_p95_ms": 358.532938,
+            "completions_per_s": 89.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.2,
+            "confirmation_end_s": 27.2,
+            "cohort_messages": 246,
+            "queue_p95_ms": 358.046337,
+            "completions_per_s": 89.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.4,
+            "confirmation_end_s": 27.4,
+            "cohort_messages": 244,
+            "queue_p95_ms": 358.046337,
+            "completions_per_s": 89.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.6,
+            "confirmation_end_s": 27.6,
+            "cohort_messages": 242,
+            "queue_p95_ms": 358.046337,
+            "completions_per_s": 89.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.8,
+            "confirmation_end_s": 27.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 347.454951,
+            "completions_per_s": 89.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.0,
+            "confirmation_end_s": 28.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 325.526089,
+            "completions_per_s": 89.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.2,
+            "confirmation_end_s": 28.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 304.824507,
+            "completions_per_s": 89.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.4,
+            "confirmation_end_s": 28.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 283.526616,
+            "completions_per_s": 89.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.6,
+            "confirmation_end_s": 28.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 260.707744,
+            "completions_per_s": 88.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.8,
+            "confirmation_end_s": 28.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 240.075558,
+            "completions_per_s": 88.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.0,
+            "confirmation_end_s": 29.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 221.03306,
+            "completions_per_s": 87.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.2,
+            "confirmation_end_s": 29.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 200.425046,
+            "completions_per_s": 86.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.4,
+            "confirmation_end_s": 29.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 177.953892,
+            "completions_per_s": 85.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.6,
+            "confirmation_end_s": 29.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 155.500977,
+            "completions_per_s": 85.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.8,
+            "confirmation_end_s": 29.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 135.321038,
+            "completions_per_s": 84.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.0,
+            "confirmation_end_s": 30.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 112.057883,
+            "completions_per_s": 84.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.2,
+            "confirmation_end_s": 30.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 90.577515,
+            "completions_per_s": 83.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.4,
+            "confirmation_end_s": 30.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 68.107759,
+            "completions_per_s": 82.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.6,
+            "confirmation_end_s": 30.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 46.036722,
+            "completions_per_s": 82.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.8,
+            "confirmation_end_s": 30.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 22.65545,
+            "completions_per_s": 81.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 28.0,
+            "confirmation_end_s": 31.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 2.170646,
+            "completions_per_s": 80.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 28.2,
+            "confirmation_end_s": 31.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.073411,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.4,
+            "confirmation_end_s": 31.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.073941,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.6,
+            "confirmation_end_s": 31.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.073501,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.8,
+            "confirmation_end_s": 31.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.073941,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.0,
+            "confirmation_end_s": 32.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.074502,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.2,
+            "confirmation_end_s": 32.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.081813,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 29.4,
+            "confirmation_end_s": 32.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.090416,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 29.6,
+            "confirmation_end_s": 32.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.090416,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 29.8,
+            "confirmation_end_s": 32.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.124077,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 30.0,
+            "confirmation_end_s": 33.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.126881,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 30.2,
+            "confirmation_end_s": 33.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.127562,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 30.4,
+            "confirmation_end_s": 33.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.130496,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 30.6,
+            "confirmation_end_s": 33.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.130496,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 30.8,
+            "confirmation_end_s": 33.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.130496,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 31.0,
+            "confirmation_end_s": 34.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.130496,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 31.2,
+            "confirmation_end_s": 34.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.130496,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 31.4,
+            "confirmation_end_s": 34.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.130496,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 31.6,
+            "confirmation_end_s": 34.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.130496,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 31.8,
+            "confirmation_end_s": 34.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.128703,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.0,
+            "confirmation_end_s": 35.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.128703,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.2,
+            "confirmation_end_s": 35.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.121453,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.4,
+            "confirmation_end_s": 35.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.109034,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.6,
+            "confirmation_end_s": 35.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.109034,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.8,
+            "confirmation_end_s": 35.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.083946,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 33.0,
+            "confirmation_end_s": 36.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.082454,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          }
+        ]
+      }
+    },
+    "fixed8": {
+      "name": "exploratory-fixed8",
+      "purpose": "single_exploratory_fixed8",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 2880,
+      "skipped": 654,
+      "attempted": 2226,
+      "successful_sends": 2226,
+      "failed_sends": 0,
+      "admitted": 2226,
+      "dequeued": 2226,
+      "processed": 2226,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 8,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.776858,
+      "worker_observed_s": 36.001088216,
+      "worker_busy_s": 33.567479374,
+      "worker_idle_s": 2.433608842,
+      "idle_backlog_ms": 82.705538,
+      "event_write_calls": 8907,
+      "event_format_write_ms": 29.111701,
+      "event_write_max_us": 231.087,
+      "event_flush_calls": 185,
+      "event_flush_ms": 5.164584,
+      "event_flush_max_us": 322.646,
+      "timed_event_io_fraction": 0.0009520902477821922,
+      "service_mean_ms": 15.079730176999101,
+      "service_p95_upper_ms": 41.679231,
+      "half_close_s": 36.000725846,
+      "rpc_s": 36.350320736,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.87890625,
+      "send_gt20ms_calls": 285,
+      "send_gt20ms_duration_s": 9.811915732,
+      "send_wall_duration_s": 9.882117161,
+      "logical_admission_wait_s": 12.797471975,
+      "physical_reservation_wait_s": 0.001166907,
+      "server_eof_s": 36.000991049,
+      "last_completion_s": 36.000090835,
+      "server_worker_stop_s": 36.001088216,
+      "server_eof_to_worker_stop_s": 9.716699999984257e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 960,
+          "first_start_s": 0.001971526,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 292,
+          "first_start_s": 12.000956037,
+          "selected_ms": [
+            40
+          ]
+        },
+        "2": {
+          "count": 974,
+          "first_start_s": 24.031939566,
+          "selected_ms": [
+            10
+          ]
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phases": {
+        "healthy": {
+          "bounds_s": [
+            0,
+            12
+          ],
+          "actual_service_ms_by_start": {
+            "count": 960,
+            "mean": 11.142314099999998,
+            "p50": 11.148109,
+            "p95": 11.375995999999999,
+            "p99": 11.523798,
+            "min": 10.125485999999999,
+            "max": 12.203700999999999
+          },
+          "completion_count": 960,
+          "completion_rate_s": 80.0,
+          "queue_residence_ms_by_enqueue": {
+            "count": 960,
+            "mean": 0.05623191145833333,
+            "p50": 0.034942,
+            "p95": 0.08895399999999999,
+            "p99": 0.253221,
+            "min": 0.014792999999999999,
+            "max": 5.246529
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 960,
+          "successful_sends": 960,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 80.0,
+          "send_ms": {
+            "count": 960,
+            "mean": 0.029164503124999998,
+            "p50": 0.022813999999999997,
+            "p95": 0.06697,
+            "p99": 0.136255,
+            "min": 0.009344,
+            "max": 0.566311
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 960,
+          "skipped_scheduled_slots": 0
+        },
+        "slowdown": {
+          "bounds_s": [
+            12,
+            24
+          ],
+          "actual_service_ms_by_start": {
+            "count": 292,
+            "mean": 41.17037276027397,
+            "p50": 41.038197,
+            "p95": 41.89398,
+            "p99": 42.01513,
+            "min": 40.32016,
+            "max": 42.171986
+          },
+          "completion_count": 291,
+          "completion_rate_s": 24.25,
+          "queue_residence_ms_by_enqueue": {
+            "count": 300,
+            "mean": 319.8209748566667,
+            "p50": 329.33655899999997,
+            "p95": 331.17789799999997,
+            "p99": 332.305809,
+            "min": 0.019258,
+            "max": 332.680956
+          },
+          "Q_mean": 7.916666666666667,
+          "Q_max": 8,
+          "attempted_sends": 308,
+          "successful_sends": 308,
+          "successful_send_returns": 308,
+          "return_rate_s": 25.666666666666668,
+          "attempt_rate_s": 25.666666666666668,
+          "send_ms": {
+            "count": 308,
+            "mean": 31.762020227272725,
+            "p50": 33.924045,
+            "p95": 39.974616,
+            "p99": 40.758229,
+            "min": 0.012539,
+            "max": 41.877856
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 308,
+          "skipped_scheduled_slots": 652
+        },
+        "recovery": {
+          "bounds_s": [
+            24,
+            36
+          ],
+          "actual_service_ms_by_start": {
+            "count": 974,
+            "mean": 11.138715597535933,
+            "p50": 11.176389,
+            "p95": 11.487528,
+            "p99": 11.703973999999999,
+            "min": 10.111112,
+            "max": 12.723688
+          },
+          "completion_count": 974,
+          "completion_rate_s": 81.16666666666667,
+          "queue_residence_ms_by_enqueue": {
+            "count": 966,
+            "mean": 10.452648988612836,
+            "p50": 0.040852,
+            "p95": 88.852453,
+            "p99": 90.12861199999999,
+            "min": 0.016715,
+            "max": 90.872591
+          },
+          "Q_mean": 0.8666666666666667,
+          "Q_max": 8,
+          "attempted_sends": 958,
+          "successful_sends": 958,
+          "successful_send_returns": 958,
+          "return_rate_s": 79.83333333333333,
+          "attempt_rate_s": 79.83333333333333,
+          "send_ms": {
+            "count": 958,
+            "mean": 0.07454802505219206,
+            "p50": 0.027590999999999997,
+            "p95": 0.059588999999999996,
+            "p99": 0.195013,
+            "min": 0.009845,
+            "max": 31.176551999999997
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 958,
+          "skipped_scheduled_slots": 2
+        },
+        "drain": {
+          "bounds_s": [
+            36,
+            null
+          ],
+          "actual_service_ms_by_start": {
+            "count": 0
+          },
+          "completion_count": 1,
+          "completion_rate_s": null,
+          "queue_residence_ms_by_enqueue": {
+            "count": 0
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 0,
+          "successful_sends": 0,
+          "successful_send_returns": 0,
+          "return_rate_s": null,
+          "attempt_rate_s": null,
+          "send_ms": {
+            "count": 0
+          }
+        }
+      },
+      "first_sampled_Q_zero_after24_s": 25.683528275,
+      "early_recovery_completion_rate_s": 83.75,
+      "late_recovery_completion_rate_s": 79.75,
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1592366",
+          "lateness_ns": "1592366",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793159870010609573"
+        },
+        {
+          "scheduled_ns": "12000000000",
+          "observed_ns": "12000980504",
+          "lateness_ns": "980504",
+          "phase": "slowdown",
+          "configured_ms": "40",
+          "unix_ns": "1793159882009996710"
+        },
+        {
+          "scheduled_ns": "24000000000",
+          "observed_ns": "24001750419",
+          "lateness_ns": "1750419",
+          "phase": "recovery",
+          "configured_ms": "10",
+          "unix_ns": "1793159894010767506"
+        },
+        {
+          "scheduled_ns": "36000000000",
+          "observed_ns": "36001318022",
+          "lateness_ns": "1318022",
+          "phase": "drain",
+          "configured_ms": "10",
+          "unix_ns": "1793159906010334658"
+        }
+      ],
+      "pooled_residence_12_36": {
+        "count": 1266,
+        "p50_ms": 0.04625,
+        "p95_ms": 330.105718,
+        "p99_ms": 331.271228
+      },
+      "recovery_window_screen": {
+        "method": "exploratory 200ms-grid 3s enqueue-cohort window; not proof of continuous instantaneous recovery or primary H4",
+        "healthy_p95_ms": 0.088954,
+        "healthy_completion_rate_s": 80.0,
+        "first_passing_window": {
+          "start_s": 25.8,
+          "confirmation_end_s": 28.8,
+          "cohort_messages": 240,
+          "queue_p95_ms": 0.08599,
+          "completions_per_s": 80.0,
+          "passes_window_screen": true
+        },
+        "status": "window observed",
+        "windows": [
+          {
+            "start_s": 24.0,
+            "confirmation_end_s": 27.0,
+            "cohort_messages": 246,
+            "queue_p95_ms": 90.029342,
+            "completions_per_s": 85.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.2,
+            "confirmation_end_s": 27.2,
+            "cohort_messages": 246,
+            "queue_p95_ms": 89.928791,
+            "completions_per_s": 85.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.4,
+            "confirmation_end_s": 27.4,
+            "cohort_messages": 244,
+            "queue_p95_ms": 89.541128,
+            "completions_per_s": 84.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.6,
+            "confirmation_end_s": 27.6,
+            "cohort_messages": 243,
+            "queue_p95_ms": 88.693664,
+            "completions_per_s": 84.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.8,
+            "confirmation_end_s": 27.8,
+            "cohort_messages": 241,
+            "queue_p95_ms": 85.793296,
+            "completions_per_s": 83.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.0,
+            "confirmation_end_s": 28.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 64.796861,
+            "completions_per_s": 82.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.2,
+            "confirmation_end_s": 28.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 42.468768,
+            "completions_per_s": 81.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.4,
+            "confirmation_end_s": 28.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 19.647407,
+            "completions_per_s": 81.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.6,
+            "confirmation_end_s": 28.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 1.126174,
+            "completions_per_s": 80.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.8,
+            "confirmation_end_s": 28.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.08599,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 26.0,
+            "confirmation_end_s": 29.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.089425,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.2,
+            "confirmation_end_s": 29.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.089425,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.4,
+            "confirmation_end_s": 29.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.089425,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.6,
+            "confirmation_end_s": 29.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.08599,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 26.8,
+            "confirmation_end_s": 29.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.08599,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 27.0,
+            "confirmation_end_s": 30.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.082334,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 27.2,
+            "confirmation_end_s": 30.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.068263,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 27.4,
+            "confirmation_end_s": 30.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.078939,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 27.6,
+            "confirmation_end_s": 30.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.078939,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 27.8,
+            "confirmation_end_s": 30.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.083225,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.0,
+            "confirmation_end_s": 31.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.083225,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.2,
+            "confirmation_end_s": 31.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.083225,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.4,
+            "confirmation_end_s": 31.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.083225,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.6,
+            "confirmation_end_s": 31.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.073731,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.8,
+            "confirmation_end_s": 31.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.070506,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.0,
+            "confirmation_end_s": 32.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.070506,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.2,
+            "confirmation_end_s": 32.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.070506,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.4,
+            "confirmation_end_s": 32.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.073731,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.6,
+            "confirmation_end_s": 32.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.083225,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.8,
+            "confirmation_end_s": 32.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.083225,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.0,
+            "confirmation_end_s": 33.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.094832,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 30.2,
+            "confirmation_end_s": 33.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.096094,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 30.4,
+            "confirmation_end_s": 33.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088403,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.6,
+            "confirmation_end_s": 33.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088403,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.8,
+            "confirmation_end_s": 33.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088403,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.0,
+            "confirmation_end_s": 34.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.089074,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 31.2,
+            "confirmation_end_s": 34.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.090907,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 31.4,
+            "confirmation_end_s": 34.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.096094,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 31.6,
+            "confirmation_end_s": 34.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.096094,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 31.8,
+            "confirmation_end_s": 34.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.096094,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.0,
+            "confirmation_end_s": 35.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.104377,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.2,
+            "confirmation_end_s": 35.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.096094,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.4,
+            "confirmation_end_s": 35.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.090907,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.6,
+            "confirmation_end_s": 35.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.089074,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 32.8,
+            "confirmation_end_s": 35.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.089074,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 33.0,
+            "confirmation_end_s": 36.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.090907,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": false
+          }
+        ]
+      }
+    },
+    "adaptive": {
+      "name": "exploratory-adaptive",
+      "purpose": "single_exploratory_adaptive",
+      "event_io": "buffered",
+      "source_commit": "40bb23fd888a0fdc1c98a1d7b695b9eb7a80c202",
+      "valid_for_declared_purpose": true,
+      "scheduled": 2880,
+      "skipped": 659,
+      "attempted": 2221,
+      "successful_sends": 2221,
+      "failed_sends": 0,
+      "admitted": 2221,
+      "dequeued": 2221,
+      "processed": 2221,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 16,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.155839,
+      "worker_observed_s": 36.000259811,
+      "worker_busy_s": 33.531878401,
+      "worker_idle_s": 2.46838141,
+      "idle_backlog_ms": 89.366368,
+      "event_write_calls": 8889,
+      "event_format_write_ms": 28.403557,
+      "event_write_max_us": 502.176,
+      "event_flush_calls": 185,
+      "event_flush_ms": 4.91192,
+      "event_flush_max_us": 118.909,
+      "timed_event_io_fraction": 0.0009254232379128648,
+      "service_mean_ms": 15.097648987393066,
+      "service_p95_upper_ms": 41.679231,
+      "half_close_s": 36.00006683,
+      "rpc_s": 36.350250221,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 7.1484375,
+      "send_gt20ms_calls": 265,
+      "send_gt20ms_duration_s": 9.744259078,
+      "send_wall_duration_s": 9.833188886,
+      "logical_admission_wait_s": 12.581335953,
+      "physical_reservation_wait_s": 0.001084276,
+      "server_eof_s": 36.000223271,
+      "last_completion_s": 35.99925295,
+      "server_worker_stop_s": 36.000259811,
+      "server_eof_to_worker_stop_s": 3.65399999964211e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 960,
+          "first_start_s": 0.001514777,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 291,
+          "first_start_s": 12.000325434,
+          "selected_ms": [
+            40
+          ]
+        },
+        "2": {
+          "count": 970,
+          "first_start_s": 24.012772134,
+          "selected_ms": [
+            10
+          ]
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phases": {
+        "healthy": {
+          "bounds_s": [
+            0,
+            12
+          ],
+          "actual_service_ms_by_start": {
+            "count": 960,
+            "mean": 11.156975764583333,
+            "p50": 11.167334,
+            "p95": 11.385942,
+            "p99": 11.563646,
+            "min": 10.169637999999999,
+            "max": 13.343689999999999
+          },
+          "completion_count": 960,
+          "completion_rate_s": 80.0,
+          "queue_residence_ms_by_enqueue": {
+            "count": 960,
+            "mean": 0.050169007291666665,
+            "p50": 0.035724,
+            "p95": 0.098589,
+            "p99": 0.23166899999999999,
+            "min": 0.018638,
+            "max": 2.227619
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 960,
+          "successful_sends": 960,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 80.0,
+          "send_ms": {
+            "count": 960,
+            "mean": 0.031760188541666665,
+            "p50": 0.02651,
+            "p95": 0.06289399999999999,
+            "p99": 0.12278399999999999,
+            "min": 0.011077,
+            "max": 0.440013
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 960,
+          "skipped_scheduled_slots": 0
+        },
+        "slowdown": {
+          "bounds_s": [
+            12,
+            24
+          ],
+          "actual_service_ms_by_start": {
+            "count": 291,
+            "mean": 41.23698280412371,
+            "p50": 41.130621,
+            "p95": 41.924836,
+            "p99": 42.076893,
+            "min": 40.227526999999995,
+            "max": 43.03948
+          },
+          "completion_count": 290,
+          "completion_rate_s": 24.166666666666668,
+          "queue_residence_ms_by_enqueue": {
+            "count": 294,
+            "mean": 182.09364575170065,
+            "p50": 123.961395,
+            "p95": 660.917702,
+            "p99": 663.463488,
+            "min": 0.038879,
+            "max": 663.681306
+          },
+          "Q_mean": 4.433333333333334,
+          "Q_max": 16,
+          "attempted_sends": 303,
+          "successful_sends": 303,
+          "successful_send_returns": 302,
+          "return_rate_s": 25.166666666666668,
+          "attempt_rate_s": 25.25,
+          "send_ms": {
+            "count": 303,
+            "mean": 32.27276303960396,
+            "p50": 33.679263,
+            "p95": 40.274685999999996,
+            "p99": 41.565031,
+            "min": 0.013139999999999999,
+            "max": 361.34475299999997
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 303,
+          "skipped_scheduled_slots": 657
+        },
+        "recovery": {
+          "bounds_s": [
+            24,
+            36
+          ],
+          "actual_service_ms_by_start": {
+            "count": 970,
+            "mean": 11.155896568041237,
+            "p50": 11.15657,
+            "p95": 11.451626,
+            "p99": 11.763214,
+            "min": 10.129381,
+            "max": 14.647611999999999
+          },
+          "completion_count": 971,
+          "completion_rate_s": 80.91666666666667,
+          "queue_residence_ms_by_enqueue": {
+            "count": 967,
+            "mean": 3.047243640124095,
+            "p50": 0.038838,
+            "p95": 33.081523,
+            "p99": 34.234238,
+            "min": 0.016944999999999998,
+            "max": 34.972637999999996
+          },
+          "Q_mean": 0.23333333333333334,
+          "Q_max": 3,
+          "attempted_sends": 958,
+          "successful_sends": 958,
+          "successful_send_returns": 959,
+          "return_rate_s": 79.91666666666667,
+          "attempt_rate_s": 79.83333333333333,
+          "send_ms": {
+            "count": 958,
+            "mean": 0.025106371607515658,
+            "p50": 0.021162,
+            "p95": 0.047992,
+            "p99": 0.10223399999999999,
+            "min": 0.008322999999999999,
+            "max": 0.44631299999999996
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 958,
+          "skipped_scheduled_slots": 2
+        },
+        "drain": {
+          "bounds_s": [
+            36,
+            null
+          ],
+          "actual_service_ms_by_start": {
+            "count": 0
+          },
+          "completion_count": 0,
+          "completion_rate_s": null,
+          "queue_residence_ms_by_enqueue": {
+            "count": 0
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 0,
+          "successful_sends": 0,
+          "successful_send_returns": 0,
+          "return_rate_s": null,
+          "attempt_rate_s": null,
+          "send_ms": {
+            "count": 0
+          }
+        }
+      },
+      "first_sampled_Q_zero_after24_s": 25.082754773,
+      "early_recovery_completion_rate_s": 82.75,
+      "late_recovery_completion_rate_s": 80.0,
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1089078",
+          "lateness_ns": "1089078",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793161451978780627"
+        },
+        {
+          "scheduled_ns": "12000000000",
+          "observed_ns": "12001477578",
+          "lateness_ns": "1477578",
+          "phase": "slowdown",
+          "configured_ms": "40",
+          "unix_ns": "1793161463979168016"
+        },
+        {
+          "scheduled_ns": "24000000000",
+          "observed_ns": "24001474169",
+          "lateness_ns": "1474169",
+          "phase": "recovery",
+          "configured_ms": "10",
+          "unix_ns": "1793161475979165369"
+        },
+        {
+          "scheduled_ns": "36000000000",
+          "observed_ns": "36001601815",
+          "lateness_ns": "1601815",
+          "phase": "drain",
+          "configured_ms": "10",
+          "unix_ns": "1793161487979292383"
+        }
+      ],
+      "pooled_residence_12_36": {
+        "count": 1261,
+        "p50_ms": 0.045489,
+        "p95_ms": 164.732119,
+        "p99_ms": 661.060091
+      },
+      "recovery_window_screen": {
+        "method": "exploratory 200ms-grid 3s enqueue-cohort window; not proof of continuous instantaneous recovery or primary H4",
+        "healthy_p95_ms": 0.098589,
+        "healthy_completion_rate_s": 80.0,
+        "first_passing_window": {
+          "start_s": 25.2,
+          "confirmation_end_s": 28.2,
+          "cohort_messages": 240,
+          "queue_p95_ms": 0.075544,
+          "completions_per_s": 79.66666666666667,
+          "passes_window_screen": true
+        },
+        "status": "window observed",
+        "windows": [
+          {
+            "start_s": 24.0,
+            "confirmation_end_s": 27.0,
+            "cohort_messages": 247,
+            "queue_p95_ms": 34.161148,
+            "completions_per_s": 83.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.2,
+            "confirmation_end_s": 27.2,
+            "cohort_messages": 246,
+            "queue_p95_ms": 33.883441,
+            "completions_per_s": 83.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.4,
+            "confirmation_end_s": 27.4,
+            "cohort_messages": 244,
+            "queue_p95_ms": 33.666483,
+            "completions_per_s": 82.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.6,
+            "confirmation_end_s": 27.6,
+            "cohort_messages": 242,
+            "queue_p95_ms": 33.128425,
+            "completions_per_s": 82.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 24.8,
+            "confirmation_end_s": 27.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 20.470313,
+            "completions_per_s": 81.33333333333333,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.0,
+            "confirmation_end_s": 28.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.117768,
+            "completions_per_s": 80.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.2,
+            "confirmation_end_s": 28.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.075544,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 25.4,
+            "confirmation_end_s": 28.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.098919,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.6,
+            "confirmation_end_s": 28.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.098919,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 25.8,
+            "confirmation_end_s": 28.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.080352,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 26.0,
+            "confirmation_end_s": 29.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.080352,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 26.2,
+            "confirmation_end_s": 29.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.089535,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 26.4,
+            "confirmation_end_s": 29.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.104538,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.6,
+            "confirmation_end_s": 29.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.110677,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 26.8,
+            "confirmation_end_s": 29.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.104538,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.0,
+            "confirmation_end_s": 30.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.104538,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.2,
+            "confirmation_end_s": 30.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.104538,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.4,
+            "confirmation_end_s": 30.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.111218,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 27.6,
+            "confirmation_end_s": 30.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.097727,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 27.8,
+            "confirmation_end_s": 30.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.111218,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 28.0,
+            "confirmation_end_s": 31.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.111218,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 28.2,
+            "confirmation_end_s": 31.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.122584,
+            "completions_per_s": 80.0,
+            "passes_window_screen": false
+          },
+          {
+            "start_s": 28.4,
+            "confirmation_end_s": 31.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088433,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.6,
+            "confirmation_end_s": 31.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.094953,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 28.8,
+            "confirmation_end_s": 31.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.095213,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.0,
+            "confirmation_end_s": 32.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.095213,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.2,
+            "confirmation_end_s": 32.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.097727,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.4,
+            "confirmation_end_s": 32.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.097436,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.6,
+            "confirmation_end_s": 32.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.094953,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 29.8,
+            "confirmation_end_s": 32.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.091808,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.0,
+            "confirmation_end_s": 33.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.091808,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.2,
+            "confirmation_end_s": 33.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.091808,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.4,
+            "confirmation_end_s": 33.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.091087,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.6,
+            "confirmation_end_s": 33.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088433,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 30.8,
+            "confirmation_end_s": 33.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088433,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.0,
+            "confirmation_end_s": 34.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.2,
+            "confirmation_end_s": 34.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.4,
+            "confirmation_end_s": 34.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.6,
+            "confirmation_end_s": 34.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.084397,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 31.8,
+            "confirmation_end_s": 34.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.081152,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.0,
+            "confirmation_end_s": 35.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.084397,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.2,
+            "confirmation_end_s": 35.2,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.081152,
+            "completions_per_s": 80.33333333333333,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.4,
+            "confirmation_end_s": 35.4,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.075473,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.6,
+            "confirmation_end_s": 35.6,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.075473,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 32.8,
+            "confirmation_end_s": 35.8,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 79.66666666666667,
+            "passes_window_screen": true
+          },
+          {
+            "start_s": 33.0,
+            "confirmation_end_s": 36.0,
+            "cohort_messages": 240,
+            "queue_p95_ms": 0.088743,
+            "completions_per_s": 80.0,
+            "passes_window_screen": true
+          }
+        ]
+      }
+    }
+  },
+  "caveat": "Three single runs at separate times/source versions, different admitted cohorts; no repeated primary comparison, uncertainty estimate, isolated transport stall or end-to-end claim."
+}

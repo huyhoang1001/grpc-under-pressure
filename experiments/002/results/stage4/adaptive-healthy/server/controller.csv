@@ -1,0 +1,4 @@
+scheduled_ns,observed_ns,lateness_ns,window_start_ns,interval_completions,interval_service_ns,interval_mean_ms,ewma_ms,estimated_delay_ms,Q,R,W,B_before,B_proposed,B_after,near_full,high_before,low_before,high_after,low_after,proposal_reason,decision_reason,shrink_occupancy,total_completions,total_service_ns
+500000000,500742833,742833,0,40,447300274,11.18250685,11.18250685,0,0,1,1,16,16,16,0,0,0,0,0,hold,hold,0,40,447300274
+1000000000,1001394272,1394272,500742833,40,445212742,11.13031855,11.17206919,0,0,1,0,16,16,16,0,0,0,0,0,hold,hold,0,80,892513016
+1500000000,1500951120,951120,1001394272,40,444719955,11.117998875,11.161255127,0,0,1,0,16,16,16,0,0,0,0,0,hold,hold,0,120,1337232971

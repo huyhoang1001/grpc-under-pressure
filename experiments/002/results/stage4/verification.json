@@ -1,0 +1,13 @@
+{
+  "adaptive-cancel": [
+    "cancel fixture did not exercise live shrink"
+  ],
+  "adaptive-cancel-after-shrink": [],
+  "adaptive-healthy": [],
+  "adaptive-schedule-smoke": [],
+  "adaptive-worker-error": [],
+  "adaptive-worker-panic": [],
+  "exploratory-adaptive": [],
+  "fixed32-regression": [],
+  "fixed8-regression": []
+}

@@ -1,0 +1,13 @@
+{
+  "acceptance_passed": true,
+  "cases": [
+    "adaptive-cancel-after-shrink",
+    "adaptive-healthy",
+    "adaptive-schedule-smoke",
+    "adaptive-worker-error",
+    "adaptive-worker-panic",
+    "fixed32-regression",
+    "fixed8-regression"
+  ],
+  "note": "Verified fixtures and tick/gate replay before one exploration; no performance conclusion."
+}

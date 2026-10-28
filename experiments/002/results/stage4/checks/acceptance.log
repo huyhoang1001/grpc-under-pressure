@@ -1,0 +1,15 @@
+fixed32-regression PASS
+fixed8-regression PASS
+adaptive-healthy PASS
+adaptive-schedule-smoke PASS
+adaptive-cancel ['cancel fixture did not exercise live shrink']
+Traceback (most recent call last):
+  File "/workspace/grpc-under-pressure/experiments/002/stage4/run.py", line 127, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/grpc-under-pressure/experiments/002/stage4/run.py", line 117, in main
+    run(root,'adaptive-cancel',2,policy='adaptive',rate=1000,deadline='1200ms',fault='cancellation')
+  File "/workspace/grpc-under-pressure/experiments/002/stage4/run.py", line 106, in run
+    if issues:raise RuntimeError('Stop and diagnose; all attempted data retained')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Stop and diagnose; all attempted data retained

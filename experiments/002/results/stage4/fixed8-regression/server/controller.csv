@@ -1,0 +1,4 @@
+scheduled_ns,observed_ns,lateness_ns,window_start_ns,interval_completions,interval_service_ns,interval_mean_ms,ewma_ms,estimated_delay_ms,Q,R,W,B_before,B_proposed,B_after,near_full,high_before,low_before,high_after,low_after,proposal_reason,decision_reason,shrink_occupancy,total_completions,total_service_ns
+500000000,501005582,1005582,0,40,446005125,11.150128125,11.150128125,0,0,1,0,8,8,8,0,0,0,0,0,hold,fixed_policy_hold,0,40,446005125
+1000000000,1000744970,744970,501005582,40,445802268,11.1450567,11.14911384,0,0,1,0,8,8,8,0,0,0,0,0,hold,fixed_policy_hold,0,80,891807393
+1500000000,1500900257,900257,1000744970,40,446945602,11.173640050000001,11.154019082000001,0,0,1,0,8,8,8,0,0,0,0,0,hold,fixed_policy_hold,0,120,1338752995

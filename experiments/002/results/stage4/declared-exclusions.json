@@ -1,0 +1,8 @@
+{
+  "adaptive-cancel": {
+    "issues": [
+      "cancel fixture did not exercise live shrink"
+    ],
+    "reason": "1200ms RPC deadline includes setup/barrier; only one tick before cancellation. Accounting checks passed, but live shrink coverage absent. Retained invalid; replaced for coverage by separately named 2s cancellation fixture, not an exploratory benchmark retry."
+  }
+}

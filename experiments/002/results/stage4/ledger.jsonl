@@ -1,0 +1,9 @@
+{"name": "fixed32-regression", "purpose": "integration_fixture", "policy": "fixed32", "expected_fault": null, "issues": [], "valid": true}
+{"name": "fixed8-regression", "purpose": "integration_fixture", "policy": "fixed8", "expected_fault": null, "issues": [], "valid": true}
+{"name": "adaptive-healthy", "purpose": "integration_fixture", "policy": "adaptive", "expected_fault": null, "issues": [], "valid": true}
+{"name": "adaptive-schedule-smoke", "purpose": "integration_fixture", "policy": "adaptive", "expected_fault": null, "issues": [], "valid": true}
+{"name": "adaptive-cancel", "purpose": "integration_fixture", "policy": "adaptive", "expected_fault": "cancellation", "issues": ["cancel fixture did not exercise live shrink"], "valid": false}
+{"name": "adaptive-cancel-after-shrink", "purpose": "integration_fixture", "policy": "adaptive", "expected_fault": "cancellation", "issues": [], "valid": true}
+{"name": "adaptive-worker-error", "purpose": "integration_fixture", "policy": "adaptive", "expected_fault": "worker_error", "issues": [], "valid": true}
+{"name": "adaptive-worker-panic", "purpose": "integration_fixture", "policy": "adaptive", "expected_fault": "worker_panic", "issues": [], "valid": true}
+{"name": "exploratory-adaptive", "purpose": "single_exploratory_adaptive", "policy": "adaptive", "expected_fault": null, "issues": [], "valid": true}

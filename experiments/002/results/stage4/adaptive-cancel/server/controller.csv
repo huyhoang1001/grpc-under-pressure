@@ -1,0 +1,2 @@
+scheduled_ns,observed_ns,lateness_ns,window_start_ns,interval_completions,interval_service_ns,interval_mean_ms,ewma_ms,estimated_delay_ms,Q,R,W,B_before,B_proposed,B_after,near_full,high_before,low_before,high_after,low_after,proposal_reason,decision_reason,shrink_occupancy,total_completions,total_service_ns
+500000000,501587169,1587169,0,44,492252264,11.187551454545455,11.187551454545455,179.00082327272727,16,0,1,16,16,16,1,0,0,1,0,hold,hold,0,44,492252264

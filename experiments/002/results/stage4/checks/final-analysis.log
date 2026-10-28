@@ -1,0 +1,13 @@
+Validated 8 cases; exploratory 1
+{
+  "final_budget": 3,
+  "controller_ticks": 71,
+  "budget_updates": 4,
+  "pooled_residence_12_36": {
+    "count": 1261,
+    "p50_ms": 0.045489,
+    "p95_ms": 164.732119,
+    "p99_ms": 661.060091
+  },
+  "budget_direction_reversals": 1
+}

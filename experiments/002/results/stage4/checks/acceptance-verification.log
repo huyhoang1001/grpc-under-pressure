@@ -1,0 +1,8 @@
+adaptive-cancel RETAINED INVALID (declared)
+adaptive-cancel-after-shrink PASS
+adaptive-healthy PASS
+adaptive-schedule-smoke PASS
+adaptive-worker-error PASS
+adaptive-worker-panic PASS
+fixed32-regression PASS
+fixed8-regression PASS
