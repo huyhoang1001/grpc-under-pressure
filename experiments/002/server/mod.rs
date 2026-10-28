@@ -66,12 +66,19 @@ struct Counts {
     idle: u64,
     idle_backlog: u64,
     queue_violations: u64,
+    event_write_calls: u64,
+    event_write_ns: u64,
+    event_write_max_ns: u64,
+    event_flush_calls: u64,
+    event_flush_ns: u64,
+    event_flush_max_ns: u64,
 }
 struct Item {
     payload: Payload,
     enqueued: Instant,
     service_start: Option<Instant>,
     phase: usize,
+    selected_ms: u64,
 }
 #[derive(Clone, Copy, PartialEq)]
 enum Mode {
@@ -94,7 +101,12 @@ struct State {
     service_hist: [Histogram; 4],
     queue_total: Histogram,
     service_total: Histogram,
-    events: Option<BufWriter<File>>,
+    events: Option<BufWriter<Box<dyn Write + Send>>>,
+    scheduled: bool,
+    constant_service_ms: u64,
+    last_service_start_ns: u64,
+    last_selected_ms: u64,
+    last_service_phase: usize,
 }
 impl State {
     fn new(rx: mpsc::Receiver<Item>, events: Option<File>) -> Self {
@@ -113,7 +125,13 @@ impl State {
             service_hist: std::array::from_fn(|_| Histogram::default()),
             queue_total: Histogram::default(),
             service_total: Histogram::default(),
-            events: events.map(|f| BufWriter::with_capacity(65536, f)),
+            events: events
+                .map(|f| BufWriter::with_capacity(65536, Box::new(f) as Box<dyn Write + Send>)),
+            scheduled: false,
+            constant_service_ms: 10,
+            last_service_start_ns: 0,
+            last_selected_ms: 0,
+            last_service_phase: 0,
         }
     }
     fn elapsed(&self, now: Instant) -> u64 {
@@ -157,10 +175,27 @@ impl State {
         } else {
             None
         };
+        let service_event = matches!(kind, "dequeued" | "processed" | "discarded_worker");
+        let start_ns = if service_event {
+            self.last_service_start_ns.to_string()
+        } else {
+            String::new()
+        };
+        let selected_ms = if service_event {
+            self.last_selected_ms.to_string()
+        } else {
+            String::new()
+        };
+        let service_phase = if service_event {
+            self.last_service_phase.to_string()
+        } else {
+            String::new()
+        };
         if let Some(out) = self.events.as_mut() {
+            let io_start = Instant::now();
             if writeln!(
                 out,
-                "{elapsed},{kind},{},{bytes},{enqueue_ns},{},{},{queue_ns},{service_ns},{p}",
+                "{elapsed},{kind},{},{bytes},{enqueue_ns},{},{},{queue_ns},{service_ns},{p},{start_ns},{selected_ms},{service_phase}",
                 seq.map(|n| n.to_string()).unwrap_or_default(),
                 dequeue.map(|n| n.to_string()).unwrap_or_default(),
                 completion.map(|n| n.to_string()).unwrap_or_default()
@@ -169,7 +204,23 @@ impl State {
             {
                 self.c.telemetry_errors += 1;
             }
+            let cost = ns(io_start.elapsed());
+            self.c.event_write_calls += 1;
+            self.c.event_write_ns += cost;
+            self.c.event_write_max_ns = self.c.event_write_max_ns.max(cost);
         }
+    }
+    fn flush_events(&mut self) -> std::io::Result<()> {
+        if let Some(out) = self.events.as_mut() {
+            let start = Instant::now();
+            let result = out.flush();
+            let cost = ns(start.elapsed());
+            self.c.event_flush_calls += 1;
+            self.c.event_flush_ns += cost;
+            self.c.event_flush_max_ns = self.c.event_flush_max_ns.max(cost);
+            result?;
+        }
+        Ok(())
     }
     fn verify(&self) {
         assert_eq!(self.c.queue_violations, 0);
@@ -233,6 +284,15 @@ impl State {
             self.queue_hist[item.phase].record(queue_ns);
             self.queue_total.record(queue_ns);
             item.service_start = Some(now);
+            item.selected_ms =
+                service_delay(self.elapsed(now), self.scheduled, self.constant_service_ms);
+            self.last_service_start_ns = self.elapsed(now);
+            self.last_selected_ms = item.selected_ms;
+            self.last_service_phase = if self.scheduled {
+                phase(self.elapsed(now))
+            } else {
+                0
+            };
             self.mode = Mode::Busy;
             self.event(
                 "dequeued",
@@ -409,6 +469,7 @@ impl Reservation {
             enqueued: now,
             service_start: None,
             phase: p,
+            selected_ms: 0,
         });
         s.c.r -= 1;
         s.c.q += 1;
@@ -477,8 +538,29 @@ struct Config {
     service_ms: u64,
     fail_after: u64,
     panic_after: u64,
+    scheduled: bool,
+}
+fn service_delay(elapsed_ns: u64, scheduled: bool, constant_ms: u64) -> u64 {
+    if scheduled && (12_000_000_000..24_000_000_000).contains(&elapsed_ns) {
+        40
+    } else if scheduled {
+        10
+    } else {
+        constant_ms
+    }
+}
+fn service_phase(elapsed_ns: u64, scheduled: bool) -> &'static str {
+    if !scheduled {
+        return "stage1_constant";
+    }
+    ["healthy", "slowdown", "recovery", "drain"][phase(elapsed_ns)]
 }
 async fn worker(shared: Arc<Shared>, config: Config) {
+    {
+        let mut state = shared.s.lock().unwrap();
+        state.scheduled = config.scheduled;
+        state.constant_service_ms = config.service_ms;
+    }
     let mut guard = WorkerGuard {
         shared: shared.clone(),
         normal: false,
@@ -486,14 +568,14 @@ async fn worker(shared: Arc<Shared>, config: Config) {
     };
     loop {
         let notified = shared.changed.notified();
-        let has_work = {
+        let selected_delay = {
             let mut s = shared.s.lock().unwrap();
             if s.terminal {
                 guard.normal = true;
                 return;
             }
             if s.dequeue(Instant::now()) {
-                true
+                Some(s.worker.as_ref().unwrap().selected_ms)
             } else if s.eof {
                 s.touch(Instant::now());
                 s.mode = Mode::Stopped;
@@ -502,12 +584,12 @@ async fn worker(shared: Arc<Shared>, config: Config) {
                 guard.normal = true;
                 return;
             } else {
-                false
+                None
             }
         };
-        if has_work {
+        if let Some(selected_ms) = selected_delay {
             shared.changed.notify_one();
-            tokio::time::sleep(Duration::from_millis(config.service_ms)).await;
+            tokio::time::sleep(Duration::from_millis(selected_ms)).await;
             let ordinal = shared.s.lock().unwrap().c.dequeued;
             if config.fail_after > 0 && ordinal == config.fail_after {
                 guard.reason = "worker_error";
@@ -645,7 +727,7 @@ fn option(args: &[String], name: &str, default: &str) -> String {
 fn write_histograms(shared: &Shared, path: &Path) -> std::io::Result<()> {
     let s = shared.s.lock().unwrap();
     let mut out = BufWriter::new(create(path)?);
-    writeln!(out,"{{\"schema\":\"e2-stage1-histogram-v1\",\"convention\":\"nearest-rank upper bucket bound; exact durations in events.csv\",\"phase_assignment\":\"enqueue time: [0,12),[12,24),[24,36),[36,infinity); Stage1 service is constant\",\"bounds_ns\":{:?},\"queue_counts\":[",histogram::bounds())?;
+    writeln!(out,"{{\"schema\":\"e2-stage1-histogram-v1\",\"convention\":\"nearest-rank upper bucket bound; exact durations in events.csv\",\"phase_assignment\":\"enqueue time: [0,12),[12,24),[24,36),[36,infinity); enqueue-phase assignment is independent of selected service schedule\",\"bounds_ns\":{:?},\"queue_counts\":[",histogram::bounds())?;
     for (i, h) in s.queue_hist.iter().enumerate() {
         write!(out, "{}{:?}", if i > 0 { "," } else { "" }, h.counts)?;
     }
@@ -658,7 +740,7 @@ fn write_histograms(shared: &Shared, path: &Path) -> std::io::Result<()> {
 }
 async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
     let mut out = BufWriter::new(create(&path).unwrap());
-    writeln!(out,"unix_ns,elapsed_ns,started,physical_queue_depth,Q,R,W,queued_payload_bytes,handler_payload_bytes,worker_payload_bytes,received,admitted,dequeued,processed,discarded_from_queue,discarded_from_worker,discarded,received_not_admitted,reservations_acquired,reservations_released,logical_gate_wait_ns,physical_reservation_wait_ns,worker_busy_ns,worker_idle_ns,worker_idle_backlog_ns,queue_residence_violations,queue_p50_upper_ns,queue_p95_upper_ns,queue_p99_upper_ns,service_p50_upper_ns,service_p95_upper_ns,service_p99_upper_ns,errors,telemetry_errors,active_streams,connections,B,service_ms,service_phase,terminal_reason,rss_bytes,received_bytes,admitted_bytes,dequeued_bytes,processed_bytes,discarded_queue_bytes,discarded_worker_bytes,received_not_admitted_bytes").unwrap();
+    writeln!(out,"unix_ns,elapsed_ns,started,physical_queue_depth,Q,R,W,queued_payload_bytes,handler_payload_bytes,worker_payload_bytes,received,admitted,dequeued,processed,discarded_from_queue,discarded_from_worker,discarded,received_not_admitted,reservations_acquired,reservations_released,logical_gate_wait_ns,physical_reservation_wait_ns,worker_busy_ns,worker_idle_ns,worker_idle_backlog_ns,queue_residence_violations,queue_p50_upper_ns,queue_p95_upper_ns,queue_p99_upper_ns,service_p50_upper_ns,service_p95_upper_ns,service_p99_upper_ns,errors,telemetry_errors,active_streams,connections,B,service_ms,service_phase,terminal_reason,rss_bytes,received_bytes,admitted_bytes,dequeued_bytes,processed_bytes,discarded_queue_bytes,discarded_worker_bytes,received_not_admitted_bytes,event_write_calls,event_write_ns,event_write_max_ns,event_flush_calls,event_flush_ns,event_flush_max_ns,inflight_selected_ms,queue_observations,queue_residence_sum_ns,service_observations,service_duration_sum_ns").unwrap();
     let mut ticker = tokio::time::interval(Duration::from_millis(200));
     ticker.set_missed_tick_behavior(tokio::time::MissedTickBehavior::Skip);
     loop {
@@ -672,6 +754,7 @@ async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
             let now = Instant::now();
             s.touch(now);
             s.verify();
+            s.flush_events().unwrap();
             let c = &s.c;
             let q = &s.queue_total;
             let h = &s.service_total;
@@ -713,8 +796,8 @@ async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
                 c.active.to_string(),
                 c.connections.to_string(),
                 K.to_string(),
-                "10".into(),
-                "stage1_constant".into(),
+                service_delay(s.elapsed(now), s.scheduled, s.constant_service_ms).to_string(),
+                service_phase(s.elapsed(now), s.scheduled).into(),
                 s.reason.into(),
                 memory.to_string(),
                 c.received_bytes.to_string(),
@@ -724,12 +807,24 @@ async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
                 c.dqbytes.to_string(),
                 c.dwbytes.to_string(),
                 c.not_admitted_bytes.to_string(),
+                c.event_write_calls.to_string(),
+                c.event_write_ns.to_string(),
+                c.event_write_max_ns.to_string(),
+                c.event_flush_calls.to_string(),
+                c.event_flush_ns.to_string(),
+                c.event_flush_max_ns.to_string(),
+                s.worker
+                    .as_ref()
+                    .map(|item| item.selected_ms)
+                    .unwrap_or(0)
+                    .to_string(),
+                q.count.to_string(),
+                q.sum.to_string(),
+                h.count.to_string(),
+                h.sum.to_string(),
             ];
             writeln!(out, "{}", values.join(",")).unwrap();
             out.flush().unwrap();
-            if let Some(events) = s.events.as_mut() {
-                events.flush().unwrap();
-            }
             if c_telemetry_failed(&s) {
                 eprintln!("instrumentation failed");
                 std::process::exit(43);
@@ -764,17 +859,33 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let dir = PathBuf::from(option(&args, "--output", "stage1-output"));
     std::fs::create_dir_all(&dir)?;
     let mut events = create(&dir.join("events.csv"))?;
-    writeln!(events,"observed_elapsed_ns,event,sequence,payload_bytes,enqueue_ns,dequeue_ns,completion_ns,queue_residence_ns,service_duration_ns,enqueue_phase")?;
+    writeln!(events,"observed_elapsed_ns,event,sequence,payload_bytes,enqueue_ns,dequeue_ns,completion_ns,queue_residence_ns,service_duration_ns,enqueue_phase,service_start_ns,selected_service_ms,service_start_phase")?;
     let shared = Shared::new(Some(events));
+    let event_io = option(&args, "--event-io", "buffered");
+    assert!(
+        ["buffered", "discard"].contains(&event_io.as_str()),
+        "invalid event I/O mode"
+    );
+    if event_io == "discard" {
+        shared.s.lock().unwrap().events =
+            Some(BufWriter::with_capacity(65536, Box::new(std::io::sink())));
+    }
+    let schedule = option(&args, "--service-schedule", "constant");
+    assert!(
+        ["constant", "contract"].contains(&schedule.as_str()),
+        "invalid schedule"
+    );
     let config = Config {
         service_ms: option(&args, "--service-ms", "10").parse()?,
         fail_after: option(&args, "--test-fail-after", "0").parse()?,
         panic_after: option(&args, "--test-panic-after", "0").parse()?,
+        scheduled: schedule == "contract",
     };
     assert_eq!(
         config.service_ms, 10,
-        "Stage1 service is fixed at 10ms; no slowdown schedule"
+        "base service must remain 10ms; contract flag alone selects the frozen schedule"
     );
+    shared.s.lock().unwrap().scheduled = config.scheduled;
     let marker = PathBuf::from(option(&args, "--marker", "marker.txt"));
     let marker_shared = shared.clone();
     let marker_out = dir.clone();
@@ -796,6 +907,48 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         marker_shared.start.send_replace(true);
         std::fs::write(marker_out.join("clock.json"),format!("{{\"target_unix_ns\":{target},\"actual_start_unix_ns\":{actual},\"start_offset_ns\":{}}}",actual as i128-target as i128)).unwrap();
+    });
+    let phase_shared = shared.clone();
+    let phase_path = dir.join("phase-transitions.csv");
+    let transitions = tokio::spawn(async move {
+        let result: std::io::Result<()> = async {
+            let mut started = phase_shared.start.subscribe();
+            while !*started.borrow() {
+                started.changed().await.map_err(std::io::Error::other)?;
+            }
+            let start = phase_shared.s.lock().unwrap().started.unwrap();
+            let mut out = BufWriter::new(create(&phase_path)?);
+            writeln!(
+                out,
+                "scheduled_ns,observed_ns,lateness_ns,phase,configured_ms,unix_ns"
+            )?;
+            let boundaries: &[u64] = if config.scheduled {
+                &[0, 12, 24, 36]
+            } else {
+                &[0]
+            };
+            for seconds in boundaries {
+                let target = start + Duration::from_secs(*seconds);
+                tokio::time::sleep_until(tokio::time::Instant::from_std(target)).await;
+                let observed = ns(start.elapsed());
+                let expected = seconds * 1_000_000_000;
+                writeln!(
+                    out,
+                    "{expected},{observed},{},{},{},{}",
+                    observed.saturating_sub(expected),
+                    service_phase(expected, config.scheduled),
+                    service_delay(expected, config.scheduled, 10),
+                    epoch()
+                )?;
+                out.flush()?;
+            }
+            Ok(())
+        }
+        .await;
+        if let Err(error) = result {
+            phase_shared.fail("phase_marker_failed");
+            eprintln!("phase marker failed: {error}");
+        }
     });
     let mut metrics = tokio::spawn(sample(shared.clone(), dir.join("server.csv"), 536870912));
     let listener = TcpListener::bind(option(&args, "--addr", "127.0.0.1:50053")).await?;
@@ -827,6 +980,7 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
     write_histograms(&shared, &dir.join("histograms.json"))?;
     metrics.abort();
     clock.abort();
+    transitions.abort();
     Ok(())
 }
 

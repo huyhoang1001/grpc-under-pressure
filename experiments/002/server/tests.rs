@@ -47,6 +47,7 @@ fn config() -> Config {
         service_ms: 1,
         fail_after: 0,
         panic_after: 0,
+        scheduled: false,
     }
 }
 async fn until(shared: &Shared, condition: impl Fn(&State) -> bool) {
@@ -216,6 +217,7 @@ async fn payload_ownership_and_synthetic_queue_phase() {
         payload: enqueue.payload,
         service_start: None,
         phase: 1,
+        selected_ms: 0,
     })
     .unwrap();
     assert!(m.dequeue(now));
@@ -306,4 +308,93 @@ async fn phase_is_assigned_at_enqueue_even_when_dequeue_crosses_a_boundary() {
         (1, 0)
     );
     state.verify();
+}
+
+#[test]
+fn contract_schedule_has_exact_boundaries_and_retains_drain_delay() {
+    for (t, expected) in [
+        (0, 10),
+        (11_999_999_999, 10),
+        (12_000_000_000, 40),
+        (23_999_999_999, 40),
+        (24_000_000_000, 10),
+        (35_999_999_999, 10),
+        (36_000_000_000, 10),
+        (120_000_000_000, 10),
+    ] {
+        assert_eq!(service_delay(t, true, 999), expected);
+    }
+    assert_eq!(service_delay(13_000_000_000, false, 10), 10);
+}
+
+#[tokio::test]
+async fn delay_uses_service_start_not_enqueue_completion_or_message_count() {
+    for (enqueue_ns, start_ns, end_ns, expected) in [
+        (11_000_000_000, 12_001_000_000, 12_050_000_000, 40),
+        (23_000_000_000, 23_999_000_000, 24_045_000_000, 40),
+        (13_000_000_000, 24_001_000_000, 24_013_000_000, 10),
+        (13_000_000_000, 36_001_000_000, 36_013_000_000, 10),
+    ] {
+        let (shared, _, _) = setup(0);
+        let origin = Instant::now() - Duration::from_nanos(enqueue_ns);
+        {
+            let mut s = shared.s.lock().unwrap();
+            s.started = Some(origin);
+            s.scheduled = true;
+        }
+        reserve(shared.clone())
+            .await
+            .unwrap()
+            .handoff(Payload {
+                sequence: 0,
+                data: vec![0; 16],
+            })
+            .unwrap();
+        let mut s = shared.s.lock().unwrap();
+        assert!(s.dequeue(origin + Duration::from_nanos(start_ns)));
+        assert_eq!(s.worker.as_ref().unwrap().selected_ms, expected);
+        s.complete(origin + Duration::from_nanos(end_ns));
+        assert_eq!(s.last_selected_ms, expected);
+        s.verify();
+    }
+}
+
+#[tokio::test]
+async fn scheduled_worker_failure_keeps_capacity_wakeup_and_disposition() {
+    let (shared, input, _) = setup(100);
+    shared.s.lock().unwrap().started = Some(Instant::now() - Duration::from_secs(13));
+    let task = tokio::spawn(ingest(
+        input,
+        shared.clone(),
+        Config {
+            scheduled: true,
+            fail_after: 1,
+            ..config()
+        },
+    ));
+    assert!(tokio::time::timeout(Duration::from_secs(2), task)
+        .await
+        .unwrap()
+        .unwrap()
+        .is_err());
+    let s = shared.s.lock().unwrap();
+    s.verify();
+    assert_eq!((s.c.admitted, s.c.dq, s.c.dw, s.c.r), (33, 32, 1, 0));
+    assert_eq!(s.last_selected_ms, 40);
+}
+
+#[tokio::test]
+async fn discard_sink_retains_formatting_histograms_and_counter_invariants() {
+    let (shared, input, _) = setup(5);
+    shared.s.lock().unwrap().events =
+        Some(BufWriter::with_capacity(65536, Box::new(std::io::sink())));
+    let summary = ingest(input, shared.clone(), config()).await.unwrap();
+    assert_eq!(summary.processed, 5);
+    let mut s = shared.s.lock().unwrap();
+    s.flush_events().unwrap();
+    s.verify();
+    assert!(s.c.event_write_calls > 0);
+    assert_eq!(s.c.event_flush_calls, 1);
+    assert_eq!(s.service_total.count, 5);
+    assert_eq!(s.queue_total.count, 5);
 }
