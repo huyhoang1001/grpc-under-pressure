@@ -1,0 +1,2249 @@
+{
+  "analysis_plan": "experiments/002/stage5/PLAN.md",
+  "complete": false,
+  "valid_runs": 2,
+  "invalid_attempts": [
+    {
+      "name": "b01-03-fixed8",
+      "issues": [
+        "validation exception TypeError(\"'NoneType' object is not subscriptable\")"
+      ]
+    }
+  ],
+  "summary": {
+    "fixed32": {
+      "queue_p95": {
+        "values": [
+          1321.34349
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 1321.34349,
+        "mean": 1321.34349,
+        "min": 1321.34349,
+        "max": 1321.34349
+      },
+      "queue_p99": {
+        "values": [
+          1323.828802
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 1323.828802,
+        "mean": 1323.828802,
+        "min": 1323.828802,
+        "max": 1323.828802
+      },
+      "slow_p95": {
+        "values": [
+          1323.320151
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 1323.320151,
+        "mean": 1323.320151,
+        "min": 1323.320151,
+        "max": 1323.320151
+      },
+      "slow_p99": {
+        "values": [
+          1326.215303
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 1326.215303,
+        "mean": 1326.215303,
+        "min": 1326.215303,
+        "max": 1326.215303
+      },
+      "recovery_p95": {
+        "values": [
+          356.65995799999996
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 356.65995799999996,
+        "mean": 356.65995799999996,
+        "min": 356.65995799999996,
+        "max": 356.65995799999996
+      },
+      "recovery_confirmation": {
+        "values": [
+          7.399999999999999
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 7.399999999999999,
+        "mean": 7.399999999999999,
+        "min": 7.399999999999999,
+        "max": 7.399999999999999
+      },
+      "throughput": {
+        "values": [
+          62.5
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 62.5,
+        "mean": 62.5,
+        "min": 62.5,
+        "max": 62.5
+      },
+      "rpc": {
+        "values": [
+          36.347574072
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 36.347574072,
+        "mean": 36.347574072,
+        "min": 36.347574072,
+        "max": 36.347574072
+      },
+      "idle_backlog_fraction": {
+        "values": [
+          0.0055480933841299115
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 0.0055480933841299115,
+        "mean": 0.0055480933841299115,
+        "min": 0.0055480933841299115,
+        "max": 0.0055480933841299115
+      },
+      "skipped": {
+        "values": [
+          630
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 630,
+        "mean": 630,
+        "min": 630,
+        "max": 630
+      },
+      "send_wall": {
+        "values": [
+          9.479843679
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 9.479843679,
+        "mean": 9.479843679,
+        "min": 9.479843679,
+        "max": 9.479843679
+      },
+      "logical_wait": {
+        "values": [
+          12.295003093
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 12.295003093,
+        "mean": 12.295003093,
+        "min": 12.295003093,
+        "max": 12.295003093
+      },
+      "pooled_queue_ms": {
+        "count": 1290,
+        "mean": 354.723561472093,
+        "p50": 38.671617,
+        "p95": 1321.34349,
+        "p99": 1323.828802,
+        "min": 0.018007,
+        "max": 1326.644734
+      },
+      "pooled_phases": {
+        "healthy": {
+          "count": 960,
+          "mean": 0.060650013541666666,
+          "p50": 0.038438,
+          "p95": 0.08340499999999999,
+          "p99": 0.36036199999999996,
+          "min": 0.017847,
+          "max": 4.180861
+        },
+        "slowdown": {
+          "count": 323,
+          "mean": 1178.5719714798763,
+          "p50": 1318.665818,
+          "p95": 1323.320151,
+          "p99": 1326.215303,
+          "min": 0.027791,
+          "max": 1326.644734
+        },
+        "recovery": {
+          "count": 967,
+          "mean": 79.53944933919338,
+          "p50": 0.050216,
+          "p95": 356.65995799999996,
+          "p99": 358.347242,
+          "min": 0.018007,
+          "max": 359.332039
+        }
+      }
+    },
+    "fixed8": {
+      "queue_p95": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "queue_p99": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "slow_p95": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "slow_p99": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "recovery_p95": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "recovery_confirmation": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "throughput": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "rpc": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "idle_backlog_fraction": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "skipped": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "send_wall": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "logical_wait": {
+        "values": [],
+        "count": 0,
+        "censored_or_missing": 0,
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "pooled_queue_ms": {
+        "count": 0
+      },
+      "pooled_phases": {
+        "healthy": {
+          "count": 0
+        },
+        "slowdown": {
+          "count": 0
+        },
+        "recovery": {
+          "count": 0
+        }
+      }
+    },
+    "adaptive": {
+      "queue_p95": {
+        "values": [
+          163.92642899999998
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 163.92642899999998,
+        "mean": 163.92642899999998,
+        "min": 163.92642899999998,
+        "max": 163.92642899999998
+      },
+      "queue_p99": {
+        "values": [
+          662.274185
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 662.274185,
+        "mean": 662.274185,
+        "min": 662.274185,
+        "max": 662.274185
+      },
+      "slow_p95": {
+        "values": [
+          661.8771429999999
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 661.8771429999999,
+        "mean": 661.8771429999999,
+        "min": 661.8771429999999,
+        "max": 661.8771429999999
+      },
+      "slow_p99": {
+        "values": [
+          663.472007
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 663.472007,
+        "mean": 663.472007,
+        "min": 663.472007,
+        "max": 663.472007
+      },
+      "recovery_p95": {
+        "values": [
+          33.312096
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 33.312096,
+        "mean": 33.312096,
+        "min": 33.312096,
+        "max": 33.312096
+      },
+      "recovery_confirmation": {
+        "values": [
+          4.600000000000001
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 4.600000000000001,
+        "mean": 4.600000000000001,
+        "min": 4.600000000000001,
+        "max": 4.600000000000001
+      },
+      "throughput": {
+        "values": [
+          61.72222222222222
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 61.72222222222222,
+        "mean": 61.72222222222222,
+        "min": 61.72222222222222,
+        "max": 61.72222222222222
+      },
+      "rpc": {
+        "values": [
+          36.352243684
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 36.352243684,
+        "mean": 36.352243684,
+        "min": 36.352243684,
+        "max": 36.352243684
+      },
+      "idle_backlog_fraction": {
+        "values": [
+          0.007163522556637081
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 0.007163522556637081,
+        "mean": 0.007163522556637081,
+        "min": 0.007163522556637081,
+        "max": 0.007163522556637081
+      },
+      "skipped": {
+        "values": [
+          658
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 658,
+        "mean": 658,
+        "min": 658,
+        "max": 658
+      },
+      "send_wall": {
+        "values": [
+          9.834793355
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 9.834793355,
+        "mean": 9.834793355,
+        "min": 9.834793355,
+        "max": 9.834793355
+      },
+      "logical_wait": {
+        "values": [
+          12.67270529
+        ],
+        "count": 1,
+        "censored_or_missing": 0,
+        "median": 12.67270529,
+        "mean": 12.67270529,
+        "min": 12.67270529,
+        "max": 12.67270529
+      },
+      "pooled_queue_ms": {
+        "count": 1262,
+        "mean": 45.00592095641838,
+        "p50": 0.045299,
+        "p95": 163.92642899999998,
+        "p99": 662.274185,
+        "min": 0.017727,
+        "max": 664.668338
+      },
+      "pooled_phases": {
+        "healthy": {
+          "count": 960,
+          "mean": 0.052199015625,
+          "p50": 0.037586999999999995,
+          "p95": 0.10692099999999999,
+          "p99": 0.29109799999999997,
+          "min": 0.016936,
+          "max": 2.230626
+        },
+        "slowdown": {
+          "count": 294,
+          "mean": 182.23618107142855,
+          "p50": 123.798571,
+          "p95": 661.8771429999999,
+          "p99": 663.472007,
+          "min": 0.021762999999999998,
+          "max": 664.668338
+        },
+        "recovery": {
+          "count": 968,
+          "mean": 3.326482450413223,
+          "p50": 0.040840999999999995,
+          "p95": 33.312096,
+          "p99": 34.460374,
+          "min": 0.017727,
+          "max": 36.428951
+        }
+      }
+    }
+  },
+  "paired_comparisons": {},
+  "hypotheses": {
+    "status": "Incomplete matrix; no full primary hypothesis decision",
+    "H1": {
+      "status": "inspect invalid runs; do not infer all-attempt safety from valid subset",
+      "invalid": [
+        {
+          "name": "b01-03-fixed8",
+          "issues": [
+            "validation exception TypeError(\"'NoneType' object is not subscriptable\")"
+          ]
+        }
+      ]
+    }
+  },
+  "runs": [
+    {
+      "name": "b01-01-adaptive",
+      "purpose": "primary_controlled_comparison",
+      "event_io": "buffered",
+      "source_commit": "37fbdddf53918392043dd17e53b5740134eed4c1",
+      "valid_for_declared_purpose": true,
+      "scheduled": 2880,
+      "skipped": 658,
+      "attempted": 2222,
+      "successful_sends": 2222,
+      "failed_sends": 0,
+      "admitted": 2222,
+      "dequeued": 2222,
+      "processed": 2222,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 16,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.742202,
+      "worker_observed_s": 36.001270396,
+      "worker_busy_s": 33.526357705,
+      "worker_idle_s": 2.474912691,
+      "idle_backlog_ms": 94.993756,
+      "event_write_calls": 8893,
+      "event_format_write_ms": 31.687469,
+      "event_write_max_us": 1610.934,
+      "event_flush_calls": 185,
+      "event_flush_ms": 4.618865,
+      "event_flush_max_us": 99.209,
+      "timed_event_io_fraction": 0.0010084736899738376,
+      "service_mean_ms": 15.088369804230423,
+      "service_p95_upper_ms": 41.679231,
+      "half_close_s": 36.000770459,
+      "rpc_s": 36.352243684,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 7.05078125,
+      "send_gt20ms_calls": 265,
+      "send_gt20ms_duration_s": 9.730070394,
+      "send_wall_duration_s": 9.834793355,
+      "logical_admission_wait_s": 12.67270529,
+      "physical_reservation_wait_s": 0.001101431,
+      "server_eof_s": 36.001117686,
+      "last_completion_s": 35.999988307,
+      "server_worker_stop_s": 36.001270396,
+      "server_eof_to_worker_stop_s": 0.0001527100000018322,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 960,
+          "first_start_s": 0.001624438,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 291,
+          "first_start_s": 12.002255658,
+          "selected_ms": [
+            40
+          ]
+        },
+        "2": {
+          "count": 971,
+          "first_start_s": 24.005576254,
+          "selected_ms": [
+            10
+          ]
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phases": {
+        "healthy": {
+          "bounds_s": [
+            0,
+            12
+          ],
+          "actual_service_ms_by_start": {
+            "count": 960,
+            "mean": 11.151341901041665,
+            "p50": 11.160283,
+            "p95": 11.364239,
+            "p99": 11.503147,
+            "min": 10.129401999999999,
+            "max": 12.917591
+          },
+          "completion_count": 960,
+          "completion_rate_s": 80.0,
+          "queue_residence_ms_by_enqueue": {
+            "count": 960,
+            "mean": 0.052199015625,
+            "p50": 0.037586999999999995,
+            "p95": 0.10692099999999999,
+            "p99": 0.29109799999999997,
+            "min": 0.016936,
+            "max": 2.230626
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 960,
+          "successful_sends": 960,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 80.0,
+          "send_ms": {
+            "count": 960,
+            "mean": 0.027938809375,
+            "p50": 0.023065,
+            "p95": 0.056103999999999994,
+            "p99": 0.106601,
+            "min": 0.009084,
+            "max": 0.59783
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 960,
+          "skipped_scheduled_slots": 0
+        },
+        "slowdown": {
+          "bounds_s": [
+            12,
+            24
+          ],
+          "actual_service_ms_by_start": {
+            "count": 291,
+            "mean": 41.20679002405498,
+            "p50": 41.066849999999995,
+            "p95": 41.919108,
+            "p99": 42.053028999999995,
+            "min": 40.266016,
+            "max": 42.204260999999995
+          },
+          "completion_count": 290,
+          "completion_rate_s": 24.166666666666668,
+          "queue_residence_ms_by_enqueue": {
+            "count": 294,
+            "mean": 182.23618107142855,
+            "p50": 123.798571,
+            "p95": 661.8771429999999,
+            "p99": 663.472007,
+            "min": 0.021762999999999998,
+            "max": 664.668338
+          },
+          "Q_mean": 4.45,
+          "Q_max": 16,
+          "attempted_sends": 303,
+          "successful_sends": 303,
+          "successful_send_returns": 302,
+          "return_rate_s": 25.166666666666668,
+          "attempt_rate_s": 25.25,
+          "send_ms": {
+            "count": 303,
+            "mean": 32.24019845874587,
+            "p50": 33.507991,
+            "p95": 40.466347999999996,
+            "p99": 41.579798,
+            "min": 0.009544,
+            "max": 366.115307
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 303,
+          "skipped_scheduled_slots": 657
+        },
+        "recovery": {
+          "bounds_s": [
+            24,
+            36
+          ],
+          "actual_service_ms_by_start": {
+            "count": 971,
+            "mean": 11.15334045623069,
+            "p50": 11.163488,
+            "p95": 11.465022,
+            "p99": 11.865825,
+            "min": 10.124314,
+            "max": 13.677615999999999
+          },
+          "completion_count": 972,
+          "completion_rate_s": 81.0,
+          "queue_residence_ms_by_enqueue": {
+            "count": 968,
+            "mean": 3.326482450413223,
+            "p50": 0.040840999999999995,
+            "p95": 33.312096,
+            "p99": 34.460374,
+            "min": 0.017727,
+            "max": 36.428951
+          },
+          "Q_mean": 0.26666666666666666,
+          "Q_max": 3,
+          "attempted_sends": 959,
+          "successful_sends": 959,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 79.91666666666667,
+          "send_ms": {
+            "count": 959,
+            "mean": 0.0408675338894682,
+            "p50": 0.023485,
+            "p95": 0.068033,
+            "p99": 0.238208,
+            "min": 0.009453999999999999,
+            "max": 4.3117529999999995
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 959,
+          "skipped_scheduled_slots": 1
+        },
+        "drain": {
+          "bounds_s": [
+            36,
+            null
+          ],
+          "actual_service_ms_by_start": {
+            "count": 0
+          },
+          "completion_count": 0,
+          "completion_rate_s": null,
+          "queue_residence_ms_by_enqueue": {
+            "count": 0
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 0,
+          "successful_sends": 0,
+          "successful_send_returns": 0,
+          "return_rate_s": null,
+          "attempt_rate_s": null,
+          "send_ms": {
+            "count": 0
+          }
+        }
+      },
+      "first_sampled_Q_zero_after24_s": 25.283140878,
+      "early_recovery_completion_rate_s": 83.0,
+      "late_recovery_completion_rate_s": 80.0,
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1631979",
+          "lateness_ns": "1631979",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793162609393515551"
+        },
+        {
+          "scheduled_ns": "12000000000",
+          "observed_ns": "12001307892",
+          "lateness_ns": "1307892",
+          "phase": "slowdown",
+          "configured_ms": "40",
+          "unix_ns": "1793162621393191504"
+        },
+        {
+          "scheduled_ns": "24000000000",
+          "observed_ns": "24001289784",
+          "lateness_ns": "1289784",
+          "phase": "recovery",
+          "configured_ms": "10",
+          "unix_ns": "1793162633393174477"
+        },
+        {
+          "scheduled_ns": "36000000000",
+          "observed_ns": "36001023815",
+          "lateness_ns": "1023815",
+          "phase": "drain",
+          "configured_ms": "10",
+          "unix_ns": "1793162645392907427"
+        }
+      ],
+      "block": 1,
+      "position": 1,
+      "policy": "adaptive",
+      "primary_run": true,
+      "pooled_queue_ms": {
+        "count": 1262,
+        "mean": 45.00592095641838,
+        "p50": 0.045299,
+        "p95": 163.92642899999998,
+        "p99": 662.274185,
+        "min": 0.017727,
+        "max": 664.668338
+      },
+      "recovery": {
+        "healthy_p95_ms": 0.106921,
+        "healthy_completion_rate_s": 80.0,
+        "start_delay_s": 1.6000000000000014,
+        "confirmation_delay_s": 4.600000000000001,
+        "right_censored": false,
+        "censor_confirmation_delay_s": null,
+        "windows": [
+          {
+            "start_s": 24.0,
+            "confirmation_s": 27.0,
+            "queue_count": 248,
+            "completion_count": 252,
+            "p95_ms": 34.253994,
+            "completion_rate_s": 84.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 24.2,
+            "confirmation_s": 27.2,
+            "queue_count": 246,
+            "completion_count": 250,
+            "p95_ms": 34.241825,
+            "completion_rate_s": 83.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 24.4,
+            "confirmation_s": 27.4,
+            "queue_count": 244,
+            "completion_count": 248,
+            "p95_ms": 34.196838,
+            "completion_rate_s": 82.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 24.6,
+            "confirmation_s": 27.6,
+            "queue_count": 242,
+            "completion_count": 245,
+            "p95_ms": 33.793311,
+            "completion_rate_s": 81.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 24.8,
+            "confirmation_s": 27.8,
+            "queue_count": 241,
+            "completion_count": 245,
+            "p95_ms": 32.126236,
+            "completion_rate_s": 81.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 25.0,
+            "confirmation_s": 28.0,
+            "queue_count": 240,
+            "completion_count": 243,
+            "p95_ms": 8.312814,
+            "completion_rate_s": 81.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 25.2,
+            "confirmation_s": 28.2,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.128143,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 25.4,
+            "confirmation_s": 28.4,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.113331,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 25.6,
+            "confirmation_s": 28.6,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.09987,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": true
+          },
+          {
+            "start_s": 25.8,
+            "confirmation_s": 28.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.113331,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 26.0,
+            "confirmation_s": 29.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.094983,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 26.2,
+            "confirmation_s": 29.2,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.071588,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": true
+          },
+          {
+            "start_s": 26.4,
+            "confirmation_s": 29.4,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.071588,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 26.6,
+            "confirmation_s": 29.6,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.072108,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 26.8,
+            "confirmation_s": 29.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.072108,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 27.0,
+            "confirmation_s": 30.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.072108,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 27.2,
+            "confirmation_s": 30.2,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.077036,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 27.4,
+            "confirmation_s": 30.4,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.077036,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 27.6,
+            "confirmation_s": 30.6,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.077036,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": true
+          },
+          {
+            "start_s": 27.8,
+            "confirmation_s": 30.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.077036,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 28.0,
+            "confirmation_s": 31.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.077036,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 28.2,
+            "confirmation_s": 31.2,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.077036,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 28.4,
+            "confirmation_s": 31.4,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.07956,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 28.6,
+            "confirmation_s": 31.6,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.07956,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 28.8,
+            "confirmation_s": 31.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.091368,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 29.0,
+            "confirmation_s": 32.0,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.098438,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": true
+          },
+          {
+            "start_s": 29.2,
+            "confirmation_s": 32.2,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.102434,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": true
+          },
+          {
+            "start_s": 29.4,
+            "confirmation_s": 32.4,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.105659,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": true
+          },
+          {
+            "start_s": 29.6,
+            "confirmation_s": 32.6,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.105659,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": true
+          },
+          {
+            "start_s": 29.8,
+            "confirmation_s": 32.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.105378,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 30.0,
+            "confirmation_s": 33.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.105378,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 30.2,
+            "confirmation_s": 33.2,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.105378,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 30.4,
+            "confirmation_s": 33.4,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.105378,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 30.6,
+            "confirmation_s": 33.6,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.105378,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 30.8,
+            "confirmation_s": 33.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.105659,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 31.0,
+            "confirmation_s": 34.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.107402,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 31.2,
+            "confirmation_s": 34.2,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.105659,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": true
+          },
+          {
+            "start_s": 31.4,
+            "confirmation_s": 34.4,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.105659,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 31.6,
+            "confirmation_s": 34.6,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.105659,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 31.8,
+            "confirmation_s": 34.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.100531,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.0,
+            "confirmation_s": 35.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.100531,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.2,
+            "confirmation_s": 35.2,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.100531,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.4,
+            "confirmation_s": 35.4,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.083706,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.6,
+            "confirmation_s": 35.6,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.084717,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.8,
+            "confirmation_s": 35.8,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.093721,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": true
+          },
+          {
+            "start_s": 33.0,
+            "confirmation_s": 36.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.100021,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          }
+        ]
+      },
+      "offered_ownership": {
+        "busy_s": 33.526357705,
+        "idle_s": 2.473642295,
+        "utilization": 0.9312877140277778,
+        "backlog_s": 13.260760366,
+        "idle_backlog_s": 0.094993756,
+        "idle_backlog_fraction": 0.007163522556637081
+      },
+      "full_span_ownership": {
+        "busy_s": 33.526357705,
+        "idle_s": 2.474912691,
+        "utilization": 0.9312548511822799,
+        "backlog_s": 13.260760366,
+        "idle_backlog_s": 0.094993756,
+        "idle_backlog_fraction": 0.007163522556637081
+      },
+      "ownership_crosscheck_delta_ns": {
+        "busy": 0,
+        "idle_backlog": 0
+      },
+      "offered_completions": 2222,
+      "offered_completion_rate_s": 61.72222222222222,
+      "send_ms_overall": {
+        "count": 2222,
+        "mean": 4.42609961971197,
+        "p50": 0.024357,
+        "p95": 35.613254999999995,
+        "p99": 39.806412,
+        "min": 0.009084,
+        "max": 366.115307
+      },
+      "send_excess_gt20ms_s": 4.430070394,
+      "peak_client_rss_mib": 17.0859375,
+      "peak_payload_bytes": {
+        "queued_payload_bytes": 262144,
+        "handler_payload_bytes": 0,
+        "worker_payload_bytes": 16384
+      },
+      "final_accounting": {
+        "received": "2222",
+        "admitted": "2222",
+        "dequeued": "2222",
+        "processed": "2222",
+        "discarded": "0",
+        "received_not_admitted": "0",
+        "reservations_acquired": "2223",
+        "reservations_released": "1",
+        "Q": "0",
+        "R": "0",
+        "W": "0",
+        "queued_payload_bytes": "0",
+        "handler_payload_bytes": "0",
+        "worker_payload_bytes": "0",
+        "received_bytes": "36405248",
+        "admitted_bytes": "36405248",
+        "processed_bytes": "36405248",
+        "active_streams": "0",
+        "controller_running": "0",
+        "physical_available_capacity": "32",
+        "terminal_reason": "normal_eof_drained"
+      },
+      "controller": {
+        "tick_count": 72,
+        "update_count": 4,
+        "updates": [
+          {
+            "scheduled_ns": "13000000000",
+            "observed_ns": "13000945122",
+            "lateness_ns": "945122",
+            "window_start_ns": "12501115626",
+            "interval_completions": "12",
+            "interval_service_ns": "498305634",
+            "interval_mean_ms": "41.5254695",
+            "ewma_ms": "22.025315889343545",
+            "estimated_delay_ms": "352.4050542294967",
+            "Q": "16",
+            "R": "0",
+            "W": "1",
+            "B_before": "16",
+            "B_proposed": "8",
+            "B_after": "8",
+            "near_full": "1",
+            "high_before": "1",
+            "low_before": "0",
+            "high_after": "0",
+            "low_after": "0",
+            "proposal_reason": "decrease",
+            "decision_reason": "decrease",
+            "shrink_occupancy": "16",
+            "total_completions": "984",
+            "total_service_ns": "11697527754"
+          },
+          {
+            "scheduled_ns": "14000000000",
+            "observed_ns": "14000802323",
+            "lateness_ns": "802323",
+            "window_start_ns": "13500847698",
+            "interval_completions": "12",
+            "interval_service_ns": "494453859",
+            "interval_mean_ms": "41.20448825",
+            "ewma_ms": "28.945123472513203",
+            "estimated_delay_ms": "231.56098778010562",
+            "Q": "8",
+            "R": "0",
+            "W": "1",
+            "B_before": "8",
+            "B_proposed": "4",
+            "B_after": "4",
+            "near_full": "1",
+            "high_before": "1",
+            "low_before": "0",
+            "high_after": "0",
+            "low_after": "0",
+            "proposal_reason": "decrease",
+            "decision_reason": "decrease",
+            "shrink_occupancy": "8",
+            "total_completions": "1008",
+            "total_service_ns": "12687583387"
+          },
+          {
+            "scheduled_ns": "15000000000",
+            "observed_ns": "15000897157",
+            "lateness_ns": "897157",
+            "window_start_ns": "14500679142",
+            "interval_completions": "12",
+            "interval_service_ns": "492703187",
+            "interval_mean_ms": "41.05859891666666",
+            "ewma_ms": "33.28366985907512",
+            "estimated_delay_ms": "133.13467943630047",
+            "Q": "4",
+            "R": "0",
+            "W": "1",
+            "B_before": "4",
+            "B_proposed": "2",
+            "B_after": "2",
+            "near_full": "1",
+            "high_before": "1",
+            "low_before": "0",
+            "high_after": "0",
+            "low_after": "0",
+            "proposal_reason": "decrease",
+            "decision_reason": "decrease",
+            "shrink_occupancy": "4",
+            "total_completions": "1032",
+            "total_service_ns": "13671316903"
+          },
+          {
+            "scheduled_ns": "16000000000",
+            "observed_ns": "16000704813",
+            "lateness_ns": "704813",
+            "window_start_ns": "15501364999",
+            "interval_completions": "12",
+            "interval_service_ns": "495921496",
+            "interval_mean_ms": "41.32679133333333",
+            "ewma_ms": "36.15443340314141",
+            "estimated_delay_ms": "72.30886680628282",
+            "Q": "2",
+            "R": "0",
+            "W": "1",
+            "B_before": "2",
+            "B_proposed": "3",
+            "B_after": "3",
+            "near_full": "1",
+            "high_before": "0",
+            "low_before": "1",
+            "high_after": "0",
+            "low_after": "0",
+            "proposal_reason": "increase",
+            "decision_reason": "increase",
+            "shrink_occupancy": "4",
+            "total_completions": "1056",
+            "total_service_ns": "14661302881"
+          }
+        ],
+        "final_B": 3,
+        "min_B": 2,
+        "max_B": 16,
+        "reversals": 1,
+        "max_tick_lateness_ms": 1.488395,
+        "timed_controller_io_ms": 2.170334
+      },
+      "sample_gaps_ms": {
+        "server": {
+          "count": 182,
+          "mean": 199.9991521318681,
+          "p50": 199.952161,
+          "p95": 200.713301,
+          "p99": 201.169836,
+          "min": 198.919807,
+          "max": 201.698823
+        },
+        "client": {
+          "count": 180,
+          "mean": 199.13165890555553,
+          "p50": 200.00077399999998,
+          "p95": 200.846183,
+          "p99": 200.995455,
+          "min": 43.707699999999996,
+          "max": 201.04511599999998
+        }
+      },
+      "sampled_Q_mean": 1.5722222222222222,
+      "process": {
+        "server": {
+          "cpu_s": 0.98,
+          "observed_wall_s": 36.670447312,
+          "one_core_percent": 2.672451720214784,
+          "peak_rss_mib": 6.9140625
+        },
+        "client": {
+          "cpu_s": 0.98,
+          "observed_wall_s": 36.269702713,
+          "one_core_percent": 2.701979687439629,
+          "peak_rss_mib": 16.58984375
+        }
+      }
+    },
+    {
+      "name": "b01-02-fixed32",
+      "purpose": "primary_controlled_comparison",
+      "event_io": "buffered",
+      "source_commit": "37fbdddf53918392043dd17e53b5740134eed4c1",
+      "valid_for_declared_purpose": true,
+      "scheduled": 2880,
+      "skipped": 630,
+      "attempted": 2250,
+      "successful_sends": 2250,
+      "failed_sends": 0,
+      "admitted": 2250,
+      "dequeued": 2250,
+      "processed": 2250,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 32,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.757374,
+      "worker_observed_s": 36.000726153,
+      "worker_busy_s": 33.840319885,
+      "worker_idle_s": 2.160406268,
+      "idle_backlog_ms": 90.709371,
+      "event_write_calls": 9005,
+      "event_format_write_ms": 31.797337,
+      "event_write_max_us": 211.188,
+      "event_flush_calls": 185,
+      "event_flush_ms": 4.904323,
+      "event_flush_max_us": 114.583,
+      "timed_event_io_fraction": 0.0010194699919113045,
+      "service_mean_ms": 15.04014217111111,
+      "service_p95_upper_ms": 41.679231,
+      "half_close_s": 36.000452151,
+      "rpc_s": 36.347574072,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 7.765625,
+      "send_gt20ms_calls": 273,
+      "send_gt20ms_duration_s": 9.400869206,
+      "send_wall_duration_s": 9.479843679,
+      "logical_admission_wait_s": 12.295003093,
+      "physical_reservation_wait_s": 0.001190073,
+      "server_eof_s": 36.000685172,
+      "last_completion_s": 35.999515502,
+      "server_worker_stop_s": 36.000726153,
+      "server_eof_to_worker_stop_s": 4.098100000504701e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 960,
+          "first_start_s": 0.001615809,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 291,
+          "first_start_s": 12.002053677,
+          "selected_ms": [
+            40
+          ]
+        },
+        "2": {
+          "count": 999,
+          "first_start_s": 24.01266267,
+          "selected_ms": [
+            10
+          ]
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phases": {
+        "healthy": {
+          "bounds_s": [
+            0,
+            12
+          ],
+          "actual_service_ms_by_start": {
+            "count": 960,
+            "mean": 11.132356919791667,
+            "p50": 11.153893,
+            "p95": 11.355606,
+            "p99": 11.507114,
+            "min": 10.128351,
+            "max": 13.132850999999999
+          },
+          "completion_count": 960,
+          "completion_rate_s": 80.0,
+          "queue_residence_ms_by_enqueue": {
+            "count": 960,
+            "mean": 0.060650013541666666,
+            "p50": 0.038438,
+            "p95": 0.08340499999999999,
+            "p99": 0.36036199999999996,
+            "min": 0.017847,
+            "max": 4.180861
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 960,
+          "successful_sends": 960,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 80.0,
+          "send_ms": {
+            "count": 960,
+            "mean": 0.02672631875,
+            "p50": 0.022664,
+            "p95": 0.045718999999999996,
+            "p99": 0.122149,
+            "min": 0.008662999999999999,
+            "max": 0.29706699999999997
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 960,
+          "skipped_scheduled_slots": 0
+        },
+        "slowdown": {
+          "bounds_s": [
+            12,
+            24
+          ],
+          "actual_service_ms_by_start": {
+            "count": 291,
+            "mean": 41.226597553264604,
+            "p50": 41.114027,
+            "p95": 41.949089,
+            "p99": 42.119295,
+            "min": 40.208304999999996,
+            "max": 42.226306
+          },
+          "completion_count": 290,
+          "completion_rate_s": 24.166666666666668,
+          "queue_residence_ms_by_enqueue": {
+            "count": 323,
+            "mean": 1178.5719714798763,
+            "p50": 1318.665818,
+            "p95": 1323.320151,
+            "p99": 1326.215303,
+            "min": 0.027791,
+            "max": 1326.644734
+          },
+          "Q_mean": 31.183333333333334,
+          "Q_max": 32,
+          "attempted_sends": 332,
+          "successful_sends": 332,
+          "successful_send_returns": 331,
+          "return_rate_s": 27.583333333333332,
+          "attempt_rate_s": 27.666666666666668,
+          "send_ms": {
+            "count": 332,
+            "mean": 28.377577045180722,
+            "p50": 33.413753,
+            "p95": 39.972725,
+            "p99": 41.041351999999996,
+            "min": 0.016655,
+            "max": 50.516048
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 332,
+          "skipped_scheduled_slots": 628
+        },
+        "recovery": {
+          "bounds_s": [
+            24,
+            36
+          ],
+          "actual_service_ms_by_start": {
+            "count": 999,
+            "mean": 11.167484838838838,
+            "p50": 11.181422999999999,
+            "p95": 11.608455,
+            "p99": 11.987656,
+            "min": 10.131935,
+            "max": 12.976448
+          },
+          "completion_count": 1000,
+          "completion_rate_s": 83.33333333333333,
+          "queue_residence_ms_by_enqueue": {
+            "count": 967,
+            "mean": 79.53944933919338,
+            "p50": 0.050216,
+            "p95": 356.65995799999996,
+            "p99": 358.347242,
+            "min": 0.018007,
+            "max": 359.332039
+          },
+          "Q_mean": 6.883333333333334,
+          "Q_max": 32,
+          "attempted_sends": 958,
+          "successful_sends": 958,
+          "successful_send_returns": 959,
+          "return_rate_s": 79.91666666666667,
+          "attempt_rate_s": 79.83333333333333,
+          "send_ms": {
+            "count": 958,
+            "mean": 0.03427018162839248,
+            "p50": 0.027572,
+            "p95": 0.071889,
+            "p99": 0.188023,
+            "min": 0.009404,
+            "max": 0.484058
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 958,
+          "skipped_scheduled_slots": 2
+        },
+        "drain": {
+          "bounds_s": [
+            36,
+            null
+          ],
+          "actual_service_ms_by_start": {
+            "count": 0
+          },
+          "completion_count": 0,
+          "completion_rate_s": null,
+          "queue_residence_ms_by_enqueue": {
+            "count": 0
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 0,
+          "successful_sends": 0,
+          "successful_send_returns": 0,
+          "return_rate_s": null,
+          "attempt_rate_s": null,
+          "send_ms": {
+            "count": 0
+          }
+        }
+      },
+      "first_sampled_Q_zero_after24_s": 28.284037988,
+      "early_recovery_completion_rate_s": 89.0,
+      "late_recovery_completion_rate_s": 80.25,
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1410290",
+          "lateness_ns": "1410290",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793162646769861006"
+        },
+        {
+          "scheduled_ns": "12000000000",
+          "observed_ns": "12000374696",
+          "lateness_ns": "374696",
+          "phase": "slowdown",
+          "configured_ms": "40",
+          "unix_ns": "1793162658768824861"
+        },
+        {
+          "scheduled_ns": "24000000000",
+          "observed_ns": "24001318831",
+          "lateness_ns": "1318831",
+          "phase": "recovery",
+          "configured_ms": "10",
+          "unix_ns": "1793162670769770008"
+        },
+        {
+          "scheduled_ns": "36000000000",
+          "observed_ns": "36000627365",
+          "lateness_ns": "627365",
+          "phase": "drain",
+          "configured_ms": "10",
+          "unix_ns": "1793162682769076799"
+        }
+      ],
+      "block": 1,
+      "position": 2,
+      "policy": "fixed32",
+      "primary_run": true,
+      "pooled_queue_ms": {
+        "count": 1290,
+        "mean": 354.723561472093,
+        "p50": 38.671617,
+        "p95": 1321.34349,
+        "p99": 1323.828802,
+        "min": 0.018007,
+        "max": 1326.644734
+      },
+      "recovery": {
+        "healthy_p95_ms": 0.083405,
+        "healthy_completion_rate_s": 80.0,
+        "start_delay_s": 4.399999999999999,
+        "confirmation_delay_s": 7.399999999999999,
+        "right_censored": false,
+        "censor_confirmation_delay_s": null,
+        "windows": [
+          {
+            "start_s": 24.0,
+            "confirmation_s": 27.0,
+            "queue_count": 247,
+            "completion_count": 267,
+            "p95_ms": 357.971944,
+            "completion_rate_s": 89.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 24.2,
+            "confirmation_s": 27.2,
+            "queue_count": 246,
+            "completion_count": 268,
+            "p95_ms": 357.971944,
+            "completion_rate_s": 89.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 24.4,
+            "confirmation_s": 27.4,
+            "queue_count": 244,
+            "completion_count": 268,
+            "p95_ms": 357.971944,
+            "completion_rate_s": 89.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 24.6,
+            "confirmation_s": 27.6,
+            "queue_count": 242,
+            "completion_count": 268,
+            "p95_ms": 357.471037,
+            "completion_rate_s": 89.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 24.8,
+            "confirmation_s": 27.8,
+            "queue_count": 240,
+            "completion_count": 268,
+            "p95_ms": 344.519177,
+            "completion_rate_s": 89.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 25.0,
+            "confirmation_s": 28.0,
+            "queue_count": 240,
+            "completion_count": 267,
+            "p95_ms": 326.475363,
+            "completion_rate_s": 89.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 25.2,
+            "confirmation_s": 28.2,
+            "queue_count": 240,
+            "completion_count": 267,
+            "p95_ms": 305.970298,
+            "completion_rate_s": 89.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 25.4,
+            "confirmation_s": 28.4,
+            "queue_count": 240,
+            "completion_count": 267,
+            "p95_ms": 286.936491,
+            "completion_rate_s": 89.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 25.6,
+            "confirmation_s": 28.6,
+            "queue_count": 240,
+            "completion_count": 265,
+            "p95_ms": 266.17175,
+            "completion_rate_s": 88.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 25.8,
+            "confirmation_s": 28.8,
+            "queue_count": 240,
+            "completion_count": 264,
+            "p95_ms": 247.074843,
+            "completion_rate_s": 88.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 26.0,
+            "confirmation_s": 29.0,
+            "queue_count": 240,
+            "completion_count": 261,
+            "p95_ms": 227.772648,
+            "completion_rate_s": 87.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 26.2,
+            "confirmation_s": 29.2,
+            "queue_count": 240,
+            "completion_count": 260,
+            "p95_ms": 207.316752,
+            "completion_rate_s": 86.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 26.4,
+            "confirmation_s": 29.4,
+            "queue_count": 240,
+            "completion_count": 259,
+            "p95_ms": 186.378671,
+            "completion_rate_s": 86.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 26.6,
+            "confirmation_s": 29.6,
+            "queue_count": 240,
+            "completion_count": 257,
+            "p95_ms": 164.424915,
+            "completion_rate_s": 85.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 26.8,
+            "confirmation_s": 29.8,
+            "queue_count": 240,
+            "completion_count": 255,
+            "p95_ms": 143.458636,
+            "completion_rate_s": 85.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 27.0,
+            "confirmation_s": 30.0,
+            "queue_count": 240,
+            "completion_count": 253,
+            "p95_ms": 122.343217,
+            "completion_rate_s": 84.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 27.2,
+            "confirmation_s": 30.2,
+            "queue_count": 240,
+            "completion_count": 251,
+            "p95_ms": 99.186222,
+            "completion_rate_s": 83.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 27.4,
+            "confirmation_s": 30.4,
+            "queue_count": 240,
+            "completion_count": 249,
+            "p95_ms": 76.901444,
+            "completion_rate_s": 83.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 27.6,
+            "confirmation_s": 30.6,
+            "queue_count": 240,
+            "completion_count": 247,
+            "p95_ms": 56.86274,
+            "completion_rate_s": 82.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 27.8,
+            "confirmation_s": 30.8,
+            "queue_count": 240,
+            "completion_count": 245,
+            "p95_ms": 39.394785,
+            "completion_rate_s": 81.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 28.0,
+            "confirmation_s": 31.0,
+            "queue_count": 240,
+            "completion_count": 243,
+            "p95_ms": 18.579212,
+            "completion_rate_s": 81.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 28.2,
+            "confirmation_s": 31.2,
+            "queue_count": 240,
+            "completion_count": 242,
+            "p95_ms": 0.194683,
+            "completion_rate_s": 80.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 28.4,
+            "confirmation_s": 31.4,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.074042,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": true
+          },
+          {
+            "start_s": 28.6,
+            "confirmation_s": 31.6,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.081412,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 28.8,
+            "confirmation_s": 31.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.090846,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 29.0,
+            "confirmation_s": 32.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.090846,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 29.2,
+            "confirmation_s": 32.2,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.083065,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": true
+          },
+          {
+            "start_s": 29.4,
+            "confirmation_s": 32.4,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.100381,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 29.6,
+            "confirmation_s": 32.6,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.100381,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 29.8,
+            "confirmation_s": 32.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.089565,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 30.0,
+            "confirmation_s": 33.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.089565,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 30.2,
+            "confirmation_s": 33.2,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.092169,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 30.4,
+            "confirmation_s": 33.4,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.104948,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 30.6,
+            "confirmation_s": 33.6,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.104948,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 30.8,
+            "confirmation_s": 33.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.117417,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 31.0,
+            "confirmation_s": 34.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.104948,
+            "completion_rate_s": 80.0,
+            "qualifies": false
+          },
+          {
+            "start_s": 31.2,
+            "confirmation_s": 34.2,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.089565,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": false
+          },
+          {
+            "start_s": 31.4,
+            "confirmation_s": 34.4,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.089565,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": false
+          },
+          {
+            "start_s": 31.6,
+            "confirmation_s": 34.6,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.081212,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 31.8,
+            "confirmation_s": 34.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.080381,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.0,
+            "confirmation_s": 35.0,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.080801,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.2,
+            "confirmation_s": 35.2,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.081212,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.4,
+            "confirmation_s": 35.4,
+            "queue_count": 240,
+            "completion_count": 239,
+            "p95_ms": 0.080381,
+            "completion_rate_s": 79.66666666666667,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.6,
+            "confirmation_s": 35.6,
+            "queue_count": 240,
+            "completion_count": 241,
+            "p95_ms": 0.080381,
+            "completion_rate_s": 80.33333333333333,
+            "qualifies": true
+          },
+          {
+            "start_s": 32.8,
+            "confirmation_s": 35.8,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.075133,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          },
+          {
+            "start_s": 33.0,
+            "confirmation_s": 36.0,
+            "queue_count": 240,
+            "completion_count": 240,
+            "p95_ms": 0.075133,
+            "completion_rate_s": 80.0,
+            "qualifies": true
+          }
+        ]
+      },
+      "offered_ownership": {
+        "busy_s": 33.840319885,
+        "idle_s": 2.159680115,
+        "utilization": 0.9400088856944444,
+        "backlog_s": 16.349647477,
+        "idle_backlog_s": 0.090709371,
+        "idle_backlog_fraction": 0.0055480933841299115
+      },
+      "full_span_ownership": {
+        "busy_s": 33.840319885,
+        "idle_s": 2.160406268,
+        "utilization": 0.939989925235995,
+        "backlog_s": 16.349647477,
+        "idle_backlog_s": 0.090709371,
+        "idle_backlog_fraction": 0.0055480933841299115
+      },
+      "ownership_crosscheck_delta_ns": {
+        "busy": 0,
+        "idle_backlog": 0
+      },
+      "offered_completions": 2250,
+      "offered_completion_rate_s": 62.5,
+      "send_ms_overall": {
+        "count": 2250,
+        "mean": 4.213263857333333,
+        "p50": 0.025679,
+        "p95": 35.718528,
+        "p99": 39.674316,
+        "min": 0.008662999999999999,
+        "max": 50.516048
+      },
+      "send_excess_gt20ms_s": 3.940869206,
+      "peak_client_rss_mib": 17.40234375,
+      "peak_payload_bytes": {
+        "queued_payload_bytes": 524288,
+        "handler_payload_bytes": 0,
+        "worker_payload_bytes": 16384
+      },
+      "final_accounting": {
+        "received": "2250",
+        "admitted": "2250",
+        "dequeued": "2250",
+        "processed": "2250",
+        "discarded": "0",
+        "received_not_admitted": "0",
+        "reservations_acquired": "2251",
+        "reservations_released": "1",
+        "Q": "0",
+        "R": "0",
+        "W": "0",
+        "queued_payload_bytes": "0",
+        "handler_payload_bytes": "0",
+        "worker_payload_bytes": "0",
+        "received_bytes": "36864000",
+        "admitted_bytes": "36864000",
+        "processed_bytes": "36864000",
+        "active_streams": "0",
+        "controller_running": "0",
+        "physical_available_capacity": "32",
+        "terminal_reason": "normal_eof_drained"
+      },
+      "controller": {
+        "tick_count": 72,
+        "update_count": 0,
+        "updates": [],
+        "final_B": 32,
+        "min_B": 32,
+        "max_B": 32,
+        "reversals": 0,
+        "max_tick_lateness_ms": 1.309302,
+        "timed_controller_io_ms": 2.099645
+      },
+      "sample_gaps_ms": {
+        "server": {
+          "count": 182,
+          "mean": 200.00045764285713,
+          "p50": 200.01387599999998,
+          "p95": 200.749864,
+          "p99": 200.928261,
+          "min": 198.99343399999998,
+          "max": 200.935116
+        },
+        "client": {
+          "count": 180,
+          "mean": 199.12822215555553,
+          "p50": 200.00964,
+          "p95": 200.89598099999998,
+          "p99": 201.10818799999998,
+          "min": 42.497516999999995,
+          "max": 201.61137399999998
+        }
+      },
+      "sampled_Q_mean": 12.688888888888888,
+      "process": {
+        "server": {
+          "cpu_s": 1.06,
+          "observed_wall_s": 36.675465059,
+          "one_core_percent": 2.8902155658960913,
+          "peak_rss_mib": 7.35546875
+        },
+        "client": {
+          "cpu_s": 1.02,
+          "observed_wall_s": 36.274692844,
+          "one_core_percent": 2.8118777032421174,
+          "peak_rss_mib": 17.18359375
+        }
+      }
+    }
+  ]
+}

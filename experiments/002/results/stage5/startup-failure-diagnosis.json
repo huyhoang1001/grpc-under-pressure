@@ -1,0 +1,16 @@
+{
+  "run": "b01-03-fixed8",
+  "declared_valid": false,
+  "runner_error": "clock evidence missing",
+  "server_clock_exists": false,
+  "server_marker_task_panic": "ParseIntError { kind: Empty } at server/mod.rs:1120",
+  "root_cause": "Non-atomic Path.write_text publishes an empty marker file before writing timestamp; server parse unwrap sees empty content",
+  "server_received": 0,
+  "server_admitted": 0,
+  "server_dequeued": 0,
+  "server_processed": 0,
+  "client_error": "DeadlineExceeded at unchanged 120s deadline",
+  "application_changes": false,
+  "amended_harness_publication": "write complete same-directory temporary file then os.replace",
+  "amendment": "experiments/002/stage5/AMENDMENT-1.md"
+}

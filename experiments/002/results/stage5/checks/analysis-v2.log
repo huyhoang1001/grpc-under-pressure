@@ -1,0 +1,86 @@
+{
+  "complete": true,
+  "valid_runs": 15,
+  "invalid": [],
+  "hypotheses": {
+    "H1": {
+      "status": "supported in observed valid runs",
+      "scope": "All lifecycle/physical/admission/byte checks passed, not a universal guarantee"
+    },
+    "H2": {
+      "status": "supported",
+      "pooled_reduction": {
+        "point": 0.8752202201602125,
+        "ci95": [
+          0.8748161682767905,
+          0.8756228001081626
+        ],
+        "bootstrap_samples": 3125,
+        "unique_cluster_compositions": 126
+      }
+    },
+    "H3": {
+      "status": "not fully established",
+      "throughput_criterion_met": true,
+      "throughput_ratio": 0.987986117291092,
+      "throughput_ratio_ci95": [
+        0.9866678517465114,
+        0.9898323225115947
+      ],
+      "idle_nonincrease_supported": false,
+      "idle_difference_fraction_ci95": [
+        0.0012331467369478943,
+        0.001998276117281015
+      ],
+      "qualification": "Frozen contract has no numerical material-idle margin; do not equate a CI containing zero with noninferiority"
+    },
+    "H4": {
+      "status": "not established",
+      "recovery": {
+        "status": "censored, no complete-pair effect interval",
+        "adaptive": [
+          4.199999999999999,
+          7.399999999999999,
+          5.600000000000001,
+          4.199999999999999,
+          4.199999999999999
+        ],
+        "baseline": [
+          7.199999999999999,
+          null,
+          7.199999999999999,
+          null,
+          7.399999999999999
+        ]
+      },
+      "rpc_ratio": 0.9999936607102696,
+      "rpc_ratio_ci95": [
+        0.9999585202654678,
+        1.000028801816187
+      ]
+    },
+    "H5": {
+      "status": "mixed/incomplete tradeoff; necessity and overall material benefit not established",
+      "adaptive_pareto_on_observed_mean_endpoints": false,
+      "fixed8_pareto_on_observed_mean_endpoints": false,
+      "signed_mean_effects_lower_favors_adaptive": {
+        "queue_p95": -166.0287624,
+        "queue_p99": 326.25534999999996,
+        "slow_p95": 326.1866622,
+        "slow_p99": 327.14919979999996,
+        "recovery_p95": -57.9972372,
+        "rpc": 0.0009170428000004449,
+        "skipped": 2,
+        "recovery_confirmation": null,
+        "throughput": 0.05000000000000426
+      },
+      "qualification": "No frozen materiality margin or endpoint weights; evaluate the full fixed8 tradeoff, including repeated worse slowdown tails. Pooled p95 alone is insufficient.",
+      "slow_p95_pairs_adaptive_worse": 5,
+      "slow_p99_pairs_adaptive_worse": 5
+    },
+    "null": {
+      "status": "not formally rejected; assess consistency with waiting moved upstream and fixed bounded sufficiency",
+      "qualification": "Qualitative engineering null, no prespecified probabilistic null model; local latency is not end-to-end improvement"
+    }
+  }
+}

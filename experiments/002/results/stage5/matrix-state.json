@@ -1,0 +1,14 @@
+{
+  "status": "stopped_partial",
+  "freeze_sha256": "f4fc4c48c0454db629707697709827d8f4780fa4a289d17af3ee9258db8ca543",
+  "started_unix_ns": 1793162608809645047,
+  "attempts": 3,
+  "current": {
+    "block": 1,
+    "position": 3,
+    "policy": "fixed8",
+    "name": "b01-03-fixed8"
+  },
+  "error": "RuntimeError('Stop and diagnose; all attempted data retained')",
+  "finished_unix_ns": 1793162804418118503
+}

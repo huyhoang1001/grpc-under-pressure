@@ -1,0 +1,28 @@
+{
+  "attempted_runs": 18,
+  "valid_attempts": 17,
+  "invalid_attempts": 1,
+  "final_primary_runs": 15,
+  "excluded_from_final_primary_estimates": [
+    {
+      "cohort": "original",
+      "name": "b01-01-adaptive",
+      "valid_for_original_purpose": true,
+      "reason": "Entire original incomplete matrix kept separate under predeclared whole-matrix restart amendment; no selection by measured endpoints"
+    },
+    {
+      "cohort": "original",
+      "name": "b01-02-fixed32",
+      "valid_for_original_purpose": true,
+      "reason": "Entire original incomplete matrix kept separate under predeclared whole-matrix restart amendment; no selection by measured endpoints"
+    },
+    {
+      "cohort": "original",
+      "name": "b01-03-fixed8",
+      "valid_for_original_purpose": false,
+      "reason": "Marker-reader task panic on transient empty file; no server workload start; client deadline120s; see startup-failure-diagnosis.json"
+    }
+  ],
+  "individual_policy_replacements": 0,
+  "whole_matrix_restarts": 1
+}

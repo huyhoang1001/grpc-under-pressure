@@ -1,0 +1,12 @@
+test_cluster_weighted_nearest_rank_matches_expanded_cohorts (test_analysis.AnalysisTests.test_cluster_weighted_nearest_rank_matches_expanded_cohorts) ... ok
+test_enqueue_cohort_half_open_boundaries_not_completion_time (test_analysis.AnalysisTests.test_enqueue_cohort_half_open_boundaries_not_completion_time) ... ok
+test_marker_publication_is_atomic_to_readers (test_analysis.AnalysisTests.test_marker_publication_is_atomic_to_readers) ... ok
+test_order_has_five_complete_interleaved_blocks_and_is_deterministic (test_analysis.AnalysisTests.test_order_has_five_complete_interleaved_blocks_and_is_deterministic) ... ok
+test_primary_verifier_accepts_historical_copy_and_rejects_config_tamper (test_analysis.AnalysisTests.test_primary_verifier_accepts_historical_copy_and_rejects_config_tamper) ... ok
+test_recovery_contiguous_window_and_right_censoring (test_analysis.AnalysisTests.test_recovery_contiguous_window_and_right_censoring) ... ok
+test_worker_utilization_backlog_ownership_and_clipping (test_analysis.AnalysisTests.test_worker_utilization_backlog_ownership_and_clipping) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.232s
+
+OK

@@ -1,0 +1,15 @@
+b01-01-adaptive PASS
+b01-02-fixed32 PASS
+b01-03-fixed8 PASS
+b02-01-adaptive PASS
+b02-02-fixed8 PASS
+b02-03-fixed32 PASS
+b03-01-adaptive PASS
+b03-02-fixed8 PASS
+b03-03-fixed32 PASS
+b04-01-fixed32 PASS
+b04-02-fixed8 PASS
+b04-03-adaptive PASS
+b05-01-fixed8 PASS
+b05-02-adaptive PASS
+b05-03-fixed32 PASS

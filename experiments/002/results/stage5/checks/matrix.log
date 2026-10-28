@@ -1,0 +1,13 @@
+b01-01-adaptive PASS
+b01-02-fixed32 PASS
+b01-03-fixed8 ['validation failed TypeError("\'NoneType\' object is not subscriptable")']
+Traceback (most recent call last):
+  File "/workspace/grpc-under-pressure/experiments/002/stage5/run.py", line 133, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/grpc-under-pressure/experiments/002/stage5/run.py", line 127, in main
+    run(root,ROW['name'],36,policy=ROW['policy'],schedule='contract')
+  File "/workspace/grpc-under-pressure/experiments/002/stage5/run.py", line 108, in run
+    if issues:raise RuntimeError('Stop and diagnose; all attempted data retained')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Stop and diagnose; all attempted data retained

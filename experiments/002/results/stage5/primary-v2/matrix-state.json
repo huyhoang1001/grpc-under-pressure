@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "freeze_sha256": "5289bfff82e6ef0a3846f2b9142397d964dd1cf8613ce9a8e2042e848db15765",
+  "started_unix_ns": 1793162991968430479,
+  "attempts": 15,
+  "current": {
+    "block": 5,
+    "position": 3,
+    "policy": "fixed32",
+    "name": "b05-03-fixed32"
+  },
+  "finished_unix_ns": 1793163552082743887
+}

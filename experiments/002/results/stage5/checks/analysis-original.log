@@ -1,0 +1,26 @@
+{
+  "complete": false,
+  "valid_runs": 2,
+  "invalid": [
+    {
+      "name": "b01-03-fixed8",
+      "issues": [
+        "validation exception TypeError(\"'NoneType' object is not subscriptable\")"
+      ]
+    }
+  ],
+  "hypotheses": {
+    "status": "Incomplete matrix; no full primary hypothesis decision",
+    "H1": {
+      "status": "inspect invalid runs; do not infer all-attempt safety from valid subset",
+      "invalid": [
+        {
+          "name": "b01-03-fixed8",
+          "issues": [
+            "validation exception TypeError(\"'NoneType' object is not subscriptable\")"
+          ]
+        }
+      ]
+    }
+  }
+}

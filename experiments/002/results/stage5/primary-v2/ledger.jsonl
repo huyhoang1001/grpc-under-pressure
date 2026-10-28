@@ -1,0 +1,15 @@
+{"name": "b01-01-adaptive", "block": 1, "position": 1, "purpose": "primary_controlled_comparison", "policy": "adaptive", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b01-02-fixed32", "block": 1, "position": 2, "purpose": "primary_controlled_comparison", "policy": "fixed32", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b01-03-fixed8", "block": 1, "position": 3, "purpose": "primary_controlled_comparison", "policy": "fixed8", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b02-01-adaptive", "block": 2, "position": 1, "purpose": "primary_controlled_comparison", "policy": "adaptive", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b02-02-fixed8", "block": 2, "position": 2, "purpose": "primary_controlled_comparison", "policy": "fixed8", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b02-03-fixed32", "block": 2, "position": 3, "purpose": "primary_controlled_comparison", "policy": "fixed32", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b03-01-adaptive", "block": 3, "position": 1, "purpose": "primary_controlled_comparison", "policy": "adaptive", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b03-02-fixed8", "block": 3, "position": 2, "purpose": "primary_controlled_comparison", "policy": "fixed8", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b03-03-fixed32", "block": 3, "position": 3, "purpose": "primary_controlled_comparison", "policy": "fixed32", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b04-01-fixed32", "block": 4, "position": 1, "purpose": "primary_controlled_comparison", "policy": "fixed32", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b04-02-fixed8", "block": 4, "position": 2, "purpose": "primary_controlled_comparison", "policy": "fixed8", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b04-03-adaptive", "block": 4, "position": 3, "purpose": "primary_controlled_comparison", "policy": "adaptive", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b05-01-fixed8", "block": 5, "position": 1, "purpose": "primary_controlled_comparison", "policy": "fixed8", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b05-02-adaptive", "block": 5, "position": 2, "purpose": "primary_controlled_comparison", "policy": "adaptive", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b05-03-fixed32", "block": 5, "position": 3, "purpose": "primary_controlled_comparison", "policy": "fixed32", "expected_fault": null, "issues": [], "valid": true}

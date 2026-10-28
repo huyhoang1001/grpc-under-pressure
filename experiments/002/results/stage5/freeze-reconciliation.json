@@ -1,0 +1,18 @@
+{
+  "original_freeze_sha256": "f4fc4c48c0454db629707697709827d8f4780fa4a289d17af3ee9258db8ca543",
+  "corrected_freeze_sha256": "5289bfff82e6ef0a3846f2b9142397d964dd1cf8613ce9a8e2042e848db15765",
+  "identical_fields": [
+    "application_source_commit",
+    "application_source_sha256",
+    "binary_sha256",
+    "configuration",
+    "policy_initial_budgets",
+    "order",
+    "order_seed",
+    "analysis_plan_sha256"
+  ],
+  "endpoint_analysis_and_verifier_byte_identical": true,
+  "harness_amendment": "experiments/002/stage5/AMENDMENT-1.md",
+  "original_attempts_retained": 3,
+  "original_valid_runs_not_mixed_into_restarted_primary_estimates": 2
+}

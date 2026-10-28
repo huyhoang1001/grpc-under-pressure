@@ -1,0 +1,3 @@
+{"name": "b01-01-adaptive", "block": 1, "position": 1, "purpose": "primary_controlled_comparison", "policy": "adaptive", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b01-02-fixed32", "block": 1, "position": 2, "purpose": "primary_controlled_comparison", "policy": "fixed32", "expected_fault": null, "issues": [], "valid": true}
+{"name": "b01-03-fixed8", "block": 1, "position": 3, "purpose": "primary_controlled_comparison", "policy": "fixed8", "expected_fault": null, "issues": ["validation failed TypeError(\"'NoneType' object is not subscriptable\")"], "valid": false}

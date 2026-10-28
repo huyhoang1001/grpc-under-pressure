@@ -1,0 +1,9 @@
+{
+  "credential_pattern_scan": "No private-key/GitHub/AWS credential/high-entropy credential assignment pattern matches; limited static scan, not a guarantee",
+  "files_reviewed": 335,
+  "largest_file_bytes": 647358,
+  "total_bytes": 17955094,
+  "unexpected_large_files": false,
+  "executables_or_payload_contents_or_environment_variable_dumps": false,
+  "review_notes": "Full raw evidence retained; original startup failure and valid abandoned-cohort measurements remain explicitly separate from restarted primary cohort. No historical data changed."
+}

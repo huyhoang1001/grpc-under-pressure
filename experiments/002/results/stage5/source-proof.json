@@ -1,0 +1,14 @@
+[
+  {
+    "cohort": ".",
+    "harness_commit": "37fbdddf53918392043dd17e53b5740134eed4c1",
+    "all_harness_hashes_match_committed_bytes": true,
+    "application_and_binaries_still_match_freeze": true
+  },
+  {
+    "cohort": "primary-v2",
+    "harness_commit": "22fa491dc15084dd58ce95446ecfdefd12ad1ee4",
+    "all_harness_hashes_match_committed_bytes": true,
+    "application_and_binaries_still_match_freeze": true
+  }
+]

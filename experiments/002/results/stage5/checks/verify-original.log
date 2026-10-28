@@ -1,0 +1,3 @@
+b01-01-adaptive PASS
+b01-02-fixed32 PASS
+b01-03-fixed8 ['verification exception TypeError("\'NoneType\' object is not subscriptable")']

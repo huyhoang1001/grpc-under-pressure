@@ -1,0 +1,16 @@
+Freeze SHA256 f4fc4c48c0454db629707697709827d8f4780fa4a289d17af3ee9258db8ca543
+b01-01-adaptive
+b01-02-fixed32
+b01-03-fixed8
+b02-01-adaptive
+b02-02-fixed8
+b02-03-fixed32
+b03-01-adaptive
+b03-02-fixed8
+b03-03-fixed32
+b04-01-fixed32
+b04-02-fixed8
+b04-03-adaptive
+b05-01-fixed8
+b05-02-adaptive
+b05-03-fixed32

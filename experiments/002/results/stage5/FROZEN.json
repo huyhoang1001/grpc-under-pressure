@@ -1,0 +1,246 @@
+{
+  "schema": "e2-stage5-freeze-v1",
+  "frozen_unix_ns": 1793162608452464033,
+  "application_source_commit": "ccbd497f85346c7825394924a25db5617e5680e5",
+  "harness_commit": "37fbdddf53918392043dd17e53b5740134eed4c1",
+  "client_build_source_commit": "84509545abf6a5f139687250757e67703477a5c1",
+  "git_status_porcelain": "",
+  "application_source_sha256": {
+    "experiments/002/client/go.mod": "245b3c5ed1338af70f7d22cb65cc00830abb2618d3f4ab4c7b3141b5f8a5a5ea",
+    "experiments/002/client/go.sum": "e34b4ddb3ea9d54efdaea326b5837f32b8e60f72b1dac34a9df14a8115cd4e12",
+    "experiments/002/client/main.go": "1936eeaaa4138fcbd3852603f4fa3c248c812fc68513a31e0823c88dd8a8395e",
+    "experiments/002/client/main_test.go": "cd9338474c48f04ea5f80187d95667bb5567d051992ef4209949879c138e8fb1",
+    "experiments/002/server/adaptive_tests.rs": "a72a4a9173156c3124c38c7c2e1ed84c05b26a6ebbfa540676feba6dc30b2b50",
+    "experiments/002/server/controller.rs": "8fcc62aa94288e8f0191930efb65c368817b6f4eee77734946ce682ac3744595",
+    "experiments/002/server/histogram.rs": "21836f1fceb1e651fcc25bb6b283d0872f94872b630cd1a21a1d1a40d1115646",
+    "experiments/002/server/mod.rs": "e911845f4246d76c2ab76c175a85a70a0df4aec82f84f3930e952087210a490f",
+    "experiments/002/server/tests.rs": "d6a6d940f3810dcc0c5b3fdd68b2651a5a828b7387af6177592b02484fac09b2",
+    "loadgen/cmd/loadgen/main.go": "eff3e0fe1ef07a9ed6fbacc67db4e2d4618f32f1a29afcf8430c8ade8656a996",
+    "loadgen/cmd/loadgen/main_test.go": "5307283ef38bf7112b02e0cf307b5bfafbd2de1595bd52abc012cf47c8f777a9",
+    "loadgen/gen/pressure/v1/ingest.pb.go": "9e86c409f1dbf12cff9b356d47c99219d3dffce3b057b4f173d244822c9b60ce",
+    "loadgen/gen/pressure/v1/ingest_grpc.pb.go": "cc47651c001f36e8e70ab562c8e24b23ff7047027d86e04e830625b974a0d143",
+    "loadgen/go.mod": "e7fd42b2fec6fe47d406b53608f3204665fd5697303b55c8a3b67f7bd672f156",
+    "loadgen/go.sum": "e34b4ddb3ea9d54efdaea326b5837f32b8e60f72b1dac34a9df14a8115cd4e12",
+    "loadgen/protocol_test.go": "09541bdb98cded468eebb2c1294b977f74603d06abbc75570f103c36986d20eb",
+    "proto/ingest.proto": "7001a8a8c55e6016eaf30661d0324a03e9bfb63cc249488a861680097dbbd28a",
+    "rust-toolchain.toml": "d13306be0ecda81ce779baa290ffb417380d525928477f16200884b5169cca33",
+    "server/Cargo.lock": "2579443f2e81532c5d5ea6fba99174c794d3035f73432b9c7017a158ed6d9fee",
+    "server/Cargo.toml": "2ba91621499ce15315934a720d938903b2d97be6a7a2ee4f464e485143e52602",
+    "server/build.rs": "c1985ae90e342997c8dc68aa658b8561027e85192871b49e853ac167fcdf88e3",
+    "server/src/bin/pressure-stage1.rs": "719d7ca90be52605fdddc45acc0aadba7821d9e23d34f599f67727ee23370d0e",
+    "server/src/lib.rs": "140f278631618b6c09c5afab7617894dca16c7aa37a36d84acc52b244343564d",
+    "server/src/main.rs": "b3c4b892238628eb9ae8ce96734ae49cb50624075dc93f3d11410ced848d0c3c"
+  },
+  "harness_source_sha256": {
+    "experiments/002/.gitattributes": "7418fc2999bb90b0258adaf25a07871c09c5c6ede2edb195ac57468d12fc7944",
+    "experiments/002/EXPERIMENT-002.md": "fdd38c609ca7802f9f4a07ecc1d865a707aa9daed258034b943c66361e147b6a",
+    "experiments/002/README.md": "2dac744f9504255a145e0ae6701268355e86357fc64f5c8504a7e0c391445c37",
+    "experiments/002/STAGE1-REPORT.md": "e3ed2b7e56b1bdb50abe3a46f6e153761cba14c5a4ab8badfd380b91137c8b0c",
+    "experiments/002/STAGE2-REPORT.md": "8d7ae5fb10766f5334eac09fe0d3877978156e01e2078dae578e127074b24545",
+    "experiments/002/STAGE3-REPORT.md": "ec46c60e8a4bcb1d723416c637a747ae13d7d3c6c1d69dbb54e572ae116615d8",
+    "experiments/002/STAGE4-REPORT.md": "9e2731964e0206332df653b8b06b03fe4e12cdff56eed00f26090ef62cd9fa08",
+    "experiments/002/client/go.mod": "245b3c5ed1338af70f7d22cb65cc00830abb2618d3f4ab4c7b3141b5f8a5a5ea",
+    "experiments/002/client/go.sum": "e34b4ddb3ea9d54efdaea326b5837f32b8e60f72b1dac34a9df14a8115cd4e12",
+    "experiments/002/client/main.go": "1936eeaaa4138fcbd3852603f4fa3c248c812fc68513a31e0823c88dd8a8395e",
+    "experiments/002/client/main_test.go": "cd9338474c48f04ea5f80187d95667bb5567d051992ef4209949879c138e8fb1",
+    "experiments/002/config.json": "a1f42accf2e435bd6a4ec4100352cae77c3959e30ca4639b330fed3571387ee4",
+    "experiments/002/server/adaptive_tests.rs": "a72a4a9173156c3124c38c7c2e1ed84c05b26a6ebbfa540676feba6dc30b2b50",
+    "experiments/002/server/controller.rs": "8fcc62aa94288e8f0191930efb65c368817b6f4eee77734946ce682ac3744595",
+    "experiments/002/server/histogram.rs": "21836f1fceb1e651fcc25bb6b283d0872f94872b630cd1a21a1d1a40d1115646",
+    "experiments/002/server/mod.rs": "e911845f4246d76c2ab76c175a85a70a0df4aec82f84f3930e952087210a490f",
+    "experiments/002/server/tests.rs": "d6a6d940f3810dcc0c5b3fdd68b2651a5a828b7387af6177592b02484fac09b2",
+    "experiments/002/smoke.py": "796ac3bf0dda964dcefca36e36f49910e018b8dc0de727019f47a2f2758c4363",
+    "experiments/002/stage2/README.md": "e9fc1a3dcc4494d6906f02cb3a7954af3202d9e6c7ce1f1e7cbf0369e16e4f9c",
+    "experiments/002/stage2/analyze.py": "11c69d90933f17df73f7d79be86bd4ca7801a9ea822a5fc0bc8b50e22f008a82",
+    "experiments/002/stage2/report.py": "5aca82b28d06b748925e570c909c9722f75ee90e0afd54d5a3f8b0d298f566da",
+    "experiments/002/stage2/run.py": "249116a0429445cce894e7258f392146db2350ca9822d4e6319551ea1d9dae88",
+    "experiments/002/stage3/README.md": "41a84ce01d6c9156051f0f03a6d5a1b481692227ccc704b93877554855474fc0",
+    "experiments/002/stage3/analyze.py": "00218c15435b0a23bf52dca881d3e29a71977cb8c3d0649bfc1fef3364e7a37d",
+    "experiments/002/stage3/audit.py": "f743336554176c5df480b2a2e40b5c3d1857d88db47eb6aeb84565e42d65f556",
+    "experiments/002/stage3/run.py": "8c08fb1f6a19236265d761d6fcc37f83ba6fac34c0cbcce1f6d8e2a63c4ae853",
+    "experiments/002/stage4/README.md": "b3ca86ed116565a96940570d94e310dbb2e0cbf276e22c6dfba95512878ac61c",
+    "experiments/002/stage4/analyze.py": "4c00a90f158535cbe491f099cf2a025a202fb104e666e3d3d04d170ff256c6a8",
+    "experiments/002/stage4/audit.py": "9d27feaefa38d58043ee7cbdc08483bf305690e75cb76e76cc9c56e75a8c7e42",
+    "experiments/002/stage4/run.py": "8c1531fac65a91ac5905c5582b563b7212b3ed8d000fe77a234e35a410683b1d",
+    "experiments/002/stage4/verify.py": "0c2c475891e0597030432bef014738c4a466ab0a0ab6c95f48994a41754ae906",
+    "experiments/002/stage5/PLAN.md": "9879f93fc2663701b2fffb649c3e84d622c48c7aa3a25e87d5a94ac1a487a8a9",
+    "experiments/002/stage5/analyze.py": "8a6044b95738aacdd0ea91019f8347b9a01765faf41f4ccbc29460c36d3f35a7",
+    "experiments/002/stage5/freeze.py": "ac4ecf037d27fa09757c27604d81a1c3d7ac50fa07b2169c66f7f16d5bfa0165",
+    "experiments/002/stage5/run.py": "130038603d20162eda8d7c96eda40447f56624ae04756d2ef1a8e5067c74558d",
+    "experiments/002/stage5/test_analysis.py": "59ac4de0f62c8b11327d99a619243dbd1fce59ebae461a2da91c625f486637fd",
+    "experiments/002/stage5/verify.py": "1b6febe2c2ec3ba072b76a11b02ac8fac47645ee4507688dcd32aa878e8ab934",
+    "experiments/002/verify.py": "c1cd68f13f47bd996e46d7fbf5f9f77bae30c5938cdb998b92f90e81795dce40",
+    "scripts/dev-env.sh": "fc5e84802b0fc6ceedbd4b013d4905189ad9ad12f03779a3aab5025061a7deb1"
+  },
+  "binary_sha256": {
+    "/workspace/grpc-under-pressure/server/target/debug/pressure-stage1": "25f65e00c39765a696e5ad79614646dcdc679403bd07a774aba4ce4812732f54",
+    "/workspace/toolchains/bin/pressure-stage1-client": "a2e6746e71041666bf9f8beec2f03c68482659c98bb882062d1c88f5e842fcb7"
+  },
+  "configuration": {
+    "service_schedule": "contract",
+    "event_io": "buffered",
+    "sample_ms": 200,
+    "rate": 80,
+    "offered_seconds": 36,
+    "payload_bytes": 16384,
+    "seed": 1,
+    "physical_K": 32,
+    "controller": {
+      "period_ms": 500,
+      "alpha": 0.2,
+      "minimum_completions": 5,
+      "high_ms": 125,
+      "low_ms": 75,
+      "streak_ticks": 2,
+      "range": [
+        1,
+        32
+      ],
+      "feedback_window": "deltas between actual tick snapshots, first from workload marker",
+      "fixed_policies_observe_only": true
+    },
+    "windows": {
+      "stream": 65535,
+      "connection": 65535,
+      "server_adaptive": false
+    },
+    "runtime": {
+      "tokio_workers": 2,
+      "gomaxprocs": 2,
+      "compression": false,
+      "retries": false,
+      "max_message_bytes": 1048576
+    },
+    "build_mode": "debug Rust; default optimized Go",
+    "limits": {
+      "server_rss": 536870912,
+      "client_rss": 134217728,
+      "cpu_seconds": 10,
+      "file_bytes": 16777216,
+      "wall_seconds": 125,
+      "rpc_deadline": "120s"
+    }
+  },
+  "policy_initial_budgets": {
+    "fixed32": 32,
+    "fixed8": 8,
+    "adaptive": 16
+  },
+  "order_seed": 2005,
+  "order": [
+    {
+      "block": 1,
+      "position": 1,
+      "policy": "adaptive",
+      "name": "b01-01-adaptive"
+    },
+    {
+      "block": 1,
+      "position": 2,
+      "policy": "fixed32",
+      "name": "b01-02-fixed32"
+    },
+    {
+      "block": 1,
+      "position": 3,
+      "policy": "fixed8",
+      "name": "b01-03-fixed8"
+    },
+    {
+      "block": 2,
+      "position": 1,
+      "policy": "adaptive",
+      "name": "b02-01-adaptive"
+    },
+    {
+      "block": 2,
+      "position": 2,
+      "policy": "fixed8",
+      "name": "b02-02-fixed8"
+    },
+    {
+      "block": 2,
+      "position": 3,
+      "policy": "fixed32",
+      "name": "b02-03-fixed32"
+    },
+    {
+      "block": 3,
+      "position": 1,
+      "policy": "adaptive",
+      "name": "b03-01-adaptive"
+    },
+    {
+      "block": 3,
+      "position": 2,
+      "policy": "fixed8",
+      "name": "b03-02-fixed8"
+    },
+    {
+      "block": 3,
+      "position": 3,
+      "policy": "fixed32",
+      "name": "b03-03-fixed32"
+    },
+    {
+      "block": 4,
+      "position": 1,
+      "policy": "fixed32",
+      "name": "b04-01-fixed32"
+    },
+    {
+      "block": 4,
+      "position": 2,
+      "policy": "fixed8",
+      "name": "b04-02-fixed8"
+    },
+    {
+      "block": 4,
+      "position": 3,
+      "policy": "adaptive",
+      "name": "b04-03-adaptive"
+    },
+    {
+      "block": 5,
+      "position": 1,
+      "policy": "fixed8",
+      "name": "b05-01-fixed8"
+    },
+    {
+      "block": 5,
+      "position": 2,
+      "policy": "adaptive",
+      "name": "b05-02-adaptive"
+    },
+    {
+      "block": 5,
+      "position": 3,
+      "policy": "fixed32",
+      "name": "b05-03-fixed32"
+    }
+  ],
+  "analysis_plan": "experiments/002/stage5/PLAN.md",
+  "analysis_plan_sha256": "9879f93fc2663701b2fffb649c3e84d622c48c7aa3a25e87d5a94ac1a487a8a9",
+  "resampling": "all 3125 ordered block bootstrap samples; nearest-rank percentile 95%",
+  "environment": {
+    "os_release": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"13\"\nVERSION=\"13 (trixie)\"\nVERSION_CODENAME=trixie\nDEBIAN_VERSION_FULL=13.6\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+    "kernel": "6.18.55",
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cgroup_cpu_max": "400000 100000",
+    "cgroup_memory_max": "34359738368",
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\nbinary: rustc\ncommit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67\ncommit-date: 2026-10-13\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.1\nLLVM version: 23.1.1",
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+    "go": "go version go1.27.3 linux/amd64",
+    "client_build_info": "/workspace/toolchains/bin/pressure-stage1-client: go1.27.3\n\tpath\tgithub.com/huyhoang1001/grpc-under-pressure/experiments/002/client\n\tmod\tgithub.com/huyhoang1001/grpc-under-pressure/experiments/002/client\t(devel)\t\n\tdep\tgithub.com/huyhoang1001/grpc-under-pressure/loadgen\tv0.0.0\n\t=>\t../../../loadgen\t(devel)\t\n\t\n\tdep\tgolang.org/x/net\tv0.42.0\th1:jzkYrhi3YQWD6MLBJcsklgQsoAcw89EcZbJw8Z614hs=\n\tdep\tgolang.org/x/sys\tv0.34.0\th1:H5Y5sJ2L2JRdyv7ROF1he/lPdvFsd0mJHFw2ThKHxLA=\n\tdep\tgolang.org/x/text\tv0.27.0\th1:4fGWRpyh641NLlecmyl4LOe6yDdfaYNrGb2zdfo4JV4=\n\tdep\tgoogle.golang.org/genproto/googleapis/rpc\tv0.0.0-20250804133106-a7a43d27e69b\th1:zPKJod4w6F1+nRGDI9ubnXYhU9NSWoFAijkHkUXeTK8=\n\tdep\tgoogle.golang.org/grpc\tv1.76.0\th1:UnVkv1+uMLYXoIz6o7chp59WfQUYA2ex/BXQ9rHZu7A=\n\tdep\tgoogle.golang.org/protobuf\tv1.36.10\th1:AYd7cD/uASjIL6Q9LiTjz8JLcrh/88q5UObnmY3aOOE=\n\tbuild\t-buildmode=exe\n\tbuild\t-compiler=gc\n\tbuild\tCGO_ENABLED=1\n\tbuild\tCGO_CFLAGS=\n\tbuild\tCGO_CPPFLAGS=\n\tbuild\tCGO_CXXFLAGS=\n\tbuild\tCGO_LDFLAGS=\n\tbuild\tGOARCH=amd64\n\tbuild\tGOOS=linux\n\tbuild\tGOAMD64=v1\n\tbuild\tvcs=git\n\tbuild\tvcs.revision=84509545abf6a5f139687250757e67703477a5c1\n\tbuild\tvcs.time=2026-10-28T03:05:09Z\n\tbuild\tvcs.modified=false",
+    "rust_dependencies": "pressure-server v0.1.0 (/workspace/grpc-under-pressure/server)\n\u251c\u2500\u2500 prost v0.14.1\n\u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2514\u2500\u2500 prost-derive v0.14.4 (proc-macro)\n\u2502       \u251c\u2500\u2500 anyhow v1.0.104\n\u2502       \u251c\u2500\u2500 itertools v0.14.0\n\u2502       \u2502   \u2514\u2500\u2500 either v1.19.0\n\u2502       \u251c\u2500\u2500 proc-macro2 v1.0.107\n\u2502       \u2502   \u2514\u2500\u2500 unicode-ident v1.0.27\n\u2502       \u251c\u2500\u2500 quote v1.0.47\n\u2502       \u2502   \u2514\u2500\u2500 proc-macro2 v1.0.107 (*)\n\u2502       \u2514\u2500\u2500 syn v2.0.119\n\u2502           \u251c\u2500\u2500 proc-macro2 v1.0.107 (*)\n\u2502           \u251c\u2500\u2500 quote v1.0.47 (*)\n\u2502           \u2514\u2500\u2500 unicode-ident v1.0.27\n\u251c\u2500\u2500 tokio v1.48.0\n\u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u251c\u2500\u2500 libc v0.2.191\n\u2502   \u251c\u2500\u2500 mio v1.2.4\n\u2502   \u2502   \u2514\u2500\u2500 libc v0.2.191\n\u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u251c\u2500\u2500 signal-hook-registry v1.4.8\n\u2502   \u2502   \u251c\u2500\u2500 errno v0.3.14\n\u2502   \u2502   \u2502   \u2514\u2500\u2500 libc v0.2.191\n\u2502   \u2502   \u2514\u2500\u2500 libc v0.2.191\n\u2502   \u251c\u2500\u2500 socket2 v0.6.5\n\u2502   \u2502   \u2514\u2500\u2500 libc v0.2.191\n\u2502   \u2514\u2500\u2500 tokio-macros v2.6.1 (proc-macro)\n\u2502       \u251c\u2500\u2500 proc-macro2 v1.0.107 (*)\n\u2502       \u251c\u2500\u2500 quote v1.0.47 (*)\n\u2502       \u2514\u2500\u2500 syn v2.0.119 (*)\n\u251c\u2500\u2500 tokio-stream v0.1.17\n\u2502   \u251c\u2500\u2500 futures-core v0.3.34\n\u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2514\u2500\u2500 tokio v1.48.0 (*)\n\u251c\u2500\u2500 tonic v0.14.2\n\u2502   \u251c\u2500\u2500 async-trait v0.1.92 (proc-macro)\n\u2502   \u2502   \u251c\u2500\u2500 proc-macro2 v1.0.107 (*)\n\u2502   \u2502   \u251c\u2500\u2500 quote v1.0.47 (*)\n\u2502   \u2502   \u2514\u2500\u2500 syn v3.0.9\n\u2502   \u2502       \u251c\u2500\u2500 proc-macro2 v1.0.107 (*)\n\u2502   \u2502       \u251c\u2500\u2500 quote v1.0.47 (*)\n\u2502   \u2502       \u2514\u2500\u2500 unicode-ident v1.0.27\n\u2502   \u251c\u2500\u2500 axum v0.8.9\n\u2502   \u2502   \u251c\u2500\u2500 axum-core v0.5.6\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-core v0.3.34\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 http v1.5.0\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2502   \u2502   \u2502   \u2514\u2500\u2500 itoa v1.0.18\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 http-body v1.1.0\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2502   \u2502   \u2502   \u2514\u2500\u2500 http v1.5.0 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 http-body-util v0.1.5\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-core v0.3.34\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 http v1.5.0 (*)\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 http-body v1.1.0 (*)\n\u2502   \u2502   \u2502   \u2502   \u2514\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 mime v0.3.17\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 sync_wrapper v1.0.2\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 tower-layer v0.3.3\n\u2502   \u2502   \u2502   \u2514\u2500\u2500 tower-service v0.3.3\n\u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2502   \u251c\u2500\u2500 futures-util v0.3.34\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-core v0.3.34\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-task v0.3.34\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u2502   \u2514\u2500\u2500 slab v0.4.12\n\u2502   \u2502   \u251c\u2500\u2500 http v1.5.0 (*)\n\u2502   \u2502   \u251c\u2500\u2500 http-body v1.1.0 (*)\n\u2502   \u2502   \u251c\u2500\u2500 http-body-util v0.1.5 (*)\n\u2502   \u2502   \u251c\u2500\u2500 itoa v1.0.18\n\u2502   \u2502   \u251c\u2500\u2500 matchit v0.8.4\n\u2502   \u2502   \u251c\u2500\u2500 memchr v2.8.3\n\u2502   \u2502   \u251c\u2500\u2500 mime v0.3.17\n\u2502   \u2502   \u251c\u2500\u2500 percent-encoding v2.3.2\n\u2502   \u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u251c\u2500\u2500 serde_core v1.0.229\n\u2502   \u2502   \u251c\u2500\u2500 sync_wrapper v1.0.2\n\u2502   \u2502   \u251c\u2500\u2500 tower v0.5.3\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-core v0.3.34\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-util v0.3.34 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 indexmap v2.14.2\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 equivalent v1.0.3\n\u2502   \u2502   \u2502   \u2502   \u2514\u2500\u2500 hashbrown v0.17.1\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 slab v0.4.12\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 sync_wrapper v1.0.2\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 tokio v1.48.0 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 tokio-util v0.7.19\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-core v0.3.34\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-sink v0.3.34\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 libc v0.2.191\n\u2502   \u2502   \u2502   \u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u2502   \u2502   \u2514\u2500\u2500 tokio v1.48.0 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 tower-layer v0.3.3\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 tower-service v0.3.3\n\u2502   \u2502   \u2502   \u2514\u2500\u2500 tracing v0.1.44\n\u2502   \u2502   \u2502       \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u2502       \u251c\u2500\u2500 tracing-attributes v0.1.31 (proc-macro)\n\u2502   \u2502   \u2502       \u2502   \u251c\u2500\u2500 proc-macro2 v1.0.107 (*)\n\u2502   \u2502   \u2502       \u2502   \u251c\u2500\u2500 quote v1.0.47 (*)\n\u2502   \u2502   \u2502       \u2502   \u2514\u2500\u2500 syn v2.0.119 (*)\n\u2502   \u2502   \u2502       \u2514\u2500\u2500 tracing-core v0.1.36\n\u2502   \u2502   \u2502           \u2514\u2500\u2500 once_cell v1.21.4\n\u2502   \u2502   \u251c\u2500\u2500 tower-layer v0.3.3\n\u2502   \u2502   \u2514\u2500\u2500 tower-service v0.3.3\n\u2502   \u251c\u2500\u2500 base64 v0.22.1\n\u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u251c\u2500\u2500 h2 v0.4.20\n\u2502   \u2502   \u251c\u2500\u2500 atomic-waker v1.1.2\n\u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2502   \u251c\u2500\u2500 fnv v1.0.7\n\u2502   \u2502   \u251c\u2500\u2500 futures-core v0.3.34\n\u2502   \u2502   \u251c\u2500\u2500 futures-sink v0.3.34\n\u2502   \u2502   \u251c\u2500\u2500 http v1.5.0 (*)\n\u2502   \u2502   \u251c\u2500\u2500 indexmap v2.14.2 (*)\n\u2502   \u2502   \u251c\u2500\u2500 slab v0.4.12\n\u2502   \u2502   \u251c\u2500\u2500 tokio v1.48.0 (*)\n\u2502   \u2502   \u251c\u2500\u2500 tokio-util v0.7.19 (*)\n\u2502   \u2502   \u2514\u2500\u2500 tracing v0.1.44 (*)\n\u2502   \u251c\u2500\u2500 http v1.5.0 (*)\n\u2502   \u251c\u2500\u2500 http-body v1.1.0 (*)\n\u2502   \u251c\u2500\u2500 http-body-util v0.1.5 (*)\n\u2502   \u251c\u2500\u2500 hyper v1.12.0\n\u2502   \u2502   \u251c\u2500\u2500 atomic-waker v1.1.2\n\u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2502   \u251c\u2500\u2500 futures-channel v0.3.34\n\u2502   \u2502   \u2502   \u2514\u2500\u2500 futures-core v0.3.34\n\u2502   \u2502   \u251c\u2500\u2500 futures-core v0.3.34\n\u2502   \u2502   \u251c\u2500\u2500 h2 v0.4.20 (*)\n\u2502   \u2502   \u251c\u2500\u2500 http v1.5.0 (*)\n\u2502   \u2502   \u251c\u2500\u2500 http-body v1.1.0 (*)\n\u2502   \u2502   \u251c\u2500\u2500 httparse v1.10.1\n\u2502   \u2502   \u251c\u2500\u2500 httpdate v1.0.3\n\u2502   \u2502   \u251c\u2500\u2500 itoa v1.0.18\n\u2502   \u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u251c\u2500\u2500 smallvec v1.16.4\n\u2502   \u2502   \u251c\u2500\u2500 tokio v1.48.0 (*)\n\u2502   \u2502   \u2514\u2500\u2500 want v0.3.2\n\u2502   \u2502       \u2514\u2500\u2500 try-lock v0.2.5\n\u2502   \u251c\u2500\u2500 hyper-timeout v0.5.2\n\u2502   \u2502   \u251c\u2500\u2500 hyper v1.12.0 (*)\n\u2502   \u2502   \u251c\u2500\u2500 hyper-util v0.1.21\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-channel v0.3.34 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 futures-util v0.3.34 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 http v1.5.0 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 http-body v1.1.0 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 httparse v1.10.1\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 hyper v1.12.0 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 libc v0.2.191\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 socket2 v0.6.5 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 tokio v1.48.0 (*)\n\u2502   \u2502   \u2502   \u251c\u2500\u2500 tower-service v0.3.3\n\u2502   \u2502   \u2502   \u2514\u2500\u2500 tracing v0.1.44 (*)\n\u2502   \u2502   \u251c\u2500\u2500 pin-project-lite v0.2.17\n\u2502   \u2502   \u251c\u2500\u2500 tokio v1.48.0 (*)\n\u2502   \u2502   \u2514\u2500\u2500 tower-service v0.3.3\n\u2502   \u251c\u2500\u2500 hyper-util v0.1.21 (*)\n\u2502   \u251c\u2500\u2500 percent-encoding v2.3.2\n\u2502   \u251c\u2500\u2500 pin-project v1.1.13\n\u2502   \u2502   \u2514\u2500\u2500 pin-project-internal v1.1.13 (proc-macro)\n\u2502   \u2502       \u251c\u2500\u2500 proc-macro2 v1.0.107 (*)\n\u2502   \u2502       \u251c\u2500\u2500 quote v1.0.47 (*)\n\u2502   \u2502       \u2514\u2500\u2500 syn v2.0.119 (*)\n\u2502   \u251c\u2500\u2500 socket2 v0.6.5 (*)\n\u2502   \u251c\u2500\u2500 sync_wrapper v1.0.2\n\u2502   \u251c\u2500\u2500 tokio v1.48.0 (*)\n\u2502   \u251c\u2500\u2500 tokio-stream v0.1.17 (*)\n\u2502   \u251c\u2500\u2500 tower v0.5.3 (*)\n\u2502   \u251c\u2500\u2500 tower-layer v0.3.3\n\u2502   \u251c\u2500\u2500 tower-service v0.3.3\n\u2502   \u2514\u2500\u2500 tracing v0.1.44 (*)\n\u251c\u2500\u2500 tonic-prost v0.14.2\n\u2502   \u251c\u2500\u2500 bytes v1.12.1\n\u2502   \u251c\u2500\u2500 prost v0.14.1 (*)\n\u2502   \u2514\u2500\u2500 tonic v0.14.2 (*)\n\u2514\u2500\u2500 tracing-subscriber v0.3.20\n    \u251c\u2500\u2500 matchers v0.2.0\n    \u2502   \u2514\u2500\u2500 regex-automata v0.4.18\n    \u2502       \u2514\u2500\u2500 regex-syntax v0.8.11\n    \u251c\u2500\u2500 nu-ansi-term v0.50.3\n    \u251c\u2500\u2500 once_cell v1.21.4\n    \u251c\u2500\u2500 regex-automata v0.4.18 (*)\n    \u251c\u2500\u2500 sharded-slab v0.1.7\n    \u2502   \u2514\u2500\u2500 lazy_static v1.5.1\n    \u251c\u2500\u2500 smallvec v1.16.4\n    \u251c\u2500\u2500 thread_local v1.1.10\n    \u2502   \u2514\u2500\u2500 cfg-if v1.0.5\n    \u251c\u2500\u2500 tracing v0.1.44 (*)\n    \u251c\u2500\u2500 tracing-core v0.1.36 (*)\n    \u2514\u2500\u2500 tracing-log v0.2.0\n        \u251c\u2500\u2500 log v0.4.34\n        \u251c\u2500\u2500 once_cell v1.21.4\n        \u2514\u2500\u2500 tracing-core v0.1.36 (*)\n[build-dependencies]\n\u251c\u2500\u2500 protoc-bin-vendored v3.2.0\n\u2502   \u251c\u2500\u2500 protoc-bin-vendored-linux-aarch_64 v3.2.0\n\u2502   \u251c\u2500\u2500 protoc-bin-vendored-linux-ppcle_64 v3.2.0\n\u2502   \u251c\u2500\u2500 protoc-bin-vendored-linux-s390_64 v3.2.0\n\u2502   \u251c\u2500\u2500 protoc-bin-vendored-linux-x86_32 v3.2.0\n\u2502   \u251c\u2500\u2500 protoc-bin-vendored-linux-x86_64 v3.2.0\n\u2502   \u251c\u2500\u2500 protoc-bin-vendored-macos-aarch_64 v3.2.0\n\u2502   \u251c\u2500\u2500 protoc-bin-vendored-macos-x86_64 v3.2.0\n\u2502   \u2514\u2500\u2500 protoc-bin-vendored-win32 v3.2.0\n\u2514\u2500\u2500 tonic-prost-build v0.14.2\n    \u251c\u2500\u2500 prettyplease v0.2.37\n    \u2502   \u251c\u2500\u2500 proc-macro2 v1.0.107 (*)\n    \u2502   \u2514\u2500\u2500 syn v2.0.119 (*)\n    \u251c\u2500\u2500 proc-macro2 v1.0.107 (*)\n    \u251c\u2500\u2500 prost-build v0.14.1\n    \u2502   \u251c\u2500\u2500 heck v0.5.0\n    \u2502   \u251c\u2500\u2500 itertools v0.14.0 (*)\n    \u2502   \u251c\u2500\u2500 log v0.4.34\n    \u2502   \u251c\u2500\u2500 multimap v0.10.1\n    \u2502   \u251c\u2500\u2500 once_cell v1.21.4\n    \u2502   \u251c\u2500\u2500 petgraph v0.7.1\n    \u2502   \u2502   \u251c\u2500\u2500 fixedbitset v0.5.7\n    \u2502   \u2502   \u2514\u2500\u2500 indexmap v2.14.2 (*)\n    \u2502   \u251c\u2500\u2500 prettyplease v0.2.37 (*)\n    \u2502   \u251c\u2500\u2500 prost v0.14.1\n    \u2502   \u2502   \u251c\u2500\u2500 bytes v1.12.1\n    \u2502   \u2502   \u2514\u2500\u2500 prost-derive v0.14.4 (proc-macro) (*)\n    \u2502   \u251c\u2500\u2500 prost-types v0.14.1\n    \u2502   \u2502   \u2514\u2500\u2500 prost v0.14.1 (*)\n    \u2502   \u251c\u2500\u2500 pulldown-cmark v0.13.5\n    \u2502   \u2502   \u251c\u2500\u2500 bitflags v2.13.2\n    \u2502   \u2502   \u251c\u2500\u2500 memchr v2.8.3\n    \u2502   \u2502   \u2514\u2500\u2500 unicase v2.10.0\n    \u2502   \u251c\u2500\u2500 pulldown-cmark-to-cmark v21.1.0\n    \u2502   \u2502   \u2514\u2500\u2500 pulldown-cmark v0.13.5 (*)\n    \u2502   \u251c\u2500\u2500 regex v1.13.1\n    \u2502   \u2502   \u251c\u2500\u2500 regex-automata v0.4.18\n    \u2502   \u2502   \u2502   \u2514\u2500\u2500 regex-syntax v0.8.11\n    \u2502   \u2502   \u2514\u2500\u2500 regex-syntax v0.8.11\n    \u2502   \u251c\u2500\u2500 syn v2.0.119 (*)\n    \u2502   \u2514\u2500\u2500 tempfile v3.27.0\n    \u2502       \u251c\u2500\u2500 fastrand v2.5.0\n    \u2502       \u251c\u2500\u2500 getrandom v0.4.3\n    \u2502       \u2502   \u251c\u2500\u2500 cfg-if v1.0.5\n    \u2502       \u2502   \u2514\u2500\u2500 libc v0.2.191\n    \u2502       \u251c\u2500\u2500 once_cell v1.21.4\n    \u2502       \u2514\u2500\u2500 rustix v1.1.5\n    \u2502           \u251c\u2500\u2500 bitflags v2.13.2\n    \u2502           \u2514\u2500\u2500 linux-raw-sys v0.12.1\n    \u251c\u2500\u2500 prost-types v0.14.1 (*)\n    \u251c\u2500\u2500 quote v1.0.47 (*)\n    \u251c\u2500\u2500 syn v2.0.119 (*)\n    \u251c\u2500\u2500 tempfile v3.27.0 (*)\n    \u2514\u2500\u2500 tonic-build v0.14.6\n        \u251c\u2500\u2500 prettyplease v0.2.37 (*)\n        \u251c\u2500\u2500 proc-macro2 v1.0.107 (*)\n        \u251c\u2500\u2500 quote v1.0.47 (*)\n        \u2514\u2500\u2500 syn v2.0.119 (*)",
+    "go_modules": "github.com/huyhoang1001/grpc-under-pressure/experiments/002/client\ncel.dev/expr v0.24.0\ncloud.google.com/go/compute/metadata v0.7.0\ngithub.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp v1.29.0\ngithub.com/cespare/xxhash/v2 v2.3.0\ngithub.com/cncf/xds/go v0.0.0-20250501225837-2ac532fd4443\ngithub.com/envoyproxy/go-control-plane v0.13.4\ngithub.com/envoyproxy/go-control-plane/envoy v1.32.4\ngithub.com/envoyproxy/go-control-plane/ratelimit v0.1.0\ngithub.com/envoyproxy/protoc-gen-validate v1.2.1\ngithub.com/go-jose/go-jose/v4 v4.1.2\ngithub.com/go-logr/logr v1.4.3\ngithub.com/go-logr/stdr v1.2.2\ngithub.com/golang/glog v1.2.5\ngithub.com/golang/protobuf v1.5.4\ngithub.com/google/go-cmp v0.7.0\ngithub.com/google/uuid v1.6.0\ngithub.com/huyhoang1001/grpc-under-pressure/loadgen v0.0.0 => ../../../loadgen\ngithub.com/planetscale/vtprotobuf v0.6.1-0.20240319094008-0393e58bdf10\ngithub.com/spiffe/go-spiffe/v2 v2.5.0\ngithub.com/zeebo/errs v1.4.0\ngo.opentelemetry.io/auto/sdk v1.1.0\ngo.opentelemetry.io/contrib/detectors/gcp v1.36.0\ngo.opentelemetry.io/otel v1.37.0\ngo.opentelemetry.io/otel/metric v1.37.0\ngo.opentelemetry.io/otel/sdk v1.37.0\ngo.opentelemetry.io/otel/sdk/metric v1.37.0\ngo.opentelemetry.io/otel/trace v1.37.0\ngolang.org/x/crypto v0.40.0\ngolang.org/x/mod v0.25.0\ngolang.org/x/net v0.42.0\ngolang.org/x/oauth2 v0.30.0\ngolang.org/x/sync v0.16.0\ngolang.org/x/sys v0.34.0\ngolang.org/x/term v0.33.0\ngolang.org/x/text v0.27.0\ngolang.org/x/tools v0.34.0\ngonum.org/v1/gonum v0.16.0\ngoogle.golang.org/genproto/googleapis/api v0.0.0-20250804133106-a7a43d27e69b\ngoogle.golang.org/genproto/googleapis/rpc v0.0.0-20250804133106-a7a43d27e69b\ngoogle.golang.org/grpc v1.76.0\ngoogle.golang.org/protobuf v1.36.10",
+    "python": "3.12.14",
+    "protoc": "31.1 via pinned protoc-bin-vendored3.2.0"
+  }
+}

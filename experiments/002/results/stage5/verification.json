@@ -1,0 +1,7 @@
+{
+  "b01-01-adaptive": [],
+  "b01-02-fixed32": [],
+  "b01-03-fixed8": [
+    "verification exception TypeError(\"'NoneType' object is not subscriptable\")"
+  ]
+}

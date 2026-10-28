@@ -1,0 +1,10 @@
+{
+  "captured_unix_ns": 1793163587985625696,
+  "cpu_info_selected_fields": {
+    "vendor_id": "AuthenticAMD",
+    "model name": "AMD EPYC 9V74 80-Core Processor",
+    "siblings": "5",
+    "cpu cores": "5"
+  },
+  "note": "Selected hardware detail captured after collection, not a change of experimental configuration. Primary pre-run environment/affinity/cgroup values are in FROZEN.json."
+}
