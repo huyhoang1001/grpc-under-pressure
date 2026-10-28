@@ -34,6 +34,24 @@ class AnalysisTests(unittest.TestCase):
             m['rate']=81;(folder/'manifest.json').write_text(json.dumps(m))
             self.assertIn('configuration drift rate',validate(folder))
 
+    def test_marker_publication_is_atomic_to_readers(self):
+        import tempfile,threading
+        from stage5.run import publish_marker
+        with tempfile.TemporaryDirectory() as temporary:
+            marker=Path(temporary)/'marker.txt';done=threading.Event();observed=[]
+            def reader():
+                while not done.is_set():
+                    try:observed.append(marker.read_text())
+                    except FileNotFoundError:pass
+            task=threading.Thread(target=reader);task.start()
+            try:
+                for target in range(100):publish_marker(marker,target)
+            finally:done.set();task.join()
+            self.assertTrue(observed)
+            self.assertTrue(all(text.endswith('\n') and text.strip().isdigit() for text in observed))
+            self.assertEqual(marker.read_text(),'99\n')
+            self.assertFalse(marker.with_name('marker.txt.pending').exists())
+
     def test_enqueue_cohort_half_open_boundaries_not_completion_time(self):
         events=[{'event':'dequeued','enqueue_ns':str(t),'queue_residence_ns':str(value)} for t,value in [(11_999_999_999,1),(12_000_000_000,2),(35_999_999_999,3),(36_000_000_000,4)]]
         self.assertEqual(cohort(events,12_000_000_000,36_000_000_000),[2,3])

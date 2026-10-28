@@ -24,6 +24,11 @@ CLIENT=Path('/workspace/toolchains/bin/pressure-stage1-client')
 def git(*args):return subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def save(p,v):p.write_text(json.dumps(v,indent=2)+'\n')
+def publish_marker(marker,target):
+    pending=marker.with_name(marker.name+'.pending')
+    with pending.open('x') as output:output.write(str(target)+'\n')
+    os.replace(pending,marker)
+
 def expected_delay(t):return 40 if 12_000_000_000<=t<24_000_000_000 else 10
 
 def validate(folder):
@@ -78,7 +83,7 @@ def run(root,name,seconds,policy='fixed32',schedule='constant',purpose='primary_
                 if cp.poll() is not None:raise RuntimeError('client readiness failure')
                 time.sleep(.01)
             else:raise RuntimeError('client barrier timeout')
-            target=time.time_ns()+300_000_000;marker.write_text(str(target)+'\n');m['marker_target_unix_ns']=target;m['marker_written_unix_ns']=time.time_ns()
+            target=time.time_ns()+300_000_000;publish_marker(marker,target);m['marker_target_unix_ns']=target;m['marker_written_unix_ns']=time.time_ns()
             thread=threading.Thread(target=collect);thread.start()
             m['client_exit']=cp.wait(timeout=125);time.sleep(.5)
     except Exception as e:m['runner_error']=repr(e)
