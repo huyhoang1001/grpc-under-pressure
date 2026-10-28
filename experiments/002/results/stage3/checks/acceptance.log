@@ -1,0 +1,8 @@
+fixed32-default PASS
+fixed32-explicit PASS
+fixed8-normal PASS
+fixed8-cancel PASS
+fixed8-worker-error PASS
+fixed8-worker-panic PASS
+fixed32-schedule-smoke PASS
+fixed8-schedule-smoke PASS

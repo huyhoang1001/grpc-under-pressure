@@ -1,0 +1,8 @@
+{
+  "credential_pattern_scan": "no matches for private-key/GitHub/AWS credential/high-entropy assignment patterns; limited static scan, not a guarantee",
+  "unintended_large_files": false,
+  "largest_file_bytes": 637509,
+  "measured_binaries_in_package": false,
+  "files_reviewed": 222,
+  "raw_payloads_or_environment_variable_dumps_in_package": false
+}

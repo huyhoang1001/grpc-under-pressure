@@ -1,0 +1,54 @@
+{
+  "accepted32-1": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "accepted32-2": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "exploratory-fixed8": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "fixed32-default": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "fixed32-explicit": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "fixed32-schedule-smoke": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "fixed8-cancel": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "fixed8-normal": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "fixed8-schedule-smoke": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "fixed8-worker-error": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "fixed8-worker-panic": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "shared32-1": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  },
+  "shared32-2": {
+    "issues": [],
+    "valid_for_declared_purpose": true
+  }
+}

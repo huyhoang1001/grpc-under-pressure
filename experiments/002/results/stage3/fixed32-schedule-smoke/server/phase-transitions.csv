@@ -1,0 +1,2 @@
+scheduled_ns,observed_ns,lateness_ns,phase,configured_ms,unix_ns
+0,647674,647674,healthy,10,1793159600276818447

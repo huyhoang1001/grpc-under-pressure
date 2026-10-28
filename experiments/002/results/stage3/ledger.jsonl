@@ -1,0 +1,13 @@
+{"name": "fixed32-default", "purpose": "integration_fixture", "policy": "fixed32", "baseline": false, "expected_fault": null, "issues": [], "valid": true}
+{"name": "fixed32-explicit", "purpose": "integration_fixture", "policy": "fixed32", "baseline": false, "expected_fault": null, "issues": [], "valid": true}
+{"name": "fixed8-normal", "purpose": "integration_fixture", "policy": "fixed8", "baseline": false, "expected_fault": null, "issues": [], "valid": true}
+{"name": "fixed8-cancel", "purpose": "integration_fixture", "policy": "fixed8", "baseline": false, "expected_fault": "cancellation", "issues": [], "valid": true}
+{"name": "fixed8-worker-error", "purpose": "integration_fixture", "policy": "fixed8", "baseline": false, "expected_fault": "worker_error", "issues": [], "valid": true}
+{"name": "fixed8-worker-panic", "purpose": "integration_fixture", "policy": "fixed8", "baseline": false, "expected_fault": "worker_panic", "issues": [], "valid": true}
+{"name": "fixed32-schedule-smoke", "purpose": "integration_fixture", "policy": "fixed32", "baseline": false, "expected_fault": null, "issues": [], "valid": true}
+{"name": "fixed8-schedule-smoke", "purpose": "integration_fixture", "policy": "fixed8", "baseline": false, "expected_fault": null, "issues": [], "valid": true}
+{"name": "accepted32-1", "purpose": "stage2_baseline_overhead_control", "policy": "fixed32", "baseline": true, "expected_fault": null, "issues": [], "valid": true}
+{"name": "shared32-1", "purpose": "stage2_baseline_overhead_control", "policy": "fixed32", "baseline": false, "expected_fault": null, "issues": [], "valid": true}
+{"name": "shared32-2", "purpose": "stage2_baseline_overhead_control", "policy": "fixed32", "baseline": false, "expected_fault": null, "issues": [], "valid": true}
+{"name": "accepted32-2", "purpose": "stage2_baseline_overhead_control", "policy": "fixed32", "baseline": true, "expected_fault": null, "issues": [], "valid": true}
+{"name": "exploratory-fixed8", "purpose": "single_exploratory_fixed8", "policy": "fixed8", "baseline": false, "expected_fault": null, "issues": [], "valid": true}

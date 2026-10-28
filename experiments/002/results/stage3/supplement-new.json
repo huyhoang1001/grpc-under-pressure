@@ -1,0 +1,90 @@
+{
+  "cpu_and_rss": {
+    "server": {
+      "observed_cpu_s": 0.93,
+      "observed_wall_s": 36.67264321,
+      "mean_one_core_percent": 2.5359502849971967,
+      "peak_rss_bytes": 6844416
+    },
+    "client": {
+      "observed_cpu_s": 1.04,
+      "observed_wall_s": 36.271864137,
+      "mean_one_core_percent": 2.8672361477532182,
+      "peak_rss_bytes": 17629184
+    }
+  },
+  "final_server": {
+    "unix_ns": "1793159906493141430",
+    "elapsed_ns": "36484119326",
+    "started": "1",
+    "physical_queue_depth": "0",
+    "Q": "0",
+    "R": "0",
+    "W": "0",
+    "queued_payload_bytes": "0",
+    "handler_payload_bytes": "0",
+    "worker_payload_bytes": "0",
+    "received": "2226",
+    "admitted": "2226",
+    "dequeued": "2226",
+    "processed": "2226",
+    "discarded_from_queue": "0",
+    "discarded_from_worker": "0",
+    "discarded": "0",
+    "received_not_admitted": "0",
+    "reservations_acquired": "2227",
+    "reservations_released": "1",
+    "logical_gate_wait_ns": "12797471975",
+    "physical_reservation_wait_ns": "1166907",
+    "worker_busy_ns": "33567479374",
+    "worker_idle_ns": "2433608842",
+    "worker_idle_backlog_ns": "82705538",
+    "queue_residence_violations": "0",
+    "queue_p50_upper_ns": "39902",
+    "queue_p95_upper_ns": "333378777",
+    "queue_p99_upper_ns": "333378777",
+    "service_p50_upper_ns": "11279963",
+    "service_p95_upper_ns": "41679231",
+    "service_p99_upper_ns": "42512816",
+    "errors": "0",
+    "telemetry_errors": "0",
+    "active_streams": "0",
+    "connections": "1",
+    "B": "8",
+    "service_ms": "10",
+    "service_phase": "drain",
+    "terminal_reason": "normal_eof_drained",
+    "rss_bytes": "7098368",
+    "received_bytes": "36470784",
+    "admitted_bytes": "36470784",
+    "dequeued_bytes": "36470784",
+    "processed_bytes": "36470784",
+    "discarded_queue_bytes": "0",
+    "discarded_worker_bytes": "0",
+    "received_not_admitted_bytes": "0",
+    "event_write_calls": "8907",
+    "event_write_ns": "29111701",
+    "event_write_max_ns": "231087",
+    "event_flush_calls": "185",
+    "event_flush_ns": "5164584",
+    "event_flush_max_ns": "322646",
+    "inflight_selected_ms": "0",
+    "queue_observations": "2226",
+    "queue_residence_sum_ns": "106097534015",
+    "service_observations": "2226",
+    "service_duration_sum_ns": "33567479374",
+    "physical_capacity": "32",
+    "physical_available_capacity": "32",
+    "logical_pending": "0"
+  },
+  "sample_gaps_ms": {
+    "server": {
+      "median": 200.008228,
+      "max": 200.938531
+    },
+    "client": {
+      "median": 199.9746105,
+      "max": 200.969256
+    }
+  }
+}

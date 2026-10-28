@@ -38,6 +38,7 @@ python3 experiments/002/stage3/run.py --output experiments/002/results/stage3 --
 python3 experiments/002/stage3/analyze.py experiments/002/results/stage3
 python3 experiments/002/stage3/run.py --output experiments/002/results/stage3 --phase exploratory
 MPLCONFIGDIR=/workspace/toolchains/matplotlib python3 experiments/002/stage3/analyze.py experiments/002/results/stage3
+python3 experiments/002/stage3/audit.py experiments/002/results/stage3
 ```
 
 Directories are exclusive-create; every attempt enters ledger.jsonl. The runner blocks exploration without accepted fixtures/controls and an overhead assessment, and refuses a second exploratory attempt. Historical E1, Stage 1 and Stage 2 raw files/reports remain unchanged. Stage 3 is exploratory static budgeting only.

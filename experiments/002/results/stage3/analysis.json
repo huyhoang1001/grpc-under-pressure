@@ -1,0 +1,1768 @@
+{
+  "runs": [
+    {
+      "name": "accepted32-1",
+      "purpose": "stage2_baseline_overhead_control",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 320,
+      "skipped": 0,
+      "attempted": 320,
+      "successful_sends": 320,
+      "failed_sends": 0,
+      "admitted": 320,
+      "dequeued": 320,
+      "processed": 320,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.725491,
+      "worker_observed_s": 4.000488493,
+      "worker_busy_s": 3.555183604,
+      "worker_idle_s": 0.445304889,
+      "idle_backlog_ms": 11.631105,
+      "event_write_calls": 1283,
+      "event_format_write_ms": 3.583441,
+      "event_write_max_us": 88.173,
+      "event_flush_calls": 25,
+      "event_flush_ms": 0.565271,
+      "event_flush_max_us": 60.241,
+      "timed_event_io_fraction": 0.0010370513519184867,
+      "service_mean_ms": 11.109948762499998,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 4.000322378,
+      "rpc_s": 4.350036878,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.4453125,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.009174551,
+      "logical_admission_wait_s": 0.000397618,
+      "physical_reservation_wait_s": 0.000163814,
+      "server_eof_s": 4.000477767,
+      "last_completion_s": 3.999434387,
+      "server_worker_stop_s": 4.000488493,
+      "server_eof_to_worker_stop_s": 1.0726000000182978e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 320,
+          "first_start_s": 0.001370811,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1339614",
+          "lateness_ns": "1339614",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793159603999042482"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed32",
+      "server_source_commit": "84509545abf6a5f139687250757e67703477a5c1",
+      "accepted_stage2_binary": true
+    },
+    {
+      "name": "accepted32-2",
+      "purpose": "stage2_baseline_overhead_control",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 320,
+      "skipped": 0,
+      "attempted": 320,
+      "successful_sends": 320,
+      "failed_sends": 0,
+      "admitted": 320,
+      "dequeued": 320,
+      "processed": 320,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.349841,
+      "worker_observed_s": 4.001215217,
+      "worker_busy_s": 3.558710183,
+      "worker_idle_s": 0.442505034,
+      "idle_backlog_ms": 11.756387,
+      "event_write_calls": 1283,
+      "event_format_write_ms": 3.484847,
+      "event_write_max_us": 58.548,
+      "event_flush_calls": 25,
+      "event_flush_ms": 0.595071,
+      "event_flush_max_us": 97.456,
+      "timed_event_io_fraction": 0.001019669720005466,
+      "service_mean_ms": 11.120969321875,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 4.001043783,
+      "rpc_s": 4.349982231,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.49609375,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.00912118,
+      "logical_admission_wait_s": 0.000398909,
+      "physical_reservation_wait_s": 0.000166379,
+      "server_eof_s": 4.001203709,
+      "last_completion_s": 3.999105402,
+      "server_worker_stop_s": 4.001215217,
+      "server_eof_to_worker_stop_s": 1.1508000000048924e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 320,
+          "first_start_s": 0.001963081,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1632183",
+          "lateness_ns": "1632183",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793159619123205727"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed32",
+      "server_source_commit": "84509545abf6a5f139687250757e67703477a5c1",
+      "accepted_stage2_binary": true
+    },
+    {
+      "name": "exploratory-fixed8",
+      "purpose": "single_exploratory_fixed8",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 2880,
+      "skipped": 654,
+      "attempted": 2226,
+      "successful_sends": 2226,
+      "failed_sends": 0,
+      "admitted": 2226,
+      "dequeued": 2226,
+      "processed": 2226,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 8,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.776858,
+      "worker_observed_s": 36.001088216,
+      "worker_busy_s": 33.567479374,
+      "worker_idle_s": 2.433608842,
+      "idle_backlog_ms": 82.705538,
+      "event_write_calls": 8907,
+      "event_format_write_ms": 29.111701,
+      "event_write_max_us": 231.087,
+      "event_flush_calls": 185,
+      "event_flush_ms": 5.164584,
+      "event_flush_max_us": 322.646,
+      "timed_event_io_fraction": 0.0009520902477821922,
+      "service_mean_ms": 15.079730176999101,
+      "service_p95_upper_ms": 41.679231,
+      "half_close_s": 36.000725846,
+      "rpc_s": 36.350320736,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.87890625,
+      "send_gt20ms_calls": 285,
+      "send_gt20ms_duration_s": 9.811915732,
+      "send_wall_duration_s": 9.882117161,
+      "logical_admission_wait_s": 12.797471975,
+      "physical_reservation_wait_s": 0.001166907,
+      "server_eof_s": 36.000991049,
+      "last_completion_s": 36.000090835,
+      "server_worker_stop_s": 36.001088216,
+      "server_eof_to_worker_stop_s": 9.716699999984257e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 960,
+          "first_start_s": 0.001971526,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 292,
+          "first_start_s": 12.000956037,
+          "selected_ms": [
+            40
+          ]
+        },
+        "2": {
+          "count": 974,
+          "first_start_s": 24.031939566,
+          "selected_ms": [
+            10
+          ]
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phases": {
+        "healthy": {
+          "bounds_s": [
+            0,
+            12
+          ],
+          "actual_service_ms_by_start": {
+            "count": 960,
+            "mean": 11.142314099999998,
+            "p50": 11.148109,
+            "p95": 11.375995999999999,
+            "p99": 11.523798,
+            "min": 10.125485999999999,
+            "max": 12.203700999999999
+          },
+          "completion_count": 960,
+          "completion_rate_s": 80.0,
+          "queue_residence_ms_by_enqueue": {
+            "count": 960,
+            "mean": 0.05623191145833333,
+            "p50": 0.034942,
+            "p95": 0.08895399999999999,
+            "p99": 0.253221,
+            "min": 0.014792999999999999,
+            "max": 5.246529
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 960,
+          "successful_sends": 960,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 80.0,
+          "send_ms": {
+            "count": 960,
+            "mean": 0.029164503124999998,
+            "p50": 0.022813999999999997,
+            "p95": 0.06697,
+            "p99": 0.136255,
+            "min": 0.009344,
+            "max": 0.566311
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 960,
+          "skipped_scheduled_slots": 0
+        },
+        "slowdown": {
+          "bounds_s": [
+            12,
+            24
+          ],
+          "actual_service_ms_by_start": {
+            "count": 292,
+            "mean": 41.17037276027397,
+            "p50": 41.038197,
+            "p95": 41.89398,
+            "p99": 42.01513,
+            "min": 40.32016,
+            "max": 42.171986
+          },
+          "completion_count": 291,
+          "completion_rate_s": 24.25,
+          "queue_residence_ms_by_enqueue": {
+            "count": 300,
+            "mean": 319.8209748566667,
+            "p50": 329.33655899999997,
+            "p95": 331.17789799999997,
+            "p99": 332.305809,
+            "min": 0.019258,
+            "max": 332.680956
+          },
+          "Q_mean": 7.916666666666667,
+          "Q_max": 8,
+          "attempted_sends": 308,
+          "successful_sends": 308,
+          "successful_send_returns": 308,
+          "return_rate_s": 25.666666666666668,
+          "attempt_rate_s": 25.666666666666668,
+          "send_ms": {
+            "count": 308,
+            "mean": 31.762020227272725,
+            "p50": 33.924045,
+            "p95": 39.974616,
+            "p99": 40.758229,
+            "min": 0.012539,
+            "max": 41.877856
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 308,
+          "skipped_scheduled_slots": 652
+        },
+        "recovery": {
+          "bounds_s": [
+            24,
+            36
+          ],
+          "actual_service_ms_by_start": {
+            "count": 974,
+            "mean": 11.138715597535933,
+            "p50": 11.176389,
+            "p95": 11.487528,
+            "p99": 11.703973999999999,
+            "min": 10.111112,
+            "max": 12.723688
+          },
+          "completion_count": 974,
+          "completion_rate_s": 81.16666666666667,
+          "queue_residence_ms_by_enqueue": {
+            "count": 966,
+            "mean": 10.452648988612836,
+            "p50": 0.040852,
+            "p95": 88.852453,
+            "p99": 90.12861199999999,
+            "min": 0.016715,
+            "max": 90.872591
+          },
+          "Q_mean": 0.8666666666666667,
+          "Q_max": 8,
+          "attempted_sends": 958,
+          "successful_sends": 958,
+          "successful_send_returns": 958,
+          "return_rate_s": 79.83333333333333,
+          "attempt_rate_s": 79.83333333333333,
+          "send_ms": {
+            "count": 958,
+            "mean": 0.07454802505219206,
+            "p50": 0.027590999999999997,
+            "p95": 0.059588999999999996,
+            "p99": 0.195013,
+            "min": 0.009845,
+            "max": 31.176551999999997
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 958,
+          "skipped_scheduled_slots": 2
+        },
+        "drain": {
+          "bounds_s": [
+            36,
+            null
+          ],
+          "actual_service_ms_by_start": {
+            "count": 0
+          },
+          "completion_count": 1,
+          "completion_rate_s": null,
+          "queue_residence_ms_by_enqueue": {
+            "count": 0
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 0,
+          "successful_sends": 0,
+          "successful_send_returns": 0,
+          "return_rate_s": null,
+          "attempt_rate_s": null,
+          "send_ms": {
+            "count": 0
+          }
+        }
+      },
+      "first_sampled_Q_zero_after24_s": 25.683528275,
+      "early_recovery_completion_rate_s": 83.75,
+      "late_recovery_completion_rate_s": 79.75,
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1592366",
+          "lateness_ns": "1592366",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793159870010609573"
+        },
+        {
+          "scheduled_ns": "12000000000",
+          "observed_ns": "12000980504",
+          "lateness_ns": "980504",
+          "phase": "slowdown",
+          "configured_ms": "40",
+          "unix_ns": "1793159882009996710"
+        },
+        {
+          "scheduled_ns": "24000000000",
+          "observed_ns": "24001750419",
+          "lateness_ns": "1750419",
+          "phase": "recovery",
+          "configured_ms": "10",
+          "unix_ns": "1793159894010767506"
+        },
+        {
+          "scheduled_ns": "36000000000",
+          "observed_ns": "36001318022",
+          "lateness_ns": "1318022",
+          "phase": "drain",
+          "configured_ms": "10",
+          "unix_ns": "1793159906010334658"
+        }
+      ],
+      "policy": "fixed8",
+      "server_source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "accepted_stage2_binary": false,
+      "pooled_residence_12_36": {
+        "count": 1266,
+        "p50_ms": 0.04625,
+        "p95_ms": 330.105718,
+        "p99_ms": 331.271228
+      },
+      "budget_enforced": true
+    },
+    {
+      "name": "fixed32-default",
+      "purpose": "integration_fixture",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 64,
+      "skipped": 0,
+      "attempted": 64,
+      "successful_sends": 64,
+      "failed_sends": 0,
+      "admitted": 64,
+      "dequeued": 64,
+      "processed": 64,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.750684,
+      "worker_observed_s": 0.801219279,
+      "worker_busy_s": 0.713819233,
+      "worker_idle_s": 0.087400046,
+      "idle_backlog_ms": 2.384677,
+      "event_write_calls": 259,
+      "event_format_write_ms": 0.698073,
+      "event_write_max_us": 28.963,
+      "event_flush_calls": 9,
+      "event_flush_ms": 0.140952,
+      "event_flush_max_us": 42.063,
+      "timed_event_io_fraction": 0.0010471852362903514,
+      "service_mean_ms": 11.153425515625,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 0.800977786,
+      "rpc_s": 1.151151149,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.53515625,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.00210536,
+      "logical_admission_wait_s": 7.5397e-05,
+      "physical_reservation_wait_s": 2.2342e-05,
+      "server_eof_s": 0.801205078,
+      "last_completion_s": 0.801115278,
+      "server_worker_stop_s": 0.801219279,
+      "server_eof_to_worker_stop_s": 1.4201000000046982e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 64,
+          "first_start_s": 0.001871027,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1722754",
+          "lateness_ns": "1722754",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793159590958414512"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed32",
+      "server_source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "accepted_stage2_binary": false
+    },
+    {
+      "name": "fixed32-explicit",
+      "purpose": "integration_fixture",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 64,
+      "skipped": 0,
+      "attempted": 64,
+      "successful_sends": 64,
+      "failed_sends": 0,
+      "admitted": 64,
+      "dequeued": 64,
+      "processed": 64,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.97411,
+      "worker_observed_s": 0.80058214,
+      "worker_busy_s": 0.714251765,
+      "worker_idle_s": 0.086330375,
+      "idle_backlog_ms": 2.630165,
+      "event_write_calls": 259,
+      "event_format_write_ms": 0.681526,
+      "event_write_max_us": 19.009,
+      "event_flush_calls": 9,
+      "event_flush_ms": 0.115603,
+      "event_flush_max_us": 27.331,
+      "timed_event_io_fraction": 0.0009956867136706297,
+      "service_mean_ms": 11.160183828125,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 0.800238884,
+      "rpc_s": 1.150442828,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.4296875,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.002594658,
+      "logical_admission_wait_s": 8.1987e-05,
+      "physical_reservation_wait_s": 2.5851e-05,
+      "server_eof_s": 0.800567368,
+      "last_completion_s": 0.799413983,
+      "server_worker_stop_s": 0.80058214,
+      "server_eof_to_worker_stop_s": 1.4772000000107255e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 64,
+          "first_start_s": 0.002212819,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "2459961",
+          "lateness_ns": "2459961",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793159592764044877"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed32",
+      "server_source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "accepted_stage2_binary": false
+    },
+    {
+      "name": "fixed32-schedule-smoke",
+      "purpose": "integration_fixture",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 64,
+      "skipped": 0,
+      "attempted": 64,
+      "successful_sends": 64,
+      "failed_sends": 0,
+      "admitted": 64,
+      "dequeued": 64,
+      "processed": 64,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.56829,
+      "worker_observed_s": 0.800343572,
+      "worker_busy_s": 0.713797748,
+      "worker_idle_s": 0.086545824,
+      "idle_backlog_ms": 2.60755,
+      "event_write_calls": 259,
+      "event_format_write_ms": 0.873314,
+      "event_write_max_us": 65.819,
+      "event_flush_calls": 9,
+      "event_flush_ms": 0.119919,
+      "event_flush_max_us": 26.64,
+      "timed_event_io_fraction": 0.001241008280378867,
+      "service_mean_ms": 11.1530898125,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 0.800143306,
+      "rpc_s": 1.151406469,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.4140625,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.002387114,
+      "logical_admission_wait_s": 8.2101e-05,
+      "physical_reservation_wait_s": 2.6917e-05,
+      "server_eof_s": 0.800331293,
+      "last_completion_s": 0.798277222,
+      "server_worker_stop_s": 0.800343572,
+      "server_eof_to_worker_stop_s": 1.2278999999892903e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 64,
+          "first_start_s": 0.002698971,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "647674",
+          "lateness_ns": "647674",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793159600276818447"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed32",
+      "server_source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "accepted_stage2_binary": false
+    },
+    {
+      "name": "fixed8-cancel",
+      "purpose": "integration_fixture",
+      "policy": "fixed8",
+      "expected_fault": "cancellation",
+      "valid_for_declared_purpose": true,
+      "successful_sends": 97,
+      "failed_sends": 1,
+      "admitted": 89,
+      "processed": 80,
+      "discarded": 9
+    },
+    {
+      "name": "fixed8-normal",
+      "purpose": "integration_fixture",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 64,
+      "skipped": 0,
+      "attempted": 64,
+      "successful_sends": 64,
+      "failed_sends": 0,
+      "admitted": 64,
+      "dequeued": 64,
+      "processed": 64,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.731315,
+      "worker_observed_s": 0.800201657,
+      "worker_busy_s": 0.712599893,
+      "worker_idle_s": 0.087601764,
+      "idle_backlog_ms": 2.718402,
+      "event_write_calls": 259,
+      "event_format_write_ms": 1.187927,
+      "event_write_max_us": 306.491,
+      "event_flush_calls": 9,
+      "event_flush_ms": 0.125209,
+      "event_flush_max_us": 28.653,
+      "timed_event_io_fraction": 0.001641006349478229,
+      "service_mean_ms": 11.134373328125,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 0.800062958,
+      "rpc_s": 1.150302294,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.52734375,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.002191823,
+      "logical_admission_wait_s": 8.6037e-05,
+      "physical_reservation_wait_s": 2.8543e-05,
+      "server_eof_s": 0.800191812,
+      "last_completion_s": 0.799176305,
+      "server_worker_stop_s": 0.800201657,
+      "server_eof_to_worker_stop_s": 9.84500000000832e-06,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 64,
+          "first_start_s": 0.001371271,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1691183",
+          "lateness_ns": "1691183",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793159594583107475"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed8",
+      "server_source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "accepted_stage2_binary": false
+    },
+    {
+      "name": "fixed8-schedule-smoke",
+      "purpose": "integration_fixture",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 64,
+      "skipped": 0,
+      "attempted": 64,
+      "successful_sends": 64,
+      "failed_sends": 0,
+      "admitted": 64,
+      "dequeued": 64,
+      "processed": 64,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.819933,
+      "worker_observed_s": 0.800601727,
+      "worker_busy_s": 0.711285412,
+      "worker_idle_s": 0.089316315,
+      "idle_backlog_ms": 2.490264,
+      "event_write_calls": 259,
+      "event_format_write_ms": 0.737589,
+      "event_write_max_us": 31.678,
+      "event_flush_calls": 9,
+      "event_flush_ms": 0.123075,
+      "event_flush_max_us": 28.002,
+      "timed_event_io_fraction": 0.001075021413237596,
+      "service_mean_ms": 11.1138345625,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 0.800385421,
+      "rpc_s": 1.148630409,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.50390625,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.002105106,
+      "logical_admission_wait_s": 0.000100965,
+      "physical_reservation_wait_s": 2.5932e-05,
+      "server_eof_s": 0.800589038,
+      "last_completion_s": 0.799471408,
+      "server_worker_stop_s": 0.800601727,
+      "server_eof_to_worker_stop_s": 1.2688999999954653e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 64,
+          "first_start_s": 0.001841145,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1838061",
+          "lateness_ns": "1838061",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793159602081416250"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed8",
+      "server_source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "accepted_stage2_binary": false
+    },
+    {
+      "name": "fixed8-worker-error",
+      "purpose": "integration_fixture",
+      "policy": "fixed8",
+      "expected_fault": "worker_error",
+      "valid_for_declared_purpose": true,
+      "successful_sends": 1,
+      "failed_sends": 1,
+      "admitted": 1,
+      "processed": 0,
+      "discarded": 1
+    },
+    {
+      "name": "fixed8-worker-panic",
+      "purpose": "integration_fixture",
+      "policy": "fixed8",
+      "expected_fault": "worker_panic",
+      "valid_for_declared_purpose": true,
+      "successful_sends": 2,
+      "failed_sends": 1,
+      "admitted": 1,
+      "processed": 0,
+      "discarded": 1
+    },
+    {
+      "name": "shared32-1",
+      "purpose": "stage2_baseline_overhead_control",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 320,
+      "skipped": 0,
+      "attempted": 320,
+      "successful_sends": 320,
+      "failed_sends": 0,
+      "admitted": 320,
+      "dequeued": 320,
+      "processed": 320,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.3686,
+      "worker_observed_s": 4.00072354,
+      "worker_busy_s": 3.565593971,
+      "worker_idle_s": 0.435129569,
+      "idle_backlog_ms": 11.158626,
+      "event_write_calls": 1283,
+      "event_format_write_ms": 3.372115,
+      "event_write_max_us": 56.676,
+      "event_flush_calls": 25,
+      "event_flush_ms": 0.537189,
+      "event_flush_max_us": 48.383,
+      "timed_event_io_fraction": 0.0009771492483582108,
+      "service_mean_ms": 11.142481159375,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 4.000574861,
+      "rpc_s": 4.355373404,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.40234375,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.007877556,
+      "logical_admission_wait_s": 0.000373048,
+      "physical_reservation_wait_s": 0.000106959,
+      "server_eof_s": 4.000708478,
+      "last_completion_s": 3.999626099,
+      "server_worker_stop_s": 4.00072354,
+      "server_eof_to_worker_stop_s": 1.5062000000121145e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 320,
+          "first_start_s": 0.001374222,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1014040",
+          "lateness_ns": "1014040",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793159609029061619"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed32",
+      "server_source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "accepted_stage2_binary": false
+    },
+    {
+      "name": "shared32-2",
+      "purpose": "stage2_baseline_overhead_control",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 320,
+      "skipped": 0,
+      "attempted": 320,
+      "successful_sends": 320,
+      "failed_sends": 0,
+      "admitted": 320,
+      "dequeued": 320,
+      "processed": 320,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 0,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.280376,
+      "worker_observed_s": 4.000621325,
+      "worker_busy_s": 3.563129663,
+      "worker_idle_s": 0.437491662,
+      "idle_backlog_ms": 13.254441,
+      "event_write_calls": 1283,
+      "event_format_write_ms": 3.508497,
+      "event_write_max_us": 57.797,
+      "event_flush_calls": 25,
+      "event_flush_ms": 0.600804,
+      "event_flush_max_us": 92.559,
+      "timed_event_io_fraction": 0.0010271656990680066,
+      "service_mean_ms": 11.134780196875,
+      "service_p95_upper_ms": 11.505563,
+      "half_close_s": 4.000435065,
+      "rpc_s": 4.350701125,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.52734375,
+      "send_gt20ms_calls": 0,
+      "send_gt20ms_duration_s": 0.0,
+      "send_wall_duration_s": 0.010237994,
+      "logical_admission_wait_s": 0.000442657,
+      "physical_reservation_wait_s": 0.000298971,
+      "server_eof_s": 4.000610349,
+      "last_completion_s": 3.999486528,
+      "server_worker_stop_s": 4.000621325,
+      "server_eof_to_worker_stop_s": 1.0976000000439967e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 320,
+          "first_start_s": 0.001295133,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "2": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "867820",
+          "lateness_ns": "867820",
+          "phase": "stage1_constant",
+          "configured_ms": "10",
+          "unix_ns": "1793159614049831717"
+        }
+      ],
+      "phase_window_note": "Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.",
+      "policy": "fixed32",
+      "server_source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "accepted_stage2_binary": false
+    }
+  ],
+  "scope": "static-budget acceptance/overhead and at most one fixed8 exploratory run; no primary comparison",
+  "overhead": {
+    "accepted_stage2": {
+      "service_mean_ms": {
+        "median": 11.1154590421875,
+        "min": 11.109948762499998,
+        "max": 11.120969321875
+      },
+      "service_p95_upper_ms": {
+        "median": 11.505563,
+        "min": 11.505563,
+        "max": 11.505563
+      },
+      "timed_event_io_fraction": {
+        "median": 0.0010283605359619765,
+        "min": 0.001019669720005466,
+        "max": 0.0010370513519184867
+      },
+      "event_format_write_ms": {
+        "median": 3.534144,
+        "min": 3.484847,
+        "max": 3.583441
+      },
+      "event_flush_ms": {
+        "median": 0.580171,
+        "min": 0.565271,
+        "max": 0.595071
+      },
+      "rpc_s": {
+        "median": 4.3500095545,
+        "min": 4.349982231,
+        "max": 4.350036878
+      },
+      "worker_observed_s": {
+        "median": 4.0008518550000005,
+        "min": 4.000488493,
+        "max": 4.001215217
+      }
+    },
+    "stage3_fixed32": {
+      "service_mean_ms": {
+        "median": 11.138630678125,
+        "min": 11.134780196875,
+        "max": 11.142481159375
+      },
+      "service_p95_upper_ms": {
+        "median": 11.505563,
+        "min": 11.505563,
+        "max": 11.505563
+      },
+      "timed_event_io_fraction": {
+        "median": 0.0010021574737131087,
+        "min": 0.0009771492483582108,
+        "max": 0.0010271656990680066
+      },
+      "event_format_write_ms": {
+        "median": 3.440306,
+        "min": 3.372115,
+        "max": 3.508497
+      },
+      "event_flush_ms": {
+        "median": 0.5689965,
+        "min": 0.537189,
+        "max": 0.600804
+      },
+      "rpc_s": {
+        "median": 4.353037264499999,
+        "min": 4.350701125,
+        "max": 4.355373404
+      },
+      "worker_observed_s": {
+        "median": 4.0006724325,
+        "min": 4.000621325,
+        "max": 4.00072354
+      }
+    }
+  },
+  "overhead_caveat": "Two healthy 4s controls per executable in ABBA order, identical client bytes, build mode/config/affinity and 80/s workload. This checks gross regressions, not equivalence proof or saturated-capacity overhead. Direct event timers omit some telemetry/locking costs and include descheduling; ranges are not confidence intervals.",
+  "comparison": {
+    "accepted_stage2_fixed32": {
+      "name": "exploratory-1",
+      "purpose": "single_exploratory_slowdown_recovery",
+      "event_io": "buffered",
+      "source_commit": "84509545abf6a5f139687250757e67703477a5c1",
+      "valid_for_declared_purpose": true,
+      "scheduled": 2880,
+      "skipped": 629,
+      "attempted": 2251,
+      "successful_sends": 2251,
+      "failed_sends": 0,
+      "admitted": 2251,
+      "dequeued": 2251,
+      "processed": 2251,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 32,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.494664,
+      "worker_observed_s": 36.001000234,
+      "worker_busy_s": 33.849077816,
+      "worker_idle_s": 2.151922418,
+      "idle_backlog_ms": 74.417919,
+      "event_write_calls": 9007,
+      "event_format_write_ms": 28.063037,
+      "event_write_max_us": 450.958,
+      "event_flush_calls": 185,
+      "event_flush_ms": 4.869654,
+      "event_flush_max_us": 228.013,
+      "timed_event_io_fraction": 0.0009147715559552084,
+      "service_mean_ms": 15.037351317636606,
+      "service_p95_upper_ms": 41.679231,
+      "half_close_s": 36.00086411,
+      "rpc_s": 36.348827545,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 7.66796875,
+      "send_gt20ms_calls": 273,
+      "send_gt20ms_duration_s": 9.391721875,
+      "send_wall_duration_s": 9.472874581,
+      "logical_admission_wait_s": 12.344393117,
+      "physical_reservation_wait_s": 0.001573518,
+      "server_eof_s": 36.000989428,
+      "last_completion_s": 35.999757904,
+      "server_worker_stop_s": 36.001000234,
+      "server_eof_to_worker_stop_s": 1.080600000591403e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 960,
+          "first_start_s": 0.001777936,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 291,
+          "first_start_s": 12.001447611,
+          "selected_ms": [
+            40
+          ]
+        },
+        "2": {
+          "count": 1000,
+          "first_start_s": 24.005988864,
+          "selected_ms": [
+            10
+          ]
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phases": {
+        "healthy": {
+          "bounds_s": [
+            0,
+            12
+          ],
+          "actual_service_ms_by_start": {
+            "count": 960,
+            "mean": 11.152994466666666,
+            "p50": 11.154494,
+            "p95": 11.389833,
+            "p99": 11.534131,
+            "min": 10.118039999999999,
+            "max": 13.023577
+          },
+          "completion_count": 959,
+          "completion_rate_s": 79.91666666666667,
+          "queue_residence_ms_by_enqueue": {
+            "count": 960,
+            "mean": 0.045738106249999994,
+            "p50": 0.034762,
+            "p95": 0.079289,
+            "p99": 0.249586,
+            "min": 0.016635,
+            "max": 3.1401049999999997
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 960,
+          "successful_sends": 960,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 80.0,
+          "send_ms": {
+            "count": 960,
+            "mean": 0.03222485520833333,
+            "p50": 0.02036,
+            "p95": 0.051788,
+            "p99": 0.12639,
+            "min": 0.009163,
+            "max": 5.1878459999999995
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 960,
+          "skipped_scheduled_slots": 0
+        },
+        "slowdown": {
+          "bounds_s": [
+            12,
+            24
+          ],
+          "actual_service_ms_by_start": {
+            "count": 291,
+            "mean": 41.225142498281784,
+            "p50": 41.086757,
+            "p95": 41.934557,
+            "p99": 42.054994,
+            "min": 40.393969999999996,
+            "max": 44.242657
+          },
+          "completion_count": 291,
+          "completion_rate_s": 24.25,
+          "queue_residence_ms_by_enqueue": {
+            "count": 323,
+            "mean": 1177.9257852817336,
+            "p50": 1319.222078,
+            "p95": 1323.315282,
+            "p99": 1324.265342,
+            "min": 0.024385999999999998,
+            "max": 1325.2853029999999
+          },
+          "Q_mean": 31.183333333333334,
+          "Q_max": 32,
+          "attempted_sends": 332,
+          "successful_sends": 332,
+          "successful_send_returns": 331,
+          "return_rate_s": 27.583333333333332,
+          "attempt_rate_s": 27.666666666666668,
+          "send_ms": {
+            "count": 332,
+            "mean": 28.338650759036145,
+            "p50": 32.930558999999995,
+            "p95": 39.6727,
+            "p99": 40.776104,
+            "min": 0.010466,
+            "max": 41.624862
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 332,
+          "skipped_scheduled_slots": 628
+        },
+        "recovery": {
+          "bounds_s": [
+            24,
+            36
+          ],
+          "actual_service_ms_by_start": {
+            "count": 1000,
+            "mean": 11.145686661,
+            "p50": 11.170387999999999,
+            "p95": 11.487515,
+            "p99": 11.706069,
+            "min": 10.134443,
+            "max": 12.218485
+          },
+          "completion_count": 1001,
+          "completion_rate_s": 83.41666666666667,
+          "queue_residence_ms_by_enqueue": {
+            "count": 968,
+            "mean": 77.7939784070248,
+            "p50": 0.045979,
+            "p95": 356.174482,
+            "p99": 358.608864,
+            "min": 0.017405999999999998,
+            "max": 359.597443
+          },
+          "Q_mean": 6.816666666666666,
+          "Q_max": 32,
+          "attempted_sends": 959,
+          "successful_sends": 959,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 79.91666666666667,
+          "send_ms": {
+            "count": 959,
+            "mean": 0.034939174139728885,
+            "p50": 0.021612,
+            "p95": 0.056495,
+            "p99": 0.12563,
+            "min": 0.009614,
+            "max": 4.231446
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 959,
+          "skipped_scheduled_slots": 1
+        },
+        "drain": {
+          "bounds_s": [
+            36,
+            null
+          ],
+          "actual_service_ms_by_start": {
+            "count": 0
+          },
+          "completion_count": 0,
+          "completion_rate_s": null,
+          "queue_residence_ms_by_enqueue": {
+            "count": 0
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 0,
+          "successful_sends": 0,
+          "successful_send_returns": 0,
+          "return_rate_s": null,
+          "attempt_rate_s": null,
+          "send_ms": {
+            "count": 0
+          }
+        }
+      },
+      "first_sampled_Q_zero_after24_s": 28.282441347,
+      "early_recovery_completion_rate_s": 89.75,
+      "late_recovery_completion_rate_s": 80.25,
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "609798",
+          "lateness_ns": "609798",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793156852171423843"
+        },
+        {
+          "scheduled_ns": "12000000000",
+          "observed_ns": "12001124826",
+          "lateness_ns": "1124826",
+          "phase": "slowdown",
+          "configured_ms": "40",
+          "unix_ns": "1793156864171939332"
+        },
+        {
+          "scheduled_ns": "24000000000",
+          "observed_ns": "24000682891",
+          "lateness_ns": "682891",
+          "phase": "recovery",
+          "configured_ms": "10",
+          "unix_ns": "1793156876171498068"
+        },
+        {
+          "scheduled_ns": "36000000000",
+          "observed_ns": "36000867194",
+          "lateness_ns": "867194",
+          "phase": "drain",
+          "configured_ms": "10",
+          "unix_ns": "1793156888171681329"
+        }
+      ],
+      "intended_capacity_transition_observed": true
+    },
+    "accepted_stage2_pooled_residence_12_36": {
+      "count": 1291,
+      "p50_ms": 24.591454,
+      "p95_ms": 1321.889556,
+      "p99_ms": 1323.48684
+    },
+    "stage3_fixed8": {
+      "name": "exploratory-fixed8",
+      "purpose": "single_exploratory_fixed8",
+      "event_io": "buffered",
+      "source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "valid_for_declared_purpose": true,
+      "scheduled": 2880,
+      "skipped": 654,
+      "attempted": 2226,
+      "successful_sends": 2226,
+      "failed_sends": 0,
+      "admitted": 2226,
+      "dequeued": 2226,
+      "processed": 2226,
+      "discarded": 0,
+      "received_not_admitted": 0,
+      "Qmax": 8,
+      "R_final": 0,
+      "Q_final": 0,
+      "W_final": 0,
+      "errors": 0,
+      "phase_alignment_ms": 0.776858,
+      "worker_observed_s": 36.001088216,
+      "worker_busy_s": 33.567479374,
+      "worker_idle_s": 2.433608842,
+      "idle_backlog_ms": 82.705538,
+      "event_write_calls": 8907,
+      "event_format_write_ms": 29.111701,
+      "event_write_max_us": 231.087,
+      "event_flush_calls": 185,
+      "event_flush_ms": 5.164584,
+      "event_flush_max_us": 322.646,
+      "timed_event_io_fraction": 0.0009520902477821922,
+      "service_mean_ms": 15.079730176999101,
+      "service_p95_upper_ms": 41.679231,
+      "half_close_s": 36.000725846,
+      "rpc_s": 36.350320736,
+      "rpc_status": "<nil>",
+      "peak_server_rss_mib": 6.87890625,
+      "send_gt20ms_calls": 285,
+      "send_gt20ms_duration_s": 9.811915732,
+      "send_wall_duration_s": 9.882117161,
+      "logical_admission_wait_s": 12.797471975,
+      "physical_reservation_wait_s": 0.001166907,
+      "server_eof_s": 36.000991049,
+      "last_completion_s": 36.000090835,
+      "server_worker_stop_s": 36.001088216,
+      "server_eof_to_worker_stop_s": 9.716699999984257e-05,
+      "server_eof_to_last_completion_s": 0,
+      "service_start_selections": {
+        "0": {
+          "count": 960,
+          "first_start_s": 0.001971526,
+          "selected_ms": [
+            10
+          ]
+        },
+        "1": {
+          "count": 292,
+          "first_start_s": 12.000956037,
+          "selected_ms": [
+            40
+          ]
+        },
+        "2": {
+          "count": 974,
+          "first_start_s": 24.031939566,
+          "selected_ms": [
+            10
+          ]
+        },
+        "3": {
+          "count": 0,
+          "first_start_s": null,
+          "selected_ms": []
+        }
+      },
+      "phases": {
+        "healthy": {
+          "bounds_s": [
+            0,
+            12
+          ],
+          "actual_service_ms_by_start": {
+            "count": 960,
+            "mean": 11.142314099999998,
+            "p50": 11.148109,
+            "p95": 11.375995999999999,
+            "p99": 11.523798,
+            "min": 10.125485999999999,
+            "max": 12.203700999999999
+          },
+          "completion_count": 960,
+          "completion_rate_s": 80.0,
+          "queue_residence_ms_by_enqueue": {
+            "count": 960,
+            "mean": 0.05623191145833333,
+            "p50": 0.034942,
+            "p95": 0.08895399999999999,
+            "p99": 0.253221,
+            "min": 0.014792999999999999,
+            "max": 5.246529
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 960,
+          "successful_sends": 960,
+          "successful_send_returns": 960,
+          "return_rate_s": 80.0,
+          "attempt_rate_s": 80.0,
+          "send_ms": {
+            "count": 960,
+            "mean": 0.029164503124999998,
+            "p50": 0.022813999999999997,
+            "p95": 0.06697,
+            "p99": 0.136255,
+            "min": 0.009344,
+            "max": 0.566311
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 960,
+          "skipped_scheduled_slots": 0
+        },
+        "slowdown": {
+          "bounds_s": [
+            12,
+            24
+          ],
+          "actual_service_ms_by_start": {
+            "count": 292,
+            "mean": 41.17037276027397,
+            "p50": 41.038197,
+            "p95": 41.89398,
+            "p99": 42.01513,
+            "min": 40.32016,
+            "max": 42.171986
+          },
+          "completion_count": 291,
+          "completion_rate_s": 24.25,
+          "queue_residence_ms_by_enqueue": {
+            "count": 300,
+            "mean": 319.8209748566667,
+            "p50": 329.33655899999997,
+            "p95": 331.17789799999997,
+            "p99": 332.305809,
+            "min": 0.019258,
+            "max": 332.680956
+          },
+          "Q_mean": 7.916666666666667,
+          "Q_max": 8,
+          "attempted_sends": 308,
+          "successful_sends": 308,
+          "successful_send_returns": 308,
+          "return_rate_s": 25.666666666666668,
+          "attempt_rate_s": 25.666666666666668,
+          "send_ms": {
+            "count": 308,
+            "mean": 31.762020227272725,
+            "p50": 33.924045,
+            "p95": 39.974616,
+            "p99": 40.758229,
+            "min": 0.012539,
+            "max": 41.877856
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 308,
+          "skipped_scheduled_slots": 652
+        },
+        "recovery": {
+          "bounds_s": [
+            24,
+            36
+          ],
+          "actual_service_ms_by_start": {
+            "count": 974,
+            "mean": 11.138715597535933,
+            "p50": 11.176389,
+            "p95": 11.487528,
+            "p99": 11.703973999999999,
+            "min": 10.111112,
+            "max": 12.723688
+          },
+          "completion_count": 974,
+          "completion_rate_s": 81.16666666666667,
+          "queue_residence_ms_by_enqueue": {
+            "count": 966,
+            "mean": 10.452648988612836,
+            "p50": 0.040852,
+            "p95": 88.852453,
+            "p99": 90.12861199999999,
+            "min": 0.016715,
+            "max": 90.872591
+          },
+          "Q_mean": 0.8666666666666667,
+          "Q_max": 8,
+          "attempted_sends": 958,
+          "successful_sends": 958,
+          "successful_send_returns": 958,
+          "return_rate_s": 79.83333333333333,
+          "attempt_rate_s": 79.83333333333333,
+          "send_ms": {
+            "count": 958,
+            "mean": 0.07454802505219206,
+            "p50": 0.027590999999999997,
+            "p95": 0.059588999999999996,
+            "p99": 0.195013,
+            "min": 0.009845,
+            "max": 31.176551999999997
+          },
+          "scheduled_slots": 960,
+          "attempted_scheduled_slots": 958,
+          "skipped_scheduled_slots": 2
+        },
+        "drain": {
+          "bounds_s": [
+            36,
+            null
+          ],
+          "actual_service_ms_by_start": {
+            "count": 0
+          },
+          "completion_count": 1,
+          "completion_rate_s": null,
+          "queue_residence_ms_by_enqueue": {
+            "count": 0
+          },
+          "Q_mean": 0,
+          "Q_max": 0,
+          "attempted_sends": 0,
+          "successful_sends": 0,
+          "successful_send_returns": 0,
+          "return_rate_s": null,
+          "attempt_rate_s": null,
+          "send_ms": {
+            "count": 0
+          }
+        }
+      },
+      "first_sampled_Q_zero_after24_s": 25.683528275,
+      "early_recovery_completion_rate_s": 83.75,
+      "late_recovery_completion_rate_s": 79.75,
+      "phase_markers": [
+        {
+          "scheduled_ns": "0",
+          "observed_ns": "1592366",
+          "lateness_ns": "1592366",
+          "phase": "healthy",
+          "configured_ms": "10",
+          "unix_ns": "1793159870010609573"
+        },
+        {
+          "scheduled_ns": "12000000000",
+          "observed_ns": "12000980504",
+          "lateness_ns": "980504",
+          "phase": "slowdown",
+          "configured_ms": "40",
+          "unix_ns": "1793159882009996710"
+        },
+        {
+          "scheduled_ns": "24000000000",
+          "observed_ns": "24001750419",
+          "lateness_ns": "1750419",
+          "phase": "recovery",
+          "configured_ms": "10",
+          "unix_ns": "1793159894010767506"
+        },
+        {
+          "scheduled_ns": "36000000000",
+          "observed_ns": "36001318022",
+          "lateness_ns": "1318022",
+          "phase": "drain",
+          "configured_ms": "10",
+          "unix_ns": "1793159906010334658"
+        }
+      ],
+      "policy": "fixed8",
+      "server_source_commit": "e104d0899a9d4c03ffc5803a69336f984ff31b9c",
+      "accepted_stage2_binary": false,
+      "pooled_residence_12_36": {
+        "count": 1266,
+        "p50_ms": 0.04625,
+        "p95_ms": 330.105718,
+        "p99_ms": 331.271228
+      },
+      "budget_enforced": true
+    },
+    "caveat": "One historical fixed32 and one new fixed8 run; shared gate healthy-load overhead checked separately, but source version/time/host noise and admitted cohorts are confounded. Skips are outcomes, not exclusions; local residence is not end-to-end latency."
+  }
+}

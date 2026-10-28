@@ -1,0 +1,2 @@
+scheduled_ns,observed_ns,lateness_ns,phase,configured_ms,unix_ns
+0,943330,943330,stage1_constant,10,1793159598237641739
