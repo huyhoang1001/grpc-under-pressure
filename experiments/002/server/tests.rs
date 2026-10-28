@@ -591,3 +591,6 @@ async fn fixed8_handoff_cancel_races_release_permits_and_classify_received_work_
         assert_eq!(s.tx.capacity(), 32);
     }
 }
+
+#[path = "adaptive_tests.rs"]
+mod adaptive;

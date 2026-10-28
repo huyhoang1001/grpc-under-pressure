@@ -1,4 +1,7 @@
+mod controller;
 mod histogram;
+
+use controller::Controller;
 
 use histogram::{phase, Histogram};
 use pressure_server::protocol::{
@@ -98,6 +101,14 @@ struct State {
     ever_started: bool,
     reason: &'static str,
     budget: usize,
+    shrink_occupancy: usize,
+    adaptive: bool,
+    controller: Controller,
+    controller_running: bool,
+    controller_ticks: u64,
+    budget_updates: u64,
+    controller_io_ns: u64,
+    controller_out: Option<BufWriter<File>>,
     queue_hist: [Histogram; 4],
     service_hist: [Histogram; 4],
     queue_total: Histogram,
@@ -111,10 +122,7 @@ struct State {
 }
 impl State {
     fn new(rx: mpsc::Receiver<Item>, events: Option<File>, budget: usize) -> Self {
-        assert!(
-            matches!(budget, 8 | 32),
-            "Stage3 supports static budgets 8 or 32 only"
-        );
+        assert!((1..=K).contains(&budget));
         Self {
             c: Counts::default(),
             rx,
@@ -127,6 +135,14 @@ impl State {
             ever_started: false,
             reason: "running",
             budget,
+            shrink_occupancy: 0,
+            adaptive: false,
+            controller: Controller::default(),
+            controller_running: false,
+            controller_ticks: 0,
+            budget_updates: 0,
+            controller_io_ns: 0,
+            controller_out: None,
             queue_hist: std::array::from_fn(|_| Histogram::default()),
             service_hist: std::array::from_fn(|_| Histogram::default()),
             queue_total: Histogram::default(),
@@ -241,7 +257,10 @@ impl State {
         assert_eq!(self.c.q, self.rx.len());
         assert_eq!(self.c.w, usize::from(self.worker.is_some()));
         assert!(
-            self.c.q <= K && self.c.w <= 1 && self.c.r <= 1 && self.c.q + self.c.r <= self.budget
+            self.c.q <= K
+                && self.c.w <= 1
+                && self.c.r <= 1
+                && self.c.q + self.c.r <= self.budget.max(self.shrink_occupancy)
         );
         assert_eq!(self.c.received, self.c.admitted + self.c.not_admitted);
         assert_eq!(
@@ -271,6 +290,19 @@ impl State {
             self.c.admitted,
             self.c.processed + self.c.dq + self.c.dw + self.c.q as u64 + self.c.w as u64
         );
+    }
+    fn set_budget(&mut self, budget: usize) -> bool {
+        assert!((1..=K).contains(&budget));
+        if self.eof || self.terminal || !self.adaptive || budget == self.budget {
+            return false;
+        }
+        if budget < self.budget {
+            self.shrink_occupancy = self.c.q + self.c.r;
+        }
+        self.budget = budget;
+        self.budget_updates += 1;
+        self.verify();
+        true
     }
     fn dequeue(&mut self, now: Instant) -> bool {
         self.touch(now);
@@ -400,24 +432,162 @@ struct Shared {
     changed: Notify,
     stop: watch::Sender<bool>,
     start: watch::Sender<bool>,
+    controller_stop: watch::Sender<bool>,
 }
 impl Shared {
     fn new(events: Option<File>, budget: usize) -> Arc<Self> {
         let (tx, rx) = mpsc::channel(K);
         let (stop, _) = watch::channel(false);
         let (start, _) = watch::channel(false);
+        let (controller_stop, _) = watch::channel(false);
         Arc::new(Self {
             s: Mutex::new(State::new(rx, events, budget)),
             tx,
             changed: Notify::new(),
             stop,
             start,
+            controller_stop,
         })
     }
     fn fail(&self, reason: &'static str) {
         self.s.lock().unwrap().terminate(reason);
         self.stop.send_replace(true);
+        self.controller_stop.send_replace(true);
         self.changed.notify_waiters();
+    }
+}
+
+#[derive(Default)]
+struct TickWindow {
+    start_ns: u64,
+    completions: u64,
+    service_ns: u64,
+}
+fn number(value: Option<f64>) -> String {
+    value.map(|v| v.to_string()).unwrap_or_default()
+}
+fn control_tick(shared: &Shared, scheduled_ns: u64, previous: &mut TickWindow) -> bool {
+    let mut s = shared.s.lock().unwrap();
+    if s.eof || s.terminal {
+        return false;
+    }
+    let now = Instant::now();
+    s.touch(now);
+    let observed = s.elapsed(now);
+    let (n, total) = (s.service_total.count, s.service_total.sum);
+    let count = n - previous.completions;
+    let service_ns = total - previous.service_ns;
+    let (q, r, w, before) = (s.c.q, s.c.r, s.c.w, s.budget);
+    let decision = s.controller.tick(count, service_ns, q, r, before);
+    let changed = s.set_budget(decision.proposed);
+    s.controller_ticks += 1;
+    let values = [
+        scheduled_ns.to_string(),
+        observed.to_string(),
+        observed.saturating_sub(scheduled_ns).to_string(),
+        previous.start_ns.to_string(),
+        count.to_string(),
+        service_ns.to_string(),
+        number(decision.mean_ms),
+        number(s.controller.ewma_ms),
+        number(decision.delay_ms),
+        q.to_string(),
+        r.to_string(),
+        w.to_string(),
+        before.to_string(),
+        decision.proposed.to_string(),
+        s.budget.to_string(),
+        u8::from(decision.near_full).to_string(),
+        decision.high_before.to_string(),
+        decision.low_before.to_string(),
+        s.controller.high.to_string(),
+        s.controller.low.to_string(),
+        decision.reason.into(),
+        if s.adaptive {
+            decision.reason
+        } else {
+            "fixed_policy_hold"
+        }
+        .into(),
+        s.shrink_occupancy.to_string(),
+        n.to_string(),
+        total.to_string(),
+    ];
+    let io_start = Instant::now();
+    if let Some(out) = s.controller_out.as_mut() {
+        if writeln!(out, "{}", values.join(","))
+            .and_then(|_| out.flush())
+            .is_err()
+        {
+            s.c.telemetry_errors += 1;
+        }
+    }
+    s.controller_io_ns += ns(io_start.elapsed());
+    *previous = TickWindow {
+        start_ns: observed,
+        completions: n,
+        service_ns: total,
+    };
+    s.verify();
+    let healthy = s.c.telemetry_errors == 0;
+    drop(s);
+    if changed {
+        // Both growth and shrink wake already-registered waiters to recheck O<B.
+        shared.changed.notify_waiters();
+    }
+    healthy
+}
+
+struct ControllerGuard {
+    shared: Arc<Shared>,
+    normal: bool,
+}
+impl Drop for ControllerGuard {
+    fn drop(&mut self) {
+        if !self.normal {
+            self.shared.fail("controller_failed");
+        }
+        let mut s = self.shared.s.lock().unwrap();
+        s.controller_running = false;
+        s.event("controller_stopped", None, 0, (0, 0, 0), 0);
+    }
+}
+async fn control(shared: Arc<Shared>) {
+    let mut guard = ControllerGuard {
+        shared: shared.clone(),
+        normal: false,
+    };
+    let mut stopped = shared.controller_stop.subscribe();
+    let start = {
+        let mut s = shared.s.lock().unwrap();
+        s.controller_running = true;
+        s.event("controller_started", None, 0, (0, 0, 0), 0);
+        s.started.expect("controller starts after workload marker")
+    };
+    let period = Duration::from_millis(500);
+    let mut ticker =
+        tokio::time::interval_at(tokio::time::Instant::from_std(start + period), period);
+    ticker.set_missed_tick_behavior(tokio::time::MissedTickBehavior::Skip);
+    let mut previous = TickWindow::default();
+    loop {
+        if *stopped.borrow() {
+            guard.normal = true;
+            return;
+        }
+        tokio::select! {
+            biased;
+            _ = stopped.changed() => {},
+            target = ticker.tick() => {
+                let scheduled = ns(target.into_std().duration_since(start));
+                if !control_tick(&shared, scheduled, &mut previous) {
+                    guard.normal = {
+                        let s = shared.s.lock().unwrap();
+                        s.eof || s.terminal
+                    };
+                    return;
+                }
+            }
+        }
     }
 }
 struct Reservation {
@@ -496,13 +666,15 @@ async fn reserve(shared: Arc<Shared>) -> Result<Reservation, Status> {
     loop {
         // Notify::notify_one stores a permit if a dequeue races this await.
         let notified = shared.changed.notified();
+        tokio::pin!(notified);
+        notified.as_mut().enable();
         {
             let mut s = shared.s.lock().unwrap();
             s.touch(Instant::now());
             if s.terminal {
                 return Err(Status::cancelled("admission terminated"));
             }
-            // A single shared gate for both static policies. W is deliberately excluded.
+            // One gate for every policy. Carryover never authorizes new acquisition; W is excluded.
             if s.c.q + s.c.r < s.budget {
                 s.c.r += 1;
                 s.c.acquired += 1;
@@ -529,7 +701,7 @@ async fn reserve(shared: Arc<Shared>) -> Result<Reservation, Status> {
                 });
             }
         }
-        tokio::select! { _=notified=>{}, _=stopped.changed()=>return Err(Status::cancelled("worker stopped while waiting for capacity")) }
+        tokio::select! { _=notified.as_mut()=>{}, _=stopped.changed()=>return Err(Status::cancelled("worker stopped while waiting for capacity")) }
     }
 }
 struct WorkerGuard {
@@ -583,6 +755,8 @@ async fn worker(shared: Arc<Shared>, config: Config) {
     };
     loop {
         let notified = shared.changed.notified();
+        tokio::pin!(notified);
+        notified.as_mut().enable();
         let selected_delay = {
             let mut s = shared.s.lock().unwrap();
             if s.terminal {
@@ -623,6 +797,7 @@ async fn worker(shared: Arc<Shared>, config: Config) {
 struct HandlerGuard {
     shared: Arc<Shared>,
     task: Option<tokio::task::JoinHandle<()>>,
+    controller_task: Option<tokio::task::JoinHandle<()>>,
     normal: bool,
 }
 impl Drop for HandlerGuard {
@@ -631,6 +806,9 @@ impl Drop for HandlerGuard {
             self.shared.fail("rpc_cancelled_or_failed");
         }
         if let Some(task) = self.task.as_ref() {
+            task.abort();
+        }
+        if let Some(task) = self.controller_task.as_ref() {
             task.abort();
         }
         let mut s = self.shared.s.lock().unwrap();
@@ -663,6 +841,7 @@ async fn ingest(
     let mut guard = HandlerGuard {
         shared: shared.clone(),
         task: None,
+        controller_task: None,
         normal: false,
     };
     let mut started = shared.start.subscribe();
@@ -670,6 +849,7 @@ async fn ingest(
     while !*started.borrow() {
         tokio::select! {_=started.changed()=>{},_=stopped.changed()=>return Err(Status::cancelled("stopped before marker"))}
     }
+    guard.controller_task = Some(tokio::spawn(control(shared.clone())));
     guard.task = Some(tokio::spawn(worker(shared.clone(), config)));
     loop {
         let reservation = reserve(shared.clone()).await?;
@@ -682,10 +862,16 @@ async fn ingest(
             s.eof = true;
             s.event("eof", None, 0, (0, 0, 0), 0);
             s.verify();
+            shared.controller_stop.send_replace(true);
             shared.changed.notify_one();
             break;
         }
     }
+    if let Some(task) = guard.controller_task.as_mut() {
+        task.await
+            .map_err(|_| Status::internal("controller failed"))?;
+    }
+    guard.controller_task.take();
     tokio::select! {
      result=guard.task.as_mut().unwrap()=>{result.map_err(|_|Status::internal("worker failed"))?;},
      _=stopped.changed()=>return Err(Status::internal("worker stopped during drain"))
@@ -755,7 +941,7 @@ fn write_histograms(shared: &Shared, path: &Path) -> std::io::Result<()> {
 }
 async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
     let mut out = BufWriter::new(create(&path).unwrap());
-    writeln!(out,"unix_ns,elapsed_ns,started,physical_queue_depth,Q,R,W,queued_payload_bytes,handler_payload_bytes,worker_payload_bytes,received,admitted,dequeued,processed,discarded_from_queue,discarded_from_worker,discarded,received_not_admitted,reservations_acquired,reservations_released,logical_gate_wait_ns,physical_reservation_wait_ns,worker_busy_ns,worker_idle_ns,worker_idle_backlog_ns,queue_residence_violations,queue_p50_upper_ns,queue_p95_upper_ns,queue_p99_upper_ns,service_p50_upper_ns,service_p95_upper_ns,service_p99_upper_ns,errors,telemetry_errors,active_streams,connections,B,service_ms,service_phase,terminal_reason,rss_bytes,received_bytes,admitted_bytes,dequeued_bytes,processed_bytes,discarded_queue_bytes,discarded_worker_bytes,received_not_admitted_bytes,event_write_calls,event_write_ns,event_write_max_ns,event_flush_calls,event_flush_ns,event_flush_max_ns,inflight_selected_ms,queue_observations,queue_residence_sum_ns,service_observations,service_duration_sum_ns,physical_capacity,physical_available_capacity,logical_pending").unwrap();
+    writeln!(out,"unix_ns,elapsed_ns,started,physical_queue_depth,Q,R,W,queued_payload_bytes,handler_payload_bytes,worker_payload_bytes,received,admitted,dequeued,processed,discarded_from_queue,discarded_from_worker,discarded,received_not_admitted,reservations_acquired,reservations_released,logical_gate_wait_ns,physical_reservation_wait_ns,worker_busy_ns,worker_idle_ns,worker_idle_backlog_ns,queue_residence_violations,queue_p50_upper_ns,queue_p95_upper_ns,queue_p99_upper_ns,service_p50_upper_ns,service_p95_upper_ns,service_p99_upper_ns,errors,telemetry_errors,active_streams,connections,B,service_ms,service_phase,terminal_reason,rss_bytes,received_bytes,admitted_bytes,dequeued_bytes,processed_bytes,discarded_queue_bytes,discarded_worker_bytes,received_not_admitted_bytes,event_write_calls,event_write_ns,event_write_max_ns,event_flush_calls,event_flush_ns,event_flush_max_ns,inflight_selected_ms,queue_observations,queue_residence_sum_ns,service_observations,service_duration_sum_ns,physical_capacity,physical_available_capacity,logical_pending,shrink_occupancy,controller_running,controller_ticks,budget_updates,controller_io_ns,adaptive_policy").unwrap();
     let mut ticker = tokio::time::interval(Duration::from_millis(200));
     ticker.set_missed_tick_behavior(tokio::time::MissedTickBehavior::Skip);
     loop {
@@ -840,6 +1026,12 @@ async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
                 shared.tx.max_capacity().to_string(),
                 shared.tx.capacity().to_string(),
                 (c.q + c.r).to_string(),
+                s.shrink_occupancy.to_string(),
+                u8::from(s.controller_running).to_string(),
+                s.controller_ticks.to_string(),
+                s.budget_updates.to_string(),
+                s.controller_io_ns.to_string(),
+                u8::from(s.adaptive).to_string(),
             ];
             writeln!(out, "{}", values.join(",")).unwrap();
             out.flush().unwrap();
@@ -882,9 +1074,18 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let budget = match policy.as_str() {
         "fixed32" => 32,
         "fixed8" => 8,
-        _ => return Err("Stage3 supports fixed32 or fixed8 only".into()),
+        "adaptive" => 16,
+        _ => return Err("policy must be fixed32, fixed8 or adaptive".into()),
     };
     let shared = Shared::new(Some(events), budget);
+    {
+        let mut s = shared.s.lock().unwrap();
+        s.adaptive = policy == "adaptive";
+        let mut out = BufWriter::with_capacity(65536, create(&dir.join("controller.csv"))?);
+        writeln!(out, "scheduled_ns,observed_ns,lateness_ns,window_start_ns,interval_completions,interval_service_ns,interval_mean_ms,ewma_ms,estimated_delay_ms,Q,R,W,B_before,B_proposed,B_after,near_full,high_before,low_before,high_after,low_after,proposal_reason,decision_reason,shrink_occupancy,total_completions,total_service_ns")?;
+        out.flush()?;
+        s.controller_out = Some(out);
+    }
     let event_io = option(&args, "--event-io", "buffered");
     assert!(
         ["buffered", "discard"].contains(&event_io.as_str()),
