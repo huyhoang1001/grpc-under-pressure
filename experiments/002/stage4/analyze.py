@@ -45,10 +45,15 @@ def summarize(folder):
 def main():
     p=argparse.ArgumentParser();p.add_argument('directory',type=Path);a=p.parse_args();root=a.directory
     cases=[]
+    exclusions=json.loads((root/'declared-exclusions.json').read_text()) if (root/'declared-exclusions.json').exists() else {}
+    invalid=[]
     for path in sorted(root.glob('*/manifest.json')):
-        issues=validate(path.parent);assert not issues,(path,issues)
+        issues=validate(path.parent)
+        if issues:
+            assert path.parent.name in exclusions and issues==exclusions[path.parent.name]['issues'],(path,issues)
+            invalid.append({'name':path.parent.name,'issues':issues,'reason':exclusions[path.parent.name]['reason'],'excluded_from_acceptance':True});continue
         cases.append(summarize(path.parent))
-    result={'scope':'Stage4 correctness and at most one exploratory adaptive run, not primary comparison','runs':cases}
+    result={'scope':'Stage4 correctness and at most one exploratory adaptive run, not primary comparison','runs':cases,'retained_invalid_attempts':invalid}
     exploratory=[r for r in cases if r['purpose']=='single_exploratory_adaptive']
     if exploratory:
         adaptive=exploratory[0];comparison={}

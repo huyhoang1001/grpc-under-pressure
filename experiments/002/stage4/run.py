@@ -105,16 +105,20 @@ def run(root,name,seconds,policy='fixed32',schedule='constant',purpose='integrat
     print(name,'PASS' if not issues else issues,flush=True)
     if issues:raise RuntimeError('Stop and diagnose; all attempted data retained')
 
-FIXTURES=['fixed32-regression','fixed8-regression','adaptive-healthy','adaptive-schedule-smoke','adaptive-cancel','adaptive-worker-error','adaptive-worker-panic']
+FIXTURES=['fixed32-regression','fixed8-regression','adaptive-healthy','adaptive-schedule-smoke','adaptive-cancel-after-shrink','adaptive-worker-error','adaptive-worker-panic']
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--output',required=True,type=Path);p.add_argument('--phase',required=True,choices=['acceptance','exploratory']);a=p.parse_args();root=a.output.resolve();root.mkdir(parents=True,exist_ok=True)
+    p=argparse.ArgumentParser();p.add_argument('--output',required=True,type=Path);p.add_argument('--phase',required=True,choices=['acceptance','acceptance-completion','exploratory']);a=p.parse_args();root=a.output.resolve();root.mkdir(parents=True,exist_ok=True)
     if git('diff','HEAD','--','server','loadgen','proto','rust-toolchain.toml','experiments/002/server','experiments/002/client','experiments/002/stage4'):raise RuntimeError('commit source/harness before evidence collection')
     if a.phase=='acceptance':
         run(root,'fixed32-regression',1.6,policy='fixed32')
         run(root,'fixed8-regression',1.6,policy='fixed8')
         run(root,'adaptive-healthy',1.6,policy='adaptive')
         run(root,'adaptive-schedule-smoke',1.6,policy='adaptive',schedule='contract')
-        run(root,'adaptive-cancel',2,policy='adaptive',rate=1000,deadline='1200ms',fault='cancellation')
+        run(root,'adaptive-cancel-after-shrink',2.5,policy='adaptive',rate=1000,deadline='2s',fault='cancellation')
+        run(root,'adaptive-worker-error',.8,policy='adaptive',fault='worker_error')
+        run(root,'adaptive-worker-panic',.8,policy='adaptive',fault='worker_panic')
+    elif a.phase=='acceptance-completion':
+        run(root,'adaptive-cancel-after-shrink',2.5,policy='adaptive',rate=1000,deadline='2s',fault='cancellation')
         run(root,'adaptive-worker-error',.8,policy='adaptive',fault='worker_error')
         run(root,'adaptive-worker-panic',.8,policy='adaptive',fault='worker_panic')
     else:

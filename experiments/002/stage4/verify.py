@@ -98,9 +98,13 @@ def validate(folder):
 def main():
     p=argparse.ArgumentParser();p.add_argument('directory',type=Path);a=p.parse_args()
     results={}
+    exclusions=json.loads((a.directory/'declared-exclusions.json').read_text()) if (a.directory/'declared-exclusions.json').exists() else {}
+    unexpected=False
     for manifest in sorted(a.directory.glob('*/manifest.json')):
         problems=validate(manifest.parent);results[manifest.parent.name]=problems
-        print(manifest.parent.name,'PASS' if not problems else problems)
+        known=manifest.parent.name in exclusions and problems==exclusions[manifest.parent.name]['issues']
+        unexpected |= bool(problems) and not known
+        print(manifest.parent.name,'RETAINED INVALID (declared)' if known else ('PASS' if not problems else problems))
     (a.directory/'verification.json').write_text(json.dumps(results,indent=2)+'\n')
-    if any(results.values()):raise SystemExit(1)
+    if unexpected:raise SystemExit(1)
 if __name__=='__main__':main()

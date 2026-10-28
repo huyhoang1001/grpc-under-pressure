@@ -28,3 +28,7 @@ python3 experiments/002/stage4/verify.py experiments/002/results/stage4
 ```
 
 Use a fresh directory to reproduce. Existing attempts are exclusive-create and exploration is refused if any prior exploratory directory exists. The runner requires the retained client hash from accepted Stage2; code is unchanged. Archives contain raw metrics/manifests, not executables or environment-variable dumps.
+
+## Recorded acceptance-fixture correction
+
+The original 1200ms cancellation attempt `adaptive-cancel` was preserved invalid: RPC time includes ~350ms setup/barrier, so only one 500ms tick occurred; accounting passed but shrink coverage did not. Do not alter it. A distinct `adaptive-cancel-after-shrink` fixture uses1000/s,2.5s offered schedule,2s RPC deadline to allow two ticks before deliberate cancellation. Frozen36s workload/120s deadline, safety guards and controller unchanged. Current session resumes only the missing fixtures via `--phase acceptance-completion`; passing fixtures are not repeated. `declared-exclusions.json` records the original issue; verification/analysis expose it, not treat it as a passing run. Fresh `--phase acceptance` uses the corrected named fixture.
