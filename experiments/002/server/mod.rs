@@ -97,6 +97,7 @@ struct State {
     terminal: bool,
     ever_started: bool,
     reason: &'static str,
+    budget: usize,
     queue_hist: [Histogram; 4],
     service_hist: [Histogram; 4],
     queue_total: Histogram,
@@ -109,7 +110,11 @@ struct State {
     last_service_phase: usize,
 }
 impl State {
-    fn new(rx: mpsc::Receiver<Item>, events: Option<File>) -> Self {
+    fn new(rx: mpsc::Receiver<Item>, events: Option<File>, budget: usize) -> Self {
+        assert!(
+            matches!(budget, 8 | 32),
+            "Stage3 supports static budgets 8 or 32 only"
+        );
         Self {
             c: Counts::default(),
             rx,
@@ -121,6 +126,7 @@ impl State {
             terminal: false,
             ever_started: false,
             reason: "running",
+            budget,
             queue_hist: std::array::from_fn(|_| Histogram::default()),
             service_hist: std::array::from_fn(|_| Histogram::default()),
             queue_total: Histogram::default(),
@@ -234,7 +240,9 @@ impl State {
         );
         assert_eq!(self.c.q, self.rx.len());
         assert_eq!(self.c.w, usize::from(self.worker.is_some()));
-        assert!(self.c.q <= K && self.c.w <= 1 && self.c.r <= 1 && self.c.q + self.c.r <= K);
+        assert!(
+            self.c.q <= K && self.c.w <= 1 && self.c.r <= 1 && self.c.q + self.c.r <= self.budget
+        );
         assert_eq!(self.c.received, self.c.admitted + self.c.not_admitted);
         assert_eq!(
             self.c.received_bytes,
@@ -394,12 +402,12 @@ struct Shared {
     start: watch::Sender<bool>,
 }
 impl Shared {
-    fn new(events: Option<File>) -> Arc<Self> {
+    fn new(events: Option<File>, budget: usize) -> Arc<Self> {
         let (tx, rx) = mpsc::channel(K);
         let (stop, _) = watch::channel(false);
         let (start, _) = watch::channel(false);
         Arc::new(Self {
-            s: Mutex::new(State::new(rx, events)),
+            s: Mutex::new(State::new(rx, events, budget)),
             tx,
             changed: Notify::new(),
             stop,
@@ -494,18 +502,25 @@ async fn reserve(shared: Arc<Shared>) -> Result<Reservation, Status> {
             if s.terminal {
                 return Err(Status::cancelled("admission terminated"));
             }
-            // Fixed K=32 only: logical R accounts the same physical reservation. No dynamic B.
-            if s.c.q + s.c.r < K {
-                let physical_start = Instant::now();
-                let permit = shared
-                    .tx
-                    .clone()
-                    .try_reserve_owned()
-                    .map_err(|_| Status::internal("physical reservation disagrees with Q"))?;
-                s.c.gate_wait += ns(start.elapsed());
-                s.c.physical_wait += ns(physical_start.elapsed());
+            // A single shared gate for both static policies. W is deliberately excluded.
+            if s.c.q + s.c.r < s.budget {
                 s.c.r += 1;
                 s.c.acquired += 1;
+                let physical_start = Instant::now();
+                let permit = match shared.tx.clone().try_reserve_owned() {
+                    Ok(permit) => permit,
+                    Err(_) => {
+                        // Logical acquisition has exactly one terminal outcome even on failure.
+                        s.event("reservation_acquired", None, 0, (0, 0, 0), 0);
+                        s.c.r -= 1;
+                        s.c.released += 1;
+                        s.event("reservation_released", None, 0, (0, 0, 0), 0);
+                        s.verify();
+                        return Err(Status::internal("physical reservation failed"));
+                    }
+                };
+                s.c.gate_wait += ns(start.elapsed());
+                s.c.physical_wait += ns(physical_start.elapsed());
                 s.event("reservation_acquired", None, 0, (0, 0, 0), 0);
                 s.verify();
                 return Ok(Reservation {
@@ -740,7 +755,7 @@ fn write_histograms(shared: &Shared, path: &Path) -> std::io::Result<()> {
 }
 async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
     let mut out = BufWriter::new(create(&path).unwrap());
-    writeln!(out,"unix_ns,elapsed_ns,started,physical_queue_depth,Q,R,W,queued_payload_bytes,handler_payload_bytes,worker_payload_bytes,received,admitted,dequeued,processed,discarded_from_queue,discarded_from_worker,discarded,received_not_admitted,reservations_acquired,reservations_released,logical_gate_wait_ns,physical_reservation_wait_ns,worker_busy_ns,worker_idle_ns,worker_idle_backlog_ns,queue_residence_violations,queue_p50_upper_ns,queue_p95_upper_ns,queue_p99_upper_ns,service_p50_upper_ns,service_p95_upper_ns,service_p99_upper_ns,errors,telemetry_errors,active_streams,connections,B,service_ms,service_phase,terminal_reason,rss_bytes,received_bytes,admitted_bytes,dequeued_bytes,processed_bytes,discarded_queue_bytes,discarded_worker_bytes,received_not_admitted_bytes,event_write_calls,event_write_ns,event_write_max_ns,event_flush_calls,event_flush_ns,event_flush_max_ns,inflight_selected_ms,queue_observations,queue_residence_sum_ns,service_observations,service_duration_sum_ns").unwrap();
+    writeln!(out,"unix_ns,elapsed_ns,started,physical_queue_depth,Q,R,W,queued_payload_bytes,handler_payload_bytes,worker_payload_bytes,received,admitted,dequeued,processed,discarded_from_queue,discarded_from_worker,discarded,received_not_admitted,reservations_acquired,reservations_released,logical_gate_wait_ns,physical_reservation_wait_ns,worker_busy_ns,worker_idle_ns,worker_idle_backlog_ns,queue_residence_violations,queue_p50_upper_ns,queue_p95_upper_ns,queue_p99_upper_ns,service_p50_upper_ns,service_p95_upper_ns,service_p99_upper_ns,errors,telemetry_errors,active_streams,connections,B,service_ms,service_phase,terminal_reason,rss_bytes,received_bytes,admitted_bytes,dequeued_bytes,processed_bytes,discarded_queue_bytes,discarded_worker_bytes,received_not_admitted_bytes,event_write_calls,event_write_ns,event_write_max_ns,event_flush_calls,event_flush_ns,event_flush_max_ns,inflight_selected_ms,queue_observations,queue_residence_sum_ns,service_observations,service_duration_sum_ns,physical_capacity,physical_available_capacity,logical_pending").unwrap();
     let mut ticker = tokio::time::interval(Duration::from_millis(200));
     ticker.set_missed_tick_behavior(tokio::time::MissedTickBehavior::Skip);
     loop {
@@ -795,7 +810,7 @@ async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
                 c.telemetry_errors.to_string(),
                 c.active.to_string(),
                 c.connections.to_string(),
-                K.to_string(),
+                s.budget.to_string(),
                 service_delay(s.elapsed(now), s.scheduled, s.constant_service_ms).to_string(),
                 service_phase(s.elapsed(now), s.scheduled).into(),
                 s.reason.into(),
@@ -822,6 +837,9 @@ async fn sample(shared: Arc<Shared>, path: PathBuf, rss_limit: u64) {
                 q.sum.to_string(),
                 h.count.to_string(),
                 h.sum.to_string(),
+                shared.tx.max_capacity().to_string(),
+                shared.tx.capacity().to_string(),
+                (c.q + c.r).to_string(),
             ];
             writeln!(out, "{}", values.join(",")).unwrap();
             out.flush().unwrap();
@@ -860,7 +878,13 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
     std::fs::create_dir_all(&dir)?;
     let mut events = create(&dir.join("events.csv"))?;
     writeln!(events,"observed_elapsed_ns,event,sequence,payload_bytes,enqueue_ns,dequeue_ns,completion_ns,queue_residence_ns,service_duration_ns,enqueue_phase,service_start_ns,selected_service_ms,service_start_phase")?;
-    let shared = Shared::new(Some(events));
+    let policy = option(&args, "--policy", "fixed32");
+    let budget = match policy.as_str() {
+        "fixed32" => 32,
+        "fixed8" => 8,
+        _ => return Err("Stage3 supports fixed32 or fixed8 only".into()),
+    };
+    let shared = Shared::new(Some(events), budget);
     let event_io = option(&args, "--event-io", "buffered");
     assert!(
         ["buffered", "discard"].contains(&event_io.as_str()),

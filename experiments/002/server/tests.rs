@@ -20,7 +20,10 @@ impl Inbound for Input {
     }
 }
 fn setup(n: usize) -> (Arc<Shared>, Input, Arc<AtomicUsize>) {
-    let shared = Shared::new(None);
+    setup_budget(n, 32)
+}
+fn setup_budget(n: usize, budget: usize) -> (Arc<Shared>, Input, Arc<AtomicUsize>) {
+    let shared = Shared::new(None, budget);
     {
         let mut s = shared.s.lock().unwrap();
         let now = Instant::now();
@@ -397,4 +400,194 @@ async fn discard_sink_retains_formatting_histograms_and_counter_invariants() {
     assert_eq!(s.c.event_flush_calls, 1);
     assert_eq!(s.service_total.count, 5);
     assert_eq!(s.queue_total.count, 5);
+}
+
+#[tokio::test]
+async fn fixed8_blocks_read_ahead_with_24_unused_physical_slots_and_worker_excluded() {
+    let (s, input, reads) = setup_budget(100, 8);
+    let task = tokio::spawn(ingest(
+        input,
+        s.clone(),
+        Config {
+            service_ms: 10000,
+            ..config()
+        },
+    ));
+    until(&s, |m| m.c.q == 8 && m.c.w == 1).await;
+    assert_eq!(s.tx.max_capacity(), 32);
+    assert_eq!(s.tx.capacity(), 24);
+    assert_eq!(reads.load(Ordering::SeqCst), 9); // eight pending + one executing
+    {
+        let m = s.s.lock().unwrap();
+        assert_eq!(m.c.r, 0);
+        m.verify();
+    }
+    s.fail("test_cancel_logical_gate");
+    assert!(tokio::time::timeout(Duration::from_secs(1), task)
+        .await
+        .unwrap()
+        .unwrap()
+        .is_err());
+    let m = s.s.lock().unwrap();
+    m.verify();
+    assert_eq!((m.c.dq, m.c.dw, m.c.r, m.c.active), (8, 1, 0, 0));
+    assert_eq!(s.tx.capacity(), 32);
+}
+
+#[tokio::test]
+async fn fixed8_counts_reserved_slot_in_pending_budget_and_releases_unused_permit() {
+    let (s, _, _) = setup_budget(0, 8);
+    for sequence in 0..7 {
+        reserve(s.clone())
+            .await
+            .unwrap()
+            .handoff(Payload {
+                sequence,
+                data: vec![0; 16],
+            })
+            .unwrap();
+    }
+    let unused = reserve(s.clone()).await.unwrap();
+    {
+        let m = s.s.lock().unwrap();
+        assert_eq!((m.c.q, m.c.r, m.c.w), (7, 1, 0));
+        m.verify();
+    }
+    assert_eq!(s.tx.capacity(), 24);
+    assert!(
+        tokio::time::timeout(Duration::from_millis(20), reserve(s.clone()))
+            .await
+            .is_err()
+    );
+    drop(unused);
+    let eof_reservation = tokio::time::timeout(Duration::from_millis(100), reserve(s.clone()))
+        .await
+        .unwrap()
+        .unwrap();
+    drop(eof_reservation);
+    let m = s.s.lock().unwrap();
+    m.verify();
+    assert_eq!((m.c.r, m.c.released), (0, 2));
+}
+
+#[tokio::test]
+async fn fixed8_eof_progresses_and_drains_multiple_budget_windows() {
+    let (s, input, reads) = setup_budget(65, 8);
+    let summary = tokio::time::timeout(Duration::from_secs(2), ingest(input, s.clone(), config()))
+        .await
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        (
+            summary.accepted,
+            summary.processed,
+            reads.load(Ordering::SeqCst)
+        ),
+        (65, 65, 66)
+    );
+    let m = s.s.lock().unwrap();
+    m.verify();
+    assert_eq!(
+        (m.c.q, m.c.r, m.c.w, m.c.qbytes, m.c.wbytes),
+        (0, 0, 0, 0, 0)
+    );
+    assert_eq!((m.c.acquired, m.c.released, m.c.dq + m.c.dw), (66, 1, 0));
+    assert_eq!(s.tx.capacity(), 32);
+}
+
+#[tokio::test]
+async fn fixed8_worker_error_and_panic_wake_the_blocked_logical_gate() {
+    for panic in [false, true] {
+        let (s, input, reads) = setup_budget(100, 8);
+        let c = Config {
+            service_ms: 40,
+            fail_after: if panic { 0 } else { 1 },
+            panic_after: if panic { 1 } else { 0 },
+            ..config()
+        };
+        let task = tokio::spawn(ingest(input, s.clone(), c));
+        until(&s, |m| m.c.q == 8 && m.c.w == 1).await;
+        assert_eq!(s.tx.capacity(), 24);
+        assert_eq!(reads.load(Ordering::SeqCst), 9);
+        assert!(tokio::time::timeout(Duration::from_secs(1), task)
+            .await
+            .unwrap()
+            .unwrap()
+            .is_err());
+        let m = s.s.lock().unwrap();
+        m.verify();
+        assert_eq!(
+            (m.c.admitted, m.c.dq, m.c.dw, m.c.r, m.c.active),
+            (9, 8, 1, 0, 0)
+        );
+        assert_eq!(
+            m.reason,
+            if panic {
+                "worker_panic"
+            } else {
+                "worker_error"
+            }
+        );
+    }
+}
+
+#[tokio::test]
+async fn physical_acquisition_error_releases_the_prior_logical_reservation() {
+    for budget in [8, 32] {
+        let (s, _, _) = setup_budget(0, budget);
+        s.s.lock().unwrap().rx.close();
+        assert!(reserve(s.clone()).await.is_err());
+        let m = s.s.lock().unwrap();
+        m.verify();
+        assert_eq!(
+            (m.c.acquired, m.c.released, m.c.r, m.c.received),
+            (1, 1, 0, 0)
+        );
+    }
+}
+
+#[tokio::test]
+async fn fixed8_handoff_cancel_races_release_permits_and_classify_received_work_once() {
+    for _ in 0..200 {
+        let (s, _, _) = setup_budget(0, 8);
+        reserve(s.clone())
+            .await
+            .unwrap()
+            .handoff(Payload {
+                sequence: 1,
+                data: vec![0; 16],
+            })
+            .unwrap();
+        assert!(s.s.lock().unwrap().dequeue(Instant::now()));
+        let reservation = reserve(s.clone()).await.unwrap();
+        let barrier = Arc::new(std::sync::Barrier::new(3));
+        std::thread::scope(|scope| {
+            let b = barrier.clone();
+            scope.spawn(move || {
+                b.wait();
+                let _ = reservation.handoff(Payload {
+                    sequence: 2,
+                    data: vec![0; 24],
+                });
+            });
+            let b = barrier.clone();
+            let a = s.clone();
+            scope.spawn(move || {
+                b.wait();
+                a.fail("test_handoff_race");
+            });
+            barrier.wait();
+        });
+        let m = s.s.lock().unwrap();
+        m.verify();
+        assert_eq!(m.c.received, 2);
+        assert_eq!(m.c.received_bytes, 40);
+        assert_eq!(m.c.admitted, m.c.dq + m.c.dw);
+        assert_eq!(m.c.admitted + m.c.not_admitted, 2);
+        assert_eq!(
+            (m.c.q, m.c.r, m.c.w, m.c.qbytes, m.c.wbytes),
+            (0, 0, 0, 0, 0)
+        );
+        assert_eq!(s.tx.capacity(), 32);
+    }
 }
