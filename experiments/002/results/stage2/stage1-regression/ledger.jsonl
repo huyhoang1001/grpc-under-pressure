@@ -1,0 +1,6 @@
+{"run": "normal-1", "fault": null, "valid_smoke": true, "errors": []}
+{"run": "normal-2", "fault": null, "valid_smoke": true, "errors": []}
+{"run": "normal-3", "fault": null, "valid_smoke": true, "errors": []}
+{"run": "cancel-capacity", "fault": "cancellation", "valid_smoke": true, "errors": []}
+{"run": "worker-error", "fault": "worker_error", "valid_smoke": true, "errors": []}
+{"run": "worker-panic", "fault": "worker_panic", "valid_smoke": true, "errors": []}

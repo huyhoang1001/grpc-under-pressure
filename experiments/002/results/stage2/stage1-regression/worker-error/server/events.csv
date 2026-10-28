@@ -1,0 +1,8 @@
+observed_elapsed_ns,event,sequence,payload_bytes,enqueue_ns,dequeue_ns,completion_ns,queue_residence_ns,service_duration_ns,enqueue_phase,service_start_ns,selected_service_ms,service_start_phase
+1004324,reservation_acquired,,0,0,,,0,0,0,,,
+1059637,admitted,0,16384,1059387,,,0,0,0,,,
+1065927,reservation_acquired,,0,0,,,0,0,0,,,
+1104314,dequeued,0,16384,1059387,1079717,,20330,0,0,1079717,10,0
+11394289,discarded_worker,0,16384,1059387,1079717,,20330,10314361,0,1079717,10,0
+11406707,terminal,,0,0,,,0,0,0,,,
+11459126,reservation_released,,0,0,,,0,0,0,,,

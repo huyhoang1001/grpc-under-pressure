@@ -1,0 +1,6 @@
+{"name": "schedule-smoke", "purpose": "short_integration_fixture", "event_io": "buffered", "issues": [], "valid": true}
+{"name": "buffered-1", "purpose": "overhead_control", "event_io": "buffered", "issues": [], "valid": true}
+{"name": "discard-1", "purpose": "overhead_control", "event_io": "discard", "issues": [], "valid": true}
+{"name": "discard-2", "purpose": "overhead_control", "event_io": "discard", "issues": [], "valid": true}
+{"name": "buffered-2", "purpose": "overhead_control", "event_io": "buffered", "issues": [], "valid": true}
+{"name": "exploratory-1", "purpose": "single_exploratory_slowdown_recovery", "event_io": "buffered", "issues": [], "valid": true}

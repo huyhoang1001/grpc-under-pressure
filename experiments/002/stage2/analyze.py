@@ -30,17 +30,21 @@ def one(folder):
     event_ns=int(last['event_write_ns'])+int(last['event_flush_ns'])
     hist=json.loads((folder/'server/histograms.json').read_text())
     service_counts=[sum(values) for values in zip(*hist['service_counts'])]
-    result={'name':m['name'],'purpose':m['purpose'],'event_io':m['event_io'],'source_commit':m['git_commit'],'valid_for_declared_purpose':m['valid_for_declared_purpose'],'scheduled':c['scheduled'],'skipped':c['skipped'],'attempted':c['attempted'],'successful_sends':c['successful_sends'],'failed_sends':c['failed_sends'],'admitted':int(last['admitted']),'dequeued':int(last['dequeued']),'processed':int(last['processed']),'discarded':int(last['discarded']),'received_not_admitted':int(last['received_not_admitted']),'Qmax':max(int(r['Q']) for r in s),'R_final':int(last['R']),'Q_final':int(last['Q']),'W_final':int(last['W']),'errors':int(last['errors']),'phase_alignment_ms':m['clock']['phase_alignment_error_ns']/1e6,'worker_observed_s':wall/1e9,'worker_busy_s':int(last['worker_busy_ns'])/1e9,'worker_idle_s':int(last['worker_idle_ns'])/1e9,'idle_backlog_ms':int(last['worker_idle_backlog_ns'])/1e6,'event_write_calls':int(last['event_write_calls']),'event_format_write_ms':int(last['event_write_ns'])/1e6,'event_write_max_us':int(last['event_write_max_ns'])/1e3,'event_flush_calls':int(last['event_flush_calls']),'event_flush_ms':int(last['event_flush_ns'])/1e6,'event_flush_max_us':int(last['event_flush_max_ns'])/1e3,'timed_event_io_fraction':event_ns/wall,'service_mean_ms':int(last['service_duration_sum_ns'])/int(last['service_observations'])/1e6,'service_p95_upper_ms':hquantile(hist['bounds_ns'],service_counts,.95)/1e6,'half_close_s':c['half_close_ns']/1e9,'rpc_s':c['rpc_elapsed_ns']/1e9,'rpc_status':c['rpc_error'],'peak_server_rss_mib':max(int(r['rss_bytes']) for r in s)/2**20,'send_gt20ms_calls':c['send_gt20ms_calls'],'send_gt20ms_duration_s':c['send_gt20ms_duration_ns']/1e9,'send_wall_duration_s':c['send_duration_ns']/1e9}
+    result={'name':m['name'],'purpose':m['purpose'],'event_io':m['event_io'],'source_commit':m['git_commit'],'valid_for_declared_purpose':m['valid_for_declared_purpose'],'scheduled':c['scheduled'],'skipped':c['skipped'],'attempted':c['attempted'],'successful_sends':c['successful_sends'],'failed_sends':c['failed_sends'],'admitted':int(last['admitted']),'dequeued':int(last['dequeued']),'processed':int(last['processed']),'discarded':int(last['discarded']),'received_not_admitted':int(last['received_not_admitted']),'Qmax':max(int(r['Q']) for r in s),'R_final':int(last['R']),'Q_final':int(last['Q']),'W_final':int(last['W']),'errors':int(last['errors']),'phase_alignment_ms':m['clock']['phase_alignment_error_ns']/1e6,'worker_observed_s':wall/1e9,'worker_busy_s':int(last['worker_busy_ns'])/1e9,'worker_idle_s':int(last['worker_idle_ns'])/1e9,'idle_backlog_ms':int(last['worker_idle_backlog_ns'])/1e6,'event_write_calls':int(last['event_write_calls']),'event_format_write_ms':int(last['event_write_ns'])/1e6,'event_write_max_us':int(last['event_write_max_ns'])/1e3,'event_flush_calls':int(last['event_flush_calls']),'event_flush_ms':int(last['event_flush_ns'])/1e6,'event_flush_max_us':int(last['event_flush_max_ns'])/1e3,'timed_event_io_fraction':event_ns/wall,'service_mean_ms':int(last['service_duration_sum_ns'])/int(last['service_observations'])/1e6,'service_p95_upper_ms':hquantile(hist['bounds_ns'],service_counts,.95)/1e6,'half_close_s':c['half_close_ns']/1e9,'rpc_s':c['rpc_elapsed_ns']/1e9,'rpc_status':c['rpc_error'],'peak_server_rss_mib':max(int(r['rss_bytes']) for r in s)/2**20,'send_gt20ms_calls':c['send_gt20ms_calls'],'send_gt20ms_duration_s':c['send_gt20ms_duration_ns']/1e9,'send_wall_duration_s':c['send_duration_ns']/1e9,'logical_admission_wait_s':int(last['logical_gate_wait_ns'])/1e9,'physical_reservation_wait_s':int(last['physical_reservation_wait_ns'])/1e9}
     if m['event_io']=='buffered':
         e=read(folder/'server/events.csv');sends=read(folder/'client/sends.csv');completed=[v for v in e if v['event']=='processed'];dequeued=[v for v in e if v['event']=='dequeued'];eof=[v for v in e if v['event']=='eof']
         result['server_eof_s']=int(eof[-1]['observed_elapsed_ns'])/1e9
         result['last_completion_s']=max(int(v['completion_ns']) for v in completed)/1e9
-        result['half_close_to_last_completion_s']=max(0,result['last_completion_s']-result['half_close_s']) # aligned markers, diagnostic only
+        result['server_worker_stop_s']=wall/1e9
+        result['server_eof_to_worker_stop_s']=max(0,result['server_worker_stop_s']-result['server_eof_s'])
         result['server_eof_to_last_completion_s']=max(0,result['last_completion_s']-result['server_eof_s'])
         result['service_start_selections']={}
         for p in range(4):
             group=[v for v in dequeued if int(v['service_start_phase'])==p]
             result['service_start_selections'][str(p)]={'count':len(group),'first_start_s':min((int(v['service_start_ns'])/1e9 for v in group),default=None),'selected_ms':sorted(set(int(v['selected_service_ms']) for v in group))}
+        slots=[int(v['slot']) for v in sends];seq=[int(v['sequence']) for v in sends]
+        assert len(set(slots))==len(slots) and slots==sorted(slots)
+        assert seq==list(range(len(seq)))
         phases={}
         for i,(name,a,b) in enumerate([('healthy',0,12),('slowdown',12,24),('recovery',24,36),('drain',36,None)]):
             within=lambda value: value>=a*1e9 and (b is None or value<b*1e9)
@@ -48,9 +52,13 @@ def one(folder):
             completions=[v for v in completed if within(int(v['completion_ns']))]
             queues=[int(v['queue_residence_ns']) for v in dequeued if within(int(v['enqueue_ns']))]
             sender=[v for v in sends if within(int(v['send_start_ns']))]
+            returned=[v for v in sends if within(int(v['send_return_ns'])) and v['outcome']=='success']
             snapshots=[v for v in s if v['started']=='1' and within(int(v['elapsed_ns']))]
             counts=[int(v['Q']) for v in snapshots]
-            phases[name]={'bounds_s':[a,b],'actual_service_ms_by_start':stats(services,1e-6),'completion_count':len(completions),'completion_rate_s':len(completions)/(b-a) if b else None,'queue_residence_ms_by_enqueue':stats(queues,1e-6),'Q_mean':statistics.mean(counts) if counts else None,'Q_max':max(counts,default=None),'attempted_sends':len(sender),'successful_sends':sum(v['outcome']=='success' for v in sender),'attempt_rate_s':len(sender)/(b-a) if b else None,'send_ms':stats([int(v['send_duration_ns']) for v in sender],1e-6)}
+            phases[name]={'bounds_s':[a,b],'actual_service_ms_by_start':stats(services,1e-6),'completion_count':len(completions),'completion_rate_s':len(completions)/(b-a) if b else None,'queue_residence_ms_by_enqueue':stats(queues,1e-6),'Q_mean':statistics.mean(counts) if counts else None,'Q_max':max(counts,default=None),'attempted_sends':len(sender),'successful_sends':sum(v['outcome']=='success' for v in sender),'successful_send_returns':len(returned),'return_rate_s':len(returned)/(b-a) if b else None,'attempt_rate_s':len(sender)/(b-a) if b else None,'send_ms':stats([int(v['send_duration_ns']) for v in sender],1e-6)}
+            if i<3 and m['offered_seconds']==36:
+                phase_slots=sum(i*960<=slot<(i+1)*960 for slot in slots)
+                phases[name]['scheduled_slots']=960;phases[name]['attempted_scheduled_slots']=phase_slots;phases[name]['skipped_scheduled_slots']=960-phase_slots
         result['phases']=phases
         after=[v for v in s if v['started']=='1' and 24e9<=int(v['elapsed_ns'])<=36e9]
         result['first_sampled_Q_zero_after24_s']=next((int(v['elapsed_ns'])/1e9 for v in after if int(v['Q'])==0),None)
@@ -62,6 +70,9 @@ def one(folder):
             healthy=phases['healthy'];slow=phases['slowdown'];recover=phases['recovery']
             result['intended_capacity_transition_observed']=(healthy['actual_service_ms_by_start']['mean']<20 and 30<slow['actual_service_ms_by_start']['mean']<70 and recover['actual_service_ms_by_start']['mean']<20 and slow['completion_rate_s']<healthy['completion_rate_s'] and slow['Q_max']==32 and result['early_recovery_completion_rate_s']>slow['completion_rate_s'])
             if not result['intended_capacity_transition_observed']:result['failure_notice']='Frozen workload did not show intended capacity transition; do not retune.'
+    if m['offered_seconds']!=36:
+        for key in ['phases','first_sampled_Q_zero_after24_s','early_recovery_completion_rate_s','late_recovery_completion_rate_s']:result.pop(key,None)
+        result['phase_window_note']='Short control/smoke: full 12-second phase windows were not executed; no phase throughput rates reported.'
     return result
 
 def main():

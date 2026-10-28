@@ -1,0 +1,66 @@
+{
+  "buffered": {
+    "timed_event_io_fraction": {
+      "median": 0.000975336083554625,
+      "min": 0.0009490650833511556,
+      "max": 0.0010016070837580943
+    },
+    "event_format_write_ms": {
+      "median": 3.3970700000000003,
+      "min": 3.330579,
+      "max": 3.463561
+    },
+    "event_flush_ms": {
+      "median": 0.5050345,
+      "min": 0.466202,
+      "max": 0.543867
+    },
+    "event_flush_max_us": {
+      "median": 46.3495,
+      "min": 26.349,
+      "max": 66.35
+    },
+    "service_mean_ms": {
+      "median": 11.120259167187498,
+      "min": 11.0998509,
+      "max": 11.140667434374999
+    },
+    "service_p95_upper_ms": {
+      "median": 11.505563,
+      "min": 11.505563,
+      "max": 11.505563
+    }
+  },
+  "discard": {
+    "timed_event_io_fraction": {
+      "median": 0.0009470556948646184,
+      "min": 0.0008998648528320976,
+      "max": 0.0009942465368971392
+    },
+    "event_format_write_ms": {
+      "median": 3.7549075,
+      "min": 3.566346,
+      "max": 3.943469
+    },
+    "event_flush_ms": {
+      "median": 0.034209500000000004,
+      "min": 0.034135,
+      "max": 0.034284
+    },
+    "event_flush_max_us": {
+      "median": 1.8675000000000002,
+      "min": 1.772,
+      "max": 1.963
+    },
+    "service_mean_ms": {
+      "median": 11.13798891875,
+      "min": 11.126910021875,
+      "max": 11.149067815625001
+    },
+    "service_p95_upper_ms": {
+      "median": 11.505563,
+      "min": 11.505563,
+      "max": 11.505563
+    }
+  }
+}

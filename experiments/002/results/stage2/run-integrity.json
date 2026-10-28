@@ -1,0 +1,9 @@
+{
+  "source_commit": "84509545abf6a5f139687250757e67703477a5c1",
+  "validated_stage2_cases": 6,
+  "all_binary_hashes_identical": true,
+  "inherited_cpu_affinity_identical": true,
+  "source_inputs_match_pinned_git_objects": true,
+  "no_resource_guard_events": true,
+  "one_exploratory_manifest": 1
+}
