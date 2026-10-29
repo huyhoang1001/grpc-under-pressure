@@ -346,3 +346,14 @@ func TestSyntheticRefusalRetryHistoryAndAuthoritySupersession(t *testing.T) {
 		t.Fatal("accepted unknown server attempt")
 	}
 }
+
+func TestFixtureEpochRetainsWallTargetAndMonotonicComponent(t *testing.T) {
+	target := time.Unix(0, time.Now().Add(time.Second).UnixNano())
+	epoch := monotonicEpoch(target)
+	if epoch.UnixNano() != target.UnixNano() {
+		t.Fatal("epoch target changed")
+	}
+	if epoch == epoch.Round(0) {
+		t.Fatal("epoch lacks monotonic component")
+	}
+}

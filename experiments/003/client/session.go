@@ -47,12 +47,20 @@ func Receive(ctx context.Context, stream grpc.BidiStreamingClient[p.ClientFrame,
 	}
 }
 
+// Convert a coordinated wall-clock target once to a local monotonic epoch.
+// All subsequent scheduling/offsets use Go's monotonic time component.
+func monotonicEpoch(target time.Time) time.Time {
+	anchor := time.Now()
+	return anchor.Add(target.Sub(anchor))
+}
+
 // FixtureExchange sends at most32 selected originals, not a workload schedule or
 // retry/policy implementation. Send and Recv are independent; all goroutines join.
 func FixtureExchange(parent context.Context, client p.OverloadServiceClient, ledger *Ledger, ids []int, epoch time.Time, events io.Writer) error {
 	if len(ids) > PendingCapacity {
 		return ErrCapacity
 	}
+	epoch = monotonicEpoch(epoch)
 	ctx, cancel := context.WithCancel(parent)
 	defer cancel()
 	stream, err := client.Exchange(ctx)
