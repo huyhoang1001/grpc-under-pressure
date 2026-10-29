@@ -42,7 +42,7 @@ def main():
         rec=c['client_observed_reconciliation'];assert rec['N']==2880 and rec['U']==2 and sum(rec['Counts'].values())==2880
         for id,obs in enumerate(c['observations']):assert obs['Seq']==s['originals'][id]['terminal']['event_seq'] and obs['Offset']==s['originals'][id]['terminal']['offset_ns']
         for role,path in [('server',out/'server/server-events.jsonl'),('client',out/'client-events.jsonl')]:
-            rows=[json.loads(v) for v in path.read_text().splitlines()];assert [v['seq'] for v in rows]==list(range(1,len(rows)+1));evidence[role+'_events']=len(rows)
+            rows=[json.loads(v) for v in path.read_text().splitlines()];assert [v['seq'] for v in rows]==list(range(1,len(rows)+1));assert len(rows)==(s['event_seq'] if role=='server' else c['client']['EventSeq']);evidence[role+'_events']=len(rows)
         assert all(sha(ROOT/name)==digest for name,digest in source_hashes.items());evidence['source_hashes_unchanged']=True
         evidence['verdict']='PASS'
     except Exception as error:evidence['verdict']='FAIL';evidence['error']=repr(error);raise

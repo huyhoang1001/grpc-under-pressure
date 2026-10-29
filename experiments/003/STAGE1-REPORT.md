@@ -99,7 +99,7 @@ This is **not** a claim that the full Stage 2 T01–T20 policy suite passes. App
 - Final admitted/staged/receive/response ownership0; no server failure.
 - Client pending/outstanding0, attempts2, successful Sends2, retries0; no invalid-ledger flag.
 - Terminal sequence IDs and completion offsets match across Rust wire output, Go observation and authoritative server snapshot.
-- Server/client JSONL sequences are contiguous (16/11 events); buffers empty after flush.
+- Server/client JSONL sequences are contiguous and match the final counter tails (16/11 events); buffers empty after flush. [Independent tail audit](results/stage1/event-tail-verification.json) also rejects loss of an otherwise-contiguous log suffix.
 - Synthetic offline cutoff39s reconciles all2880 immutable IDs:2 COMPLETED_ON_TIME +2878 EXPIRED_BEFORE_SEND. This is a fixture partition, **not** observed primary goodput or a39s run.
 - Reported fixed record-storage estimates are1,391,133 bytes server and654,341 bytes client for this build; they are not process memory measurements.
 

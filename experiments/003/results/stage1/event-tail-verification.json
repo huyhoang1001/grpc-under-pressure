@@ -1,0 +1,50 @@
+{
+  "interop-1": {
+    "server": {
+      "events": 16,
+      "expected_final_seq": 16,
+      "contiguous_and_complete": true
+    },
+    "client": {
+      "events": 11,
+      "expected_final_seq": 11,
+      "contiguous_and_complete": true
+    }
+  },
+  "interop-2": {
+    "server": {
+      "events": 16,
+      "expected_final_seq": 16,
+      "contiguous_and_complete": true
+    },
+    "client": {
+      "events": 11,
+      "expected_final_seq": 11,
+      "contiguous_and_complete": true
+    }
+  },
+  "interop-3": {
+    "server": {
+      "events": 16,
+      "expected_final_seq": 16,
+      "contiguous_and_complete": true
+    },
+    "client": {
+      "events": 11,
+      "expected_final_seq": 11,
+      "contiguous_and_complete": true
+    }
+  },
+  "interop-4": {
+    "server": {
+      "events": 16,
+      "expected_final_seq": 16,
+      "contiguous_and_complete": true
+    },
+    "client": {
+      "events": 11,
+      "expected_final_seq": 11,
+      "contiguous_and_complete": true
+    }
+  }
+}
