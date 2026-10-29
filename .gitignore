@@ -8,3 +8,4 @@ experiments/001/traces/*
 *.pcapng
 __pycache__/
 *.pyc
+/experiments/003/server/target/

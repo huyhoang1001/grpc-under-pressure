@@ -1,0 +1,62 @@
+syntax = "proto3";
+package pressure.e3.v1;
+option go_package = "github.com/huyhoang1001/grpc-under-pressure/experiments/003/client/gen;protocol";
+service OverloadService {
+  rpc Exchange(stream ClientFrame) returns (stream ServerFrame);
+}
+message Work {
+  string run_id = 1;
+  uint64 message_id = 2;
+  uint64 attempt_id = 3;
+  uint32 attempt_number = 4;
+  uint32 client_id = 5;
+  uint64 scheduled_offset_ns = 6;
+  uint64 deadline_offset_ns = 7;
+  bytes payload = 8;
+  bytes payload_sha256 = 9;
+  bool expendable = 10;
+}
+message CancelOriginal { string run_id = 1; uint64 message_id = 2; }
+message ClientDone {}
+message ClientFrame {
+  oneof frame { Work work = 1; CancelOriginal cancel_original = 2; ClientDone client_done = 3; }
+}
+enum Outcome {
+  OUTCOME_UNSPECIFIED = 0;
+  COMPLETED = 1;
+  REJECTED_OVERLOAD = 2;
+  DROPPED_OVERLOAD = 3;
+  EXPIRED = 4;
+  PROCESSING_FAILED = 5;
+  CANCELLED = 6;
+  DUPLICATE_RESULT = 7;
+}
+// Duplicate references preserve the authoritative disposition and its original
+// timestamp/sequence, rather than treating replay time as completion time.
+message TerminalReference {
+  Outcome outcome = 1;
+  uint64 server_event_seq = 2;
+  uint64 server_event_offset_ns = 3;
+  uint64 worker_service_ns = 4;
+  string detail_code = 5;
+}
+message TerminalOutcome {
+  string run_id = 1;
+  uint64 message_id = 2;
+  uint64 attempt_id = 3;
+  Outcome outcome = 4;
+  uint64 server_event_seq = 5;
+  uint64 server_event_offset_ns = 6;
+  uint64 worker_service_ns = 7;
+  string detail_code = 8;
+  TerminalReference referenced_terminal = 9;
+}
+message ProtocolError {
+  string run_id = 1;
+  optional uint64 message_id = 2;
+  optional uint64 attempt_id = 3;
+  string code = 4;
+}
+message ServerFrame {
+  oneof frame { TerminalOutcome terminal_outcome = 1; ProtocolError protocol_error = 2; }
+}
