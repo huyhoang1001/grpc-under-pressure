@@ -405,8 +405,21 @@ impl Ledger {
             );
             return Err(Error::Capacity);
         }
-        let duplicate = self.originals[id].is_some();
-        let terminal = self.originals[id].as_ref().and_then(|o| o.terminal.clone());
+        // Protocol state support, not a refusal policy: an explicitly refused
+        // original has never executed and may acquire its first admission later.
+        let eligible_after_refusal = self.originals[id].as_ref().is_some_and(|o| {
+            o.starts == 0
+                && now < work.deadline_offset_ns
+                && o.terminal
+                    .as_ref()
+                    .is_some_and(|t| t.outcome == Outcome::RejectedOverload as i32)
+        });
+        let duplicate = self.originals[id].is_some() && !eligible_after_refusal;
+        let terminal = if duplicate {
+            self.originals[id].as_ref().and_then(|o| o.terminal.clone())
+        } else {
+            None
+        };
         self.attempts[i] = Some(Attempt {
             attempt_id: work.attempt_id,
             message_id: work.message_id,
@@ -469,7 +482,7 @@ impl Ledger {
             .attempts
             .iter_mut()
             .flatten()
-            .filter(|a| a.message_id == id as u64)
+            .filter(|a| a.message_id == id as u64 && a.terminal.is_none())
         {
             a.terminal = Some(result.clone());
             a.undelivered = self.failed.is_some();
@@ -915,5 +928,42 @@ impl Ledger {
             originals: self.originals.iter().flatten().cloned().collect(),
             attempts: self.attempts.iter().flatten().cloned().collect(),
         }
+    }
+}
+
+#[cfg(test)]
+mod protocol_fixtures {
+    use super::*;
+    #[test]
+    fn explicit_refusal_then_new_attempt_preserves_each_attempt_and_deadline() {
+        let mut l = Ledger::new(Manifest::primary("refusal-fixture")).unwrap();
+        l.begin_decode(0).unwrap();
+        l.offer(l.manifest().work(0, 10, 1), 0).unwrap();
+        // Seed an explicit protocol refusal fixture only. No overload-policy
+        // branch/selector exists in the live Stage1 service.
+        l.finish(0, Outcome::RejectedOverload, 1, "FIXTURE_REFUSAL", 0);
+        l.staging.take();
+        l.attempts[0].as_mut().unwrap().immediate_reservation = true;
+        l.event(1, "fixture_refusal", Some(0), Some(10));
+        l.response(2).unwrap().unwrap();
+        l.begin_decode(3).unwrap();
+        l.offer(l.manifest().work(0, 11, 2), 3).unwrap();
+        l.progress_stage(3).unwrap();
+        assert_eq!(l.snapshot().permits_acquired, 1);
+        l.start(4).unwrap();
+        l.exit(0, 5, 5, true).unwrap();
+        let s = l.snapshot();
+        assert_eq!(s.logical_entries, 1);
+        assert_eq!(s.attempt_entries, 2);
+        assert_eq!(s.originals[0].starts, 1);
+        assert_eq!(
+            s.attempts[0].terminal.as_ref().unwrap().outcome,
+            Outcome::RejectedOverload as i32
+        );
+        assert_eq!(
+            s.attempts[1].terminal.as_ref().unwrap().outcome,
+            Outcome::Completed as i32
+        );
+        assert_eq!(l.manifest().originals[0].deadline_offset_ns, 2_000_000_000);
     }
 }
