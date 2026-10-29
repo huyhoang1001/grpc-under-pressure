@@ -1,0 +1,53 @@
+{
+  "fixture_only": true,
+  "messages_sent": 2,
+  "not_a_primary_or_performance_run": true,
+  "git_commit": "f82d3ba7f4b1d118fd4a9eb7c98014ff147b2145",
+  "git_status": " M .gitignore\n?? experiments/003/\n",
+  "epoch_unix_ns": 1793249694777839274,
+  "server_command": [
+    "prlimit",
+    "--cpu=5",
+    "--fsize=16777216",
+    "--core=0",
+    "--",
+    "/workspace/grpc-under-pressure/experiments/003/server/target/debug/pressure-e3-stage1",
+    "--manifest",
+    "/workspace/grpc-under-pressure/experiments/003/results/stage1/interop-1/workload.json",
+    "--output",
+    "/workspace/grpc-under-pressure/experiments/003/results/stage1/interop-1/server",
+    "--epoch-unix-ns",
+    "1793249694777839274",
+    "--addr",
+    "127.0.0.1:0"
+  ],
+  "workload_sha256": "5ad794d5cce6bc292297952c179186c9fcf67d7d2b1ae934063a95bd97564262",
+  "binary_sha256": {
+    "/workspace/grpc-under-pressure/experiments/003/server/target/debug/pressure-e3-stage1": "4ac584590ee94d8c627a742242ca19e0fc8890d55c31f45d839e8b8dc4b3190e",
+    "/workspace/toolchains/bin/e3-stage1-smoke": "4440c1e160bf69c2b622028dcd9d5b9e2dd52456f59db78f08b6e4a174d282e9"
+  },
+  "synthetic_reconciliation_cutoff_ns": 39000000000,
+  "client_command": [
+    "prlimit",
+    "--cpu=5",
+    "--fsize=16777216",
+    "--core=0",
+    "--",
+    "/workspace/toolchains/bin/e3-stage1-smoke",
+    "--manifest",
+    "/workspace/grpc-under-pressure/experiments/003/results/stage1/interop-1/workload.json",
+    "--addr",
+    "127.0.0.1:35221",
+    "--epoch-unix-ns",
+    "1793249694777839274",
+    "--events",
+    "/workspace/grpc-under-pressure/experiments/003/results/stage1/interop-1/client-events.jsonl",
+    "--report",
+    "/workspace/grpc-under-pressure/experiments/003/results/stage1/interop-1/client-report.json"
+  ],
+  "client_exit": 0,
+  "server_exit": 0,
+  "server_events": 16,
+  "client_events": 11,
+  "verdict": "PASS"
+}

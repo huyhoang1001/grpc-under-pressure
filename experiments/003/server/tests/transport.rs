@@ -407,3 +407,42 @@ async fn logger_io_failure_invalidates_even_if_application_completed() {
     stop.send(()).unwrap();
     server.await.unwrap();
 }
+
+#[tokio::test]
+async fn cancel_original_frame_cancels_only_its_owned_work_and_preserves_healthy_stream() {
+    let hooks = Hooks::default();
+    hooks.worker_service.set(false);
+    let mut h = harness(hooks).await;
+    let (tx, rx) = mpsc::channel(2);
+    let mut responses = h
+        .client
+        .exchange(ReceiverStream::new(rx))
+        .await
+        .unwrap()
+        .into_inner();
+    tx.send(work(&h.shared, 0, 10, 1)).await.unwrap();
+    until(&h, |s| s.running == 1).await;
+    tx.send(ClientFrame {
+        frame: Some(client_frame::Frame::CancelOriginal(
+            pressure_e3_stage1::protocol::CancelOriginal {
+                run_id: "transport-test".into(),
+                message_id: 0,
+            },
+        )),
+    })
+    .await
+    .unwrap();
+    drop(tx);
+    let frame = responses.message().await.unwrap().unwrap();
+    let Some(server_frame::Frame::TerminalOutcome(t)) = frame.frame else {
+        panic!()
+    };
+    assert_eq!(
+        t.outcome,
+        pressure_e3_stage1::protocol::Outcome::Cancelled as i32
+    );
+    assert!(responses.message().await.unwrap().is_none());
+    assert!(h.shared.ledger.lock().unwrap().failed.is_none());
+    drop(responses);
+    finish(h).await;
+}

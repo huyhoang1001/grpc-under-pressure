@@ -1,0 +1,100 @@
+{
+  "run_id": "e3-stage1-two-message-fixture",
+  "logical_capacity": 2880,
+  "attempt_capacity": 8640,
+  "logical_entries": 2,
+  "attempt_entries": 2,
+  "allocated_ledger_bytes": 1391133,
+  "queued": 0,
+  "running": 0,
+  "cancellation_pending_subset": 0,
+  "occupied": 0,
+  "decoded_staging": 0,
+  "receive_stage_reservation": 0,
+  "queued_payload_bytes": 0,
+  "worker_payload_bytes": 0,
+  "staging_payload_bytes": 0,
+  "terminal_responses_reserved": 0,
+  "immediate_responses": 0,
+  "event_writer_queue": 0,
+  "permits_acquired": 2,
+  "permits_released": 2,
+  "decoded_frames": 2,
+  "decoded_attempts": 2,
+  "failed": null,
+  "event_seq": 16,
+  "originals": [
+    {
+      "message_id": 0,
+      "phase": "Terminal",
+      "first_attempt": 0,
+      "starts": 1,
+      "start_ns": 3204870,
+      "exit_ns": 15792261,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 10,
+        "offset_ns": 15790698,
+        "worker_service_ns": 12587391,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 1,
+      "phase": "Terminal",
+      "first_attempt": 1,
+      "starts": 1,
+      "start_ns": 16134836,
+      "exit_ns": 26825504,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 14,
+        "offset_ns": 26817362,
+        "worker_service_ns": 10690668,
+        "detail_code": "COMPLETED"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "attempt_id": 0,
+      "message_id": 0,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 10,
+        "offset_ns": 15790698,
+        "worker_service_ns": 12587391,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 1,
+      "message_id": 1,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 14,
+        "offset_ns": 26817362,
+        "worker_service_ns": 10690668,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    }
+  ]
+}

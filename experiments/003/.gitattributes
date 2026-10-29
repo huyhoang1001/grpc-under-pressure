@@ -1,0 +1,2 @@
+# Preserve correctness fixture bytes and diagnostic formatting.
+results/** -text -whitespace

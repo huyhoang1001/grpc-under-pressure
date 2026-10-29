@@ -1,0 +1,20 @@
+[
+  {
+    "file": "EXPERIMENT-003.md",
+    "uploaded_sha256": "d6b55003c321a25f4c2a9f8e1043b07f808ca165f6f5a29c33e8a6bafa40ea3b",
+    "current_sha256": "d6b55003c321a25f4c2a9f8e1043b07f808ca165f6f5a29c33e8a6bafa40ea3b",
+    "change": "none"
+  },
+  {
+    "file": "PROTOCOL-003.md",
+    "uploaded_sha256": "21befe0bb946e7c453c71c6e5af4a4864f4f35999f000f68a17c0d34abfaec03",
+    "current_sha256": "371d01e88ffecb757fe18dade62bb9900b11552c7ae69059317cfa2f3ca194da",
+    "change": "user-approved \u00a74 local-outbound-progress clarification only"
+  },
+  {
+    "file": "VALIDITY-003.md",
+    "uploaded_sha256": "0e07efb999db5d6d962eb7900d50193fb4aeadc2dc2a8c6366807bed265378a9",
+    "current_sha256": "4f404cf08d760c2306df1c473732ad920b73b09641678ade45807c2c7c600d77",
+    "change": "user-approved T06 clarification only"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "files_reviewed": 79,
+  "largest_file_bytes": 1739845,
+  "credential_pattern_scan": "No private-key/GitHub/AWS credential/high-entropy credential assignment matches; limited static scan, not a guarantee",
+  "binaries_or_caches_in_package": false,
+  "large_artifact_note": "Each 2880-ID immutable fixture identity artifact is 1.74MB, contains hashes not full payloads, and is identical across fixture runs; Git deduplicates identical blobs. No performance or payload dump."
+}

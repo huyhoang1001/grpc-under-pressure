@@ -1,0 +1,76 @@
+{
+  "runtime_commit": "4cdeee3a569e7642902b3f5a51184868d6d6efef",
+  "unchanged_runtime_inputs": [
+    {
+      "path": "experiments/003/client/cmd/smoke/main.go",
+      "sha256": "bc6402f4230a7e2c13b009a233973aad26776415d8adfc60c51ab2175d77d031"
+    },
+    {
+      "path": "experiments/003/client/gen/overload.pb.go",
+      "sha256": "22d4c61713b82f697e68846004e24c062ed4ec7952a29ac9e9a60e7208417195"
+    },
+    {
+      "path": "experiments/003/client/gen/overload_grpc.pb.go",
+      "sha256": "f4bc3f4a29638d05521ea31c3b6b18efa8b02e1051a50d87403b6360dd045635"
+    },
+    {
+      "path": "experiments/003/client/go.mod",
+      "sha256": "9273284fdb0c5b42e2ed9054f1e18b09f911fc5922c03166586df6a9dd31c879"
+    },
+    {
+      "path": "experiments/003/client/go.sum",
+      "sha256": "e34b4ddb3ea9d54efdaea326b5837f32b8e60f72b1dac34a9df14a8115cd4e12"
+    },
+    {
+      "path": "experiments/003/client/ledger.go",
+      "sha256": "c39227eeebfa83002c73f0791daffd49ccc9d0056379080405e909279a6fb0cc"
+    },
+    {
+      "path": "experiments/003/client/ledger_test.go",
+      "sha256": "d5d68bc22c3c9a37ab22458f667f950db548ce44ad31ffa69ba7e057afdc92c4"
+    },
+    {
+      "path": "experiments/003/client/reconcile.go",
+      "sha256": "81a46e9d035ebe0d62374efe5bee537809f676fcafae8936da43b1dda7c48b1e"
+    },
+    {
+      "path": "experiments/003/client/session.go",
+      "sha256": "d99011f1c5cd7ee755be35008d51c9dcb8bbd002ea47019a66e3bd703b2fc0d0"
+    },
+    {
+      "path": "experiments/003/proto/overload.proto",
+      "sha256": "d377da63f51294278e55418b85500e8d0bb3d3b215d7105c2eb58edfd12f43d5"
+    },
+    {
+      "path": "experiments/003/server/Cargo.lock",
+      "sha256": "c8c36ed11776eaffa4b12233522c669b181dd33f102e5e16b62507d9e6067837"
+    },
+    {
+      "path": "experiments/003/server/Cargo.toml",
+      "sha256": "b52f44d52ac8da7fda8a8d6b61c11e2741b8d325db3c1deb2229c7717d5e5ceb"
+    },
+    {
+      "path": "experiments/003/server/build.rs",
+      "sha256": "c5ec5dbbd57fbc4de9de674e3922b51857c005f210bb71b04b416efce76501c4"
+    },
+    {
+      "path": "experiments/003/server/src/ledger.rs",
+      "sha256": "9dd4627910b349828ed7981bbed2929963583431a88d16a2fe54a64caab5ebba"
+    },
+    {
+      "path": "experiments/003/server/src/lib.rs",
+      "sha256": "695fcf5cb4d1ad6171336e6acd9869bcdf20d8bb6b82b6c5badbc0a281958234"
+    },
+    {
+      "path": "experiments/003/server/src/main.rs",
+      "sha256": "2ed150b4b7e2877905e7955c096c998f12159e3c8941dda9d1124df48faef39c"
+    },
+    {
+      "path": "experiments/003/server/src/service.rs",
+      "sha256": "d474cfc5e53a3f3536632de074f52917390716e13740ae56b6299d4bd7c96418"
+    }
+  ],
+  "additional_test_only_file": "experiments/003/server/tests/transport.rs",
+  "additional_test_file_sha256": "ad9834d0fc87619c65b60a61159e5a0fc4b832c33e7534e7919f17908575131f",
+  "runtime_changed_after_final_interop": false
+}

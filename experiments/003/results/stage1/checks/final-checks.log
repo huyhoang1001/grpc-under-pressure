@@ -1,0 +1,86 @@
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.05s
+   Compiling pressure-e3-stage1 v0.1.0 (/workspace/grpc-under-pressure/experiments/003/server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.95s
+     Running unittests src/lib.rs (experiments/003/server/target/debug/deps/pressure_e3_stage1-fc4d533f8dfdb8e5)
+
+running 3 tests
+test service::tests::deterministic_outbound_timeout_is_one_second_of_local_blocking ... ok
+test ledger::protocol_fixtures::explicit_refusal_then_new_attempt_preserves_each_attempt_and_deadline ... ok
+test service::tests::log_backpressure_wait_is_cancellable_without_unlogged_mutation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s
+
+     Running unittests src/main.rs (experiments/003/server/target/debug/deps/pressure_e3_stage1-da261a505d69e3f3)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/ledger.rs (experiments/003/server/target/debug/deps/ledger-3905420a39a9193a)
+
+running 9 tests
+test concurrent_same_identity_registration_is_atomic ... ok
+test identity_duplicate_join_replay_and_cancel_after_completion ... ok
+test deadline_boundary_late_race_and_delayed_cancellation_exit ... ok
+test expire_waiting_queued_no_start_after_deadline_and_stream_abort ... ok
+test all_capacity_domains_and_no_worker_ack_dependency ... ok
+test worker_start_phase_is_selected_once_and_worker_time_partitions_exactly ... ok
+test reject_changed_identity_and_attempt_id_alias_without_mutation ... ok
+test immediate_reservations_stop_decode_without_hidden_duplicate_queue ... ok
+test metadata_exhaustion_never_evicts_and_log_pressure_never_silently_loses ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+
+     Running tests/transport.rs (experiments/003/server/target/debug/deps/transport-abc5505bb6fd5d9a)
+
+running 10 tests
+test invalid_identity_produces_correlated_error_without_second_start ... ok
+test cancel_original_frame_cancels_only_its_owned_work_and_preserves_healthy_stream ... ok
+test half_close_drains_terminal_and_duplicate_frames_then_clean_eof ... ok
+test client_done_is_diagnostic_not_a_substitute_for_eof ... ok
+test stream_abort_before_decode_does_not_fabricate_admission ... ok
+test stream_abort_during_service_records_request_observation_exit ... ok
+test lost_terminal_frame_preserves_authoritative_completion ... ok
+test logger_io_failure_invalidates_even_if_application_completed ... ok
+test t07_full_immediate_path_pauses_decoder_but_worker_does_not_wait_for_ack ... ok
+test t06_writer_barrier_timeout_cancels_and_holds_permit_until_exit ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.09s
+
+   Doc-tests pressure_e3_stage1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+    Checking pressure-e3-stage1 v0.1.0 (/workspace/grpc-under-pressure/experiments/003/server)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.20s
+all modules verified
+=== RUN   TestT01All2880UnsentAndPartition
+--- PASS: TestT01All2880UnsentAndPartition (0.00s)
+=== RUN   TestT02PendingOverflowOutstandingAndExpiry
+--- PASS: TestT02PendingOverflowOutstandingAndExpiry (0.01s)
+=== RUN   TestT05SendSuccessNeverImpliesAdmissionOrRetry
+--- PASS: TestT05SendSuccessNeverImpliesAdmissionOrRetry (0.01s)
+=== RUN   TestT11T12T19BoundaryLateCompletionAndLostAck
+--- PASS: TestT11T12T19BoundaryLateCompletionAndLostAck (0.00s)
+=== RUN   TestTerminalDedupCreditAndChangedResponse
+--- PASS: TestTerminalDedupCreditAndChangedResponse (0.00s)
+=== RUN   TestReconciliationRefusalSupersededByCompletionAndExpiryKinds
+--- PASS: TestReconciliationRefusalSupersededByCompletionAndExpiryKinds (0.00s)
+=== RUN   TestT17MetadataAndEventBounds
+--- PASS: TestT17MetadataAndEventBounds (0.00s)
+=== RUN   TestT08ReceiveReleasesCreditWhileSendBlocked
+--- PASS: TestT08ReceiveReleasesCreditWhileSendBlocked (0.00s)
+=== RUN   TestResponseEventQueueOverflowCancelsExplicitly
+--- PASS: TestResponseEventQueueOverflowCancelsExplicitly (0.01s)
+=== RUN   TestImmutableManifestAndForeignServerPopulation
+--- PASS: TestImmutableManifestAndForeignServerPopulation (0.00s)
+=== RUN   TestSyntheticRefusalRetryHistoryAndAuthoritySupersession
+--- PASS: TestSyntheticRefusalRetryHistoryAndAuthoritySupersession (0.00s)
+=== RUN   TestFixtureEpochRetainsWallTargetAndMonotonicComponent
+--- PASS: TestFixtureEpochRetainsWallTargetAndMonotonicComponent (0.00s)
+PASS
+ok  	github.com/huyhoang1001/grpc-under-pressure/experiments/003/client	1.068s
+?   	github.com/huyhoang1001/grpc-under-pressure/experiments/003/client/cmd/smoke	[no test files]
+?   	github.com/huyhoang1001/grpc-under-pressure/experiments/003/client/gen	[no test files]

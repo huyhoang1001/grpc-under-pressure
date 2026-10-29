@@ -1,0 +1,11 @@
+{"seq":1,"offset_ns":1003896,"kind":"original_arrival","message_id":0,"attempt_id":0}
+{"seq":2,"offset_ns":1020852,"kind":"pending_deadline_sweep","message_id":0,"attempt_id":0}
+{"seq":3,"offset_ns":1020852,"kind":"attempt_initiated","message_id":0,"attempt_id":0}
+{"seq":4,"offset_ns":1333382,"kind":"grpc_send_return","message_id":0,"attempt_id":0}
+{"seq":5,"offset_ns":13296882,"kind":"original_arrival","message_id":1,"attempt_id":0}
+{"seq":6,"offset_ns":13297293,"kind":"pending_deadline_sweep","message_id":0,"attempt_id":0}
+{"seq":7,"offset_ns":13297293,"kind":"attempt_initiated","message_id":1,"attempt_id":1}
+{"seq":8,"offset_ns":13397633,"kind":"grpc_send_return","message_id":1,"attempt_id":1}
+{"seq":9,"offset_ns":17299527,"kind":"terminal_observed","message_id":0,"attempt_id":0}
+{"seq":10,"offset_ns":28751048,"kind":"terminal_observed","message_id":1,"attempt_id":1}
+{"seq":11,"offset_ns":28762205,"kind":"stream_closed","message_id":0,"attempt_id":0}

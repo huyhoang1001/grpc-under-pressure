@@ -1,0 +1,10 @@
+{
+  "code_commit": "4cdeee3a569e7642902b3f5a51184868d6d6efef",
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\nbinary: rustc\ncommit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67\ncommit-date: 2026-10-13\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.1\nLLVM version: 23.1.1",
+  "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+  "go": "go version go1.27.3 linux/amd64",
+  "generator_versions": "libprotoc 31.1\nprotoc-gen-go v1.36.10\nprotoc-gen-go-grpc 1.5.1\n",
+  "cargo_lock_sha256": "c8c36ed11776eaffa4b12233522c669b181dd33f102e5e16b62507d9e6067837",
+  "go_sum_sha256": "e34b4ddb3ea9d54efdaea326b5837f32b8e60f72b1dac34a9df14a8115cd4e12",
+  "scope": "Stage1 correctness only; no performance benchmarks; clock calibration and primary telemetry deferred"
+}

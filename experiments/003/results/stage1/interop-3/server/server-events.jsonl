@@ -1,0 +1,16 @@
+{"seq":1,"offset_ns":625262,"kind":"decode_reserved","message_id":null,"attempt_id":null,"occupied":0,"queued":0,"running":0}
+{"seq":2,"offset_ns":1738491,"kind":"decoded","message_id":0,"attempt_id":0,"occupied":0,"queued":0,"running":0}
+{"seq":3,"offset_ns":2753658,"kind":"admitted","message_id":0,"attempt_id":null,"occupied":1,"queued":1,"running":0}
+{"seq":4,"offset_ns":3009572,"kind":"decode_reserved","message_id":null,"attempt_id":null,"occupied":1,"queued":1,"running":0}
+{"seq":5,"offset_ns":3691954,"kind":"worker_start","message_id":0,"attempt_id":null,"occupied":1,"queued":0,"running":1}
+{"seq":6,"offset_ns":13630834,"kind":"decoded","message_id":1,"attempt_id":1,"occupied":1,"queued":0,"running":1}
+{"seq":7,"offset_ns":14656096,"kind":"admitted","message_id":1,"attempt_id":null,"occupied":2,"queued":1,"running":1}
+{"seq":8,"offset_ns":14905551,"kind":"decode_reserved","message_id":null,"attempt_id":null,"occupied":2,"queued":1,"running":1}
+{"seq":9,"offset_ns":15570201,"kind":"half_close","message_id":null,"attempt_id":null,"occupied":2,"queued":1,"running":1}
+{"seq":10,"offset_ns":15967168,"kind":"worker_exit","message_id":0,"attempt_id":null,"occupied":1,"queued":1,"running":0}
+{"seq":11,"offset_ns":16278486,"kind":"worker_start","message_id":1,"attempt_id":null,"occupied":1,"queued":0,"running":1}
+{"seq":12,"offset_ns":16505076,"kind":"response_taken_by_writer","message_id":null,"attempt_id":null,"occupied":1,"queued":0,"running":1}
+{"seq":13,"offset_ns":16731427,"kind":"local_write_accepted","message_id":null,"attempt_id":null,"occupied":1,"queued":0,"running":1}
+{"seq":14,"offset_ns":27396245,"kind":"worker_exit","message_id":1,"attempt_id":null,"occupied":0,"queued":0,"running":0}
+{"seq":15,"offset_ns":27797849,"kind":"response_taken_by_writer","message_id":null,"attempt_id":null,"occupied":0,"queued":0,"running":0}
+{"seq":16,"offset_ns":28054846,"kind":"local_write_accepted","message_id":null,"attempt_id":null,"occupied":0,"queued":0,"running":0}
