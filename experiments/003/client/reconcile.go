@@ -92,10 +92,24 @@ func (l *Ledger) Reconcile(server *ServerSnapshot, cutoff uint64) (Reconciliatio
 	for id, o := range l.originals {
 		entry := Reconciled{ID: uint64(id), ClientObserved: o.ClientObserved}
 		s := index[id]
+		latestRefusalKnown := false
+		if server != nil && s != nil && s.Terminal != nil && s.Terminal.Outcome == int32(p.Outcome_REJECTED_OVERLOAD) {
+			for ai := l.used - 1; ai >= 0; ai-- {
+				if l.attempts[ai].Original == id {
+					for _, sa := range server.Attempts {
+						if sa.ID == l.attempts[ai].ID {
+							latestRefusalKnown = true
+							break
+						}
+					}
+					break
+				}
+			}
+		}
 		if o.ClientObserved == ExpiredWaitingQueued && o.Observed != nil && o.Observed.Outcome == p.Outcome_REJECTED_OVERLOAD && (s == nil || s.Terminal == nil || s.Terminal.Outcome == int32(p.Outcome_REJECTED_OVERLOAD)) {
 			// Retry eligibility expired locally; retain refusal in attempt history.
 			entry.Disposition = ExpiredWaitingQueued
-		} else if o.Attempts > 1 && o.Observed == nil && (s == nil || s.Terminal == nil || s.Terminal.Outcome == int32(p.Outcome_REJECTED_OVERLOAD)) {
+		} else if o.Attempts > 1 && o.Observed == nil && !latestRefusalKnown && (s == nil || s.Terminal == nil || s.Terminal.Outcome == int32(p.Outcome_REJECTED_OVERLOAD)) {
 			if !l.closed {
 				return r, fmt.Errorf("ambiguous retry without definitive stream closure")
 			}

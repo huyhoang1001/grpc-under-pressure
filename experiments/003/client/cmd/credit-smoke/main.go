@@ -24,6 +24,7 @@ func run() error {
 	retrySeed := flag.Uint64("retry-seed", 1, "recorded per-client jitter seed")
 	serverLedger := flag.String("server-ledger", "", "authoritative snapshot after joined Rust shutdown")
 	expectCancel := flag.Bool("expect-cancel", false, "expected WAIT cancellation fixture")
+	legacy := flag.Bool("legacy-sweeps", false, "calibration control only: emit old no-op sweep events")
 	flag.Parse()
 	if *manifest == "" || *events == "" || *report == "" || *epoch == 0 {
 		return fmt.Errorf("manifest, epoch, events, report are required")
@@ -50,12 +51,14 @@ func run() error {
 	if err != nil {
 		return err
 	}
+	ledger.LegacySweepLogging(*legacy)
+	transport := &e3.Transport{}
 	out, err := os.OpenFile(*events, os.O_CREATE|os.O_EXCL|os.O_WRONLY, 0600)
 	if err != nil {
 		return err
 	}
 	defer out.Close()
-	conn, err := grpc.NewClient(*addr, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDisableRetry(), grpc.WithStaticStreamWindowSize(65535), grpc.WithStaticConnWindowSize(65535), grpc.WithDefaultCallOptions(grpc.MaxCallRecvMsgSize(1024*1024), grpc.MaxCallSendMsgSize(1024*1024), grpc.MaxRetryRPCBufferSize(0)))
+	conn, err := grpc.NewClient(*addr, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDisableRetry(), grpc.WithContextDialer(transport.Dial), grpc.WithStatsHandler(transport), grpc.WithStaticStreamWindowSize(65535), grpc.WithStaticConnWindowSize(65535), grpc.WithDefaultCallOptions(grpc.MaxCallRecvMsgSize(1024*1024), grpc.MaxCallSendMsgSize(1024*1024), grpc.MaxRetryRPCBufferSize(0)))
 	if err != nil {
 		return err
 	}
@@ -105,7 +108,7 @@ func run() error {
 			observations[id] = &v
 		}
 	}
-	if err = json.NewEncoder(file).Encode(map[string]any{"observations": observations, "contract_revision": "A01", "client_outstanding_limit": e3.OutstandingCapacity, "client_pending_limit": e3.PendingCapacity, "fixture_only": true, "policy": *policy, "retry_seed": *retrySeed, "exchange_error": text, "client": ledger.Snapshot(), "server_reconciliation": result}); err != nil {
+	if err = json.NewEncoder(file).Encode(map[string]any{"observations": observations, "contract_revision": "A01", "client_outstanding_limit": e3.OutstandingCapacity, "client_pending_limit": e3.PendingCapacity, "fixture_only": true, "policy": *policy, "retry_seed": *retrySeed, "exchange_error": text, "client": ledger.Snapshot(), "server_reconciliation": result, "transport": transport.Snapshot(), "legacy_sweeps": *legacy}); err != nil {
 		return err
 	}
 	if *expectCancel {

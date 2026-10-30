@@ -40,6 +40,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let wall = SystemTime::now().duration_since(UNIX_EPOCH)?.as_nanos();
     assert!(target > wall);
     let epoch = Instant::now() + Duration::from_nanos(u64::try_from(target - wall)?);
+    let clock_start = pressure_e3_stage1::measurement::calibrate(epoch);
     let hooks = Hooks::default();
     hooks.worker_service.set(false);
     let shared = Shared::with_policy(
@@ -103,6 +104,18 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         } else {
             monitor_shared.hooks.worker_service.set(true)
         }
+        if tokio::time::timeout(Duration::from_secs(3), monitor_shared.wait_finished())
+            .await
+            .is_err()
+        {
+            monitor_shared.cancel();
+            return Err("fixture drain/flush timeout".to_string());
+        }
+        fs::write(
+            monitor_out.join("finished.json"),
+            b"{\"supervised_tasks_joined\":true,\"logs_flushed\":true}\n",
+        )
+        .map_err(|e| e.to_string())?;
         Ok(())
     });
     let (stop, shutdown) = tokio::sync::oneshot::channel();
@@ -130,6 +143,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     serde_json::to_writer_pretty(
         File::create_new(out.join("server-ledger.json"))?,
         &shared.ledger.lock().unwrap().snapshot(),
+    )?;
+    serde_json::to_writer_pretty(
+        File::create_new(out.join("clock.json"))?,
+        &serde_json::json!({"contract_revision":"A01","start":clock_start,"end":pressure_e3_stage1::measurement::calibrate(epoch),"bounded_io":{"bridge_current":shared.bridge_n.load(Ordering::SeqCst),"bridge_peak":shared.bridge_peak.load(Ordering::SeqCst),"writer_current":shared.writer_n.load(Ordering::SeqCst),"writer_peak":shared.writer_peak.load(Ordering::SeqCst),"logger_current":shared.logger_n.load(Ordering::SeqCst),"logger_peak":shared.logger_peak.load(Ordering::SeqCst)}}),
     )?;
     monitor_result.map_err(std::io::Error::other)?;
     Ok(())

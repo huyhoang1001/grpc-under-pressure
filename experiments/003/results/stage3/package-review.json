@@ -1,0 +1,8 @@
+{
+  "files_scanned": 1014,
+  "secret_pattern_hits": [],
+  "files_over_2MiB": [],
+  "archived_bytes": 23954691,
+  "protected_files_reverified": 1988,
+  "note": "Limited pattern scan, not proof against all sensitive content. No executables, caches, credentials or full payload dumps. Extra raw development runs are retained for exclusions/provenance, not selected as performance results."
+}

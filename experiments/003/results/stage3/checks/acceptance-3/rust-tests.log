@@ -1,0 +1,75 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+     Running unittests src/lib.rs (experiments/003/server/target/debug/deps/pressure_e3_stage1-68dd2f7edde9c507)
+
+running 3 tests
+test service::tests::deterministic_outbound_timeout_is_one_second_of_local_blocking ... ok
+test ledger::protocol_fixtures::explicit_refusal_then_new_attempt_preserves_each_attempt_and_deadline ... ok
+test service::tests::log_backpressure_wait_is_cancellable_without_unlogged_mutation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.30s
+
+     Running unittests src/main.rs (experiments/003/server/target/debug/deps/pressure_e3_stage1-60f9b04e29fc9720)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/ledger.rs (experiments/003/server/target/debug/deps/ledger-adc35fc8cbdb93e0)
+
+running 9 tests
+test concurrent_same_identity_registration_is_atomic ... ok
+test identity_duplicate_join_replay_and_cancel_after_completion ... ok
+test deadline_boundary_late_race_and_delayed_cancellation_exit ... ok
+test expire_waiting_queued_no_start_after_deadline_and_stream_abort ... ok
+test all_capacity_domains_and_no_worker_ack_dependency ... ok
+test worker_start_phase_is_selected_once_and_worker_time_partitions_exactly ... ok
+test reject_changed_identity_and_attempt_id_alias_without_mutation ... ok
+test immediate_reservations_stop_decode_without_hidden_duplicate_queue ... ok
+test metadata_exhaustion_never_evicts_and_log_pressure_never_silently_loses ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
+
+     Running tests/measurement.rs (experiments/003/server/target/debug/deps/measurement-c8743fac31dbc102)
+
+running 2 tests
+test real_clock_brackets_are_bounded_for_future_epoch ... ok
+test event_resources_queue_timing_and_writer_counter_are_reconstructible ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/policies.rs (experiments/003/server/target/debug/deps/policies-b9f89a4867362dd6)
+
+running 7 tests
+test drop_nonexpendable_is_correlated_protocol_error_not_silent_drop ... ok
+test stream_failure_cleanup_and_duplicate_execution_for_all_policies ... ok
+test t14_real_refusal_then_first_admission_and_immutable_attempt_history ... ok
+test t15_attempt_index_limit_after_three_real_refusals ... ok
+test t03_t04_shared_policy_boundary_and_refused_work_never_starts ... ok
+test policies_expiry_cancellation_permit_lifetime_and_terminal_capacity ... ok
+test full_immediate_queue_stops_decode_for_every_refusal_policy ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.99s
+
+     Running tests/transport.rs (experiments/003/server/target/debug/deps/transport-ee7bd0b820798c49)
+
+running 11 tests
+test half_close_drains_terminal_and_duplicate_frames_then_clean_eof ... ok
+test cancel_original_frame_cancels_only_its_owned_work_and_preserves_healthy_stream ... ok
+test client_done_is_diagnostic_not_a_substitute_for_eof ... ok
+test lost_terminal_frame_preserves_authoritative_completion ... ok
+test stream_abort_before_decode_does_not_fabricate_admission ... ok
+test invalid_identity_produces_correlated_error_without_second_start ... ok
+test stream_abort_during_service_records_request_observation_exit ... ok
+test logger_io_failure_invalidates_even_if_application_completed ... ok
+test actual_full_admission_policy_outcomes_retry_and_clean_drain ... ok
+test t07_full_immediate_path_pauses_decoder_but_worker_does_not_wait_for_ack ... ok
+test t06_writer_barrier_timeout_cancels_and_holds_permit_until_exit ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.15s
+
+   Doc-tests pressure_e3_stage1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

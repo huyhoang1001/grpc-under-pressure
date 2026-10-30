@@ -1,0 +1,342 @@
+{
+  "primary_runs_attempted": 0,
+  "invalid_primary_runs": [],
+  "attempt_ledger": [
+    {
+      "directory": "accepted-drop-drain",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_ACCEPTANCE",
+      "error": null
+    },
+    {
+      "directory": "accepted-faults",
+      "recorded_verdict": "PASS",
+      "category": "SYNTHETIC_FAULT_TEST",
+      "error": null
+    },
+    {
+      "directory": "accepted-faults-v2",
+      "recorded_verdict": "PASS",
+      "category": "SYNTHETIC_FAULT_TEST",
+      "error": null
+    },
+    {
+      "directory": "accepted-reject-drain",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_ACCEPTANCE",
+      "error": null
+    },
+    {
+      "directory": "accepted-retry-drain",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_ACCEPTANCE",
+      "error": null
+    },
+    {
+      "directory": "accepted-wait-cancel",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_ACCEPTANCE",
+      "error": null
+    },
+    {
+      "directory": "accepted-wait-drain",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_ACCEPTANCE",
+      "error": null
+    },
+    {
+      "directory": "development-retry-1",
+      "recorded_verdict": "FAIL",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": "AssertionError()"
+    },
+    {
+      "directory": "development-retry-3",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "development-wait-1",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "drop-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "faults",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "final-drop-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "final-faults",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "final-reject-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "final-retry-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "final-wait-cancel",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "final-wait-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "frozen-drop-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "frozen-faults",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "frozen-reject-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "frozen-retry-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "frozen-wait-cancel",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "frozen-wait-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "reject-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "retry-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "stage1-regression",
+      "recorded_verdict": "PASS",
+      "category": "SUPPLEMENTAL_LEGACY_FIXTURE_NOT_STAGE3_CALIBRATION",
+      "error": null
+    },
+    {
+      "directory": "sweep-1-legacy",
+      "recorded_verdict": "FAIL",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": "AssertionError()"
+    },
+    {
+      "directory": "sweep-1-optimized",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-2-legacy",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-2-optimized",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-3-legacy",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-3-optimized",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v2-1-legacy",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v2-1-optimized",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v2-2-legacy",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v2-2-optimized",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v2-3-legacy",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v2-3-optimized",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v3-1-legacy",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v3-1-optimized",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v3-2-legacy",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v3-2-optimized",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v3-3-legacy",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v3-3-optimized",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "sweep-v4-1-legacy",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_MATCHED_CALIBRATION",
+      "error": null
+    },
+    {
+      "directory": "sweep-v4-1-optimized",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_MATCHED_CALIBRATION",
+      "error": null
+    },
+    {
+      "directory": "sweep-v4-2-legacy",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_MATCHED_CALIBRATION",
+      "error": null
+    },
+    {
+      "directory": "sweep-v4-2-optimized",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_MATCHED_CALIBRATION",
+      "error": null
+    },
+    {
+      "directory": "sweep-v4-3-legacy",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_MATCHED_CALIBRATION",
+      "error": null
+    },
+    {
+      "directory": "sweep-v4-3-optimized",
+      "recorded_verdict": "PASS",
+      "category": "FINAL_MATCHED_CALIBRATION",
+      "error": null
+    },
+    {
+      "directory": "wait-cancel",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "wait-drain",
+      "recorded_verdict": "PASS",
+      "category": "PRELIMINARY_NOT_FINAL_SOURCE",
+      "error": null
+    },
+    {
+      "directory": "development-wait-1",
+      "pipeline_note": "RPC/ledger fixture passed, wrapper failed because independent-verifier file was not yet installed. Later preliminary verifier passed; not final acceptance."
+    },
+    {
+      "directory": "development-retry-1",
+      "pipeline_note": "Startup failed: Path.resolve was an incorrect way to compare unavailable namespace identity paths. Raw failed manifest preserved."
+    },
+    {
+      "directory": "development-retry-2",
+      "pipeline_note": "Startup failed before manifest construction: /proc/self/ns/time unavailable; workload file retained. Exact console output was not saved as a raw file."
+    },
+    {
+      "directory": "sweep-1-legacy",
+      "pipeline_note": "INVALID: immediate SIGINT raced with server log/task flush, yielding unexpected STREAM_FAILED despite clean client EOF. Entire matched set restarted after finished marker, then again for final socket/accounting source. No safety limit weakened."
+    }
+  ],
+  "development_notes": "All result directories retained. Preliminary checks acceptance1/2/3 passed before subsequent audited fixes; acceptance4 pins final application. Early ad hoc console-only checks are not reconstructed as raw transcripts.",
+  "expected_faults": "WAIT cancellation, deterministic worker barriers, synthetic corruptions, and no-encoding microcontrols are explicit correctness/calibration injections. Never treat them as policy performance or conforming primary runs."
+}

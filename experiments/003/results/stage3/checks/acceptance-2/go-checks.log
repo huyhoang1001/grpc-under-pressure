@@ -1,0 +1,199 @@
+all modules verified
+=== RUN   TestA01Exact33CreditBoundaryAndRelease
+--- PASS: TestA01Exact33CreditBoundaryAndRelease (0.01s)
+=== RUN   TestT01All2880UnsentAndPartition
+--- PASS: TestT01All2880UnsentAndPartition (0.01s)
+=== RUN   TestT02PendingOverflowOutstandingAndExpiry
+--- PASS: TestT02PendingOverflowOutstandingAndExpiry (0.01s)
+=== RUN   TestT05SendSuccessNeverImpliesAdmissionOrRetry
+--- PASS: TestT05SendSuccessNeverImpliesAdmissionOrRetry (0.00s)
+=== RUN   TestT11T12T19BoundaryLateCompletionAndLostAck
+--- PASS: TestT11T12T19BoundaryLateCompletionAndLostAck (0.01s)
+=== RUN   TestTerminalDedupCreditAndChangedResponse
+--- PASS: TestTerminalDedupCreditAndChangedResponse (0.00s)
+=== RUN   TestReconciliationRefusalSupersededByCompletionAndExpiryKinds
+--- PASS: TestReconciliationRefusalSupersededByCompletionAndExpiryKinds (0.02s)
+=== RUN   TestT17MetadataAndEventBounds
+--- PASS: TestT17MetadataAndEventBounds (0.01s)
+=== RUN   TestT08ReceiveReleasesCreditWhileSendBlocked
+--- PASS: TestT08ReceiveReleasesCreditWhileSendBlocked (0.00s)
+=== RUN   TestResponseEventQueueOverflowCancelsExplicitly
+--- PASS: TestResponseEventQueueOverflowCancelsExplicitly (0.01s)
+=== RUN   TestImmutableManifestAndForeignServerPopulation
+--- PASS: TestImmutableManifestAndForeignServerPopulation (0.00s)
+=== RUN   TestSyntheticRefusalRetryHistoryAndAuthoritySupersession
+--- PASS: TestSyntheticRefusalRetryHistoryAndAuthoritySupersession (0.02s)
+=== RUN   TestFixtureEpochRetainsWallTargetAndMonotonicComponent
+--- PASS: TestFixtureEpochRetainsWallTargetAndMonotonicComponent (0.00s)
+=== RUN   TestNoOpSweepsSilentButExpirationPreserved
+--- PASS: TestNoOpSweepsSilentButExpirationPreserved (0.01s)
+=== RUN   TestMeasuredNotificationPhysicalCapacityAndDrain
+--- PASS: TestMeasuredNotificationPhysicalCapacityAndDrain (0.01s)
+=== RUN   TestClockBracketFutureAndPastEpoch
+--- PASS: TestClockBracketFutureAndPastEpoch (0.00s)
+=== RUN   TestT14RealRetryLedgerAndT15MaximumAttempts
+--- PASS: TestT14RealRetryLedgerAndT15MaximumAttempts (0.00s)
+=== RUN   TestRetryOnlyExplicitRefusalNoAmbiguousOrDuplicateRetry
+--- PASS: TestRetryOnlyExplicitRefusalNoAmbiguousOrDuplicateRetry (0.04s)
+=== RUN   TestT15DeadlineAndSharedPendingCapacity
+--- PASS: TestT15DeadlineAndSharedPendingCapacity (0.02s)
+=== RUN   TestRetrySeedReplayAndNoRetryPriority
+--- PASS: TestRetrySeedReplayAndNoRetryPriority (0.01s)
+=== RUN   TestRetryPendingExpiryReconcilesEveryOriginal
+--- PASS: TestRetryPendingExpiryReconcilesEveryOriginal (0.00s)
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/wait
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/reject
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/retry
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/drop
+--- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies (0.39s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/wait (0.04s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/reject (0.03s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/retry (0.28s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/drop (0.03s)
+=== RUN   TestRetryAmbiguousSecondAttemptCannotReusePriorRefusal
+--- PASS: TestRetryAmbiguousSecondAttemptCannotReusePriorRefusal (0.00s)
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/wait
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/reject
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/retry
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/drop
+--- PASS: TestT02OpenLoopArrivalsNotBlockedBySend (0.41s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/wait (0.10s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/reject (0.10s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/retry (0.10s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/drop (0.10s)
+=== RUN   TestA01Exact33CreditBoundaryAndRelease
+--- PASS: TestA01Exact33CreditBoundaryAndRelease (0.02s)
+=== RUN   TestT01All2880UnsentAndPartition
+--- PASS: TestT01All2880UnsentAndPartition (0.00s)
+=== RUN   TestT02PendingOverflowOutstandingAndExpiry
+--- PASS: TestT02PendingOverflowOutstandingAndExpiry (0.02s)
+=== RUN   TestT05SendSuccessNeverImpliesAdmissionOrRetry
+--- PASS: TestT05SendSuccessNeverImpliesAdmissionOrRetry (0.01s)
+=== RUN   TestT11T12T19BoundaryLateCompletionAndLostAck
+--- PASS: TestT11T12T19BoundaryLateCompletionAndLostAck (0.01s)
+=== RUN   TestTerminalDedupCreditAndChangedResponse
+--- PASS: TestTerminalDedupCreditAndChangedResponse (0.00s)
+=== RUN   TestReconciliationRefusalSupersededByCompletionAndExpiryKinds
+--- PASS: TestReconciliationRefusalSupersededByCompletionAndExpiryKinds (0.02s)
+=== RUN   TestT17MetadataAndEventBounds
+--- PASS: TestT17MetadataAndEventBounds (0.00s)
+=== RUN   TestT08ReceiveReleasesCreditWhileSendBlocked
+--- PASS: TestT08ReceiveReleasesCreditWhileSendBlocked (0.00s)
+=== RUN   TestResponseEventQueueOverflowCancelsExplicitly
+--- PASS: TestResponseEventQueueOverflowCancelsExplicitly (0.01s)
+=== RUN   TestImmutableManifestAndForeignServerPopulation
+--- PASS: TestImmutableManifestAndForeignServerPopulation (0.00s)
+=== RUN   TestSyntheticRefusalRetryHistoryAndAuthoritySupersession
+--- PASS: TestSyntheticRefusalRetryHistoryAndAuthoritySupersession (0.00s)
+=== RUN   TestFixtureEpochRetainsWallTargetAndMonotonicComponent
+--- PASS: TestFixtureEpochRetainsWallTargetAndMonotonicComponent (0.00s)
+=== RUN   TestNoOpSweepsSilentButExpirationPreserved
+--- PASS: TestNoOpSweepsSilentButExpirationPreserved (0.00s)
+=== RUN   TestMeasuredNotificationPhysicalCapacityAndDrain
+--- PASS: TestMeasuredNotificationPhysicalCapacityAndDrain (0.00s)
+=== RUN   TestClockBracketFutureAndPastEpoch
+--- PASS: TestClockBracketFutureAndPastEpoch (0.00s)
+=== RUN   TestT14RealRetryLedgerAndT15MaximumAttempts
+--- PASS: TestT14RealRetryLedgerAndT15MaximumAttempts (0.01s)
+=== RUN   TestRetryOnlyExplicitRefusalNoAmbiguousOrDuplicateRetry
+--- PASS: TestRetryOnlyExplicitRefusalNoAmbiguousOrDuplicateRetry (0.02s)
+=== RUN   TestT15DeadlineAndSharedPendingCapacity
+--- PASS: TestT15DeadlineAndSharedPendingCapacity (0.01s)
+=== RUN   TestRetrySeedReplayAndNoRetryPriority
+--- PASS: TestRetrySeedReplayAndNoRetryPriority (0.01s)
+=== RUN   TestRetryPendingExpiryReconcilesEveryOriginal
+--- PASS: TestRetryPendingExpiryReconcilesEveryOriginal (0.00s)
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/wait
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/reject
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/retry
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/drop
+--- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies (0.38s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/wait (0.03s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/reject (0.03s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/retry (0.28s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/drop (0.03s)
+=== RUN   TestRetryAmbiguousSecondAttemptCannotReusePriorRefusal
+--- PASS: TestRetryAmbiguousSecondAttemptCannotReusePriorRefusal (0.00s)
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/wait
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/reject
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/retry
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/drop
+--- PASS: TestT02OpenLoopArrivalsNotBlockedBySend (0.42s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/wait (0.12s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/reject (0.10s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/retry (0.10s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/drop (0.10s)
+=== RUN   TestA01Exact33CreditBoundaryAndRelease
+--- PASS: TestA01Exact33CreditBoundaryAndRelease (0.01s)
+=== RUN   TestT01All2880UnsentAndPartition
+--- PASS: TestT01All2880UnsentAndPartition (0.00s)
+=== RUN   TestT02PendingOverflowOutstandingAndExpiry
+--- PASS: TestT02PendingOverflowOutstandingAndExpiry (0.01s)
+=== RUN   TestT05SendSuccessNeverImpliesAdmissionOrRetry
+--- PASS: TestT05SendSuccessNeverImpliesAdmissionOrRetry (0.01s)
+=== RUN   TestT11T12T19BoundaryLateCompletionAndLostAck
+--- PASS: TestT11T12T19BoundaryLateCompletionAndLostAck (0.01s)
+=== RUN   TestTerminalDedupCreditAndChangedResponse
+--- PASS: TestTerminalDedupCreditAndChangedResponse (0.00s)
+=== RUN   TestReconciliationRefusalSupersededByCompletionAndExpiryKinds
+--- PASS: TestReconciliationRefusalSupersededByCompletionAndExpiryKinds (0.00s)
+=== RUN   TestT17MetadataAndEventBounds
+--- PASS: TestT17MetadataAndEventBounds (0.01s)
+=== RUN   TestT08ReceiveReleasesCreditWhileSendBlocked
+--- PASS: TestT08ReceiveReleasesCreditWhileSendBlocked (0.00s)
+=== RUN   TestResponseEventQueueOverflowCancelsExplicitly
+--- PASS: TestResponseEventQueueOverflowCancelsExplicitly (0.00s)
+=== RUN   TestImmutableManifestAndForeignServerPopulation
+--- PASS: TestImmutableManifestAndForeignServerPopulation (0.00s)
+=== RUN   TestSyntheticRefusalRetryHistoryAndAuthoritySupersession
+--- PASS: TestSyntheticRefusalRetryHistoryAndAuthoritySupersession (0.00s)
+=== RUN   TestFixtureEpochRetainsWallTargetAndMonotonicComponent
+--- PASS: TestFixtureEpochRetainsWallTargetAndMonotonicComponent (0.00s)
+=== RUN   TestNoOpSweepsSilentButExpirationPreserved
+--- PASS: TestNoOpSweepsSilentButExpirationPreserved (0.01s)
+=== RUN   TestMeasuredNotificationPhysicalCapacityAndDrain
+--- PASS: TestMeasuredNotificationPhysicalCapacityAndDrain (0.00s)
+=== RUN   TestClockBracketFutureAndPastEpoch
+--- PASS: TestClockBracketFutureAndPastEpoch (0.00s)
+=== RUN   TestT14RealRetryLedgerAndT15MaximumAttempts
+--- PASS: TestT14RealRetryLedgerAndT15MaximumAttempts (0.00s)
+=== RUN   TestRetryOnlyExplicitRefusalNoAmbiguousOrDuplicateRetry
+--- PASS: TestRetryOnlyExplicitRefusalNoAmbiguousOrDuplicateRetry (0.01s)
+=== RUN   TestT15DeadlineAndSharedPendingCapacity
+--- PASS: TestT15DeadlineAndSharedPendingCapacity (0.01s)
+=== RUN   TestRetrySeedReplayAndNoRetryPriority
+--- PASS: TestRetrySeedReplayAndNoRetryPriority (0.01s)
+=== RUN   TestRetryPendingExpiryReconcilesEveryOriginal
+--- PASS: TestRetryPendingExpiryReconcilesEveryOriginal (0.00s)
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/wait
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/reject
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/retry
+=== RUN   TestSchedulerOpenLoopRetriesAndDrainAllPolicies/drop
+--- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies (0.38s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/wait (0.03s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/reject (0.03s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/retry (0.28s)
+    --- PASS: TestSchedulerOpenLoopRetriesAndDrainAllPolicies/drop (0.03s)
+=== RUN   TestRetryAmbiguousSecondAttemptCannotReusePriorRefusal
+--- PASS: TestRetryAmbiguousSecondAttemptCannotReusePriorRefusal (0.00s)
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/wait
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/reject
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/retry
+=== RUN   TestT02OpenLoopArrivalsNotBlockedBySend/drop
+--- PASS: TestT02OpenLoopArrivalsNotBlockedBySend (0.42s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/wait (0.10s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/reject (0.11s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/retry (0.10s)
+    --- PASS: TestT02OpenLoopArrivalsNotBlockedBySend/drop (0.10s)
+PASS
+ok  	github.com/huyhoang1001/grpc-under-pressure/experiments/003/client	3.875s
+?   	github.com/huyhoang1001/grpc-under-pressure/experiments/003/client/cmd/credit-smoke	[no test files]
+?   	github.com/huyhoang1001/grpc-under-pressure/experiments/003/client/cmd/policy-smoke	[no test files]
+?   	github.com/huyhoang1001/grpc-under-pressure/experiments/003/client/cmd/smoke	[no test files]
+?   	github.com/huyhoang1001/grpc-under-pressure/experiments/003/client/gen	[no test files]

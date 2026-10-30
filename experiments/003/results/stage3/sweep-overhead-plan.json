@@ -1,0 +1,20 @@
+{
+  "calibration_only": true,
+  "policy": "wait",
+  "order": [
+    [
+      "optimized",
+      "legacy"
+    ],
+    [
+      "legacy",
+      "optimized"
+    ],
+    [
+      "optimized",
+      "legacy"
+    ]
+  ],
+  "hypothesis": "Removing no-op events changes log volume, not lifecycle transitions. CPU/RSS estimates retain shared-host and10ms CPU quantization uncertainty.",
+  "configuration_difference_only": "--legacy-sweeps; same source,binary,33 originals,payload,clock,barrier and resource guards"
+}

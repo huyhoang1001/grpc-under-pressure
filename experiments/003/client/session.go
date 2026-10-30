@@ -15,6 +15,18 @@ import (
 // waits for send credits or the sender. Overflow explicitly cancels an invalid run.
 func Receive(ctx context.Context, stream grpc.BidiStreamingClient[p.ClientFrame, p.ServerFrame], ledger *Ledger, events chan<- Event, now func() uint64, cancel context.CancelFunc) error {
 	defer close(events)
+	return receiveFrames(ctx, stream, ledger, func(event Event) error {
+		select {
+		case events <- event:
+			return nil
+		case <-ctx.Done():
+			return ctx.Err()
+		default:
+			return ErrCapacity
+		}
+	}, now, cancel)
+}
+func receiveFrames(ctx context.Context, stream grpc.BidiStreamingClient[p.ClientFrame, p.ServerFrame], ledger *Ledger, push func(Event) error, now func() uint64, cancel context.CancelFunc) error {
 	defer func() { ledger.Close(now()); cancel() }()
 	for {
 		frame, err := stream.Recv()
@@ -34,15 +46,11 @@ func Receive(ctx context.Context, stream grpc.BidiStreamingClient[p.ClientFrame,
 		}
 		t := frame.GetTerminalOutcome()
 		event := Event{Kind: "terminal_processed", MessageID: t.MessageId, AttemptID: t.AttemptId, Offset: now()}
-		select {
-		case events <- event:
-		case <-ctx.Done():
-			return ctx.Err()
-		default:
-			ledger.Invalidate("RESPONSE_EVENT_QUEUE_OVERFLOW")
+		if err := push(event); err != nil {
+			ledger.Invalidate("RESPONSE_EVENT_QUEUE_OVERFLOW: " + err.Error())
 			ledger.Close(now())
 			cancel()
-			return ErrCapacity
+			return err
 		}
 	}
 }
@@ -83,17 +91,19 @@ func FixtureExchange(parent context.Context, client p.OverloadServiceClient, led
 		}
 		return uint64(d)
 	}
-	responseEvents := make(chan Event, ResponseCapacity)
+	responseEvents := NewNotifications(ledger, now)
 	var group sync.WaitGroup
 	errors := make(chan error, 3)
 	group.Add(1)
 	go func() {
 		defer group.Done()
-		for range responseEvents {
-		}
+		responseEvents.Drain()
 	}()
 	group.Add(1)
-	go func() { defer group.Done(); errors <- Receive(ctx, stream, ledger, responseEvents, now, cancel) }()
+	go func() {
+		defer group.Done()
+		errors <- ReceiveNotifications(ctx, stream, ledger, responseEvents, now, cancel)
+	}()
 	// Event writer is bounded by the ledger's fixed1024 entry ring, and flushes on exit.
 	logDone := make(chan struct{})
 	group.Add(1)
@@ -145,6 +155,11 @@ func FixtureExchange(parent context.Context, client p.OverloadServiceClient, led
 		}
 		work, e := ledger.BeginNext(now(), uint64(id))
 		if e != nil {
+			err = e
+			cancel()
+			break
+		}
+		if e = ledger.MarkSendStart(work.AttemptId, now()); e != nil {
 			err = e
 			cancel()
 			break

@@ -1,0 +1,20 @@
+{
+  "calibration_only": true,
+  "replaces": "earlier matched pairs; all preserved",
+  "reason": "Use final client accounting source, including latest-refusal ACK-loss reconciliation. No policy or scheduling change.",
+  "policy": "wait",
+  "order": [
+    [
+      "optimized",
+      "legacy"
+    ],
+    [
+      "legacy",
+      "optimized"
+    ],
+    [
+      "optimized",
+      "legacy"
+    ]
+  ]
+}

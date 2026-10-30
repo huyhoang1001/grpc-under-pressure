@@ -1,0 +1,11 @@
+{
+  "calibration_only": true,
+  "contract_revision": "A01",
+  "cpu_ns": 1780100000,
+  "cpu_resolution_ns": 1000,
+  "events": 2240,
+  "mode": "file",
+  "note": "No service timers or network: only incremental JSON/file I/O cost; event construction and ledger instrumentation enabled in both modes.",
+  "unique_fixture_completions": 320,
+  "wall_ns": 1780622010
+}

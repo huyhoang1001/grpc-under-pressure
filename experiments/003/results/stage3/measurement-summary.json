@@ -1,0 +1,315 @@
+{
+  "accepted-wait-drain": {
+    "verdict": "PASS",
+    "clock_uncertainty_ns": 520,
+    "populations": {
+      "N": 33,
+      "A": 33,
+      "F": 33,
+      "S": 33,
+      "R": 33,
+      "retries": 0,
+      "retry_scheduled": 0,
+      "admitted": 33,
+      "worker_starts": 33,
+      "worker_exits": 33
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 33
+    },
+    "client_high_water": {
+      "Pending": 1,
+      "Outstanding": 33,
+      "Events": 12,
+      "Responses": 4
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 0,
+      "events": 8
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 8839168,
+        "last_observed_cpu_ns": 480000000,
+        "cpu_resolution_ns": 10000000
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 13762560,
+        "last_observed_cpu_ns": 120000000,
+        "cpu_resolution_ns": 10000000
+      }
+    },
+    "transport": {
+      "grpc_in_messages": 33,
+      "grpc_in_wire_bytes": 2234,
+      "grpc_out_messages": 33,
+      "grpc_out_wire_bytes": 543842,
+      "tcp_stream_read_bytes": 3280,
+      "tcp_stream_write_bytes": 544596
+    },
+    "ledger_record_estimates": {
+      "server": 1202204,
+      "client": 645956
+    },
+    "log_bytes": {
+      "server": 79219,
+      "client": 69454
+    }
+  },
+  "accepted-reject-drain": {
+    "verdict": "PASS",
+    "clock_uncertainty_ns": 491,
+    "populations": {
+      "N": 33,
+      "A": 33,
+      "F": 33,
+      "S": 33,
+      "R": 33,
+      "retries": 0,
+      "retry_scheduled": 0,
+      "admitted": 32,
+      "worker_starts": 32,
+      "worker_exits": 32
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 32,
+      "REJECTED_FINAL": 1
+    },
+    "client_high_water": {
+      "Pending": 1,
+      "Outstanding": 33,
+      "Events": 15,
+      "Responses": 5
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 1,
+      "events": 4
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 8679424,
+        "last_observed_cpu_ns": 510000000,
+        "cpu_resolution_ns": 10000000
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 13398016,
+        "last_observed_cpu_ns": 110000000,
+        "cpu_resolution_ns": 10000000
+      }
+    },
+    "transport": {
+      "grpc_in_messages": 33,
+      "grpc_in_wire_bytes": 2237,
+      "grpc_out_messages": 33,
+      "grpc_out_wire_bytes": 543842,
+      "tcp_stream_read_bytes": 3296,
+      "tcp_stream_write_bytes": 544596
+    },
+    "ledger_record_estimates": {
+      "server": 1202204,
+      "client": 645956
+    },
+    "log_bytes": {
+      "server": 78470,
+      "client": 69332
+    }
+  },
+  "accepted-retry-drain": {
+    "verdict": "PASS",
+    "clock_uncertainty_ns": 831,
+    "populations": {
+      "N": 33,
+      "A": 35,
+      "F": 33,
+      "S": 35,
+      "R": 35,
+      "retries": 2,
+      "retry_scheduled": 2,
+      "admitted": 32,
+      "worker_starts": 32,
+      "worker_exits": 32
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 32,
+      "REJECTED_FINAL": 1
+    },
+    "client_high_water": {
+      "Pending": 1,
+      "Outstanding": 33,
+      "Events": 4,
+      "Responses": 1
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 1,
+      "events": 4
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 8912896,
+        "last_observed_cpu_ns": 540000000,
+        "cpu_resolution_ns": 10000000
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 14286848,
+        "last_observed_cpu_ns": 130000000,
+        "cpu_resolution_ns": 10000000
+      }
+    },
+    "transport": {
+      "grpc_in_messages": 35,
+      "grpc_in_wire_bytes": 2379,
+      "grpc_out_messages": 35,
+      "grpc_out_wire_bytes": 576804,
+      "tcp_stream_read_bytes": 3495,
+      "tcp_stream_write_bytes": 577594
+    },
+    "ledger_record_estimates": {
+      "server": 1202204,
+      "client": 646036
+    },
+    "log_bytes": {
+      "server": 81956,
+      "client": 73578
+    }
+  },
+  "accepted-drop-drain": {
+    "verdict": "PASS",
+    "clock_uncertainty_ns": 602,
+    "populations": {
+      "N": 33,
+      "A": 33,
+      "F": 33,
+      "S": 33,
+      "R": 33,
+      "retries": 0,
+      "retry_scheduled": 0,
+      "admitted": 32,
+      "worker_starts": 32,
+      "worker_exits": 32
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 32,
+      "DROPPED": 1
+    },
+    "client_high_water": {
+      "Pending": 1,
+      "Outstanding": 33,
+      "Events": 8,
+      "Responses": 4
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 1,
+      "events": 7
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 8859648,
+        "last_observed_cpu_ns": 490000000,
+        "cpu_resolution_ns": 10000000
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 13791232,
+        "last_observed_cpu_ns": 130000000,
+        "cpu_resolution_ns": 10000000
+      }
+    },
+    "transport": {
+      "grpc_in_messages": 33,
+      "grpc_in_wire_bytes": 2236,
+      "grpc_out_messages": 33,
+      "grpc_out_wire_bytes": 543842,
+      "tcp_stream_read_bytes": 3295,
+      "tcp_stream_write_bytes": 544596
+    },
+    "ledger_record_estimates": {
+      "server": 1202204,
+      "client": 645956
+    },
+    "log_bytes": {
+      "server": 78469,
+      "client": 69323
+    }
+  },
+  "accepted-wait-cancel": {
+    "verdict": "PASS",
+    "clock_uncertainty_ns": 651,
+    "populations": {
+      "N": 33,
+      "A": 33,
+      "F": 33,
+      "S": 33,
+      "R": 33,
+      "retries": 0,
+      "retry_scheduled": 0,
+      "admitted": 32,
+      "worker_starts": 1,
+      "worker_exits": 1
+    },
+    "partition": {
+      "CANCELLED": 33
+    },
+    "client_high_water": {
+      "Pending": 1,
+      "Outstanding": 33,
+      "Events": 4,
+      "Responses": 0
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 0,
+      "events": 36
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 8716288,
+        "last_observed_cpu_ns": 390000000,
+        "cpu_resolution_ns": 10000000
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 13692928,
+        "last_observed_cpu_ns": 70000000,
+        "cpu_resolution_ns": 10000000
+      }
+    },
+    "transport": {
+      "grpc_in_messages": 0,
+      "grpc_in_wire_bytes": 0,
+      "grpc_out_messages": 33,
+      "grpc_out_wire_bytes": 543842,
+      "tcp_stream_read_bytes": 798,
+      "tcp_stream_write_bytes": 544600
+    },
+    "ledger_record_estimates": {
+      "server": 1202204,
+      "client": 644636
+    },
+    "log_bytes": {
+      "server": 46367,
+      "client": 33835
+    }
+  }
+}

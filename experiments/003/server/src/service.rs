@@ -64,6 +64,13 @@ impl Default for Hooks {
     }
 }
 pub struct Shared {
+    pub bridge_n: AtomicUsize,
+    pub bridge_peak: AtomicUsize,
+    pub writer_n: AtomicUsize,
+    pub writer_peak: AtomicUsize,
+    pub logger_n: AtomicUsize,
+    pub logger_peak: AtomicUsize,
+    bridge_closed: AtomicBool,
     pub ledger: Mutex<Ledger>,
     pub epoch: Instant,
     pub hooks: Hooks,
@@ -92,6 +99,13 @@ impl Shared {
         policy: crate::ledger::Policy,
     ) -> Arc<Self> {
         Arc::new(Self {
+            bridge_n: AtomicUsize::new(0),
+            bridge_peak: AtomicUsize::new(0),
+            writer_n: AtomicUsize::new(0),
+            writer_peak: AtomicUsize::new(0),
+            logger_n: AtomicUsize::new(0),
+            logger_peak: AtomicUsize::new(0),
+            bridge_closed: AtomicBool::new(false),
             ledger: Mutex::new(Ledger::with_policy(manifest, policy).unwrap()),
             epoch,
             hooks,
@@ -202,12 +216,18 @@ impl Stream for Outbound {
                     Poll::Ready(None)
                 }
             }
+            Poll::Ready(Some(item)) => {
+                self.shared.bridge_n.store(0, Ordering::SeqCst);
+                Poll::Ready(Some(item))
+            }
             other => other,
         }
     }
 }
 impl Drop for Outbound {
     fn drop(&mut self) {
+        self.shared.bridge_closed.store(true, Ordering::SeqCst);
+        self.shared.bridge_n.store(0, Ordering::SeqCst);
         if !self.ended {
             self.shared.cancel();
         }
@@ -384,13 +404,19 @@ async fn write(
         tokio::pin!(notified);
         notified.as_mut().enable();
         if let Some(frame) = shared.op(true, |l, t| l.response(t)).await? {
+            shared.writer_n.store(1, Ordering::SeqCst);
+            shared.writer_peak.fetch_max(1, Ordering::SeqCst);
             let send = async {
                 let progress = async {
                     shared.hooks.outbound.wait().await;
-                    output
-                        .send(Ok(frame.clone()))
-                        .await
-                        .map_err(|_| Error::Closed)
+                    let permit = output.reserve().await.map_err(|_| Error::Closed)?;
+                    shared.bridge_n.store(1, Ordering::SeqCst);
+                    shared.bridge_peak.fetch_max(1, Ordering::SeqCst);
+                    permit.send(Ok(frame.clone()));
+                    if shared.bridge_closed.load(Ordering::SeqCst) {
+                        shared.bridge_n.store(0, Ordering::SeqCst);
+                    }
+                    Ok(())
                 };
                 if matches!(
                     frame.frame,
@@ -401,7 +427,13 @@ async fn write(
                     tokio::select! {result=progress=>result,_=shared.cancelled()=>Err(Error::Closed)}
                 }
             };
-            match tokio::time::timeout(Duration::from_secs(1), send).await {
+            let writer_started = Instant::now();
+            let result = tokio::time::timeout(Duration::from_secs(1), send).await;
+            shared.writer_n.store(0, Ordering::SeqCst);
+            shared.ledger.lock().unwrap().record_writer_progress(
+                writer_started.elapsed().as_nanos().min(u64::MAX as u128) as u64,
+            );
+            match result {
                 Ok(Ok(())) => {
                     shared.op(true, |l, t| l.accepted_write(&frame, t)).await?;
                 }
@@ -456,10 +488,13 @@ async fn log_events(
         let event = shared.ledger.lock().unwrap().pop_event();
         if let Some(event) = event {
             shared.changed.notify_waiters();
-            if serde_json::to_writer(&mut out, &event)
+            shared.logger_n.store(1, Ordering::SeqCst);
+            shared.logger_peak.fetch_max(1, Ordering::SeqCst);
+            let failed = serde_json::to_writer(&mut out, &event)
                 .and_then(|_| out.write_all(b"\n").map_err(serde_json::Error::io))
-                .is_err()
-            {
+                .is_err();
+            shared.logger_n.store(0, Ordering::SeqCst);
+            if failed {
                 shared.cancel();
                 return Err(Error::Protocol("EVENT_WRITER_FAILED"));
             }

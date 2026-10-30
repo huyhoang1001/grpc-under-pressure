@@ -1,0 +1,18 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+     Running tests/transport.rs (experiments/003/server/target/debug/deps/transport-ee7bd0b820798c49)
+
+running 11 tests
+test actual_full_admission_policy_outcomes_retry_and_clean_drain ... ok
+test cancel_original_frame_cancels_only_its_owned_work_and_preserves_healthy_stream ... ok
+test client_done_is_diagnostic_not_a_substitute_for_eof ... ok
+test half_close_drains_terminal_and_duplicate_frames_then_clean_eof ... ok
+test invalid_identity_produces_correlated_error_without_second_start ... ok
+test logger_io_failure_invalidates_even_if_application_completed ... ok
+test lost_terminal_frame_preserves_authoritative_completion ... ok
+test stream_abort_before_decode_does_not_fabricate_admission ... ok
+test stream_abort_during_service_records_request_observation_exit ... ok
+test t06_writer_barrier_timeout_cancels_and_holds_permit_until_exit ... ok
+test t07_full_immediate_path_pauses_decoder_but_worker_does_not_wait_for_ack ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.57s
+

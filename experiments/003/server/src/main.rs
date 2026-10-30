@@ -33,6 +33,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         return Err("Stage1 smoke epoch must be in the future".into());
     }
     let epoch = Instant::now() + Duration::from_nanos(u64::try_from(target - wall)?);
+    let clock_start = pressure_e3_stage1::measurement::calibrate(epoch);
     let policy = std::env::args()
         .collect::<Vec<_>>()
         .windows(2)
@@ -75,6 +76,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     serde_json::to_writer_pretty(
         File::create_new(out.join("server-ledger.json"))?,
         &shared.ledger.lock().unwrap().snapshot(),
+    )?;
+    serde_json::to_writer_pretty(
+        File::create_new(out.join("clock.json"))?,
+        &serde_json::json!({"contract_revision":"A01","start":clock_start,"end":pressure_e3_stage1::measurement::calibrate(epoch),"bounded_io":{"bridge_current":shared.bridge_n.load(Ordering::SeqCst),"bridge_peak":shared.bridge_peak.load(Ordering::SeqCst),"writer_current":shared.writer_n.load(Ordering::SeqCst),"writer_peak":shared.writer_peak.load(Ordering::SeqCst),"logger_current":shared.logger_n.load(Ordering::SeqCst),"logger_peak":shared.logger_peak.load(Ordering::SeqCst)}}),
     )?;
     Ok(())
 }

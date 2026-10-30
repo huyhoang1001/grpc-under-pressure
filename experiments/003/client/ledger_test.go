@@ -188,7 +188,7 @@ func TestT17MetadataAndEventBounds(t *testing.T) {
 	}
 	l := testLedger(t)
 	for i := 0; i < 1024; i++ {
-		if e := l.ExpirePending(uint64(i)); e != nil {
+		if e := l.Diagnostic(uint64(i)); e != nil {
 			t.Fatal(e)
 		}
 	}

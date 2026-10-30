@@ -17,6 +17,9 @@ import (
 // This is not a calibrated benchmark runner (Stage3 must add that instrumentation).
 func ScheduledExchange(parent context.Context, client p.OverloadServiceClient, ledger *Ledger, target time.Time, output io.Writer) error {
 	epoch := monotonicEpoch(target)
+	ledger.SetEpoch(epoch)
+	ledger.SetClock(true, CalibrateClock(epoch))
+	defer func() { ledger.SetClock(false, CalibrateClock(epoch)) }()
 	lastDeadline := uint64(0)
 	for _, id := range ledger.manifest.Originals {
 		if id.Deadline > lastDeadline {
@@ -44,16 +47,15 @@ func ScheduledExchange(parent context.Context, client p.OverloadServiceClient, l
 		return uint64(elapsed)
 	}
 	var wg sync.WaitGroup
-	responses := make(chan Event, ResponseCapacity)
+	responses := NewNotifications(ledger, now)
 	errs := make(chan error, 2)
 	var arrivalsDone atomic.Bool
 	wg.Add(3)
 	go func() {
 		defer wg.Done()
-		for range responses {
-		}
+		responses.Drain()
 	}()
-	go func() { defer wg.Done(); errs <- Receive(ctx, stream, ledger, responses, now, cancel) }()
+	go func() { defer wg.Done(); errs <- ReceiveNotifications(ctx, stream, ledger, responses, now, cancel) }()
 	go func() {
 		defer wg.Done()
 		var attempt uint64
@@ -68,6 +70,12 @@ func ScheduledExchange(parent context.Context, client p.OverloadServiceClient, l
 			work, e := ledger.BeginNext(now(), attempt)
 			if e == nil {
 				attempt++
+				e = ledger.MarkSendStart(work.AttemptId, now())
+				if e != nil {
+					cancel()
+					errs <- e
+					return
+				}
 				e = stream.Send(&p.ClientFrame{Frame: &p.ClientFrame_Work{Work: work}})
 				if note := ledger.SendReturn(work.AttemptId, e == nil, now()); note != nil {
 					e = note

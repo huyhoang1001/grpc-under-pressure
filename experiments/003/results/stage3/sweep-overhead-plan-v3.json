@@ -1,0 +1,20 @@
+{
+  "calibration_only": true,
+  "replaces": "all earlier pairs",
+  "reason": "Final counted-dialer matches pinned grpc-go socket defaults. Restart all matched pairs with final source/binaries.",
+  "policy": "wait",
+  "order": [
+    [
+      "optimized",
+      "legacy"
+    ],
+    [
+      "legacy",
+      "optimized"
+    ],
+    [
+      "optimized",
+      "legacy"
+    ]
+  ]
+}

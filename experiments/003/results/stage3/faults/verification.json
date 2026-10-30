@@ -1,0 +1,79 @@
+{
+  "contract_revision": "A01",
+  "synthetic_faults_only": true,
+  "baseline": "experiments/003/results/stage3/wait-drain",
+  "positive_control": "PASS",
+  "faults": [
+    {
+      "fault": "missing-middle",
+      "verdict": "REJECTED",
+      "reason": "server missing/reordered event or tail"
+    },
+    {
+      "fault": "missing-tail",
+      "verdict": "REJECTED",
+      "reason": "client missing/reordered event or tail"
+    },
+    {
+      "fault": "duplicate-worker-start-with-renumbered-log",
+      "verdict": "REJECTED",
+      "reason": "duplicate execution/FIFO"
+    },
+    {
+      "fault": "send-counter",
+      "verdict": "REJECTED",
+      "reason": "send counters"
+    },
+    {
+      "fault": "wrong-partition",
+      "verdict": "REJECTED",
+      "reason": "incorrect terminal partition"
+    },
+    {
+      "fault": "resource-overflow",
+      "verdict": "REJECTED",
+      "reason": "client resource/counter replay"
+    },
+    {
+      "fault": "server-overflow",
+      "verdict": "REJECTED",
+      "reason": "server resource bound terminal"
+    },
+    {
+      "fault": "clock-misalignment",
+      "verdict": "REJECTED",
+      "reason": "cross-process alignment/drift >=5ms"
+    },
+    {
+      "fault": "missing-process-samples",
+      "verdict": "REJECTED",
+      "reason": "missing client process samples"
+    },
+    {
+      "fault": "sampling-gap",
+      "verdict": "REJECTED",
+      "reason": "metric time order"
+    },
+    {
+      "fault": "A01-drift",
+      "verdict": "REJECTED",
+      "reason": "A01 config"
+    },
+    {
+      "fault": "high-water-mismatch",
+      "verdict": "REJECTED",
+      "reason": "server high-water mismatch"
+    },
+    {
+      "fault": "transport-count",
+      "verdict": "REJECTED",
+      "reason": "grpc outbound message counter"
+    },
+    {
+      "fault": "missing-provenance",
+      "verdict": "REJECTED",
+      "reason": "missing provenance"
+    }
+  ],
+  "verdict": "PASS"
+}

@@ -1,0 +1,113 @@
+{
+  "synthetic_only": true,
+  "no_measured_findings": true,
+  "baseline_for_schema_clock_and_process_fields_only": "experiments/003/results/stage3/accepted-wait-drain",
+  "all2880_unsent": {
+    "N": 2880,
+    "A": 0,
+    "partition": {
+      "EXPIRED_BEFORE_SEND": 2880
+    }
+  },
+  "terminal_classification_cases": [
+    {
+      "input": {
+        "outcome": 1,
+        "offset_ns": 100,
+        "detail_code": "COMPLETED"
+      },
+      "deadline_ns": 100,
+      "expected": "COMPLETED_ON_TIME",
+      "actual": "COMPLETED_ON_TIME"
+    },
+    {
+      "input": {
+        "outcome": 2,
+        "offset_ns": 100,
+        "detail_code": ""
+      },
+      "deadline_ns": 100,
+      "expected": "REJECTED_FINAL",
+      "actual": "REJECTED_FINAL"
+    },
+    {
+      "input": {
+        "outcome": 3,
+        "offset_ns": 100,
+        "detail_code": ""
+      },
+      "deadline_ns": 100,
+      "expected": "DROPPED",
+      "actual": "DROPPED"
+    },
+    {
+      "input": {
+        "outcome": 4,
+        "offset_ns": 100,
+        "detail_code": "EXPIRED_QUEUED"
+      },
+      "deadline_ns": 100,
+      "expected": "EXPIRED_WAITING_OR_QUEUED",
+      "actual": "EXPIRED_WAITING_OR_QUEUED"
+    },
+    {
+      "input": {
+        "outcome": 4,
+        "offset_ns": 100,
+        "detail_code": "EXPIRED_PROCESSING"
+      },
+      "deadline_ns": 100,
+      "expected": "EXPIRED_PROCESSING",
+      "actual": "EXPIRED_PROCESSING"
+    },
+    {
+      "input": {
+        "outcome": 5,
+        "offset_ns": 100,
+        "detail_code": ""
+      },
+      "deadline_ns": 100,
+      "expected": "PROCESSING_FAILED",
+      "actual": "PROCESSING_FAILED"
+    },
+    {
+      "input": {
+        "outcome": 6,
+        "offset_ns": 100,
+        "detail_code": ""
+      },
+      "deadline_ns": 100,
+      "expected": "CANCELLED",
+      "actual": "CANCELLED"
+    }
+  ],
+  "late_boundary": "PASS",
+  "retry_and_unknown_edge_cases": [
+    {
+      "expected": "EXPIRED_WAITING_OR_QUEUED",
+      "actual": "EXPIRED_WAITING_OR_QUEUED"
+    },
+    {
+      "expected": "REJECTED_FINAL",
+      "actual": "REJECTED_FINAL"
+    },
+    {
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN"
+    },
+    {
+      "expected": "CLIENT_BACKLOG_EXHAUSTED",
+      "actual": "CLIENT_BACKLOG_EXHAUSTED"
+    }
+  ],
+  "failed_send_before_decode": {
+    "synthetic_only": true,
+    "partition": {
+      "UNKNOWN": 1
+    },
+    "A": 1,
+    "S": 0,
+    "R": 0
+  },
+  "verdict": "PASS"
+}

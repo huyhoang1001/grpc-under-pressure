@@ -1,0 +1,136 @@
+{
+  "verdict": "PASS",
+  "contract_revision": "A01",
+  "clock_uncertainty_ns": 651,
+  "counter_populations": {
+    "N": 33,
+    "A": 33,
+    "F": 33,
+    "S": 33,
+    "R": 33,
+    "retries": 0,
+    "retry_scheduled": 0,
+    "admitted": 32,
+    "worker_starts": 1,
+    "worker_exits": 1
+  },
+  "partition": {
+    "CANCELLED": 33
+  },
+  "queue_residence_ns": [
+    822641
+  ],
+  "logical_admission_wait_ns": [
+    1099742,
+    1095556,
+    994144,
+    1031801,
+    1299663,
+    1270379,
+    982767,
+    969637,
+    1047014,
+    1039833,
+    987573,
+    1053643,
+    1079582,
+    975926,
+    1231160,
+    1002757,
+    1012061,
+    1208516,
+    1051660,
+    972030,
+    957499,
+    1117328,
+    982787,
+    1012973,
+    1321276,
+    1127675,
+    1342973,
+    967553,
+    1052522,
+    1469057,
+    1202016,
+    1020734
+  ],
+  "worker_occupied_ns": 403763367,
+  "worker_elapsed_by_disposition": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 403763367
+  },
+  "client_high_water": {
+    "Pending": 1,
+    "Outstanding": 33,
+    "Events": 4,
+    "Responses": 0
+  },
+  "server_high_water": {
+    "queued": 31,
+    "running": 1,
+    "staging": 1,
+    "receive": 1,
+    "terminal": 32,
+    "immediate": 0,
+    "events": 36
+  },
+  "writer_local_progress_ns": 0,
+  "send_duration_ns": [
+    243946,
+    21392,
+    26210,
+    28683,
+    29264,
+    38848,
+    169214,
+    20952,
+    25529,
+    77306,
+    17116,
+    21022,
+    19058,
+    32319,
+    19980,
+    116124,
+    21482,
+    17185,
+    22924,
+    18759,
+    14442,
+    31206,
+    23565,
+    34522,
+    27311,
+    36986,
+    28763,
+    24777,
+    20781,
+    33280,
+    28833,
+    20181,
+    66390
+  ],
+  "process_metrics": {
+    "server": {
+      "sampled_rss_peak_bytes": 8716288,
+      "last_observed_cpu_ns": 390000000,
+      "cpu_resolution_ns": 10000000
+    },
+    "client": {
+      "sampled_rss_peak_bytes": 13692928,
+      "last_observed_cpu_ns": 70000000,
+      "cpu_resolution_ns": 10000000
+    }
+  },
+  "limitations": [
+    "RSS peaks are sampled lower bounds; CPU is /proc jiffy-quantized and final observation precedes exit.",
+    "Send and local writer elapsed include scheduling/serialization effects, not isolated HTTP/2 blocking.",
+    "Clock bound assumes shared host/time namespace and CLOCK_MONOTONIC; start/end bound does not prove arbitrary unobserved transients.",
+    "gRPC wire payload bytes exclude HTTP/2; plaintext TCP-stream counts include HTTP/2 but exclude packets/retransmissions."
+  ],
+  "verifier_sha256": "0f0083b6b12b91ae2ec74e0efba0b82045ab2783df47bb3fe93c6e34f6451467"
+}

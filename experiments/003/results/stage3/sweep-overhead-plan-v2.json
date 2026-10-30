@@ -1,0 +1,20 @@
+{
+  "calibration_only": true,
+  "replaces": "full original matched calibration; invalid sweep-1-legacy preserved",
+  "reason": "Final harness waits for supervised finish/log flush before SIGINT. Restart all pairs with identical final binaries/source.",
+  "policy": "wait",
+  "order": [
+    [
+      "optimized",
+      "legacy"
+    ],
+    [
+      "legacy",
+      "optimized"
+    ],
+    [
+      "optimized",
+      "legacy"
+    ]
+  ]
+}

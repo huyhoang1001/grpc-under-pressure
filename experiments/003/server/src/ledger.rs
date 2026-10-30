@@ -110,6 +110,8 @@ pub struct Original {
     pub first_attempt: usize,
     pub starts: u32,
     pub start_ns: Option<u64>,
+    pub decoded_ns: u64,
+    pub admitted_ns: Option<u64>,
     pub exit_ns: Option<u64>,
     pub cancellation_requested_ns: Option<u64>,
     pub cancellation_observed_ns: Option<u64>,
@@ -147,9 +149,39 @@ pub struct Event {
     pub occupied: usize,
     pub queued: usize,
     pub running: usize,
+    pub resources: Resources,
+    pub terminal: Option<ResultRecord>,
+    pub start_ns: Option<u64>,
+    pub exit_ns: Option<u64>,
+    pub admitted_ns: Option<u64>,
+    pub writer_progress_ns: u64,
+}
+#[derive(Clone, Copy, Default, Debug, Serialize)]
+pub struct Resources {
+    pub queued: usize,
+    pub running: usize,
+    pub staging: usize,
+    pub receive: usize,
+    pub terminal: usize,
+    pub immediate: usize,
+    pub events: usize,
+}
+impl Resources {
+    fn include(&mut self, r: Self) {
+        self.queued = self.queued.max(r.queued);
+        self.running = self.running.max(r.running);
+        self.staging = self.staging.max(r.staging);
+        self.receive = self.receive.max(r.receive);
+        self.terminal = self.terminal.max(r.terminal);
+        self.immediate = self.immediate.max(r.immediate);
+        self.events = self.events.max(r.events);
+    }
 }
 #[derive(Debug, Serialize)]
 pub struct Snapshot {
+    pub high_water: Resources,
+    pub writer_progress_ns: u64,
+    pub writer_calls: u64,
     pub run_id: String,
     pub logical_capacity: usize,
     pub attempt_capacity: usize,
@@ -198,6 +230,9 @@ impl Policy {
 }
 
 pub struct Ledger {
+    high_water: Resources,
+    writer_progress_ns: u64,
+    writer_calls: u64,
     policy: Policy,
     manifest: Manifest,
     originals: Vec<Option<Original>>,
@@ -227,6 +262,9 @@ impl Ledger {
         manifest.validate()?;
         assert!(logical <= ORIGINALS && attempts <= ATTEMPTS);
         Ok(Self {
+            high_water: Resources::default(),
+            writer_progress_ns: 0,
+            writer_calls: 0,
             policy: Policy::Wait,
             originals: vec![None; ORIGINALS],
             attempts: vec![None; ATTEMPTS],
@@ -264,6 +302,9 @@ impl Ledger {
     fn event(&mut self, now: u64, kind: &'static str, id: Option<usize>, attempt: Option<u64>) {
         assert!(self.events.len() < EVENTS);
         self.seq += 1;
+        let resources = self.resources(self.events.len() + 1);
+        self.high_water.include(resources);
+        let original = id.and_then(|i| self.originals[i].as_ref());
         self.events.push_back(Event {
             seq: self.seq,
             offset_ns: now,
@@ -273,8 +314,33 @@ impl Ledger {
             occupied: self.queue.len() + usize::from(self.running.is_some()),
             queued: self.queue.len(),
             running: usize::from(self.running.is_some()),
+            resources,
+            terminal: original.and_then(|o| o.terminal.clone()),
+            start_ns: original.and_then(|o| o.start_ns),
+            exit_ns: original.and_then(|o| o.exit_ns),
+            admitted_ns: original.and_then(|o| o.admitted_ns),
+            writer_progress_ns: self.writer_progress_ns,
         });
         self.verify();
+    }
+    pub fn record_writer_progress(&mut self, ns: u64) {
+        self.writer_progress_ns += ns;
+        self.writer_calls += 1;
+    }
+    fn resources(&self, events: usize) -> Resources {
+        Resources {
+            queued: self.queue.len(),
+            running: usize::from(self.running.is_some()),
+            staging: usize::from(self.staging.is_some()),
+            receive: usize::from(self.reading),
+            terminal: self
+                .terminal_slots
+                .iter()
+                .filter(|s| !matches!(s, TerminalSlot::Free))
+                .count(),
+            immediate: self.immediate_occupied(),
+            events,
+        }
     }
     pub fn manifest(&self) -> &Manifest {
         &self.manifest
@@ -469,6 +535,8 @@ impl Ledger {
                 first_attempt: i,
                 starts: 0,
                 start_ns: None,
+                decoded_ns: now,
+                admitted_ns: None,
                 exit_ns: None,
                 cancellation_requested_ns: None,
                 cancellation_observed_ns: None,
@@ -584,6 +652,7 @@ impl Ledger {
         });
         self.acquired += 1;
         self.originals[id].as_mut().unwrap().phase = Phase::Queued;
+        self.originals[id].as_mut().unwrap().admitted_ns = Some(now);
         self.event(now, "admitted", Some(id), None);
         Ok(())
     }
@@ -934,6 +1003,9 @@ impl Ledger {
     pub fn snapshot(&self) -> Snapshot {
         self.verify();
         Snapshot {
+            high_water: self.high_water,
+            writer_progress_ns: self.writer_progress_ns,
+            writer_calls: self.writer_calls,
             run_id: self.manifest.run_id.clone(),
             logical_capacity: self.logical_limit,
             attempt_capacity: self.attempt_limit,

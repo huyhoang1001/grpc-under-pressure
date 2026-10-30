@@ -1,0 +1,23 @@
+{
+  "bounded_io": {
+    "bridge_current": 0,
+    "bridge_peak": 1,
+    "logger_current": 0,
+    "logger_peak": 1,
+    "writer_current": 0,
+    "writer_peak": 1
+  },
+  "contract_revision": "A01",
+  "end": {
+    "bracket_ns": 70,
+    "epoch_max_ns": 214732079946279,
+    "epoch_min_ns": 214732079946209,
+    "samples": 8
+  },
+  "start": {
+    "bracket_ns": 60,
+    "epoch_max_ns": 214732079946269,
+    "epoch_min_ns": 214732079946209,
+    "samples": 8
+  }
+}

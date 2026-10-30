@@ -110,19 +110,32 @@ type OriginalRecord struct {
 	Observed             *Observation
 }
 type AttemptRecord struct {
-	ID                    uint64
-	Original              int
-	Number                uint32
-	Returned, SendSuccess bool
-	Observed              *Observation
+	ID                       uint64
+	Original                 int
+	Number                   uint32
+	Returned, SendSuccess    bool
+	InitiatedNS, SendStartNS uint64
+	ExplicitSendStart        bool
+	Observed                 *Observation
 }
 type Event struct {
-	Seq           uint64 `json:"seq"`
-	Offset        uint64 `json:"offset_ns"`
-	Kind          string `json:"kind"`
-	MessageID     uint64 `json:"message_id"`
-	AttemptID     uint64 `json:"attempt_id"`
-	ReadyOffsetNS uint64 `json:"ready_offset_ns,omitempty"`
+	CommitOffsetNS  int64        `json:"commit_offset_ns"`
+	Seq             uint64       `json:"seq"`
+	Offset          uint64       `json:"offset_ns"`
+	Kind            string       `json:"kind"`
+	MessageID       uint64       `json:"message_id"`
+	AttemptID       uint64       `json:"attempt_id"`
+	ReadyOffsetNS   uint64       `json:"ready_offset_ns,omitempty"`
+	Pending         int          `json:"pending"`
+	Outstanding     int          `json:"outstanding"`
+	EventQueue      int          `json:"event_queue"`
+	ResponseQueue   int          `json:"response_queue"`
+	AttemptNumber   uint32       `json:"attempt_number"`
+	State           Disposition  `json:"state,omitempty"`
+	Result          *Observation `json:"result,omitempty"`
+	SendSuccess     *bool        `json:"send_success,omitempty"`
+	SendDurationNS  uint64       `json:"send_duration_ns"`
+	SendTimingExact bool         `json:"send_timing_exact"`
 }
 type Snapshot struct {
 	Pending, Outstanding, Originals, Attempts, FirstAttempts, Retries, SendSuccess int
@@ -131,8 +144,12 @@ type Snapshot struct {
 	LedgerAllocatedBytes                                                           int
 	EventQueue                                                                     int
 	EventSeq                                                                       uint64
+	HighWater                                                                      HighWater
+	ResponseQueue                                                                  int
+	ClockStart, ClockEnd                                                           ClockBounds
 }
 type Ledger struct {
+	clockNow                          func() int64
 	mu                                sync.Mutex
 	manifest                          Manifest
 	originals                         []OriginalRecord
@@ -148,6 +165,10 @@ type Ledger struct {
 	policy                            Policy
 	rng                               uint64
 	pendingOrder                      uint64
+	high                              HighWater
+	responseN                         int
+	legacySweeps                      bool
+	clockStart, clockEnd              ClockBounds
 }
 
 func NewLedger(m Manifest) (*Ledger, error) {
@@ -173,6 +194,29 @@ func (l *Ledger) event(now uint64, kind string, id int, attempt uint64) {
 	l.seq++
 	l.events[(l.eventHead+l.eventN)%EventCapacity] = Event{Seq: l.seq, Offset: now, Kind: kind, MessageID: uint64(id), AttemptID: attempt}
 	l.eventN++
+	e := &l.events[(l.eventHead+l.eventN-1)%EventCapacity]
+	e.CommitOffsetNS = int64(now)
+	if l.clockNow != nil {
+		e.CommitOffsetNS = l.clockNow()
+	}
+	e.Pending, e.Outstanding, e.EventQueue, e.ResponseQueue = l.pendingN, l.outstanding, l.eventN, l.responseN
+	if id >= 0 && id < len(l.originals) {
+		e.State = l.originals[id].ClientObserved
+	}
+	if a := l.attempt(attempt); a != nil {
+		e.AttemptNumber = a.Number
+		e.Result = a.Observed
+		if kind == "grpc_send_return" {
+			v := a.SendSuccess
+			e.SendSuccess = &v
+			e.SendDurationNS = now - a.SendStartNS
+			e.SendTimingExact = a.ExplicitSendStart
+		}
+	}
+	l.high.Pending = max(l.high.Pending, l.pendingN)
+	l.high.Outstanding = max(l.high.Outstanding, l.outstanding)
+	l.high.Events = max(l.high.Events, l.eventN)
+	l.high.Responses = max(l.high.Responses, l.responseN)
 }
 func (l *Ledger) PopEvent() (Event, bool) {
 	l.mu.Lock()
@@ -215,11 +259,17 @@ func (l *Ledger) Arrive(id int, now uint64) error {
 	return l.arrive(id, now)
 }
 func (l *Ledger) expire(now uint64) error {
-	count := 1
+	count := 0
+	if l.legacySweeps {
+		count++
+	}
 	for i := 0; i < l.pendingN; i++ {
 		if now >= l.manifest.Originals[l.pending[i]].Deadline {
 			count++
 		}
+	}
+	if count == 0 {
+		return nil
 	}
 	if l.eventN+count > EventCapacity {
 		l.invalid = ErrEventFull.Error()
@@ -244,7 +294,9 @@ func (l *Ledger) expire(now uint64) error {
 	}
 	l.pendingN = n
 	l.heapify()
-	l.event(now, "pending_deadline_sweep", 0, 0)
+	if l.legacySweeps {
+		l.event(now, "pending_deadline_sweep", 0, 0)
+	}
 	return nil
 }
 func (l *Ledger) ExpirePending(now uint64) error {
@@ -313,7 +365,7 @@ func (l *Ledger) BeginNext(now, attempt uint64) (*p.Work, error) {
 		l.first++
 	}
 	l.outstanding++
-	l.attempts[l.used] = AttemptRecord{ID: attempt, Original: id, Number: uint32(o.Attempts)}
+	l.attempts[l.used] = AttemptRecord{ID: attempt, Original: id, Number: uint32(o.Attempts), InitiatedNS: now, SendStartNS: now}
 	l.used++
 	l.event(now, "attempt_initiated", id, attempt)
 	return l.manifest.Work(id, attempt, uint32(o.Attempts)), nil
@@ -463,7 +515,7 @@ func (l *Ledger) Invalidate(reason string) { l.mu.Lock(); defer l.mu.Unlock(); l
 func (l *Ledger) Snapshot() Snapshot {
 	l.mu.Lock()
 	defer l.mu.Unlock()
-	return Snapshot{l.pendingN, l.outstanding, len(l.originals), l.used, l.first, l.used - l.first, l.success, l.closed, l.invalid, ledgerBytes(l), l.eventN, l.seq}
+	return Snapshot{l.pendingN, l.outstanding, len(l.originals), l.used, l.first, l.used - l.first, l.success, l.closed, l.invalid, ledgerBytes(l), l.eventN, l.seq, l.high, l.responseN, l.clockStart, l.clockEnd}
 }
 func (l *Ledger) Verify() error {
 	l.mu.Lock()
