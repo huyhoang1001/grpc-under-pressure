@@ -1,0 +1,18 @@
+{
+  "command": "source scripts/dev-env.sh; cargo build --locked --manifest-path experiments/003/server/Cargo.toml",
+  "rows": [
+    {
+      "binary": "/workspace/grpc-under-pressure/experiments/003/server/target/debug/pressure-e3-stage1",
+      "recorded": "e5ed863d309f7e43aa507adde7d04d2f010e408a9133c2adc57cd6a0f318e257",
+      "normal_build": "e5ed863d309f7e43aa507adde7d04d2f010e408a9133c2adc57cd6a0f318e257",
+      "matches": true
+    },
+    {
+      "binary": "/workspace/toolchains/bin/e3-pilot",
+      "recorded": "351450bf5103d12d74743980ed795fba8331d04ad71c1c4f8076b5ac464b1d78",
+      "normal_build": "351450bf5103d12d74743980ed795fba8331d04ad71c1c4f8076b5ac464b1d78",
+      "matches": true
+    }
+  ],
+  "verdict": "PASS"
+}

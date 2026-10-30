@@ -1,0 +1,7 @@
+{
+  "synthetic_only": true,
+  "application_spawned": false,
+  "temporary_external_path": true,
+  "verdict": "PASS",
+  "result": "Absolute external artifact directory correctly recorded after expected synthetic startup failure; temporary unit-test data cleaned."
+}

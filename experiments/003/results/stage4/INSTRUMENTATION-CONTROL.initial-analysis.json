@@ -1,0 +1,36 @@
+{
+  "pilot_instrumentation_control_only": true,
+  "replicated_pairs": 1,
+  "only_requested_change": "client event-output buffer0 vs65536, same final source/binaries/workload/policy/guards",
+  "same_workload_sha256": true,
+  "cpu_delta_buffered_minus_direct_ns": {
+    "server": 50000000,
+    "client": -60000000
+  },
+  "direct_partition": {
+    "COMPLETED_ON_TIME": 2199,
+    "EXPIRED_PROCESSING": 149,
+    "CLIENT_BACKLOG_EXHAUSTED": 531,
+    "COMPLETED_LATE": 1
+  },
+  "buffered_partition": {
+    "COMPLETED_ON_TIME": 2196,
+    "COMPLETED_LATE": 5,
+    "EXPIRED_PROCESSING": 148,
+    "CLIENT_BACKLOG_EXHAUSTED": 531
+  },
+  "direct_log_bytes": {
+    "client": 5511914,
+    "server": 5871764
+  },
+  "buffered_log_bytes": {
+    "client": 5516888,
+    "server": 5873363
+  },
+  "limitations": [
+    "One nonconsecutive pair on shared host; no confidence interval or attribution of outcome differences.",
+    "10ms CPU quantization and200ms sampling; endpoints approximate and exclude some startup/teardown.",
+    "Event batching isolates a component of output cost, not total instrumentation overhead or state-lock accounting.",
+    "No policy configuration or default instrumentation changed based on results."
+  ]
+}

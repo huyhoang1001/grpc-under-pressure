@@ -1,0 +1,63 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+     Running unittests src/lib.rs (server/target/debug/deps/pressure_server-45a2c4d72b51c5ce)
+
+running 4 tests
+test tests::summary_round_trip_keeps_admission_distinct_from_completion ... ok
+test channel_contract_tests::owned_payloads_survive_handoff_and_drain_exactly_once ... ok
+test channel_contract_tests::reservation_blocks_read_ahead_and_drop_releases_eof_slot ... ok
+test tests::payload_round_trip_preserves_sequence_and_owned_bytes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (server/target/debug/deps/pressure_server-feb63396598e92b4)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/pressure-stage1.rs (server/target/debug/deps/pressure_stage1-0ea89af6a711b8ca)
+
+running 34 tests
+test stage1::controller::tests::intervening_eligible_tick_resets_each_threshold_streak ... ok
+test stage1::controller::tests::eligibility_initialization_ewma_and_missing_feedback_reset ... ok
+test stage1::controller::tests::strict_thresholds_near_full_hysteresis_and_bounds ... ok
+test stage1::tests::adaptive::controller_abort_is_supervised_and_stops_without_orphan_work ... ok
+test stage1::tests::adaptive::controller_growth_wakes_blocked_gate_and_fixed_policies_only_observe ... ok
+test stage1::tests::adaptive::eof_and_receive_error_release_existing_r_after_shrink ... ok
+test stage1::tests::adaptive::shrink_preserves_existing_reservation_and_handoff_or_release ... ok
+test stage1::tests::adaptive::controller_stops_at_eof_and_cancellation_without_orphan_references ... ok
+test stage1::tests::adaptive::update_handoff_completion_and_cancellation_races_preserve_ownership ... ok
+test stage1::histogram::tests::known_durations_and_frozen_phase_boundaries ... ok
+test stage1::tests::cancel_during_service_and_receive_cleans_permit ... ok
+test stage1::tests::completion_cancellation_races_never_double_dispose ... ok
+test stage1::tests::contract_schedule_has_exact_boundaries_and_retains_drain_delay ... ok
+test stage1::tests::delay_uses_service_start_not_enqueue_completion_or_message_count ... ok
+test stage1::tests::discard_sink_retains_formatting_histograms_and_counter_invariants ... ok
+test stage1::tests::empty_eof_releases_reservation ... ok
+test stage1::tests::fixed8_blocks_read_ahead_with_24_unused_physical_slots_and_worker_excluded ... ok
+test stage1::tests::adaptive::updates_during_cancel_worker_error_and_panic_leave_no_controller_or_work ... ok
+test stage1::tests::fixed8_counts_reserved_slot_in_pending_budget_and_releases_unused_permit ... ok
+test stage1::tests::fixed8_handoff_cancel_races_release_permits_and_classify_received_work_once ... ok
+test stage1::tests::fixed8_eof_progresses_and_drains_multiple_budget_windows ... ok
+test stage1::tests::full_queue_prevents_read_ahead_and_cancel_wakes_capacity ... ok
+test stage1::tests::fixed8_worker_error_and_panic_wake_the_blocked_logical_gate ... ok
+test stage1::tests::payload_ownership_and_synthetic_queue_phase ... ok
+test stage1::tests::phase_is_assigned_at_enqueue_even_when_dequeue_crosses_a_boundary ... ok
+test stage1::tests::physical_acquisition_error_releases_the_prior_logical_reservation ... ok
+test stage1::tests::received_handoff_failure_has_own_disposition ... ok
+test stage1::tests::sampler_failure_stops_the_server_instead_of_leaving_a_metrics_gap ... ok
+test stage1::tests::scheduled_worker_failure_keeps_capacity_wakeup_and_disposition ... ok
+test stage1::tests::worker_error_wakes_blocked_handler ... ok
+test stage1::tests::worker_panic_wakes_blocked_handler ... ok
+test stage1::tests::handoff_drain_and_unused_eof_reservation ... ok
+test stage1::tests::adaptive::shrink_stops_read_ahead_then_eof_drains_without_rejecting_work ... ok
+test stage1::tests::adaptive::healthy_paced_work_makes_progress_with_live_controller_and_no_starvation ... ok
+
+test result: ok. 34 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.25s
+
+   Doc-tests pressure_server
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

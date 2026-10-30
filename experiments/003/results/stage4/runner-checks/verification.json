@@ -1,0 +1,23 @@
+{
+  "contract_revision": "A01",
+  "synthetic_runner_checks_only": true,
+  "cases": [
+    {
+      "case": "exclusive_directory",
+      "verdict": "PASS",
+      "result": "refused existing output before mutation"
+    },
+    {
+      "case": "single_active_run_lock",
+      "verdict": "PASS",
+      "result": "second invocation refused without spawning application"
+    },
+    {
+      "case": "startup_failure",
+      "verdict": "PASS",
+      "result": "FAIL manifest/exclusion/log files preserved; sampler joined; no child process leaked",
+      "synthetic_only": true
+    }
+  ],
+  "verdict": "PASS"
+}

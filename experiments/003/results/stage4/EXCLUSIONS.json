@@ -1,0 +1,82 @@
+{
+  "primary_runs_attempted": 0,
+  "attempts": [
+    {
+      "directory": "experiments/003/results/stage4/low-wait",
+      "profile": "low",
+      "policy": "wait",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage4/final-low-wait",
+      "profile": "low",
+      "policy": "wait",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage4/overload-wait",
+      "profile": "overload",
+      "policy": "wait",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage4/overload-reject",
+      "profile": "overload",
+      "policy": "reject",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage4/overload-retry",
+      "profile": "overload",
+      "policy": "retry",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage4/overload-drop",
+      "profile": "overload",
+      "policy": "drop",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage4/overhead-wait-buffered",
+      "profile": "overload",
+      "policy": "wait",
+      "event_buffer_bytes": 65536,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    }
+  ],
+  "preliminary_passes": [
+    {
+      "directory": "low-wait",
+      "reason": "Passed before atomic marker/run-lock/abort-hardening changes. Replaced by final-low-wait for same-final-source pilot acceptance; raw data unchanged."
+    }
+  ],
+  "synthetic_runner_failures": "runner-checks/EXCLUSIONS.json; explicitly simulated startup failure, not a failed live pilot",
+  "live_safety_aborts": 0,
+  "development_build_notes": [
+    {
+      "status": "CORRECTED_BEFORE_PILOTS",
+      "reason": "New Go pilot CLI initially had a duplicate JSON map key; compiler rejected it. No pilot executed that build; console transcript not reconstructed."
+    }
+  ]
+}

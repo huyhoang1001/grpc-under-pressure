@@ -1,0 +1,930 @@
+{
+  "final-low-wait": {
+    "verdict": "PASS",
+    "counter_populations": {
+      "N": 40,
+      "A": 40,
+      "F": 40,
+      "S": 40,
+      "R": 40,
+      "retries": 0,
+      "retry_scheduled": 0,
+      "admitted": 40,
+      "worker_starts": 40,
+      "worker_exits": 40
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 40
+    },
+    "genuine_activation": {
+      "full_rejections": 0,
+      "full_drops": 0,
+      "actual_retries": 0
+    },
+    "clock_uncertainty_ns": 1262,
+    "client_high_water": {
+      "Pending": 1,
+      "Outstanding": 1,
+      "Events": 4,
+      "Responses": 1
+    },
+    "server_high_water": {
+      "queued": 1,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 1,
+      "immediate": 0,
+      "events": 4
+    },
+    "sampling_coverage": {
+      "server": {
+        "first_offset_ns": -1541715860,
+        "last_offset_ns": 7002012687,
+        "max_gap_ns": 200704885,
+        "rows": 44
+      },
+      "client": {
+        "first_offset_ns": -1541631222,
+        "last_offset_ns": 7002066799,
+        "max_gap_ns": 200730033,
+        "rows": 44
+      }
+    },
+    "rpc_end_offset_ns": 3917893305,
+    "client_half_close_offset_ns": 3916311169,
+    "drain_after_arrivals_ns": 0,
+    "observation_end_offset_ns": 7002332008,
+    "phase_marker_lateness_ns": [
+      682940,
+      1283665
+    ],
+    "profile": "low",
+    "policy": "wait",
+    "event_buffer_bytes": 0,
+    "worker_start_phase_cohorts": [
+      {
+        "phase": "initial",
+        "starts": 40,
+        "completed": 40,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11243336.0
+      },
+      {
+        "phase": "slowdown",
+        "starts": 0,
+        "completed": 0,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": null
+      },
+      {
+        "phase": "recovery",
+        "starts": 0,
+        "completed": 0,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": null
+      },
+      {
+        "phase": "drain",
+        "starts": 0,
+        "completed": 0,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": null
+      }
+    ],
+    "arrival_lateness_ns": {
+      "median": 401167.5,
+      "p99": 1112221,
+      "max": 1216964
+    },
+    "backlog_full_arrivals": {
+      "count": 0,
+      "outstanding33": 0,
+      "available_credit_at_arrival": 0
+    },
+    "send_duration_ns": {
+      "p50": 38207,
+      "p95": 60461,
+      "p99": 77177,
+      "max": 243927
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 8089600,
+        "last_observed_cpu_ns": 240000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 240000000,
+        "sample_window_offsets_ns": [
+          61685780,
+          7002012687
+        ]
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 14905344,
+        "last_observed_cpu_ns": 430000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 280000000,
+        "sample_window_offsets_ns": [
+          61749236,
+          7002066799
+        ]
+      }
+    },
+    "record_storage_estimates_bytes": {
+      "client": 646976,
+      "server": 1202192
+    },
+    "event_log_bytes": {
+      "client": 87568,
+      "server": 96119
+    },
+    "transport": {
+      "grpc_in_messages": 40,
+      "grpc_in_wire_bytes": 2215,
+      "grpc_out_messages": 40,
+      "grpc_out_wire_bytes": 658748,
+      "tcp_stream_read_bytes": 3480,
+      "tcp_stream_write_bytes": 659628
+    },
+    "writer_local_progress_ns": 1077749
+  },
+  "overload-wait": {
+    "verdict": "PASS",
+    "counter_populations": {
+      "N": 2880,
+      "A": 2349,
+      "F": 2349,
+      "S": 2349,
+      "R": 2349,
+      "retries": 0,
+      "retry_scheduled": 0,
+      "admitted": 2349,
+      "worker_starts": 2349,
+      "worker_exits": 2349
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 2199,
+      "EXPIRED_PROCESSING": 149,
+      "CLIENT_BACKLOG_EXHAUSTED": 531,
+      "COMPLETED_LATE": 1
+    },
+    "genuine_activation": {
+      "full_rejections": 0,
+      "full_drops": 0,
+      "actual_retries": 0
+    },
+    "clock_uncertainty_ns": 2033,
+    "client_high_water": {
+      "Pending": 32,
+      "Outstanding": 33,
+      "Events": 30,
+      "Responses": 5
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 0,
+      "events": 22
+    },
+    "sampling_coverage": {
+      "server": {
+        "first_offset_ns": -1548104897,
+        "last_offset_ns": 39337788196,
+        "max_gap_ns": 201830558,
+        "rows": 206
+      },
+      "client": {
+        "first_offset_ns": -1548018367,
+        "last_offset_ns": 39337887766,
+        "max_gap_ns": 201846021,
+        "rows": 206
+      }
+    },
+    "rpc_end_offset_ns": 36687966240,
+    "client_half_close_offset_ns": 36686656039,
+    "drain_after_arrivals_ns": 687966240,
+    "observation_end_offset_ns": 39001563349,
+    "phase_marker_lateness_ns": [
+      1672671,
+      1673611,
+      1256023,
+      3387765,
+      1438266
+    ],
+    "profile": "overload",
+    "policy": "wait",
+    "event_buffer_bytes": 0,
+    "worker_start_phase_cohorts": [
+      {
+        "phase": "initial",
+        "starts": 960,
+        "completed": 960,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11757005.0
+      },
+      {
+        "phase": "slowdown",
+        "starts": 372,
+        "completed": 223,
+        "processing_expiries": 149,
+        "completed_only_service_median_ns": 41580155
+      },
+      {
+        "phase": "recovery",
+        "starts": 962,
+        "completed": 962,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11684944.0
+      },
+      {
+        "phase": "drain",
+        "starts": 55,
+        "completed": 55,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11503439
+      }
+    ],
+    "arrival_lateness_ns": {
+      "median": 551631.5,
+      "p99": 1400176,
+      "max": 3127500
+    },
+    "backlog_full_arrivals": {
+      "count": 531,
+      "outstanding33": 523,
+      "available_credit_at_arrival": 8
+    },
+    "send_duration_ns": {
+      "p50": 24096,
+      "p95": 48433,
+      "p99": 124747,
+      "max": 1166120
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 9953280,
+        "last_observed_cpu_ns": 13420000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 13040000000,
+        "sample_window_offsets_ns": [
+          55306809,
+          39002149786
+        ]
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 24662016,
+        "last_observed_cpu_ns": 3990000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 3570000000,
+        "sample_window_offsets_ns": [
+          55370595,
+          39002212901
+        ]
+      }
+    },
+    "record_storage_estimates_bytes": {
+      "client": 1108333,
+      "server": 1460245
+    },
+    "event_log_bytes": {
+      "client": 5511914,
+      "server": 5871764
+    },
+    "transport": {
+      "grpc_in_messages": 2349,
+      "grpc_in_wire_bytes": 149283,
+      "grpc_out_messages": 2349,
+      "grpc_out_wire_bytes": 38702259,
+      "tcp_stream_read_bytes": 208353,
+      "tcp_stream_write_bytes": 38744945
+    },
+    "writer_local_progress_ns": 180822436
+  },
+  "overload-reject": {
+    "verdict": "PASS",
+    "counter_populations": {
+      "N": 2880,
+      "A": 2527,
+      "F": 2527,
+      "S": 2527,
+      "R": 2527,
+      "retries": 0,
+      "retry_scheduled": 0,
+      "admitted": 2238,
+      "worker_starts": 2238,
+      "worker_exits": 2238
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 2201,
+      "REJECTED_FINAL": 289,
+      "EXPIRED_PROCESSING": 30,
+      "CLIENT_BACKLOG_EXHAUSTED": 353,
+      "COMPLETED_LATE": 7
+    },
+    "genuine_activation": {
+      "full_rejections": 289,
+      "full_drops": 0,
+      "actual_retries": 0
+    },
+    "clock_uncertainty_ns": 2043,
+    "client_high_water": {
+      "Pending": 32,
+      "Outstanding": 33,
+      "Events": 30,
+      "Responses": 5
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 1,
+      "events": 30
+    },
+    "sampling_coverage": {
+      "server": {
+        "first_offset_ns": -1523822963,
+        "last_offset_ns": 39364547152,
+        "max_gap_ns": 203313813,
+        "rows": 206
+      },
+      "client": {
+        "first_offset_ns": -1523735842,
+        "last_offset_ns": 39364610036,
+        "max_gap_ns": 203291599,
+        "rows": 206
+      }
+    },
+    "rpc_end_offset_ns": 36346686391,
+    "client_half_close_offset_ns": 36345637172,
+    "drain_after_arrivals_ns": 346686391,
+    "observation_end_offset_ns": 39000234863,
+    "phase_marker_lateness_ns": [
+      1703193,
+      1001925,
+      962932,
+      1302380,
+      813884
+    ],
+    "profile": "overload",
+    "policy": "reject",
+    "event_buffer_bytes": 0,
+    "worker_start_phase_cohorts": [
+      {
+        "phase": "initial",
+        "starts": 960,
+        "completed": 960,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11739427.5
+      },
+      {
+        "phase": "slowdown",
+        "starts": 291,
+        "completed": 261,
+        "processing_expiries": 30,
+        "completed_only_service_median_ns": 41658133
+      },
+      {
+        "phase": "recovery",
+        "starts": 960,
+        "completed": 960,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11742118.0
+      },
+      {
+        "phase": "drain",
+        "starts": 27,
+        "completed": 27,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11774344
+      }
+    ],
+    "arrival_lateness_ns": {
+      "median": 569553.5,
+      "p99": 1596085,
+      "max": 8844033
+    },
+    "backlog_full_arrivals": {
+      "count": 353,
+      "outstanding33": 342,
+      "available_credit_at_arrival": 11
+    },
+    "send_duration_ns": {
+      "p50": 27882,
+      "p95": 57757,
+      "p99": 117482,
+      "max": 1126415
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 10153984,
+        "last_observed_cpu_ns": 14350000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 13910000000,
+        "sample_window_offsets_ns": [
+          79448287,
+          39004685143
+        ]
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 25202688,
+        "last_observed_cpu_ns": 4320000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 3840000000,
+        "sample_window_offsets_ns": [
+          79513185,
+          39004840827
+        ]
+      }
+    },
+    "record_storage_estimates_bytes": {
+      "client": 1115453,
+      "server": 1460245
+    },
+    "event_log_bytes": {
+      "client": 5790036,
+      "server": 6021995
+    },
+    "transport": {
+      "grpc_in_messages": 2527,
+      "grpc_in_wire_bytes": 160326,
+      "grpc_out_messages": 2527,
+      "grpc_out_wire_bytes": 41634987,
+      "tcp_stream_read_bytes": 226978,
+      "tcp_stream_write_bytes": 41680886
+    },
+    "writer_local_progress_ns": 102288200
+  },
+  "overload-retry": {
+    "verdict": "PASS",
+    "counter_populations": {
+      "N": 2880,
+      "A": 2645,
+      "F": 2506,
+      "S": 2645,
+      "R": 2645,
+      "retries": 139,
+      "retry_scheduled": 139,
+      "admitted": 2276,
+      "worker_starts": 2256,
+      "worker_exits": 2256
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 2248,
+      "REJECTED_FINAL": 230,
+      "EXPIRED_WAITING_OR_QUEUED": 20,
+      "EXPIRED_PROCESSING": 5,
+      "CLIENT_BACKLOG_EXHAUSTED": 374,
+      "COMPLETED_LATE": 3
+    },
+    "genuine_activation": {
+      "full_rejections": 369,
+      "full_drops": 0,
+      "actual_retries": 139
+    },
+    "clock_uncertainty_ns": 2304,
+    "client_high_water": {
+      "Pending": 32,
+      "Outstanding": 33,
+      "Events": 32,
+      "Responses": 5
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 1,
+      "events": 32
+    },
+    "sampling_coverage": {
+      "server": {
+        "first_offset_ns": -1559122321,
+        "last_offset_ns": 39327900854,
+        "max_gap_ns": 204678273,
+        "rows": 206
+      },
+      "client": {
+        "first_offset_ns": -1559029205,
+        "last_offset_ns": 39327954100,
+        "max_gap_ns": 204711414,
+        "rows": 206
+      }
+    },
+    "rpc_end_offset_ns": 36725104499,
+    "client_half_close_offset_ns": 36724112421,
+    "drain_after_arrivals_ns": 725104499,
+    "observation_end_offset_ns": 39002114555,
+    "phase_marker_lateness_ns": [
+      1566792,
+      1914240,
+      1208280,
+      1157923,
+      1754082
+    ],
+    "profile": "overload",
+    "policy": "retry",
+    "event_buffer_bytes": 0,
+    "worker_start_phase_cohorts": [
+      {
+        "phase": "initial",
+        "starts": 960,
+        "completed": 960,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11679586.5
+      },
+      {
+        "phase": "slowdown",
+        "starts": 285,
+        "completed": 280,
+        "processing_expiries": 5,
+        "completed_only_service_median_ns": 41580470.0
+      },
+      {
+        "phase": "recovery",
+        "starts": 953,
+        "completed": 953,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11759953
+      },
+      {
+        "phase": "drain",
+        "starts": 58,
+        "completed": 58,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11703995.5
+      }
+    ],
+    "arrival_lateness_ns": {
+      "median": 584341.0,
+      "p99": 1607850,
+      "max": 5203786
+    },
+    "backlog_full_arrivals": {
+      "count": 374,
+      "outstanding33": 363,
+      "available_credit_at_arrival": 11
+    },
+    "send_duration_ns": {
+      "p50": 23846,
+      "p95": 53630,
+      "p99": 131528,
+      "max": 2454590
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 9981952,
+        "last_observed_cpu_ns": 14630000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 14240000000,
+        "sample_window_offsets_ns": [
+          43854864,
+          39008434168
+        ]
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 24952832,
+        "last_observed_cpu_ns": 4130000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 3740000000,
+        "sample_window_offsets_ns": [
+          43911144,
+          39008490638
+        ]
+      }
+    },
+    "record_storage_estimates_bytes": {
+      "client": 1120173,
+      "server": 1460245
+    },
+    "event_log_bytes": {
+      "client": 6144598,
+      "server": 6238268
+    },
+    "transport": {
+      "grpc_in_messages": 2645,
+      "grpc_in_wire_bytes": 167918,
+      "grpc_out_messages": 2645,
+      "grpc_out_wire_bytes": 43579204,
+      "tcp_stream_read_bytes": 232555,
+      "tcp_stream_write_bytes": 43627235
+    },
+    "writer_local_progress_ns": 160629134
+  },
+  "overload-drop": {
+    "verdict": "PASS",
+    "counter_populations": {
+      "N": 2880,
+      "A": 2522,
+      "F": 2522,
+      "S": 2522,
+      "R": 2522,
+      "retries": 0,
+      "retry_scheduled": 0,
+      "admitted": 2219,
+      "worker_starts": 2219,
+      "worker_exits": 2219
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 2178,
+      "DROPPED": 303,
+      "EXPIRED_PROCESSING": 37,
+      "CLIENT_BACKLOG_EXHAUSTED": 358,
+      "COMPLETED_LATE": 4
+    },
+    "genuine_activation": {
+      "full_rejections": 0,
+      "full_drops": 303,
+      "actual_retries": 0
+    },
+    "clock_uncertainty_ns": 2003,
+    "client_high_water": {
+      "Pending": 32,
+      "Outstanding": 33,
+      "Events": 31,
+      "Responses": 5
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 1,
+      "events": 28
+    },
+    "sampling_coverage": {
+      "server": {
+        "first_offset_ns": -1543895815,
+        "last_offset_ns": 39371372334,
+        "max_gap_ns": 211172318,
+        "rows": 206
+      },
+      "client": {
+        "first_offset_ns": -1543804978,
+        "last_offset_ns": 39371471272,
+        "max_gap_ns": 211167101,
+        "rows": 206
+      }
+    },
+    "rpc_end_offset_ns": 36379477696,
+    "client_half_close_offset_ns": 36378354474,
+    "drain_after_arrivals_ns": 379477696,
+    "observation_end_offset_ns": 39000158985,
+    "phase_marker_lateness_ns": [
+      1314117,
+      704778,
+      1265021,
+      1169332,
+      1278446
+    ],
+    "profile": "overload",
+    "policy": "drop",
+    "event_buffer_bytes": 0,
+    "worker_start_phase_cohorts": [
+      {
+        "phase": "initial",
+        "starts": 960,
+        "completed": 960,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11722534.0
+      },
+      {
+        "phase": "slowdown",
+        "starts": 292,
+        "completed": 255,
+        "processing_expiries": 37,
+        "completed_only_service_median_ns": 41634321
+      },
+      {
+        "phase": "recovery",
+        "starts": 937,
+        "completed": 937,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11755781
+      },
+      {
+        "phase": "drain",
+        "starts": 30,
+        "completed": 30,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11690473.0
+      }
+    ],
+    "arrival_lateness_ns": {
+      "median": 605770.5,
+      "p99": 1887656,
+      "max": 9067599
+    },
+    "backlog_full_arrivals": {
+      "count": 358,
+      "outstanding33": 343,
+      "available_credit_at_arrival": 15
+    },
+    "send_duration_ns": {
+      "p50": 28373,
+      "p95": 75333,
+      "p99": 188638,
+      "max": 1210369
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 9986048,
+        "last_observed_cpu_ns": 15620000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 15180000000,
+        "sample_window_offsets_ns": [
+          59033490,
+          39004826565
+        ]
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 23031808,
+        "last_observed_cpu_ns": 4780000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 4340000000,
+        "sample_window_offsets_ns": [
+          59088453,
+          39004881778
+        ]
+      }
+    },
+    "record_storage_estimates_bytes": {
+      "client": 1115253,
+      "server": 1460245
+    },
+    "event_log_bytes": {
+      "client": 5783909,
+      "server": 6009365
+    },
+    "transport": {
+      "grpc_in_messages": 2522,
+      "grpc_in_wire_bytes": 159808,
+      "grpc_out_messages": 2522,
+      "grpc_out_wire_bytes": 41552607,
+      "tcp_stream_read_bytes": 224894,
+      "tcp_stream_write_bytes": 41598407
+    },
+    "writer_local_progress_ns": 170371585
+  },
+  "overhead-wait-buffered": {
+    "verdict": "PASS",
+    "counter_populations": {
+      "N": 2880,
+      "A": 2349,
+      "F": 2349,
+      "S": 2349,
+      "R": 2349,
+      "retries": 0,
+      "retry_scheduled": 0,
+      "admitted": 2349,
+      "worker_starts": 2349,
+      "worker_exits": 2349
+    },
+    "partition": {
+      "COMPLETED_ON_TIME": 2196,
+      "COMPLETED_LATE": 5,
+      "EXPIRED_PROCESSING": 148,
+      "CLIENT_BACKLOG_EXHAUSTED": 531
+    },
+    "genuine_activation": {
+      "full_rejections": 0,
+      "full_drops": 0,
+      "actual_retries": 0
+    },
+    "clock_uncertainty_ns": 1993,
+    "client_high_water": {
+      "Pending": 32,
+      "Outstanding": 33,
+      "Events": 30,
+      "Responses": 5
+    },
+    "server_high_water": {
+      "queued": 31,
+      "running": 1,
+      "staging": 1,
+      "receive": 1,
+      "terminal": 32,
+      "immediate": 0,
+      "events": 24
+    },
+    "sampling_coverage": {
+      "server": {
+        "first_offset_ns": -1568392747,
+        "last_offset_ns": 39317902034,
+        "max_gap_ns": 201953234,
+        "rows": 206
+      },
+      "client": {
+        "first_offset_ns": -1568042910,
+        "last_offset_ns": 39317961864,
+        "max_gap_ns": 201906564,
+        "rows": 206
+      }
+    },
+    "rpc_end_offset_ns": 36648658870,
+    "client_half_close_offset_ns": 36647372930,
+    "drain_after_arrivals_ns": 648658870,
+    "observation_end_offset_ns": 39000625227,
+    "phase_marker_lateness_ns": [
+      1556515,
+      943050,
+      1277836,
+      645381,
+      1209927
+    ],
+    "profile": "overload",
+    "policy": "wait",
+    "event_buffer_bytes": 65536,
+    "worker_start_phase_cohorts": [
+      {
+        "phase": "initial",
+        "starts": 960,
+        "completed": 960,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11747854.5
+      },
+      {
+        "phase": "slowdown",
+        "starts": 371,
+        "completed": 223,
+        "processing_expiries": 148,
+        "completed_only_service_median_ns": 41600854
+      },
+      {
+        "phase": "recovery",
+        "starts": 966,
+        "completed": 966,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11696500.0
+      },
+      {
+        "phase": "drain",
+        "starts": 52,
+        "completed": 52,
+        "processing_expiries": 0,
+        "completed_only_service_median_ns": 11738115.5
+      }
+    ],
+    "arrival_lateness_ns": {
+      "median": 575290.0,
+      "p99": 1604216,
+      "max": 4100035
+    },
+    "backlog_full_arrivals": {
+      "count": 531,
+      "outstanding33": 525,
+      "available_credit_at_arrival": 6
+    },
+    "send_duration_ns": {
+      "p50": 24387,
+      "p95": 52379,
+      "p99": 122365,
+      "max": 2115704
+    },
+    "process_metrics": {
+      "server": {
+        "sampled_rss_peak_bytes": 10256384,
+        "last_observed_cpu_ns": 13470000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 13100000000,
+        "sample_window_offsets_ns": [
+          36231771,
+          39009474652
+        ]
+      },
+      "client": {
+        "sampled_rss_peak_bytes": 24535040,
+        "last_observed_cpu_ns": 3920000000,
+        "cpu_resolution_ns": 10000000,
+        "sample_window_cpu_ns": 3520000000,
+        "sample_window_offsets_ns": [
+          36296569,
+          39009539770
+        ]
+      }
+    },
+    "record_storage_estimates_bytes": {
+      "client": 1108333,
+      "server": 1460245
+    },
+    "event_log_bytes": {
+      "client": 5516888,
+      "server": 5873363
+    },
+    "transport": {
+      "grpc_in_messages": 2349,
+      "grpc_in_wire_bytes": 149270,
+      "grpc_out_messages": 2349,
+      "grpc_out_wire_bytes": 38702259,
+      "tcp_stream_read_bytes": 208132,
+      "tcp_stream_write_bytes": 38744945
+    },
+    "writer_local_progress_ns": 180070189
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "contract_revision": "A01",
+  "synthetic_only": true,
+  "positive_control": "PASS",
+  "cases": [
+    {
+      "fault": "client-exits-before-cutoff",
+      "result": "REJECTED",
+      "reason": "client observation cutoff",
+      "synthetic_only": true
+    },
+    {
+      "fault": "sampler-stops-before-cutoff",
+      "result": "REJECTED",
+      "reason": "process sampling fails cutoff coverage: server",
+      "synthetic_only": true
+    },
+    {
+      "fault": "worker-barrier-enabled",
+      "result": "REJECTED",
+      "reason": "pilot controls",
+      "synthetic_only": true
+    },
+    {
+      "fault": "RPC-not-drained-by-cutoff",
+      "result": "REJECTED",
+      "reason": "EOF/drain beyond cutoff",
+      "synthetic_only": true
+    },
+    {
+      "fault": "missing-phase-cutoff",
+      "result": "REJECTED",
+      "reason": "phase marker coverage",
+      "synthetic_only": true
+    }
+  ],
+  "verdict": "PASS"
+}

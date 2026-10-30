@@ -81,3 +81,15 @@ func (l *Ledger) SetEpoch(epoch time.Time) {
 	defer l.mu.Unlock()
 	l.clockNow = func() int64 { return time.Since(epoch).Nanoseconds() }
 }
+
+// PilotEpoch preserves one wall-to-monotonic mapping for RPC and observation.
+func PilotEpoch(target time.Time) time.Time { return monotonicEpoch(target) }
+func (l *Ledger) MarkHalfClose(now uint64) error {
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	if e := l.room(); e != nil {
+		return e
+	}
+	l.event(now, "client_half_close", 0, 0)
+	return nil
+}

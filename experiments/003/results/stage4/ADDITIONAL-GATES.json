@@ -1,0 +1,72 @@
+{
+  "verdict": "PASS",
+  "script_sha256": "7677dac283565bade7fc45973bcd1f63a3ee8f5935311f76aed190a35c28e3aa",
+  "cases": {
+    "final-low-wait": {
+      "verdict": "PASS",
+      "attempts": 40,
+      "originals_attempted": 40,
+      "max_attempts_per_original": 1,
+      "all_attempt_ids_and_numbers_match": true,
+      "all_terminal_frames_locally_written_and_observed": true,
+      "refusal_first_offset_ns": null,
+      "refusal_last_offset_ns": null,
+      "source_hashes_unchanged": true
+    },
+    "overload-wait": {
+      "verdict": "PASS",
+      "attempts": 2349,
+      "originals_attempted": 2349,
+      "max_attempts_per_original": 1,
+      "all_attempt_ids_and_numbers_match": true,
+      "all_terminal_frames_locally_written_and_observed": true,
+      "refusal_first_offset_ns": null,
+      "refusal_last_offset_ns": null,
+      "source_hashes_unchanged": true
+    },
+    "overload-reject": {
+      "verdict": "PASS",
+      "attempts": 2527,
+      "originals_attempted": 2527,
+      "max_attempts_per_original": 1,
+      "all_attempt_ids_and_numbers_match": true,
+      "all_terminal_frames_locally_written_and_observed": true,
+      "refusal_first_offset_ns": 12553321513,
+      "refusal_last_offset_ns": 28542269261,
+      "source_hashes_unchanged": true
+    },
+    "overload-retry": {
+      "verdict": "PASS",
+      "attempts": 2645,
+      "originals_attempted": 2506,
+      "max_attempts_per_original": 3,
+      "all_attempt_ids_and_numbers_match": true,
+      "all_terminal_frames_locally_written_and_observed": true,
+      "refusal_first_offset_ns": 12597644999,
+      "refusal_last_offset_ns": 36221187922,
+      "source_hashes_unchanged": true
+    },
+    "overload-drop": {
+      "verdict": "PASS",
+      "attempts": 2522,
+      "originals_attempted": 2522,
+      "max_attempts_per_original": 1,
+      "all_attempt_ids_and_numbers_match": true,
+      "all_terminal_frames_locally_written_and_observed": true,
+      "refusal_first_offset_ns": 12552247544,
+      "refusal_last_offset_ns": 32328898845,
+      "source_hashes_unchanged": true
+    },
+    "overhead-wait-buffered": {
+      "verdict": "PASS",
+      "attempts": 2349,
+      "originals_attempted": 2349,
+      "max_attempts_per_original": 1,
+      "all_attempt_ids_and_numbers_match": true,
+      "all_terminal_frames_locally_written_and_observed": true,
+      "refusal_first_offset_ns": null,
+      "refusal_last_offset_ns": null,
+      "source_hashes_unchanged": true
+    }
+  }
+}

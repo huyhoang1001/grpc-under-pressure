@@ -1,0 +1,84 @@
+{
+  "files_scanned": 282,
+  "secret_pattern_hits": [],
+  "expected_large_raw_artifacts": [
+    {
+      "path": "experiments/003/results/stage4/overhead-wait-buffered/client-events.jsonl",
+      "bytes": 5516888,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overhead-wait-buffered/server/server-events.jsonl",
+      "bytes": 5873363,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overhead-wait-buffered/server/server-ledger.json",
+      "bytes": 2291027,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-drop/client-events.jsonl",
+      "bytes": 5783909,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-drop/server/server-events.jsonl",
+      "bytes": 6009365,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-drop/server/server-ledger.json",
+      "bytes": 2449450,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-reject/client-events.jsonl",
+      "bytes": 5790036,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-reject/server/server-events.jsonl",
+      "bytes": 6021995,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-reject/server/server-ledger.json",
+      "bytes": 2454938,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-retry/client-events.jsonl",
+      "bytes": 6144598,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-retry/server/server-events.jsonl",
+      "bytes": 6238268,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-retry/server/server-ledger.json",
+      "bytes": 2495237,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-wait/client-events.jsonl",
+      "bytes": 5511914,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-wait/server/server-events.jsonl",
+      "bytes": 5871764,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    },
+    {
+      "path": "experiments/003/results/stage4/overload-wait/server/server-ledger.json",
+      "bytes": 2291063,
+      "reason": "Expected full-workload raw event ledger or authoritative bounded-history snapshot; necessary for independent replay."
+    }
+  ],
+  "unexpected_large_files": [],
+  "protected_historical_files_reverified": 3000,
+  "note": "Limited pattern scan, not proof against all sensitive content. No binaries/caches/credentials/full payload dumps. Full raw JSONL and snapshots exceed2MiB by design; preserve for independent all-original replay."
+}

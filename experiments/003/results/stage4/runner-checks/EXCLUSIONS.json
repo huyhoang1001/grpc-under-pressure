@@ -1,0 +1,14 @@
+{
+  "primary_runs_attempted": 0,
+  "attempts": [
+    {
+      "directory": "experiments/003/results/stage4/runner-checks/synthetic-startup-failure",
+      "profile": "low",
+      "policy": "wait",
+      "event_buffer_bytes": 0,
+      "verdict": "FAIL",
+      "reason": "OSError('SYNTHETIC startup failure; no application process created')",
+      "safety_abort": false
+    }
+  ]
+}

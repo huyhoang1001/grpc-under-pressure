@@ -275,10 +275,11 @@ func (l *Ledger) expire(now uint64) error {
 		l.invalid = ErrEventFull.Error()
 		return ErrEventFull
 	}
-	n := 0
-	for i := 0; i < l.pendingN; i++ {
+	for i := 0; i < l.pendingN; {
 		id := l.pending[i]
 		if now >= l.manifest.Originals[id].Deadline {
+			l.pendingN--
+			l.pending[i] = l.pending[l.pendingN]
 			l.originals[id].Pending = false
 			if l.originals[id].Attempts == 0 {
 				l.originals[id].ClientObserved = ExpiredBeforeSend
@@ -288,11 +289,9 @@ func (l *Ledger) expire(now uint64) error {
 				l.event(now, "retry_expired_waiting", id, 0)
 			}
 		} else {
-			l.pending[n] = id
-			n++
+			i++
 		}
 	}
-	l.pendingN = n
 	l.heapify()
 	if l.legacySweeps {
 		l.event(now, "pending_deadline_sweep", 0, 0)

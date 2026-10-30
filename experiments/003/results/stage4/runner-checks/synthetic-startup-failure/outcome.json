@@ -1,0 +1,4 @@
+{
+  "verdict": "FAIL",
+  "reason": "OSError('SYNTHETIC startup failure; no application process created')"
+}

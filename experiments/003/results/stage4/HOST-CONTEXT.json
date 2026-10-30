@@ -1,0 +1,14 @@
+{
+  "captured_after_pilots": true,
+  "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+  "runtime_environment_subset": {
+    "GOMAXPROCS": null,
+    "GOGC": null,
+    "GOMEMLIMIT": null,
+    "TOKIO_WORKER_THREADS": null,
+    "RUST_LOG": "codex_exec_server=info,codex_cli=info,error"
+  },
+  "cpu_cgroup": "400000 100000",
+  "memory_cgroup": "34359738368",
+  "note": "Supplemental packaging-time context only, not a retroactive claim of sampled Go runtime settings. Every actual run records compiler versions, cgroup limits and exact launch arguments; Go runtime defaults under that recorded quota were retained."
+}

@@ -16,6 +16,15 @@ import (
 // No per-message goroutines/timers; one shared32-entry heap lives in Ledger.
 // This is not a calibrated benchmark runner (Stage3 must add that instrumentation).
 func ScheduledExchange(parent context.Context, client p.OverloadServiceClient, ledger *Ledger, target time.Time, output io.Writer) error {
+	return scheduledExchange(parent, client, ledger, target, output, 0)
+}
+
+// ScheduledExchangeWithCutoff pins the RPC deadline to the declared observation
+// cutoff. The caller retains the ledger/process through cutoff after early EOF.
+func ScheduledExchangeWithCutoff(parent context.Context, client p.OverloadServiceClient, ledger *Ledger, target time.Time, output io.Writer, cutoff uint64) error {
+	return scheduledExchange(parent, client, ledger, target, output, cutoff)
+}
+func scheduledExchange(parent context.Context, client p.OverloadServiceClient, ledger *Ledger, target time.Time, output io.Writer, cutoff uint64) error {
 	epoch := monotonicEpoch(target)
 	ledger.SetEpoch(epoch)
 	ledger.SetClock(true, CalibrateClock(epoch))
@@ -26,7 +35,14 @@ func ScheduledExchange(parent context.Context, client p.OverloadServiceClient, l
 			lastDeadline = id.Deadline
 		}
 	}
-	ctx, cancel := context.WithDeadline(parent, epoch.Add(time.Duration(lastDeadline)+time.Second))
+	rpcDeadline := epoch.Add(time.Duration(lastDeadline) + time.Second)
+	if cutoff != 0 {
+		if cutoff <= lastDeadline {
+			return fmt.Errorf("cutoff must exceed last immutable deadline")
+		}
+		rpcDeadline = epoch.Add(time.Duration(cutoff))
+	}
+	ctx, cancel := context.WithDeadline(parent, rpcDeadline)
 	defer cancel()
 	stream, err := client.Exchange(ctx)
 	if err != nil {
@@ -94,6 +110,11 @@ func ScheduledExchange(parent context.Context, client p.OverloadServiceClient, l
 			}
 			s := ledger.Snapshot()
 			if arrivalsDone.Load() && s.Pending == 0 && s.Outstanding == 0 {
+				if err := ledger.MarkHalfClose(now()); err != nil {
+					cancel()
+					errs <- err
+					return
+				}
 				errs <- stream.CloseSend()
 				return
 			}
