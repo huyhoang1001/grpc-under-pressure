@@ -41,11 +41,16 @@ struct Harness {
 }
 async fn harness(hooks: Hooks) -> Harness {
     let events = Arc::new(std::sync::Mutex::new(Vec::new()));
-    let shared = Shared::new(
+    let policy = pressure_e3_stage1::ledger::Policy::parse(
+        &std::env::var("E3_TEST_POLICY").unwrap_or_else(|_| "wait".into()),
+    )
+    .unwrap();
+    let shared = Shared::with_policy(
         Manifest::primary("transport-test"),
         Instant::now(),
         Box::new(Output(events.clone())),
         hooks,
+        policy,
     );
     let listener = TcpListener::bind("127.0.0.1:0").await.unwrap();
     let addr = listener.local_addr().unwrap();
@@ -443,6 +448,81 @@ async fn cancel_original_frame_cancels_only_its_owned_work_and_preserves_healthy
     );
     assert!(responses.message().await.unwrap().is_none());
     assert!(h.shared.ledger.lock().unwrap().failed.is_none());
+    drop(responses);
+    finish(h).await;
+}
+
+#[tokio::test]
+async fn actual_full_admission_policy_outcomes_retry_and_clean_drain() {
+    use pressure_e3_stage1::{ledger::Policy, protocol::Outcome};
+    let policy =
+        Policy::parse(&std::env::var("E3_TEST_POLICY").unwrap_or_else(|_| "wait".into())).unwrap();
+    let hooks = Hooks::default();
+    hooks.worker_service.set(false);
+    let mut h = harness(hooks).await;
+    let (tx, rx) = mpsc::channel(32);
+    let mut responses = h
+        .client
+        .exchange(ReceiverStream::new(rx))
+        .await
+        .unwrap()
+        .into_inner();
+    // Deliberate saturation fixture:33 raw attempts bypass the normal32 client
+    // credits. This cannot be presented as a conforming primary workload.
+    for id in 0..32 {
+        tx.send(work(&h.shared, id, id as u64, 1)).await.unwrap();
+    }
+    until(&h, |s| s.occupied == 32).await;
+    tx.send(work(&h.shared, 32, 100, 1)).await.unwrap();
+    until(&h, |s| s.attempt_entries == 33).await;
+    let mut count = 0;
+    if policy == Policy::Wait {
+        until(&h, |s| s.decoded_staging == 1).await;
+        assert_eq!(h.shared.ledger.lock().unwrap().snapshot().occupied, 32);
+    } else {
+        let frame = tokio::time::timeout(Duration::from_secs(1), responses.message())
+            .await
+            .unwrap()
+            .unwrap()
+            .unwrap();
+        let Some(server_frame::Frame::TerminalOutcome(t)) = frame.frame else {
+            panic!()
+        };
+        assert_eq!(t.attempt_id, 100);
+        assert_eq!(
+            t.outcome,
+            if policy == Policy::Drop {
+                Outcome::DroppedOverload
+            } else {
+                Outcome::RejectedOverload
+            } as i32
+        );
+        count += 1;
+        let s = h.shared.ledger.lock().unwrap().snapshot();
+        assert_eq!(s.originals[32].starts, 0);
+        assert_eq!(s.occupied, 32);
+    }
+    h.shared.hooks.worker_service.set(true);
+    if policy == Policy::Retry {
+        until(&h, |s| s.permits_released >= 1).await;
+        tx.send(work(&h.shared, 32, 101, 2)).await.unwrap();
+    }
+    drop(tx);
+    while let Some(frame) = responses.message().await.unwrap() {
+        let Some(server_frame::Frame::TerminalOutcome(t)) = frame.frame else {
+            panic!()
+        };
+        assert_eq!(t.outcome, Outcome::Completed as i32);
+        count += 1;
+    }
+    assert_eq!(count, if policy == Policy::Retry { 34 } else { 33 });
+    let s = h.shared.ledger.lock().unwrap().snapshot();
+    assert_eq!(
+        s.originals[32].starts,
+        u32::from(policy == Policy::Wait || policy == Policy::Retry)
+    );
+    assert!(s.originals.iter().all(|o| o.starts <= 1));
+    assert!(s.failed.is_none());
     drop(responses);
     finish(h).await;
 }

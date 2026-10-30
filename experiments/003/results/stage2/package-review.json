@@ -1,0 +1,28 @@
+{
+  "files_scanned": 108,
+  "secret_pattern_hits": [],
+  "large_files_over_2MiB": [],
+  "largest_files": [
+    {
+      "path": "experiments/003/results/stage2/preservation.json",
+      "bytes": 235946
+    },
+    {
+      "path": "experiments/003/results/stage2/interop-wait/client-events.jsonl",
+      "bytes": 101235
+    },
+    {
+      "path": "experiments/003/results/stage2/final-interop-wait/client-events.jsonl",
+      "bytes": 100613
+    },
+    {
+      "path": "experiments/003/results/stage2/final-interop-reject/client-events.jsonl",
+      "bytes": 99915
+    },
+    {
+      "path": "experiments/003/results/stage2/final-interop-drop/client-events.jsonl",
+      "bytes": 98574
+    }
+  ],
+  "note": "Limited secret-pattern and size review, not a proof against all sensitive content. No binaries, caches, credentials or transport payload dumps included. Logs contain deterministic fixture identities and loopback addresses. Source and protected-file hashes reverified."
+}

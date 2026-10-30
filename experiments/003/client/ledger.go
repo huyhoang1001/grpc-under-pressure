@@ -103,6 +103,8 @@ type OriginalRecord struct {
 	Arrived              bool
 	Pending, Outstanding bool
 	Attempts             int
+	ReadyAt              uint64
+	PendingOrder         uint64
 	ClientObserved       Disposition
 	Observed             *Observation
 }
@@ -114,11 +116,12 @@ type AttemptRecord struct {
 	Observed              *Observation
 }
 type Event struct {
-	Seq       uint64 `json:"seq"`
-	Offset    uint64 `json:"offset_ns"`
-	Kind      string `json:"kind"`
-	MessageID uint64 `json:"message_id"`
-	AttemptID uint64 `json:"attempt_id"`
+	Seq           uint64 `json:"seq"`
+	Offset        uint64 `json:"offset_ns"`
+	Kind          string `json:"kind"`
+	MessageID     uint64 `json:"message_id"`
+	AttemptID     uint64 `json:"attempt_id"`
+	ReadyOffsetNS uint64 `json:"ready_offset_ns,omitempty"`
 }
 type Snapshot struct {
 	Pending, Outstanding, Originals, Attempts, FirstAttempts, Retries, SendSuccess int
@@ -141,6 +144,9 @@ type Ledger struct {
 	seq                               uint64
 	closed                            bool
 	invalid                           string
+	policy                            Policy
+	rng                               uint64
+	pendingOrder                      uint64
 }
 
 func NewLedger(m Manifest) (*Ledger, error) {
@@ -164,7 +170,7 @@ func (l *Ledger) room() error {
 }
 func (l *Ledger) event(now uint64, kind string, id int, attempt uint64) {
 	l.seq++
-	l.events[(l.eventHead+l.eventN)%EventCapacity] = Event{l.seq, now, kind, uint64(id), attempt}
+	l.events[(l.eventHead+l.eventN)%EventCapacity] = Event{Seq: l.seq, Offset: now, Kind: kind, MessageID: uint64(id), AttemptID: attempt}
 	l.eventN++
 }
 func (l *Ledger) PopEvent() (Event, bool) {
@@ -190,8 +196,8 @@ func (l *Ledger) arrive(id int, now uint64) error {
 		o.ClientObserved = ClientBacklogExhausted
 	} else {
 		o.Pending = true
-		l.pending[l.pendingN] = id
-		l.pendingN++
+		o.ReadyAt = now
+		l.pushPending(id)
 	}
 	l.event(now, "original_arrival", id, 0)
 	return nil
@@ -223,14 +229,20 @@ func (l *Ledger) expire(now uint64) error {
 		id := l.pending[i]
 		if now >= l.manifest.Originals[id].Deadline {
 			l.originals[id].Pending = false
-			l.originals[id].ClientObserved = ExpiredBeforeSend
-			l.event(now, "expired_before_send", id, 0)
+			if l.originals[id].Attempts == 0 {
+				l.originals[id].ClientObserved = ExpiredBeforeSend
+				l.event(now, "expired_before_send", id, 0)
+			} else {
+				l.originals[id].ClientObserved = ExpiredWaitingQueued
+				l.event(now, "retry_expired_waiting", id, 0)
+			}
 		} else {
 			l.pending[n] = id
 			n++
 		}
 	}
 	l.pendingN = n
+	l.heapify()
 	l.event(now, "pending_deadline_sweep", 0, 0)
 	return nil
 }
@@ -270,7 +282,7 @@ func (l *Ledger) BeginNext(now, attempt uint64) (*p.Work, error) {
 	if err := l.expire(now); err != nil {
 		return nil, err
 	}
-	if l.pendingN == 0 || l.outstanding == OutstandingCapacity {
+	if l.pendingN == 0 || l.outstanding == OutstandingCapacity || l.originals[l.pending[0]].ReadyAt > now {
 		return nil, ErrBlocked
 	}
 	if err := l.room(); err != nil {
@@ -287,20 +299,23 @@ func (l *Ledger) BeginNext(now, attempt uint64) (*p.Work, error) {
 	}
 	id := l.pending[0]
 	o := &l.originals[id]
-	if o.Outstanding || o.Attempts != 0 {
+	if o.Outstanding || o.Attempts >= 3 {
 		return nil, ErrProtocol
 	}
-	copy(l.pending[:], l.pending[1:l.pendingN])
-	l.pendingN--
+	l.popPending()
 	o.Pending = false
 	o.Outstanding = true
+	o.Observed = nil // prior attempt history remains in attempts, never latest truth
+	o.ClientObserved = ""
 	o.Attempts++
-	l.first++
+	if o.Attempts == 1 {
+		l.first++
+	}
 	l.outstanding++
-	l.attempts[l.used] = AttemptRecord{ID: attempt, Original: id, Number: 1}
+	l.attempts[l.used] = AttemptRecord{ID: attempt, Original: id, Number: uint32(o.Attempts)}
 	l.used++
 	l.event(now, "attempt_initiated", id, attempt)
-	return l.manifest.Work(id, attempt, 1), nil
+	return l.manifest.Work(id, attempt, uint32(o.Attempts)), nil
 }
 func (l *Ledger) attempt(id uint64) *AttemptRecord {
 	for i := 0; i < l.used; i++ {
@@ -331,6 +346,10 @@ func (l *Ledger) SendReturn(id uint64, success bool, now uint64) error {
 func (l *Ledger) Apply(frame *p.ServerFrame, now uint64) error {
 	l.mu.Lock()
 	defer l.mu.Unlock()
+	if l.policy == Retry && l.eventN > EventCapacity-2 {
+		l.invalid = ErrEventFull.Error()
+		return ErrEventFull
+	}
 	if e := l.room(); e != nil {
 		return e
 	}
@@ -368,6 +387,25 @@ func (l *Ledger) Apply(frame *p.ServerFrame, now uint64) error {
 		l.outstanding--
 	}
 	o.ClientObserved = classify(v, l.manifest.Originals[a.Original].Deadline)
+	// Only a new explicit overload refusal authorizes a retry. Replay never does.
+	if t.Outcome == p.Outcome_REJECTED_OVERLOAD && l.policy == Retry && !l.closed {
+		if now >= l.manifest.Originals[a.Original].Deadline {
+			o.ClientObserved = ExpiredWaitingQueued
+			l.event(now, "retry_final_deadline", a.Original, a.ID)
+		} else if o.Attempts < 3 && l.pendingN < PendingCapacity {
+			o.Pending = true
+			o.ReadyAt = now + l.jitter(uint32(o.Attempts))
+			l.pushPending(a.Original)
+			l.event(now, "retry_scheduled", a.Original, a.ID)
+			l.events[(l.eventHead+l.eventN-1)%EventCapacity].ReadyOffsetNS = o.ReadyAt
+		} else {
+			if o.Attempts >= 3 {
+				l.event(now, "retry_final_attempt_limit", a.Original, a.ID)
+			} else {
+				l.event(now, "retry_final_pending_full", a.Original, a.ID)
+			}
+		}
+	}
 	l.event(now, "terminal_observed", a.Original, a.ID)
 	return nil
 }
@@ -443,6 +481,29 @@ func (l *Ledger) Verify() error {
 	}
 	if n != l.outstanding {
 		return fmt.Errorf("credit mismatch")
+	}
+	pendingFlags := 0
+	for _, o := range l.originals {
+		if o.Pending {
+			pendingFlags++
+		}
+		if o.Pending && o.Outstanding || o.Attempts > 3 {
+			return ErrProtocol
+		}
+	}
+	if pendingFlags != l.pendingN {
+		return fmt.Errorf("pending mismatch")
+	}
+	var seen [OriginalCapacity]bool
+	for i := 0; i < l.pendingN; i++ {
+		id := l.pending[i]
+		if id < 0 || id >= len(l.originals) || seen[id] || !l.originals[id].Pending {
+			return ErrProtocol
+		}
+		seen[id] = true
+		if i > 0 && l.lessPending(i, (i-1)/2) {
+			return fmt.Errorf("retry heap order")
+		}
 	}
 	return nil
 }

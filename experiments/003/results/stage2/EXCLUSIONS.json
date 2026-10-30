@@ -1,0 +1,52 @@
+{
+  "primary_runs_attempted": 0,
+  "performance_exclusions": [],
+  "development_and_acceptance_ledger": [
+    {
+      "id": "development-rust-policies-initial",
+      "status": "FAILED_THEN_CORRECTED",
+      "reason": "Two test fixture assertions used2s while Primary per-ID deadlines were retained after resetting schedule to0. Corrected synthetic fixture deadlines; no primary parameter changed. Initial result4passed2failed. Complete initial transcript was not saved to a file; failure details are recorded here, not reconstructed as a raw log."
+    },
+    {
+      "id": "development-go-retry-initial",
+      "status": "FAILED_THEN_CORRECTED",
+      "reason": "Two new tests exposed retry-pending expiry being classified before-send and prior refusal overriding that expiry. Corrected expiry/reconciliation. Complete initial transcript was not saved to a file; no fabricated raw transcript included."
+    },
+    {
+      "id": "interop-wait",
+      "status": "PASS_PRELIMINARY",
+      "reason": "Eight-message fixture passed before final runtime/retry-event changes. Preserved; superseded by final-interop-wait for final source verification."
+    },
+    {
+      "id": "checks/acceptance-1",
+      "status": "PASS_PRELIMINARY",
+      "reason": "All checks passed before adding the final actual_full_admission_policy_outcomes_retry_and_clean_drain transport test. Runtime source unchanged afterward. Final acceptance uses acceptance-2."
+    },
+    {
+      "id": "checks/acceptance-2",
+      "status": "PASS_FINAL",
+      "reason": null
+    },
+    {
+      "id": "final-interop-wait",
+      "status": "PASS_FINAL",
+      "reason": null
+    },
+    {
+      "id": "final-interop-reject",
+      "status": "PASS_FINAL",
+      "reason": null
+    },
+    {
+      "id": "final-interop-retry",
+      "status": "PASS_FINAL",
+      "reason": null
+    },
+    {
+      "id": "final-interop-drop",
+      "status": "PASS_FINAL",
+      "reason": null
+    }
+  ],
+  "expected_fault_tests": "Timeout, cancellation, full queues, protocol failures, lost ACK and explicit refusals are intentional correctness injections, not excluded primary runs."
+}

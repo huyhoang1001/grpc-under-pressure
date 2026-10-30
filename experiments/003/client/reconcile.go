@@ -92,7 +92,16 @@ func (l *Ledger) Reconcile(server *ServerSnapshot, cutoff uint64) (Reconciliatio
 	for id, o := range l.originals {
 		entry := Reconciled{ID: uint64(id), ClientObserved: o.ClientObserved}
 		s := index[id]
-		if s != nil && s.Terminal != nil {
+		if o.ClientObserved == ExpiredWaitingQueued && o.Observed != nil && o.Observed.Outcome == p.Outcome_REJECTED_OVERLOAD && (s == nil || s.Terminal == nil || s.Terminal.Outcome == int32(p.Outcome_REJECTED_OVERLOAD)) {
+			// Retry eligibility expired locally; retain refusal in attempt history.
+			entry.Disposition = ExpiredWaitingQueued
+		} else if o.Attempts > 1 && o.Observed == nil && (s == nil || s.Terminal == nil || s.Terminal.Outcome == int32(p.Outcome_REJECTED_OVERLOAD)) {
+			if !l.closed {
+				return r, fmt.Errorf("ambiguous retry without definitive stream closure")
+			}
+			entry.Disposition = Unknown
+			entry.Ambiguity = true
+		} else if s != nil && s.Terminal != nil {
 			v := Observation{p.Outcome(s.Terminal.Outcome), s.Terminal.Seq, s.Terminal.Offset, s.Terminal.Service, detail(s.Terminal.Detail)}
 			if v.Seq == 0 || v.Outcome < p.Outcome_COMPLETED || v.Outcome > p.Outcome_CANCELLED {
 				return r, ErrProtocol

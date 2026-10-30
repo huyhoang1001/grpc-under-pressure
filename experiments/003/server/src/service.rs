@@ -82,8 +82,17 @@ impl Shared {
         output: Box<dyn Write + Send>,
         hooks: Hooks,
     ) -> Arc<Self> {
+        Self::with_policy(manifest, epoch, output, hooks, crate::ledger::Policy::Wait)
+    }
+    pub fn with_policy(
+        manifest: Manifest,
+        epoch: Instant,
+        output: Box<dyn Write + Send>,
+        hooks: Hooks,
+        policy: crate::ledger::Policy,
+    ) -> Arc<Self> {
         Arc::new(Self {
-            ledger: Mutex::new(Ledger::new(manifest).unwrap()),
+            ledger: Mutex::new(Ledger::with_policy(manifest, policy).unwrap()),
             epoch,
             hooks,
             changed: Notify::new(),

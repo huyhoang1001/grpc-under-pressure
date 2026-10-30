@@ -1,5 +1,5 @@
 use pressure_e3_stage1::{
-    ledger::Manifest,
+    ledger::{Manifest, Policy},
     protocol::overload_service_server::OverloadServiceServer,
     service::{Hooks, Service, Shared},
 };
@@ -33,11 +33,19 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         return Err("Stage1 smoke epoch must be in the future".into());
     }
     let epoch = Instant::now() + Duration::from_nanos(u64::try_from(target - wall)?);
-    let shared = Shared::new(
+    let policy = std::env::args()
+        .collect::<Vec<_>>()
+        .windows(2)
+        .find(|w| w[0] == "--policy")
+        .map(|w| w[1].clone())
+        .unwrap_or_else(|| "wait".into());
+    let policy = Policy::parse(&policy)?;
+    let shared = Shared::with_policy(
         manifest,
         epoch,
         Box::new(File::create_new(out.join("server-events.jsonl"))?),
         Hooks::default(),
+        policy,
     );
     let listener = TcpListener::bind(arg("--addr")?).await?;
     let addr = listener.local_addr()?;

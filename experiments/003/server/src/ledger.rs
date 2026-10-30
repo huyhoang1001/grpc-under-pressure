@@ -178,7 +178,27 @@ pub struct Snapshot {
     pub attempts: Vec<Attempt>,
 }
 
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Policy {
+    Wait,
+    Reject,
+    Retry,
+    Drop,
+}
+impl Policy {
+    pub fn parse(value: &str) -> Result<Self, &'static str> {
+        match value {
+            "wait" => Ok(Self::Wait),
+            "reject" => Ok(Self::Reject),
+            "retry" => Ok(Self::Retry),
+            "drop" => Ok(Self::Drop),
+            _ => Err("unknown overload policy"),
+        }
+    }
+}
+
 pub struct Ledger {
+    policy: Policy,
     manifest: Manifest,
     originals: Vec<Option<Original>>,
     attempts: Vec<Option<Attempt>>,
@@ -207,6 +227,7 @@ impl Ledger {
         manifest.validate()?;
         assert!(logical <= ORIGINALS && attempts <= ATTEMPTS);
         Ok(Self {
+            policy: Policy::Wait,
             originals: vec![None; ORIGINALS],
             attempts: vec![None; ATTEMPTS],
             manifest,
@@ -227,6 +248,11 @@ impl Ledger {
             eof: false,
             failed: None,
         })
+    }
+    pub fn with_policy(manifest: Manifest, policy: Policy) -> Result<Self, Error> {
+        let mut ledger = Self::new(manifest)?;
+        ledger.policy = policy;
+        Ok(ledger)
     }
     fn room(&self) -> Result<(), Error> {
         if self.events.len() == EVENTS {
@@ -361,6 +387,9 @@ impl Ledger {
             return Err(Error::Protocol("NO_DECODE_RESERVATION"));
         }
         let id = self.validate_work(&work)?;
+        if self.policy == Policy::Drop && !work.expendable {
+            return Err(Error::Protocol("DROP_REQUIRES_EXPENDABLE"));
+        }
         if let Some(i) = self
             .attempts
             .iter()
@@ -527,7 +556,20 @@ impl Ledger {
             return Ok(());
         }
         if self.queue.len() + usize::from(self.running.is_some()) == BUDGET {
-            return Err(Error::Blocked);
+            if self.policy == Policy::Wait {
+                return Err(Error::Blocked);
+            }
+            let (outcome, detail) = if self.policy == Policy::Drop {
+                (Outcome::DroppedOverload, "DROPPED_OVERLOAD")
+            } else {
+                (Outcome::RejectedOverload, "REJECTED_OVERLOAD")
+            };
+            self.finish(id, outcome, now, detail, 0);
+            let first = self.originals[id].as_ref().unwrap().first_attempt;
+            self.attempts[first].as_mut().unwrap().immediate_reservation = true;
+            self.staging.take();
+            self.event(now, "policy_refusal", Some(id), None);
+            return Ok(());
         }
         let slot = self
             .terminal_slots
