@@ -1,0 +1,151 @@
+{
+  "version": "E3-STAGE5-1",
+  "contract_revision": "A01",
+  "application_baseline_commit": "e1370b0e625eec48fb39b94c6a5b4487f1abd962",
+  "blocks": [
+    {
+      "block": 1,
+      "jitter_seed": 1134903123497516951,
+      "order": [
+        "wait",
+        "drop",
+        "retry",
+        "reject"
+      ]
+    },
+    {
+      "block": 2,
+      "jitter_seed": 7335427334695112769,
+      "order": [
+        "retry",
+        "reject",
+        "wait",
+        "drop"
+      ]
+    },
+    {
+      "block": 3,
+      "jitter_seed": 9136803124150509004,
+      "order": [
+        "drop",
+        "reject",
+        "wait",
+        "retry"
+      ]
+    },
+    {
+      "block": 4,
+      "jitter_seed": 1435626977494426790,
+      "order": [
+        "drop",
+        "wait",
+        "reject",
+        "retry"
+      ]
+    },
+    {
+      "block": 5,
+      "jitter_seed": 16813872846671630229,
+      "order": [
+        "drop",
+        "retry",
+        "wait",
+        "reject"
+      ]
+    }
+  ],
+  "order_prng": "Python random.Random(20261030), shuffle wait/reject/retry/drop independently per block",
+  "jitter_seed_prng": "Python random.Random(3005).getrandbits(64), independent of ordering",
+  "required_valid_blocks": 5,
+  "max_full_block_attempts": 2,
+  "replacement": "A transient operational invalid run excludes its whole partial block; retry that complete block once, same order/seed. Do not finish remaining policies in invalid attempt. Stop on repeat invalidity, any safety/invariant/source failure, or same transient category twice. Never replace valid unfavorable outcomes.",
+  "configuration": {
+    "N": 2880,
+    "rate_per_s": 80,
+    "arrival_seconds": 36,
+    "cutoff_ns": 39000000000,
+    "payload_bytes": 16384,
+    "payload_seed": 1,
+    "client_outstanding": 33,
+    "client_pending": 32,
+    "server_admission": 32,
+    "workers": 1,
+    "service_ms": [
+      10,
+      40,
+      10
+    ],
+    "phase_boundaries_s": [
+      12,
+      24
+    ],
+    "deadline_ns": 2000000000,
+    "max_attempts": 3,
+    "event_buffer_bytes": 0,
+    "http2_windows": [
+      65535,
+      65535
+    ],
+    "event_capacity": 1024,
+    "client_response_capacity": 64,
+    "terminal_response_capacity": 32,
+    "immediate_response_capacity": 32,
+    "build_profile": "normal debug",
+    "guard_cpu_seconds": 30,
+    "guard_rss_bytes": 268435456,
+    "guard_file_bytes": 67108864,
+    "guard_wall_seconds": 51,
+    "sample_interval_ns": 200000000,
+    "configured_retries": false,
+    "retry_replay_bytes": 0,
+    "compression": false
+  },
+  "primary_analysis": {
+    "endpoint": "U/N, U=unique authoritative completion offset<=original deadline; N=2880 including unsent",
+    "pairs": [
+      [
+        "reject",
+        "wait"
+      ],
+      [
+        "retry",
+        "wait"
+      ],
+      [
+        "drop",
+        "wait"
+      ],
+      [
+        "retry",
+        "reject"
+      ],
+      [
+        "drop",
+        "reject"
+      ],
+      [
+        "drop",
+        "retry"
+      ]
+    ],
+    "estimate": "arithmetic mean of paired within-block differences; retain all five per-block differences and medians",
+    "uncertainty": "exact paired block bootstrap all n^n=3125 ordered size5 resamples; linear-interpolated2.5/97.5 percentiles; descriptive only, no p-values/significance/equivalence claim",
+    "completion_latency": "scheduled->authoritative terminal completion, only completed cohort; all completed and on-time-only n,p50,p95,p99 per-run; no pooled headline",
+    "secondary": "all-original partitions; A/N and retries/N; admission wait admitted cohort; queue residence started cohort; occupied worker ns by disposition; sampled RSS and /proc CPU; gRPC/TCP bytes; server owned payload byte-time integral[0,39]; queue max; send duration; all-original deadline attainment; recovery"
+  },
+  "recovery": {
+    "anchor_ns": 24000000000,
+    "cutoff_ns": 39000000000,
+    "clearance": "first time no pre24s admitted queued/running originals remain; zero if empty at24; censored if any unresolved by39. Do not impute censored values as recovery.",
+    "series": "one-second unique on-time completion counts and client pending+outstanding/server occupied originals for[24,39]",
+    "steady_state": "no claim from short recovery window"
+  },
+  "hypothesis_assessment": {
+    "H1": "supported if all5 WAIT runs show slowdown capacity constraint (completed-only service median>=40ms), occupied32, nonzero upstream pending and backlog/expiry. Mixed otherwise; no measured pressure despite constraint is contrary evidence.",
+    "H2": "descriptive support if mean paired REJECT-WAIT server payload-byte-time integral<0 and at least4/5 negative, with refusal present in all REJECT; otherwise mixed/not established. Report unique admitted fractions and peak occupancy too.",
+    "H3": "descriptive support only if mean paired RETRY-REJECT U/N>0, bootstrap lower>0, at least4/5 positive and retry-converted on-time completions in at least4 blocks. Zero conversions is contrary to conversion benefit; do not infer benefit from aggregate noise alone.",
+    "H4": "outcome-label distinction alone insufficient. Assess DROP-REJECT U/N/retention/conditional timing. No consistent paired direction(>=4/5) and intervals crossing0 means no distinct performance tradeoff established, not proof of equivalence.",
+    "H5": "report recovery clearance/censoring and per-second rates; descriptive differentiation if at least one uncensored pair has interval excluding0 and>=4/5 consistent direction. Censoring/mixed evidence remains inconclusive.",
+    "no_claim": "no universal winner, no causal attribution beyond this in-memory/debug/single-host model; conditional cohorts differ and all-original fractions govern headline"
+  }
+}
