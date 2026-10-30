@@ -1,0 +1,8 @@
+{
+  "files_scanned": 153,
+  "secret_pattern_hits": [],
+  "large_files_over_2MiB": [],
+  "largest_file_bytes": 266377,
+  "source_and_historical_hashes_reverified": true,
+  "note": "Limited pattern/size review; not a guarantee against all sensitive content. No binaries/cache/full payload dumps archived."
+}

@@ -11,10 +11,11 @@ import (
 )
 
 const (
-	OriginalCapacity    = 2880
-	AttemptCapacity     = 8640
-	PendingCapacity     = 32
-	OutstandingCapacity = 32
+	OriginalCapacity = 2880
+	AttemptCapacity  = 8640
+	PendingCapacity  = 32
+	// A01: minimal headroom above the fixed32 server admission budget.
+	OutstandingCapacity = 33
 	ResponseCapacity    = 64
 	EventCapacity       = 1024
 	PayloadBytes        = 16384
@@ -470,7 +471,7 @@ func (l *Ledger) Verify() error {
 	if l.invalid != "" {
 		return errors.New(l.invalid)
 	}
-	if l.pendingN > 32 || l.outstanding > 32 || l.used > AttemptCapacity {
+	if l.pendingN > PendingCapacity || l.outstanding > OutstandingCapacity || l.used > AttemptCapacity {
 		return ErrCapacity
 	}
 	n := 0

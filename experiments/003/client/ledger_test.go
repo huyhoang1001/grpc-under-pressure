@@ -47,16 +47,16 @@ func TestT01All2880UnsentAndPartition(t *testing.T) {
 }
 func TestT02PendingOverflowOutstandingAndExpiry(t *testing.T) {
 	l := testLedger(t)
-	for id := 0; id < 32; id++ {
+	for id := 0; id < OutstandingCapacity; id++ {
 		begin(t, l, id, uint64(id))
 	}
-	for id := 32; id <= 64; id++ {
+	for id := OutstandingCapacity; id <= OutstandingCapacity+PendingCapacity; id++ {
 		if e := l.Arrive(id, 0); e != nil {
 			t.Fatal(e)
 		}
 	}
 	s := l.Snapshot()
-	if s.Pending != 32 || s.Outstanding != 32 || l.originals[64].ClientObserved != ClientBacklogExhausted {
+	if s.Pending != PendingCapacity || s.Outstanding != OutstandingCapacity || l.originals[OutstandingCapacity+PendingCapacity].ClientObserved != ClientBacklogExhausted {
 		t.Fatal(s)
 	}
 	if _, e := l.BeginNext(0, 100); e != ErrBlocked {
@@ -69,7 +69,7 @@ func TestT02PendingOverflowOutstandingAndExpiry(t *testing.T) {
 		t.Fatal(e)
 	}
 	s = l.Snapshot()
-	if s.Pending != 0 || s.Outstanding != 32 {
+	if s.Pending != 0 || s.Outstanding != OutstandingCapacity {
 		t.Fatal(s)
 	}
 	l.Close(3_000_000_000)
@@ -81,7 +81,7 @@ func TestT02PendingOverflowOutstandingAndExpiry(t *testing.T) {
 	for _, n := range r.Counts {
 		sum += n
 	}
-	if sum != 2880 || r.Counts[Unknown] != 32 || r.Counts[ClientBacklogExhausted] != 1 {
+	if sum != 2880 || r.Counts[Unknown] != OutstandingCapacity || r.Counts[ClientBacklogExhausted] != 1 {
 		t.Fatal(r.Counts)
 	}
 }

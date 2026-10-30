@@ -1,6 +1,6 @@
 # VALIDITY-003 — E3 Accounting, Correctness, and Run Acceptance
 
-Status: Stage 0 v1.0. Normative alongside EXPERIMENT-003.md and PROTOCOL-003.md. No results exist at freeze.
+Status: Stage 0 v1.1, amendment A01 (client outstanding33; original v1.0 at commit000308b). Normative alongside EXPERIMENT-003.md and PROTOCOL-003.md. No results exist at freeze.
 
 ## 1. Authoritative populations and reconciliation
 N = 2880 immutable original scheduled IDs. A = total application attempts initiated (not successful Send returns). S = grpc-go Send returns success. R = server decoded attempts. F = originals with first attempt initiated. A = F + retries, F<=N, retries<=2N, A<=8640. S<=A and R<=A; S and R have no required ordering because transport failure may occur after server decode and before Send returns. Each attempt has unique attempt_id and exactly one original ID. A retry preserves original payload, deadline and client. Each original has at most one active attempt.
@@ -10,7 +10,7 @@ Reconciled terminal partition at t=39 s: N = COMPLETED_ON_TIME + COMPLETED_LATE 
 U = COMPLETED_ON_TIME; primary U/N. Deadline attainment curves use all N originals, not completed-only population. A/N and retries/N include unsent originals. Conditional latency distributions disclose cohort, count, and policy. Report admitted fraction per original, per attempt and completion fraction separately. No dropped or rejected original counts as useful processing.
 
 ## 2. Safety invariants (hard run validity)
-- `0 <= client_pending <= 32`; `0 <= client_outstanding <= 32`; retry scheduling consumes shared pending capacity.
+- `0 <= client_pending <= 32`; `0 <= client_outstanding <= 33`; retry scheduling consumes shared pending capacity.
 - `0 <= server_queued + server_running + cancellation_pending <= 32`, with each occupied slot counted exactly once (cancellation-pending running remains running, not double counted).
 - `server_running <= 1`; `server_decoded_staging <= 1`; `server_immediate_response_queue <= 32`; `server_reserved_terminal_responses <= 32`; `client_response_queue <= 64`; `event_writer_queue <= 1024`.
 - For every acquired permit exactly one release, after removal/worker exit, never merely on cancellation request; no negative occupancy.
@@ -62,3 +62,13 @@ At least five valid matched blocks, policy order randomized within each. Same or
 
 ## 7. Artifacts and acceptance stages
 Per run: `manifest.json`, `client-events.jsonl`, `server-events.jsonl`, `client-metrics.csv`, `server-metrics.csv`, `reconciliation.json`, `verification.json`; per block `block-manifest.json`; experiment `EXCLUSIONS.json`, scripts and charts with reproducible source. Stage 1: protocol tests and deterministic reconciliation fixtures pass. Stage 2: all T01–T20 pass. Stage 3: counters reconcile to event logs and timing calibrated. Stage 4: pilot demonstrates observability and safe stop without changing primary parameters. Stage 5: all matched blocks valid and independently reanalyzable. Stage 6: secondary comparisons preserve aggregate original demand. Stage 7: independent evidence-to-claims review before Blog 3.
+
+## Amendment A01 — minimal client admission headroom
+
+A01 changes only the client outstanding attempt-credit limit from32 to33 for every policy. With server admission fixed32,33 is the smallest integer limit permitting a conforming single client to submit an additional attempt to a full server. The choice follows ownership arithmetic, not observed policy performance. Pending capacity remains32 shared by originals/retries; server admission32, staging<=1, admitted-terminal reservations32, immediate responses32, client response events64 and event writers1024 are unchanged. The same limit applies to WAIT/REJECT/RETRY/DROP. Credit is acquired before Send and retained until a terminal response or definitive closure; deadlines and retries are unchanged.
+
+At most65 originals can be client pending or outstanding (32+33), rather than64. One extra credit permits at most16384 additional bytes of distinct unacknowledged application payload; this is an ownership bound, not a bound on transport/allocator/process RSS. Server admitted-plus-staged payload remains at most33*16384 bytes. Transport windows remain65535; credits do not override HTTP/2 flow control or prove delivery. Immediate-response pressure still pauses decoding; no response buffers are enlarged.
+
+Acceptance additionally requires a real Go scheduler/Rust tonic saturation fixture, respecting33 client credits and all other resource bounds, showing full-budget refusal for REJECT/RETRY and drop for DROP, real bounded retries, plus bounded/cancellable WAIT. A deterministic worker barrier is permitted only in labeled correctness fixtures; no fabricated policy outcomes or bypass of client credit enforcement. The34th simultaneous outstanding attempt must block, while pending/retry overflow and deadline behavior remain explicit.
+
+All later run/configuration manifests (not the immutable original-identity workload file) must identify contract revision A01 and client_outstanding_limit=33. Pre-amendment Stage1/2 evidence remains unchanged and valid for its original correctness scope; it does not establish A01 saturation reachability. Future policy comparisons must use A01 identically for all policies, and must not pool results with the32-credit Stage0 configuration or attribute cross-revision differences solely to policy. Primary workload, server budget, hypotheses, analysis definitions and other research decisions are unchanged.

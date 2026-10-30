@@ -1,0 +1,32 @@
+{
+  "primary_runs_attempted": 0,
+  "failed_fixture_runs": [],
+  "exclusions": [],
+  "preliminary_passes": [
+    {
+      "path": "development-reject-1",
+      "reason": "First conforming fixture, before formatting/independent pending replay and final source-comment updates."
+    },
+    {
+      "path": "development-retry-1",
+      "reason": "Development real-retry validation before final source comment; retained."
+    },
+    {
+      "path": "development-wait-cancel-1",
+      "reason": "Development cancellation validation before final source comment; retained."
+    },
+    {
+      "path": "checks/final-1",
+      "reason": "Passed before clarifying that A01 revision belongs to run/configuration manifests, not workload identities. Final-2 pins final specifications."
+    }
+  ],
+  "final_acceptance": [
+    "checks/final-2",
+    "wait-drain",
+    "reject-drain",
+    "retry-drain",
+    "drop-drain",
+    "wait-cancel"
+  ],
+  "expected_faults": "Worker barrier in every saturation fixture; deliberate WAIT stream cancellation in wait-cancel. These are labeled correctness injections, not invalid or excluded primary runs."
+}

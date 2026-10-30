@@ -1,0 +1,43 @@
+{
+  "revision": "A01",
+  "previous_revision": "Stage0-v1.0",
+  "base_commit": "000308b79d07228d47cfd52458591893d9c02d7b",
+  "selection_basis": "Smallest integer above server admission32; selected before saturation executions, not from performance.",
+  "changes": {
+    "client_outstanding_limit": {
+      "before": 32,
+      "after": 33
+    }
+  },
+  "unchanged": {
+    "server_admission": 32,
+    "client_pending": 32,
+    "server_staging": 1,
+    "server_admitted_terminal_reservations": 32,
+    "server_immediate_responses": 32,
+    "client_response_events": 64,
+    "event_writers": 1024,
+    "payload_bytes": 16384,
+    "deadline_ns": 2000000000,
+    "primary_rate": 80,
+    "primary_originals": 2880,
+    "primary_arrival_seconds": 36,
+    "observation_cutoff_seconds": 39
+  },
+  "specification_hashes": {
+    "EXPERIMENT-003.md": {
+      "before_sha256": "d6b55003c321a25f4c2a9f8e1043b07f808ca165f6f5a29c33e8a6bafa40ea3b",
+      "after_sha256": "1e7ad97d0f575b5aac089fce09690231f6113d803a451f065492bdd56d402ebb"
+    },
+    "PROTOCOL-003.md": {
+      "before_sha256": "371d01e88ffecb757fe18dade62bb9900b11552c7ae69059317cfa2f3ca194da",
+      "after_sha256": "e7b14d8273ec3bec1afb484414e3fabf974e5266376fd09db1eb7be91252b8f0"
+    },
+    "VALIDITY-003.md": {
+      "before_sha256": "4f404cf08d760c2306df1c473732ad920b73b09641678ade45807c2c7c600d77",
+      "after_sha256": "428f3c6b198e8f1c9b219160b76b68f747998a2a1a084b322161c2e417aca699"
+    }
+  },
+  "common_amendment_text_identical": true,
+  "verdict": "GO_FOR_STAGE3_INSTRUMENTATION"
+}

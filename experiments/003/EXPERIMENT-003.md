@@ -1,6 +1,6 @@
 # EXPERIMENT-003 — Backpressure Is Not an Overload Policy
 
-Status: Stage 0 contract v1.0 — implementation authorized subject to Stage 1 correctness gates; no measured findings.
+Status: Stage 0 contract v1.1, amendment A01 — client outstanding credits33; original v1.0 preserved at commit000308b. No primary measured findings.
 Companion contracts: PROTOCOL-003.md and VALIDITY-003.md. These three files are normative together.
 
 ## 1. Question and scope
@@ -27,7 +27,7 @@ Continuity: E1 exposed application buffering despite transport flow control; E2 
 | Server admission | 32 total occupied slots = queued + running + cancellation-pending |
 | Deadline | original scheduled timestamp + 2,000 ms, immutable across attempts |
 | Client original pending | 32 slots; local backlog-full becomes CLIENT_BACKLOG_EXHAUSTED immediately |
-| Client outstanding | 32 attempt credits; one attempt per original at a time |
+| Client outstanding | 33 attempt credits; one attempt per original at a time |
 | Server decoded staging | at most 1 request outside admission/identity records |
 | Server terminal response reservations | 32 admitted-work reservations plus 32 immediate-response slots |
 | Client response processing | direct nonblocking ledger update; bounded response-event channel capacity 64, drained independently |
@@ -79,3 +79,13 @@ See VALIDITY-003.md. Require exact manifest identity, pinned commit and lockfile
 
 ## 9. Boundaries
 No durable exactly-once semantics, crash recovery, database, adaptive tuning, retries on ambiguous delivery, production CPU saturation, automatic transport-level guarantee of message delivery, or universal policy ranking. E3 assesses a fixed, bounded simulated service and explicit application-level outcomes.
+
+## Amendment A01 — minimal client admission headroom
+
+A01 changes only the client outstanding attempt-credit limit from32 to33 for every policy. With server admission fixed32,33 is the smallest integer limit permitting a conforming single client to submit an additional attempt to a full server. The choice follows ownership arithmetic, not observed policy performance. Pending capacity remains32 shared by originals/retries; server admission32, staging<=1, admitted-terminal reservations32, immediate responses32, client response events64 and event writers1024 are unchanged. The same limit applies to WAIT/REJECT/RETRY/DROP. Credit is acquired before Send and retained until a terminal response or definitive closure; deadlines and retries are unchanged.
+
+At most65 originals can be client pending or outstanding (32+33), rather than64. One extra credit permits at most16384 additional bytes of distinct unacknowledged application payload; this is an ownership bound, not a bound on transport/allocator/process RSS. Server admitted-plus-staged payload remains at most33*16384 bytes. Transport windows remain65535; credits do not override HTTP/2 flow control or prove delivery. Immediate-response pressure still pauses decoding; no response buffers are enlarged.
+
+Acceptance additionally requires a real Go scheduler/Rust tonic saturation fixture, respecting33 client credits and all other resource bounds, showing full-budget refusal for REJECT/RETRY and drop for DROP, real bounded retries, plus bounded/cancellable WAIT. A deterministic worker barrier is permitted only in labeled correctness fixtures; no fabricated policy outcomes or bypass of client credit enforcement. The34th simultaneous outstanding attempt must block, while pending/retry overflow and deadline behavior remain explicit.
+
+All later run/configuration manifests (not the immutable original-identity workload file) must identify contract revision A01 and client_outstanding_limit=33. Pre-amendment Stage1/2 evidence remains unchanged and valid for its original correctness scope; it does not establish A01 saturation reachability. Future policy comparisons must use A01 identically for all policies, and must not pool results with the32-credit Stage0 configuration or attribute cross-revision differences solely to policy. Primary workload, server budget, hypotheses, analysis definitions and other research decisions are unchanged.
