@@ -1,0 +1,382 @@
+[
+  {
+    "id": "C01",
+    "scope": "Engineering synthesis",
+    "classification": "QUALIFIED",
+    "claim": "Backpressure is not a complete overload policy.",
+    "publication_wording": "A bound can limit admitted work; it cannot decide which demand should wait, be refused, be retried or be discarded.",
+    "evidence": [
+      "../../PROTOCOL-003.md#5-four-policy-semantics",
+      "audit/REVIEW-AUDIT.json#/runs"
+    ],
+    "qualification": "A design conclusion supported by different outcomes under the same admission bound; no isolated HTTP/2 transport-blocking experiment here.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C02",
+    "scope": "Primary",
+    "classification": "SUPPORTED",
+    "claim": "Bounded admission does not guarantee original-deadline success.",
+    "publication_wording": "All primary runs respected32 occupied server slots, yet on-time completion averaged76.0\u201377.6% of every scheduled original.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/runs",
+      "../stage5/analysis/RESULTS.json#/policies"
+    ],
+    "qualification": "Application ownership is bounded; do not substitute a bound on total RSS or a hard real-time execution guarantee.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C03",
+    "scope": "Primary H3",
+    "classification": "SUPPORTED",
+    "claim": "RETRY improved all-original deadline goodput over REJECT in this primary model.",
+    "publication_wording": "Mean paired RETRY\u2212REJECT was+1.410 percentage points; descriptive95% interval+0.889 to+2.042; five of five block differences positive.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/primary_paired/retry-minus-reject/U_over_N",
+      "../stage5/analysis/RESULTS.json#/paired/retry-minus-reject/U_over_N"
+    ],
+    "qualification": "N2880/run,2s deadline,one client/worker; paired n5 intervals are descriptive, not significance or a universal winner.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C04",
+    "scope": "Primary cost",
+    "classification": "SUPPORTED",
+    "claim": "Retries incurred extra attempts; normalizers matter.",
+    "publication_wording": "RETRY averaged124.8 retries/run: retries/N4.333%, A/F1.0500 and A/N0.9101. Its total attempts exceeded REJECT by91.2/run because first-attempt populations also changed.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/runs",
+      "../stage5/analysis/RESULTS.json#/runs"
+    ],
+    "qualification": "Do not call4.333% the total-attempt increase relative to REJECT; that increase is3.605%. A/N can be below1 while retries amplify sent originals.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C05",
+    "scope": "Primary mechanism",
+    "classification": "QUALIFIED",
+    "claim": "Previously refused originals sometimes completed on time after retry.",
+    "publication_wording": "There were88,95,100,83,77 such originals in the five RETRY runs.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/runs",
+      "../stage5/analysis/OFFLINE-AUDIT.json#/rows"
+    ],
+    "qualification": "Conversion IDs are observed lifecycle facts, not the net counterfactual gain over REJECT (75,22,34,47,25).",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C06",
+    "scope": "Primary conditional latency",
+    "classification": "QUALIFIED",
+    "claim": "RETRY has a conditional recovery-cohort latency cost.",
+    "publication_wording": "For completed originals scheduled in[24,36), RETRY per-run p95 was1.054\u20131.100s versus REJECT0.573\u20130.733s, higher in all five blocks.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/primary_recovery_conditional",
+      "../stage5/analysis/RESULTS.json#/runs"
+    ],
+    "qualification": "Cohorts differ: RETRY n934\u2013956, REJECT n900\u2013932; only882\u2013922 completed IDs are shared per pair. This is not the delay imposed on every original or a fixed-cohort causal estimate.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C07",
+    "scope": "Primary ordering",
+    "classification": "INCONCLUSIVE",
+    "claim": "Goodput ordering among WAIT, REJECT and DROP.",
+    "publication_wording": "No clear ordering was established among these three under the primary workload.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/primary_paired",
+      "../stage5/analysis/RESULTS.json#/paired"
+    ],
+    "qualification": "All three paired descriptive intervals cross0; this neither proves equality nor excludes meaningful differences in other workloads.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C08",
+    "scope": "Primary equivalence",
+    "classification": "UNSUPPORTED",
+    "claim": "WAIT, REJECT and DROP are equivalent.",
+    "publication_wording": "Do not publish an equivalence claim.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/primary_paired"
+    ],
+    "qualification": "No equivalence margin/test or adequate population precision was established.",
+    "origin": "Rejected extrapolation; not attributed to the authors"
+  },
+  {
+    "id": "C09",
+    "scope": "Primary H2",
+    "classification": "QUALIFIED",
+    "claim": "REJECT retains less server work than WAIT.",
+    "publication_wording": "REJECT\u2019s queued+worker payload-byte-time integral was lower in5/5 pairs, mean\u22120.500MiB\u00b7s over39s.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/primary_paired/reject-minus-wait/payload_byte_ns",
+      "../stage5/analysis/RESULTS.json#/paired/reject-minus-wait/server_payload_byte_ns"
+    ],
+    "qualification": "This operational retention metric excludes staging, metadata, transport and allocator memory; both variants reached occupied32. It is not a demonstrated total-process-memory reduction.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C10",
+    "scope": "Primary H4",
+    "classification": "INCONCLUSIVE",
+    "claim": "DROP offers a distinct operational advantage over REJECT.",
+    "publication_wording": "No distinct goodput/retention tradeoff was established for DROP versus REJECT here.",
+    "evidence": [
+      "../stage5/analysis/RESULTS.json#/paired/drop-minus-reject",
+      "../../PROTOCOL-003.md#5-four-policy-semantics"
+    ],
+    "qualification": "All work is expendable and both policies return per-message terminal frames. DROP is not a no-response/fire-and-forget transport variant.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C11",
+    "scope": "Primary H5",
+    "classification": "QUALIFIED",
+    "claim": "Recovery differs between policies.",
+    "publication_wording": "Some pre24-admitted server-cohort clearance comparisons differ descriptively; client backlog can persist much longer.",
+    "evidence": [
+      "../stage5/analysis/RESULTS.json#/paired",
+      "../stage5/analysis/RESULTS.json#/runs",
+      "../stage5/analysis/figures/recovery-observed-intervals.png"
+    ],
+    "qualification": "Cohort clearance is not whole-system recovery or a steady-state guarantee. Do not headline millisecond clearance differences as an overall recovery winner.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C12",
+    "scope": "Secondary A",
+    "classification": "SUPPORTED",
+    "claim": "Actual5s versus500ms deadlines change on-time completion.",
+    "publication_wording": "Within the secondary runtime,5s\u2212500ms paired U/N gains were positive in all five blocks for each policy.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/secondary_deadline_paired",
+      "../stage6/analysis/RESULTS.json#/contrasts"
+    ],
+    "qualification": "These are new executions with immutable scenario deadlines, not reclassified2s primary data. Source/runtime/configuration families remain separate.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C13",
+    "scope": "Secondary A context",
+    "classification": "INCONCLUSIVE",
+    "claim": "RETRY improves goodput over REJECT at500ms.",
+    "publication_wording": "RETRY\u2212REJECT averaged\u22120.00694pp with a descriptive interval spanning0, despite additional retry attempts.",
+    "evidence": [
+      "../stage6/analysis/RESULTS.json#/contrasts/a500:retry-minus-reject"
+    ],
+    "qualification": "The primary2s RETRY benefit is not a universal claim across deadlines.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C14",
+    "scope": "Secondary A context",
+    "classification": "SUPPORTED",
+    "claim": "At5s RETRY had lower goodput than WAIT in these secondary runs.",
+    "publication_wording": "RETRY\u2212WAIT averaged\u22120.222pp, interval\u22120.382 to\u22120.063pp.",
+    "evidence": [
+      "../stage6/analysis/RESULTS.json#/contrasts/a5000:retry-minus-wait"
+    ],
+    "qualification": "This supports the measured negative contrast only; it does not establish a universal WAIT ranking.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C15",
+    "scope": "Secondary anomaly",
+    "classification": "SUPPORTED",
+    "claim": "The anomalous500ms WAIT block is retained and materially affects summaries.",
+    "publication_wording": "WAIT U counts are1485,1966,1966,1956,1944. All-five mean64.701%, median67.917%; its paired deadline-gain mean13.799pp exceeds median10.417pp.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/anomalous_WAIT500_influence",
+      "../stage6/A-block-01-attempt-01/a500-wait/server/server-ledger.json"
+    ],
+    "qualification": "No run was excluded or rerun. The anomalous run has363 late completions versus5\u201326 in other blocks; keep it visible.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C16",
+    "scope": "Secondary anomaly cause",
+    "classification": "UNSUPPORTED",
+    "claim": "GC, cold start, CPU load or a particular race caused the anomalous run.",
+    "publication_wording": "Its cause remains unresolved.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/anomalous_WAIT500_influence",
+      "../../STAGE6-REPORT.md#study-a--actual-deadline-sensitivity-runs"
+    ],
+    "qualification": "Timing/CPU observations are not an isolated causal diagnosis.",
+    "origin": "Rejected explanation; not attributed as an established author claim"
+  },
+  {
+    "id": "C17",
+    "scope": "Secondary B2/H6",
+    "classification": "SUPPORTED",
+    "claim": "Deterministic retry collision was lower than jitter in the specified model.",
+    "publication_wording": "Using actual initiated retries in[12,24) and600 fixed20ms bins, deterministic collision was lower in5/5 pairs; mean relative difference\u221215.873%, descriptive interval\u221218.704 to\u221212.236%.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/secondary_burst_paired",
+      "audit/REVIEW-AUDIT.json#/runs",
+      "../stage6/analysis/RESULTS.json#/burst_contrasts"
+    ],
+    "qualification": "Denominator is M choose2 for M initiated retries in that window, not scheduled N or all decoded R. Mean of five relative differences, not ratio of pooled retry populations.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C18",
+    "scope": "Secondary synchronization interpretation",
+    "classification": "QUALIFIED",
+    "claim": "H6\u2019s directional prediction was contradicted in the operational study.",
+    "publication_wording": "Common fixed relative backoff did not produce the predicted greater concentration under evenly staggered original arrivals.",
+    "evidence": [
+      "../../STAGE6-PLAN.md#study-b-eight-client-synchronization",
+      "audit/REVIEW-AUDIT.json#/secondary_burst_paired"
+    ],
+    "qualification": "No synchronized burst/barrier was injected. This does not refute jitter under an actual correlated herd or establish a universal counterexample to retry guidance.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C19",
+    "scope": "Jitter causation",
+    "classification": "UNSUPPORTED",
+    "claim": "Jitter generally worsens overload, or variance alone caused the observed difference.",
+    "publication_wording": "Do not make either causal/general claim.",
+    "evidence": [
+      "../stage6/analysis/RESULTS.json#/rows",
+      "../../STAGE6-PLAN.md#study-b-eight-client-synchronization"
+    ],
+    "qualification": "Fixed100/200ms waits versus uniform[0,cap] also changes expected backoff; retry counts, client load phases and transport smoothing differ.",
+    "origin": "Rejected extrapolation; not attributed to the authors"
+  },
+  {
+    "id": "C20",
+    "scope": "B2 chronology",
+    "classification": "SUPPORTED",
+    "claim": "B2 was chosen before any StudyB outcome could guide seed selection.",
+    "publication_wording": "The original B driver stopped before any B attempt; the hashed-seed amendment was committed/frozen before B2 traffic.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/B2_chronology",
+      "../stage6/MATRIX-AT-BOUNDARY.json",
+      "../stage6/BOUNDARY-VERIFICATION.json",
+      "../../STAGE6-B-SEED-AMENDMENT.md"
+    ],
+    "qualification": "This verifies the preserved record and finite-range seed check, not a human\u2019s private A viewing history or externally trusted timestamp attestation.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C21",
+    "scope": "Eight-client capacity",
+    "classification": "SUPPORTED",
+    "claim": "Eight clients preserve aggregate demand but multiply client-side capacity.",
+    "publication_wording": "Eight processes each own360 IDs at10/s:80/s total, N2880. Server admission stays32/worker1; aggregate outstanding limit264 and pending256.",
+    "evidence": [
+      "../../STAGE6-PLAN.md#implementation-gap-and-versioned-resolution",
+      "audit/REVIEW-AUDIT.json#/runs"
+    ],
+    "qualification": "StudyB is not a single-client jitter replication. Eight connections/bridges and replicated ledger metadata must be disclosed.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C22",
+    "scope": "Memory claim",
+    "classification": "UNSUPPORTED",
+    "claim": "A32-slot application budget bounds whole-process RSS.",
+    "publication_wording": "State the application ownership limit only; RSS peaks are sampled observations.",
+    "evidence": [
+      "../../VALIDITY-003.md#2-safety-invariants-hard-run-validity",
+      "../stage5/analysis/RESULTS.json#/runs",
+      "../stage6/analysis/RESULTS.json#/rows"
+    ],
+    "qualification": "Transport, allocator/runtime, decoder, metadata and other allocations are separate; sampled RSS guards do not prove a hard continuous memory ceiling.",
+    "origin": "Rejected extrapolation; not attributed to the authors"
+  },
+  {
+    "id": "C23",
+    "scope": "Transport claim",
+    "classification": "UNSUPPORTED",
+    "claim": "Send duration is isolated HTTP/2 blocking or successful Send proves admission.",
+    "publication_wording": "Send return is a local transport API event; end-to-end disposition requires protocol/accounting evidence.",
+    "evidence": [
+      "../../PROTOCOL-003.md#1-wire-contract-schema-specification",
+      "../../PROTOCOL-003.md#4-fixed-bounded-resources"
+    ],
+    "qualification": "Serialization/scheduling/instrumentation are included; successful server writes do not prove client application consumption.",
+    "origin": "Rejected extrapolation; not attributed to the authors"
+  },
+  {
+    "id": "C24",
+    "scope": "Recovery claim",
+    "classification": "UNSUPPORTED",
+    "claim": "Every request is slower under RETRY, or the system fully recovered once the old server cohort cleared.",
+    "publication_wording": "Use cohort-qualified latency and separate client/server backlog traces.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/primary_recovery_conditional",
+      "../stage5/analysis/RESULTS.json#/runs"
+    ],
+    "qualification": "Different completion cohorts and unserved originals preclude either statement.",
+    "origin": "Rejected extrapolation; not attributed to the authors"
+  },
+  {
+    "id": "C25",
+    "scope": "Statistical claim",
+    "classification": "UNSUPPORTED",
+    "claim": "The study proves statistical significance or a universal policy winner.",
+    "publication_wording": "Five paired blocks provide descriptive, model-specific evidence.",
+    "evidence": [
+      "../../STAGE5-PLAN.md#frozen-analysis",
+      "../../STAGE6-PLAN.md#frozen-analysis-and-claim-scope"
+    ],
+    "qualification": "No p-values/equivalence test/multiplicity-controlled universal decision; originals and retry pairs are not independent replication units.",
+    "origin": "Rejected extrapolation; not attributed to the authors"
+  },
+  {
+    "id": "C26",
+    "scope": "Cross-study claim",
+    "classification": "UNSUPPORTED",
+    "claim": "Pool all70 runs, interpolate a common500ms\u21922s\u21925s curve, or reuse Stage5 attainment curves as new deadline runs.",
+    "publication_wording": "Keep primary, secondary A and secondary B2 in separate panels and comparisons.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/runs",
+      "../../STAGE6-REPORT.md#preregistration-isolated-runtime-and-provenance"
+    ],
+    "qualification": "Application runtime, clients, deadlines and observation windows differ even though each run schedules2880 logical originals.",
+    "origin": "Rejected extrapolation; not attributed to the authors"
+  },
+  {
+    "id": "C27",
+    "scope": "Protocol guarantee",
+    "classification": "UNSUPPORTED",
+    "claim": "In-memory deduplication establishes durable exactly-once processing across crashes.",
+    "publication_wording": "At most one observed worker start per logical ID in each valid run; no crash durability claim.",
+    "evidence": [
+      "../../PROTOCOL-003.md#6-deduplication-and-ledger",
+      "audit/REVIEW-AUDIT.json#/runs"
+    ],
+    "qualification": "No durable state, restart study or external side-effect transaction was tested.",
+    "origin": "Rejected extrapolation; not attributed to the authors"
+  },
+  {
+    "id": "C28",
+    "scope": "Instrumentation/provenance",
+    "classification": "QUALIFIED",
+    "claim": "Calculations and source/content provenance are reproducible.",
+    "publication_wording": "The archived calculations, source hashes and available executable hashes reproduce; instrumentation overhead remains part of the measured model.",
+    "evidence": [
+      "audit/REVIEW-AUDIT.json#/integrity",
+      "audit/REVIEW-AUDIT.json#/provenance",
+      "../../STAGE5-REPORT.md#measurement-limitations-and-deviations"
+    ],
+    "qualification": "This is offline reproducibility, not an external-lab replication. Native secondary routing, per-attempt generation/hashing, polling and logging remain measured-model costs.",
+    "origin": "Reported finding / publication candidate"
+  },
+  {
+    "id": "C29",
+    "scope": "Deadline terminology",
+    "classification": "UNSUPPORTED",
+    "claim": "The experiment used a2s gRPC stream deadline.",
+    "publication_wording": "The2s primary deadline is an application-level deadline per scheduled original; the streaming RPC lasts through the workload/observation window.",
+    "evidence": [
+      "../../PROTOCOL-003.md#2-timing-and-deadlines",
+      "../../client/scheduler.go"
+    ],
+    "qualification": "Original deadlines start at the scheduled slot, include pending time, and never reset on retry. RPC context cutoff is a separate deadline.",
+    "origin": "Rejected terminology; publication guard"
+  }
+]

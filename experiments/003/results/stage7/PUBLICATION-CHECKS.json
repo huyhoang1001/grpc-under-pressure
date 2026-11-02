@@ -1,0 +1,31 @@
+{
+  "verdict": "PASS",
+  "publication_recommendation": "PUBLISH",
+  "publication_scope": "Qualified evidence/outline ready for drafting; no manuscript reviewed or written.",
+  "performance_runs_executed": 0,
+  "raw_or_frozen_artifacts_modified": false,
+  "historical_checksums_verified": 2656,
+  "gate_replays": 70,
+  "new_arithmetic_families": {
+    "primary": 20,
+    "secondary_A": 40,
+    "secondary_B2": 10
+  },
+  "claims": {
+    "QUALIFIED": 7,
+    "SUPPORTED": 9,
+    "INCONCLUSIVE": 3,
+    "UNSUPPORTED": 10
+  },
+  "local_evidence_links_checked": 272,
+  "chart_data_points_checked": 30,
+  "source_reviewed_revision": "25771cda76abfbcee32f994841a67e900efe5833",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "stage7_files_hashed": 23,
+  "stage7_max_file_bytes": 2930449,
+  "stage7_sha256_manifest_sha256": "0e6f672ab8ec9a03fd89368c38ce735095cf68dbf4b6243b3b70924ea0a39016",
+  "script_sha256": "ed31d33b19182383aa47dc5785ed674c81d88d183ac1275d49197137c9c08cd0",
+  "no_new_protocol_validator_claimed": true,
+  "limits": "Automated data/schema/link/preservation checks supplement the human-readable editorial review; they do not validate an unwritten article or provide external execution attestation."
+}

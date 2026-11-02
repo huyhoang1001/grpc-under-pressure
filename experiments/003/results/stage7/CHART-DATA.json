@@ -1,0 +1,272 @@
+[
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 1,
+    "policy": "wait",
+    "value": 76.31944444444444,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-01-attempt-01/wait"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 2,
+    "policy": "wait",
+    "value": 74.82638888888889,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-02-attempt-01/wait"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 3,
+    "policy": "wait",
+    "value": 76.25,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-03-attempt-01/wait"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 4,
+    "policy": "wait",
+    "value": 76.45833333333333,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-04-attempt-01/wait"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 5,
+    "policy": "wait",
+    "value": 76.35416666666667,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-05-attempt-01/wait"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 1,
+    "policy": "reject",
+    "value": 75.03472222222223,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-01-attempt-01/reject"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 2,
+    "policy": "reject",
+    "value": 76.42361111111111,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-02-attempt-01/reject"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 3,
+    "policy": "reject",
+    "value": 76.42361111111111,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-03-attempt-01/reject"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 4,
+    "policy": "reject",
+    "value": 76.28472222222223,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-04-attempt-01/reject"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 5,
+    "policy": "reject",
+    "value": 76.66666666666667,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-05-attempt-01/reject"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 1,
+    "policy": "retry",
+    "value": 77.63888888888889,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-01-attempt-01/retry"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 2,
+    "policy": "retry",
+    "value": 77.1875,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-02-attempt-01/retry"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 3,
+    "policy": "retry",
+    "value": 77.60416666666666,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-03-attempt-01/retry"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 4,
+    "policy": "retry",
+    "value": 77.91666666666667,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-04-attempt-01/retry"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 5,
+    "policy": "retry",
+    "value": 77.53472222222221,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-05-attempt-01/retry"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 1,
+    "policy": "drop",
+    "value": 76.07638888888889,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-01-attempt-01/drop"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 2,
+    "policy": "drop",
+    "value": 75.10416666666667,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-02-attempt-01/drop"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 3,
+    "policy": "drop",
+    "value": 76.35416666666667,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-03-attempt-01/drop"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 4,
+    "policy": "drop",
+    "value": 75.97222222222221,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-04-attempt-01/drop"
+  },
+  {
+    "panel": "all-original",
+    "family": "PRIMARY",
+    "block": 5,
+    "policy": "drop",
+    "value": 76.5625,
+    "units": "percent of all2880 scheduled originals",
+    "directory": "experiments/003/results/stage5/block-05-attempt-01/drop"
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 1,
+    "policy": "reject",
+    "value": 0.73347830495,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 900
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 1,
+    "policy": "retry",
+    "value": 1.0995782094499997,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 942
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 2,
+    "policy": "reject",
+    "value": 0.6780480717999999,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 927
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 2,
+    "policy": "retry",
+    "value": 1.096777026,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 941
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 3,
+    "policy": "reject",
+    "value": 0.7243734885,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 916
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 3,
+    "policy": "retry",
+    "value": 1.0718145075999999,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 954
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 4,
+    "policy": "reject",
+    "value": 0.6698878218,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 925
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 4,
+    "policy": "retry",
+    "value": 1.0535535745,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 956
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 5,
+    "policy": "reject",
+    "value": 0.57325985395,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 932
+  },
+  {
+    "panel": "conditional recovery",
+    "family": "PRIMARY",
+    "block": 5,
+    "policy": "retry",
+    "value": 1.0905553576,
+    "units": "seconds; per-run completed-cohort p95",
+    "cohort_n": 934
+  }
+]

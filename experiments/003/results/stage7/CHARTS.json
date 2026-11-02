@@ -1,0 +1,57 @@
+{
+  "charts": [
+    {
+      "id": "primary-outcomes",
+      "scope": "PRIMARY",
+      "file": "../stage5/analysis/figures/outcomes.png",
+      "publication_status": "USE_WITH_CAPTION",
+      "caption": "Primary single-client2s study; five matched blocks. Mean fractions of all2880 scheduled originals/run, including never-sent/backlog, expiry, refusal/drop and late completion. No completed-only denominator."
+    },
+    {
+      "id": "primary-tradeoff",
+      "scope": "PRIMARY",
+      "file": "figures/primary-tradeoff.png",
+      "publication_status": "REVIEWED_EXISTING_ENDPOINT_RENDERING",
+      "caption": "Primary2s study, five matched blocks. Left: individual U/N values with mean marks, all2880 originals/run. Right: per-run p95 of completed originals scheduled[24,36), REJECT n900\u2013932 and RETRY n934\u2013956; different cohorts, no pooled p95 or per-original causal delay."
+    },
+    {
+      "id": "deadline-panels",
+      "scope": "SECONDARY_A",
+      "file": "../stage6/analysis/figures/deadline-goodput.png",
+      "publication_status": "USE_WITH_CAPTION",
+      "caption": "Secondary A actual500ms and5s deadline runs, five matched blocks. All2880 scheduled originals/run; different secondary runtime from primary. Keep valid500ms WAIT block1 visible; no causal explanation or removal. No2s primary interpolation."
+    },
+    {
+      "id": "retry-collision",
+      "scope": "SECONDARY_B2",
+      "file": "../stage6/analysis/figures/retry-pairs.png",
+      "publication_status": "USE_LEFT_PANEL_OR_EXPLAIN_RIGHT_ZOOM",
+      "caption": "Secondary B2 eight clients sharing80 originals/s and one server worker, five pairs. Collision uses actual initiated retries in[12,24),60020ms bins and denominator M choose2. Fixed relative backoff, no injected synchronization; means differ from uniform jitter. Right-panel goodput axis is zoomed, not a universal winner."
+    },
+    {
+      "id": "corrected-recovery",
+      "scope": "PRIMARY",
+      "file": "../stage5/analysis/figures/recovery-observed-intervals.png",
+      "publication_status": "APPENDIX_WITH_CAPTION",
+      "caption": "Primary recovery observation; five blocks. On-time-rate bins[24,25) through[38,39), with client pending/outstanding endpoints through39s. Pre24-admitted cohort clearance is not whole-system recovery."
+    },
+    {
+      "id": "original-recovery-sentinel",
+      "scope": "PRIMARY",
+      "file": "../stage5/analysis/figures/recovery.png",
+      "publication_status": "DO_NOT_PROMOTE",
+      "caption": "Preserved original plot includes an unobserved zero39s closure sentinel for rate; use the corrected display. Do not modify the original evidence."
+    },
+    {
+      "id": "whole-conditional-latency",
+      "scope": "PRIMARY",
+      "file": "../stage5/analysis/figures/conditional-latency.png",
+      "publication_status": "NOT_RECOVERY_EVIDENCE",
+      "caption": "Whole-workload completed-cohort p95, five runs/policy. It is not recovery-only p95 and cannot substantiate that phase-specific claim."
+    }
+  ],
+  "data_file": "CHART-DATA.json",
+  "generator_sha256": "bcbb8ba882e4b88f29f7e4452eb467a1f015c76023065f9b0412523cfd4a6a0b",
+  "no_new_endpoints": true,
+  "performance_runs_executed": 0
+}
