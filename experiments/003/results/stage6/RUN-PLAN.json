@@ -1,0 +1,733 @@
+{
+  "revision": "secondary-v1",
+  "contract_revision": "A01",
+  "blocks": [
+    {
+      "study": "A",
+      "block": 1,
+      "seed": 3230235474862838262,
+      "cases": [
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        }
+      ]
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "seed": 9548838229514957687,
+      "cases": [
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        }
+      ]
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "seed": 17182457733526921878,
+      "cases": [
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        }
+      ]
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "seed": 15133099369218606263,
+      "cases": [
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        }
+      ]
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "seed": 11855545033508639373,
+      "cases": [
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        }
+      ]
+    },
+    {
+      "study": "B",
+      "block": 1,
+      "seed": 13819103293325858276,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            13819103293325858276,
+            6773074038939505145,
+            18173788858262703630,
+            11127759603876350499,
+            4081730349489997368,
+            15482445168813195853,
+            8436415914426842722,
+            1390386660040489591
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            13819103293325858276,
+            6773074038939505145,
+            18173788858262703630,
+            11127759603876350499,
+            4081730349489997368,
+            15482445168813195853,
+            8436415914426842722,
+            1390386660040489591
+          ]
+        }
+      ]
+    },
+    {
+      "study": "B",
+      "block": 2,
+      "seed": 16633640269546976327,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            16633640269546976327,
+            9587611015160623196,
+            2541581760774270065,
+            13942296580097468550,
+            6896267325711115419,
+            18296982145034313904,
+            11250952890647960773,
+            4204923636261607642
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            16633640269546976327,
+            9587611015160623196,
+            2541581760774270065,
+            13942296580097468550,
+            6896267325711115419,
+            18296982145034313904,
+            11250952890647960773,
+            4204923636261607642
+          ]
+        }
+      ]
+    },
+    {
+      "study": "B",
+      "block": 3,
+      "seed": 17958156311306776733,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            17958156311306776733,
+            10912127056920423602,
+            3866097802534070471,
+            15266812621857268956,
+            8220783367470915825,
+            1174754113084562694,
+            12575468932407761179,
+            5529439678021408048
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17958156311306776733,
+            10912127056920423602,
+            3866097802534070471,
+            15266812621857268956,
+            8220783367470915825,
+            1174754113084562694,
+            12575468932407761179,
+            5529439678021408048
+          ]
+        }
+      ]
+    },
+    {
+      "study": "B",
+      "block": 4,
+      "seed": 9043764941866104881,
+      "cases": [
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9043764941866104881,
+            1997735687479751750,
+            13398450506802950235,
+            6352421252416597104,
+            17753136071739795589,
+            10707106817353442458,
+            3661077562967089327,
+            15061792382290287812
+          ]
+        },
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            9043764941866104881,
+            1997735687479751750,
+            13398450506802950235,
+            6352421252416597104,
+            17753136071739795589,
+            10707106817353442458,
+            3661077562967089327,
+            15061792382290287812
+          ]
+        }
+      ]
+    },
+    {
+      "study": "B",
+      "block": 5,
+      "seed": 15299322588890134026,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            15299322588890134026,
+            8253293334503780895,
+            1207264080117427764,
+            12607978899440626249,
+            5561949645054273118,
+            16962664464377471603,
+            9916635209991118472,
+            2870605955604765341
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15299322588890134026,
+            8253293334503780895,
+            1207264080117427764,
+            12607978899440626249,
+            5561949645054273118,
+            16962664464377471603,
+            9916635209991118472,
+            2870605955604765341
+          ]
+        }
+      ]
+    }
+  ],
+  "valid_blocks_per_study": 5,
+  "max_attempts_per_block": 2,
+  "pairs": [
+    [
+      "reject",
+      "wait"
+    ],
+    [
+      "retry",
+      "wait"
+    ],
+    [
+      "drop",
+      "wait"
+    ],
+    [
+      "retry",
+      "reject"
+    ],
+    [
+      "drop",
+      "reject"
+    ],
+    [
+      "drop",
+      "retry"
+    ]
+  ],
+  "order_rng_seeds": [
+    6001,
+    6003
+  ],
+  "block_rng_seeds": [
+    6002,
+    6004
+  ],
+  "analysis_plan": "experiments/003/STAGE6-PLAN.md"
+}

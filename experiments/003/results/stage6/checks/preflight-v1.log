@@ -1,0 +1,5 @@
+a500-wait PASS None
+a5000-wait PASS None
+b-deterministic PASS None
+b-jitter PASS None
+PASS: four short fixtures, not secondary performance evidence

@@ -1,0 +1,98 @@
+[
+  {
+    "name": "rust-fmt",
+    "argv": [
+      "bash",
+      "-e",
+      "-c",
+      "source scripts/dev-env.sh\ncargo fmt --manifest-path experiments/003/secondary/server/Cargo.toml --check"
+    ],
+    "exit": 0,
+    "started_unix_ns": 1793592857753303763,
+    "log": "rust-fmt.log"
+  },
+  {
+    "name": "rust-tests",
+    "argv": [
+      "bash",
+      "-e",
+      "-c",
+      "source scripts/dev-env.sh\ncargo test --locked --manifest-path experiments/003/secondary/server/Cargo.toml"
+    ],
+    "exit": 0,
+    "started_unix_ns": 1793592857853518562,
+    "log": "rust-tests.log"
+  },
+  {
+    "name": "clippy",
+    "argv": [
+      "bash",
+      "-e",
+      "-c",
+      "source scripts/dev-env.sh\ncargo clippy --locked --manifest-path experiments/003/secondary/server/Cargo.toml --all-targets -- -D warnings"
+    ],
+    "exit": 0,
+    "started_unix_ns": 1793592861453540217,
+    "log": "clippy.log"
+  },
+  {
+    "name": "go-race",
+    "argv": [
+      "bash",
+      "-e",
+      "-c",
+      "source scripts/dev-env.sh\ncd experiments/003/secondary/client\ngo test -race -count=3 ./..."
+    ],
+    "exit": 0,
+    "started_unix_ns": 1793592861606589694,
+    "log": "go-race.log"
+  },
+  {
+    "name": "go-vet",
+    "argv": [
+      "bash",
+      "-e",
+      "-c",
+      "source scripts/dev-env.sh\ncd experiments/003/secondary/client\ngo vet ./..."
+    ],
+    "exit": 0,
+    "started_unix_ns": 1793592866328581182,
+    "log": "go-vet.log"
+  },
+  {
+    "name": "go-mod",
+    "argv": [
+      "bash",
+      "-e",
+      "-c",
+      "source scripts/dev-env.sh\ncd experiments/003/secondary/client\ngo mod verify"
+    ],
+    "exit": 0,
+    "started_unix_ns": 1793592866422873451,
+    "log": "go-mod.log"
+  },
+  {
+    "name": "analysis",
+    "argv": [
+      "bash",
+      "-e",
+      "-c",
+      "source scripts/dev-env.sh\npython3 experiments/003/secondary/fixtures/analyze.py --selftest"
+    ],
+    "exit": 0,
+    "started_unix_ns": 1793592866776327463,
+    "log": "analysis.log"
+  },
+  {
+    "name": "normal-build",
+    "argv": [
+      "bash",
+      "-e",
+      "-c",
+      "source scripts/dev-env.sh\ncargo build --locked --manifest-path experiments/003/secondary/server/Cargo.toml"
+    ],
+    "exit": 0,
+    "started_unix_ns": 1793592866827341730,
+    "log": "normal-build.log"
+  }
+]

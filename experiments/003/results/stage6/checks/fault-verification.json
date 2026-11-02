@@ -1,0 +1,37 @@
+{
+  "synthetic_not_measurements": true,
+  "fixture_source": "experiments/003/results/stage6/preflight/rc/b-jitter",
+  "results": [
+    {
+      "fault": "missing_event",
+      "verdict": "REJECTED_AS_REQUIRED",
+      "reason": "attempt ownership/overlap"
+    },
+    {
+      "fault": "wrong_deadline",
+      "verdict": "REJECTED_AS_REQUIRED",
+      "reason": "workload hash"
+    },
+    {
+      "fault": "credit_overflow",
+      "verdict": "REJECTED_AS_REQUIRED",
+      "reason": "client high-water mismatch"
+    },
+    {
+      "fault": "attempt_collision",
+      "verdict": "REJECTED_AS_REQUIRED",
+      "reason": "server decode count"
+    },
+    {
+      "fault": "bridge_overflow",
+      "verdict": "REJECTED_AS_REQUIRED",
+      "reason": "bounded IO"
+    },
+    {
+      "fault": "wrong_seed",
+      "verdict": "REJECTED_AS_REQUIRED",
+      "reason": "secondary configuration drift"
+    }
+  ],
+  "verdict": "PASS"
+}

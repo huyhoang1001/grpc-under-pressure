@@ -1,0 +1,18 @@
+{
+  "case": {
+    "name": "a500-wait",
+    "study": "a500",
+    "policy": "wait",
+    "deadline_ns": 500000000,
+    "clients": 1,
+    "retry_mode": "jitter",
+    "client_seeds": [
+      3230235474862838262
+    ]
+  },
+  "outcome": {
+    "verdict": "PASS",
+    "reason": null,
+    "safety_abort": false
+  }
+}

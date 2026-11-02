@@ -1,0 +1,186 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling libc v0.2.191
+   Compiling bytes v1.12.1
+   Compiling pin-project-lite v0.2.17
+   Compiling once_cell v1.21.4
+   Compiling futures-core v0.3.34
+   Compiling hashbrown v0.17.1
+   Compiling syn v2.0.119
+   Compiling equivalent v1.0.3
+   Compiling itoa v1.0.18
+   Compiling indexmap v2.14.2
+   Compiling anyhow v1.0.104
+   Compiling http v1.5.0
+   Compiling errno v0.3.14
+   Compiling signal-hook-registry v1.4.8
+   Compiling mio v1.2.4
+   Compiling socket2 v0.6.5
+   Compiling memchr v2.8.3
+   Compiling either v1.19.0
+   Compiling itertools v0.14.0
+   Compiling tracing-core v0.1.36
+   Compiling futures-sink v0.3.34
+   Compiling slab v0.4.12
+   Compiling http-body v1.1.0
+   Compiling bitflags v2.13.2
+   Compiling version_check v0.9.5
+   Compiling httparse v1.10.1
+   Compiling cfg-if v1.0.5
+   Compiling futures-task v0.3.34
+   Compiling tower-service v0.3.3
+   Compiling serde_core v1.0.228
+   Compiling prettyplease v0.2.37
+   Compiling rustix v1.1.5
+   Compiling getrandom v0.4.3
+   Compiling pulldown-cmark v0.13.5
+   Compiling futures-util v0.3.34
+   Compiling generic-array v0.14.7
+   Compiling atomic-waker v1.1.2
+   Compiling try-lock v0.2.5
+   Compiling linux-raw-sys v0.12.1
+   Compiling regex-syntax v0.8.11
+   Compiling fnv v1.0.7
+   Compiling unicase v2.10.0
+   Compiling tokio-macros v2.6.1
+   Compiling tracing-attributes v0.1.31
+   Compiling tokio v1.48.0
+   Compiling prost-derive v0.14.4
+   Compiling regex-automata v0.4.18
+   Compiling tracing v0.1.44
+   Compiling prost v0.14.1
+   Compiling want v0.3.2
+   Compiling futures-channel v0.3.34
+   Compiling fixedbitset v0.5.7
+   Compiling typenum v1.20.1
+   Compiling httpdate v1.0.3
+   Compiling smallvec v1.16.4
+   Compiling sync_wrapper v1.0.2
+   Compiling tower-layer v0.3.3
+   Compiling fastrand v2.5.0
+   Compiling tempfile v3.27.0
+   Compiling petgraph v0.7.1
+   Compiling tokio-util v0.7.19
+   Compiling h2 v0.4.20
+   Compiling regex v1.13.1
+   Compiling prost-types v0.14.1
+   Compiling pulldown-cmark-to-cmark v21.1.0
+   Compiling http-body-util v0.1.5
+   Compiling multimap v0.10.1
+   Compiling mime v0.3.17
+   Compiling log v0.4.34
+   Compiling heck v0.5.0
+   Compiling axum-core v0.5.6
+   Compiling tower v0.5.3
+   Compiling prost-build v0.14.1
+   Compiling tonic-build v0.14.6
+   Compiling hyper v1.12.0
+   Compiling pin-project-internal v1.1.13
+   Compiling syn v3.0.9
+   Compiling protoc-bin-vendored-linux-x86_64 v3.2.0
+   Compiling protoc-bin-vendored-linux-x86_32 v3.2.0
+   Compiling protoc-bin-vendored-linux-s390_64 v3.2.0
+   Compiling protoc-bin-vendored-linux-ppcle_64 v3.2.0
+   Compiling zmij v1.0.23
+   Compiling protoc-bin-vendored-linux-aarch_64 v3.2.0
+   Compiling protoc-bin-vendored-win32 v3.2.0
+   Compiling protoc-bin-vendored-macos-x86_64 v3.2.0
+   Compiling protoc-bin-vendored-macos-aarch_64 v3.2.0
+   Compiling matchit v0.8.4
+   Compiling percent-encoding v2.3.2
+   Compiling hyper-util v0.1.21
+   Compiling axum v0.8.9
+   Compiling protoc-bin-vendored v3.2.0
+   Compiling pin-project v1.1.13
+   Compiling tonic-prost-build v0.14.2
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling tokio-stream v0.1.17
+   Compiling hyper-timeout v0.5.2
+   Compiling serde_json v1.0.149
+   Compiling serde v1.0.228
+   Compiling base64 v0.22.1
+   Compiling digest v0.10.7
+   Compiling pressure-e3-stage1 v0.1.0 (/workspace/grpc-under-pressure/experiments/003/secondary/server)
+   Compiling serde_derive v1.0.228
+   Compiling cpufeatures v0.2.17
+   Compiling sha2 v0.10.9
+   Compiling async-trait v0.1.92
+   Compiling tonic v0.14.2
+   Compiling tonic-prost v0.14.2
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 19.10s
+     Running unittests src/lib.rs (experiments/003/secondary/server/target/debug/deps/pressure_e3_stage1-68dd2f7edde9c507)
+
+running 3 tests
+test service::tests::deterministic_outbound_timeout_is_one_second_of_local_blocking ... ok
+test ledger::protocol_fixtures::explicit_refusal_then_new_attempt_preserves_each_attempt_and_deadline ... ok
+test service::tests::log_backpressure_wait_is_cancellable_without_unlogged_mutation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.32s
+
+     Running unittests src/main.rs (experiments/003/secondary/server/target/debug/deps/pressure_e3_stage1-60f9b04e29fc9720)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/ledger.rs (experiments/003/secondary/server/target/debug/deps/ledger-adc35fc8cbdb93e0)
+
+running 9 tests
+test concurrent_same_identity_registration_is_atomic ... ok
+test deadline_boundary_late_race_and_delayed_cancellation_exit ... ok
+test identity_duplicate_join_replay_and_cancel_after_completion ... ok
+test all_capacity_domains_and_no_worker_ack_dependency ... ok
+test expire_waiting_queued_no_start_after_deadline_and_stream_abort ... ok
+test worker_start_phase_is_selected_once_and_worker_time_partitions_exactly ... ok
+test reject_changed_identity_and_attempt_id_alias_without_mutation ... ok
+test immediate_reservations_stop_decode_without_hidden_duplicate_queue ... ok
+test metadata_exhaustion_never_evicts_and_log_pressure_never_silently_loses ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.41s
+
+     Running tests/measurement.rs (experiments/003/secondary/server/target/debug/deps/measurement-c8743fac31dbc102)
+
+running 2 tests
+test real_clock_brackets_are_bounded_for_future_epoch ... ok
+test event_resources_queue_timing_and_writer_counter_are_reconstructible ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/policies.rs (experiments/003/secondary/server/target/debug/deps/policies-b9f89a4867362dd6)
+
+running 7 tests
+test drop_nonexpendable_is_correlated_protocol_error_not_silent_drop ... ok
+test stream_failure_cleanup_and_duplicate_execution_for_all_policies ... ok
+test t14_real_refusal_then_first_admission_and_immutable_attempt_history ... ok
+test t15_attempt_index_limit_after_three_real_refusals ... ok
+test t03_t04_shared_policy_boundary_and_refused_work_never_starts ... ok
+test policies_expiry_cancellation_permit_lifetime_and_terminal_capacity ... ok
+test full_immediate_queue_stops_decode_for_every_refusal_policy ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.02s
+
+     Running tests/transport.rs (experiments/003/secondary/server/target/debug/deps/transport-ee7bd0b820798c49)
+
+running 11 tests
+test cancel_original_frame_cancels_only_its_owned_work_and_preserves_healthy_stream ... ok
+test half_close_drains_terminal_and_duplicate_frames_then_clean_eof ... ok
+test client_done_is_diagnostic_not_a_substitute_for_eof ... ok
+test lost_terminal_frame_preserves_authoritative_completion ... ok
+test stream_abort_before_decode_does_not_fabricate_admission ... ok
+test invalid_identity_produces_correlated_error_without_second_start ... ok
+test stream_abort_during_service_records_request_observation_exit ... ok
+test logger_io_failure_invalidates_even_if_application_completed ... ok
+test actual_full_admission_policy_outcomes_retry_and_clean_drain ... ok
+test t07_full_immediate_path_pauses_decoder_but_worker_does_not_wait_for_ack ... ok
+test t06_writer_barrier_timeout_cancels_and_holds_permit_until_exit ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.15s
+
+   Doc-tests pressure_e3_stage1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

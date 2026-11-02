@@ -1,0 +1,25 @@
+{
+  "case": {
+    "name": "b-deterministic",
+    "study": "b",
+    "policy": "retry",
+    "deadline_ns": 2000000000,
+    "clients": 8,
+    "retry_mode": "deterministic",
+    "client_seeds": [
+      13819103293325858276,
+      6773074038939505145,
+      18173788858262703630,
+      11127759603876350499,
+      4081730349489997368,
+      15482445168813195853,
+      8436415914426842722,
+      1390386660040489591
+    ]
+  },
+  "outcome": {
+    "verdict": "PASS",
+    "reason": null,
+    "safety_abort": false
+  }
+}
