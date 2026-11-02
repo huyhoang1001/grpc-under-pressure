@@ -1,0 +1,118 @@
+{
+  "attempts": [
+    {
+      "study": "B",
+      "block": 1,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-01-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 1,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-01-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 2,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-02-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 2,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-02-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 3,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-03-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 3,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-03-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 4,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-04-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 4,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-04-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 5,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-05-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 5,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-05-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    }
+  ],
+  "excluded_blocks": [],
+  "replacement_attempts": [],
+  "seed_amendment": "B2",
+  "primary_stage5_runs_used": 0
+}

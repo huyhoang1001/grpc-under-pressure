@@ -1,0 +1,26 @@
+START B2 1 1 b-deterministic
+b-deterministic PASS None
+START B2 1 1 b-jitter
+b-jitter PASS None
+VALID BLOCK B2 1
+START B2 2 1 b-deterministic
+b-deterministic PASS None
+START B2 2 1 b-jitter
+b-jitter PASS None
+VALID BLOCK B2 2
+START B2 3 1 b-deterministic
+b-deterministic PASS None
+START B2 3 1 b-jitter
+b-jitter PASS None
+VALID BLOCK B2 3
+START B2 4 1 b-jitter
+b-jitter PASS None
+START B2 4 1 b-deterministic
+b-deterministic PASS None
+VALID BLOCK B2 4
+START B2 5 1 b-deterministic
+b-deterministic PASS None
+START B2 5 1 b-jitter
+b-jitter PASS None
+VALID BLOCK B2 5
+B2 MATRIX COMPLETE

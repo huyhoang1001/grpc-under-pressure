@@ -1,0 +1,2822 @@
+{
+  "verdict": "PASS",
+  "matrix_status": "COMPLETE",
+  "runs_replayed": 50,
+  "rows": [
+    {
+      "study": "A",
+      "block": 1,
+      "name": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-drop",
+      "validity_replay": "PASS",
+      "independent_U": 1965,
+      "retry_collision": null,
+      "raw_verification_sha256": "38554f6754b172cfe037c1403784329a5b2f11ff7a34fe9a62b0eba09d73e63d",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11671577385713664,
+        "staging_payload_byte_ns": 57756131819520,
+        "client_pending_item_ns": 49122020336,
+        "client_outstanding_item_ns": 766615734372,
+        "cpu_sampled_common_window_ns": {
+          "server": 17110000000,
+          "client-0": 3990000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23742435309,
+          "2": 0,
+          "3": 0,
+          "4": 10950908204,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11751929.0
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41275387.5
+          },
+          "recovery": {
+            "n": 965,
+            "median_ns": 11710871.0
+          },
+          "drain": {
+            "n": 25,
+            "median_ns": 11466263.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "name": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-retry",
+      "validity_replay": "PASS",
+      "independent_U": 2258,
+      "retry_collision": 0.00404040404040404,
+      "raw_verification_sha256": "877f3a251f9f407ca007bef969f59c3b61ef493e98b86f0ac1cfc58f9b62a584",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12349317184782336,
+        "staging_payload_byte_ns": 50502017974272,
+        "client_pending_item_ns": 662719758481,
+        "client_outstanding_item_ns": 823411845432,
+        "cpu_sampled_common_window_ns": {
+          "server": 13740000000,
+          "client-0": 3540000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35313476674,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11720828.5
+          },
+          "slowdown": {
+            "n": 283,
+            "median_ns": 41679436.0
+          },
+          "recovery": {
+            "n": 960,
+            "median_ns": 11696548.5
+          },
+          "drain": {
+            "n": 55,
+            "median_ns": 11715875.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "name": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-retry",
+      "validity_replay": "PASS",
+      "independent_U": 1963,
+      "retry_collision": 0.00316930775646372,
+      "raw_verification_sha256": "466cb3d3537cef0927018760fd50066e16b4d143b5c1743cd6856f574dcae350",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10554180253384704,
+        "staging_payload_byte_ns": 55349447950336,
+        "client_pending_item_ns": 106431338601,
+        "client_outstanding_item_ns": 703909769823,
+        "cpu_sampled_common_window_ns": {
+          "server": 16080000000,
+          "client-0": 3350000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23638922919,
+          "2": 0,
+          "3": 0,
+          "4": 10934952052,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 959,
+            "median_ns": 11724353.0
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41546943.5
+          },
+          "recovery": {
+            "n": 973,
+            "median_ns": 11670936.0
+          },
+          "drain": {
+            "n": 16,
+            "median_ns": 11466250.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "name": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-wait",
+      "validity_replay": "PASS",
+      "independent_U": 1485,
+      "retry_collision": null,
+      "raw_verification_sha256": "6795c5676ee2eff00dfaff4e4787ddd87904b660573e75c9e1befb07a09c7939",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12071854960902144,
+        "staging_payload_byte_ns": 73621149859840,
+        "client_pending_item_ns": 206955232519,
+        "client_outstanding_item_ns": 815464824442,
+        "cpu_sampled_common_window_ns": {
+          "server": 17380000000,
+          "client-0": 3870000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 22546434960,
+          "2": 0,
+          "3": 0,
+          "4": 12153322411,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11724264.0
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41443612.0
+          },
+          "recovery": {
+            "n": 834,
+            "median_ns": 11737970.0
+          },
+          "drain": {
+            "n": 38,
+            "median_ns": 11795555.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "name": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-reject",
+      "validity_replay": "PASS",
+      "independent_U": 1959,
+      "retry_collision": null,
+      "raw_verification_sha256": "1fa4d848e527c038200803a2da86506c3a804bb589b4061954efab528e01de19",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11256418096988160,
+        "staging_payload_byte_ns": 56273437048832,
+        "client_pending_item_ns": 55324558672,
+        "client_outstanding_item_ns": 743072652304,
+        "cpu_sampled_common_window_ns": {
+          "server": 16670000000,
+          "client-0": 3790000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23718221964,
+          "2": 0,
+          "3": 0,
+          "4": 10899674447,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11734464.5
+          },
+          "slowdown": {
+            "n": 18,
+            "median_ns": 41472799.0
+          },
+          "recovery": {
+            "n": 964,
+            "median_ns": 11681475.0
+          },
+          "drain": {
+            "n": 22,
+            "median_ns": 11780909.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "name": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-wait",
+      "validity_replay": "PASS",
+      "independent_U": 2259,
+      "retry_collision": null,
+      "raw_verification_sha256": "7f9792128bb80d44eff42fb58da3297af5ed42766033b477c82bdb0d048810fc",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12595053194166272,
+        "staging_payload_byte_ns": 142291607601152,
+        "client_pending_item_ns": 694772554579,
+        "client_outstanding_item_ns": 824260097285,
+        "cpu_sampled_common_window_ns": {
+          "server": 13260000000,
+          "client-0": 3970000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35304014611,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11716082.0
+          },
+          "slowdown": {
+            "n": 284,
+            "median_ns": 41598036.0
+          },
+          "recovery": {
+            "n": 957,
+            "median_ns": 11714641.0
+          },
+          "drain": {
+            "n": 58,
+            "median_ns": 11600559.5
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "name": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-drop",
+      "validity_replay": "PASS",
+      "independent_U": 2233,
+      "retry_collision": null,
+      "raw_verification_sha256": "63345252c3809176ccd43298505e2c68a4ea74d9faa957fa4e3f0c975022f908",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11996958110400512,
+        "staging_payload_byte_ns": 48623368470528,
+        "client_pending_item_ns": 390446369112,
+        "client_outstanding_item_ns": 779525999519,
+        "cpu_sampled_common_window_ns": {
+          "server": 13300000000,
+          "client-0": 3560000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34877767846,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11683047.0
+          },
+          "slowdown": {
+            "n": 284,
+            "median_ns": 41609671.0
+          },
+          "recovery": {
+            "n": 968,
+            "median_ns": 11667706.0
+          },
+          "drain": {
+            "n": 21,
+            "median_ns": 11765981.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "name": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-reject",
+      "validity_replay": "PASS",
+      "independent_U": 2233,
+      "retry_collision": null,
+      "raw_verification_sha256": "b591a470cdc21ba8150936294f56292ed14634d78465e494d2613fab33b0eae1",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11386108723494912,
+        "staging_payload_byte_ns": 48792866914304,
+        "client_pending_item_ns": 387609128746,
+        "client_outstanding_item_ns": 740312436261,
+        "cpu_sampled_common_window_ns": {
+          "server": 13450000000,
+          "client-0": 3680000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34870970311,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11673749.0
+          },
+          "slowdown": {
+            "n": 283,
+            "median_ns": 41650687.0
+          },
+          "recovery": {
+            "n": 972,
+            "median_ns": 11675995.5
+          },
+          "drain": {
+            "n": 18,
+            "median_ns": 11438431.5
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "name": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-wait",
+      "validity_replay": "PASS",
+      "independent_U": 1966,
+      "retry_collision": null,
+      "raw_verification_sha256": "72a4e71f2a61bf1ea61b59ad6d9343a4a96502ccca8d7c416739e56757c52ef7",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12096362979819520,
+        "staging_payload_byte_ns": 77428916142080,
+        "client_pending_item_ns": 175238091115,
+        "client_outstanding_item_ns": 813011207652,
+        "cpu_sampled_common_window_ns": {
+          "server": 16350000000,
+          "client-0": 3560000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23843504214,
+          "2": 0,
+          "3": 0,
+          "4": 10893922313,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11738572.5
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41569216.5
+          },
+          "recovery": {
+            "n": 962,
+            "median_ns": 11713325.0
+          },
+          "drain": {
+            "n": 34,
+            "median_ns": 11759453.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "name": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-wait",
+      "validity_replay": "PASS",
+      "independent_U": 2263,
+      "retry_collision": null,
+      "raw_verification_sha256": "c06f69ad5ef3a6c3c318e0bf179e9f270df831efa5f01a709a67727d0cfab901",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12505811397820416,
+        "staging_payload_byte_ns": 139301052203008,
+        "client_pending_item_ns": 676341917077,
+        "client_outstanding_item_ns": 822121431046,
+        "cpu_sampled_common_window_ns": {
+          "server": 12150000000,
+          "client-0": 3420000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35243016502,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11683678.5
+          },
+          "slowdown": {
+            "n": 285,
+            "median_ns": 41599778.0
+          },
+          "recovery": {
+            "n": 965,
+            "median_ns": 11658273.0
+          },
+          "drain": {
+            "n": 53,
+            "median_ns": 11603454.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "name": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-drop",
+      "validity_replay": "PASS",
+      "independent_U": 1965,
+      "retry_collision": null,
+      "raw_verification_sha256": "087e4985a328e847214c055b439ecf479910e2fb963e59f0b311da09854a36f2",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10634277830656000,
+        "staging_payload_byte_ns": 54537139060736,
+        "client_pending_item_ns": 50961818467,
+        "client_outstanding_item_ns": 703823222979,
+        "cpu_sampled_common_window_ns": {
+          "server": 16030000000,
+          "client-0": 3520000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23597365994,
+          "2": 0,
+          "3": 0,
+          "4": 10931186673,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11707406.0
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41557986.5
+          },
+          "recovery": {
+            "n": 973,
+            "median_ns": 11679516.0
+          },
+          "drain": {
+            "n": 16,
+            "median_ns": 11723799.5
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "name": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-reject",
+      "validity_replay": "PASS",
+      "independent_U": 1963,
+      "retry_collision": null,
+      "raw_verification_sha256": "efa5550888de9ff99a7b4f5e7f22c7b8465781d6e0a9559cfa0995ebd4f81f5b",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10772545309310976,
+        "staging_payload_byte_ns": 54461635477504,
+        "client_pending_item_ns": 45026612956,
+        "client_outstanding_item_ns": 713231070298,
+        "cpu_sampled_common_window_ns": {
+          "server": 15910000000,
+          "client-0": 3480000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23736019600,
+          "2": 0,
+          "3": 0,
+          "4": 10876246203,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11754568.0
+          },
+          "slowdown": {
+            "n": 18,
+            "median_ns": 41643640.5
+          },
+          "recovery": {
+            "n": 973,
+            "median_ns": 11669891.0
+          },
+          "drain": {
+            "n": 16,
+            "median_ns": 11772325.5
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "name": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-reject",
+      "validity_replay": "PASS",
+      "independent_U": 2236,
+      "retry_collision": null,
+      "raw_verification_sha256": "d9f691a706bd8c9e8b69ea75401f1d005f7fd34604c27278e0318382b91cbc3b",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11213837941882880,
+        "staging_payload_byte_ns": 49972662599680,
+        "client_pending_item_ns": 390218013998,
+        "client_outstanding_item_ns": 731225243400,
+        "cpu_sampled_common_window_ns": {
+          "server": 13810000000,
+          "client-0": 3810000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34850266666,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11725763.5
+          },
+          "slowdown": {
+            "n": 282,
+            "median_ns": 41593340.0
+          },
+          "recovery": {
+            "n": 977,
+            "median_ns": 11621473.0
+          },
+          "drain": {
+            "n": 17,
+            "median_ns": 11690542.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "name": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-drop",
+      "validity_replay": "PASS",
+      "independent_U": 2227,
+      "retry_collision": null,
+      "raw_verification_sha256": "cea0595965023e53a0aab3f25b4a63f6471b8c8e1ed26ff7729e76ecb420c801",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12045322807083008,
+        "staging_payload_byte_ns": 49648985948160,
+        "client_pending_item_ns": 395409948187,
+        "client_outstanding_item_ns": 785160049033,
+        "cpu_sampled_common_window_ns": {
+          "server": 13780000000,
+          "client-0": 3700000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34856841188,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11706259.5
+          },
+          "slowdown": {
+            "n": 282,
+            "median_ns": 41649174.5
+          },
+          "recovery": {
+            "n": 960,
+            "median_ns": 11720551.5
+          },
+          "drain": {
+            "n": 25,
+            "median_ns": 11456632.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "name": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-retry",
+      "validity_replay": "PASS",
+      "independent_U": 2253,
+      "retry_collision": 0.003787878787878788,
+      "raw_verification_sha256": "15737f4037da5633b9d6dc25cd6977728bb486b508f9895c0723cc0dd4d028cf",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12517046827614208,
+        "staging_payload_byte_ns": 52431098724352,
+        "client_pending_item_ns": 694580136036,
+        "client_outstanding_item_ns": 831671479535,
+        "cpu_sampled_common_window_ns": {
+          "server": 14720000000,
+          "client-0": 4100000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35326410324,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11676832.5
+          },
+          "slowdown": {
+            "n": 283,
+            "median_ns": 41629412.0
+          },
+          "recovery": {
+            "n": 955,
+            "median_ns": 11733231.0
+          },
+          "drain": {
+            "n": 55,
+            "median_ns": 11705453.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "name": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-retry",
+      "validity_replay": "PASS",
+      "independent_U": 1949,
+      "retry_collision": 0.001902587519025875,
+      "raw_verification_sha256": "114786abfa6ea3f7c0ca338b8ecfd6daadd9ce6ba21c4db0522a98a0e940291e",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11760452221714432,
+        "staging_payload_byte_ns": 59120465625088,
+        "client_pending_item_ns": 126225454089,
+        "client_outstanding_item_ns": 794197608047,
+        "cpu_sampled_common_window_ns": {
+          "server": 17200000000,
+          "client-0": 3720000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23710079768,
+          "2": 0,
+          "3": 0,
+          "4": 10937241470,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11820728.0
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41526939.5
+          },
+          "recovery": {
+            "n": 949,
+            "median_ns": 11707163.0
+          },
+          "drain": {
+            "n": 26,
+            "median_ns": 11722253.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "name": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-retry",
+      "validity_replay": "PASS",
+      "independent_U": 1963,
+      "retry_collision": 0.002898550724637681,
+      "raw_verification_sha256": "4ffdf2cd521e309ded8eeae4f0d21bd1c86d8725758230544daac2fb027bac96",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10501290905092096,
+        "staging_payload_byte_ns": 59751813316608,
+        "client_pending_item_ns": 107316326053,
+        "client_outstanding_item_ns": 704131899486,
+        "cpu_sampled_common_window_ns": {
+          "server": 17730000000,
+          "client-0": 4080000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23647793397,
+          "2": 0,
+          "3": 0,
+          "4": 10820283912,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11712780.5
+          },
+          "slowdown": {
+            "n": 17,
+            "median_ns": 41390759.0
+          },
+          "recovery": {
+            "n": 977,
+            "median_ns": 11632521.0
+          },
+          "drain": {
+            "n": 13,
+            "median_ns": 11877639.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "name": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-reject",
+      "validity_replay": "PASS",
+      "independent_U": 2234,
+      "retry_collision": null,
+      "raw_verification_sha256": "62e80ccc2c9d7c91275148d249f642a42f10796e6bab7ed1fef6ce81c835c7f6",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11335928730238976,
+        "staging_payload_byte_ns": 47943819837440,
+        "client_pending_item_ns": 388116671076,
+        "client_outstanding_item_ns": 737858171253,
+        "cpu_sampled_common_window_ns": {
+          "server": 13080000000,
+          "client-0": 3450000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34868297818,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11821951.5
+          },
+          "slowdown": {
+            "n": 283,
+            "median_ns": 41556193.0
+          },
+          "recovery": {
+            "n": 974,
+            "median_ns": 11659894.5
+          },
+          "drain": {
+            "n": 17,
+            "median_ns": 11958095.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "name": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-wait",
+      "validity_replay": "PASS",
+      "independent_U": 1966,
+      "retry_collision": null,
+      "raw_verification_sha256": "58ed2072469fd4747d114647868eec1eb43c76e5cabc6d552e8096810dbda7e7",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12084389910364160,
+        "staging_payload_byte_ns": 75513272926208,
+        "client_pending_item_ns": 180026701466,
+        "client_outstanding_item_ns": 814050855092,
+        "cpu_sampled_common_window_ns": {
+          "server": 16640000000,
+          "client-0": 3590000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23823809903,
+          "2": 0,
+          "3": 0,
+          "4": 10909480035,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11723443.5
+          },
+          "slowdown": {
+            "n": 17,
+            "median_ns": 41486601.0
+          },
+          "recovery": {
+            "n": 958,
+            "median_ns": 11677445.0
+          },
+          "drain": {
+            "n": 36,
+            "median_ns": 11842590.5
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "name": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-drop",
+      "validity_replay": "PASS",
+      "independent_U": 1964,
+      "retry_collision": null,
+      "raw_verification_sha256": "d2a9acbdf3dda8333af7bbf71f6e3f5c1e1d40cda879ad5528a48d9967023c5a",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10749394843500544,
+        "staging_payload_byte_ns": 53570527674368,
+        "client_pending_item_ns": 55853141330,
+        "client_outstanding_item_ns": 712655498530,
+        "cpu_sampled_common_window_ns": {
+          "server": 15810000000,
+          "client-0": 3660000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23689712534,
+          "2": 0,
+          "3": 0,
+          "4": 10890546753,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11761378.5
+          },
+          "slowdown": {
+            "n": 18,
+            "median_ns": 41532035.0
+          },
+          "recovery": {
+            "n": 970,
+            "median_ns": 11712082.0
+          },
+          "drain": {
+            "n": 17,
+            "median_ns": 11629768.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "name": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-reject",
+      "validity_replay": "PASS",
+      "independent_U": 1954,
+      "retry_collision": null,
+      "raw_verification_sha256": "eec380b187c4290b191e023174cad18c04334906af87b7cbc082271b81a2324d",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11264826079035392,
+        "staging_payload_byte_ns": 55389082435584,
+        "client_pending_item_ns": 51775648920,
+        "client_outstanding_item_ns": 743192123729,
+        "cpu_sampled_common_window_ns": {
+          "server": 16500000000,
+          "client-0": 3800000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23624859876,
+          "2": 0,
+          "3": 0,
+          "4": 10980776486,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11762643.0
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41643970.0
+          },
+          "recovery": {
+            "n": 963,
+            "median_ns": 11702589.0
+          },
+          "drain": {
+            "n": 22,
+            "median_ns": 11774224.5
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "name": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-wait",
+      "validity_replay": "PASS",
+      "independent_U": 2263,
+      "retry_collision": null,
+      "raw_verification_sha256": "15ba228f475b6c91b63fb5fb5390c384baa4a671b829c085bbfdfbbaf693bd3e",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12553006428143616,
+        "staging_payload_byte_ns": 139193842417664,
+        "client_pending_item_ns": 648751950109,
+        "client_outstanding_item_ns": 823484013501,
+        "cpu_sampled_common_window_ns": {
+          "server": 12670000000,
+          "client-0": 3800000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35292494335,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11711007.0
+          },
+          "slowdown": {
+            "n": 285,
+            "median_ns": 41587032.0
+          },
+          "recovery": {
+            "n": 967,
+            "median_ns": 11660576.0
+          },
+          "drain": {
+            "n": 51,
+            "median_ns": 11662549.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "name": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-retry",
+      "validity_replay": "PASS",
+      "independent_U": 2256,
+      "retry_collision": 0.0024630541871921183,
+      "raw_verification_sha256": "db9aee832b2dabae5a9954d5a2cf9d14267ed46c023d600384bdc4f80a9d0dae",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12308623872917504,
+        "staging_payload_byte_ns": 49324372819968,
+        "client_pending_item_ns": 643995018335,
+        "client_outstanding_item_ns": 820477722266,
+        "cpu_sampled_common_window_ns": {
+          "server": 13420000000,
+          "client-0": 3390000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35242055935,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11723019.5
+          },
+          "slowdown": {
+            "n": 283,
+            "median_ns": 41576218.0
+          },
+          "recovery": {
+            "n": 960,
+            "median_ns": 11690329.0
+          },
+          "drain": {
+            "n": 53,
+            "median_ns": 11648596.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "name": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-drop",
+      "validity_replay": "PASS",
+      "independent_U": 2234,
+      "retry_collision": null,
+      "raw_verification_sha256": "2de35bc354ae48aabb9e934383dd896b0d248a9f0478fdf26c40362f25ec6f16",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11687186324389888,
+        "staging_payload_byte_ns": 47553700577280,
+        "client_pending_item_ns": 395208970508,
+        "client_outstanding_item_ns": 761644178723,
+        "cpu_sampled_common_window_ns": {
+          "server": 13110000000,
+          "client-0": 3640000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34858647255,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11718096.5
+          },
+          "slowdown": {
+            "n": 284,
+            "median_ns": 41573784.0
+          },
+          "recovery": {
+            "n": 969,
+            "median_ns": 11700791.0
+          },
+          "drain": {
+            "n": 21,
+            "median_ns": 11747101.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "name": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-wait",
+      "validity_replay": "PASS",
+      "independent_U": 2256,
+      "retry_collision": null,
+      "raw_verification_sha256": "b732dca52e9dc2d162da9fb236dc3435b3198c2526bd42a6b0c31f6c037d18b1",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12490231161323520,
+        "staging_payload_byte_ns": 146590376067072,
+        "client_pending_item_ns": 660957579619,
+        "client_outstanding_item_ns": 820516781806,
+        "cpu_sampled_common_window_ns": {
+          "server": 13190000000,
+          "client-0": 3960000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35235445065,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11715964.5
+          },
+          "slowdown": {
+            "n": 284,
+            "median_ns": 41601561.0
+          },
+          "recovery": {
+            "n": 965,
+            "median_ns": 11675267.0
+          },
+          "drain": {
+            "n": 47,
+            "median_ns": 11699659.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "name": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-wait",
+      "validity_replay": "PASS",
+      "independent_U": 1956,
+      "retry_collision": null,
+      "raw_verification_sha256": "f9743d16c8450e64de1efc20e73bad901ec844571911443f896946acdb2bb67e",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12041377130627072,
+        "staging_payload_byte_ns": 74035462930432,
+        "client_pending_item_ns": 176914461738,
+        "client_outstanding_item_ns": 812489311727,
+        "cpu_sampled_common_window_ns": {
+          "server": 16400000000,
+          "client-0": 3510000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23796361450,
+          "2": 0,
+          "3": 0,
+          "4": 10901190890,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11743870.5
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41541257.5
+          },
+          "recovery": {
+            "n": 963,
+            "median_ns": 11713746.0
+          },
+          "drain": {
+            "n": 33,
+            "median_ns": 11368201.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "name": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-reject",
+      "validity_replay": "PASS",
+      "independent_U": 1959,
+      "retry_collision": null,
+      "raw_verification_sha256": "10c1d2cfc07e86b9f09c383fb359f698bf076974c78efaa795ce09a9dd021268",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10546052049092608,
+        "staging_payload_byte_ns": 55318654959616,
+        "client_pending_item_ns": 51829757035,
+        "client_outstanding_item_ns": 699163407399,
+        "cpu_sampled_common_window_ns": {
+          "server": 16320000000,
+          "client-0": 3690000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23565016819,
+          "2": 0,
+          "3": 0,
+          "4": 10961535364,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11740090.5
+          },
+          "slowdown": {
+            "n": 15,
+            "median_ns": 41949272.0
+          },
+          "recovery": {
+            "n": 977,
+            "median_ns": 11658677.0
+          },
+          "drain": {
+            "n": 13,
+            "median_ns": 11638743.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "name": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-retry",
+      "validity_replay": "PASS",
+      "independent_U": 1965,
+      "retry_collision": 0.0035087719298245615,
+      "raw_verification_sha256": "13447a6a86bdd8e767a80af77a3181271224e657507cb12b66660050467ceb50",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10877265342808064,
+        "staging_payload_byte_ns": 55924032913408,
+        "client_pending_item_ns": 109616731427,
+        "client_outstanding_item_ns": 727873979415,
+        "cpu_sampled_common_window_ns": {
+          "server": 16340000000,
+          "client-0": 3490000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23645440037,
+          "2": 0,
+          "3": 0,
+          "4": 10930047879,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11709204.5
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41612708.0
+          },
+          "recovery": {
+            "n": 977,
+            "median_ns": 11659002.0
+          },
+          "drain": {
+            "n": 16,
+            "median_ns": 11756419.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "name": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-drop",
+      "validity_replay": "PASS",
+      "independent_U": 2233,
+      "retry_collision": null,
+      "raw_verification_sha256": "2eb502ee11f01d543fab9751bdcb1489590030b293f0cece88623861d5c31f09",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11447954261934080,
+        "staging_payload_byte_ns": 46596520034304,
+        "client_pending_item_ns": 381204268645,
+        "client_outstanding_item_ns": 743441707720,
+        "cpu_sampled_common_window_ns": {
+          "server": 12870000000,
+          "client-0": 3350000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34790895611,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11668961.0
+          },
+          "slowdown": {
+            "n": 282,
+            "median_ns": 41688311.0
+          },
+          "recovery": {
+            "n": 976,
+            "median_ns": 11676373.5
+          },
+          "drain": {
+            "n": 15,
+            "median_ns": 11772965.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "name": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-reject",
+      "validity_replay": "PASS",
+      "independent_U": 2229,
+      "retry_collision": null,
+      "raw_verification_sha256": "9620da597a225db0b855671f809ec63a79fd6ce411d2b9706fa78220324794dc",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11367018439278592,
+        "staging_payload_byte_ns": 48786460770304,
+        "client_pending_item_ns": 395357934649,
+        "client_outstanding_item_ns": 741110554317,
+        "cpu_sampled_common_window_ns": {
+          "server": 13550000000,
+          "client-0": 3570000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34843726433,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11673587.5
+          },
+          "slowdown": {
+            "n": 283,
+            "median_ns": 41613490.0
+          },
+          "recovery": {
+            "n": 969,
+            "median_ns": 11656771.0
+          },
+          "drain": {
+            "n": 17,
+            "median_ns": 11497982.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "name": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-drop",
+      "validity_replay": "PASS",
+      "independent_U": 1963,
+      "retry_collision": null,
+      "raw_verification_sha256": "16b34c7a026815923ca138c1fbadc1f8edc0d7d81ce69ff8b2ffd74d6c88c91a",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 9948800542638080,
+        "staging_payload_byte_ns": 54097557258240,
+        "client_pending_item_ns": 36062356756,
+        "client_outstanding_item_ns": 660998405491,
+        "cpu_sampled_common_window_ns": {
+          "server": 15820000000,
+          "client-0": 3560000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23578318224,
+          "2": 0,
+          "3": 0,
+          "4": 10902062366,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11789234.0
+          },
+          "slowdown": {
+            "n": 17,
+            "median_ns": 41696308.0
+          },
+          "recovery": {
+            "n": 979,
+            "median_ns": 11594783.0
+          },
+          "drain": {
+            "n": 9,
+            "median_ns": 11757203.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "name": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-retry",
+      "validity_replay": "PASS",
+      "independent_U": 2256,
+      "retry_collision": 0.004761904761904762,
+      "raw_verification_sha256": "869e47e383e73823fc89455170e518d04748cb789d30a00202b38dc9c14de3d6",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12333188826497024,
+        "staging_payload_byte_ns": 48912059039744,
+        "client_pending_item_ns": 692432624557,
+        "client_outstanding_item_ns": 822570138752,
+        "cpu_sampled_common_window_ns": {
+          "server": 13210000000,
+          "client-0": 3400000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35273273831,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11714995.5
+          },
+          "slowdown": {
+            "n": 284,
+            "median_ns": 41656516.5
+          },
+          "recovery": {
+            "n": 956,
+            "median_ns": 11715384.5
+          },
+          "drain": {
+            "n": 56,
+            "median_ns": 11782849.5
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "name": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-retry",
+      "validity_replay": "PASS",
+      "independent_U": 2249,
+      "retry_collision": 0.001893939393939394,
+      "raw_verification_sha256": "451df0cf2f005c0a1ff33fe6d9f90da3d14a2befeca603c10c2e29ec61f2d131",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12354759492206592,
+        "staging_payload_byte_ns": 49540922638336,
+        "client_pending_item_ns": 698525866232,
+        "client_outstanding_item_ns": 823379568843,
+        "cpu_sampled_common_window_ns": {
+          "server": 13410000000,
+          "client-0": 3380000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35238927016,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11655911.5
+          },
+          "slowdown": {
+            "n": 284,
+            "median_ns": 41557296.0
+          },
+          "recovery": {
+            "n": 946,
+            "median_ns": 11735470.5
+          },
+          "drain": {
+            "n": 59,
+            "median_ns": 11795494.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "name": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-reject",
+      "validity_replay": "PASS",
+      "independent_U": 2235,
+      "retry_collision": null,
+      "raw_verification_sha256": "8dc556348f1e6965ca64331d14a8fbd53b62f3bb3f3e7244d5a49ccab6623703",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11839324395896832,
+        "staging_payload_byte_ns": 47371610636288,
+        "client_pending_item_ns": 393022060548,
+        "client_outstanding_item_ns": 769874472376,
+        "cpu_sampled_common_window_ns": {
+          "server": 12950000000,
+          "client-0": 3310000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34904929385,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11764131.5
+          },
+          "slowdown": {
+            "n": 284,
+            "median_ns": 41597916.0
+          },
+          "recovery": {
+            "n": 967,
+            "median_ns": 11664450.0
+          },
+          "drain": {
+            "n": 24,
+            "median_ns": 11721766.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "name": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-drop",
+      "validity_replay": "PASS",
+      "independent_U": 1964,
+      "retry_collision": null,
+      "raw_verification_sha256": "f4950b79ba34752a505771810a62cc66ae7503bc4fb624d3ed80e663b16fb65b",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10883505722736640,
+        "staging_payload_byte_ns": 55932418916352,
+        "client_pending_item_ns": 53243443492,
+        "client_outstanding_item_ns": 719614962434,
+        "cpu_sampled_common_window_ns": {
+          "server": 16540000000,
+          "client-0": 3720000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23676639157,
+          "2": 0,
+          "3": 0,
+          "4": 10924155421,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11689326.0
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41519504.0
+          },
+          "recovery": {
+            "n": 976,
+            "median_ns": 11648649.5
+          },
+          "drain": {
+            "n": 15,
+            "median_ns": 11733758.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "name": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-retry",
+      "validity_replay": "PASS",
+      "independent_U": 1966,
+      "retry_collision": 0.0020940415000951836,
+      "raw_verification_sha256": "5bad6429baa0d018e5c848a8da57a6a2a5488655ebb762de61ef9c312c8edd7f",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10548048260808704,
+        "staging_payload_byte_ns": 54222131200000,
+        "client_pending_item_ns": 105922074738,
+        "client_outstanding_item_ns": 704978502865,
+        "cpu_sampled_common_window_ns": {
+          "server": 15840000000,
+          "client-0": 3330000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23592723823,
+          "2": 0,
+          "3": 0,
+          "4": 10943707353,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11771819.5
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41684744.5
+          },
+          "recovery": {
+            "n": 978,
+            "median_ns": 11645610.5
+          },
+          "drain": {
+            "n": 12,
+            "median_ns": 11779174.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "name": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-wait",
+      "validity_replay": "PASS",
+      "independent_U": 2263,
+      "retry_collision": null,
+      "raw_verification_sha256": "96570f2ee288f59c75ba9b295b4e6d4938558b480f63b3a7e59adc6ec60a4576",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12489445874204672,
+        "staging_payload_byte_ns": 141705345400832,
+        "client_pending_item_ns": 658233739208,
+        "client_outstanding_item_ns": 820170548592,
+        "cpu_sampled_common_window_ns": {
+          "server": 12020000000,
+          "client-0": 3200000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 35250526473,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11711644.5
+          },
+          "slowdown": {
+            "n": 286,
+            "median_ns": 41518591.5
+          },
+          "recovery": {
+            "n": 966,
+            "median_ns": 11671413.0
+          },
+          "drain": {
+            "n": 51,
+            "median_ns": 11691758.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "name": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-drop",
+      "validity_replay": "PASS",
+      "independent_U": 2230,
+      "retry_collision": null,
+      "raw_verification_sha256": "2541f51efee986f234fa6a5f0a8556f4720596e2338189560f45b2accddbaed5",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11686996347797504,
+        "staging_payload_byte_ns": 47829282832384,
+        "client_pending_item_ns": 430535421160,
+        "client_outstanding_item_ns": 764550022957,
+        "cpu_sampled_common_window_ns": {
+          "server": 12990000000,
+          "client-0": 3420000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34831863508,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11741999.0
+          },
+          "slowdown": {
+            "n": 284,
+            "median_ns": 41571513.0
+          },
+          "recovery": {
+            "n": 966,
+            "median_ns": 11704947.5
+          },
+          "drain": {
+            "n": 20,
+            "median_ns": 11781397.5
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "name": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-reject",
+      "validity_replay": "PASS",
+      "independent_U": 1972,
+      "retry_collision": null,
+      "raw_verification_sha256": "d5aad8b52f6afaf5b5d4ff5aa2296a8459c3433d96ec666868e898466cac919b",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 10905984317341696,
+        "staging_payload_byte_ns": 54804906213376,
+        "client_pending_item_ns": 42923946538,
+        "client_outstanding_item_ns": 719337266736,
+        "cpu_sampled_common_window_ns": {
+          "server": 16240000000,
+          "client-0": 3580000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23884058747,
+          "2": 0,
+          "3": 0,
+          "4": 10710848914,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11730141.5
+          },
+          "slowdown": {
+            "n": 22,
+            "median_ns": 41460346.5
+          },
+          "recovery": {
+            "n": 971,
+            "median_ns": 11656615.0
+          },
+          "drain": {
+            "n": 19,
+            "median_ns": 11853558.0
+          }
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "name": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-wait",
+      "validity_replay": "PASS",
+      "independent_U": 1944,
+      "retry_collision": null,
+      "raw_verification_sha256": "aaa59aa131110a1ca3d1d43789c1dfe5db5c0dacbfb64457af0ec3e0e6af6b18",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12056770548170752,
+        "staging_payload_byte_ns": 75719151730688,
+        "client_pending_item_ns": 177309447321,
+        "client_outstanding_item_ns": 813519118418,
+        "cpu_sampled_common_window_ns": {
+          "server": 16650000000,
+          "client-0": 3530000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 23795345738,
+          "2": 0,
+          "3": 0,
+          "4": 10892426624,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11684448.5
+          },
+          "slowdown": {
+            "n": 16,
+            "median_ns": 41552036.5
+          },
+          "recovery": {
+            "n": 960,
+            "median_ns": 11693322.5
+          },
+          "drain": {
+            "n": 34,
+            "median_ns": 11652669.0
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 1,
+      "name": "b-deterministic",
+      "directory": "experiments/003/results/stage6/B2-block-01-attempt-01/b-deterministic",
+      "validity_replay": "PASS",
+      "independent_U": 2228,
+      "retry_collision": 0.0014213325153532468,
+      "raw_verification_sha256": "ae7d43bdcadc7fefa12705fe8508b37f36030d05bdc01138bcb4935eb842fc21",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12386782985830400,
+        "staging_payload_byte_ns": 88903299366912,
+        "client_pending_item_ns": 233549240127,
+        "client_outstanding_item_ns": 842322391738,
+        "cpu_sampled_common_window_ns": {
+          "server": 21780000000,
+          "client-0": 2020000000,
+          "client-1": 1940000000,
+          "client-2": 1980000000,
+          "client-3": 2020000000,
+          "client-4": 2050000000,
+          "client-5": 2010000000,
+          "client-6": 2010000000,
+          "client-7": 2010000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34927097031,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11747196.5
+          },
+          "slowdown": {
+            "n": 278,
+            "median_ns": 42108191.5
+          },
+          "recovery": {
+            "n": 963,
+            "median_ns": 11735033.0
+          },
+          "drain": {
+            "n": 27,
+            "median_ns": 11515417.0
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 1,
+      "name": "b-jitter",
+      "directory": "experiments/003/results/stage6/B2-block-01-attempt-01/b-jitter",
+      "validity_replay": "PASS",
+      "independent_U": 2222,
+      "retry_collision": 0.0017121904006004787,
+      "raw_verification_sha256": "0edd8979721e473371fea196f61dacd924f18a06a9680b4233355471257bb307",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12359063736532992,
+        "staging_payload_byte_ns": 91670817079296,
+        "client_pending_item_ns": 121222812626,
+        "client_outstanding_item_ns": 837484844673,
+        "cpu_sampled_common_window_ns": {
+          "server": 22300000000,
+          "client-0": 2100000000,
+          "client-1": 2090000000,
+          "client-2": 2040000000,
+          "client-3": 2080000000,
+          "client-4": 2080000000,
+          "client-5": 2080000000,
+          "client-6": 2100000000,
+          "client-7": 2060000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34922123997,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11786184.0
+          },
+          "slowdown": {
+            "n": 276,
+            "median_ns": 42081510.0
+          },
+          "recovery": {
+            "n": 959,
+            "median_ns": 11735022.0
+          },
+          "drain": {
+            "n": 27,
+            "median_ns": 11695719.0
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 2,
+      "name": "b-deterministic",
+      "directory": "experiments/003/results/stage6/B2-block-02-attempt-01/b-deterministic",
+      "validity_replay": "PASS",
+      "independent_U": 2231,
+      "retry_collision": 0.0013924675182281673,
+      "raw_verification_sha256": "f6943a0ee109a186f01a761813c2c7b0c961b2b2da5b1729f53cb12d73e24b8a",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 11960438535258112,
+        "staging_payload_byte_ns": 86541057277952,
+        "client_pending_item_ns": 235929391477,
+        "client_outstanding_item_ns": 817142500299,
+        "cpu_sampled_common_window_ns": {
+          "server": 21250000000,
+          "client-0": 1970000000,
+          "client-1": 1930000000,
+          "client-2": 1960000000,
+          "client-3": 1990000000,
+          "client-4": 1990000000,
+          "client-5": 1970000000,
+          "client-6": 1930000000,
+          "client-7": 1960000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34867451182,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11767826.0
+          },
+          "slowdown": {
+            "n": 280,
+            "median_ns": 41900911.0
+          },
+          "recovery": {
+            "n": 967,
+            "median_ns": 11706479.0
+          },
+          "drain": {
+            "n": 24,
+            "median_ns": 11467853.0
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 2,
+      "name": "b-jitter",
+      "directory": "experiments/003/results/stage6/B2-block-02-attempt-01/b-jitter",
+      "validity_replay": "PASS",
+      "independent_U": 2225,
+      "retry_collision": 0.0016408469238657919,
+      "raw_verification_sha256": "cec3d4d7dae93d659dd3cbf54f14edc2c0e7df92f9b091a4d500ebe90a06b2d5",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12368528093528064,
+        "staging_payload_byte_ns": 89287120748544,
+        "client_pending_item_ns": 120064392331,
+        "client_outstanding_item_ns": 836097250448,
+        "cpu_sampled_common_window_ns": {
+          "server": 21820000000,
+          "client-0": 2030000000,
+          "client-1": 2010000000,
+          "client-2": 2110000000,
+          "client-3": 2100000000,
+          "client-4": 2160000000,
+          "client-5": 2000000000,
+          "client-6": 2030000000,
+          "client-7": 2050000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34867114399,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11778802.0
+          },
+          "slowdown": {
+            "n": 278,
+            "median_ns": 41992785.5
+          },
+          "recovery": {
+            "n": 960,
+            "median_ns": 11687997.5
+          },
+          "drain": {
+            "n": 27,
+            "median_ns": 11550726.0
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 3,
+      "name": "b-deterministic",
+      "directory": "experiments/003/results/stage6/B2-block-03-attempt-01/b-deterministic",
+      "validity_replay": "PASS",
+      "independent_U": 2233,
+      "retry_collision": 0.00137529885769946,
+      "raw_verification_sha256": "bf8c009474239b4175e011ea4a088c5c3e2688f84b42fcb940fbf33a58843b56",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12349972378730496,
+        "staging_payload_byte_ns": 87194815561728,
+        "client_pending_item_ns": 237745579495,
+        "client_outstanding_item_ns": 839994756746,
+        "cpu_sampled_common_window_ns": {
+          "server": 21260000000,
+          "client-0": 1960000000,
+          "client-1": 1940000000,
+          "client-2": 1970000000,
+          "client-3": 1970000000,
+          "client-4": 1980000000,
+          "client-5": 2020000000,
+          "client-6": 1940000000,
+          "client-7": 1980000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34876487892,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11686204.5
+          },
+          "slowdown": {
+            "n": 280,
+            "median_ns": 41845461.5
+          },
+          "recovery": {
+            "n": 965,
+            "median_ns": 11734476.0
+          },
+          "drain": {
+            "n": 28,
+            "median_ns": 11368163.5
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 3,
+      "name": "b-jitter",
+      "directory": "experiments/003/results/stage6/B2-block-03-attempt-01/b-jitter",
+      "validity_replay": "PASS",
+      "independent_U": 2227,
+      "retry_collision": 0.001701174080419931,
+      "raw_verification_sha256": "ca8ce873f303611d1ea8a11dff39126d2b4de639689f83702e785e7ca436b7f3",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12010755477553152,
+        "staging_payload_byte_ns": 85899586486272,
+        "client_pending_item_ns": 119143138810,
+        "client_outstanding_item_ns": 813101834062,
+        "cpu_sampled_common_window_ns": {
+          "server": 20880000000,
+          "client-0": 1920000000,
+          "client-1": 1930000000,
+          "client-2": 1870000000,
+          "client-3": 1900000000,
+          "client-4": 1890000000,
+          "client-5": 1910000000,
+          "client-6": 1900000000,
+          "client-7": 1870000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34826868678,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11703044.0
+          },
+          "slowdown": {
+            "n": 278,
+            "median_ns": 42024338.0
+          },
+          "recovery": {
+            "n": 966,
+            "median_ns": 11691356.5
+          },
+          "drain": {
+            "n": 23,
+            "median_ns": 11665965.0
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 4,
+      "name": "b-jitter",
+      "directory": "experiments/003/results/stage6/B2-block-04-attempt-01/b-jitter",
+      "validity_replay": "PASS",
+      "independent_U": 2226,
+      "retry_collision": 0.0017390106104450875,
+      "raw_verification_sha256": "dd11528ff1fa543275f4484a4c5685ebf62e2af05e2f18bce7d8482bf233face",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12330834685968384,
+        "staging_payload_byte_ns": 84975160819712,
+        "client_pending_item_ns": 114323540484,
+        "client_outstanding_item_ns": 829643163638,
+        "cpu_sampled_common_window_ns": {
+          "server": 20690000000,
+          "client-0": 1950000000,
+          "client-1": 1920000000,
+          "client-2": 1950000000,
+          "client-3": 1960000000,
+          "client-4": 1940000000,
+          "client-5": 1960000000,
+          "client-6": 1900000000,
+          "client-7": 1930000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34903661780,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11721206.0
+          },
+          "slowdown": {
+            "n": 277,
+            "median_ns": 42153006.0
+          },
+          "recovery": {
+            "n": 963,
+            "median_ns": 11772094.0
+          },
+          "drain": {
+            "n": 26,
+            "median_ns": 11499815.5
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 4,
+      "name": "b-deterministic",
+      "directory": "experiments/003/results/stage6/B2-block-04-attempt-01/b-deterministic",
+      "validity_replay": "PASS",
+      "independent_U": 2230,
+      "retry_collision": 0.001406699519907067,
+      "raw_verification_sha256": "8a89c2d5fee764d80dfb9f16e90f4227bca1ecbcc05872d104fcacd1020582c4",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12335553169620992,
+        "staging_payload_byte_ns": 86948463542272,
+        "client_pending_item_ns": 234021519698,
+        "client_outstanding_item_ns": 838101478287,
+        "cpu_sampled_common_window_ns": {
+          "server": 21240000000,
+          "client-0": 1960000000,
+          "client-1": 1960000000,
+          "client-2": 1960000000,
+          "client-3": 1970000000,
+          "client-4": 1960000000,
+          "client-5": 1950000000,
+          "client-6": 1940000000,
+          "client-7": 1960000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34911688640,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11748822.0
+          },
+          "slowdown": {
+            "n": 278,
+            "median_ns": 42220683.0
+          },
+          "recovery": {
+            "n": 966,
+            "median_ns": 11736723.0
+          },
+          "drain": {
+            "n": 26,
+            "median_ns": 11639403.0
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 5,
+      "name": "b-deterministic",
+      "directory": "experiments/003/results/stage6/B2-block-05-attempt-01/b-deterministic",
+      "validity_replay": "PASS",
+      "independent_U": 2230,
+      "retry_collision": 0.0014376222396817171,
+      "raw_verification_sha256": "114aa06c7ecfba2f8e558f2ec1278aa2a4d0a8e64b138b5e41c5b2c0003a93c0",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12515034345750528,
+        "staging_payload_byte_ns": 88525607403520,
+        "client_pending_item_ns": 240067401906,
+        "client_outstanding_item_ns": 851952875292,
+        "cpu_sampled_common_window_ns": {
+          "server": 21340000000,
+          "client-0": 1950000000,
+          "client-1": 1950000000,
+          "client-2": 1920000000,
+          "client-3": 1940000000,
+          "client-4": 1950000000,
+          "client-5": 1990000000,
+          "client-6": 1950000000,
+          "client-7": 1940000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34884934768,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11719456.5
+          },
+          "slowdown": {
+            "n": 278,
+            "median_ns": 42083044.0
+          },
+          "recovery": {
+            "n": 964,
+            "median_ns": 11791139.5
+          },
+          "drain": {
+            "n": 28,
+            "median_ns": 11409667.5
+          }
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 5,
+      "name": "b-jitter",
+      "directory": "experiments/003/results/stage6/B2-block-05-attempt-01/b-jitter",
+      "validity_replay": "PASS",
+      "independent_U": 2222,
+      "retry_collision": 0.0015794127842829874,
+      "raw_verification_sha256": "8bfae6880d4328acb163d095a2582a1cac37c60453513dc3ee36650bad393daa",
+      "supplementary_common_39": {
+        "common_window_ns": [
+          0,
+          39000000000
+        ],
+        "server_payload_byte_ns": 12076304059219968,
+        "staging_payload_byte_ns": 89774144192512,
+        "client_pending_item_ns": 119873561429,
+        "client_outstanding_item_ns": 816915976446,
+        "cpu_sampled_common_window_ns": {
+          "server": 21890000000,
+          "client-0": 2020000000,
+          "client-1": 2050000000,
+          "client-2": 2060000000,
+          "client-3": 2040000000,
+          "client-4": 2050000000,
+          "client-5": 1990000000,
+          "client-6": 2050000000,
+          "client-7": 2060000000
+        },
+        "worker_occupied_by_disposition_ns": {
+          "1": 34823087961,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "completed_service_by_start_phase": {
+          "initial": {
+            "n": 960,
+            "median_ns": 11721213.5
+          },
+          "slowdown": {
+            "n": 275,
+            "median_ns": 42356112.0
+          },
+          "recovery": {
+            "n": 962,
+            "median_ns": 11721397.5
+          },
+          "drain": {
+            "n": 25,
+            "median_ns": 11451119.0
+          }
+        }
+      }
+    }
+  ],
+  "paired_U_reanalysis": {
+    "a500:reject-minus-wait": {
+      "PASS": true,
+      "values": [
+        0.16458333333333333,
+        -0.0010416666666666667,
+        -0.004166666666666667,
+        0.0010416666666666667,
+        0.009722222222222222
+      ],
+      "interval95": [
+        -0.001875,
+        0.09986111111111111
+      ]
+    },
+    "a500:retry-minus-wait": {
+      "PASS": true,
+      "values": [
+        0.16597222222222222,
+        -0.005902777777777778,
+        -0.0010416666666666667,
+        0.003125,
+        0.007638888888888889
+      ],
+      "interval95": [
+        -0.002222222222222222,
+        0.10083333333333333
+      ]
+    },
+    "a500:drop-minus-wait": {
+      "PASS": true,
+      "values": [
+        0.16666666666666666,
+        -0.00034722222222222224,
+        -0.0006944444444444445,
+        0.0024305555555555556,
+        0.006944444444444444
+      ],
+      "interval95": [
+        6.944444444444444e-05,
+        0.10124999999999999
+      ]
+    },
+    "a500:retry-minus-reject": {
+      "PASS": true,
+      "values": [
+        0.001388888888888889,
+        -0.004861111111111111,
+        0.003125,
+        0.0020833333333333333,
+        -0.0020833333333333333
+      ],
+      "interval95": [
+        -0.002916666666666667,
+        0.002361111111111111
+      ]
+    },
+    "a500:drop-minus-reject": {
+      "PASS": true,
+      "values": [
+        0.0020833333333333333,
+        0.0006944444444444445,
+        0.003472222222222222,
+        0.001388888888888889,
+        -0.002777777777777778
+      ],
+      "interval95": [
+        -0.001111111111111111,
+        0.0026388888888888885
+      ]
+    },
+    "a500:drop-minus-retry": {
+      "PASS": true,
+      "values": [
+        0.0006944444444444445,
+        0.005555555555555556,
+        0.00034722222222222224,
+        -0.0006944444444444445,
+        -0.0006944444444444445
+      ],
+      "interval95": [
+        -0.0004861111111111111,
+        0.003333333333333333
+      ]
+    },
+    "a5000:reject-minus-wait": {
+      "PASS": true,
+      "values": [
+        -0.009027777777777777,
+        -0.009375,
+        -0.010069444444444445,
+        -0.009375,
+        -0.009722222222222222
+      ],
+      "interval95": [
+        -0.00986111111111111,
+        -0.00923611111111111
+      ]
+    },
+    "a5000:retry-minus-wait": {
+      "PASS": true,
+      "values": [
+        -0.00034722222222222224,
+        -0.003472222222222222,
+        -0.0024305555555555556,
+        0.0,
+        -0.004861111111111111
+      ],
+      "interval95": [
+        -0.0038194444444444448,
+        -0.000625
+      ]
+    },
+    "a5000:drop-minus-wait": {
+      "PASS": true,
+      "values": [
+        -0.009027777777777777,
+        -0.0125,
+        -0.010069444444444445,
+        -0.00798611111111111,
+        -0.011458333333333333
+      ],
+      "interval95": [
+        -0.011597222222222222,
+        -0.008819444444444444
+      ]
+    },
+    "a5000:retry-minus-reject": {
+      "PASS": true,
+      "values": [
+        0.008680555555555556,
+        0.005902777777777778,
+        0.007638888888888889,
+        0.009375,
+        0.004861111111111111
+      ],
+      "interval95": [
+        0.005833333333333334,
+        0.008749999999999999
+      ]
+    },
+    "a5000:drop-minus-reject": {
+      "PASS": true,
+      "values": [
+        0.0,
+        -0.003125,
+        0.0,
+        0.001388888888888889,
+        -0.001736111111111111
+      ],
+      "interval95": [
+        -0.002222222222222222,
+        0.0005555555555555556
+      ]
+    },
+    "a5000:drop-minus-retry": {
+      "PASS": true,
+      "values": [
+        -0.008680555555555556,
+        -0.009027777777777777,
+        -0.007638888888888889,
+        -0.00798611111111111,
+        -0.006597222222222222
+      ],
+      "interval95": [
+        -0.008680555555555556,
+        -0.007222222222222222
+      ]
+    },
+    "deadline5000-minus-500:wait": {
+      "PASS": true,
+      "values": [
+        0.26875,
+        0.103125,
+        0.103125,
+        0.10416666666666667,
+        0.11076388888888888
+      ],
+      "interval95": [
+        0.10333333333333335,
+        0.20402777777777778
+      ]
+    },
+    "deadline5000-minus-500:reject": {
+      "PASS": true,
+      "values": [
+        0.09513888888888888,
+        0.09479166666666666,
+        0.09722222222222222,
+        0.09375,
+        0.09131944444444444
+      ],
+      "interval95": [
+        0.09270833333333334,
+        0.09604166666666666
+      ]
+    },
+    "deadline5000-minus-500:retry": {
+      "PASS": true,
+      "values": [
+        0.10243055555555555,
+        0.10555555555555556,
+        0.10173611111111111,
+        0.10104166666666667,
+        0.09826388888888889
+      ],
+      "interval95": [
+        0.09972222222222221,
+        0.10402777777777776
+      ]
+    },
+    "deadline5000-minus-500:drop": {
+      "PASS": true,
+      "values": [
+        0.09305555555555556,
+        0.09097222222222222,
+        0.09375,
+        0.09375,
+        0.09236111111111112
+      ],
+      "interval95": [
+        0.09180555555555556,
+        0.09361111111111112
+      ]
+    },
+    "B:deterministic-minus-jitter": {
+      "PASS": true,
+      "values": [
+        0.0020833333333333333,
+        0.0020833333333333333,
+        0.0020833333333333333,
+        0.001388888888888889,
+        0.002777777777777778
+      ],
+      "interval95": [
+        0.0016666666666666666,
+        0.0025
+      ]
+    }
+  },
+  "stage5_checksums_unchanged": 426,
+  "modified_or_deleted_historical_files": [],
+  "source_commit": "ec97c831d085bd96c102a3af6beaadfda6e92669",
+  "audit_sha256": "dc165f0ab0595c799f1a64f1fd5db6fc054f6287811652083c9ce82b61b62890",
+  "note": "Common39 quantities implement the human preregistration; no endpoint/exclusion/hypothesis is redefined. CPU windows remain sampled/quantized."
+}

@@ -1,0 +1,421 @@
+{
+  "status": "COMPLETE",
+  "started_unix_ns": 1793594890780420569,
+  "frozen_sha256": "88a7014b6d6be432d48ea72a412ad623e442e0ba3530d20b7ed53e11c37ea56a",
+  "seed_amendment": "B2",
+  "blocks": [
+    {
+      "study": "B",
+      "block": 1,
+      "seed": 13819103293325858276,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            6355496765504103343,
+            15071436124021378880,
+            5625014017878236905,
+            3447117230475965497,
+            5250776049895919015,
+            17778372907978106541,
+            7521561004142020321,
+            7220011407975953819
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            6355496765504103343,
+            15071436124021378880,
+            5625014017878236905,
+            3447117230475965497,
+            5250776049895919015,
+            17778372907978106541,
+            7521561004142020321,
+            7220011407975953819
+          ]
+        }
+      ],
+      "attempt": 1,
+      "seed_amendment": "B2",
+      "status": "VALID",
+      "runs": {
+        "b-deterministic": {
+          "directory": "experiments/003/results/stage6/B2-block-01-attempt-01/b-deterministic",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "b-jitter": {
+          "directory": "experiments/003/results/stage6/B2-block-01-attempt-01/b-jitter",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 2,
+      "seed": 16633640269546976327,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            8722254150812052471,
+            11099270542738077153,
+            8836916056094257903,
+            12903785145674574280,
+            254964878358020449,
+            2046897096955049273,
+            11929147259849570409,
+            15958692587508686687
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            8722254150812052471,
+            11099270542738077153,
+            8836916056094257903,
+            12903785145674574280,
+            254964878358020449,
+            2046897096955049273,
+            11929147259849570409,
+            15958692587508686687
+          ]
+        }
+      ],
+      "attempt": 1,
+      "seed_amendment": "B2",
+      "status": "VALID",
+      "runs": {
+        "b-deterministic": {
+          "directory": "experiments/003/results/stage6/B2-block-02-attempt-01/b-deterministic",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "b-jitter": {
+          "directory": "experiments/003/results/stage6/B2-block-02-attempt-01/b-jitter",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 3,
+      "seed": 17958156311306776733,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            5856690814628899233,
+            14354742196754730648,
+            3321190657799731937,
+            650471454528270664,
+            9893498355474897976,
+            16258915137125366552,
+            16300055080175679994,
+            13027081335204446552
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            5856690814628899233,
+            14354742196754730648,
+            3321190657799731937,
+            650471454528270664,
+            9893498355474897976,
+            16258915137125366552,
+            16300055080175679994,
+            13027081335204446552
+          ]
+        }
+      ],
+      "attempt": 1,
+      "seed_amendment": "B2",
+      "status": "VALID",
+      "runs": {
+        "b-deterministic": {
+          "directory": "experiments/003/results/stage6/B2-block-03-attempt-01/b-deterministic",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "b-jitter": {
+          "directory": "experiments/003/results/stage6/B2-block-03-attempt-01/b-jitter",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 4,
+      "seed": 9043764941866104881,
+      "cases": [
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17702452344147909808,
+            1765025267287285012,
+            11187789706569895208,
+            4048116638734641497,
+            3999139750200727639,
+            3316457824709584161,
+            8842185317537806200,
+            6616788001203615398
+          ]
+        },
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            17702452344147909808,
+            1765025267287285012,
+            11187789706569895208,
+            4048116638734641497,
+            3999139750200727639,
+            3316457824709584161,
+            8842185317537806200,
+            6616788001203615398
+          ]
+        }
+      ],
+      "attempt": 1,
+      "seed_amendment": "B2",
+      "status": "VALID",
+      "runs": {
+        "b-jitter": {
+          "directory": "experiments/003/results/stage6/B2-block-04-attempt-01/b-jitter",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "b-deterministic": {
+          "directory": "experiments/003/results/stage6/B2-block-04-attempt-01/b-deterministic",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 5,
+      "seed": 15299322588890134026,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            695142299695308062,
+            7503457414277559097,
+            5339405856046753711,
+            14945826017325457226,
+            17712967486953178184,
+            18253969219709188750,
+            13530328321541074172,
+            5281678204480465563
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            695142299695308062,
+            7503457414277559097,
+            5339405856046753711,
+            14945826017325457226,
+            17712967486953178184,
+            18253969219709188750,
+            13530328321541074172,
+            5281678204480465563
+          ]
+        }
+      ],
+      "attempt": 1,
+      "seed_amendment": "B2",
+      "status": "VALID",
+      "runs": {
+        "b-deterministic": {
+          "directory": "experiments/003/results/stage6/B2-block-05-attempt-01/b-deterministic",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "b-jitter": {
+          "directory": "experiments/003/results/stage6/B2-block-05-attempt-01/b-jitter",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "study": "B",
+      "block": 1,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-01-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 1,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-01-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 2,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-02-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 2,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-02-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 3,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-03-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 3,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-03-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 4,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-04-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 4,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-04-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 5,
+      "attempt": 1,
+      "case": "b-deterministic",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-05-attempt-01/b-deterministic",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "B",
+      "block": 5,
+      "attempt": 1,
+      "case": "b-jitter",
+      "seed_amendment": "B2",
+      "directory": "experiments/003/results/stage6/B2-block-05-attempt-01/b-jitter",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    }
+  ],
+  "completed_unix_ns": 1793595331846050864
+}

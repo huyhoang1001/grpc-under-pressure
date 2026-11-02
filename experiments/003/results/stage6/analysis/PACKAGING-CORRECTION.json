@@ -1,0 +1,6 @@
+{
+  "stage": "post-run packaging, not a study attempt",
+  "initial_check_exit": 1,
+  "error": "AttributeError: str object has no attribute read_bytes in checksum helper",
+  "resolution": "Normalize checksum inputs through pathlib.Path; no source frozen for measurement, raw data, analysis endpoint or exclusion changed. No workload rerun."
+}
