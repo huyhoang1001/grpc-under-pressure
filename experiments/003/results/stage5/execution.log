@@ -1,0 +1,66 @@
+START block1 attempt1 wait seed1134903123497516951
+RPC ended: wait 36.724726955 
+PASS 
+START block1 attempt1 drop seed1134903123497516951
+RPC ended: drop 36.312629816 
+PASS 
+START block1 attempt1 retry seed1134903123497516951
+RPC ended: retry 36.761326946 
+PASS 
+START block1 attempt1 reject seed1134903123497516951
+RPC ended: reject 36.364866081 
+PASS 
+VALID BLOCK 1
+START block2 attempt1 retry seed7335427334695112769
+RPC ended: retry 36.744705227 
+PASS 
+START block2 attempt1 reject seed7335427334695112769
+RPC ended: reject 36.265989642 
+PASS 
+START block2 attempt1 wait seed7335427334695112769
+RPC ended: wait 36.777008895 
+PASS 
+START block2 attempt1 drop seed7335427334695112769
+RPC ended: drop 36.497453485 
+PASS 
+VALID BLOCK 2
+START block3 attempt1 drop seed9136803124150509004
+RPC ended: drop 36.24790519 
+PASS 
+START block3 attempt1 reject seed9136803124150509004
+RPC ended: reject 36.36440964 
+PASS 
+START block3 attempt1 wait seed9136803124150509004
+RPC ended: wait 36.653771833 
+PASS 
+START block3 attempt1 retry seed9136803124150509004
+RPC ended: retry 36.712785933 
+PASS 
+VALID BLOCK 3
+START block4 attempt1 drop seed1435626977494426790
+RPC ended: drop 36.326420715 
+PASS 
+START block4 attempt1 wait seed1435626977494426790
+RPC ended: wait 36.642930731 
+PASS 
+START block4 attempt1 reject seed1435626977494426790
+RPC ended: reject 36.36781367 
+PASS 
+START block4 attempt1 retry seed1435626977494426790
+RPC ended: retry 36.723957146 
+PASS 
+VALID BLOCK 4
+START block5 attempt1 drop seed16813872846671630229
+RPC ended: drop 36.30106333 
+PASS 
+START block5 attempt1 retry seed16813872846671630229
+RPC ended: retry 36.736859528 
+PASS 
+START block5 attempt1 wait seed16813872846671630229
+RPC ended: wait 36.701129047 
+PASS 
+START block5 attempt1 reject seed16813872846671630229
+RPC ended: reject 36.233651929 
+PASS 
+VALID BLOCK 5
+MATRIX COMPLETE

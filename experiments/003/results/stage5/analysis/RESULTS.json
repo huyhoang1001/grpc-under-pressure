@@ -1,0 +1,6953 @@
+{
+  "valid_blocks": 5,
+  "runs": [
+    {
+      "policy": "wait",
+      "seed": 1134903123497516951,
+      "directory": "experiments/003/results/stage5/block-01-attempt-01/wait",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2198,
+      "U_over_N": 0.7631944444444444,
+      "deadline_goodput_per_s": 61.05555555555556,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 532,
+        "COMPLETED_LATE": 3,
+        "COMPLETED_ON_TIME": 2198,
+        "EXPIRED_PROCESSING": 147
+      },
+      "A": 2348,
+      "F": 2348,
+      "S": 2348,
+      "R": 2348,
+      "attempts_per_original": 0.8152777777777778,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.8152777777777778,
+      "admitted_fraction_attempt": 1.0,
+      "completed_fraction_admitted": 0.9373935264054515,
+      "completion_latency_ns": {
+        "n": 2201,
+        "p50": 736828177.0,
+        "p95": 1979761165.0,
+        "p99": 1995420748.0
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2198,
+        "p50": 736802892.5,
+        "p95": 1979382656.2,
+        "p99": 1994904190.1399999
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16456461.5,
+          "p95": 19153395.699999996,
+          "p99": 22781338.559999995
+        },
+        "slowdown": {
+          "n": 287,
+          "p50": 1970027639.0,
+          "p95": 1997418900.8,
+          "p99": 1999265573.9
+        },
+        "recovery": {
+          "n": 954,
+          "p50": 746283340.5,
+          "p95": 764138602.25,
+          "p99": 771827062.53
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2348,
+        "p50": 752125517.5,
+        "p95": 2019470176.65,
+        "p99": 2038888416.4199998
+      },
+      "admission_wait_ns": {
+        "n": 2348,
+        "p50": 1150901.5,
+        "p95": 22861009.400000025,
+        "p99": 37994272.730000034
+      },
+      "queue_residence_ns": {
+        "n": 2348,
+        "p50": 349744428.0,
+        "p95": 1134053182.85,
+        "p99": 1302113200.92
+      },
+      "send_duration_ns": {
+        "n": 2348,
+        "p50": 23154.5,
+        "p95": 54593.65000000008,
+        "p99": 159330.6700000005
+      },
+      "queue_occupancy_item_ns": 727317167124,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12494063570878464,
+      "staged_payload_byte_ns": 135742523179008,
+      "worker_occupied_ns": 35259955122,
+      "worker_occupied_by_disposition_ns": {
+        "1": 32779197622,
+        "2": 0,
+        "3": 0,
+        "4": 2480757500,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9041014133846154,
+      "idle_with_backlog_ns": 1271176771,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9986048,
+          "cpu_window_ns": 13250000000,
+          "cpu_window_offsets_ns": [
+            80102350,
+            39006351954
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 22593536,
+          "cpu_window_ns": 3610000000,
+          "cpu_window_offsets_ns": [
+            80161129,
+            39006407258
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2348,
+        "grpc_in_wire_bytes": 149201,
+        "grpc_out_messages": 2348,
+        "grpc_out_wire_bytes": 38685783,
+        "tcp_stream_read_bytes": 208054,
+        "tcp_stream_write_bytes": 38728442
+      },
+      "tcp_write_bytes_per_original": 13447.375694444445,
+      "clock_uncertainty_ns": 1573,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 25,
+        "Responses": 4
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 0,
+        "events": 25
+      },
+      "writer_local_progress_ns": 205508059,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41595981.5,
+      "recovery_clearance_ns": 414318600,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 79,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 79,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 81,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 79,
+          "client_pending": 30,
+          "client_outstanding": 29,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 81,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 80,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 79,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 81,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 81,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 81,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 78,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 80,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 59,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.3388888888888889,
+        "1": 0.6777777777777778,
+        "2": 0.7631944444444444,
+        "5": 0.7642361111111111
+      },
+      "block": 1
+    },
+    {
+      "policy": "reject",
+      "seed": 1134903123497516951,
+      "directory": "experiments/003/results/stage5/block-01-attempt-01/reject",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2161,
+      "U_over_N": 0.7503472222222223,
+      "deadline_goodput_per_s": 60.02777777777778,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 350,
+        "COMPLETED_LATE": 9,
+        "COMPLETED_ON_TIME": 2161,
+        "EXPIRED_PROCESSING": 37,
+        "REJECTED_FINAL": 323
+      },
+      "A": 2530,
+      "F": 2530,
+      "S": 2530,
+      "R": 2530,
+      "attempts_per_original": 0.8784722222222222,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.7663194444444444,
+      "admitted_fraction_attempt": 0.8723320158102766,
+      "completed_fraction_admitted": 0.983235160851835,
+      "completion_latency_ns": {
+        "n": 2170,
+        "p50": 389707683.5,
+        "p95": 1961908645.1499996,
+        "p99": 1995997371.48
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2161,
+        "p50": 388059072.0,
+        "p95": 1956289451.0,
+        "p99": 1994557499.0
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16947115.0,
+          "p95": 29900849.05,
+          "p99": 31314329.7
+        },
+        "slowdown": {
+          "n": 310,
+          "p50": 1926758563.0,
+          "p95": 1997784788.45,
+          "p99": 2003064568.73
+        },
+        "recovery": {
+          "n": 900,
+          "p50": 478435721.5,
+          "p95": 733478304.95,
+          "p99": 749513923.28
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2530,
+        "p50": 402122292.0,
+        "p95": 1992737322.1499999,
+        "p99": 2031260116.19
+      },
+      "admission_wait_ns": {
+        "n": 2207,
+        "p50": 1193485.0,
+        "p95": 2050086.2999999984,
+        "p99": 3266843.400000009
+      },
+      "queue_residence_ns": {
+        "n": 2207,
+        "p50": 357205788.0,
+        "p95": 1269513832.1999998,
+        "p99": 1312178563.8
+      },
+      "send_duration_ns": {
+        "n": 2530,
+        "p50": 25203.0,
+        "p95": 66340.49999999991,
+        "p99": 196556.52000000008
+      },
+      "queue_occupancy_item_ns": 713528144345,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12262597297143808,
+      "staged_payload_byte_ns": 54748387311616,
+      "worker_occupied_ns": 34921397717,
+      "worker_occupied_by_disposition_ns": {
+        "1": 33726588988,
+        "2": 0,
+        "3": 0,
+        "4": 1194808729,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.8954204542820513,
+      "idle_with_backlog_ns": 1331424411,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9822208,
+          "cpu_window_ns": 15230000000,
+          "cpu_window_offsets_ns": [
+            50217778,
+            39008323652
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 23359488,
+          "cpu_window_ns": 4250000000,
+          "cpu_window_offsets_ns": [
+            50351158,
+            39008395019
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2530,
+        "grpc_in_wire_bytes": 160677,
+        "grpc_out_messages": 2530,
+        "grpc_out_wire_bytes": 41684415,
+        "tcp_stream_read_bytes": 224825,
+        "tcp_stream_write_bytes": 41730359
+      },
+      "tcp_write_bytes_per_original": 14489.70798611111,
+      "clock_uncertainty_ns": 1732,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 30,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 34
+      },
+      "writer_local_progress_ns": 189114275,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41725948.0,
+      "recovery_clearance_ns": 427453864,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 76,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 78,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 77,
+          "client_pending": 21,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 77,
+          "client_pending": 16,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 77,
+          "client_pending": 11,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 74,
+          "client_pending": 6,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 75,
+          "client_pending": 4,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 76,
+          "client_pending": 3,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 78,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 30,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.5072916666666667,
+        "1": 0.6631944444444444,
+        "2": 0.7503472222222223,
+        "5": 0.7534722222222222
+      },
+      "block": 1
+    },
+    {
+      "policy": "retry",
+      "seed": 1134903123497516951,
+      "directory": "experiments/003/results/stage5/block-01-attempt-01/retry",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2236,
+      "U_over_N": 0.7763888888888889,
+      "deadline_goodput_per_s": 62.111111111111114,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 384,
+        "COMPLETED_LATE": 1,
+        "COMPLETED_ON_TIME": 2236,
+        "EXPIRED_PROCESSING": 11,
+        "EXPIRED_WAITING_OR_QUEUED": 16,
+        "REJECTED_FINAL": 232
+      },
+      "A": 2630,
+      "F": 2496,
+      "S": 2630,
+      "R": 2630,
+      "attempts_per_original": 0.9131944444444444,
+      "retries": 134,
+      "retries_per_original": 0.04652777777777778,
+      "admitted_fraction_original": 0.7857638888888889,
+      "admitted_fraction_attempt": 0.8604562737642586,
+      "completed_fraction_admitted": 0.9885108263367212,
+      "completion_latency_ns": {
+        "n": 2237,
+        "p50": 691296561.0,
+        "p95": 1938740268.8,
+        "p99": 1987557846.1599998
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2236,
+        "p50": 691154259.5,
+        "p95": 1938347940.25,
+        "p99": 1987017791.75
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16477514.5,
+          "p95": 19269159.049999997,
+          "p99": 23304447.63
+        },
+        "slowdown": {
+          "n": 335,
+          "p50": 1876238049.0,
+          "p95": 1990311312.1999998,
+          "p99": 1997389025.78
+        },
+        "recovery": {
+          "n": 942,
+          "p50": 729926713.0,
+          "p95": 1099578209.45,
+          "p99": 1346448411.4400063
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2496,
+        "p50": 705560255.5,
+        "p95": 1972778031.5,
+        "p99": 2019037861.5500004
+      },
+      "admission_wait_ns": {
+        "n": 2263,
+        "p50": 1131442.0,
+        "p95": 1716623.6000000003,
+        "p99": 2892694.220000002
+      },
+      "queue_residence_ns": {
+        "n": 2248,
+        "p50": 345613034.5,
+        "p95": 1243297298.85,
+        "p99": 1284197639.0200002
+      },
+      "send_duration_ns": {
+        "n": 2630,
+        "p50": 22804.0,
+        "p95": 52014.99999999996,
+        "p99": 125976.39
+      },
+      "queue_occupancy_item_ns": 718994641548,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12358532039475200,
+      "staged_payload_byte_ns": 53078971498496,
+      "worker_occupied_ns": 35310292502,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34966197620,
+        "2": 0,
+        "3": 0,
+        "4": 344094882,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9053921154358975,
+      "idle_with_backlog_ns": 1277600633,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 10133504,
+          "cpu_window_ns": 14510000000,
+          "cpu_window_offsets_ns": [
+            55724151,
+            39004544599
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 22380544,
+          "cpu_window_ns": 3750000000,
+          "cpu_window_offsets_ns": [
+            55782163,
+            39004607709
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2630,
+        "grpc_in_wire_bytes": 166995,
+        "grpc_out_messages": 2630,
+        "grpc_out_wire_bytes": 43332042,
+        "tcp_stream_read_bytes": 231029,
+        "tcp_stream_write_bytes": 43379821
+      },
+      "tcp_write_bytes_per_original": 15062.437847222222,
+      "clock_uncertainty_ns": 2484,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 32,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 34
+      },
+      "writer_local_progress_ns": 174507214,
+      "retry_converted_on_time_originals": 88,
+      "slowdown_completed_service_median_ns": 41635525.5,
+      "recovery_clearance_ns": 392975293,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 31,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 79,
+          "client_pending": 32,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 5
+        },
+        {
+          "second": 25,
+          "on_time_completions": 78,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 11
+        },
+        {
+          "second": 26,
+          "on_time_completions": 81,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 8
+        },
+        {
+          "second": 27,
+          "on_time_completions": 78,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 13
+        },
+        {
+          "second": 28,
+          "on_time_completions": 80,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 7
+        },
+        {
+          "second": 29,
+          "on_time_completions": 80,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 5
+        },
+        {
+          "second": 30,
+          "on_time_completions": 78,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 7
+        },
+        {
+          "second": 31,
+          "on_time_completions": 78,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 10
+        },
+        {
+          "second": 32,
+          "on_time_completions": 81,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 7
+        },
+        {
+          "second": 33,
+          "on_time_completions": 77,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 5
+        },
+        {
+          "second": 34,
+          "on_time_completions": 78,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 5
+        },
+        {
+          "second": 35,
+          "on_time_completions": 75,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 7
+        },
+        {
+          "second": 36,
+          "on_time_completions": 61,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 3
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.3385416666666667,
+        "1": 0.6513888888888889,
+        "2": 0.7763888888888889,
+        "5": 0.7767361111111111
+      },
+      "block": 1
+    },
+    {
+      "policy": "drop",
+      "seed": 1134903123497516951,
+      "directory": "experiments/003/results/stage5/block-01-attempt-01/drop",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2191,
+      "U_over_N": 0.7607638888888889,
+      "deadline_goodput_per_s": 60.861111111111114,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 351,
+        "COMPLETED_LATE": 4,
+        "COMPLETED_ON_TIME": 2191,
+        "DROPPED": 297,
+        "EXPIRED_PROCESSING": 37
+      },
+      "A": 2529,
+      "F": 2529,
+      "S": 2529,
+      "R": 2529,
+      "attempts_per_original": 0.878125,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.775,
+      "admitted_fraction_attempt": 0.8825622775800712,
+      "completed_fraction_admitted": 0.9834229390681004,
+      "completion_latency_ns": {
+        "n": 2195,
+        "p50": 328684847.0,
+        "p95": 1948026732.2999997,
+        "p99": 1994322542.94
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2191,
+        "p50": 328629624.0,
+        "p95": 1946267441.5,
+        "p99": 1994141199.1
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16701500.5,
+          "p95": 21359385.699999996,
+          "p99": 26570656.98999998
+        },
+        "slowdown": {
+          "n": 311,
+          "p50": 1908923224.0,
+          "p95": 1995699566.0,
+          "p99": 2000581686.4
+        },
+        "recovery": {
+          "n": 924,
+          "p50": 385062243.5,
+          "p95": 718622819.1999999,
+          "p99": 736242305.71
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2529,
+        "p50": 351739153.0,
+        "p95": 1987824677.0,
+        "p99": 2030245467.08
+      },
+      "admission_wait_ns": {
+        "n": 2232,
+        "p50": 1161022.5,
+        "p95": 1781360.4999999986,
+        "p99": 2806005.2200000016
+      },
+      "queue_residence_ns": {
+        "n": 2232,
+        "p50": 314412285.0,
+        "p95": 1255422070.5499997,
+        "p99": 1300957043.24
+      },
+      "send_duration_ns": {
+        "n": 2529,
+        "p50": 27892.0,
+        "p95": 64074.19999999986,
+        "p99": 154260.3999999999
+      },
+      "queue_occupancy_item_ns": 695548334506,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 11967393767620608,
+      "staged_payload_byte_ns": 52242604277760,
+      "worker_occupied_ns": 34883414006,
+      "worker_occupied_by_disposition_ns": {
+        "1": 33767521744,
+        "2": 0,
+        "3": 0,
+        "4": 1115892262,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.894446512974359,
+      "idle_with_backlog_ns": 1294380043,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 10137600,
+          "cpu_window_ns": 14510000000,
+          "cpu_window_offsets_ns": [
+            42873892,
+            39003830592
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 21929984,
+          "cpu_window_ns": 4040000000,
+          "cpu_window_offsets_ns": [
+            42933031,
+            39003916011
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2529,
+        "grpc_in_wire_bytes": 160237,
+        "grpc_out_messages": 2529,
+        "grpc_out_wire_bytes": 41667939,
+        "tcp_stream_read_bytes": 225871,
+        "tcp_stream_write_bytes": 41713856
+      },
+      "tcp_write_bytes_per_original": 14483.977777777778,
+      "clock_uncertainty_ns": 2364,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 31,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 29
+      },
+      "writer_local_progress_ns": 129706035,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41680897.0,
+      "recovery_clearance_ns": 407312792,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 31,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 77,
+          "client_pending": 32,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 78,
+          "client_pending": 23,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 78,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 80,
+          "client_pending": 20,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 78,
+          "client_pending": 17,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 80,
+          "client_pending": 10,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 30,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 29,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 79,
+          "client_pending": 0,
+          "client_outstanding": 27,
+          "server_occupied": 25,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 27,
+          "server_occupied": 26,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 26,
+          "client_pending": 0,
+          "client_outstanding": 27,
+          "server_occupied": 26,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.5295138888888888,
+        "1": 0.671875,
+        "2": 0.7607638888888889,
+        "5": 0.7621527777777778
+      },
+      "block": 1
+    },
+    {
+      "policy": "wait",
+      "seed": 7335427334695112769,
+      "directory": "experiments/003/results/stage5/block-02-attempt-01/wait",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2155,
+      "U_over_N": 0.7482638888888888,
+      "deadline_goodput_per_s": 59.861111111111114,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 575,
+        "COMPLETED_LATE": 2,
+        "COMPLETED_ON_TIME": 2155,
+        "EXPIRED_PROCESSING": 148
+      },
+      "A": 2305,
+      "F": 2305,
+      "S": 2305,
+      "R": 2305,
+      "attempts_per_original": 0.8003472222222222,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.8003472222222222,
+      "admitted_fraction_attempt": 1.0,
+      "completed_fraction_admitted": 0.9357917570498916,
+      "completion_latency_ns": {
+        "n": 2157,
+        "p50": 777909250.0,
+        "p95": 1980421591.2,
+        "p99": 1994559530.48
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2155,
+        "p50": 777823477.0,
+        "p95": 1980239005.3,
+        "p99": 1994366022.48
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 18814771.0,
+          "p95": 36200010.3,
+          "p99": 43331974.31999996
+        },
+        "slowdown": {
+          "n": 284,
+          "p50": 1969941907.5,
+          "p95": 1995522178.3500001,
+          "p99": 1999358933.24
+        },
+        "recovery": {
+          "n": 913,
+          "p50": 803587506.0,
+          "p95": 843021770.8,
+          "p99": 856243472.6
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2305,
+        "p50": 801440393.0,
+        "p95": 2019091854.6,
+        "p99": 2038946056.8
+      },
+      "admission_wait_ns": {
+        "n": 2305,
+        "p50": 1263992.0,
+        "p95": 22922007.199999914,
+        "p99": 38063362.760000005
+      },
+      "queue_residence_ns": {
+        "n": 2305,
+        "p50": 367678070.0,
+        "p95": 1145085591.5999997,
+        "p99": 1305824318.36
+      },
+      "send_duration_ns": {
+        "n": 2305,
+        "p50": 25649.0,
+        "p95": 72058.5999999998,
+        "p99": 193358.80000000045
+      },
+      "queue_occupancy_item_ns": 737131896143,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12654446774419456,
+      "staged_payload_byte_ns": 140813374980096,
+      "worker_occupied_ns": 35234239991,
+      "worker_occupied_by_disposition_ns": {
+        "1": 32721741209,
+        "2": 0,
+        "3": 0,
+        "4": 2512498782,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9034420510512821,
+      "idle_with_backlog_ns": 1462814558,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9953280,
+          "cpu_window_ns": 15190000000,
+          "cpu_window_offsets_ns": [
+            49891078,
+            39007691802
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 21721088,
+          "cpu_window_ns": 4420000000,
+          "cpu_window_offsets_ns": [
+            49956576,
+            39007755828
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2305,
+        "grpc_in_wire_bytes": 146448,
+        "grpc_out_messages": 2305,
+        "grpc_out_wire_bytes": 37977296,
+        "tcp_stream_read_bytes": 205070,
+        "tcp_stream_write_bytes": 38019164
+      },
+      "tcp_write_bytes_per_original": 13201.09861111111,
+      "clock_uncertainty_ns": 1723,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 29,
+        "Responses": 4
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 0,
+        "events": 24
+      },
+      "writer_local_progress_ns": 249536702,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41624791,
+      "recovery_clearance_ns": 415873268,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 76,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 78,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 72,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 77,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 79,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 75,
+          "client_pending": 32,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 77,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 76,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 76,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 77,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 76,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 76,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 61,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.33784722222222224,
+        "1": 0.6625,
+        "2": 0.7482638888888888,
+        "5": 0.7489583333333333
+      },
+      "block": 2
+    },
+    {
+      "policy": "reject",
+      "seed": 7335427334695112769,
+      "directory": "experiments/003/results/stage5/block-02-attempt-01/reject",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2201,
+      "U_over_N": 0.7642361111111111,
+      "deadline_goodput_per_s": 61.138888888888886,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 356,
+        "COMPLETED_LATE": 5,
+        "COMPLETED_ON_TIME": 2201,
+        "EXPIRED_PROCESSING": 33,
+        "REJECTED_FINAL": 285
+      },
+      "A": 2524,
+      "F": 2524,
+      "S": 2524,
+      "R": 2524,
+      "attempts_per_original": 0.8763888888888889,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.7774305555555555,
+      "admitted_fraction_attempt": 0.8870839936608558,
+      "completed_fraction_admitted": 0.9852612773559625,
+      "completion_latency_ns": {
+        "n": 2206,
+        "p50": 316547533.5,
+        "p95": 1968827503.0,
+        "p99": 1994865959.35
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2201,
+        "p50": 316501707.0,
+        "p95": 1965983791.0,
+        "p99": 1994056951.0
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16327299.5,
+          "p95": 17807392.55,
+          "p99": 19001176.719999995
+        },
+        "slowdown": {
+          "n": 319,
+          "p50": 1934771639.0,
+          "p95": 1997394720.8,
+          "p99": 2000307387.52
+        },
+        "recovery": {
+          "n": 927,
+          "p50": 365519984.0,
+          "p95": 678048071.8,
+          "p99": 712602870.04
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2524,
+        "p50": 338309154.5,
+        "p95": 1996649433.2,
+        "p99": 2026092701.8
+      },
+      "admission_wait_ns": {
+        "n": 2239,
+        "p50": 1131583.0,
+        "p95": 1602828.1999999997,
+        "p99": 2175174.219999998
+      },
+      "queue_residence_ns": {
+        "n": 2239,
+        "p50": 302205745.0,
+        "p95": 1250730312.3000002,
+        "p99": 1292854982.34
+      },
+      "send_duration_ns": {
+        "n": 2524,
+        "p50": 25528.0,
+        "p95": 58623.999999999985,
+        "p99": 166684.20999999996
+      },
+      "queue_occupancy_item_ns": 687562473553,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 11836661851127808,
+      "staged_payload_byte_ns": 49661853712384,
+      "worker_occupied_ns": 34890032009,
+      "worker_occupied_by_disposition_ns": {
+        "1": 33936478591,
+        "2": 0,
+        "3": 0,
+        "4": 953553418,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.8946162053589743,
+      "idle_with_backlog_ns": 1224657794,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9834496,
+          "cpu_window_ns": 13600000000,
+          "cpu_window_offsets_ns": [
+            108052490,
+            39009336146
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 21929984,
+          "cpu_window_ns": 3650000000,
+          "cpu_window_offsets_ns": [
+            108114123,
+            39009416447
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2524,
+        "grpc_in_wire_bytes": 160144,
+        "grpc_out_messages": 2524,
+        "grpc_out_wire_bytes": 41585559,
+        "tcp_stream_read_bytes": 227462,
+        "tcp_stream_write_bytes": 41631386
+      },
+      "tcp_write_bytes_per_original": 14455.34236111111,
+      "clock_uncertainty_ns": 1953,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 30,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 26
+      },
+      "writer_local_progress_ns": 90503576,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41681594.0,
+      "recovery_clearance_ns": 412577650,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 78,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 79,
+          "client_pending": 21,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 79,
+          "client_pending": 15,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 30,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 29,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 28,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 27,
+          "server_occupied": 26,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 26,
+          "server_occupied": 25,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 83,
+          "client_pending": 0,
+          "client_outstanding": 26,
+          "server_occupied": 25,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 22,
+          "client_pending": 0,
+          "client_outstanding": 23,
+          "server_occupied": 22,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.603125,
+        "1": 0.6736111111111112,
+        "2": 0.7642361111111111,
+        "5": 0.7659722222222223
+      },
+      "block": 2
+    },
+    {
+      "policy": "retry",
+      "seed": 7335427334695112769,
+      "directory": "experiments/003/results/stage5/block-02-attempt-01/retry",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2223,
+      "U_over_N": 0.771875,
+      "deadline_goodput_per_s": 61.75,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 383,
+        "COMPLETED_LATE": 3,
+        "COMPLETED_ON_TIME": 2223,
+        "EXPIRED_PROCESSING": 19,
+        "EXPIRED_WAITING_OR_QUEUED": 15,
+        "REJECTED_FINAL": 237
+      },
+      "A": 2624,
+      "F": 2497,
+      "S": 2624,
+      "R": 2624,
+      "attempts_per_original": 0.9111111111111111,
+      "retries": 127,
+      "retries_per_original": 0.044097222222222225,
+      "admitted_fraction_original": 0.784375,
+      "admitted_fraction_attempt": 0.8608993902439024,
+      "completed_fraction_admitted": 0.9853917662682603,
+      "completion_latency_ns": {
+        "n": 2226,
+        "p50": 695084181.0,
+        "p95": 1951966402.0,
+        "p99": 1993284131.25
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2223,
+        "p50": 695052829.0,
+        "p95": 1950119184.1000001,
+        "p99": 1991546766.6799998
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 17414217.0,
+          "p95": 42822530.599999994,
+          "p99": 49466976.889999986
+        },
+        "slowdown": {
+          "n": 325,
+          "p50": 1915459395.0,
+          "p95": 1994468823.2,
+          "p99": 1999402871.8799999
+        },
+        "recovery": {
+          "n": 941,
+          "p50": 730743564.0,
+          "p95": 1096777026.0,
+          "p99": 1211545666.4
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2497,
+        "p50": 707593719.0,
+        "p95": 1983754321.4,
+        "p99": 2028719066.1599998
+      },
+      "admission_wait_ns": {
+        "n": 2259,
+        "p50": 1149410.0,
+        "p95": 1833616.6999999995,
+        "p99": 2759115.5400000033
+      },
+      "queue_residence_ns": {
+        "n": 2245,
+        "p50": 347550924.0,
+        "p95": 1259805487.1999998,
+        "p99": 1309637836.08
+      },
+      "send_duration_ns": {
+        "n": 2624,
+        "p50": 22429.0,
+        "p95": 62487.99999999998,
+        "p99": 150524.10999999996
+      },
+      "queue_occupancy_item_ns": 723087832387,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12425690694205440,
+      "staged_payload_byte_ns": 54040722849792,
+      "worker_occupied_ns": 35316140648,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34647888772,
+        "2": 0,
+        "3": 0,
+        "4": 668251876,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9055420678974359,
+      "idle_with_backlog_ns": 1310454543,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 10117120,
+          "cpu_window_ns": 15000000000,
+          "cpu_window_offsets_ns": [
+            70582010,
+            39009165925
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 25542656,
+          "cpu_window_ns": 3980000000,
+          "cpu_window_offsets_ns": [
+            70660077,
+            39009263882
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2624,
+        "grpc_in_wire_bytes": 166693,
+        "grpc_out_messages": 2624,
+        "grpc_out_wire_bytes": 43233203,
+        "tcp_stream_read_bytes": 230825,
+        "tcp_stream_write_bytes": 43280919
+      },
+      "tcp_write_bytes_per_original": 15028.096875,
+      "clock_uncertainty_ns": 2193,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 32,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 29
+      },
+      "writer_local_progress_ns": 169430819,
+      "retry_converted_on_time_originals": 95,
+      "slowdown_completed_service_median_ns": 41629164.5,
+      "recovery_clearance_ns": 400678770,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 31,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 78,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 6
+        },
+        {
+          "second": 25,
+          "on_time_completions": 81,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 9
+        },
+        {
+          "second": 26,
+          "on_time_completions": 78,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 13
+        },
+        {
+          "second": 27,
+          "on_time_completions": 79,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 9
+        },
+        {
+          "second": 28,
+          "on_time_completions": 77,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 6
+        },
+        {
+          "second": 29,
+          "on_time_completions": 76,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 4
+        },
+        {
+          "second": 30,
+          "on_time_completions": 79,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 9
+        },
+        {
+          "second": 31,
+          "on_time_completions": 80,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 3
+        },
+        {
+          "second": 32,
+          "on_time_completions": 77,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 12
+        },
+        {
+          "second": 33,
+          "on_time_completions": 80,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 3
+        },
+        {
+          "second": 34,
+          "on_time_completions": 79,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 9
+        },
+        {
+          "second": 35,
+          "on_time_completions": 77,
+          "client_pending": 27,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 10
+        },
+        {
+          "second": 36,
+          "on_time_completions": 61,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 3
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.33819444444444446,
+        "1": 0.6503472222222222,
+        "2": 0.771875,
+        "5": 0.7729166666666667
+      },
+      "block": 2
+    },
+    {
+      "policy": "drop",
+      "seed": 7335427334695112769,
+      "directory": "experiments/003/results/stage5/block-02-attempt-01/drop",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2163,
+      "U_over_N": 0.7510416666666667,
+      "deadline_goodput_per_s": 60.083333333333336,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 358,
+        "COMPLETED_LATE": 8,
+        "COMPLETED_ON_TIME": 2163,
+        "DROPPED": 309,
+        "EXPIRED_PROCESSING": 42
+      },
+      "A": 2522,
+      "F": 2522,
+      "S": 2522,
+      "R": 2522,
+      "attempts_per_original": 0.8756944444444444,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.7684027777777778,
+      "admitted_fraction_attempt": 0.8774781919111816,
+      "completed_fraction_admitted": 0.9810212381382738,
+      "completion_latency_ns": {
+        "n": 2171,
+        "p50": 392529825.0,
+        "p95": 1966471527.0,
+        "p99": 1997851752.5
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2163,
+        "p50": 392509061.0,
+        "p95": 1963372157.7,
+        "p99": 1994814087.76
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 32463722.0,
+          "p95": 68735079.75,
+          "p99": 71283539.82
+        },
+        "slowdown": {
+          "n": 307,
+          "p50": 1942702081.0,
+          "p95": 1998616962.1,
+          "p99": 2002426757.3200002
+        },
+        "recovery": {
+          "n": 904,
+          "p50": 503341526.0,
+          "p95": 714702107.55,
+          "p99": 751201688.77
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2522,
+        "p50": 402078133.5,
+        "p95": 2002239260.75,
+        "p99": 2034020625.62
+      },
+      "admission_wait_ns": {
+        "n": 2213,
+        "p50": 1227046.0,
+        "p95": 2445866.2000000007,
+        "p99": 4398833.560000003
+      },
+      "queue_residence_ns": {
+        "n": 2213,
+        "p50": 358965093.0,
+        "p95": 1254762259.4,
+        "p99": 1300310925.68
+      },
+      "send_duration_ns": {
+        "n": 2522,
+        "p50": 30841.0,
+        "p95": 89301.89999999978,
+        "p99": 228082.66999999993
+      },
+      "queue_occupancy_item_ns": 737585071825,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12657621712109568,
+      "staged_payload_byte_ns": 58557211672576,
+      "worker_occupied_ns": 34974847127,
+      "worker_occupied_by_disposition_ns": {
+        "1": 33744409509,
+        "2": 0,
+        "3": 0,
+        "4": 1230437618,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.896790951974359,
+      "idle_with_backlog_ns": 1437331300,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9981952,
+          "cpu_window_ns": 16530000000,
+          "cpu_window_offsets_ns": [
+            79100026,
+            39006424027
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 26058752,
+          "cpu_window_ns": 4800000000,
+          "cpu_window_offsets_ns": [
+            79155984,
+            39006480927
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2522,
+        "grpc_in_wire_bytes": 159876,
+        "grpc_out_messages": 2522,
+        "grpc_out_wire_bytes": 41552607,
+        "tcp_stream_read_bytes": 224316,
+        "tcp_stream_write_bytes": 41598407
+      },
+      "tcp_write_bytes_per_original": 14443.891319444445,
+      "clock_uncertainty_ns": 1952,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 30,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 32
+      },
+      "writer_local_progress_ns": 204798520,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41754477,
+      "recovery_clearance_ns": 398511304,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 78,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 76,
+          "client_pending": 23,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 79,
+          "client_pending": 18,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 79,
+          "client_pending": 14,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 78,
+          "client_pending": 6,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 79,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 67,
+          "client_pending": 1,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 74,
+          "client_pending": 9,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 73,
+          "client_pending": 8,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 40,
+          "client_pending": 8,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.49409722222222224,
+        "1": 0.6652777777777777,
+        "2": 0.7510416666666667,
+        "5": 0.7538194444444445
+      },
+      "block": 2
+    },
+    {
+      "policy": "wait",
+      "seed": 9136803124150509004,
+      "directory": "experiments/003/results/stage5/block-03-attempt-01/wait",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2196,
+      "U_over_N": 0.7625,
+      "deadline_goodput_per_s": 61.0,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 531,
+        "COMPLETED_LATE": 3,
+        "COMPLETED_ON_TIME": 2196,
+        "EXPIRED_PROCESSING": 150
+      },
+      "A": 2349,
+      "F": 2349,
+      "S": 2349,
+      "R": 2349,
+      "attempts_per_original": 0.815625,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.815625,
+      "admitted_fraction_attempt": 1.0,
+      "completed_fraction_admitted": 0.9361430395913155,
+      "completion_latency_ns": {
+        "n": 2199,
+        "p50": 688741000.0,
+        "p95": 1978018897.4,
+        "p99": 1994323827.6200001
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2196,
+        "p50": 688664408.0,
+        "p95": 1977193500.75,
+        "p99": 1994095852.3500001
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16671748.5,
+          "p95": 18896528.8,
+          "p99": 20556591.009999998
+        },
+        "slowdown": {
+          "n": 284,
+          "p50": 1967685376.5,
+          "p95": 1996644413.3,
+          "p99": 1999091392.06
+        },
+        "recovery": {
+          "n": 955,
+          "p50": 730478748.0,
+          "p95": 758008530.9,
+          "p99": 760729945.22
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2349,
+        "p50": 722447885.0,
+        "p95": 2016422126.2,
+        "p99": 2039381028.32
+      },
+      "admission_wait_ns": {
+        "n": 2349,
+        "p50": 1167987.0,
+        "p95": 24110894.99999999,
+        "p99": 38448687.76
+      },
+      "queue_residence_ns": {
+        "n": 2349,
+        "p50": 347899994.0,
+        "p95": 1141259805.7999995,
+        "p99": 1306565298.76
+      },
+      "send_duration_ns": {
+        "n": 2349,
+        "p50": 22364.0,
+        "p95": 53196.19999999992,
+        "p99": 135930.52
+      },
+      "queue_occupancy_item_ns": 725283598517,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12460165977817088,
+      "staged_payload_byte_ns": 139489260470272,
+      "worker_occupied_ns": 35224578840,
+      "worker_occupied_by_disposition_ns": {
+        "1": 32632020724,
+        "2": 0,
+        "3": 0,
+        "4": 2592558116,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9031943292307693,
+      "idle_with_backlog_ns": 1286352576,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9797632,
+          "cpu_window_ns": 13360000000,
+          "cpu_window_offsets_ns": [
+            33666856,
+            39011356718
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 23867392,
+          "cpu_window_ns": 3610000000,
+          "cpu_window_offsets_ns": [
+            33748850,
+            39011411090
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2349,
+        "grpc_in_wire_bytes": 149291,
+        "grpc_out_messages": 2349,
+        "grpc_out_wire_bytes": 38702259,
+        "tcp_stream_read_bytes": 208205,
+        "tcp_stream_write_bytes": 38744954
+      },
+      "tcp_write_bytes_per_original": 13453.109027777778,
+      "clock_uncertainty_ns": 1963,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 30,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 0,
+        "events": 32
+      },
+      "writer_local_progress_ns": 211779931,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41612795,
+      "recovery_clearance_ns": 389408414,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 81,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 80,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 80,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 79,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 81,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 80,
+          "client_pending": 26,
+          "client_outstanding": 32,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 81,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 79,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 82,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 80,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 81,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 81,
+          "client_pending": 22,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 54,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.3388888888888889,
+        "1": 0.678125,
+        "2": 0.7625,
+        "5": 0.7635416666666667
+      },
+      "block": 3
+    },
+    {
+      "policy": "reject",
+      "seed": 9136803124150509004,
+      "directory": "experiments/003/results/stage5/block-03-attempt-01/reject",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2201,
+      "U_over_N": 0.7642361111111111,
+      "deadline_goodput_per_s": 61.138888888888886,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 345,
+        "COMPLETED_LATE": 1,
+        "COMPLETED_ON_TIME": 2201,
+        "EXPIRED_PROCESSING": 21,
+        "REJECTED_FINAL": 312
+      },
+      "A": 2535,
+      "F": 2535,
+      "S": 2535,
+      "R": 2535,
+      "attempts_per_original": 0.8802083333333334,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.771875,
+      "admitted_fraction_attempt": 0.8769230769230769,
+      "completed_fraction_admitted": 0.99055330634278,
+      "completion_latency_ns": {
+        "n": 2202,
+        "p50": 333916193.0,
+        "p95": 1957280575.6999998,
+        "p99": 1990820958.1999998
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2201,
+        "p50": 333624598.0,
+        "p95": 1956802093.0,
+        "p99": 1989916514.0
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16935821.5,
+          "p95": 30485976.75,
+          "p99": 31906487.88
+        },
+        "slowdown": {
+          "n": 326,
+          "p50": 1920097937.0,
+          "p95": 1993384789.75,
+          "p99": 1998119808.75
+        },
+        "recovery": {
+          "n": 916,
+          "p50": 377913263.0,
+          "p95": 724373488.5,
+          "p99": 767043399.1
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2535,
+        "p50": 363656878.0,
+        "p95": 1981276434.3,
+        "p99": 2024019758.6999998
+      },
+      "admission_wait_ns": {
+        "n": 2223,
+        "p50": 1170672.0,
+        "p95": 1821113.3000000012,
+        "p99": 2786068.660000002
+      },
+      "queue_residence_ns": {
+        "n": 2223,
+        "p50": 323046994.0,
+        "p95": 1263487329.0,
+        "p99": 1297145658.76
+      },
+      "send_duration_ns": {
+        "n": 2535,
+        "p50": 25728.0,
+        "p95": 66809.5999999998,
+        "p99": 171321.91999999975
+      },
+      "queue_occupancy_item_ns": 700420293904,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12049066590830592,
+      "staged_payload_byte_ns": 52449643986944,
+      "worker_occupied_ns": 34996368134,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34362597349,
+        "2": 0,
+        "3": 0,
+        "4": 633770785,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.8973427726666666,
+      "idle_with_backlog_ns": 1267274824,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9924608,
+          "cpu_window_ns": 14620000000,
+          "cpu_window_offsets_ns": [
+            59217458,
+            39007470472
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 23642112,
+          "cpu_window_ns": 3810000000,
+          "cpu_window_offsets_ns": [
+            59273358,
+            39007528725
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2535,
+        "grpc_in_wire_bytes": 160811,
+        "grpc_out_messages": 2535,
+        "grpc_out_wire_bytes": 41766795,
+        "tcp_stream_read_bytes": 226911,
+        "tcp_stream_write_bytes": 41812820
+      },
+      "tcp_write_bytes_per_original": 14518.340277777777,
+      "clock_uncertainty_ns": 1603,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 30,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 31
+      },
+      "writer_local_progress_ns": 145988625,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41635580,
+      "recovery_clearance_ns": 427604197,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 31,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 74,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 77,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 78,
+          "client_pending": 21,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 79,
+          "client_pending": 14,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 77,
+          "client_pending": 9,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 79,
+          "client_pending": 0,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 30,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 29,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 28,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 77,
+          "client_pending": 0,
+          "client_outstanding": 27,
+          "server_occupied": 26,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 30,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 28,
+          "client_pending": 0,
+          "client_outstanding": 29,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.5534722222222223,
+        "1": 0.6684027777777778,
+        "2": 0.7642361111111111,
+        "5": 0.7645833333333333
+      },
+      "block": 3
+    },
+    {
+      "policy": "retry",
+      "seed": 9136803124150509004,
+      "directory": "experiments/003/results/stage5/block-03-attempt-01/retry",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2235,
+      "U_over_N": 0.7760416666666666,
+      "deadline_goodput_per_s": 62.083333333333336,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 385,
+        "COMPLETED_LATE": 3,
+        "COMPLETED_ON_TIME": 2235,
+        "EXPIRED_PROCESSING": 26,
+        "EXPIRED_WAITING_OR_QUEUED": 9,
+        "REJECTED_FINAL": 222
+      },
+      "A": 2625,
+      "F": 2495,
+      "S": 2625,
+      "R": 2625,
+      "attempts_per_original": 0.9114583333333334,
+      "retries": 130,
+      "retries_per_original": 0.04513888888888889,
+      "admitted_fraction_original": 0.7892361111111111,
+      "admitted_fraction_attempt": 0.865904761904762,
+      "completed_fraction_admitted": 0.9846018477782666,
+      "completion_latency_ns": {
+        "n": 2238,
+        "p50": 676322133.5,
+        "p95": 1949988163.4,
+        "p99": 1993178750.73
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2235,
+        "p50": 676209157.0,
+        "p95": 1948630334.5,
+        "p99": 1992266007.88
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16506261.5,
+          "p95": 23056391.199999984,
+          "p99": 29496940.15
+        },
+        "slowdown": {
+          "n": 324,
+          "p50": 1921527745.5,
+          "p95": 1994068689.2,
+          "p99": 1999771297.48
+        },
+        "recovery": {
+          "n": 954,
+          "p50": 705753914.5,
+          "p95": 1071814507.5999999,
+          "p99": 1416461026.44
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2495,
+        "p50": 696609086.0,
+        "p95": 1990428449.1999998,
+        "p99": 2029641623.62
+      },
+      "admission_wait_ns": {
+        "n": 2273,
+        "p50": 1109810.0,
+        "p95": 1607016.0000000005,
+        "p99": 2373803.640000009
+      },
+      "queue_residence_ns": {
+        "n": 2264,
+        "p50": 343276707.5,
+        "p95": 1240619773.95,
+        "p99": 1297186879.1799998
+      },
+      "send_duration_ns": {
+        "n": 2625,
+        "p50": 21092.0,
+        "p95": 49294.79999999995,
+        "p99": 114099.63999999998
+      },
+      "queue_occupancy_item_ns": 719001692348,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12358444991561728,
+      "staged_payload_byte_ns": 51171790995456,
+      "worker_occupied_ns": 35297928719,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34465739240,
+        "2": 0,
+        "3": 0,
+        "4": 832189479,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9050750953589743,
+      "idle_with_backlog_ns": 1242515607,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9965568,
+          "cpu_window_ns": 13770000000,
+          "cpu_window_offsets_ns": [
+            35038310,
+            39006447868
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 22827008,
+          "cpu_window_ns": 3420000000,
+          "cpu_window_offsets_ns": [
+            35093868,
+            39006503166
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2625,
+        "grpc_in_wire_bytes": 166792,
+        "grpc_out_messages": 2625,
+        "grpc_out_wire_bytes": 43249690,
+        "tcp_stream_read_bytes": 230816,
+        "tcp_stream_write_bytes": 43297370
+      },
+      "tcp_write_bytes_per_original": 15033.809027777777,
+      "clock_uncertainty_ns": 1602,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 32,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 29
+      },
+      "writer_local_progress_ns": 160648767,
+      "retry_converted_on_time_originals": 100,
+      "slowdown_completed_service_median_ns": 41598237.5,
+      "recovery_clearance_ns": 400670626,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 81,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 8
+        },
+        {
+          "second": 25,
+          "on_time_completions": 79,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 8
+        },
+        {
+          "second": 26,
+          "on_time_completions": 81,
+          "client_pending": 30,
+          "client_outstanding": 29,
+          "server_occupied": 29,
+          "retry_scheduled": 11
+        },
+        {
+          "second": 27,
+          "on_time_completions": 80,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 12
+        },
+        {
+          "second": 28,
+          "on_time_completions": 80,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 2
+        },
+        {
+          "second": 29,
+          "on_time_completions": 79,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 10
+        },
+        {
+          "second": 30,
+          "on_time_completions": 81,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 5
+        },
+        {
+          "second": 31,
+          "on_time_completions": 78,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 12
+        },
+        {
+          "second": 32,
+          "on_time_completions": 78,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 6
+        },
+        {
+          "second": 33,
+          "on_time_completions": 79,
+          "client_pending": 30,
+          "client_outstanding": 30,
+          "server_occupied": 28,
+          "retry_scheduled": 8
+        },
+        {
+          "second": 34,
+          "on_time_completions": 81,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 11
+        },
+        {
+          "second": 35,
+          "on_time_completions": 79,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 17
+        },
+        {
+          "second": 36,
+          "on_time_completions": 59,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.3388888888888889,
+        "1": 0.653125,
+        "2": 0.7760416666666666,
+        "5": 0.7770833333333333
+      },
+      "block": 3
+    },
+    {
+      "policy": "drop",
+      "seed": 9136803124150509004,
+      "directory": "experiments/003/results/stage5/block-03-attempt-01/drop",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2199,
+      "U_over_N": 0.7635416666666667,
+      "deadline_goodput_per_s": 61.083333333333336,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 353,
+        "COMPLETED_LATE": 11,
+        "COMPLETED_ON_TIME": 2199,
+        "DROPPED": 289,
+        "EXPIRED_PROCESSING": 28
+      },
+      "A": 2527,
+      "F": 2527,
+      "S": 2527,
+      "R": 2527,
+      "attempts_per_original": 0.8774305555555556,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.7770833333333333,
+      "admitted_fraction_attempt": 0.8856351404827859,
+      "completed_fraction_admitted": 0.9874888293118856,
+      "completion_latency_ns": {
+        "n": 2210,
+        "p50": 293321121.5,
+        "p95": 1977968651.6499999,
+        "p99": 1996940990.31
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2199,
+        "p50": 291593396.0,
+        "p95": 1973985141.1999998,
+        "p99": 1995146885.3000002
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16783300.0,
+          "p95": 28104954.799999997,
+          "p99": 41054126.75999999
+        },
+        "slowdown": {
+          "n": 318,
+          "p50": 1956167743.0,
+          "p95": 1998383298.35,
+          "p99": 2002551940.3
+        },
+        "recovery": {
+          "n": 932,
+          "p50": 366832281.5,
+          "p95": 664155295.55,
+          "p99": 679661544.91
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2527,
+        "p50": 338129796.0,
+        "p95": 2000550175.1999998,
+        "p99": 2032747324.4199998
+      },
+      "admission_wait_ns": {
+        "n": 2238,
+        "p50": 1141027.0,
+        "p95": 1610398.6000000003,
+        "p99": 2360001.9000000027
+      },
+      "queue_residence_ns": {
+        "n": 2238,
+        "p50": 282953047.5,
+        "p95": 1261469928.7,
+        "p99": 1303168318.1800003
+      },
+      "send_duration_ns": {
+        "n": 2527,
+        "p50": 26540.0,
+        "p95": 56548.69999999994,
+        "p99": 151412.35999999943
+      },
+      "queue_occupancy_item_ns": 684037621629,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 11779115288379392,
+      "staged_payload_byte_ns": 50610973016064,
+      "worker_occupied_ns": 34902520484,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34044960590,
+        "2": 0,
+        "3": 0,
+        "4": 857559894,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.8949364226666666,
+      "idle_with_backlog_ns": 1219792711,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 10215424,
+          "cpu_window_ns": 13830000000,
+          "cpu_window_offsets_ns": [
+            102995390,
+            39002639360
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 24535040,
+          "cpu_window_ns": 3690000000,
+          "cpu_window_offsets_ns": [
+            103052616,
+            39002701554
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2527,
+        "grpc_in_wire_bytes": 160011,
+        "grpc_out_messages": 2527,
+        "grpc_out_wire_bytes": 41634987,
+        "tcp_stream_read_bytes": 226208,
+        "tcp_stream_write_bytes": 41680868
+      },
+      "tcp_write_bytes_per_original": 14472.523611111112,
+      "clock_uncertainty_ns": 1682,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 30,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 27
+      },
+      "writer_local_progress_ns": 121791291,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41713005,
+      "recovery_clearance_ns": 366274005,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 31,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 80,
+          "client_pending": 32,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 80,
+          "client_pending": 20,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 80,
+          "client_pending": 15,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 78,
+          "client_pending": 12,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 80,
+          "client_pending": 2,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 30,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 28,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 27,
+          "server_occupied": 26,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 25,
+          "server_occupied": 24,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 23,
+          "server_occupied": 22,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 21,
+          "client_pending": 0,
+          "client_outstanding": 22,
+          "server_occupied": 21,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.575,
+        "1": 0.675,
+        "2": 0.7635416666666667,
+        "5": 0.7673611111111112
+      },
+      "block": 3
+    },
+    {
+      "policy": "wait",
+      "seed": 1435626977494426790,
+      "directory": "experiments/003/results/stage5/block-04-attempt-01/wait",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2202,
+      "U_over_N": 0.7645833333333333,
+      "deadline_goodput_per_s": 61.166666666666664,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 530,
+        "COMPLETED_LATE": 4,
+        "COMPLETED_ON_TIME": 2202,
+        "EXPIRED_PROCESSING": 143,
+        "EXPIRED_WAITING_OR_QUEUED": 1
+      },
+      "A": 2350,
+      "F": 2350,
+      "S": 2350,
+      "R": 2350,
+      "attempts_per_original": 0.8159722222222222,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.8159722222222222,
+      "admitted_fraction_attempt": 1.0,
+      "completed_fraction_admitted": 0.9387234042553192,
+      "completion_latency_ns": {
+        "n": 2206,
+        "p50": 678336934.5,
+        "p95": 1980118994.5,
+        "p99": 1995252236.9
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2202,
+        "p50": 678096209.5,
+        "p95": 1979534983.3,
+        "p99": 1994779130.6
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16713083.0,
+          "p95": 20403656.4,
+          "p99": 28734360.619999997
+        },
+        "slowdown": {
+          "n": 290,
+          "p50": 1966101459.0,
+          "p95": 1997410919.45,
+          "p99": 2000430962.4299998
+        },
+        "recovery": {
+          "n": 956,
+          "p50": 698844764.5,
+          "p95": 750497748.25,
+          "p99": 765469852.85
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2350,
+        "p50": 701274367.5,
+        "p95": 2013534742.1499999,
+        "p99": 2037015464.01
+      },
+      "admission_wait_ns": {
+        "n": 2350,
+        "p50": 1168891.5,
+        "p95": 25353877.69999999,
+        "p99": 38692642.72999999
+      },
+      "queue_residence_ns": {
+        "n": 2349,
+        "p50": 347936819.0,
+        "p95": 1135768297.1999996,
+        "p99": 1298186753.8799999
+      },
+      "send_duration_ns": {
+        "n": 2350,
+        "p50": 21752.0,
+        "p95": 45679.99999999983,
+        "p99": 107630.61999999976
+      },
+      "queue_occupancy_item_ns": 725899916709,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12469372032368640,
+      "staged_payload_byte_ns": 144345806897152,
+      "worker_occupied_ns": 35170153626,
+      "worker_occupied_by_disposition_ns": {
+        "1": 32841082239,
+        "2": 0,
+        "3": 0,
+        "4": 2329071387,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9017988109230769,
+      "idle_with_backlog_ns": 1313164473,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 10108928,
+          "cpu_window_ns": 13310000000,
+          "cpu_window_offsets_ns": [
+            80188794,
+            39010446641
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 22540288,
+          "cpu_window_ns": 3640000000,
+          "cpu_window_offsets_ns": [
+            80253357,
+            39010505375
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2350,
+        "grpc_in_wire_bytes": 149287,
+        "grpc_out_messages": 2350,
+        "grpc_out_wire_bytes": 38718735,
+        "tcp_stream_read_bytes": 208275,
+        "tcp_stream_write_bytes": 38761448
+      },
+      "tcp_write_bytes_per_original": 13458.836111111112,
+      "clock_uncertainty_ns": 1843,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 32,
+        "Responses": 6
+      },
+      "server_high_water": {
+        "queued": 32,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 0,
+        "events": 27
+      },
+      "writer_local_progress_ns": 192516267,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41585566,
+      "recovery_clearance_ns": 400827411,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 80,
+          "client_pending": 32,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 81,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 80,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 81,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 81,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 82,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 80,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 79,
+          "client_pending": 23,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 80,
+          "client_pending": 23,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 82,
+          "client_pending": 24,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 80,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 81,
+          "client_pending": 24,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 53,
+          "client_pending": 21,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.3388888888888889,
+        "1": 0.6788194444444444,
+        "2": 0.7645833333333333,
+        "5": 0.7659722222222223
+      },
+      "block": 4
+    },
+    {
+      "policy": "reject",
+      "seed": 1435626977494426790,
+      "directory": "experiments/003/results/stage5/block-04-attempt-01/reject",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2197,
+      "U_over_N": 0.7628472222222222,
+      "deadline_goodput_per_s": 61.02777777777778,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 351,
+        "COMPLETED_LATE": 6,
+        "COMPLETED_ON_TIME": 2197,
+        "EXPIRED_PROCESSING": 25,
+        "REJECTED_FINAL": 301
+      },
+      "A": 2529,
+      "F": 2529,
+      "S": 2529,
+      "R": 2529,
+      "attempts_per_original": 0.878125,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.7736111111111111,
+      "admitted_fraction_attempt": 0.8809806247528668,
+      "completed_fraction_admitted": 0.9887791741472173,
+      "completion_latency_ns": {
+        "n": 2203,
+        "p50": 380621386.0,
+        "p95": 1965332658.8000002,
+        "p99": 1995532209.96
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2197,
+        "p50": 380477303.0,
+        "p95": 1962774259.8,
+        "p99": 1994061743.96
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 17142296.5,
+          "p95": 47670112.75,
+          "p99": 63661046.690000005
+        },
+        "slowdown": {
+          "n": 318,
+          "p50": 1936703143.0,
+          "p95": 1997326865.45,
+          "p99": 2000986897.5600002
+        },
+        "recovery": {
+          "n": 925,
+          "p50": 392630008.0,
+          "p95": 669887821.8000001,
+          "p99": 704552060.84
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2529,
+        "p50": 400507379.0,
+        "p95": 1990017147.8,
+        "p99": 2026490252.6
+      },
+      "admission_wait_ns": {
+        "n": 2228,
+        "p50": 1170732.0,
+        "p95": 1826276.4500000002,
+        "p99": 2840367.41
+      },
+      "queue_residence_ns": {
+        "n": 2228,
+        "p50": 360868150.5,
+        "p95": 1263951808.95,
+        "p99": 1304959497.02
+      },
+      "send_duration_ns": {
+        "n": 2529,
+        "p50": 28243.0,
+        "p95": 71524.79999999993,
+        "p99": 202314.75999999914
+      },
+      "queue_occupancy_item_ns": 724842410867,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12449179825651712,
+      "staged_payload_byte_ns": 52695314022400,
+      "worker_occupied_ns": 34995224976,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34252124314,
+        "2": 0,
+        "3": 0,
+        "4": 743100662,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.897313460923077,
+      "idle_with_backlog_ns": 1268179616,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9953280,
+          "cpu_window_ns": 14730000000,
+          "cpu_window_offsets_ns": [
+            49175561,
+            39006101132
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 23719936,
+          "cpu_window_ns": 3960000000,
+          "cpu_window_offsets_ns": [
+            49230105,
+            39006168072
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2529,
+        "grpc_in_wire_bytes": 160441,
+        "grpc_out_messages": 2529,
+        "grpc_out_wire_bytes": 41667939,
+        "tcp_stream_read_bytes": 226981,
+        "tcp_stream_write_bytes": 41713865
+      },
+      "tcp_write_bytes_per_original": 14483.980902777777,
+      "clock_uncertainty_ns": 2093,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 31,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 30
+      },
+      "writer_local_progress_ns": 141039835,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41687130,
+      "recovery_clearance_ns": 425201054,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 31,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 75,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 78,
+          "client_pending": 18,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 78,
+          "client_pending": 19,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 80,
+          "client_pending": 13,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 80,
+          "client_pending": 3,
+          "client_outstanding": 31,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 78,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 30,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.5722222222222222,
+        "1": 0.671875,
+        "2": 0.7628472222222222,
+        "5": 0.7649305555555556
+      },
+      "block": 4
+    },
+    {
+      "policy": "retry",
+      "seed": 1435626977494426790,
+      "directory": "experiments/003/results/stage5/block-04-attempt-01/retry",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2244,
+      "U_over_N": 0.7791666666666667,
+      "deadline_goodput_per_s": 62.333333333333336,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 379,
+        "COMPLETED_LATE": 2,
+        "COMPLETED_ON_TIME": 2244,
+        "EXPIRED_PROCESSING": 17,
+        "EXPIRED_WAITING_OR_QUEUED": 11,
+        "REJECTED_FINAL": 227
+      },
+      "A": 2613,
+      "F": 2501,
+      "S": 2613,
+      "R": 2613,
+      "attempts_per_original": 0.9072916666666667,
+      "retries": 112,
+      "retries_per_original": 0.03888888888888889,
+      "admitted_fraction_original": 0.7892361111111111,
+      "admitted_fraction_attempt": 0.8698813624186759,
+      "completed_fraction_admitted": 0.9881214254289485,
+      "completion_latency_ns": {
+        "n": 2246,
+        "p50": 688993603.5,
+        "p95": 1960991940.75,
+        "p99": 1990411204.95
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2244,
+        "p50": 688840103.0,
+        "p95": 1960682529.9499998,
+        "p99": 1989868607.56
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16503205.0,
+          "p95": 18409680.549999997,
+          "p99": 20494476.29
+        },
+        "slowdown": {
+          "n": 330,
+          "p50": 1932984176.5,
+          "p95": 1993515203.6999998,
+          "p99": 1998886931.06
+        },
+        "recovery": {
+          "n": 956,
+          "p50": 714099880.5,
+          "p95": 1053553574.5,
+          "p99": 1153372230.3000002
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2501,
+        "p50": 706962881.0,
+        "p95": 1986324466.0,
+        "p99": 2026829523.0
+      },
+      "admission_wait_ns": {
+        "n": 2273,
+        "p50": 1115798.0,
+        "p95": 1588983.4000000001,
+        "p99": 2256918.3200000003
+      },
+      "queue_residence_ns": {
+        "n": 2263,
+        "p50": 342090313.0,
+        "p95": 1253543135.1999998,
+        "p99": 1297086697.1200001
+      },
+      "send_duration_ns": {
+        "n": 2613,
+        "p50": 21993.0,
+        "p95": 44463.00000000001,
+        "p99": 125530.28000000078
+      },
+      "queue_occupancy_item_ns": 717136294117,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12328566013198336,
+      "staged_payload_byte_ns": 50698473586688,
+      "worker_occupied_ns": 35339658837,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34765086022,
+        "2": 0,
+        "3": 0,
+        "4": 574572815,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9061450983846154,
+      "idle_with_backlog_ns": 1225233739,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 10100736,
+          "cpu_window_ns": 13650000000,
+          "cpu_window_offsets_ns": [
+            88658056,
+            39008984479
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 24145920,
+          "cpu_window_ns": 3390000000,
+          "cpu_window_offsets_ns": [
+            88712027,
+            39009175457
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2613,
+        "grpc_in_wire_bytes": 165899,
+        "grpc_out_messages": 2613,
+        "grpc_out_wire_bytes": 43051962,
+        "tcp_stream_read_bytes": 229451,
+        "tcp_stream_write_bytes": 43099453
+      },
+      "tcp_write_bytes_per_original": 14965.087847222223,
+      "clock_uncertainty_ns": 1953,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 31,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 32
+      },
+      "writer_local_progress_ns": 186239746,
+      "retry_converted_on_time_originals": 83,
+      "slowdown_completed_service_median_ns": 41612935,
+      "recovery_clearance_ns": 405693086,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 80,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 5
+        },
+        {
+          "second": 25,
+          "on_time_completions": 80,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 5
+        },
+        {
+          "second": 26,
+          "on_time_completions": 81,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 4
+        },
+        {
+          "second": 27,
+          "on_time_completions": 79,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 11
+        },
+        {
+          "second": 28,
+          "on_time_completions": 81,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 8
+        },
+        {
+          "second": 29,
+          "on_time_completions": 80,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 6
+        },
+        {
+          "second": 30,
+          "on_time_completions": 79,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 6
+        },
+        {
+          "second": 31,
+          "on_time_completions": 80,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 6
+        },
+        {
+          "second": 32,
+          "on_time_completions": 79,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 27,
+          "retry_scheduled": 11
+        },
+        {
+          "second": 33,
+          "on_time_completions": 80,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 7
+        },
+        {
+          "second": 34,
+          "on_time_completions": 80,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 7
+        },
+        {
+          "second": 35,
+          "on_time_completions": 80,
+          "client_pending": 27,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 8
+        },
+        {
+          "second": 36,
+          "on_time_completions": 59,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 2
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.3388888888888889,
+        "1": 0.6572916666666667,
+        "2": 0.7791666666666667,
+        "5": 0.7798611111111111
+      },
+      "block": 4
+    },
+    {
+      "policy": "drop",
+      "seed": 1435626977494426790,
+      "directory": "experiments/003/results/stage5/block-04-attempt-01/drop",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2188,
+      "U_over_N": 0.7597222222222222,
+      "deadline_goodput_per_s": 60.77777777777778,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 344,
+        "COMPLETED_LATE": 6,
+        "COMPLETED_ON_TIME": 2188,
+        "DROPPED": 319,
+        "EXPIRED_PROCESSING": 23
+      },
+      "A": 2536,
+      "F": 2536,
+      "S": 2536,
+      "R": 2536,
+      "attempts_per_original": 0.8805555555555555,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.7697916666666667,
+      "admitted_fraction_attempt": 0.874211356466877,
+      "completed_fraction_admitted": 0.9896256202074876,
+      "completion_latency_ns": {
+        "n": 2194,
+        "p50": 354233265.5,
+        "p95": 1961433388.4,
+        "p99": 1994515226.43
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2188,
+        "p50": 354107278.5,
+        "p95": 1959275131.2000003,
+        "p99": 1993824012.44
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16571869.5,
+          "p95": 19275213.549999997,
+          "p99": 23170814.509999998
+        },
+        "slowdown": {
+          "n": 327,
+          "p50": 1927809337.0,
+          "p95": 1995969396.1,
+          "p99": 2002451332.68
+        },
+        "recovery": {
+          "n": 907,
+          "p50": 422500097.0,
+          "p95": 779763661.0,
+          "p99": 789176234.08
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2536,
+        "p50": 377006994.0,
+        "p95": 1984287136.5,
+        "p99": 2028123477.8500001
+      },
+      "admission_wait_ns": {
+        "n": 2217,
+        "p50": 1155086.0,
+        "p95": 1988354.1999999988,
+        "p99": 3212431.4400000097
+      },
+      "queue_residence_ns": {
+        "n": 2217,
+        "p50": 339047551.0,
+        "p95": 1270643484.0,
+        "p99": 1301271548.8000002
+      },
+      "send_duration_ns": {
+        "n": 2536,
+        "p50": 25789.0,
+        "p95": 62073.75,
+        "p99": 202096.95000000013
+      },
+      "queue_occupancy_item_ns": 706150315067,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12141610109468672,
+      "staged_payload_byte_ns": 52793496436736,
+      "worker_occupied_ns": 34914755091,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34228973066,
+        "2": 0,
+        "3": 0,
+        "4": 685782025,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.8952501305384616,
+      "idle_with_backlog_ns": 1255569213,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9752576,
+          "cpu_window_ns": 14660000000,
+          "cpu_window_offsets_ns": [
+            50052998,
+            39006894216
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 23158784,
+          "cpu_window_ns": 3920000000,
+          "cpu_window_offsets_ns": [
+            50134551,
+            39006951272
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2536,
+        "grpc_in_wire_bytes": 160597,
+        "grpc_out_messages": 2536,
+        "grpc_out_wire_bytes": 41783271,
+        "tcp_stream_read_bytes": 226082,
+        "tcp_stream_write_bytes": 41829323
+      },
+      "tcp_write_bytes_per_original": 14524.070486111112,
+      "clock_uncertainty_ns": 1692,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 39,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 30
+      },
+      "writer_local_progress_ns": 155561289,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41639156,
+      "recovery_clearance_ns": 385549119,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 31,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 76,
+          "client_pending": 32,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 76,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 78,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 76,
+          "client_pending": 20,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 77,
+          "client_pending": 7,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 79,
+          "client_pending": 2,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 76,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 78,
+          "client_pending": 0,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 30,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 29,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 27,
+          "client_pending": 0,
+          "client_outstanding": 28,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.5565972222222222,
+        "1": 0.6697916666666667,
+        "2": 0.7597222222222222,
+        "5": 0.7618055555555555
+      },
+      "block": 4
+    },
+    {
+      "policy": "wait",
+      "seed": 16813872846671630229,
+      "directory": "experiments/003/results/stage5/block-05-attempt-01/wait",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2199,
+      "U_over_N": 0.7635416666666667,
+      "deadline_goodput_per_s": 61.083333333333336,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 531,
+        "COMPLETED_ON_TIME": 2199,
+        "EXPIRED_PROCESSING": 150
+      },
+      "A": 2349,
+      "F": 2349,
+      "S": 2349,
+      "R": 2349,
+      "attempts_per_original": 0.815625,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.815625,
+      "admitted_fraction_attempt": 1.0,
+      "completed_fraction_admitted": 0.9361430395913155,
+      "completion_latency_ns": {
+        "n": 2199,
+        "p50": 675041183.0,
+        "p95": 1978722895.7,
+        "p99": 1994557337.72
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2199,
+        "p50": 675041183.0,
+        "p95": 1978722895.7,
+        "p99": 1994557337.72
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16531921.5,
+          "p95": 18449791.9,
+          "p99": 21298196.959999997
+        },
+        "slowdown": {
+          "n": 284,
+          "p50": 1967244578.0,
+          "p95": 1997219133.65,
+          "p99": 1998794992.6
+        },
+        "recovery": {
+          "n": 955,
+          "p50": 696620382.0,
+          "p95": 751405238.9,
+          "p99": 757586665.1600001
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2349,
+        "p50": 697734541.0,
+        "p95": 2019955342.8000002,
+        "p99": 2037638491.0
+      },
+      "admission_wait_ns": {
+        "n": 2349,
+        "p50": 1150302.0,
+        "p95": 25810219.199999966,
+        "p99": 39192328.32
+      },
+      "queue_residence_ns": {
+        "n": 2349,
+        "p50": 349369018.0,
+        "p95": 1133254261.5999997,
+        "p99": 1299463096.4
+      },
+      "send_duration_ns": {
+        "n": 2349,
+        "p50": 22103.0,
+        "p95": 46801.99999999996,
+        "p99": 128624.31999999999
+      },
+      "queue_occupancy_item_ns": 727260562049,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12493852471902208,
+      "staged_payload_byte_ns": 144195705274368,
+      "worker_occupied_ns": 35303675738,
+      "worker_occupied_by_disposition_ns": {
+        "1": 32702459816,
+        "2": 0,
+        "3": 0,
+        "4": 2601215922,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9052224548205128,
+      "idle_with_backlog_ns": 1256655600,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 10190848,
+          "cpu_window_ns": 13080000000,
+          "cpu_window_offsets_ns": [
+            60251886,
+            39005328415
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 21929984,
+          "cpu_window_ns": 3520000000,
+          "cpu_window_offsets_ns": [
+            60310474,
+            39005394965
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2349,
+        "grpc_in_wire_bytes": 149289,
+        "grpc_out_messages": 2349,
+        "grpc_out_wire_bytes": 38702259,
+        "tcp_stream_read_bytes": 208190,
+        "tcp_stream_write_bytes": 38744936
+      },
+      "tcp_write_bytes_per_original": 13453.102777777778,
+      "clock_uncertainty_ns": 1742,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 31,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 0,
+        "events": 24
+      },
+      "writer_local_progress_ns": 192031126,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41524563.0,
+      "recovery_clearance_ns": 420696271,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 78,
+          "client_pending": 31,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 81,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 81,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 81,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 81,
+          "client_pending": 24,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 81,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 82,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 80,
+          "client_pending": 21,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 80,
+          "client_pending": 21,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 79,
+          "client_pending": 20,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 79,
+          "client_pending": 24,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 78,
+          "client_pending": 25,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 57,
+          "client_pending": 24,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.3388888888888889,
+        "1": 0.678125,
+        "2": 0.7635416666666667,
+        "5": 0.7635416666666667
+      },
+      "block": 5
+    },
+    {
+      "policy": "reject",
+      "seed": 16813872846671630229,
+      "directory": "experiments/003/results/stage5/block-05-attempt-01/reject",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2208,
+      "U_over_N": 0.7666666666666667,
+      "deadline_goodput_per_s": 61.333333333333336,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 349,
+        "COMPLETED_LATE": 5,
+        "COMPLETED_ON_TIME": 2208,
+        "EXPIRED_PROCESSING": 26,
+        "REJECTED_FINAL": 292
+      },
+      "A": 2531,
+      "F": 2531,
+      "S": 2531,
+      "R": 2531,
+      "attempts_per_original": 0.8788194444444445,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.7774305555555555,
+      "admitted_fraction_attempt": 0.8846305807981035,
+      "completed_fraction_admitted": 0.9883876730683341,
+      "completion_latency_ns": {
+        "n": 2213,
+        "p50": 268809547.0,
+        "p95": 1964686504.8000002,
+        "p99": 1994066432.1200001
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2208,
+        "p50": 268442475.0,
+        "p95": 1961657127.6000001,
+        "p99": 1993247289.4
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16506038.0,
+          "p95": 18715187.4,
+          "p99": 20185667.65
+        },
+        "slowdown": {
+          "n": 321,
+          "p50": 1930673325.0,
+          "p95": 1994780045.0,
+          "p99": 2000417223.8
+        },
+        "recovery": {
+          "n": 932,
+          "p50": 316399469.0,
+          "p95": 573259853.95,
+          "p99": 694467099.47
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2531,
+        "p50": 289489562.0,
+        "p95": 1986828316.0,
+        "p99": 2027212201.8
+      },
+      "admission_wait_ns": {
+        "n": 2239,
+        "p50": 1125694.0,
+        "p95": 1604425.1999999997,
+        "p99": 2271558.959999996
+      },
+      "queue_residence_ns": {
+        "n": 2239,
+        "p50": 257999961.0,
+        "p95": 1264683381.6000001,
+        "p99": 1294139221.6999998
+      },
+      "send_duration_ns": {
+        "n": 2531,
+        "p50": 26189.0,
+        "p95": 54061.5,
+        "p99": 134799.19999999937
+      },
+      "queue_occupancy_item_ns": 657944182814,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 11351447002562560,
+      "staged_payload_byte_ns": 49352539668480,
+      "worker_occupied_ns": 34893158651,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34084778723,
+        "2": 0,
+        "3": 0,
+        "4": 808379928,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.8946963756666667,
+      "idle_with_backlog_ns": 1193387036,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9981952,
+          "cpu_window_ns": 13560000000,
+          "cpu_window_offsets_ns": [
+            40248481,
+            39007521431
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 24875008,
+          "cpu_window_ns": 3530000000,
+          "cpu_window_offsets_ns": [
+            40298606,
+            39007576423
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2531,
+        "grpc_in_wire_bytes": 160541,
+        "grpc_out_messages": 2531,
+        "grpc_out_wire_bytes": 41700891,
+        "tcp_stream_read_bytes": 228776,
+        "tcp_stream_write_bytes": 41746844
+      },
+      "tcp_write_bytes_per_original": 14495.431944444445,
+      "clock_uncertainty_ns": 1622,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 31,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 32,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 27
+      },
+      "writer_local_progress_ns": 71992793,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41553151.0,
+      "recovery_clearance_ns": 389260477,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 31,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 79,
+          "client_pending": 32,
+          "client_outstanding": 31,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 80,
+          "client_pending": 13,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 29,
+          "server_occupied": 28,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 27,
+          "server_occupied": 26,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 26,
+          "server_occupied": 25,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 26,
+          "server_occupied": 25,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 24,
+          "server_occupied": 23,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 23,
+          "server_occupied": 22,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 23,
+          "server_occupied": 22,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 22,
+          "server_occupied": 21,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 20,
+          "client_pending": 0,
+          "client_outstanding": 20,
+          "server_occupied": 20,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.6340277777777777,
+        "1": 0.6763888888888889,
+        "2": 0.7666666666666667,
+        "5": 0.7684027777777778
+      },
+      "block": 5
+    },
+    {
+      "policy": "retry",
+      "seed": 16813872846671630229,
+      "directory": "experiments/003/results/stage5/block-05-attempt-01/retry",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2233,
+      "U_over_N": 0.7753472222222222,
+      "deadline_goodput_per_s": 62.02777777777778,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 388,
+        "COMPLETED_ON_TIME": 2233,
+        "EXPIRED_PROCESSING": 7,
+        "EXPIRED_WAITING_OR_QUEUED": 18,
+        "REJECTED_FINAL": 234
+      },
+      "A": 2613,
+      "F": 2492,
+      "S": 2613,
+      "R": 2613,
+      "attempts_per_original": 0.9072916666666667,
+      "retries": 121,
+      "retries_per_original": 0.04201388888888889,
+      "admitted_fraction_original": 0.7833333333333333,
+      "admitted_fraction_attempt": 0.8633754305396096,
+      "completed_fraction_admitted": 0.9898049645390071,
+      "completion_latency_ns": {
+        "n": 2233,
+        "p50": 704024645.0,
+        "p95": 1931471996.6,
+        "p99": 1982651442.52
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2233,
+        "p50": 704024645.0,
+        "p95": 1931471996.6,
+        "p99": 1982651442.52
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 16693867.5,
+          "p95": 19193909.9,
+          "p99": 22540950.08
+        },
+        "slowdown": {
+          "n": 339,
+          "p50": 1888533883.0,
+          "p95": 1986142779.9,
+          "p99": 1994145841.9
+        },
+        "recovery": {
+          "n": 934,
+          "p50": 734946689.5,
+          "p95": 1090555357.6,
+          "p99": 1195960111.4099998
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2492,
+        "p50": 713720399.0,
+        "p95": 1960050902.1,
+        "p99": 2014788103.41
+      },
+      "admission_wait_ns": {
+        "n": 2256,
+        "p50": 1182614.5,
+        "p95": 1803192.5,
+        "p99": 2607760.999999998
+      },
+      "queue_residence_ns": {
+        "n": 2240,
+        "p50": 348466346.0,
+        "p95": 1255070503.9,
+        "p99": 1298735942.2
+      },
+      "send_duration_ns": {
+        "n": 2613,
+        "p50": 20692.0,
+        "p95": 55888.399999999994,
+        "p99": 162404.56000000078
+      },
+      "queue_occupancy_item_ns": 719062997503,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12359826598494208,
+      "staged_payload_byte_ns": 53943174987776,
+      "worker_occupied_ns": 35320950159,
+      "worker_occupied_by_disposition_ns": {
+        "1": 35085458643,
+        "2": 0,
+        "3": 0,
+        "4": 235491516,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.9056653886923077,
+      "idle_with_backlog_ns": 1299593642,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9822208,
+          "cpu_window_ns": 14780000000,
+          "cpu_window_offsets_ns": [
+            63297246,
+            39005866288
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 24313856,
+          "cpu_window_ns": 3880000000,
+          "cpu_window_offsets_ns": [
+            63353881,
+            39005923323
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2613,
+        "grpc_in_wire_bytes": 165852,
+        "grpc_out_messages": 2613,
+        "grpc_out_wire_bytes": 43051960,
+        "tcp_stream_read_bytes": 230028,
+        "tcp_stream_write_bytes": 43099424
+      },
+      "tcp_write_bytes_per_original": 14965.077777777778,
+      "clock_uncertainty_ns": 1712,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 32,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 32
+      },
+      "writer_local_progress_ns": 194410713,
+      "retry_converted_on_time_originals": 77,
+      "slowdown_completed_service_median_ns": 41605367,
+      "recovery_clearance_ns": 396665414,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 80,
+          "client_pending": 32,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 8
+        },
+        {
+          "second": 25,
+          "on_time_completions": 79,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 28,
+          "retry_scheduled": 7
+        },
+        {
+          "second": 26,
+          "on_time_completions": 78,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 10
+        },
+        {
+          "second": 27,
+          "on_time_completions": 80,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 5
+        },
+        {
+          "second": 28,
+          "on_time_completions": 79,
+          "client_pending": 27,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 7
+        },
+        {
+          "second": 29,
+          "on_time_completions": 74,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 6
+        },
+        {
+          "second": 30,
+          "on_time_completions": 78,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 1
+        },
+        {
+          "second": 31,
+          "on_time_completions": 79,
+          "client_pending": 30,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 7
+        },
+        {
+          "second": 32,
+          "on_time_completions": 78,
+          "client_pending": 26,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 9
+        },
+        {
+          "second": 33,
+          "on_time_completions": 78,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 4
+        },
+        {
+          "second": 34,
+          "on_time_completions": 77,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 5
+        },
+        {
+          "second": 35,
+          "on_time_completions": 77,
+          "client_pending": 28,
+          "client_outstanding": 33,
+          "server_occupied": 31,
+          "retry_scheduled": 12
+        },
+        {
+          "second": 36,
+          "on_time_completions": 60,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 1
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.3388888888888889,
+        "1": 0.6510416666666666,
+        "2": 0.7753472222222222,
+        "5": 0.7753472222222222
+      },
+      "block": 5
+    },
+    {
+      "policy": "drop",
+      "seed": 16813872846671630229,
+      "directory": "experiments/003/results/stage5/block-05-attempt-01/drop",
+      "verdict": "PASS",
+      "N": 2880,
+      "U": 2205,
+      "U_over_N": 0.765625,
+      "deadline_goodput_per_s": 61.25,
+      "counts": {
+        "CLIENT_BACKLOG_EXHAUSTED": 346,
+        "COMPLETED_LATE": 6,
+        "COMPLETED_ON_TIME": 2205,
+        "DROPPED": 297,
+        "EXPIRED_PROCESSING": 26
+      },
+      "A": 2534,
+      "F": 2534,
+      "S": 2534,
+      "R": 2534,
+      "attempts_per_original": 0.8798611111111111,
+      "retries": 0,
+      "retries_per_original": 0.0,
+      "admitted_fraction_original": 0.7767361111111111,
+      "admitted_fraction_attempt": 0.8827940015785319,
+      "completed_fraction_admitted": 0.9883772910147519,
+      "completion_latency_ns": {
+        "n": 2211,
+        "p50": 330108399.0,
+        "p95": 1960274633.0,
+        "p99": 1994205418.0
+      },
+      "on_time_completion_latency_ns": {
+        "n": 2205,
+        "p50": 329815515.0,
+        "p95": 1957410373.1999998,
+        "p99": 1993213034.76
+      },
+      "phase_scheduled_completion_latency_ns": {
+        "initial": {
+          "n": 960,
+          "p50": 17088128.5,
+          "p95": 20758554.65,
+          "p99": 22784226.669999998
+        },
+        "slowdown": {
+          "n": 323,
+          "p50": 1917534134.0,
+          "p95": 1994911422.9,
+          "p99": 2000645687.7
+        },
+        "recovery": {
+          "n": 928,
+          "p50": 379509411.5,
+          "p95": 692902915.15,
+          "p99": 724156556.79
+        }
+      },
+      "client_observed_terminal_latency_ns": {
+        "n": 2534,
+        "p50": 375602890.0,
+        "p95": 1982276658.8000002,
+        "p99": 2025894585.88
+      },
+      "admission_wait_ns": {
+        "n": 2237,
+        "p50": 1189890.0,
+        "p95": 1760049.1999999997,
+        "p99": 2563049.1199999964
+      },
+      "queue_residence_ns": {
+        "n": 2237,
+        "p50": 319322349.0,
+        "p95": 1259422036.2,
+        "p99": 1297826078.4399998
+      },
+      "send_duration_ns": {
+        "n": 2534,
+        "p50": 25168.0,
+        "p95": 74921.84999999996,
+        "p99": 190134.99000000034
+      },
+      "queue_occupancy_item_ns": 701596368060,
+      "occupied_max": 32,
+      "server_payload_byte_ns": 12067488694796288,
+      "staged_payload_byte_ns": 52421008506880,
+      "worker_occupied_ns": 34944689972,
+      "worker_occupied_by_disposition_ns": {
+        "1": 34164047093,
+        "2": 0,
+        "3": 0,
+        "4": 780642879,
+        "5": 0,
+        "6": 0
+      },
+      "worker_utilization_observation": 0.8960176915897435,
+      "idle_with_backlog_ns": 1269844981,
+      "process_metrics": {
+        "server": {
+          "sampled_rss_peak_bytes": 9879552,
+          "cpu_window_ns": 14650000000,
+          "cpu_window_offsets_ns": [
+            56550516,
+            39002106883
+          ],
+          "cpu_resolution_ns": 10000000
+        },
+        "client": {
+          "sampled_rss_peak_bytes": 22994944,
+          "cpu_window_ns": 3970000000,
+          "cpu_window_offsets_ns": [
+            56609115,
+            39002233714
+          ],
+          "cpu_resolution_ns": 10000000
+        }
+      },
+      "transport": {
+        "grpc_in_messages": 2534,
+        "grpc_in_wire_bytes": 160458,
+        "grpc_out_messages": 2534,
+        "grpc_out_wire_bytes": 41750319,
+        "tcp_stream_read_bytes": 227472,
+        "tcp_stream_write_bytes": 41796326
+      },
+      "tcp_write_bytes_per_original": 14512.613194444444,
+      "clock_uncertainty_ns": 2454,
+      "client_high_water": {
+        "Pending": 32,
+        "Outstanding": 33,
+        "Events": 30,
+        "Responses": 5
+      },
+      "server_high_water": {
+        "queued": 31,
+        "running": 1,
+        "staging": 1,
+        "receive": 1,
+        "terminal": 32,
+        "immediate": 1,
+        "events": 28
+      },
+      "writer_local_progress_ns": 112399311,
+      "retry_converted_on_time_originals": 0,
+      "slowdown_completed_service_median_ns": 41641842,
+      "recovery_clearance_ns": 418623638,
+      "recovery_censored": false,
+      "pre24_backlog_at24": 32,
+      "recovery_series": [
+        {
+          "second": 24,
+          "on_time_completions": 77,
+          "client_pending": 29,
+          "client_outstanding": 33,
+          "server_occupied": 32,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 25,
+          "on_time_completions": 80,
+          "client_pending": 23,
+          "client_outstanding": 33,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 26,
+          "on_time_completions": 79,
+          "client_pending": 15,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 27,
+          "on_time_completions": 79,
+          "client_pending": 11,
+          "client_outstanding": 33,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 28,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 29,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 32,
+          "server_occupied": 31,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 30,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 31,
+          "on_time_completions": 81,
+          "client_pending": 0,
+          "client_outstanding": 31,
+          "server_occupied": 30,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 32,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 30,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 33,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 30,
+          "server_occupied": 29,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 34,
+          "on_time_completions": 82,
+          "client_pending": 0,
+          "client_outstanding": 29,
+          "server_occupied": 27,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 35,
+          "on_time_completions": 80,
+          "client_pending": 0,
+          "client_outstanding": 26,
+          "server_occupied": 25,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 36,
+          "on_time_completions": 25,
+          "client_pending": 0,
+          "client_outstanding": 26,
+          "server_occupied": 25,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 37,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 38,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        },
+        {
+          "second": 39,
+          "on_time_completions": 0,
+          "client_pending": 0,
+          "client_outstanding": 0,
+          "server_occupied": 0,
+          "retry_scheduled": 0
+        }
+      ],
+      "deadline_attainment": {
+        "0.5": 0.584375,
+        "1": 0.675,
+        "2": 0.765625,
+        "5": 0.7677083333333333
+      },
+      "block": 5
+    }
+  ],
+  "policies": {
+    "wait": {
+      "runs": 5,
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          0.7631944444444444,
+          0.7482638888888888,
+          0.7625,
+          0.7645833333333333,
+          0.7635416666666667
+        ],
+        "mean": 0.7604166666666666,
+        "median": 0.7631944444444444,
+        "interval95": [
+          0.7542361111111111,
+          0.7639583333333333
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "A_over_N": {
+        "n": 5,
+        "values": [
+          0.8152777777777778,
+          0.8003472222222222,
+          0.815625,
+          0.8159722222222222,
+          0.815625
+        ],
+        "mean": 0.8125694444444445,
+        "median": 0.815625,
+        "interval95": [
+          0.8064583333333333,
+          0.815763888888889
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_over_N": {
+        "n": 5,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "median": 0.0,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "counts_mean": {
+        "CLIENT_BACKLOG_EXHAUSTED": 539.8,
+        "COMPLETED_LATE": 2.4,
+        "COMPLETED_ON_TIME": 2190,
+        "EXPIRED_PROCESSING": 147.6,
+        "EXPIRED_WAITING_OR_QUEUED": 0.2
+      }
+    },
+    "reject": {
+      "runs": 5,
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          0.7503472222222223,
+          0.7642361111111111,
+          0.7642361111111111,
+          0.7628472222222222,
+          0.7666666666666667
+        ],
+        "mean": 0.7616666666666667,
+        "median": 0.7642361111111111,
+        "interval95": [
+          0.7559027777777778,
+          0.7654166666666666
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "A_over_N": {
+        "n": 5,
+        "values": [
+          0.8784722222222222,
+          0.8763888888888889,
+          0.8802083333333334,
+          0.878125,
+          0.8788194444444445
+        ],
+        "mean": 0.8784027777777778,
+        "median": 0.8784722222222222,
+        "interval95": [
+          0.8772222222222222,
+          0.8794444444444445
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_over_N": {
+        "n": 5,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "median": 0.0,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "counts_mean": {
+        "CLIENT_BACKLOG_EXHAUSTED": 350.2,
+        "COMPLETED_LATE": 5.2,
+        "COMPLETED_ON_TIME": 2193.6,
+        "EXPIRED_PROCESSING": 28.4,
+        "REJECTED_FINAL": 302.6
+      }
+    },
+    "retry": {
+      "runs": 5,
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          0.7763888888888889,
+          0.771875,
+          0.7760416666666666,
+          0.7791666666666667,
+          0.7753472222222222
+        ],
+        "mean": 0.7757638888888889,
+        "median": 0.7760416666666666,
+        "interval95": [
+          0.7735416666666667,
+          0.7777777777777778
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "A_over_N": {
+        "n": 5,
+        "values": [
+          0.9131944444444444,
+          0.9111111111111111,
+          0.9114583333333334,
+          0.9072916666666667,
+          0.9072916666666667
+        ],
+        "mean": 0.9100694444444445,
+        "median": 0.9111111111111111,
+        "interval95": [
+          0.9080555555555556,
+          0.9120833333333334
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_over_N": {
+        "n": 5,
+        "values": [
+          0.04652777777777778,
+          0.044097222222222225,
+          0.04513888888888889,
+          0.03888888888888889,
+          0.04201388888888889
+        ],
+        "mean": 0.043333333333333335,
+        "median": 0.044097222222222225,
+        "interval95": [
+          0.04076388888888889,
+          0.04548611111111111
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "counts_mean": {
+        "CLIENT_BACKLOG_EXHAUSTED": 383.8,
+        "COMPLETED_LATE": 1.8,
+        "COMPLETED_ON_TIME": 2234.2,
+        "EXPIRED_PROCESSING": 16,
+        "EXPIRED_WAITING_OR_QUEUED": 13.8,
+        "REJECTED_FINAL": 230.4
+      }
+    },
+    "drop": {
+      "runs": 5,
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          0.7607638888888889,
+          0.7510416666666667,
+          0.7635416666666667,
+          0.7597222222222222,
+          0.765625
+        ],
+        "mean": 0.7601388888888889,
+        "median": 0.7607638888888889,
+        "interval95": [
+          0.7552777777777778,
+          0.7639583333333333
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "A_over_N": {
+        "n": 5,
+        "values": [
+          0.878125,
+          0.8756944444444444,
+          0.8774305555555556,
+          0.8805555555555555,
+          0.8798611111111111
+        ],
+        "mean": 0.8783333333333333,
+        "median": 0.878125,
+        "interval95": [
+          0.8768750000000001,
+          0.8797916666666665
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_over_N": {
+        "n": 5,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "median": 0.0,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "counts_mean": {
+        "CLIENT_BACKLOG_EXHAUSTED": 350.4,
+        "COMPLETED_LATE": 7,
+        "COMPLETED_ON_TIME": 2189.2,
+        "DROPPED": 302.2,
+        "EXPIRED_PROCESSING": 31.2
+      }
+    }
+  },
+  "paired": {
+    "reject-minus-wait": {
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          -0.012847222222222121,
+          0.015972222222222276,
+          0.0017361111111111605,
+          -0.0017361111111110494,
+          0.0031250000000000444
+        ],
+        "mean": 0.0012500000000000623,
+        "median": 0.0017361111111111605,
+        "interval95": [
+          -0.007013888888888808,
+          0.009861111111111164
+        ],
+        "positive_blocks": 3,
+        "negative_blocks": 2,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "attempts_per_original": {
+        "n": 5,
+        "values": [
+          0.06319444444444444,
+          0.07604166666666667,
+          0.06458333333333333,
+          0.062152777777777835,
+          0.06319444444444444
+        ],
+        "mean": 0.06583333333333334,
+        "median": 0.06319444444444444,
+        "interval95": [
+          0.0627777777777778,
+          0.07097222222222224
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_per_original": {
+        "n": 5,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "median": 0.0,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "server_payload_byte_ns": {
+        "n": 5,
+        "values": [
+          -231466273734656,
+          -817784923291648,
+          -411099386986496,
+          -20192206716928,
+          -1142405469339648
+        ],
+        "mean": -524589652013875.2,
+        "median": -411099386986496,
+        "interval95": [
+          -895293521009049.6,
+          -182883269577932.8
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "worker_utilization_observation": {
+        "n": 5,
+        "values": [
+          -0.008680959102564056,
+          -0.00882584569230771,
+          -0.0058515565641026335,
+          -0.0044853499999999435,
+          -0.010526079153846069
+        ],
+        "mean": -0.007673958102564082,
+        "median": -0.008680959102564056,
+        "interval95": [
+          -0.009476961758974323,
+          -0.0056266904512820345
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "idle_with_backlog_ns": {
+        "n": 5,
+        "values": [
+          60247640,
+          -238156764,
+          -19077752,
+          -44984857,
+          -63268564
+        ],
+        "mean": -61048059.4,
+        "median": -44984857,
+        "interval95": [
+          -159363321.6,
+          14497899.8
+        ],
+        "positive_blocks": 1,
+        "negative_blocks": 4,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "tcp_write_bytes_per_original": {
+        "n": 5,
+        "values": [
+          1042.3322916666657,
+          1254.2437499999996,
+          1065.231249999999,
+          1025.1447916666657,
+          1042.3291666666664
+        ],
+        "mean": 1085.8562499999994,
+        "median": 1042.3322916666657,
+        "interval95": [
+          1035.456041666666,
+          1170.6214583333326
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "recovery_clearance_ns": {
+        "n": 5,
+        "values": [
+          13135264,
+          -3295618,
+          38195783,
+          24373643,
+          -31435794
+        ],
+        "mean": 8194655.6,
+        "median": 13135264,
+        "interval95": [
+          -14551688.4,
+          27654823.2
+        ],
+        "positive_blocks": 3,
+        "negative_blocks": 2,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      }
+    },
+    "retry-minus-wait": {
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          0.013194444444444509,
+          0.023611111111111138,
+          0.013541666666666674,
+          0.014583333333333393,
+          0.011805555555555514
+        ],
+        "mean": 0.015347222222222245,
+        "median": 0.013541666666666674,
+        "interval95": [
+          0.012638888888888911,
+          0.019583333333333352
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "attempts_per_original": {
+        "n": 5,
+        "values": [
+          0.09791666666666665,
+          0.11076388888888888,
+          0.09583333333333333,
+          0.09131944444444451,
+          0.09166666666666667
+        ],
+        "mean": 0.0975,
+        "median": 0.09583333333333333,
+        "interval95": [
+          0.09236111111111114,
+          0.104375
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_per_original": {
+        "n": 5,
+        "values": [
+          0.04652777777777778,
+          0.044097222222222225,
+          0.04513888888888889,
+          0.03888888888888889,
+          0.04201388888888889
+        ],
+        "mean": 0.043333333333333335,
+        "median": 0.044097222222222225,
+        "interval95": [
+          0.04076388888888889,
+          0.04548611111111111
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "server_payload_byte_ns": {
+        "n": 5,
+        "values": [
+          -135531531403264,
+          -228756080214016,
+          -101720986255360,
+          -140806019170304,
+          -134025873408000
+        ],
+        "mean": -148168098090188.8,
+        "median": -135531531403264,
+        "interval95": [
+          -191466260689715.2,
+          -116300101867929.6
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "worker_utilization_observation": {
+        "n": 5,
+        "values": [
+          0.0012907020512821221,
+          0.002100016846153796,
+          0.0018807661282050914,
+          0.004346287461538534,
+          0.00044293387179494825
+        ],
+        "mean": 0.0020121412717948985,
+        "median": 0.0018807661282050914,
+        "interval95": [
+          0.0010180667743590055,
+          0.003285916256410304
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "idle_with_backlog_ns": {
+        "n": 5,
+        "values": [
+          6423862,
+          -152360015,
+          -43836969,
+          -87930734,
+          42938042
+        ],
+        "mean": -46953162.8,
+        "median": -43836969,
+        "interval95": [
+          -107717383.4,
+          10977367.8
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "tcp_write_bytes_per_original": {
+        "n": 5,
+        "values": [
+          1615.0621527777766,
+          1826.9982638888887,
+          1580.699999999999,
+          1506.2517361111113,
+          1511.9750000000004
+        ],
+        "mean": 1608.1974305555552,
+        "median": 1580.699999999999,
+        "interval95": [
+          1523.4306944444445,
+          1721.6063888888887
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "recovery_clearance_ns": {
+        "n": 5,
+        "values": [
+          -21343307,
+          -15194498,
+          11262212,
+          4865675,
+          -24030857
+        ],
+        "mean": -8888155,
+        "median": -15194498,
+        "interval95": [
+          -21188565.2,
+          3461800.8
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      }
+    },
+    "drop-minus-wait": {
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          -0.0024305555555554914,
+          0.002777777777777879,
+          0.0010416666666667185,
+          -0.004861111111111094,
+          0.002083333333333326
+        ],
+        "mean": -0.0002777777777777324,
+        "median": 0.0010416666666667185,
+        "interval95": [
+          -0.0029861111111110896,
+          0.0021527777777778255
+        ],
+        "positive_blocks": 3,
+        "negative_blocks": 2,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "attempts_per_original": {
+        "n": 5,
+        "values": [
+          0.06284722222222228,
+          0.07534722222222223,
+          0.06180555555555556,
+          0.06458333333333333,
+          0.06423611111111105
+        ],
+        "mean": 0.06576388888888889,
+        "median": 0.06423611111111105,
+        "interval95": [
+          0.06263888888888894,
+          0.07069444444444446
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_per_original": {
+        "n": 5,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "median": 0.0,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "server_payload_byte_ns": {
+        "n": 5,
+        "values": [
+          -526669803257856,
+          3174937690112,
+          -681050689437696,
+          -327761922899968,
+          -426363777105920
+        ],
+        "mean": -391734251002265.6,
+        "median": -426363777105920,
+        "interval95": [
+          -579175924504985.6,
+          -168981382617497.62
+        ],
+        "positive_blocks": 1,
+        "negative_blocks": 4,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "worker_utilization_observation": {
+        "n": 5,
+        "values": [
+          -0.009654900410256406,
+          -0.006651099076923073,
+          -0.008257906564102635,
+          -0.006548680384615313,
+          -0.009204763230769242
+        ],
+        "mean": -0.008063469933333334,
+        "median": -0.008257906564102635,
+        "interval95": [
+          -0.009195446769230786,
+          -0.006931493097435881
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "idle_with_backlog_ns": {
+        "n": 5,
+        "values": [
+          23203272,
+          -25483258,
+          -66559865,
+          -57595260,
+          13189381
+        ],
+        "mean": -22649146,
+        "median": -25483258,
+        "interval95": [
+          -54758701.6,
+          9460409.6
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "tcp_write_bytes_per_original": {
+        "n": 5,
+        "values": [
+          1036.6020833333332,
+          1242.7927083333343,
+          1019.4145833333332,
+          1065.234375,
+          1059.510416666666
+        ],
+        "mean": 1084.7108333333333,
+        "median": 1059.510416666666,
+        "interval95": [
+          1033.1645833333332,
+          1166.0429166666672
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "recovery_clearance_ns": {
+        "n": 5,
+        "values": [
+          -7005808,
+          -17361964,
+          -23134409,
+          -15278292,
+          -2072633
+        ],
+        "mean": -12970621.2,
+        "median": -15278292,
+        "interval95": [
+          -19254207.6,
+          -6117134.2
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      }
+    },
+    "retry-minus-reject": {
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          0.02604166666666663,
+          0.007638888888888862,
+          0.011805555555555514,
+          0.016319444444444442,
+          0.00868055555555547
+        ],
+        "mean": 0.014097222222222183,
+        "median": 0.011805555555555514,
+        "interval95": [
+          0.008888888888888835,
+          0.02041666666666664
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "attempts_per_original": {
+        "n": 5,
+        "values": [
+          0.03472222222222221,
+          0.03472222222222221,
+          0.03125,
+          0.029166666666666674,
+          0.028472222222222232
+        ],
+        "mean": 0.03166666666666666,
+        "median": 0.03125,
+        "interval95": [
+          0.029305555555555564,
+          0.03402777777777777
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_per_original": {
+        "n": 5,
+        "values": [
+          0.04652777777777778,
+          0.044097222222222225,
+          0.04513888888888889,
+          0.03888888888888889,
+          0.04201388888888889
+        ],
+        "mean": 0.043333333333333335,
+        "median": 0.044097222222222225,
+        "interval95": [
+          0.04076388888888889,
+          0.04548611111111111
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "server_payload_byte_ns": {
+        "n": 5,
+        "values": [
+          95934742331392,
+          589028843077632,
+          309378400731136,
+          -120613812453376,
+          1008379595931648
+        ],
+        "mean": 376421553923686.4,
+        "median": 309378400731136,
+        "interval95": [
+          52004052097433.6,
+          742020474640793.6
+        ],
+        "positive_blocks": 4,
+        "negative_blocks": 1,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "worker_utilization_observation": {
+        "n": 5,
+        "values": [
+          0.009971661153846179,
+          0.010925862538461506,
+          0.007732322692307725,
+          0.008831637461538477,
+          0.010969013025641017
+        ],
+        "mean": 0.009686099374358981,
+        "median": 0.009971661153846179,
+        "interval95": [
+          0.008590893615384631,
+          0.010752282456410245
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "idle_with_backlog_ns": {
+        "n": 5,
+        "values": [
+          -53823778,
+          85796749,
+          -24759217,
+          -42945877,
+          106206606
+        ],
+        "mean": 14094896.6,
+        "median": -24759217,
+        "interval95": [
+          -43659705.4,
+          72294138.0
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "tcp_write_bytes_per_original": {
+        "n": 5,
+        "values": [
+          572.729861111111,
+          572.754513888889,
+          515.46875,
+          481.1069444444456,
+          469.64583333333394
+        ],
+        "mean": 522.3411805555559,
+        "median": 515.46875,
+        "interval95": [
+          483.3948611111118,
+          561.2875
+        ],
+        "positive_blocks": 5,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "recovery_clearance_ns": {
+        "n": 5,
+        "values": [
+          -34478571,
+          -11898880,
+          -26933571,
+          -19507968,
+          7404937
+        ],
+        "mean": -17082810.6,
+        "median": -19507968,
+        "interval95": [
+          -28466450.4,
+          -3360225.0
+        ],
+        "positive_blocks": 1,
+        "negative_blocks": 4,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      }
+    },
+    "drop-minus-reject": {
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          0.01041666666666663,
+          -0.013194444444444398,
+          -0.000694444444444442,
+          -0.0031250000000000444,
+          -0.0010416666666667185
+        ],
+        "mean": -0.0015277777777777946,
+        "median": -0.0010416666666667185,
+        "interval95": [
+          -0.008333333333333326,
+          0.0054861111111110805
+        ],
+        "positive_blocks": 1,
+        "negative_blocks": 4,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "attempts_per_original": {
+        "n": 5,
+        "values": [
+          -0.0003472222222221655,
+          -0.000694444444444442,
+          -0.002777777777777768,
+          0.0024305555555554914,
+          0.0010416666666666075
+        ],
+        "mean": -6.94444444444553e-05,
+        "median": -0.0003472222222221655,
+        "interval95": [
+          -0.0015972222222222277,
+          0.0013888888888888393
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_per_original": {
+        "n": 5,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "median": 0.0,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 0,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "server_payload_byte_ns": {
+        "n": 5,
+        "values": [
+          -295203529523200,
+          820959860981760,
+          -269951302451200,
+          -307569716183040,
+          716041692233728
+        ],
+        "mean": 132855401011609.6,
+        "median": -269951302451200,
+        "interval95": [
+          -295099558772736.0,
+          576743549131161.6
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "worker_utilization_observation": {
+        "n": 5,
+        "values": [
+          -0.0009739413076923498,
+          0.0021747466153846373,
+          -0.0024063500000000015,
+          -0.0020633303846153694,
+          0.0013213159230768268
+        ],
+        "mean": -0.00038951183076925134,
+        "median": -0.0009739413076923498,
+        "interval95": [
+          -0.0019826604153846184,
+          0.0012036367538461156
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "idle_with_backlog_ns": {
+        "n": 5,
+        "values": [
+          -37044368,
+          212673506,
+          -47482113,
+          -12610403,
+          76457945
+        ],
+        "mean": 38398913.4,
+        "median": -12610403,
+        "interval95": [
+          -36332673.0,
+          133399270.0
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "tcp_write_bytes_per_original": {
+        "n": 5,
+        "values": [
+          -5.7302083333324845,
+          -11.451041666665333,
+          -45.8166666666657,
+          40.0895833333343,
+          17.181249999999636
+        ],
+        "mean": -1.145416666665915,
+        "median": -5.7302083333324845,
+        "interval95": [
+          -26.34395833333256,
+          22.908333333334305
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "recovery_clearance_ns": {
+        "n": 5,
+        "values": [
+          -20141072,
+          -14066346,
+          -61330192,
+          -39651935,
+          29363161
+        ],
+        "mean": -21165276.8,
+        "median": -20141072,
+        "interval95": [
+          -44854544.0,
+          6874240.4
+        ],
+        "positive_blocks": 1,
+        "negative_blocks": 4,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      }
+    },
+    "drop-minus-retry": {
+      "U_over_N": {
+        "n": 5,
+        "values": [
+          -0.015625,
+          -0.02083333333333326,
+          -0.012499999999999956,
+          -0.019444444444444486,
+          -0.009722222222222188
+        ],
+        "mean": -0.015624999999999977,
+        "median": -0.015625,
+        "interval95": [
+          -0.0192361111111111,
+          -0.012013888888888857
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "attempts_per_original": {
+        "n": 5,
+        "values": [
+          -0.035069444444444375,
+          -0.03541666666666665,
+          -0.03402777777777777,
+          -0.026736111111111183,
+          -0.027430555555555625
+        ],
+        "mean": -0.03173611111111112,
+        "median": -0.03402777777777777,
+        "interval95": [
+          -0.03499999999999996,
+          -0.028472222222222277
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "retries_per_original": {
+        "n": 5,
+        "values": [
+          -0.04652777777777778,
+          -0.044097222222222225,
+          -0.04513888888888889,
+          -0.03888888888888889,
+          -0.04201388888888889
+        ],
+        "mean": -0.043333333333333335,
+        "median": -0.044097222222222225,
+        "interval95": [
+          -0.04548611111111111,
+          -0.04076388888888889
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "server_payload_byte_ns": {
+        "n": 5,
+        "values": [
+          -391138271854592,
+          231931017904128,
+          -579329703182336,
+          -186955903729664,
+          -292337903697920
+        ],
+        "mean": -243566152912076.8,
+        "median": -292337903697920,
+        "interval95": [
+          -463216657026252.8,
+          22223449263308.8
+        ],
+        "positive_blocks": 1,
+        "negative_blocks": 4,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "worker_utilization_observation": {
+        "n": 5,
+        "values": [
+          -0.010945602461538528,
+          -0.008751115923076869,
+          -0.010138672692307726,
+          -0.010894967846153847,
+          -0.00964769710256419
+        ],
+        "mean": -0.010075611205128232,
+        "median": -0.010138672692307726,
+        "interval95": [
+          -0.010763962661538496,
+          -0.00935920254358973
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "idle_with_backlog_ns": {
+        "n": 5,
+        "values": [
+          16779410,
+          126876757,
+          -22722896,
+          30335474,
+          -29748661
+        ],
+        "mean": 24304016.8,
+        "median": 16779410,
+        "interval95": [
+          -17632740.8,
+          77648569.8
+        ],
+        "positive_blocks": 3,
+        "negative_blocks": 2,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "tcp_write_bytes_per_original": {
+        "n": 5,
+        "values": [
+          -578.4600694444434,
+          -584.2055555555544,
+          -561.2854166666657,
+          -441.0173611111113,
+          -452.4645833333343
+        ],
+        "mean": -523.4865972222218,
+        "median": -561.2854166666657,
+        "interval95": [
+          -577.3233333333322,
+          -469.64986111111136
+        ],
+        "positive_blocks": 0,
+        "negative_blocks": 5,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      },
+      "recovery_clearance_ns": {
+        "n": 5,
+        "values": [
+          14337499,
+          -2167466,
+          -34396621,
+          -20143967,
+          21958224
+        ],
+        "mean": -4082466.2,
+        "median": -2167466,
+        "interval95": [
+          -22249728.4,
+          14084796.0
+        ],
+        "positive_blocks": 2,
+        "negative_blocks": 3,
+        "method": "exact paired-block bootstrap; descriptive, not significance"
+      }
+    }
+  },
+  "hypotheses": {
+    "H1": {
+      "assessment": "DESCRIPTIVELY_SUPPORTED"
+    },
+    "H2": {
+      "assessment": "DESCRIPTIVELY_SUPPORTED"
+    },
+    "H3": {
+      "assessment": "DESCRIPTIVELY_SUPPORTED",
+      "retry_converted_on_time_per_block": [
+        88,
+        95,
+        100,
+        83,
+        77
+      ]
+    },
+    "H4": {
+      "assessment": "NO_DISTINCT_TRADEOFF_ESTABLISHED_NOT_EQUIVALENCE_PROOF"
+    },
+    "H5": {
+      "assessment": "DESCRIPTIVE_RECOVERY_DIFFERENCES"
+    },
+    "caveat": "Operational preregistered descriptive assessments, not universal causal/statistical claims."
+  },
+  "analysis_sha256": "e49f79e07eb6abffce980bf18506c6b430cad30a82323b5de9ca4af1bcfaf140",
+  "limitations": [
+    "n=5 independent fresh-process blocks on one shared host; exact bootstrap intervals are descriptive.",
+    "Conditional latency cohorts differ; failures/unsent originals remain in all-original denominator.",
+    "Sampled RSS, quantized CPU and inherited clock assumptions retained.",
+    "Direct debug-profile instrumentation overhead is part of this model and not fully isolated."
+  ]
+}

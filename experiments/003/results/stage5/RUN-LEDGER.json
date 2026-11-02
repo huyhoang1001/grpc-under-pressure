@@ -1,0 +1,185 @@
+{
+  "primary_runs_attempted": 20,
+  "attempts": [
+    {
+      "directory": "experiments/003/results/stage5/block-01-attempt-01/wait",
+      "profile": "overload",
+      "policy": "wait",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-01-attempt-01/drop",
+      "profile": "overload",
+      "policy": "drop",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-01-attempt-01/retry",
+      "profile": "overload",
+      "policy": "retry",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-01-attempt-01/reject",
+      "profile": "overload",
+      "policy": "reject",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-02-attempt-01/retry",
+      "profile": "overload",
+      "policy": "retry",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-02-attempt-01/reject",
+      "profile": "overload",
+      "policy": "reject",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-02-attempt-01/wait",
+      "profile": "overload",
+      "policy": "wait",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-02-attempt-01/drop",
+      "profile": "overload",
+      "policy": "drop",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-03-attempt-01/drop",
+      "profile": "overload",
+      "policy": "drop",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-03-attempt-01/reject",
+      "profile": "overload",
+      "policy": "reject",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-03-attempt-01/wait",
+      "profile": "overload",
+      "policy": "wait",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-03-attempt-01/retry",
+      "profile": "overload",
+      "policy": "retry",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-04-attempt-01/drop",
+      "profile": "overload",
+      "policy": "drop",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-04-attempt-01/wait",
+      "profile": "overload",
+      "policy": "wait",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-04-attempt-01/reject",
+      "profile": "overload",
+      "policy": "reject",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-04-attempt-01/retry",
+      "profile": "overload",
+      "policy": "retry",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-05-attempt-01/drop",
+      "profile": "overload",
+      "policy": "drop",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-05-attempt-01/retry",
+      "profile": "overload",
+      "policy": "retry",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-05-attempt-01/wait",
+      "profile": "overload",
+      "policy": "wait",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "directory": "experiments/003/results/stage5/block-05-attempt-01/reject",
+      "profile": "overload",
+      "policy": "reject",
+      "event_buffer_bytes": 0,
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    }
+  ]
+}

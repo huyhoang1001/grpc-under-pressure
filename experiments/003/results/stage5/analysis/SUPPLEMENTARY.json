@@ -1,0 +1,1025 @@
+{
+  "timing": "Post-matrix descriptive extraction; frozen endpoints unchanged",
+  "rows": [
+    {
+      "block": 1,
+      "policy": "wait",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11704471.0
+        },
+        "slowdown": {
+          "n": 224,
+          "median_ns": 41595981.5
+        },
+        "recovery": {
+          "n": 959,
+          "median_ns": 11736318
+        }
+      },
+      "admission_wait_sum_ns": 8285066112,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1108293,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36724726955,
+      "drain_after_arrivals_ns": 724726955,
+      "phase_marker_lateness_ns": [
+        817940,
+        682968,
+        2078455,
+        355868,
+        1424535
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1522989843,
+          "last_offset_ns": 39364621598,
+          "max_gap_ns": 202347689,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1522899867,
+          "last_offset_ns": 39364677753,
+          "max_gap_ns": 202345807,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2348,
+      "worker_exits": 2348
+    },
+    {
+      "block": 1,
+      "policy": "reject",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 959,
+          "median_ns": 11782577
+        },
+        "slowdown": {
+          "n": 252,
+          "median_ns": 41725948.0
+        },
+        "recovery": {
+          "n": 930,
+          "median_ns": 11815246.0
+        }
+      },
+      "admission_wait_sum_ns": 2934740755,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115573,
+      "genuine_activation": {
+        "full_rejections": 323,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36364866081,
+      "drain_after_arrivals_ns": 364866081,
+      "phase_marker_lateness_ns": [
+        1441054,
+        883947,
+        482704,
+        819786,
+        835420
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1553926558,
+          "last_offset_ns": 39360215347,
+          "max_gap_ns": 209749374,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1553841590,
+          "last_offset_ns": 39360303008,
+          "max_gap_ns": 208951453,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2207,
+      "worker_exits": 2207
+    },
+    {
+      "block": 1,
+      "policy": "retry",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11688272.0
+        },
+        "slowdown": {
+          "n": 274,
+          "median_ns": 41635525.5
+        },
+        "recovery": {
+          "n": 943,
+          "median_ns": 11747360
+        }
+      },
+      "admission_wait_sum_ns": 2783582786,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1119573,
+      "genuine_activation": {
+        "full_rejections": 366,
+        "full_drops": 0,
+        "actual_retries": 134
+      },
+      "rpc_end_offset_ns": 36761326946,
+      "drain_after_arrivals_ns": 761326946,
+      "phase_marker_lateness_ns": [
+        1821068,
+        2794957,
+        1249976,
+        2988760,
+        1560579
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1548032639,
+          "last_offset_ns": 39350836225,
+          "max_gap_ns": 202761284,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1547945864,
+          "last_offset_ns": 39350909240,
+          "max_gap_ns": 202705770,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2248,
+      "worker_exits": 2248
+    },
+    {
+      "block": 1,
+      "policy": "drop",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11706368.5
+        },
+        "slowdown": {
+          "n": 254,
+          "median_ns": 41680897.0
+        },
+        "recovery": {
+          "n": 956,
+          "median_ns": 11669233.5
+        }
+      },
+      "admission_wait_sum_ns": 2809200690,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115533,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 297,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36312629816,
+      "drain_after_arrivals_ns": 312629816,
+      "phase_marker_lateness_ns": [
+        1175456,
+        1414463,
+        752501,
+        997431,
+        1540696
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1560063158,
+          "last_offset_ns": 39342665382,
+          "max_gap_ns": 203092315,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1559982616,
+          "last_offset_ns": 39342725143,
+          "max_gap_ns": 203077702,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2232,
+      "worker_exits": 2232
+    },
+    {
+      "block": 2,
+      "policy": "wait",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 958,
+          "median_ns": 11686941.0
+        },
+        "slowdown": {
+          "n": 223,
+          "median_ns": 41624791
+        },
+        "recovery": {
+          "n": 916,
+          "median_ns": 11814838.0
+        }
+      },
+      "admission_wait_sum_ns": 8594566344,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1106573,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36777008895,
+      "drain_after_arrivals_ns": 777008895,
+      "phase_marker_lateness_ns": [
+        960264,
+        1205398,
+        464807,
+        1015978,
+        1314525
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1553912943,
+          "last_offset_ns": 39359122461,
+          "max_gap_ns": 209638865,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1553751330,
+          "last_offset_ns": 39359182972,
+          "max_gap_ns": 209679686,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2305,
+      "worker_exits": 2305
+    },
+    {
+      "block": 2,
+      "policy": "reject",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11774374.0
+        },
+        "slowdown": {
+          "n": 260,
+          "median_ns": 41681594.0
+        },
+        "recovery": {
+          "n": 965,
+          "median_ns": 11702465
+        }
+      },
+      "admission_wait_sum_ns": 2695774113,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115333,
+      "genuine_activation": {
+        "full_rejections": 285,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36265989642,
+      "drain_after_arrivals_ns": 265989642,
+      "phase_marker_lateness_ns": [
+        1318018,
+        1671622,
+        2713644,
+        1089957,
+        983733
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1495449154,
+          "last_offset_ns": 39395866825,
+          "max_gap_ns": 204297494,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1495345848,
+          "last_offset_ns": 39396019695,
+          "max_gap_ns": 204258035,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2239,
+      "worker_exits": 2239
+    },
+    {
+      "block": 2,
+      "policy": "retry",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 959,
+          "median_ns": 11677569
+        },
+        "slowdown": {
+          "n": 266,
+          "median_ns": 41629164.5
+        },
+        "recovery": {
+          "n": 941,
+          "median_ns": 11748179
+        }
+      },
+      "admission_wait_sum_ns": 2842596662,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1119333,
+      "genuine_activation": {
+        "full_rejections": 365,
+        "full_drops": 0,
+        "actual_retries": 127
+      },
+      "rpc_end_offset_ns": 36744705227,
+      "drain_after_arrivals_ns": 744705227,
+      "phase_marker_lateness_ns": [
+        1392812,
+        798359,
+        1582794,
+        2832295,
+        1141774
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1532944278,
+          "last_offset_ns": 39365014679,
+          "max_gap_ns": 207169579,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1532862295,
+          "last_offset_ns": 39365083543,
+          "max_gap_ns": 207186885,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2245,
+      "worker_exits": 2245
+    },
+    {
+      "block": 2,
+      "policy": "drop",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11705533.5
+        },
+        "slowdown": {
+          "n": 249,
+          "median_ns": 41754477
+        },
+        "recovery": {
+          "n": 923,
+          "median_ns": 11779636
+        }
+      },
+      "admission_wait_sum_ns": 3149455234,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115253,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 309,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36497453485,
+      "drain_after_arrivals_ns": 497453485,
+      "phase_marker_lateness_ns": [
+        1372921,
+        1095285,
+        595157,
+        462219,
+        1289156
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1524955609,
+          "last_offset_ns": 39419586957,
+          "max_gap_ns": 213120749,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1524762595,
+          "last_offset_ns": 39419645839,
+          "max_gap_ns": 213024504,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2213,
+      "worker_exits": 2213
+    },
+    {
+      "block": 3,
+      "policy": "wait",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11736269.5
+        },
+        "slowdown": {
+          "n": 221,
+          "median_ns": 41612795
+        },
+        "recovery": {
+          "n": 965,
+          "median_ns": 11704462
+        }
+      },
+      "admission_wait_sum_ns": 8513748808,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1108333,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36653771833,
+      "drain_after_arrivals_ns": 653771833,
+      "phase_marker_lateness_ns": [
+        1075282,
+        1125859,
+        1735254,
+        1364142,
+        3210867
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1570350900,
+          "last_offset_ns": 39319527217,
+          "max_gap_ns": 203103082,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1570243148,
+          "last_offset_ns": 39319582811,
+          "max_gap_ns": 203057814,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2349,
+      "worker_exits": 2349
+    },
+    {
+      "block": 3,
+      "policy": "reject",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11763439.5
+        },
+        "slowdown": {
+          "n": 269,
+          "median_ns": 41635580
+        },
+        "recovery": {
+          "n": 946,
+          "median_ns": 11748647.5
+        }
+      },
+      "admission_wait_sum_ns": 2833213090,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115773,
+      "genuine_activation": {
+        "full_rejections": 312,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36364409640,
+      "drain_after_arrivals_ns": 364409640,
+      "phase_marker_lateness_ns": [
+        1546860,
+        1236045,
+        826770,
+        1253093,
+        1265080
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1543569816,
+          "last_offset_ns": 39349729360,
+          "max_gap_ns": 203328054,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1543418463,
+          "last_offset_ns": 39349796467,
+          "max_gap_ns": 203337019,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2223,
+      "worker_exits": 2223
+    },
+    {
+      "block": 3,
+      "policy": "retry",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11746169.5
+        },
+        "slowdown": {
+          "n": 264,
+          "median_ns": 41598237.5
+        },
+        "recovery": {
+          "n": 956,
+          "median_ns": 11710345.0
+        }
+      },
+      "admission_wait_sum_ns": 2715782056,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1119373,
+      "genuine_activation": {
+        "full_rejections": 352,
+        "full_drops": 0,
+        "actual_retries": 130
+      },
+      "rpc_end_offset_ns": 36712785933,
+      "drain_after_arrivals_ns": 712785933,
+      "phase_marker_lateness_ns": [
+        1610763,
+        1425531,
+        1736365,
+        1401984,
+        1308711
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1568150010,
+          "last_offset_ns": 39323455704,
+          "max_gap_ns": 204133433,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1568058137,
+          "last_offset_ns": 39323510532,
+          "max_gap_ns": 204158535,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2264,
+      "worker_exits": 2264
+    },
+    {
+      "block": 3,
+      "policy": "drop",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11722215.5
+        },
+        "slowdown": {
+          "n": 261,
+          "median_ns": 41713005
+        },
+        "recovery": {
+          "n": 969,
+          "median_ns": 11685753
+        }
+      },
+      "admission_wait_sum_ns": 2731220060,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115453,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 289,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36247905190,
+      "drain_after_arrivals_ns": 247905190,
+      "phase_marker_lateness_ns": [
+        1139015,
+        905459,
+        588123,
+        591608,
+        1061675
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1501002508,
+          "last_offset_ns": 39391009778,
+          "max_gap_ns": 202741724,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1500914156,
+          "last_offset_ns": 39391067265,
+          "max_gap_ns": 202690287,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2238,
+      "worker_exits": 2238
+    },
+    {
+      "block": 4,
+      "policy": "wait",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11684363.0
+        },
+        "slowdown": {
+          "n": 227,
+          "median_ns": 41585566
+        },
+        "recovery": {
+          "n": 967,
+          "median_ns": 11686319
+        }
+      },
+      "admission_wait_sum_ns": 8810168878,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1108373,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36642930731,
+      "drain_after_arrivals_ns": 642930731,
+      "phase_marker_lateness_ns": [
+        1831209,
+        457421,
+        467181,
+        1068689,
+        460001
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1524055517,
+          "last_offset_ns": 39368412108,
+          "max_gap_ns": 203446779,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1523973388,
+          "last_offset_ns": 39368472424,
+          "max_gap_ns": 203507801,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2349,
+      "worker_exits": 2349
+    },
+    {
+      "block": 4,
+      "policy": "reject",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 958,
+          "median_ns": 11681866.5
+        },
+        "slowdown": {
+          "n": 265,
+          "median_ns": 41687130
+        },
+        "recovery": {
+          "n": 951,
+          "median_ns": 11745297
+        }
+      },
+      "admission_wait_sum_ns": 2843651205,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115533,
+      "genuine_activation": {
+        "full_rejections": 301,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36367813670,
+      "drain_after_arrivals_ns": 367813670,
+      "phase_marker_lateness_ns": [
+        1593835,
+        1450767,
+        944479,
+        1616845,
+        1875099
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1554504464,
+          "last_offset_ns": 39349350065,
+          "max_gap_ns": 203011365,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1554416341,
+          "last_offset_ns": 39349419329,
+          "max_gap_ns": 202997575,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2228,
+      "worker_exits": 2228
+    },
+    {
+      "block": 4,
+      "policy": "retry",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11804596.0
+        },
+        "slowdown": {
+          "n": 269,
+          "median_ns": 41612935
+        },
+        "recovery": {
+          "n": 959,
+          "median_ns": 11710845
+        }
+      },
+      "admission_wait_sum_ns": 2704996713,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1118893,
+      "genuine_activation": {
+        "full_rejections": 340,
+        "full_drops": 0,
+        "actual_retries": 112
+      },
+      "rpc_end_offset_ns": 36723957146,
+      "drain_after_arrivals_ns": 723957146,
+      "phase_marker_lateness_ns": [
+        1083318,
+        710667,
+        1875463,
+        574994,
+        566278
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1514773569,
+          "last_offset_ns": 39367504947,
+          "max_gap_ns": 201839122,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1514689523,
+          "last_offset_ns": 39367563015,
+          "max_gap_ns": 201887665,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2263,
+      "worker_exits": 2263
+    },
+    {
+      "block": 4,
+      "policy": "drop",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11744351.5
+        },
+        "slowdown": {
+          "n": 267,
+          "median_ns": 41639156
+        },
+        "recovery": {
+          "n": 941,
+          "median_ns": 11703346
+        }
+      },
+      "admission_wait_sum_ns": 2846524647,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115813,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 319,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36326420715,
+      "drain_after_arrivals_ns": 326420715,
+      "phase_marker_lateness_ns": [
+        1157050,
+        1268146,
+        1672811,
+        1410589,
+        1382482
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1552844271,
+          "last_offset_ns": 39352976869,
+          "max_gap_ns": 203327245,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1552764191,
+          "last_offset_ns": 39353044260,
+          "max_gap_ns": 203314195,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2217,
+      "worker_exits": 2217
+    },
+    {
+      "block": 5,
+      "policy": "wait",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11789340.0
+        },
+        "slowdown": {
+          "n": 222,
+          "median_ns": 41524563.0
+        },
+        "recovery": {
+          "n": 961,
+          "median_ns": 11706551
+        }
+      },
+      "admission_wait_sum_ns": 8801007402,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1108333,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36701129047,
+      "drain_after_arrivals_ns": 701129047,
+      "phase_marker_lateness_ns": [
+        1144273,
+        964521,
+        1484146,
+        7727323,
+        1714793
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1542793314,
+          "last_offset_ns": 39347330479,
+          "max_gap_ns": 201994867,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1542697680,
+          "last_offset_ns": 39347384951,
+          "max_gap_ns": 201987667,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2349,
+      "worker_exits": 2349
+    },
+    {
+      "block": 5,
+      "policy": "reject",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11748612.5
+        },
+        "slowdown": {
+          "n": 264,
+          "median_ns": 41553151.0
+        },
+        "recovery": {
+          "n": 970,
+          "median_ns": 11702220.0
+        }
+      },
+      "admission_wait_sum_ns": 2675677285,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115613,
+      "genuine_activation": {
+        "full_rejections": 292,
+        "full_drops": 0,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36233651929,
+      "drain_after_arrivals_ns": 233651929,
+      "phase_marker_lateness_ns": [
+        1025739,
+        1072069,
+        765746,
+        518730,
+        1662559
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1562745093,
+          "last_offset_ns": 39329888312,
+          "max_gap_ns": 201984329,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1562628458,
+          "last_offset_ns": 39329953930,
+          "max_gap_ns": 201976407,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2239,
+      "worker_exits": 2239
+    },
+    {
+      "block": 5,
+      "policy": "retry",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11757211.5
+        },
+        "slowdown": {
+          "n": 277,
+          "median_ns": 41605367
+        },
+        "recovery": {
+          "n": 937,
+          "median_ns": 11777264
+        }
+      },
+      "admission_wait_sum_ns": 2865217476,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1118893,
+      "genuine_activation": {
+        "full_rejections": 357,
+        "full_drops": 0,
+        "actual_retries": 121
+      },
+      "rpc_end_offset_ns": 36736859528,
+      "drain_after_arrivals_ns": 736859528,
+      "phase_marker_lateness_ns": [
+        1322941,
+        1329679,
+        1170745,
+        2746306,
+        1320823
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1541395112,
+          "last_offset_ns": 39352369141,
+          "max_gap_ns": 201899647,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1541278587,
+          "last_offset_ns": 39352423482,
+          "max_gap_ns": 201898766,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2240,
+      "worker_exits": 2240
+    },
+    {
+      "block": 5,
+      "policy": "drop",
+      "completed_service_by_start_phase": {
+        "initial": {
+          "n": 960,
+          "median_ns": 11721053.5
+        },
+        "slowdown": {
+          "n": 265,
+          "median_ns": 41641842
+        },
+        "recovery": {
+          "n": 962,
+          "median_ns": 11737532.5
+        }
+      },
+      "admission_wait_sum_ns": 2842879910,
+      "server_ledger_record_bytes_estimate": 1460245,
+      "client_ledger_record_bytes_estimate": 1115733,
+      "genuine_activation": {
+        "full_rejections": 0,
+        "full_drops": 297,
+        "actual_retries": 0
+      },
+      "rpc_end_offset_ns": 36301063330,
+      "drain_after_arrivals_ns": 301063330,
+      "phase_marker_lateness_ns": [
+        746660,
+        1295275,
+        348715,
+        834323,
+        613015
+      ],
+      "sampling_coverage": {
+        "server": {
+          "first_offset_ns": -1547062986,
+          "last_offset_ns": 39349158265,
+          "max_gap_ns": 202572195,
+          "rows": 206
+        },
+        "client": {
+          "first_offset_ns": -1546980762,
+          "last_offset_ns": 39349233268,
+          "max_gap_ns": 202489394,
+          "rows": 206
+        }
+      },
+      "worker_starts": 2237,
+      "worker_exits": 2237
+    }
+  ]
+}

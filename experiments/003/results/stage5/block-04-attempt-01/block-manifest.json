@@ -1,0 +1,15 @@
+{
+  "block": {
+    "block": 4,
+    "jitter_seed": 1435626977494426790,
+    "order": [
+      "drop",
+      "wait",
+      "reject",
+      "retry"
+    ]
+  },
+  "attempt": 1,
+  "frozen_sha256": "70f119a6269f719f6040f7a410951a5dd8bede6d3d341ecba0b7a5b8cfe66c93",
+  "created_before_block": true
+}

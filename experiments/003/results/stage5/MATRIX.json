@@ -1,0 +1,128 @@
+{
+  "frozen_sha256": "70f119a6269f719f6040f7a410951a5dd8bede6d3d341ecba0b7a5b8cfe66c93",
+  "status": "COMPLETE",
+  "started_unix_ns": 1793352119435739724,
+  "blocks": [
+    {
+      "block": 1,
+      "attempt": 1,
+      "seed": 1134903123497516951,
+      "order": [
+        "wait",
+        "drop",
+        "retry",
+        "reject"
+      ],
+      "status": "VALID",
+      "runs": {
+        "wait": "experiments/003/results/stage5/block-01-attempt-01/wait",
+        "drop": "experiments/003/results/stage5/block-01-attempt-01/drop",
+        "retry": "experiments/003/results/stage5/block-01-attempt-01/retry",
+        "reject": "experiments/003/results/stage5/block-01-attempt-01/reject"
+      },
+      "verdicts": {
+        "wait": "PASS",
+        "drop": "PASS",
+        "retry": "PASS",
+        "reject": "PASS"
+      }
+    },
+    {
+      "block": 2,
+      "attempt": 1,
+      "seed": 7335427334695112769,
+      "order": [
+        "retry",
+        "reject",
+        "wait",
+        "drop"
+      ],
+      "status": "VALID",
+      "runs": {
+        "retry": "experiments/003/results/stage5/block-02-attempt-01/retry",
+        "reject": "experiments/003/results/stage5/block-02-attempt-01/reject",
+        "wait": "experiments/003/results/stage5/block-02-attempt-01/wait",
+        "drop": "experiments/003/results/stage5/block-02-attempt-01/drop"
+      },
+      "verdicts": {
+        "retry": "PASS",
+        "reject": "PASS",
+        "wait": "PASS",
+        "drop": "PASS"
+      }
+    },
+    {
+      "block": 3,
+      "attempt": 1,
+      "seed": 9136803124150509004,
+      "order": [
+        "drop",
+        "reject",
+        "wait",
+        "retry"
+      ],
+      "status": "VALID",
+      "runs": {
+        "drop": "experiments/003/results/stage5/block-03-attempt-01/drop",
+        "reject": "experiments/003/results/stage5/block-03-attempt-01/reject",
+        "wait": "experiments/003/results/stage5/block-03-attempt-01/wait",
+        "retry": "experiments/003/results/stage5/block-03-attempt-01/retry"
+      },
+      "verdicts": {
+        "drop": "PASS",
+        "reject": "PASS",
+        "wait": "PASS",
+        "retry": "PASS"
+      }
+    },
+    {
+      "block": 4,
+      "attempt": 1,
+      "seed": 1435626977494426790,
+      "order": [
+        "drop",
+        "wait",
+        "reject",
+        "retry"
+      ],
+      "status": "VALID",
+      "runs": {
+        "drop": "experiments/003/results/stage5/block-04-attempt-01/drop",
+        "wait": "experiments/003/results/stage5/block-04-attempt-01/wait",
+        "reject": "experiments/003/results/stage5/block-04-attempt-01/reject",
+        "retry": "experiments/003/results/stage5/block-04-attempt-01/retry"
+      },
+      "verdicts": {
+        "drop": "PASS",
+        "wait": "PASS",
+        "reject": "PASS",
+        "retry": "PASS"
+      }
+    },
+    {
+      "block": 5,
+      "attempt": 1,
+      "seed": 16813872846671630229,
+      "order": [
+        "drop",
+        "retry",
+        "wait",
+        "reject"
+      ],
+      "status": "VALID",
+      "runs": {
+        "drop": "experiments/003/results/stage5/block-05-attempt-01/drop",
+        "retry": "experiments/003/results/stage5/block-05-attempt-01/retry",
+        "wait": "experiments/003/results/stage5/block-05-attempt-01/wait",
+        "reject": "experiments/003/results/stage5/block-05-attempt-01/reject"
+      },
+      "verdicts": {
+        "drop": "PASS",
+        "retry": "PASS",
+        "wait": "PASS",
+        "reject": "PASS"
+      }
+    }
+  ],
+  "completed_unix_ns": 1793352967887841537
+}
