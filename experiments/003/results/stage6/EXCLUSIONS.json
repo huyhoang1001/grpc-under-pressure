@@ -1,0 +1,457 @@
+{
+  "attempts": [
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    }
+  ],
+  "excluded_blocks": [
+    {
+      "study": "B",
+      "block": 1,
+      "seed": 13819103293325858276,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            13819103293325858276,
+            6773074038939505145,
+            18173788858262703630,
+            11127759603876350499,
+            4081730349489997368,
+            15482445168813195853,
+            8436415914426842722,
+            1390386660040489591
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            13819103293325858276,
+            6773074038939505145,
+            18173788858262703630,
+            11127759603876350499,
+            4081730349489997368,
+            15482445168813195853,
+            8436415914426842722,
+            1390386660040489591
+          ]
+        }
+      ],
+      "attempt": 1,
+      "status": "SUPERSEDED_PRETRAFFIC",
+      "runs": {},
+      "original_status_before_boundary_finalization": "RUNNING",
+      "seed_review_reason": "Original B seed derivation has overlapping SplitMix streams; pre-outcome source review stopped startup before any original arrival/attempt/decode. Superseded by separately preregistered B2 domain-separated seeds; all A measurements retained."
+    }
+  ],
+  "replacement_attempts": [],
+  "seed_review_reason": "Original B seed derivation has overlapping SplitMix streams; pre-outcome source review stopped startup before any original arrival/attempt/decode. Superseded by separately preregistered B2 domain-separated seeds; all A measurements retained.",
+  "primary_stage5_runs_used": 0
+}

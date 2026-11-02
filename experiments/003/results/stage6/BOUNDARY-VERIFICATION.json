@@ -1,0 +1,19 @@
+{
+  "verdict": "PASS",
+  "A_valid_blocks": 5,
+  "A_valid_runs": 40,
+  "original_B_traffic_counts": {},
+  "original_B_event_files": [],
+  "no_original_B_traffic": true,
+  "boundary_stop": {
+    "reason": "Pre-outcome source review found overlapping per-client SplitMix state sequences; stop original B startup before workload, preserve attempt; separately preregister domain-separated seeds.",
+    "pid": 373042,
+    "signal": "SIGINT",
+    "sent_unix_ns": 1793594795197897232,
+    "completed_A_blocks": 5,
+    "study_B_numeric_outcomes_viewed": false
+  },
+  "interrupted_matrix_sha256": "c493a628da31c28faa4226fc3ac6a2e362eb14f933700e3072eb4589f1c98d66",
+  "reason": "Original B seed derivation has overlapping SplitMix streams; pre-outcome source review stopped startup before any original arrival/attempt/decode. Superseded by separately preregistered B2 domain-separated seeds; all A measurements retained.",
+  "no_run_measurements_modified": true
+}

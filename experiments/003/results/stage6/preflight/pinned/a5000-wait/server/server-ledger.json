@@ -1,0 +1,3001 @@
+{
+  "high_water": {
+    "queued": 1,
+    "running": 1,
+    "staging": 1,
+    "receive": 1,
+    "terminal": 2,
+    "immediate": 0,
+    "events": 9
+  },
+  "writer_progress_ns": 3283967,
+  "writer_calls": 80,
+  "run_id": "e3-stage6-secondary-a01",
+  "logical_capacity": 2880,
+  "attempt_capacity": 8640,
+  "logical_entries": 80,
+  "attempt_entries": 80,
+  "allocated_ledger_bytes": 1206295,
+  "queued": 0,
+  "running": 0,
+  "cancellation_pending_subset": 0,
+  "occupied": 0,
+  "decoded_staging": 0,
+  "receive_stage_reservation": 0,
+  "queued_payload_bytes": 0,
+  "worker_payload_bytes": 0,
+  "staging_payload_bytes": 0,
+  "terminal_responses_reserved": 0,
+  "immediate_responses": 0,
+  "event_writer_queue": 0,
+  "permits_acquired": 80,
+  "permits_released": 80,
+  "decoded_frames": 80,
+  "decoded_attempts": 80,
+  "failed": null,
+  "event_seq": 564,
+  "originals": [
+    {
+      "message_id": 0,
+      "phase": "Terminal",
+      "first_attempt": 0,
+      "starts": 1,
+      "start_ns": 4424057,
+      "decoded_ns": 2572399,
+      "admitted_ns": 3600965,
+      "exit_ns": 17051682,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 9,
+        "offset_ns": 17049850,
+        "worker_service_ns": 12627625,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 1,
+      "phase": "Terminal",
+      "first_attempt": 1,
+      "starts": 1,
+      "start_ns": 17515510,
+      "decoded_ns": 14710513,
+      "admitted_ns": 15926481,
+      "exit_ns": 29290630,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 16,
+        "offset_ns": 29288587,
+        "worker_service_ns": 11775120,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 2,
+      "phase": "Terminal",
+      "first_attempt": 2,
+      "starts": 1,
+      "start_ns": 29781698,
+      "decoded_ns": 27129922,
+      "admitted_ns": 28118097,
+      "exit_ns": 41889357,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 23,
+        "offset_ns": 41824229,
+        "worker_service_ns": 12107659,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 3,
+      "phase": "Terminal",
+      "first_attempt": 3,
+      "starts": 1,
+      "start_ns": 42288196,
+      "decoded_ns": 39795539,
+      "admitted_ns": 40869414,
+      "exit_ns": 54329797,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 30,
+        "offset_ns": 54328365,
+        "worker_service_ns": 12041601,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 4,
+      "phase": "Terminal",
+      "first_attempt": 4,
+      "starts": 1,
+      "start_ns": 54733634,
+      "decoded_ns": 52446606,
+      "admitted_ns": 53448021,
+      "exit_ns": 66091556,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 37,
+        "offset_ns": 66090204,
+        "worker_service_ns": 11357922,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 5,
+      "phase": "Terminal",
+      "first_attempt": 5,
+      "starts": 1,
+      "start_ns": 66518157,
+      "decoded_ns": 64177369,
+      "admitted_ns": 65235209,
+      "exit_ns": 77699354,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 44,
+        "offset_ns": 77697872,
+        "worker_service_ns": 11181197,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 6,
+      "phase": "Terminal",
+      "first_attempt": 6,
+      "starts": 1,
+      "start_ns": 78082831,
+      "decoded_ns": 75839929,
+      "admitted_ns": 76821965,
+      "exit_ns": 90733756,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 51,
+        "offset_ns": 90653396,
+        "worker_service_ns": 12650925,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 7,
+      "phase": "Terminal",
+      "first_attempt": 7,
+      "starts": 1,
+      "start_ns": 91120157,
+      "decoded_ns": 88595643,
+      "admitted_ns": 89608866,
+      "exit_ns": 102461175,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 55,
+        "offset_ns": 102455116,
+        "worker_service_ns": 11341018,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 8,
+      "phase": "Terminal",
+      "first_attempt": 8,
+      "starts": 1,
+      "start_ns": 104511727,
+      "decoded_ns": 102863304,
+      "admitted_ns": 103823027,
+      "exit_ns": 115914346,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 65,
+        "offset_ns": 115912694,
+        "worker_service_ns": 11402619,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 9,
+      "phase": "Terminal",
+      "first_attempt": 9,
+      "starts": 1,
+      "start_ns": 116378173,
+      "decoded_ns": 114133324,
+      "admitted_ns": 115125025,
+      "exit_ns": 126970325,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 69,
+        "offset_ns": 126964006,
+        "worker_service_ns": 10592152,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 10,
+      "phase": "Terminal",
+      "first_attempt": 10,
+      "starts": 1,
+      "start_ns": 129246737,
+      "decoded_ns": 127529315,
+      "admitted_ns": 128542368,
+      "exit_ns": 141065657,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 79,
+        "offset_ns": 141063634,
+        "worker_service_ns": 11818920,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 11,
+      "phase": "Terminal",
+      "first_attempt": 11,
+      "starts": 1,
+      "start_ns": 141508482,
+      "decoded_ns": 139053948,
+      "admitted_ns": 140102534,
+      "exit_ns": 153299085,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 86,
+        "offset_ns": 153237423,
+        "worker_service_ns": 11790603,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 12,
+      "phase": "Terminal",
+      "first_attempt": 12,
+      "starts": 1,
+      "start_ns": 153808191,
+      "decoded_ns": 151301768,
+      "admitted_ns": 152321651,
+      "exit_ns": 167055088,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 93,
+        "offset_ns": 167053395,
+        "worker_service_ns": 13246897,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 13,
+      "phase": "Terminal",
+      "first_attempt": 13,
+      "starts": 1,
+      "start_ns": 167480697,
+      "decoded_ns": 164745011,
+      "admitted_ns": 166289392,
+      "exit_ns": 178839030,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 100,
+        "offset_ns": 178835835,
+        "worker_service_ns": 11358333,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 14,
+      "phase": "Terminal",
+      "first_attempt": 14,
+      "starts": 1,
+      "start_ns": 179253874,
+      "decoded_ns": 175775435,
+      "admitted_ns": 176803981,
+      "exit_ns": 193372821,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 104,
+        "offset_ns": 193362025,
+        "worker_service_ns": 14118947,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 15,
+      "phase": "Terminal",
+      "first_attempt": 15,
+      "starts": 1,
+      "start_ns": 195827882,
+      "decoded_ns": 194010780,
+      "admitted_ns": 195080789,
+      "exit_ns": 207107041,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 114,
+        "offset_ns": 207103335,
+        "worker_service_ns": 11279159,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 16,
+      "phase": "Terminal",
+      "first_attempt": 16,
+      "starts": 1,
+      "start_ns": 207529136,
+      "decoded_ns": 201435140,
+      "admitted_ns": 202604558,
+      "exit_ns": 219294660,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 121,
+        "offset_ns": 219291245,
+        "worker_service_ns": 11765524,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 17,
+      "phase": "Terminal",
+      "first_attempt": 17,
+      "starts": 1,
+      "start_ns": 219689614,
+      "decoded_ns": 215033866,
+      "admitted_ns": 216028631,
+      "exit_ns": 231283851,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 128,
+        "offset_ns": 231279014,
+        "worker_service_ns": 11594237,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 18,
+      "phase": "Terminal",
+      "first_attempt": 18,
+      "starts": 1,
+      "start_ns": 231680788,
+      "decoded_ns": 225684730,
+      "admitted_ns": 226778204,
+      "exit_ns": 243822930,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 135,
+        "offset_ns": 243819575,
+        "worker_service_ns": 12142142,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 19,
+      "phase": "Terminal",
+      "first_attempt": 19,
+      "starts": 1,
+      "start_ns": 244240758,
+      "decoded_ns": 239383732,
+      "admitted_ns": 240585679,
+      "exit_ns": 255068358,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 142,
+        "offset_ns": 255064572,
+        "worker_service_ns": 10827600,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 20,
+      "phase": "Terminal",
+      "first_attempt": 20,
+      "starts": 1,
+      "start_ns": 255666657,
+      "decoded_ns": 250954244,
+      "admitted_ns": 251962659,
+      "exit_ns": 267642809,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 149,
+        "offset_ns": 267640035,
+        "worker_service_ns": 11976152,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 21,
+      "phase": "Terminal",
+      "first_attempt": 21,
+      "starts": 1,
+      "start_ns": 268096882,
+      "decoded_ns": 263480503,
+      "admitted_ns": 264512714,
+      "exit_ns": 279618860,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 156,
+        "offset_ns": 279615946,
+        "worker_service_ns": 11521978,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 22,
+      "phase": "Terminal",
+      "first_attempt": 22,
+      "starts": 1,
+      "start_ns": 280059983,
+      "decoded_ns": 276097237,
+      "admitted_ns": 277235618,
+      "exit_ns": 291095527,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 163,
+        "offset_ns": 291093844,
+        "worker_service_ns": 11035544,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 23,
+      "phase": "Terminal",
+      "first_attempt": 23,
+      "starts": 1,
+      "start_ns": 291526845,
+      "decoded_ns": 289299843,
+      "admitted_ns": 290314147,
+      "exit_ns": 303582441,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 170,
+        "offset_ns": 303580478,
+        "worker_service_ns": 12055596,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 24,
+      "phase": "Terminal",
+      "first_attempt": 24,
+      "starts": 1,
+      "start_ns": 303997194,
+      "decoded_ns": 301206414,
+      "admitted_ns": 302466478,
+      "exit_ns": 316978307,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 177,
+        "offset_ns": 316858857,
+        "worker_service_ns": 12981113,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 25,
+      "phase": "Terminal",
+      "first_attempt": 25,
+      "starts": 1,
+      "start_ns": 317420512,
+      "decoded_ns": 314988801,
+      "admitted_ns": 316116436,
+      "exit_ns": 328491593,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 184,
+        "offset_ns": 328490281,
+        "worker_service_ns": 11071081,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 26,
+      "phase": "Terminal",
+      "first_attempt": 26,
+      "starts": 1,
+      "start_ns": 328867988,
+      "decoded_ns": 326685378,
+      "admitted_ns": 327648836,
+      "exit_ns": 340300974,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 191,
+        "offset_ns": 340225671,
+        "worker_service_ns": 11432986,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 27,
+      "phase": "Terminal",
+      "first_attempt": 27,
+      "starts": 1,
+      "start_ns": 340925092,
+      "decoded_ns": 338312980,
+      "admitted_ns": 339279443,
+      "exit_ns": 352306815,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 195,
+        "offset_ns": 352299995,
+        "worker_service_ns": 11381723,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 28,
+      "phase": "Terminal",
+      "first_attempt": 28,
+      "starts": 1,
+      "start_ns": 354406576,
+      "decoded_ns": 352732259,
+      "admitted_ns": 353717911,
+      "exit_ns": 364909433,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 205,
+        "offset_ns": 364908051,
+        "worker_service_ns": 10502857,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 29,
+      "phase": "Terminal",
+      "first_attempt": 29,
+      "starts": 1,
+      "start_ns": 365308023,
+      "decoded_ns": 362903849,
+      "admitted_ns": 363876451,
+      "exit_ns": 377848287,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 212,
+        "offset_ns": 377846785,
+        "worker_service_ns": 12540264,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 30,
+      "phase": "Terminal",
+      "first_attempt": 30,
+      "starts": 1,
+      "start_ns": 378261037,
+      "decoded_ns": 375894941,
+      "admitted_ns": 376945410,
+      "exit_ns": 390531852,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 219,
+        "offset_ns": 390530179,
+        "worker_service_ns": 12270815,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 31,
+      "phase": "Terminal",
+      "first_attempt": 31,
+      "starts": 1,
+      "start_ns": 390911232,
+      "decoded_ns": 388786989,
+      "admitted_ns": 389766942,
+      "exit_ns": 404174880,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 226,
+        "offset_ns": 404173057,
+        "worker_service_ns": 13263648,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 32,
+      "phase": "Terminal",
+      "first_attempt": 32,
+      "starts": 1,
+      "start_ns": 404600079,
+      "decoded_ns": 401980386,
+      "admitted_ns": 403013529,
+      "exit_ns": 416545073,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 233,
+        "offset_ns": 416543451,
+        "worker_service_ns": 11944994,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 33,
+      "phase": "Terminal",
+      "first_attempt": 33,
+      "starts": 1,
+      "start_ns": 416931955,
+      "decoded_ns": 414499814,
+      "admitted_ns": 415568791,
+      "exit_ns": 428680400,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 240,
+        "offset_ns": 428677275,
+        "worker_service_ns": 11748445,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 34,
+      "phase": "Terminal",
+      "first_attempt": 34,
+      "starts": 1,
+      "start_ns": 429067642,
+      "decoded_ns": 425498722,
+      "admitted_ns": 426538415,
+      "exit_ns": 441460344,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 247,
+        "offset_ns": 441458381,
+        "worker_service_ns": 12392702,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 35,
+      "phase": "Terminal",
+      "first_attempt": 35,
+      "starts": 1,
+      "start_ns": 441937982,
+      "decoded_ns": 439496137,
+      "admitted_ns": 440599465,
+      "exit_ns": 453079520,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 254,
+        "offset_ns": 453017306,
+        "worker_service_ns": 11141538,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 36,
+      "phase": "Terminal",
+      "first_attempt": 36,
+      "starts": 1,
+      "start_ns": 453757999,
+      "decoded_ns": 451230550,
+      "admitted_ns": 452313658,
+      "exit_ns": 465677746,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 261,
+        "offset_ns": 465676034,
+        "worker_service_ns": 11919747,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 37,
+      "phase": "Terminal",
+      "first_attempt": 37,
+      "starts": 1,
+      "start_ns": 466162595,
+      "decoded_ns": 462979395,
+      "admitted_ns": 464665840,
+      "exit_ns": 478795559,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 268,
+        "offset_ns": 478729791,
+        "worker_service_ns": 12632964,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 38,
+      "phase": "Terminal",
+      "first_attempt": 38,
+      "starts": 1,
+      "start_ns": 479196903,
+      "decoded_ns": 476767681,
+      "admitted_ns": 477864900,
+      "exit_ns": 490536457,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 275,
+        "offset_ns": 490534444,
+        "worker_service_ns": 11339554,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 39,
+      "phase": "Terminal",
+      "first_attempt": 39,
+      "starts": 1,
+      "start_ns": 490921576,
+      "decoded_ns": 488505364,
+      "admitted_ns": 489475022,
+      "exit_ns": 502240731,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 279,
+        "offset_ns": 502234371,
+        "worker_service_ns": 11319155,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 40,
+      "phase": "Terminal",
+      "first_attempt": 40,
+      "starts": 1,
+      "start_ns": 504454744,
+      "decoded_ns": 502704723,
+      "admitted_ns": 503669133,
+      "exit_ns": 515996382,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 289,
+        "offset_ns": 515953217,
+        "worker_service_ns": 11541638,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 41,
+      "phase": "Terminal",
+      "first_attempt": 41,
+      "starts": 1,
+      "start_ns": 516399638,
+      "decoded_ns": 514048504,
+      "admitted_ns": 515109348,
+      "exit_ns": 527467400,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 296,
+        "offset_ns": 527403123,
+        "worker_service_ns": 11067762,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 42,
+      "phase": "Terminal",
+      "first_attempt": 42,
+      "starts": 1,
+      "start_ns": 527861252,
+      "decoded_ns": 525548740,
+      "admitted_ns": 526557306,
+      "exit_ns": 540309743,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 303,
+        "offset_ns": 540308331,
+        "worker_service_ns": 12448491,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 43,
+      "phase": "Terminal",
+      "first_attempt": 43,
+      "starts": 1,
+      "start_ns": 540699909,
+      "decoded_ns": 538015950,
+      "admitted_ns": 539421082,
+      "exit_ns": 553558858,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 310,
+        "offset_ns": 553499279,
+        "worker_service_ns": 12858949,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 44,
+      "phase": "Terminal",
+      "first_attempt": 44,
+      "starts": 1,
+      "start_ns": 553944478,
+      "decoded_ns": 551680480,
+      "admitted_ns": 552670318,
+      "exit_ns": 566288332,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 317,
+        "offset_ns": 566286810,
+        "worker_service_ns": 12343854,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 45,
+      "phase": "Terminal",
+      "first_attempt": 45,
+      "starts": 1,
+      "start_ns": 567024288,
+      "decoded_ns": 564332817,
+      "admitted_ns": 565342986,
+      "exit_ns": 579016554,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 324,
+        "offset_ns": 579014972,
+        "worker_service_ns": 11992266,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 46,
+      "phase": "Terminal",
+      "first_attempt": 46,
+      "starts": 1,
+      "start_ns": 579417968,
+      "decoded_ns": 577127014,
+      "admitted_ns": 578090613,
+      "exit_ns": 591109732,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 331,
+        "offset_ns": 591108250,
+        "worker_service_ns": 11691764,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 47,
+      "phase": "Terminal",
+      "first_attempt": 47,
+      "starts": 1,
+      "start_ns": 591533629,
+      "decoded_ns": 589099495,
+      "admitted_ns": 590192768,
+      "exit_ns": 602076822,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 335,
+        "offset_ns": 602068560,
+        "worker_service_ns": 10543193,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 48,
+      "phase": "Terminal",
+      "first_attempt": 48,
+      "starts": 1,
+      "start_ns": 604235291,
+      "decoded_ns": 602520724,
+      "admitted_ns": 603492004,
+      "exit_ns": 615434861,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 345,
+        "offset_ns": 615390043,
+        "worker_service_ns": 11199570,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 49,
+      "phase": "Terminal",
+      "first_attempt": 49,
+      "starts": 1,
+      "start_ns": 615834321,
+      "decoded_ns": 613529527,
+      "admitted_ns": 614521197,
+      "exit_ns": 628479830,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 352,
+        "offset_ns": 628463195,
+        "worker_service_ns": 12645509,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 50,
+      "phase": "Terminal",
+      "first_attempt": 50,
+      "starts": 1,
+      "start_ns": 628868985,
+      "decoded_ns": 626497309,
+      "admitted_ns": 627507608,
+      "exit_ns": 641044711,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 359,
+        "offset_ns": 641043288,
+        "worker_service_ns": 12175726,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 51,
+      "phase": "Terminal",
+      "first_attempt": 51,
+      "starts": 1,
+      "start_ns": 641553485,
+      "decoded_ns": 639049537,
+      "admitted_ns": 640114077,
+      "exit_ns": 653952208,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 366,
+        "offset_ns": 653950565,
+        "worker_service_ns": 12398723,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 52,
+      "phase": "Terminal",
+      "first_attempt": 52,
+      "starts": 1,
+      "start_ns": 654367161,
+      "decoded_ns": 651998346,
+      "admitted_ns": 652962215,
+      "exit_ns": 666620955,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 373,
+        "offset_ns": 666556147,
+        "worker_service_ns": 12253794,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 53,
+      "phase": "Terminal",
+      "first_attempt": 53,
+      "starts": 1,
+      "start_ns": 667008547,
+      "decoded_ns": 664459726,
+      "admitted_ns": 665466680,
+      "exit_ns": 679559949,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 380,
+        "offset_ns": 679558417,
+        "worker_service_ns": 12551402,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 54,
+      "phase": "Terminal",
+      "first_attempt": 54,
+      "starts": 1,
+      "start_ns": 679969956,
+      "decoded_ns": 677371154,
+      "admitted_ns": 678522555,
+      "exit_ns": 691993894,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 387,
+        "offset_ns": 691991721,
+        "worker_service_ns": 12023938,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 55,
+      "phase": "Terminal",
+      "first_attempt": 55,
+      "starts": 1,
+      "start_ns": 692482804,
+      "decoded_ns": 689837518,
+      "admitted_ns": 691066355,
+      "exit_ns": 702938841,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 394,
+        "offset_ns": 702937218,
+        "worker_service_ns": 10456037,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 56,
+      "phase": "Terminal",
+      "first_attempt": 56,
+      "starts": 1,
+      "start_ns": 703384431,
+      "decoded_ns": 700602949,
+      "admitted_ns": 701788261,
+      "exit_ns": 715542456,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 401,
+        "offset_ns": 715540613,
+        "worker_service_ns": 12158025,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 57,
+      "phase": "Terminal",
+      "first_attempt": 57,
+      "starts": 1,
+      "start_ns": 715927945,
+      "decoded_ns": 713431443,
+      "admitted_ns": 714721692,
+      "exit_ns": 728306967,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 408,
+        "offset_ns": 728305515,
+        "worker_service_ns": 12379022,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 58,
+      "phase": "Terminal",
+      "first_attempt": 58,
+      "starts": 1,
+      "start_ns": 728688281,
+      "decoded_ns": 725952603,
+      "admitted_ns": 726967589,
+      "exit_ns": 741265951,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 415,
+        "offset_ns": 741264249,
+        "worker_service_ns": 12577670,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 59,
+      "phase": "Terminal",
+      "first_attempt": 59,
+      "starts": 1,
+      "start_ns": 741944571,
+      "decoded_ns": 739252790,
+      "admitted_ns": 740283620,
+      "exit_ns": 753169389,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 422,
+        "offset_ns": 753079484,
+        "worker_service_ns": 11224818,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 60,
+      "phase": "Terminal",
+      "first_attempt": 60,
+      "starts": 1,
+      "start_ns": 753590562,
+      "decoded_ns": 750963428,
+      "admitted_ns": 752091313,
+      "exit_ns": 766168213,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 429,
+        "offset_ns": 766165519,
+        "worker_service_ns": 12577651,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 61,
+      "phase": "Terminal",
+      "first_attempt": 61,
+      "starts": 1,
+      "start_ns": 766602205,
+      "decoded_ns": 764095492,
+      "admitted_ns": 765217739,
+      "exit_ns": 779471714,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 436,
+        "offset_ns": 779469601,
+        "worker_service_ns": 12869509,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 62,
+      "phase": "Terminal",
+      "first_attempt": 62,
+      "starts": 1,
+      "start_ns": 780104876,
+      "decoded_ns": 777134426,
+      "admitted_ns": 778348151,
+      "exit_ns": 790991896,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 443,
+        "offset_ns": 790989673,
+        "worker_service_ns": 10887020,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 63,
+      "phase": "Terminal",
+      "first_attempt": 63,
+      "starts": 1,
+      "start_ns": 791435824,
+      "decoded_ns": 788939867,
+      "admitted_ns": 789923195,
+      "exit_ns": 802076628,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 447,
+        "offset_ns": 802065180,
+        "worker_service_ns": 10640804,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 64,
+      "phase": "Terminal",
+      "first_attempt": 64,
+      "starts": 1,
+      "start_ns": 804545173,
+      "decoded_ns": 802872278,
+      "admitted_ns": 803840524,
+      "exit_ns": 816484485,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 457,
+        "offset_ns": 816482181,
+        "worker_service_ns": 11939312,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 65,
+      "phase": "Terminal",
+      "first_attempt": 65,
+      "starts": 1,
+      "start_ns": 816910736,
+      "decoded_ns": 814383602,
+      "admitted_ns": 815411036,
+      "exit_ns": 828782320,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 464,
+        "offset_ns": 828708499,
+        "worker_service_ns": 11871584,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 66,
+      "phase": "Terminal",
+      "first_attempt": 66,
+      "starts": 1,
+      "start_ns": 829290784,
+      "decoded_ns": 826737486,
+      "admitted_ns": 827734535,
+      "exit_ns": 841452680,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 471,
+        "offset_ns": 841450757,
+        "worker_service_ns": 12161896,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 67,
+      "phase": "Terminal",
+      "first_attempt": 67,
+      "starts": 1,
+      "start_ns": 841853493,
+      "decoded_ns": 839547832,
+      "admitted_ns": 840551320,
+      "exit_ns": 854218148,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 478,
+        "offset_ns": 854216115,
+        "worker_service_ns": 12364655,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 68,
+      "phase": "Terminal",
+      "first_attempt": 68,
+      "starts": 1,
+      "start_ns": 854618109,
+      "decoded_ns": 852428593,
+      "admitted_ns": 853435677,
+      "exit_ns": 866036418,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 485,
+        "offset_ns": 866034735,
+        "worker_service_ns": 11418309,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 69,
+      "phase": "Terminal",
+      "first_attempt": 69,
+      "starts": 1,
+      "start_ns": 866449309,
+      "decoded_ns": 864270919,
+      "admitted_ns": 865242940,
+      "exit_ns": 877812298,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 492,
+        "offset_ns": 877810135,
+        "worker_service_ns": 11362989,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 70,
+      "phase": "Terminal",
+      "first_attempt": 70,
+      "starts": 1,
+      "start_ns": 878707414,
+      "decoded_ns": 875895532,
+      "admitted_ns": 876913723,
+      "exit_ns": 892064782,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 499,
+        "offset_ns": 892062439,
+        "worker_service_ns": 13357368,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 71,
+      "phase": "Terminal",
+      "first_attempt": 71,
+      "starts": 1,
+      "start_ns": 892516561,
+      "decoded_ns": 889988887,
+      "admitted_ns": 891014589,
+      "exit_ns": 902990019,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 506,
+        "offset_ns": 902987435,
+        "worker_service_ns": 10473458,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 72,
+      "phase": "Terminal",
+      "first_attempt": 72,
+      "starts": 1,
+      "start_ns": 903471633,
+      "decoded_ns": 900708254,
+      "admitted_ns": 901839935,
+      "exit_ns": 914522534,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 510,
+        "offset_ns": 914515243,
+        "worker_service_ns": 11050901,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 73,
+      "phase": "Terminal",
+      "first_attempt": 73,
+      "starts": 1,
+      "start_ns": 917725248,
+      "decoded_ns": 915912373,
+      "admitted_ns": 916924665,
+      "exit_ns": 929014011,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 520,
+        "offset_ns": 929012799,
+        "worker_service_ns": 11288763,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 74,
+      "phase": "Terminal",
+      "first_attempt": 74,
+      "starts": 1,
+      "start_ns": 929451479,
+      "decoded_ns": 927031491,
+      "admitted_ns": 928256432,
+      "exit_ns": 940070246,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 527,
+        "offset_ns": 940068012,
+        "worker_service_ns": 10618767,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 75,
+      "phase": "Terminal",
+      "first_attempt": 75,
+      "starts": 1,
+      "start_ns": 940544729,
+      "decoded_ns": 937899222,
+      "admitted_ns": 938962560,
+      "exit_ns": 951369360,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 531,
+        "offset_ns": 951362930,
+        "worker_service_ns": 10824631,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 76,
+      "phase": "Terminal",
+      "first_attempt": 76,
+      "starts": 1,
+      "start_ns": 954344062,
+      "decoded_ns": 952245617,
+      "admitted_ns": 953234524,
+      "exit_ns": 966187713,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 541,
+        "offset_ns": 966185209,
+        "worker_service_ns": 11843651,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 77,
+      "phase": "Terminal",
+      "first_attempt": 77,
+      "starts": 1,
+      "start_ns": 966627204,
+      "decoded_ns": 964065544,
+      "admitted_ns": 965073699,
+      "exit_ns": 978923928,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 548,
+        "offset_ns": 978841394,
+        "worker_service_ns": 12296724,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 78,
+      "phase": "Terminal",
+      "first_attempt": 78,
+      "starts": 1,
+      "start_ns": 979367886,
+      "decoded_ns": 976867326,
+      "admitted_ns": 977920840,
+      "exit_ns": 992075040,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 555,
+        "offset_ns": 992072917,
+        "worker_service_ns": 12707154,
+        "detail_code": "COMPLETED"
+      }
+    },
+    {
+      "message_id": 79,
+      "phase": "Terminal",
+      "first_attempt": 79,
+      "starts": 1,
+      "start_ns": 992490184,
+      "decoded_ns": 989646776,
+      "admitted_ns": 991033130,
+      "exit_ns": 1003261555,
+      "cancellation_requested_ns": null,
+      "cancellation_observed_ns": null,
+      "cancellation_reason": null,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 559,
+        "offset_ns": 1003253974,
+        "worker_service_ns": 10771371,
+        "detail_code": "COMPLETED"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "attempt_id": 0,
+      "message_id": 0,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 9,
+        "offset_ns": 17049850,
+        "worker_service_ns": 12627625,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 1,
+      "message_id": 1,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 16,
+        "offset_ns": 29288587,
+        "worker_service_ns": 11775120,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 2,
+      "message_id": 2,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 23,
+        "offset_ns": 41824229,
+        "worker_service_ns": 12107659,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 3,
+      "message_id": 3,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 30,
+        "offset_ns": 54328365,
+        "worker_service_ns": 12041601,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 4,
+      "message_id": 4,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 37,
+        "offset_ns": 66090204,
+        "worker_service_ns": 11357922,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 5,
+      "message_id": 5,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 44,
+        "offset_ns": 77697872,
+        "worker_service_ns": 11181197,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 6,
+      "message_id": 6,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 51,
+        "offset_ns": 90653396,
+        "worker_service_ns": 12650925,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 7,
+      "message_id": 7,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 55,
+        "offset_ns": 102455116,
+        "worker_service_ns": 11341018,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 8,
+      "message_id": 8,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 65,
+        "offset_ns": 115912694,
+        "worker_service_ns": 11402619,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 9,
+      "message_id": 9,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 69,
+        "offset_ns": 126964006,
+        "worker_service_ns": 10592152,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 10,
+      "message_id": 10,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 79,
+        "offset_ns": 141063634,
+        "worker_service_ns": 11818920,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 11,
+      "message_id": 11,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 86,
+        "offset_ns": 153237423,
+        "worker_service_ns": 11790603,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 12,
+      "message_id": 12,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 93,
+        "offset_ns": 167053395,
+        "worker_service_ns": 13246897,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 13,
+      "message_id": 13,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 100,
+        "offset_ns": 178835835,
+        "worker_service_ns": 11358333,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 14,
+      "message_id": 14,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 104,
+        "offset_ns": 193362025,
+        "worker_service_ns": 14118947,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 15,
+      "message_id": 15,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 114,
+        "offset_ns": 207103335,
+        "worker_service_ns": 11279159,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 16,
+      "message_id": 16,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 121,
+        "offset_ns": 219291245,
+        "worker_service_ns": 11765524,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 17,
+      "message_id": 17,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 128,
+        "offset_ns": 231279014,
+        "worker_service_ns": 11594237,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 18,
+      "message_id": 18,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 135,
+        "offset_ns": 243819575,
+        "worker_service_ns": 12142142,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 19,
+      "message_id": 19,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 142,
+        "offset_ns": 255064572,
+        "worker_service_ns": 10827600,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 20,
+      "message_id": 20,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 149,
+        "offset_ns": 267640035,
+        "worker_service_ns": 11976152,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 21,
+      "message_id": 21,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 156,
+        "offset_ns": 279615946,
+        "worker_service_ns": 11521978,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 22,
+      "message_id": 22,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 163,
+        "offset_ns": 291093844,
+        "worker_service_ns": 11035544,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 23,
+      "message_id": 23,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 170,
+        "offset_ns": 303580478,
+        "worker_service_ns": 12055596,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 24,
+      "message_id": 24,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 177,
+        "offset_ns": 316858857,
+        "worker_service_ns": 12981113,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 25,
+      "message_id": 25,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 184,
+        "offset_ns": 328490281,
+        "worker_service_ns": 11071081,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 26,
+      "message_id": 26,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 191,
+        "offset_ns": 340225671,
+        "worker_service_ns": 11432986,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 27,
+      "message_id": 27,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 195,
+        "offset_ns": 352299995,
+        "worker_service_ns": 11381723,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 28,
+      "message_id": 28,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 205,
+        "offset_ns": 364908051,
+        "worker_service_ns": 10502857,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 29,
+      "message_id": 29,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 212,
+        "offset_ns": 377846785,
+        "worker_service_ns": 12540264,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 30,
+      "message_id": 30,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 219,
+        "offset_ns": 390530179,
+        "worker_service_ns": 12270815,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 31,
+      "message_id": 31,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 226,
+        "offset_ns": 404173057,
+        "worker_service_ns": 13263648,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 32,
+      "message_id": 32,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 233,
+        "offset_ns": 416543451,
+        "worker_service_ns": 11944994,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 33,
+      "message_id": 33,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 240,
+        "offset_ns": 428677275,
+        "worker_service_ns": 11748445,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 34,
+      "message_id": 34,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 247,
+        "offset_ns": 441458381,
+        "worker_service_ns": 12392702,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 35,
+      "message_id": 35,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 254,
+        "offset_ns": 453017306,
+        "worker_service_ns": 11141538,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 36,
+      "message_id": 36,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 261,
+        "offset_ns": 465676034,
+        "worker_service_ns": 11919747,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 37,
+      "message_id": 37,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 268,
+        "offset_ns": 478729791,
+        "worker_service_ns": 12632964,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 38,
+      "message_id": 38,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 275,
+        "offset_ns": 490534444,
+        "worker_service_ns": 11339554,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 39,
+      "message_id": 39,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 279,
+        "offset_ns": 502234371,
+        "worker_service_ns": 11319155,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 40,
+      "message_id": 40,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 289,
+        "offset_ns": 515953217,
+        "worker_service_ns": 11541638,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 41,
+      "message_id": 41,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 296,
+        "offset_ns": 527403123,
+        "worker_service_ns": 11067762,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 42,
+      "message_id": 42,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 303,
+        "offset_ns": 540308331,
+        "worker_service_ns": 12448491,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 43,
+      "message_id": 43,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 310,
+        "offset_ns": 553499279,
+        "worker_service_ns": 12858949,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 44,
+      "message_id": 44,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 317,
+        "offset_ns": 566286810,
+        "worker_service_ns": 12343854,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 45,
+      "message_id": 45,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 324,
+        "offset_ns": 579014972,
+        "worker_service_ns": 11992266,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 46,
+      "message_id": 46,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 331,
+        "offset_ns": 591108250,
+        "worker_service_ns": 11691764,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 47,
+      "message_id": 47,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 335,
+        "offset_ns": 602068560,
+        "worker_service_ns": 10543193,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 48,
+      "message_id": 48,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 345,
+        "offset_ns": 615390043,
+        "worker_service_ns": 11199570,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 49,
+      "message_id": 49,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 352,
+        "offset_ns": 628463195,
+        "worker_service_ns": 12645509,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 50,
+      "message_id": 50,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 359,
+        "offset_ns": 641043288,
+        "worker_service_ns": 12175726,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 51,
+      "message_id": 51,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 366,
+        "offset_ns": 653950565,
+        "worker_service_ns": 12398723,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 52,
+      "message_id": 52,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 373,
+        "offset_ns": 666556147,
+        "worker_service_ns": 12253794,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 53,
+      "message_id": 53,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 380,
+        "offset_ns": 679558417,
+        "worker_service_ns": 12551402,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 54,
+      "message_id": 54,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 387,
+        "offset_ns": 691991721,
+        "worker_service_ns": 12023938,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 55,
+      "message_id": 55,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 394,
+        "offset_ns": 702937218,
+        "worker_service_ns": 10456037,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 56,
+      "message_id": 56,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 401,
+        "offset_ns": 715540613,
+        "worker_service_ns": 12158025,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 57,
+      "message_id": 57,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 408,
+        "offset_ns": 728305515,
+        "worker_service_ns": 12379022,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 58,
+      "message_id": 58,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 415,
+        "offset_ns": 741264249,
+        "worker_service_ns": 12577670,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 59,
+      "message_id": 59,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 422,
+        "offset_ns": 753079484,
+        "worker_service_ns": 11224818,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 60,
+      "message_id": 60,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 429,
+        "offset_ns": 766165519,
+        "worker_service_ns": 12577651,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 61,
+      "message_id": 61,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 436,
+        "offset_ns": 779469601,
+        "worker_service_ns": 12869509,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 62,
+      "message_id": 62,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 443,
+        "offset_ns": 790989673,
+        "worker_service_ns": 10887020,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 63,
+      "message_id": 63,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 447,
+        "offset_ns": 802065180,
+        "worker_service_ns": 10640804,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 64,
+      "message_id": 64,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 457,
+        "offset_ns": 816482181,
+        "worker_service_ns": 11939312,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 65,
+      "message_id": 65,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 464,
+        "offset_ns": 828708499,
+        "worker_service_ns": 11871584,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 66,
+      "message_id": 66,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 471,
+        "offset_ns": 841450757,
+        "worker_service_ns": 12161896,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 67,
+      "message_id": 67,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 478,
+        "offset_ns": 854216115,
+        "worker_service_ns": 12364655,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 68,
+      "message_id": 68,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 485,
+        "offset_ns": 866034735,
+        "worker_service_ns": 11418309,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 69,
+      "message_id": 69,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 492,
+        "offset_ns": 877810135,
+        "worker_service_ns": 11362989,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 70,
+      "message_id": 70,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 499,
+        "offset_ns": 892062439,
+        "worker_service_ns": 13357368,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 71,
+      "message_id": 71,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 506,
+        "offset_ns": 902987435,
+        "worker_service_ns": 10473458,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 72,
+      "message_id": 72,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 510,
+        "offset_ns": 914515243,
+        "worker_service_ns": 11050901,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 73,
+      "message_id": 73,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 520,
+        "offset_ns": 929012799,
+        "worker_service_ns": 11288763,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 74,
+      "message_id": 74,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 527,
+        "offset_ns": 940068012,
+        "worker_service_ns": 10618767,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 75,
+      "message_id": 75,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 531,
+        "offset_ns": 951362930,
+        "worker_service_ns": 10824631,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 76,
+      "message_id": 76,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 541,
+        "offset_ns": 966185209,
+        "worker_service_ns": 11843651,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 77,
+      "message_id": 77,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 548,
+        "offset_ns": 978841394,
+        "worker_service_ns": 12296724,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 78,
+      "message_id": 78,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 555,
+        "offset_ns": 992072917,
+        "worker_service_ns": 12707154,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    },
+    {
+      "attempt_id": 79,
+      "message_id": 79,
+      "attempt_number": 1,
+      "duplicate": false,
+      "terminal": {
+        "outcome": 1,
+        "event_seq": 559,
+        "offset_ns": 1003253974,
+        "worker_service_ns": 10771371,
+        "detail_code": "COMPLETED"
+      },
+      "response_generated": true,
+      "write_accepted": true,
+      "undelivered": false,
+      "immediate_reservation": false
+    }
+  ]
+}

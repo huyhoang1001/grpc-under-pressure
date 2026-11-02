@@ -1,0 +1,8 @@
+{
+  "reason": "Pre-outcome source review found overlapping per-client SplitMix state sequences; stop original B startup before workload, preserve attempt; separately preregister domain-separated seeds.",
+  "pid": 373042,
+  "signal": "SIGINT",
+  "sent_unix_ns": 1793594795197897232,
+  "completed_A_blocks": 5,
+  "study_B_numeric_outcomes_viewed": false
+}

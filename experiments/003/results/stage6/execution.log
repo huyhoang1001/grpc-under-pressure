@@ -1,0 +1,108 @@
+START A 1 1 a500-drop
+a500-drop PASS None
+START A 1 1 a5000-retry
+a5000-retry PASS None
+START A 1 1 a500-retry
+a500-retry PASS None
+START A 1 1 a500-wait
+a500-wait PASS None
+START A 1 1 a500-reject
+a500-reject PASS None
+START A 1 1 a5000-wait
+a5000-wait PASS None
+START A 1 1 a5000-drop
+a5000-drop PASS None
+START A 1 1 a5000-reject
+a5000-reject PASS None
+VALID BLOCK A 1
+START A 2 1 a500-wait
+a500-wait PASS None
+START A 2 1 a5000-wait
+a5000-wait PASS None
+START A 2 1 a500-drop
+a500-drop PASS None
+START A 2 1 a500-reject
+a500-reject PASS None
+START A 2 1 a5000-reject
+a5000-reject PASS None
+START A 2 1 a5000-drop
+a5000-drop PASS None
+START A 2 1 a5000-retry
+a5000-retry PASS None
+START A 2 1 a500-retry
+a500-retry PASS None
+VALID BLOCK A 2
+START A 3 1 a500-retry
+a500-retry PASS None
+START A 3 1 a5000-reject
+a5000-reject PASS None
+START A 3 1 a500-wait
+a500-wait PASS None
+START A 3 1 a500-drop
+a500-drop PASS None
+START A 3 1 a500-reject
+a500-reject PASS None
+START A 3 1 a5000-wait
+a5000-wait PASS None
+START A 3 1 a5000-retry
+a5000-retry PASS None
+START A 3 1 a5000-drop
+a5000-drop PASS None
+VALID BLOCK A 3
+START A 4 1 a5000-wait
+a5000-wait PASS None
+START A 4 1 a500-wait
+a500-wait PASS None
+START A 4 1 a500-reject
+a500-reject PASS None
+START A 4 1 a500-retry
+a500-retry PASS None
+START A 4 1 a5000-drop
+a5000-drop PASS None
+START A 4 1 a5000-reject
+a5000-reject PASS None
+START A 4 1 a500-drop
+a500-drop PASS None
+START A 4 1 a5000-retry
+a5000-retry PASS None
+VALID BLOCK A 4
+START A 5 1 a5000-retry
+a5000-retry PASS None
+START A 5 1 a5000-reject
+a5000-reject PASS None
+START A 5 1 a500-drop
+a500-drop PASS None
+START A 5 1 a500-retry
+a500-retry PASS None
+START A 5 1 a5000-wait
+a5000-wait PASS None
+START A 5 1 a5000-drop
+a5000-drop PASS None
+START A 5 1 a500-reject
+a500-reject PASS None
+START A 5 1 a500-wait
+a500-wait PASS None
+VALID BLOCK A 5
+Traceback (most recent call last):
+  File "/workspace/grpc-under-pressure/experiments/003/secondary/fixtures/study.py", line 64, in <module>
+    elif sys.argv[1]=='execute':execute()
+                                ^^^^^^^^^
+  File "/workspace/grpc-under-pressure/experiments/003/secondary/fixtures/study.py", line 45, in execute
+    R.source_guard();path=directory/case['name'];print('START',block['study'],block['block'],attempt,case['name'],flush=True)
+    ^^^^^^^^^^^^^^^^
+  File "/workspace/grpc-under-pressure/experiments/003/secondary/fixtures/run.py", line 10, in source_guard
+    f=json.loads(FREEZE.read_text());assert all(sha(ROOT/p)==h for p,h in f['source_sha256'].items()),'source drift'
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/grpc-under-pressure/experiments/003/secondary/fixtures/run.py", line 10, in <genexpr>
+    f=json.loads(FREEZE.read_text());assert all(sha(ROOT/p)==h for p,h in f['source_sha256'].items()),'source drift'
+                                                ^^^^^^^^^^^
+  File "/workspace/grpc-under-pressure/experiments/003/secondary/fixtures/run.py", line 6, in sha
+    def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                                     ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

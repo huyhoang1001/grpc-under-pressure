@@ -1,0 +1,1190 @@
+{
+  "status": "RUNNING",
+  "started_unix_ns": 1793592996736733592,
+  "frozen_sha256": "f2c975651198c2d2c1bd2ad985b38834258cc4b99f48c8788d3621a55c25e145",
+  "blocks": [
+    {
+      "study": "A",
+      "block": 1,
+      "seed": 3230235474862838262,
+      "cases": [
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            3230235474862838262
+          ]
+        }
+      ],
+      "attempt": 1,
+      "status": "VALID",
+      "runs": {
+        "a500-drop": {
+          "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-retry": {
+          "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-retry": {
+          "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-wait": {
+          "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-reject": {
+          "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-wait": {
+          "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-drop": {
+          "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-reject": {
+          "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "seed": 9548838229514957687,
+      "cases": [
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        },
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            9548838229514957687
+          ]
+        }
+      ],
+      "attempt": 1,
+      "status": "VALID",
+      "runs": {
+        "a500-wait": {
+          "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-wait": {
+          "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-drop": {
+          "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-reject": {
+          "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-reject": {
+          "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-drop": {
+          "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-retry": {
+          "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-retry": {
+          "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "seed": 17182457733526921878,
+      "cases": [
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            17182457733526921878
+          ]
+        }
+      ],
+      "attempt": 1,
+      "status": "VALID",
+      "runs": {
+        "a500-retry": {
+          "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-reject": {
+          "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-wait": {
+          "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-drop": {
+          "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-reject": {
+          "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-wait": {
+          "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-retry": {
+          "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-drop": {
+          "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "seed": 15133099369218606263,
+      "cases": [
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        },
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            15133099369218606263
+          ]
+        }
+      ],
+      "attempt": 1,
+      "status": "VALID",
+      "runs": {
+        "a5000-wait": {
+          "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-wait": {
+          "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-reject": {
+          "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-retry": {
+          "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-drop": {
+          "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-reject": {
+          "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-drop": {
+          "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-retry": {
+          "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "seed": 11855545033508639373,
+      "cases": [
+        {
+          "name": "a5000-retry",
+          "study": "a5000",
+          "policy": "retry",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a5000-reject",
+          "study": "a5000",
+          "policy": "reject",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a500-drop",
+          "study": "a500",
+          "policy": "drop",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a500-retry",
+          "study": "a500",
+          "policy": "retry",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a5000-wait",
+          "study": "a5000",
+          "policy": "wait",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a5000-drop",
+          "study": "a5000",
+          "policy": "drop",
+          "deadline_ns": 5000000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a500-reject",
+          "study": "a500",
+          "policy": "reject",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        },
+        {
+          "name": "a500-wait",
+          "study": "a500",
+          "policy": "wait",
+          "deadline_ns": 500000000,
+          "clients": 1,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            11855545033508639373
+          ]
+        }
+      ],
+      "attempt": 1,
+      "status": "VALID",
+      "runs": {
+        "a5000-retry": {
+          "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-reject": {
+          "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-drop": {
+          "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-retry": {
+          "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-retry",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-wait": {
+          "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a5000-drop": {
+          "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-drop",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-reject": {
+          "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-reject",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        },
+        "a500-wait": {
+          "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-wait",
+          "verdict": "PASS",
+          "reason": null,
+          "safety_abort": false
+        }
+      }
+    },
+    {
+      "study": "B",
+      "block": 1,
+      "seed": 13819103293325858276,
+      "cases": [
+        {
+          "name": "b-deterministic",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "deterministic",
+          "client_seeds": [
+            13819103293325858276,
+            6773074038939505145,
+            18173788858262703630,
+            11127759603876350499,
+            4081730349489997368,
+            15482445168813195853,
+            8436415914426842722,
+            1390386660040489591
+          ]
+        },
+        {
+          "name": "b-jitter",
+          "study": "b",
+          "policy": "retry",
+          "deadline_ns": 2000000000,
+          "clients": 8,
+          "retry_mode": "jitter",
+          "client_seeds": [
+            13819103293325858276,
+            6773074038939505145,
+            18173788858262703630,
+            11127759603876350499,
+            4081730349489997368,
+            15482445168813195853,
+            8436415914426842722,
+            1390386660040489591
+          ]
+        }
+      ],
+      "attempt": 1,
+      "status": "RUNNING",
+      "runs": {}
+    }
+  ],
+  "attempts": [
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 1,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-01-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 2,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-02-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 3,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-03-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 4,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-04-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a5000-retry",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a5000-reject",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a500-drop",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a500-retry",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-retry",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a5000-wait",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a5000-drop",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a5000-drop",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a500-reject",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-reject",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    },
+    {
+      "study": "A",
+      "block": 5,
+      "attempt": 1,
+      "case": "a500-wait",
+      "directory": "experiments/003/results/stage6/A-block-05-attempt-01/a500-wait",
+      "verdict": "PASS",
+      "reason": null,
+      "safety_abort": false
+    }
+  ]
+}

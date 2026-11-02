@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "/workspace/grpc-under-pressure/experiments/003/secondary/fixtures/verify.py",
+    "--run",
+    "/workspace/grpc-under-pressure/experiments/003/results/stage6/A-block-03-attempt-01/a500-reject"
+  ],
+  "exit": 0,
+  "stdout": "PASS \n",
+  "stderr": ""
+}

@@ -1,0 +1,97 @@
+{
+  "study": "A",
+  "block": 5,
+  "seed": 11855545033508639373,
+  "cases": [
+    {
+      "name": "a5000-retry",
+      "study": "a5000",
+      "policy": "retry",
+      "deadline_ns": 5000000000,
+      "clients": 1,
+      "retry_mode": "jitter",
+      "client_seeds": [
+        11855545033508639373
+      ]
+    },
+    {
+      "name": "a5000-reject",
+      "study": "a5000",
+      "policy": "reject",
+      "deadline_ns": 5000000000,
+      "clients": 1,
+      "retry_mode": "jitter",
+      "client_seeds": [
+        11855545033508639373
+      ]
+    },
+    {
+      "name": "a500-drop",
+      "study": "a500",
+      "policy": "drop",
+      "deadline_ns": 500000000,
+      "clients": 1,
+      "retry_mode": "jitter",
+      "client_seeds": [
+        11855545033508639373
+      ]
+    },
+    {
+      "name": "a500-retry",
+      "study": "a500",
+      "policy": "retry",
+      "deadline_ns": 500000000,
+      "clients": 1,
+      "retry_mode": "jitter",
+      "client_seeds": [
+        11855545033508639373
+      ]
+    },
+    {
+      "name": "a5000-wait",
+      "study": "a5000",
+      "policy": "wait",
+      "deadline_ns": 5000000000,
+      "clients": 1,
+      "retry_mode": "jitter",
+      "client_seeds": [
+        11855545033508639373
+      ]
+    },
+    {
+      "name": "a5000-drop",
+      "study": "a5000",
+      "policy": "drop",
+      "deadline_ns": 5000000000,
+      "clients": 1,
+      "retry_mode": "jitter",
+      "client_seeds": [
+        11855545033508639373
+      ]
+    },
+    {
+      "name": "a500-reject",
+      "study": "a500",
+      "policy": "reject",
+      "deadline_ns": 500000000,
+      "clients": 1,
+      "retry_mode": "jitter",
+      "client_seeds": [
+        11855545033508639373
+      ]
+    },
+    {
+      "name": "a500-wait",
+      "study": "a500",
+      "policy": "wait",
+      "deadline_ns": 500000000,
+      "clients": 1,
+      "retry_mode": "jitter",
+      "client_seeds": [
+        11855545033508639373
+      ]
+    }
+  ],
+  "attempt": 1,
+  "frozen_sha256": "f2c975651198c2d2c1bd2ad985b38834258cc4b99f48c8788d3621a55c25e145"
+}
