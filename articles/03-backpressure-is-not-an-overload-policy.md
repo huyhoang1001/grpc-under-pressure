@@ -1,47 +1,122 @@
 # Backpressure Is Not an Overload Policy: Wait, Reject, Retry, or Drop?
 
-*Revised Markdown manuscript for technical-lead review. Evidence scope: Experiment 003, Stage 7-approved package.*
+A server has **32 occupied admission slots**. Its queue is bounded. HTTP/2 flow control may be doing exactly what it should. Then one more original message arrives. **What should the service do with it?**
 
-A server has reached its admission limit. Thirty-two pieces of work already own its available slots, including the work currently running. Another original message arrives. What should happen?
+The admission limit can protect the server from accepting unlimited unfinished work. It cannot decide whether the next message should wait, receive a refusal, be tried again, or be deliberately discarded. That is an application contract, not a transport setting.
 
-The transport can slow the sender. A bounded queue can stop the application from accepting unlimited unfinished work. Neither answers the product question: **should this message wait, receive an explicit refusal, be tried again, or be deliberately discarded?** The choice determines who holds the backlog, who spends more resources, and whether the original message can still finish before it matters.
+**When capacity runs out, every overload policy moves a cost somewhere. It does not make that cost disappear.** The engineering question is: *where did the cost go, and is that an acceptable place for it?*
 
-In [Blog 1](https://github.com/huyhoang1001/grpc-under-pressure) we examined why gRPC flow control did not prevent application backlog. In Blog 2 we found that changing a pending-work admission budget could reduce local queue residence while making other tails worse. Here we hold the server's admission bound fixed and change what happens **when it fills**.
+[Blog 1](https://github.com/huyhoang1001/grpc-under-pressure) investigated transport flow control and application backlog. Blog 2 explored fixed and adaptive admission budgets. Here we hold the admission boundary fixed and change what happens beyond it.
 
-The answer is not a universal winner. In our primary experiment, bounded retries completed **1.410 percentage points more original messages on time than explicit rejection**, but required more attempts and had a worse conditional recovery-period latency tail. Separate deadline and eight-client experiments made the trade-offs less tidy, not more. That is the useful result: **backpressure limits where work accumulates; an overload policy decides what happens to demand that capacity cannot serve.**
+## 1. The queue is full. Now what?
 
-## 1. The decision a full queue cannot make
+Imagine an event that is useful only if processed before its deadline. It is already waiting in a client's pending queue, or it is about to be sent. The server cannot accept another admitted piece of work right now.
 
-Consider an event with a deadline. The Go sender's local `Send` call may return, yet that is not evidence that the Rust worker processed the event, or even that the remote application admitted it. Conversely, a server can correctly enforce a bounded admission budget and still finish too few original events before their deadlines.
+A successful local Go `Send` does **not** establish that the remote application consumed or completed the event. Even a perfectly enforced admission limit does not establish that the original event finished on time. The service needs a rule for demand it cannot serve immediately.
 
-We tested four choices at the same full-budget boundary. Each protects the **same server admission capacity**; each sends a different bill elsewhere.
+**The decision has two parts:** which work the server may own, and what promise the system makes to work outside that boundary. The first is admission control. The second is overload policy.
 
-| Policy | At full admission | Who pays, and how? |
+### The full-queue decision
+
+| At the 32-slot boundary | What happens next? | Where does the cost go? |
 |---|---|---|
-| **WAIT** | Hold admission cancellably until a slot is available. | Waiting and backlog move upstream into bounded client pending queues, credits and transport; originals may still expire or be exhausted. |
-| **REJECT** | Return an explicit nonblocking admission refusal. | The caller receives a refusal and must decide the original's fate. Nonblocking admission does **not** mean zero response latency. |
-| **RETRY** | Refuse now; the client may repeat the attempt under the **same original deadline** and bounded backoff/attempt rules. | More attempts, elapsed time and client capacity may recover useful work. Retry requires stable identity and safe handling of ambiguous delivery. |
-| **DROP** | Explicitly discard work designated expendable. | The application accepts accounted loss. Here DROP still sends a terminal per-message response; it is neither successful processing nor a no-ACK optimization. |
+| **WAIT** | Hold the request for a slot, subject to cancellation and deadlines. | Waiting time, upstream pending work, and consumed deadline. |
+| **REJECT** | Return an explicit admission refusal. | Caller responsibility: handle refusal or abandon the original. |
+| **RETRY** | Server rejects; client may try again within a finite original deadline and attempt budget. | Extra attempts, elapsed time, and client capacity. |
+| **DROP** | Accountably discard work the application says is expendable. | Accepted loss of the original's useful outcome. |
 
-An **original** is the logical message scheduled once. An **attempt** is one effort to send it; retrying does not create another original. That distinction will matter more than any throughput leaderboard.
+This is a **conceptual decision map**, not a measured chart. Costs can overlap: a retrying client may also wait, and rejecting still costs network and response work.
 
-These policies cannot manufacture worker capacity. They choose where time, memory, attempts and loss are paid. The [frozen wire protocol and policy semantics](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/PROTOCOL-003.md) define the distinctions precisely. [Stage 7 claims C01, C02, C23](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/CLAIMS.md).
+## 2. Four policies, four places to pay
 
-## 2. The small controlled model
+**WAIT — “I'll hold your place, but you pay for waiting.”** It favors giving already-offered work another chance. It sacrifices time and upstream capacity while the server remains full. In our implementation waiting is bounded and cancellable; WAIT does not promise lossless delivery.
 
-We built a Go workload generator and a Rust/Tokio/tonic server, not a production queueing system. The client schedules **80 original messages per second for 36 seconds**: **2,880 originals per run**, including originals that never reach a `Send` call. Each carries a 16 KiB payload. One serial worker simulates service with a nominal **10 ms → 40 ms → 10 ms** delay across three 12-second phases. Actual timed service includes runtime overhead and is not exactly those nominal durations.
+**REJECT — “I can't accept this; you decide what happens next.”** It favors a prompt, explicit refusal instead of silently accumulating server-owned work. The caller must choose whether the original is still worth pursuing. “Nonblocking” refers to the admission decision, not zero response latency.
 
-The server permits **32 total occupied application admission slots**, counting queued, running and cancellation-pending work under the experiment's ownership rules. That is not a claim that the whole process, transport or allocator has a 32-message memory ceiling. The client also has bounded pending/outstanding capacity.
+**RETRY — “Try again, but spend a finite budget.”** This is **client-side behavior after a server refusal**, not a fourth independent server admission mechanism. A repeated attempt must retain the original's identity and immutable deadline. It may recover useful work; it may also amplify load and displace other originals.
 
-For the primary comparison, each original has a **2-second application-level deadline measured from its scheduled arrival slot**. A retry does not reset that clock. This is **not** a two-second gRPC streaming-RPC context deadline: the RPC has a separate, longer lifetime. The experiment observes through 39 seconds, allowing eligible completions after the 36-second offer interval.
+**DROP — “This work is allowed to disappear.”** It favors explicit loss when the application has declared the event expendable. In our protocol DROP returns a terminal per-message response and counts the discarded original. It is not successful processing or a transport-level no-ACK optimization.
 
-We repeated each policy in **five matched blocks**. We used the same original-demand and service schedule within comparisons, and assessed each block as one replication, not each message as an independent experiment.
+There is no policy that manufactures worker capacity. The decision is which combination of waiting, caller responsibility, repeated work, and acceptable loss the service is prepared to own. [Protocol and semantics](https://github.com/huyhoang1001/grpc-under-pressure/blob/62647db51e48b81f07128456b9b60d660715b904/experiments/003/PROTOCOL-003.md) · [approved claims C01/C23](https://github.com/huyhoang1001/grpc-under-pressure/blob/62647db51e48b81f07128456b9b60d660715b904/experiments/003/results/stage7/CLAIMS.md).
 
-A crucial measurement definition: **useful completion** (`U`) means that the server completed an original no later than that original's immutable deadline. Our main denominator is **all scheduled originals** (`N=2,880`), including never-sent, expired, refused, dropped and backlog-exhausted work. Thus `U/N` is the on-time fraction of offered demand, not the success fraction among the convenient subset that reached the worker.
+## 3. A small experiment to make the trade-offs visible
 
-Other counters answer different questions: `F` counts distinct originals with a first attempt, `A` counts all initiated attempts including retries, `S` counts successful local Sends, and `R` counts decoded server attempts. They must not be substituted for `N`. `U/36s` can describe useful completions per offered-workload second, including eligible drain completions, but it is not an instantaneous worker rate. [Stage 5 report](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/STAGE5-REPORT.md); [Stage 7 claims C02–C04, C29](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/CLAIMS.md).
+We used a Go gRPC client and a Rust/tonic server with **one serial worker** and a **32-slot application admission limit**. The client scheduled **80 original messages per second for 36 seconds**—**2,880 originals per run**—while the worker slowed down and recovered. We compared WAIT, REJECT, RETRY, and DROP in **five matched blocks** under the primary workload.
 
-## 3. Where each policy puts the bill
+Each original carried an **immutable 2-second application deadline** measured from its scheduled arrival, not from its first successful send or its latest retry. This was **not** a two-second gRPC stream deadline; the RPC had a separate, longer lifetime.
+
+The main outcome is **useful completion**: an original completed by its own deadline, divided by **all 2,880 scheduled originals**, including originals that never reached a Send call. Counting only admitted work would hide a major part of overload.
+
+The worker's capacity did not change between policies. What changed was how demand encountered the admission boundary. Detailed phase timing, 16 KiB payloads, client bounds, counter definitions, validity checks, and limitations appear in the appendix. [Primary evidence](https://github.com/huyhoang1001/grpc-under-pressure/blob/62647db51e48b81f07128456b9b60d660715b904/experiments/003/results/stage5/analysis/RESULTS.json) · [Stage 5 report](https://github.com/huyhoang1001/grpc-under-pressure/blob/62647db51e48b81f07128456b9b60d660715b904/experiments/003/STAGE5-REPORT.md).
+
+## 4. RETRY bought useful work — and sent the bill elsewhere
+
+**Compared with REJECT, RETRY completed about 41 more original messages on time per run while initiating about 91 more total attempts.** That is the experiment's most useful trade-off: more useful work, more effort, and a latency qualification.
+
+### RETRY versus REJECT — primary single-client, 2-second deadline
+
+| Useful work gained | Additional attempts | Recovery-period latency |
+|---|---|---|
+| **+40.6 on-time originals/run** (**+1.410 percentage points** of all scheduled originals) | **+91.2 initiated attempts/run** | **Higher completed-cohort p95** for RETRY in all five paired blocks |
+
+*Conceptual comparison of measured endpoints, not an efficiency ratio or a causal allocation of attempts to completions.*
+
+![Primary paired useful completion and recovery-cohort tail latency](https://raw.githubusercontent.com/huyhoang1001/grpc-under-pressure/62647db51e48b81f07128456b9b60d660715b904/experiments/003/results/stage7/figures/primary-tradeoff.png)
+
+*Figure 1. Primary 2-second study, five matched blocks. Left: per-run useful-completion fraction of all **2,880 scheduled originals**. Right: per-run p95 **only among completed originals scheduled during recovery [24,36) seconds**. REJECT's completed cohort was **900–932/run**, RETRY's **934–956/run**. These are different cohorts: the figure does not measure the latency difference for the same originals. [Reviewed figure](https://github.com/huyhoang1001/grpc-under-pressure/blob/62647db51e48b81f07128456b9b60d660715b904/experiments/003/results/stage7/figures/primary-tradeoff.png) · [audit](https://github.com/huyhoang1001/grpc-under-pressure/blob/62647db51e48b81f07128456b9b60d660715b904/experiments/003/results/stage7/audit/REVIEW-AUDIT.json).*
+
+RETRY's on-time improvement averaged **+1.410 percentage points** across five paired blocks. But the client initiated **124.8 retries per run**, and **91.2 more total attempts** than REJECT—not 124.8 more, because RETRY first-attempted fewer distinct originals. The extra attempts did **not** cause exactly 40.6 extra completions in any directly measurable one-to-one way. Retry changed which originals entered the system, too.
+
+The latency trade-off is real but conditional. For completed originals scheduled in the recovery phase, RETRY's **per-run p95 was 1.054–1.100 seconds**, compared with **0.573–0.733 seconds** for REJECT, worse in all five blocks. Because the completed cohorts differ and unfinished work is excluded, this is **not** a same-original causal latency comparison or an end-to-end guarantee.
+
+The more detailed accounting—originals versus initiated attempts versus successful local Sends versus decoded requests, paired block counts, descriptive intervals, and retry conversions—is in the appendix. The important design lesson is simpler: **a retry is not a free second chance; it spends a deadline and an attempt budget, and it can change who gets served.**
+
+Retry *scheduling* is another cost decision. In a separate eight-client study with staggered arrivals, fixed relative backoff produced fewer retry-timing collisions than uniform jitter. That does not establish fixed backoff as generally preferable; the appendix explains the **−15.873%** finding and its limitations.
+
+## 5. Deadlines change what is worth saving
+
+Suppose the same event is useful for only **500 ms** instead of **5 seconds**. Waiting or retrying can consume most of the shorter window before the worker has a chance to act. With more time, a second attempt may still be worthwhile—but longer deadlines also permit more work to remain outstanding.
+
+In a **separate Stage 6 secondary runtime**, we executed actual 500 ms and 5-second application deadlines. Moving to 5 seconds improved on-time completion in **all five paired blocks for every policy**. The mean paired gains ranged from **9.278 to 13.799 percentage points**, depending on policy. Yet longer time did not make RETRY universally preferable: at **500 ms**, RETRY's advantage over REJECT was **−0.007 pp** with an interval crossing zero; at **5 seconds**, RETRY trailed WAIT by **−0.222 pp** on average in this secondary study.
+
+One valid **500 ms WAIT** run was markedly worse than its other four blocks. It remained in the analysis, materially lowered the mean, and its cause is **unknown**. The figure, complete block counts, and sensitivity context remain in the appendix.
+
+These runs must **not** be pooled with the primary 2-second study or joined into a single 500 ms → 2 s → 5 s curve: the secondary study used a separately versioned runtime. Their practical lesson is about *value over time*, not a universal deadline threshold. [Stage 6 evidence](https://github.com/huyhoang1001/grpc-under-pressure/blob/62647db51e48b81f07128456b9b60d660715b904/experiments/003/STAGE6-REPORT.md) · [approved claims C12–C16](https://github.com/huyhoang1001/grpc-under-pressure/blob/62647db51e48b81f07128456b9b60d660715b904/experiments/003/results/stage7/CLAIMS.md).
+
+## 6. How to choose an overload policy in production
+
+I would start with the **original's value and deadline**, not a fashionable retry algorithm. The choices then become concrete:
+
+1. **Define useful work.** What outcome counts, and when does the original stop being valuable? Keep one immutable deadline across attempts.
+2. **Decide whether loss is allowed.** DROP needs an explicit expendability contract; REJECT needs a caller-side terminal decision.
+3. **Bound both sides independently.** Limit server admission ownership **and** client pending/outstanding work. A 32-slot application limit is not a whole-process RSS bound.
+4. **Choose who may wait.** If WAIT moves backlog to the caller, specify its capacity, cancellation and expiry behavior. If REJECT is chosen, make refusal visible and actionable.
+5. **Budget retries end to end.** Cap attempts, time, outstanding credits and backoff. A retry can improve useful completion while competing with fresh originals.
+6. **Preserve original identity.** Handle ambiguous responses and deduplication; in-memory deduplication is **not** durable exactly-once processing across crashes.
+7. **Measure offered demand, not just admitted work.** Count scheduled originals, first attempts, all attempts, on-time completions, late completions, refusal, expiry, discard and never-sent work separately.
+8. **Specify terminal behavior when every budget is exhausted.** The application should know what it promised—and what it did not.
+
+For latency, separate original-schedule-to-completion from server queue residence, admission waiting and local `Send` duration. A local `Send` return does not prove remote application consumption, and those measurements should not be casually added into one end-to-end timeline. Also observe client backlog, worker occupancy, sampled memory and cohort sizes for conditional percentiles.
+
+This experiment gives a reason to **consider bounded RETRY** when originals are valuable, deadlines leave room, and additional attempts are affordable. It does not show RETRY always wins. WAIT/REJECT/DROP primary useful-work ordering remains inconclusive; the controlled timer-based single-worker system is not a general production performance model.
+
+## 7. Conclusion: decide which promises survive overload
+
+A full queue is not just a performance problem. **It is a decision about which promises your service can still keep.**
+
+Bounded admission protects a capacity boundary; it does not determine the fate of excess demand. WAIT pays in time and upstream backlog. REJECT hands a decision to the caller. RETRY can recover useful work by spending finite attempts and deadline. DROP accepts accountable loss for work allowed to disappear.
+
+The three things worth remembering are: **bound ownership**, **follow where the cost moves**, and **judge success against useful originals and their deadlines—not just server throughput**.
+
+**Backpressure tells a sender to slow down. An overload policy decides what the system is willing to promise when slowing down is not enough.**
+
+---
+
+## Appendix: the evidence behind the decisions
+
+The appendix keeps the approved outcome figures, secondary study and jitter detail, counter accounting, limitations and reproducibility references accessible without making the reader decode them before reaching the engineering decision.
+
+### A. Primary outcomes across all scheduled originals
 
 The first result is about *disposition*, not speed. The same capacity schedule produced different mixes of on-time work, late work, refusal, explicit discard and demand that never reached the server.
 
@@ -53,15 +128,7 @@ On-time completion averaged **76.042% WAIT**, **76.167% REJECT**, **77.576% RETR
 
 DROP has different *semantics* from REJECT, even though we did not establish a distinct goodput/retention advantage for DROP in this all-expendable, response-acknowledged protocol. The paired descriptive intervals for WAIT versus REJECT versus DROP overlap zero. That leaves their goodput ordering **inconclusive**, not equivalent. [Stage 7 claims C07–C11](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/CLAIMS.md).
 
-## 4. RETRY gained useful work, and sent a bill elsewhere
-
-**RETRY completed about 41 more original messages on time than REJECT, while initiating about 91 more total attempts per run.** It is the clearest example of this experiment's bargain: a modest gain in useful work, paid for with repeated work and a worse latency tail among recovery-period completions.
-
-The primary endpoint counts originals completed before their immutable application deadline out of **all 2,880 scheduled originals**, even those never sent. Across five matched blocks, RETRY improved that on-time fraction by **+1.410 percentage points** (mean **40.6 additional originals/run**). The five paired count differences were **75, 22, 34, 47, 25**; the prespecified **descriptive** 95% paired-block bootstrap interval was **+0.889 to +2.042 pp**. It is not a significance test or evidence of a universal winner.
-
-![Primary paired useful completion and recovery-cohort tail latency](https://raw.githubusercontent.com/huyhoang1001/grpc-under-pressure/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/figures/primary-tradeoff.png)
-
-*Figure 2. Primary single-client **2-second application-deadline** study; five matched blocks. **Left:** per-run on-time fraction of **all 2,880 scheduled originals**, with mean marks. **Right:** per-run p95 of **completed** originals scheduled during recovery **[24,36) s**; REJECT n=900–932/run, RETRY n=934–956/run. These are different completed cohorts, **not** a pooled p95 or same-original causal delay. [Reviewed figure](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/figures/primary-tradeoff.png) · [audited cohort values](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/audit/REVIEW-AUDIT.json).*
+### B. Retry accounting and recovery qualification
 
 The accounting explains why **124.8 retry attempts** do not mean 124.8 extra attempts compared with REJECT:
 
@@ -79,7 +146,7 @@ The logs also record **88, 95, 100, 83, 77** previously refused originals that l
 
 Even “recovery” needs careful scope. The server's pre-24-second admitted cohort cleared roughly 0.4 seconds after the slowdown ended, yet client pending/outstanding work remained at 36 seconds. Clearing old server work is **not** proof that the entire client-server system has recovered. [Stage 7 claims C03–C06, C11, C24](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/CLAIMS.md); [independent audit](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/audit/REVIEW-AUDIT.json).
 
-## 5. Change the deadline, change the decision
+### C. Deadline study, figure and valid anomaly
 
 What if the original has much less time, or much more?
 
@@ -93,7 +160,7 @@ Within this secondary runtime, moving from 500 ms to 5 seconds improved `U/N` in
 
 One valid observation complicates the deadline result: **500 ms WAIT block 1 completed only 51.5625% on time**, well below its other four blocks. It passed the frozen validity checks, was neither rerun nor excluded, and pulled the **five-block mean to 64.701%** versus **median 67.917%**. Its cause is **unknown**. We keep the point visible in Figure 3 and the full five-block accounting in the appendix; no CPU, scheduler, warm-up or cancellation story has been isolated as an explanation. [Audited anomaly](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/audit/REVIEW-AUDIT.json).
 
-## 6. The jitter result we did not expect
+### D. Eight-client retry collision and backoff sensitivity
 
 Retry advice often includes randomized backoff to avoid a synchronized herd. We tested a narrower proposition: under our specified eight-client workload, would a **common fixed relative backoff** concentrate retries into the same short time bins more than uniform jitter?
 
@@ -109,29 +176,7 @@ The directional prediction failed **in this model**. Fixed relative backoff had 
 
 Why isn't that a verdict against jitter? The eight clients' original arrivals were **staggered**. If clients start at different times, waiting the same number of milliseconds *after each refusal* need not make them retry at the same absolute time. We did not inject a synchronized herd. Moreover, fixed **100/200 ms** delays versus uniform `[0, cap]` jitter changed **expected wait duration as well as variability**. Different retry populations, client timing and transport behavior remain possible contributors; the study does not isolate any one cause. The bin-width/offset checks and the pre-traffic B2 seed correction are documented in the appendix. [Audited H6 result](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/audit/REVIEW-AUDIT.json) · [Stage 7 C17–C21](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/CLAIMS.md).
 
-## 7. Choose semantics and budgets before slogans
-
-A useful overload design starts with questions, not a preferred policy name.
-
-**Is late work still valuable?** If a result becomes worthless after a deadline, a queue that preserves everything may preserve the wrong thing. Make the original deadline explicit, and do not reset it on retry.
-
-**Is loss allowed?** If an event is expendable, explicit DROP can be a valid contract. If not, “drop and count it” is not a substitute for delivery semantics. REJECT gives the caller a choice; it does not guarantee the caller will handle refusal well.
-
-**Who owns the retry budget?** A client retry can recover useful work, as it did here, but it also consumes attempts, client capacity and time. Bound attempts and outstanding work, preserve original IDs, and specify what happens after refusal, expiry and ambiguous outcomes. Our in-memory deduplication showed no duplicate worker start in valid runs; it did **not** establish durable exactly-once external effects across crashes.
-
-**Where is waiting allowed to live?** Measure client pending/outstanding work, original-schedule-to-completion outcomes, attempts per original, server queue and running ownership, refused/dropped/expired counts, and conditional latency **with cohort sizes**. Do not treat a successful local Go `Send` or a successful server response write as proof of remote application consumption. Local call durations include scheduling, serialization and instrumentation, not isolated HTTP/2 blocking.
-
-**What happens when *those* bounds fill?** Bounded admission does not by itself cap total process RSS. Payload staging, metadata, transport, allocator state and client-side copies still exist. Sampled RSS is an observation, not a hard continuous ceiling.
-
-Our measured primary result supports a specific trade: bounded RETRY yielded a small but repeatable all-original on-time gain over REJECT, while adding attempts and a worse completed-recovery-cohort p95. The deadline study shows that ranking changes with timing requirements. The eight-client study shows that a plausible synchronization prediction can fail under staggered arrivals without disproving jitter for actual herds. WAIT/REJECT/DROP primary goodput ordering and the cause of the anomalous WAIT run remain unresolved.
-
-For a service I would first define the **value and deadline of an original**, the **admission ownership bound**, and the **observable terminal outcomes**. Then I would choose WAIT, REJECT, bounded RETRY or explicit DROP based on which costs the caller and service are permitted to bear. That is engineering guidance, not a universal ranking proved by this timer-based, single-worker study.
-
-**Backpressure tells a sender to slow down. An overload policy decides what the system is willing to promise when slowing down is not enough.**
-
----
-
-### Appendix: methods, scope and reproducibility
+### E. Methods, limitations and reproducibility
 
 **Evidence hierarchy.** The [Stage 7 review](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/STAGE7-REPORT.md), [approved claim matrix](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/CLAIMS.md), [publication outline](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/PUBLICATION-OUTLINE.md) and [chart registry](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/CHARTS.json) govern this manuscript. Primary results: [Stage 5 report](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/STAGE5-REPORT.md), [primary analysis](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage5/analysis/RESULTS.json). Secondary results: [Stage 6 report](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/STAGE6-REPORT.md), [secondary analysis](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage6/analysis/RESULTS.json), [independent raw arithmetic audit](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/results/stage7/audit/REVIEW-AUDIT.json). The review independently recomputed key arithmetic but was not an external-laboratory replication.
 
@@ -149,4 +194,3 @@ For a service I would first define the **value and deadline of an original**, th
 
 **Archived exceptions and provenance.** The valid 500 ms WAIT block 1 remains in every five-run result. The B2 seed amendment preceded any B traffic; the superseded seed plan and boundary-stop record remain available. Source hashes, immutable workloads/deadlines, per-original reconciliations, attempt events, freeze records, validity outputs and exclusions are linked from the [Stage 5](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/STAGE5-REPORT.md), [Stage 6](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/STAGE6-REPORT.md) and [Stage 7](https://github.com/huyhoang1001/grpc-under-pressure/blob/25771cda76abfbcee32f994841a67e900efe5833/experiments/003/STAGE7-REPORT.md) reports. Reproduce analysis from preserved evidence; do not overwrite raw run directories.
 
-*Manuscript status: revised for technical-lead review. No experiments or frozen artifacts modified.*
